@@ -4,7 +4,7 @@ import { select, text } from '@storybook/addon-knobs';
 import Example, { Colors } from '.'
 
 export default {
-  title: 'Default',
+  title: 'Example',
   component: Example,
 };
 

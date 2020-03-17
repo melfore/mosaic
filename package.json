@@ -2,6 +2,9 @@
   "name": "ui-kit",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.js",
+  "files": ["dist"],
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
@@ -33,7 +36,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "react-scripts build",
+    "build": "rm -rf ./dist && tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public"

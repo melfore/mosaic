@@ -1,5 +1,5 @@
 {
-  "name": "ui-kit",
+  "name": "@melfore/ui-kit",
   "version": "0.1.0",
   "private": true,
   "main": "./dist/index.js",

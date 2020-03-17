@@ -16,11 +16,11 @@ export enum ButtonVariants {
   outlined = 'outlined'
 }
 
-interface ButtonProps {
+export interface ButtonProps {
   elevated?: boolean,
   icon?: ButtonIcon,
   label: string,
-  onClick: (event: MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
+  onClick: (event: MouseEvent) => void,
   variant?: ButtonVariants
 }
 

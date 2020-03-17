@@ -6,7 +6,7 @@ export enum Colors {
   yellow = 'yellow'
 }
 
-interface ExampleProps {
+export interface ExampleProps {
   color?: Colors,
   onClick: Function,
   text: string,

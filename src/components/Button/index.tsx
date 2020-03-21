@@ -1,30 +1,13 @@
-import React, { FC, MouseEvent, ReactElement } from 'react';
+import React, { FC } from 'react';
 import MUIButton from '@material-ui/core/Button';
+import {
+  ButtonIconPosition,
+  ButtonIconType,
+  ButtonType,
+  ButtonVariants,
+} from '../../types/Button';
 
-export enum ButtonIconPosition {
-  left = 'left',
-  right ='right'
-}
-
-interface ButtonIcon {
-  icon: ReactElement,
-  position: ButtonIconPosition,
-}
-
-export enum ButtonVariants {
-  contained = 'contained',
-  outlined = 'outlined'
-}
-
-export interface ButtonProps {
-  elevated?: boolean,
-  icon?: ButtonIcon,
-  label: string,
-  onClick: (event: MouseEvent) => void,
-  variant?: ButtonVariants
-}
-
-const getIcon = (iconConfig?: ButtonIcon) => {
+const getIcon = (iconConfig?: ButtonIconType) => {
   if (!iconConfig) {
     return {};
   }
@@ -41,7 +24,8 @@ const getIcon = (iconConfig?: ButtonIcon) => {
   };
 }
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<ButtonType> = ({
+  dataCy,
   elevated = false,
   icon = undefined,
   label,
@@ -51,6 +35,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <MUIButton
       color="primary"
+      data-cy={dataCy}
       disableElevation={!elevated}
       onClick={onClick}
       variant={variant}

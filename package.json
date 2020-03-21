@@ -4,7 +4,9 @@
   "private": true,
   "main": "./dist/index.js",
   "types": "./dist/types/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
@@ -17,7 +19,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
-    "typescript": "^3.7.5"
+    "typescript": "3.8.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.14",
@@ -36,7 +38,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "rm -rf ./dist && tsc",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public"

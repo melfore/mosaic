@@ -9,7 +9,7 @@ export enum ButtonIconPosition {
 
 export interface ButtonIconType {
   name: Icons,
-  position: ButtonIconPosition,
+  position?: ButtonIconPosition,
 }
 
 export enum ButtonVariants {

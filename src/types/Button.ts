@@ -1,13 +1,14 @@
 import { MouseEvent, ReactElement } from 'react';
 import { BaseType } from './Base';
+import { Icons } from './Icon';
 
 export enum ButtonIconPosition {
   left = 'left',
-  right ='right'
+  right = 'right'
 }
 
 export interface ButtonIconType {
-  icon: ReactElement,
+  name: Icons,
   position: ButtonIconPosition,
 }
 

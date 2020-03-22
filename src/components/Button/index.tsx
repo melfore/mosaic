@@ -1,27 +1,27 @@
 import React, { FC } from 'react';
 import MUIButton from '@material-ui/core/Button';
-import {
-  ButtonIconPosition,
-  ButtonIconType,
-  ButtonType,
-  ButtonVariants,
-} from '../../types/Button';
+import Icon from '../Icon';
+import { ButtonIconPosition, ButtonIconType, ButtonType, ButtonVariants } from '../../types/Button';
 
-const getIcon = (iconConfig?: ButtonIconType) => {
+const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
+  const icons = { endIcon: undefined, startIcon: undefined };
   if (!iconConfig) {
-    return {};
+    return
   }
 
-  const { icon, position } = iconConfig;
-  if (position === ButtonIconPosition.left) {
+  const { name, position } = iconConfig;
+  const icon = <Icon dataCy={`${dataCy}-icon`} name={name} />;
+  if (position === ButtonIconPosition.right) {
     return {
-      startIcon: icon,
-    };
+      ...icons,
+      endIcon: icon,
+    }
   }
 
   return {
-    endIcon: icon,
-  };
+    ...icons,
+    startIcon: icon,
+  }
 }
 
 const Button: FC<ButtonType> = ({
@@ -39,7 +39,7 @@ const Button: FC<ButtonType> = ({
       disableElevation={!elevated}
       onClick={onClick}
       variant={variant}
-      {...getIcon(icon)}
+      {...getIcons(dataCy, icon)}
     >
       {label}
     </MUIButton>

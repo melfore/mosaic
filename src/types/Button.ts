@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement } from 'react';
+import { MouseEvent } from 'react';
 import { BaseType } from './Base';
 import { Icons } from './Icon';
 

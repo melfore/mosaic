@@ -1,5 +1,5 @@
 # @melfore/mosaic
-An example of a UI kit library based on `@material-ui`
+Melfore's UI kit library based on `@material-ui`
 
 Right now it hosts a `Button` wrapper around `MUIButton` with some basic props mapping
 

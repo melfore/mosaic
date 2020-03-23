@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -42,11 +42,11 @@
     "ts-jest": "^25.2.1"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -s public",
     "build": "rm -rf ./dist && tsc",
+    "build-storybook": "build-storybook -s public",
+    "start": "start-storybook -p 9009 -s public",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build-storybook": "build-storybook -s public"
+    "upload": "npm run-script build && npm publish --access public"
   },
   "eslintConfig": {
     "extends": "react-app"

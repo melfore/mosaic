@@ -1,9 +1,18 @@
 # @melfore/mosaic
 Melfore's UI kit library based on `@material-ui`
 
-Right now it hosts a `Button` wrapper around `MUIButton` with some basic props mapping
+## Usage
+Add the package to your project with:
 
-## Available commands
+`npm install @melfore/mosaic`
+
+## Development
+
+### Available commands
+
+- `npm run-script build`
+
+  Compiles the code with `tsc` and saves the output into `/dist`
 
 - `npm start`
 
@@ -13,12 +22,12 @@ Right now it hosts a `Button` wrapper around `MUIButton` with some basic props m
 
   Launches `Jest` test suite
 
-- `npm run-script build`
+- `npm run-script upload`
 
-  Compiles the code with `tsc` and saves the output into `/dist`
+  Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
 
-## How to use in CRA-based project
-This is temporary before publishing the package
+### Local usage / testing 
+Use this guide to locally use/test `@melfore/mosaic` on projects, while developing new features.
 
 1. Install `yalc` local package manager https://github.com/whitecolor/yalc
 
@@ -36,7 +45,7 @@ This is temporary before publishing the package
 
     `@melfore/mosaic@0.1.0-6ea98d41 published in store.`
 
-4. Move to the folder of the CRA-based project and add local dependency for `@melfore/mosaic`
+4. Move to the folder of the utilizing project and add local dependency for `@melfore/mosaic` (it will temporary replace the dependency for the online package)
 
     `yalc add @melfore/mosaic`
 
@@ -59,8 +68,8 @@ This is temporary before publishing the package
     ...
     
     <Button
-      label="Learn React"
-      onClick={() => console.log('Test')}
+        label="Learn React"
+        onClick={() => window.open('https://reactjs.org', '_blank')}
     />
     ```
 

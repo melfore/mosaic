@@ -1,5 +1,5 @@
-# Melfore UI Kit
-An example of a UI Kit library based on `@material-ui`
+# @melfore/mosaic
+An example of a UI kit library based on `@material-ui`
 
 Right now it hosts a `Button` wrapper around `MUIButton` with some basic props mapping
 
@@ -24,21 +24,21 @@ This is temporary before publishing the package
 
     `npm i yalc -g`
 
-2. Build `@melfore/ui-kit`
+2. Build `@melfore/mosaic`
 
     `npm run-script build`
 
-3. Publish locally `@melfore/ui-kit`
+3. Publish locally `@melfore/mosaic`
 
     `yalc publish --push --private`
 
     You will get something similar in the output:
 
-    `@melfore/ui-kit@0.1.0-6ea98d41 published in store.`
+    `@melfore/mosaic@0.1.0-6ea98d41 published in store.`
 
-4. Move to the folder of the CRA-based project and add local dependency for `@melfore/ui-kit`
+4. Move to the folder of the CRA-based project and add local dependency for `@melfore/mosaic`
 
-    `yalc add @melfore/ui-kit`
+    `yalc add @melfore/mosaic`
 
     You will see the new entry in your `package.json`
     Remember to add these two rules to your `.gitignore` to avoid pushing to repo:
@@ -54,7 +54,7 @@ This is temporary before publishing the package
 6. Import and use components in your code
 
     ```
-    import { Button } from '@melfore/ui-kit';
+    import { Button } from '@melfore/mosaic';
 
     ...
     

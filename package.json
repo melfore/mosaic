@@ -1,7 +1,12 @@
 {
   "name": "@melfore/mosaic",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://github.com/melfore/mosaic#readme",
+  "description": "Melfore's UI kit library based on `@material-ui`",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melfore/mosaic.git"
+  },
   "main": "./dist/index.js",
   "types": "./dist/types/index.js",
   "files": [
@@ -57,5 +62,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "license": "ISC"
 }

@@ -24,13 +24,13 @@ jobs:
       uses: actions/checkout@v2
       
     # Install NodeJS
-    - name: Install Node.js
+    - name: Install NodeJS
       uses: actions/setup-node@v1.1.0
 
     # Install project dependencies
-    - name: Install dependencies
+    - name: Install Dependencies
       run: npm install
     
     # Run tests
-    # - name: Run tests
-    #   run: npm test
+    - name: Unit Tests
+      run: npm run-script test-ci

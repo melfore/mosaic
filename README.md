@@ -10,7 +10,7 @@ Add the package to your project with:
 
 ### Available commands
 
-- `npm run-script build`
+- `npm run build`
 
   Compiles the code with `tsc` and saves the output into `/dist`
 
@@ -22,7 +22,7 @@ Add the package to your project with:
 
   Launches `Jest` test suite
 
-- `npm run-script upload`
+- `npm run upload`
 
   Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
 
@@ -35,7 +35,7 @@ Use this guide to locally use/test `@melfore/mosaic` on projects, while developi
 
 2. Build `@melfore/mosaic`
 
-    `npm run-script build`
+    `npm run build`
 
 3. Publish locally `@melfore/mosaic`
 

@@ -39,14 +39,14 @@
     "ts-jest": "^25.2.1"
   },
   "scripts": {
-    "build": "npm run-script pre-build && tsc",
+    "build": "npm run pre-build && tsc",
     "build-storybook": "build-storybook -o docs",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "start": "start-storybook -p 9009",
-    "test": "npm run-script pre-test && react-scripts test",
+    "test": "npm run pre-test && react-scripts test",
     "test-ci": "CI=true npm test",
-    "upload": "npm run-script build && npm publish --access public"
+    "upload": "npm run build && npm publish --access public"
   },
   "eslintConfig": {
     "extends": "react-app"

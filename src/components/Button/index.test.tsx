@@ -30,4 +30,15 @@ describe('Button test suite:', () => {
     const buttonLabel = button.find('span.MuiButton-label');
     expect(buttonLabel.text()).toEqual(defaultProps.label);
   })
+
+  it('failing test', () => {
+    const onClickHandler = jest.fn();
+    const component = componentWrapper({
+      onClick: onClickHandler,
+    });
+    const wrapper = mount(component);
+    const button = wrapper.find('button');
+    const buttonLabel = button.find('span.MuiButton-label');
+    expect(buttonLabel.text()).toEqual('Failing test');
+  })
 })

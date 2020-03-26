@@ -1,6 +1,8 @@
 # @melfore/mosaic
 Melfore's UI kit library based on `@material-ui`
 
+![Mosaic CI](https://github.com/melfore/mosaic/workflows/Mosaic%20CI/badge.svg)
+
 ## Usage
 Add the package to your project with:
 

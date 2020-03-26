@@ -18,8 +18,19 @@ jobs:
     - name: Install NodeJS
       uses: actions/setup-node@v1.1.0
 
+    # Cache layer for project dependencies
+    - name: Cache Dependencies
+      id: cache-dependencies
+      uses: actions/cache@v1
+      env:
+        cache-name: mosaic-dependencies
+      with:
+        path: ~/.npm
+        key: package-lock-${{ hashFiles('**/package-lock.json') }}
+
     # Install project dependencies
     - name: Install Dependencies
+      if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
     # Run tests in CI mode

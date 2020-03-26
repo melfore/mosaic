@@ -45,7 +45,6 @@
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "start": "start-storybook -p 9009",
     "test": "npm run pre-test && react-scripts test",
-    "test-ci": "CI=true npm test",
     "upload": "npm run build && npm publish --access public"
   },
   "eslintConfig": {

@@ -20,7 +20,7 @@ jobs:
 
     # Install project dependencies
     - name: Install Dependencies
-      run: npm install
+      run: npm ci
     
     # Run tests in CI mode
     - name: Unit Tests

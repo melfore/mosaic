@@ -30,7 +30,7 @@ jobs:
 
     # Install project dependencies
     - name: Install Dependencies
-      if: steps.cache-dependencies.outputs.cache-hit != 'true'
+      # if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
     # Run tests in CI mode

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/melfore/mosaicmain.741a389816fdf571ceee.bundle.js",
+    "main.js.map": "/melfore/mosaicmain.741a389816fdf571ceee.bundle.js.map",
+    "runtime~main.js": "/melfore/mosaicruntime~main.741a389816fdf571ceee.bundle.js",
+    "runtime~main.js.map": "/melfore/mosaicruntime~main.741a389816fdf571ceee.bundle.js.map",
+    "vendors~main.js": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js",
+    "vendors~main.js.map": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js.map",
+    "iframe.html": "/melfore/mosaiciframe.html",
+    "precache-manifest.b8cb61c8e3e7777c380be7fe77732c51.js": "/melfore/mosaicprecache-manifest.b8cb61c8e3e7777c380be7fe77732c51.js",
+    "service-worker.js": "/melfore/mosaicservice-worker.js",
+    "vendors~main.741a389816fdf571ceee.bundle.js.LICENSE.txt": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.741a389816fdf571ceee.bundle.js",
+    "vendors~main.741a389816fdf571ceee.bundle.js",
+    "main.741a389816fdf571ceee.bundle.js"
+  ]
+}

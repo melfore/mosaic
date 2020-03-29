@@ -39,11 +39,13 @@ jobs:
       env:
         CI: true
         
-    #: Generate StoryBook docs
-    - name: StoryBook docs
-      run: |
-        npm run build-storybook
-        git add .
-        git commit -m "Updated docs"
-        git push
+    # Generate StoryBook docs
+    - name: Generate StoryBook docs
+      run: npm run build-storybook
+
+    # Publish StoryBook docs
+    - name: Publish StoryBook docs
+      uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       

@@ -38,3 +38,10 @@ jobs:
       run: npm run test
       env:
         CI: true
+        
+    #: Generate StoryBook docs
+    - name: StoryBook docs
+      run: |
+        npm run build-storybook
+        git status
+      

@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "npm run pre-build && tsc",
-    "build-storybook": "build-storybook -o docs",
+    "build-storybook": "build-storybook -o docs --docs",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "start": "start-storybook -p 9009",

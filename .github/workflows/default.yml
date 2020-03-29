@@ -43,5 +43,7 @@ jobs:
     - name: StoryBook docs
       run: |
         npm run build-storybook
-        git status
+        git add .
+        git commit -m "Updated docs"
+        git push
       

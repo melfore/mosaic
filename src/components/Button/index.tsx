@@ -25,10 +25,10 @@ const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
 }
 
 const Button: FC<ButtonType> = ({
-  dataCy,
+  dataCy = 'button',
   elevated = false,
   icon = undefined,
-  label,
+  label = 'Example',
   onClick,
   variant = ButtonVariants.contained,
 }) => {

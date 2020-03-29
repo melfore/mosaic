@@ -1,0 +1,27 @@
+import { action } from '@storybook/addon-actions';
+import { Meta,Preview, Props, Story} from '@storybook/addon-docs/blocks';
+import { boolean, object, select, text } from '@storybook/addon-knobs';
+import { ButtonIconPosition, ButtonVariants } from '../../types/Button';
+import { Icons } from '../../types/Icon';
+import Button from '.';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+<Preview>
+  <Story name="Default">
+    <Button
+      dataCy={text('data-cy', 'button-identifier')}
+      elevated={boolean('elevated', false)}
+      icon={object('icon', { name: Icons.send, position: ButtonIconPosition.left})}
+      label={text('label', 'Example')}
+      onClick={action('Click on Button')}
+      variant={select('variant', ButtonVariants, ButtonVariants.contained)}
+    />
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Button} />

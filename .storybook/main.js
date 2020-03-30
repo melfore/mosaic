@@ -1,9 +1,10 @@
 module.exports = {
-  stories: ['../src/components/**/index.stories.tsx'],
+  stories: ['../src/**/*.stories.(tsx|mdx)'],
   addons: [
+    '@storybook/preset-create-react-app',
     '@storybook/addon-actions',
+    '@storybook/addon-docs',
     '@storybook/addon-knobs/register',
     '@storybook/addon-links',
-    '@storybook/preset-create-react-app'
   ],
 };

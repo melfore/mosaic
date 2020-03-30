@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/melfore/mosaicmain.741a389816fdf571ceee.bundle.js",
-    "main.js.map": "/melfore/mosaicmain.741a389816fdf571ceee.bundle.js.map",
-    "runtime~main.js": "/melfore/mosaicruntime~main.741a389816fdf571ceee.bundle.js",
-    "runtime~main.js.map": "/melfore/mosaicruntime~main.741a389816fdf571ceee.bundle.js.map",
-    "vendors~main.js": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js",
-    "vendors~main.js.map": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js.map",
-    "iframe.html": "/melfore/mosaiciframe.html",
-    "precache-manifest.b8cb61c8e3e7777c380be7fe77732c51.js": "/melfore/mosaicprecache-manifest.b8cb61c8e3e7777c380be7fe77732c51.js",
-    "service-worker.js": "/melfore/mosaicservice-worker.js",
-    "vendors~main.741a389816fdf571ceee.bundle.js.LICENSE.txt": "/melfore/mosaicvendors~main.741a389816fdf571ceee.bundle.js.LICENSE.txt"
+    "main.js": "./main.8a22d70aef83a8cc8e47.bundle.js",
+    "main.js.map": "./main.8a22d70aef83a8cc8e47.bundle.js.map",
+    "runtime~main.js": "./runtime~main.8a22d70aef83a8cc8e47.bundle.js",
+    "runtime~main.js.map": "./runtime~main.8a22d70aef83a8cc8e47.bundle.js.map",
+    "vendors~main.js": "./vendors~main.8a22d70aef83a8cc8e47.bundle.js",
+    "vendors~main.js.map": "./vendors~main.8a22d70aef83a8cc8e47.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "precache-manifest.e7e81c401672a60c05685853d4dc0368.js": "./precache-manifest.e7e81c401672a60c05685853d4dc0368.js",
+    "service-worker.js": "./service-worker.js",
+    "vendors~main.8a22d70aef83a8cc8e47.bundle.js.LICENSE.txt": "./vendors~main.8a22d70aef83a8cc8e47.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.741a389816fdf571ceee.bundle.js",
-    "vendors~main.741a389816fdf571ceee.bundle.js",
-    "main.741a389816fdf571ceee.bundle.js"
+    "runtime~main.8a22d70aef83a8cc8e47.bundle.js",
+    "vendors~main.8a22d70aef83a8cc8e47.bundle.js",
+    "main.8a22d70aef83a8cc8e47.bundle.js"
   ]
 }

@@ -27,8 +27,8 @@ const InputText: FC<InputTextProps> = ({
   const [value, setValue] = useState(initialValue);
   useEffect(() => setValue(initialValue), [initialValue]);
 
-  const onChangeHandler = event => {
-    const { target: { value }} = event;
+  const onChangeHandler = (event: any) => {
+    const value = event.target.value;
     setValue(value);
     if (onChange) {
       onChange(value);

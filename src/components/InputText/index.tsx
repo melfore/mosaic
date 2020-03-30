@@ -1,6 +1,11 @@
 import React, { FC, useState, useEffect } from 'react';
+import { styled } from '@material-ui/core/styles';
 import MUITextField from '@material-ui/core/TextField';
 import { InputSize, InputTextProps, InputVariant, MultilineInputType } from '../../types/InputText';
+
+const StyledMUITextField = styled(MUITextField)({
+  width: '100%',
+});
 
 const getMultilineProps = (multiline?: MultilineInputType) => {
   return {
@@ -36,7 +41,7 @@ const InputText: FC<InputTextProps> = ({
   };
 
   return (
-    <MUITextField
+    <StyledMUITextField
       disabled={disabled}
       inputProps={{
         'data-cy': dataCy,

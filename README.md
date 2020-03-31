@@ -3,35 +3,36 @@ Melfore's UI kit library based on `@material-ui`
 
 ![Mosaic CI](https://github.com/melfore/mosaic/workflows/Mosaic%20CI/badge.svg)
 
-## Usage
+# Contents
+- [Usage](#usage)
+- [Contributing](#contributing)
+  - [Available commands](#available-commands)
+  - [Local usage](#local-usage)
+  - [Snippets for VSCode](#snippets-for-vscode)
+
+# Usage
 Add the package to your project with:
 
 `npm install @melfore/mosaic`
 
-## Contributors
+# Contributing
 
-### Available commands
+## Available commands
 
-- `npm run build`
+- `npm start` : Launches `storybook` on port `9009`
 
-  Compiles the code with `tsc` and saves the output into `/dist`
+- `npm test` : Launches `Jest` test suite
 
-- `npm start`
+- `npm run build` : Compiles the code with `tsc` and saves the output into `/dist`
 
-  Launches `storybook` on port `9009`
+- `npm run build-storybook` : Builds `storybook` app in static mode and saves the output into `/docs`
 
-- `npm test`
+- `npm run upload` : Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
 
-  Launches `Jest` test suite
-
-- `npm run upload`
-
-  Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
-
-### Local usage / testing 
+## Local usage 
 Use this guide to locally use/test `@melfore/mosaic` on projects, while developing new features.
 
-1. Install `yalc` local package manager https://github.com/whitecolor/yalc
+1. Install [`yalc`](https://github.com/whitecolor/yalc) local package manager 
 
     `npm i yalc -g`
 
@@ -65,17 +66,89 @@ Use this guide to locally use/test `@melfore/mosaic` on projects, while developi
 6. Import and use components in your code
 
     ```
-    import { Button } from '@melfore/mosaic';
+    import { MosaicComponent } from '@melfore/mosaic';
 
     ...
     
-    <Button
+    <MosaicComponent
         label="Learn React"
         onClick={() => window.open('https://reactjs.org', '_blank')}
     />
     ```
+## Snippets for VSCode
+In order to speed up development when working on `Mosaic` components please add the following snippets for the category `typescriptreact` in `VSCode`.
 
+To add the snippets:
 
+1. Open the `VSCode > Preferences > User Snippets` menu
+
+2. Scroll down the list of categories till you find `typescriptreact`
+
+3. Copy and paste the following code into the file opened by `VSCode`:
+
+    ```
+    {
+      "TSReactComponent": {
+        "prefix": "New Component",
+        "body": [
+          "import React, { FC } from 'react';",
+          "import MUI$1 from '@material-ui/core/$1';",
+          "",
+          "interface $2 {",
+          "",
+          "}",
+          "",
+          "/**",
+          " * $3 component made on top of `@material-ui/core/$1`",
+          " */",
+          "const $3: FC<$2> = ({}) => {",
+          "  return null;",
+          "};",
+          "",
+          "export default $3;",
+          "",
+        ],
+        "description": "Snippet for a new TSReact Component"
+      },
+      "TSReactStory": {
+        "prefix": "New Story",
+        "body": [
+          "import React from 'react';",
+          "import {  } from '@storybook/addon-actions';",
+          "import {  } from '@storybook/addon-knobs';",
+          "import {  } from '../../types/$1';",
+          "import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from '../../utils/storybook';",
+          "import $1 from '.';",
+          "",
+          "export default {",
+          "  title: '$1',",
+          "  component: $1,",
+          "  parameters: {",
+          "    ...DOCS_PAGE_STRUCTURE,",
+          "  },",
+          "}",
+          "",
+          "export const Canvas = () => (",
+          "  <$1 />",
+          ");",
+          "",
+          "export const OtherStories = () => (",
+          "  <StoriesWrapper>",
+          "    <$1 />",
+          "  </StoriesWrapper>",
+          ");",
+          "",
+        ],
+        "description": "Snippet for a new TSReact story"
+      }
+    }
+    ```
+
+4. To use a snippet (ex: creating a new component), create the empty file in the desired location (ex: `NewComponent > index.tsx`).
+
+5. Then open `VSCode` shortcuts menu and search for `Insert Snippet` option, it will give you hints based on file type
+
+6. Pick the desired snipped and start developing 🚀
   
     
 

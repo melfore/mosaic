@@ -12,16 +12,18 @@ jobs:
     steps:
     # Checkout project in $GITHUB_WORKSPACE
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
+      with:
+        persist-credentials: false
       
     # Install NodeJS
     - name: Install NodeJS
-      uses: actions/setup-node@v1.1.0
+      uses: actions/setup-node@master
 
     # Cache layer for project dependencies
     - name: Cache Dependencies
       id: cache-dependencies
-      uses: actions/cache@v1
+      uses: actions/cache@master
       env:
         cache-name: mosaic-dependencies
       with:

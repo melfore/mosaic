@@ -8,7 +8,7 @@ Add the package to your project with:
 
 `npm install @melfore/mosaic`
 
-## Development
+## Contributors
 
 ### Available commands
 

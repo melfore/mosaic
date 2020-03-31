@@ -19,15 +19,20 @@ Add the package to your project with:
 
 ## Available commands
 
-- `npm start` : Launches `storybook` on port `9009`
+- `npm start`
+    Launches `storybook` on port `9009`
 
-- `npm test` : Launches `Jest` test suite
+- `npm test`
+    Launches `Jest` test suite
 
-- `npm run build` : Compiles the code with `tsc` and saves the output into `/dist`
+- `npm run build`
+    Compiles the code with `tsc` and saves the output into `/dist`
 
-- `npm run build-storybook` : Builds `storybook` app in static mode and saves the output into `/docs`
+- `npm run build-storybook`
+    Builds `storybook` app in static mode and saves the output into `/docs`
 
-- `npm run upload` : Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
+- `npm run upload`
+    Compiles the code with `tsc`, saves the output into `/dist` and uploads the package on npm
 
 ## Local usage 
 Use this guide to locally use/test `@melfore/mosaic` on projects, while developing new features.

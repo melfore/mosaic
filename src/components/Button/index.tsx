@@ -24,12 +24,15 @@ const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
   }
 }
 
+/**
+ * Button component made on top of `@material-ui/core/Button`
+ */
 const Button: FC<ButtonType> = ({
-  dataCy,
+  dataCy = 'button',
   elevated = false,
   icon = undefined,
-  label,
-  onClick,
+  label = 'Example',
+  onClick = () => {},
   variant = ButtonVariants.contained,
 }) => {
   return (

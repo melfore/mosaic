@@ -41,16 +41,16 @@ jobs:
         
     # Generate StoryBook docs
     - name: Generate StoryBook docs
-      run: npm run build-storybook
+      run: |
+        npm run build-storybook
+        git config --local user.email "mosaic.ci@github.com"
+        git config --local user.name "Mosaic CI"
+        git commit -m "Add changes" -a
 
     # Publish StoryBook docs
     - name: Publish StoryBook docs
-      # uses: mikeal/publish-to-github-action@master
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git add -A
-        git commit -m "Updated docs"
-        git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+      uses: ad-m/github-push-action@master
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
       

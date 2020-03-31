@@ -24,12 +24,13 @@
     "typescript": "3.8.3"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/preset-create-react-app": "^2.0.0",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.17",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.9.1",
@@ -40,7 +41,7 @@
   },
   "scripts": {
     "build": "npm run pre-build && tsc",
-    "build-storybook": "build-storybook -o docs",
+    "build-storybook": "build-storybook -o docs --docs",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "start": "start-storybook -p 9009",

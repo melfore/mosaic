@@ -49,6 +49,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Updated Docs" -a
+        git pull
+        git status
 
     # Publish StoryBook docs
     - name: Publish StoryBook docs

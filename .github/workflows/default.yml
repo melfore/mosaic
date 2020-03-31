@@ -49,12 +49,11 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Updated Docs" -a
-        git status
 
     # Publish StoryBook docs
     - name: Publish StoryBook docs
       uses: ad-m/github-push-action@master
-      env:
+      with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
       

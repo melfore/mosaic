@@ -23,7 +23,7 @@ jobs:
       env:
         cache-name: mosaic-dependencies
       with:
-        path: ~/.npm
+        path: node_modules
         key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
 
     # Install project dependencies

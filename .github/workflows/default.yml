@@ -47,12 +47,11 @@ jobs:
     - name: Generate StoryBook docs
       run: |
         npm run build-storybook
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "lucio.bordonaro@melfore.com"
+        git config --local user.name "luciobordonaro"
         git add .
         git commit -m "Updated Docs" -a
         git pull
-        git status
 
     # Publish StoryBook docs
     - name: Publish StoryBook docs

@@ -8,15 +8,12 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-    # Checkout project
     - name: Checkout
       uses: actions/checkout@master
       
-    # Install NodeJS
     - name: Install NodeJS
       uses: actions/setup-node@master
 
-    # Cache layer for project dependencies
     - name: Cache Dependencies
       id: cache-dependencies
       uses: actions/cache@master
@@ -26,14 +23,14 @@ jobs:
         path: node_modules
         key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
 
-    # Install project dependencies
     - name: Install Dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
   tests:
     needs: setup
-    # Run tests in CI mode
+    runs-on: ubuntu-latest
+    steps:
     - name: Unit Tests
       run: npm run test
       env:

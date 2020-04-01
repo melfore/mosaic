@@ -3,12 +3,13 @@ name: Mosaic CI - Release
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
     steps:
-    # Checkout project in $GITHUB_WORKSPACE
     - name: Checkout
       uses: actions/checkout@master
       with:
@@ -16,32 +17,27 @@ jobs:
         persist-credentials: false
         ref: master
       
-    # Install NodeJS
     - name: Install NodeJS
       uses: actions/setup-node@master
 
-    # Cache layer for project dependencies
     - name: Cache Dependencies
       id: cache-dependencies
       uses: actions/cache@master
       env:
         cache-name: mosaic-dependencies
       with:
-        path: ~/.npm
+        path: node_modules
         key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
 
-    # Install project dependencies
     - name: Install Dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
-    # Run tests in CI mode
     - name: Unit Tests
       run: npm run test
       env:
         CI: true
         
-    # Generate StoryBook docs
     - name: Generate StoryBook docs
       run: |
         npm run build-storybook
@@ -51,7 +47,6 @@ jobs:
         git commit -m "Updated Docs" -a
         git pull
 
-    # Publish StoryBook docs
     - name: Publish StoryBook docs
       uses: ad-m/github-push-action@master
       with:

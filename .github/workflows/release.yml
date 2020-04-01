@@ -1,9 +1,7 @@
-name: Mosaic CI
+name: Mosaic CI - Release
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
     branches: [ master ]
 
 jobs:
@@ -30,7 +28,7 @@ jobs:
         cache-name: mosaic-dependencies
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-package-lock-${{ hashFiles('**/package-lock.json') }}
+        key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
 
     # Install project dependencies
     - name: Install Dependencies

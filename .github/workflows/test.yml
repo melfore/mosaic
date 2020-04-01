@@ -5,10 +5,10 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
-    # Checkout project in $GITHUB_WORKSPACE
+    # Checkout project
     - name: Checkout
       uses: actions/checkout@master
       
@@ -31,6 +31,8 @@ jobs:
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
+  tests:
+    needs: setup
     # Run tests in CI mode
     - name: Unit Tests
       run: npm run test

@@ -1,7 +1,9 @@
 # @melfore/mosaic
 Melfore's UI kit library based on `@material-ui`
 
-![Mosaic CI](https://github.com/melfore/mosaic/workflows/Mosaic%20CI/badge.svg)
+![Mosaic CI - Test](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Test/badge.svg)
+
+![Mosaic CI - Release](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Release/badge.svg)
 
 # Contents
 - [Usage](#usage)

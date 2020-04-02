@@ -53,6 +53,10 @@
     "extends": "react-app"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.stories.{js,jsx,ts,tsx}"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 85,

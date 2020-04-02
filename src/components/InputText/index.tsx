@@ -18,11 +18,11 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
  * InputText component made on top of `@material-ui/core/TextField`
  */
 const InputText: FC<InputTextProps> = ({
-  dataCy = 'input-text',
+  dataCy,
   disabled = false,
   initialValue = '',
   // TODO#lb: implement labelId
-  label = 'Label',
+  label,
   multiline = undefined,
   onChange = undefined,
   required = false,

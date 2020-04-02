@@ -1,0 +1,53 @@
+name: Mosaic CI - Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+        ref: master
+      
+    - name: Install NodeJS
+      uses: actions/setup-node@master
+
+    - name: Cache Dependencies
+      id: cache-dependencies
+      uses: actions/cache@master
+      env:
+        cache-name: mosaic-dependencies
+      with:
+        path: node_modules
+        key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install Dependencies
+      if: steps.cache-dependencies.outputs.cache-hit != 'true'
+      run: npm ci
+    
+    - name: Unit Tests
+      run: npm run test
+      env:
+        CI: true
+        
+    - name: Generate StoryBook docs
+      run: |
+        npm run build-storybook
+        git config --local user.email "lucio.bordonaro@melfore.com"
+        git config --local user.name "luciobordonaro"
+        git add .
+        git commit -m "Updated Docs" -a
+        git pull
+
+    - name: Publish StoryBook docs
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      

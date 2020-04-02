@@ -37,6 +37,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "prettier": "^2.0.2",
     "ts-jest": "^25.2.1"
   },
   "scripts": {
@@ -44,6 +45,7 @@
     "build-storybook": "build-storybook -o docs --docs",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
+    "prettify": "prettier --write .",
     "start": "start-storybook -p 9009",
     "test": "npm run pre-test && react-scripts test",
     "upload": "npm run build && npm publish --access public"

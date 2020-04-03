@@ -1,5 +1,7 @@
 # @melfore/mosaic
-Melfore's UI kit library based on `@material-ui`
+Melfore's UI kit library based on `@material-ui`.
+
+<a href="https://melfore.github.io/mosaic/" target="_blank">**View StoryBook**</a>
 
 ![Mosaic CI - Test](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Test/badge.svg)
 

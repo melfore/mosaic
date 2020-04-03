@@ -44,7 +44,7 @@
     "build-storybook": "build-storybook -o docs --docs",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
-    "start": "start-storybook -p 9009",
+    "start": "npm run pre-test && start-storybook -p 9009",
     "test": "npm run pre-test && react-scripts test",
     "upload": "npm run build && npm publish --access public"
   },

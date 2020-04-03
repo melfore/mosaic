@@ -46,10 +46,25 @@
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "start": "npm run pre-test && start-storybook -p 9009",
     "test": "npm run pre-test && react-scripts test",
+    "test-coverage": "npm run pre-test && react-scripts test --coverage",
     "upload": "npm run build && npm publish --access public"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.stories.{js,jsx,ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    }
   },
   "browserslist": {
     "production": [

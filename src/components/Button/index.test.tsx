@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ButtonType } from '../../types/Button';
+import { Icons } from '../../types/Icon';
 import Button from '.';
+import { ButtonIconPosition } from '../../types/Button';
 
 const defaultProps = {
   dataCy: 'myButton',
@@ -29,16 +30,28 @@ describe('Button test suite:', () => {
     expect(onClickHandler).toHaveBeenCalledTimes(1);
     const buttonLabel = button.find('span.MuiButton-label');
     expect(buttonLabel.text()).toEqual(defaultProps.label);
-  })
+  });
 
-  xit('failing test', () => {
-    const onClickHandler = jest.fn();
+  it('with icon', () => {
     const component = componentWrapper({
-      onClick: onClickHandler,
+      icon: { name: Icons.send },
     });
     const wrapper = mount(component);
     const button = wrapper.find('button');
-    const buttonLabel = button.find('span.MuiButton-label');
-    expect(buttonLabel.text()).toEqual('Failing test');
-  })
+    const icon = button.find('span.MuiButton-startIcon > Icon');
+    expect(icon.prop('name')).toEqual(Icons.send);
+  });
+
+  it('with right icon', () => {
+    const component = componentWrapper({
+      icon: {
+        name: Icons.send,
+        position: ButtonIconPosition.right,
+      },
+    });
+    const wrapper = mount(component);
+    const button = wrapper.find('button');
+    const icon = button.find('span.MuiButton-endIcon > Icon');
+    expect(icon.prop('name')).toEqual(Icons.send);
+  });
 })

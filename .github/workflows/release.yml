@@ -38,16 +38,17 @@ jobs:
         
     - name: Generate StoryBook docs
       run: |
-        npm run build-storybook
         git config --local user.email "lucio.bordonaro@melfore.com"
         git config --local user.name "luciobordonaro"
+        git pull
+        npm run build-storybook
         git add .
         git commit -m "Updated Docs" -a
-        git pull
 
-    - name: Publish StoryBook docs
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Increase version
+      run: npm --no-git-tag-version version patch
+
+    - name: Create RC pull request
+      uses: peter-evans/create-pull-request@master
 
       

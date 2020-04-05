@@ -44,8 +44,6 @@ jobs:
         git config --local user.name "luciobordonaro"
         git pull
         npm run build-storybook
-        git add .
-        git commit -m "Updated Docs" -a
 
     - name: Increase version
       run: npm --no-git-tag-version version patch

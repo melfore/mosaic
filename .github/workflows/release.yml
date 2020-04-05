@@ -1,6 +1,8 @@
 name: Mosaic CI - Release
 
 on:
+  pull_request:
+    branches: [ master ]
   push:
     branches: [ master ]
 

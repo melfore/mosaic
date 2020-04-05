@@ -2,7 +2,7 @@ name: Mosaic CI - Test
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ disable-master ]
 
 jobs:
   test:

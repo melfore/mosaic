@@ -2,8 +2,8 @@ name: Mosaic CI - Pack
 
 on:
   push:
-    branches-ignore:
-      - release-candidate
+    branches:
+      - master
 
 jobs:
   pack:

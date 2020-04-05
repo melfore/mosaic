@@ -3,11 +3,12 @@ name: Mosaic CI - Release
 on:
   push:
     branches:
-      - release-candidate
+      - master
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: 0 != 0
     steps:
     - name: Checkout
       uses: actions/checkout@master

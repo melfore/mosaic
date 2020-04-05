@@ -31,6 +31,16 @@ export const DOCS_PAGE_STRUCTURE = {
               h3.fake-sbdocs-title {
                 font-size: 20px;
               }
+              .icon-wrapper {
+                align-items: center;
+                display: flex;
+              }
+              .icon-wrapper > span {
+                color: #333333 !important;
+                font-family: Arial !important;
+                font-size: 12px;
+                margin-left: 4px;
+              }
               .stories-wrapper {
                 display: flex;
                 flex-wrap: wrap;

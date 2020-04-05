@@ -1,14 +1,12 @@
-name: Mosaic CI - Pack
+name: Mosaic CI - Release
 
 on:
   push:
     branches:
-      - master
-    branches-ignore:
       - release-candidate
 
 jobs:
-  pack:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -34,26 +32,6 @@ jobs:
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
     
-    - name: Unit Tests
-      run: npm run test-coverage
-      env:
-        CI: true
-        
-    - name: Generate StoryBook docs
-      run: |
-        git pull
-        npm run build-storybook
-
-    - name: Increase version
-      run: npm --no-git-tag-version version patch
-
-    - name: Create RC pull request
-      uses: peter-evans/create-pull-request@master
-      with:
-        commit-message: pre-release ops
-        branch: release-candidate
-        title: Release Candidate
-        body: A new Release Candidate is ready to be submitted
-        reviewers: luciobordonaro
+    
 
       

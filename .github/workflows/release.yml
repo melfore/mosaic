@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: 0 != 0
+    if: github.ref == 'release-candidate'
     steps:
     - name: Checkout
       uses: actions/checkout@master

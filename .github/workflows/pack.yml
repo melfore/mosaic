@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/release-candidate'
     steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+      
     - name: Checkout
       uses: actions/checkout@master
       with:

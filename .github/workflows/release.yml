@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: 0 != 0
+    if: github.ref == 'refs/heads/release-candidate'
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -19,6 +19,8 @@ jobs:
       
     - name: Install NodeJS
       uses: actions/setup-node@master
+      with:
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Cache Dependencies
       id: cache-dependencies
@@ -32,6 +34,11 @@ jobs:
     - name: Install Dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
+
+    - name: Upload package
+      run: npm run upload
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     
     
 

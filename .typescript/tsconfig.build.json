@@ -20,10 +20,6 @@
     "outDir": "./dist",
     "declaration": true
   },
-  "exclude": [
-    "**/*.stories.*",
-    "**/*.test.*"
-  ],
   "include": [
     "src"
   ]

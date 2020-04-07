@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -37,20 +37,23 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2",
     "ts-jest": "^25.2.1"
   },
   "scripts": {
     "build": "npm run pre-build && tsc",
     "build-storybook": "build-storybook -o docs --docs",
+    "lintify": "eslint .",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
+    "prettify": "prettier --write .",
     "start": "npm run pre-test && start-storybook -p 9009",
     "test": "npm run pre-test && react-scripts test",
     "test-coverage": "npm run pre-test && react-scripts test --coverage",
     "upload": "npm run build && npm publish --access public"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "jest": {
     "collectCoverageFrom": [

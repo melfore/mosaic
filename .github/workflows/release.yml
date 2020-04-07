@@ -1,14 +1,14 @@
 name: Mosaic CI - Release
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/release-candidate'
+    if: github.head_ref == 'release-candidate' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
     - name: Dump GitHub context
       env:

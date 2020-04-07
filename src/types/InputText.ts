@@ -6,5 +6,6 @@ export interface MultilineInputType {
 }
 
 export interface InputTextType extends InputType {
+  initialValue?: string;
   multiline?: MultilineInputType;
 }

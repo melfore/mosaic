@@ -17,7 +17,6 @@ export enum InputVariant {
 
 export interface InputType extends BaseType {
   disabled?: boolean;
-  initialValue?: string;
   label: string;
   // TODO#lb: implement labelId
   // labelId: string,

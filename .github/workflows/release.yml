@@ -36,6 +36,7 @@ jobs:
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "github-actions"
+        git pull
     
     - name: Unit Tests
       run: npm run test-coverage
@@ -46,8 +47,7 @@ jobs:
       id: generate-docs
       run: |       
         npm run build-storybook
-        ::set-output name={changed-files}::{$(git status -s -uno | wc -l)}
-        echo "$(git status -s -uno | wc -l)"
+        echo "::set-output name=changed-files::$(git status -s -uno | wc -l)"
 
     - name: Commit Changes
       if: steps.generate-docs.outputs.changed-files > 0

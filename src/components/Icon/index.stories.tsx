@@ -40,13 +40,14 @@ export const Size = () => (
   </StoriesWrapper>
 );
 
-const allIcons = Object
-  .keys(Icons)
-  .map((icon: string) => (
+const allIcons = Object.values(Icons);
+const getIcon = (icon: string) => allIcons.find(i => i === icon);
+const allIconsJsx = allIcons
+  .map((icon) => (
     <div className="icon-wrapper">
       <Icon
         dataCy={`icon-${icon}`}
-        name={Icons[icon]}
+        name={getIcon(icon) || Icons.add}
       />
       <span>
         {icon}
@@ -56,6 +57,6 @@ const allIcons = Object
 
 export const AllIcons = () => (
   <StoriesWrapper>
-    {allIcons}
+    {allIconsJsx}
   </StoriesWrapper>
 );

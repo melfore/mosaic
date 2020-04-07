@@ -1,20 +1,14 @@
 name: Mosaic CI - Release
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.head_ref == 'release-candidate' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-      
     - name: Checkout
       uses: actions/checkout@master
       with:
@@ -24,8 +18,6 @@ jobs:
       
     - name: Install NodeJS
       uses: actions/setup-node@master
-      with:
-        registry-url: 'https://registry.npmjs.org'
 
     - name: Cache Dependencies
       id: cache-dependencies
@@ -40,11 +32,40 @@ jobs:
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
 
-    - name: Upload package
+    - name: Git Config
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "github-actions"
+    
+    - name: Unit Tests
+      run: npm run test-coverage
+      env:
+        CI: true
+        
+    - name: Generate Docs
+      id: generate-docs
+      run: |       
+        npm run build-storybook
+        ::set-output name={changed-files}::{$(git status -s -uno | wc -l)}
+        echo "$(git status -s -uno | wc -l)"
+
+    - name: Commit Changes
+      if: steps.generate-docs.outputs.changed-files > 0
+      run: |
+        git add .
+        git commit -m "Updated Docs" -a
+
+    - name: Increase Version
+      run: npm version patch
+
+    - name: Push Updates
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload Package
       run: npm run upload
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    
-    
 
       

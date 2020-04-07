@@ -1,4 +1,4 @@
-name: Mosaic CI - Release
+name: Mosaic CI - Pack
 
 on:
   push:
@@ -6,9 +6,9 @@ on:
       - master
 
 jobs:
-  release:
+  pack:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/release-candidate'
+    if: github.ref != 'refs/heads/release-candidate'
     steps:
     - name: Dump GitHub context
       env:
@@ -24,8 +24,6 @@ jobs:
       
     - name: Install NodeJS
       uses: actions/setup-node@master
-      with:
-        registry-url: 'https://registry.npmjs.org'
 
     - name: Cache Dependencies
       id: cache-dependencies
@@ -39,12 +37,27 @@ jobs:
     - name: Install Dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
-
-    - name: Upload package
-      run: npm run upload
+    
+    - name: Unit Tests
+      run: npm run test-coverage
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    
-    
+        CI: true
+        
+    - name: Generate StoryBook docs
+      run: |
+        git pull
+        npm run build-storybook
+
+    - name: Increase version
+      run: npm --no-git-tag-version version patch
+
+    - name: Create RC pull request
+      uses: peter-evans/create-pull-request@master
+      with:
+        commit-message: pre-release ops
+        branch: release-candidate
+        title: Release Candidate
+        body: A new Release Candidate is ready to be submitted
+        reviewers: luciobordonaro
 
       

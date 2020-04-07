@@ -5,6 +5,6 @@ export interface MultilineInputType {
   rowsMax?: number;
 }
 
-export interface InputTextProps extends InputType {
+export interface InputTextType extends InputType {
   multiline?: MultilineInputType;
 }

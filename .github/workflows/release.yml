@@ -9,63 +9,67 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-      with:
-        fetch-depth: 0
-        persist-credentials: false
-        ref: master
-      
-    - name: Install NodeJS
-      uses: actions/setup-node@master
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: master
 
-    - name: Cache Dependencies
-      id: cache-dependencies
-      uses: actions/cache@master
-      env:
-        cache-name: mosaic-dependencies
-      with:
-        path: node_modules
-        key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
+      - name: Install NodeJS
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
 
-    - name: Install Dependencies
-      if: steps.cache-dependencies.outputs.cache-hit != 'true'
-      run: npm ci
+      - name: Cache Dependencies
+        id: cache-dependencies
+        uses: actions/cache@master
+        env:
+          cache-name: mosaic-dependencies
+        with:
+          path: node_modules
+          key: mosaic-dependencies-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Git Config
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "github-actions"
-        git pull
-    
-    - name: Unit Tests
-      run: npm run test-coverage
-      env:
-        CI: true
-        
-    - name: Generate Docs
-      id: generate-docs
-      run: |       
-        npm run build-storybook
-        echo "::set-output name=changed-files::$(git status -s -uno | wc -l)"
+      - name: Install Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm ci
 
-    - name: Commit Changes
-      if: steps.generate-docs.outputs.changed-files > 0
-      run: |
-        git add .
-        git commit -m "Updated Docs" -a
+      - name: Git Config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull
 
-    - name: Increase Version
-      run: npm version patch
+      - name: Unit Tests
+        run: npm run test-coverage
+        env:
+          CI: true
 
-    - name: Push Updates
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Prettier
+        run: npm run prettify
 
-    - name: Upload Package
-      run: npm run upload
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Generate Docs
+        id: generate-docs
+        run: |
+          npm run build-storybook
+          echo "::set-output name=changed-files::$(git status -s -uno | wc -l)"
 
-      
+      - name: Commit Changes
+        if: steps.generate-docs.outputs.changed-files > 0
+        run: |
+          git add .
+          git commit -m "Release Ops" -a
+
+      - name: Increase Version
+        run: npm version patch
+
+      - name: Push Updates
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Package
+        run: npm run upload
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

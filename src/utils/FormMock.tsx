@@ -1,13 +1,13 @@
 import React, { FC, ReactElement, useState } from "react";
 
-interface InputControllerType {
+interface FormMockType {
   onInputChange: Function;
   inputValue: null | number | string;
   onChangePropName?: string;
   valuePropName?: string;
 }
 
-const InputController: FC<InputControllerType> = ({
+const FormMock: FC<FormMockType> = ({
   children,
   onInputChange,
   inputValue,
@@ -26,4 +26,4 @@ const InputController: FC<InputControllerType> = ({
   });
 };
 
-export default InputController;
+export default FormMock;

@@ -1,6 +1,7 @@
 # ignored paths
-/.yalc/*
+/.github/*
 /.pnp/*
+/.yalc/*
 /build/*
 /coverage/*
 /dist/*

@@ -1,18 +1,11 @@
-import React, { Fragment } from 'react';
-import {
-  Description,
-  Primary,
-  Props,
-  Stories,
-  Subtitle,
-  Title,
-} from '@storybook/addon-docs/blocks';
+import React, { Fragment } from "react";
+import { Description, Primary, Props, Stories, Subtitle, Title } from "@storybook/addon-docs/blocks";
 
 export const DOCS_PAGE_STRUCTURE = {
   docs: {
     page: () => (
       <Fragment>
-        <style 
+        <style
           dangerouslySetInnerHTML={{
             __html: `
               .fake-sbdocs-title {
@@ -48,7 +41,7 @@ export const DOCS_PAGE_STRUCTURE = {
               .stories-wrapper > * {
                 margin: 8px;
               }
-            `
+            `,
           }}
         />
         <Title />
@@ -56,9 +49,7 @@ export const DOCS_PAGE_STRUCTURE = {
         <Description />
         <Primary />
         <Stories />
-        <h2 className="fake-sbdocs-title" >
-          Props
-        </h2>
+        <h2 className="fake-sbdocs-title">Props</h2>
         <Props />
       </Fragment>
     ),
@@ -67,8 +58,6 @@ export const DOCS_PAGE_STRUCTURE = {
 
 export const StoriesWrapper = (props) => (
   <Fragment>
-    <div className="stories-wrapper">
-      {props.children}
-    </div>
+    <div className="stories-wrapper">{props.children}</div>
   </Fragment>
 );

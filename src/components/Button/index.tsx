@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
-import MUIButton from '@material-ui/core/Button';
-import Icon from '../Icon';
-import { ButtonIconPosition, ButtonIconType, ButtonType, ButtonVariants } from '../../types/Button';
+import React, { FC } from "react";
+import MUIButton from "@material-ui/core/Button";
+import Icon from "../Icon";
+import { ButtonIconPosition, ButtonIconType, ButtonType, ButtonVariants } from "../../types/Button";
 
 const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
   const icons = { endIcon: undefined, startIcon: undefined };
   if (!iconConfig) {
-    return
+    return;
   }
 
   const { name, position } = iconConfig;
@@ -15,14 +15,14 @@ const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
     return {
       ...icons,
       endIcon: icon,
-    }
+    };
   }
 
   return {
     ...icons,
     startIcon: icon,
-  }
-}
+  };
+};
 
 /**
  * Button component made on top of `@material-ui/core/Button`
@@ -47,6 +47,6 @@ const Button: FC<ButtonType> = ({
       {label}
     </MUIButton>
   );
-}
+};
 
-export default Button
+export default Button;

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import { styled } from "@material-ui/core/styles";
 import MUITextField from "@material-ui/core/TextField";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
@@ -12,23 +12,18 @@ const getControlledValue = (value: number | null): any => {
   return value === null ? "" : value;
 };
 
-const getBoundedValue = (value: number | null, bounds: any): number | null => {
-  const { minValue, maxValue } = bounds;
-  if (value === null || (value >= minValue && value <= maxValue)) {
-    return value;
+const getNumericValue = (value: string, options: any): number | null => {
+  const { integer, minValue, maxValue } = options;
+  const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+  if (isNaN(numericValue)) {
+    return null;
   }
 
-  return value < minValue ? minValue : maxValue;
-};
+  if (numericValue >= minValue && numericValue <= maxValue) {
+    return numericValue;
+  }
 
-const getNumericValue = (value: string, integer: boolean): number | null => {
-  const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
-  return isNaN(numericValue) ? null : numericValue;
-};
-
-const isOutsideBounds = (value: number | null, bounds: any): boolean => {
-  const { minValue, maxValue } = bounds;
-  return value !== null && (value < minValue || value > maxValue);
+  return numericValue < minValue ? minValue : maxValue;
 };
 
 /**
@@ -37,7 +32,6 @@ const isOutsideBounds = (value: number | null, bounds: any): boolean => {
 const InputNumber: FC<InputNumberType> = ({
   dataCy,
   disabled = false,
-  initialValue = null,
   integer = true,
   // TODO#lb: implement labelId
   label,
@@ -47,25 +41,19 @@ const InputNumber: FC<InputNumberType> = ({
   required = false,
   shrink = true,
   size = InputSize.default,
+  value = null,
   variant = InputVariant.default,
 }) => {
-  const [bounds, setBounds] = useState({ minValue, maxValue });
-  const [value, setValue] = useState(getBoundedValue(initialValue, bounds));
-  useEffect(() => setBounds({ minValue, maxValue }), [minValue, maxValue]);
-  useEffect(() => setValue(initialValue), [initialValue]);
-
   const onChangeHandler = (event: any) => {
-    const numericValue = getNumericValue(event.target.value, integer);
-    setValue(getBoundedValue(numericValue, bounds));
+    const numericValue = getNumericValue(event.target.value, { integer, minValue, maxValue });
     if (onChange) {
-      onChange(value);
+      onChange(numericValue);
     }
   };
 
   return (
     <StyledMUITextField
       disabled={disabled}
-      error={isOutsideBounds(value, bounds)}
       InputLabelProps={{
         shrink,
       }}

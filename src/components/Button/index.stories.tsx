@@ -4,7 +4,8 @@ import { boolean, object, select, text } from "@storybook/addon-knobs";
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/storybook";
-import Button from ".";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/storybook/IntlProviderMock";
+import Button, { ButtonIntl } from ".";
 
 export default {
   title: "Button",
@@ -48,5 +49,16 @@ export const WithIcon = () => (
       onClick={action("Click on Button")}
       variant={ButtonVariants.outlined}
     />
+  </StoriesWrapper>
+);
+
+export const WithIntl = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  // The `ButtonIntl` exported version of `Button` uses `labelId` prop to get a localized label.
+  // When using `ButtonIntl` the prop `dataCy` can be omitted as it defaults to `labelId` value.
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <ButtonIntl labelId={MessageMock.button} onClick={action("Click on Button")} />
+    </IntlProviderMock>
   </StoriesWrapper>
 );

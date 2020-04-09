@@ -3,8 +3,8 @@ import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/storybook";
-import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/storybook/IntlProviderMock";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
 import Button, { ButtonIntl } from ".";
 
 export default {

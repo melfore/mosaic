@@ -3,7 +3,7 @@ import { IntlProvider } from "react-intl";
 
 export enum LocaleMock {
   en = "en",
-  it = "it",
+  it = "it-IT",
 }
 
 export enum MessageMock {
@@ -14,7 +14,7 @@ interface IntlProviderMockType {
   locale?: LocaleMock;
 }
 
-const messages = {
+export const mockedMessages = {
   [LocaleMock.en]: {
     [MessageMock.button]: "Button",
   },
@@ -25,7 +25,7 @@ const messages = {
 
 const IntlProviderMock: FC<IntlProviderMockType> = ({ children, locale = LocaleMock.en }) => {
   return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
+    <IntlProvider locale={locale} messages={mockedMessages[locale]}>
       {children}
     </IntlProvider>
   );

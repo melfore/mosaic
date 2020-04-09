@@ -20,7 +20,7 @@ export enum ButtonVariants {
 export interface ButtonType extends BaseType {
   elevated?: boolean;
   icon?: ButtonIconType;
-  label: string;
+  label?: string;
   onClick: (event: MouseEvent) => void;
   variant?: ButtonVariants;
 }

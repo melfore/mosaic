@@ -1,7 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import { styled } from "@material-ui/core/styles";
 import MUITextField from "@material-ui/core/TextField";
-import { InputSize, InputTextProps, InputVariant, MultilineInputType } from "../../types/InputText";
+import { InputDataType, InputSize, InputVariant } from "../../types/Input";
+import { InputTextType, MultilineInputType } from "../../types/InputText";
 
 const StyledMUITextField = styled(MUITextField)({
   width: "100%",
@@ -17,7 +18,7 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
 /**
  * InputText component made on top of `@material-ui/core/TextField`
  */
-const InputText: FC<InputTextProps> = ({
+const InputText: FC<InputTextType> = ({
   dataCy,
   disabled = false,
   initialValue = "",
@@ -54,6 +55,7 @@ const InputText: FC<InputTextProps> = ({
       onChange={onChangeHandler}
       required={required}
       size={size}
+      type={InputDataType.default}
       variant={variant}
       value={value}
       {...getMultilineProps(multiline)}

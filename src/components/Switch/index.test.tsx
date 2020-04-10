@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import Switch from ".";
-import FormMock from "../../utils/FormMock";
+import FormMock from "../../utils/mocks/FormMock";
 import { SwitchType } from "../../types/Switch";
 
 const defaultProps: SwitchType = {

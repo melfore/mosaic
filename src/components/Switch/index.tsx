@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import MUISwitch from "@material-ui/core/Switch";
 import { SwitchType, SwitchSize } from "../../types/Switch";
 

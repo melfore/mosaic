@@ -1,4 +1,4 @@
-export { default as Button } from "./components/Button";
+export { default as Button, ButtonIntl } from "./components/Button";
 export { ButtonIconPosition, ButtonVariants } from "./types/Button";
 
 export { default as Icon } from "./components/Icon";

@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "./storybook";
+import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from ".";
 
 describe("DOCS_PAGE_STRUCTURE test suite:", () => {
   it("default", () => {

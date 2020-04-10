@@ -2,7 +2,7 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, object, select } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/storybook";
+import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
 import InputText from ".";
 
 export default {

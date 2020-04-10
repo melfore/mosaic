@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { InputNumberType } from "../../types/InputNumber";
-import FormMock from "../../utils/FormMock";
+import FormMock from "../../utils/mocks/FormMock";
 import InputNumber from ".";
 
 const defaultProps: InputNumberType = {

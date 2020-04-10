@@ -1,3 +1,7 @@
 export interface BaseType {
-  dataCy: string;
+  dataCy?: string;
+}
+
+export interface BaseIntlType extends BaseType {
+  labelId: string;
 }

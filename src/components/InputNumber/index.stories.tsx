@@ -2,8 +2,8 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, number, text } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
-import FormMock from "../../utils/FormMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/storybook";
+import FormMock from "../../utils/mocks/FormMock";
+import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
 import InputNumber from ".";
 
 export default {

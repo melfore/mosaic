@@ -1,7 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
-// import { SwitchType } from "../../types/Switch";
 import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/storybook";
 import Switch from ".";
 import { SwitchSize } from "../../types/Switch";

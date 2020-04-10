@@ -2,7 +2,7 @@ import { BaseType } from "./Base";
 
 export enum SwitchSize {
   small = "small",
-  medium = "medium", // default value
+  default = "medium",
 }
 
 export interface SwitchType extends BaseType {

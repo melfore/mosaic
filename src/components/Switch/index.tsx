@@ -10,7 +10,7 @@ const Switch: FC<SwitchType> = ({
   value = false,
   onChange,
   required = false,
-  size = SwitchSize.medium,
+  size = SwitchSize.default,
   disabled = false,
 }) => {
   const onChangeHandler = (event: any) => {

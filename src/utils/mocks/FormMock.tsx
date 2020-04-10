@@ -2,7 +2,7 @@ import React, { FC, ReactElement, useState } from "react";
 
 interface FormMockType {
   onInputChange: Function;
-  inputValue: null | number | string;
+  inputValue: null | number | string | boolean;
   onChangePropName?: string;
   valuePropName?: string;
 }
@@ -15,7 +15,7 @@ const FormMock: FC<FormMockType> = ({
   valuePropName = "value",
 }) => {
   const [value, setValue] = useState(inputValue);
-  const wrappedOnChange = (value: null | number | string) => {
+  const wrappedOnChange = (value: null | number | string | boolean) => {
     setValue(value);
     onInputChange(value);
   };

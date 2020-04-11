@@ -32,6 +32,12 @@ export const Elevated = () => (
   </StoriesWrapper>
 );
 
+export const Disabled = () => (
+  <StoriesWrapper>
+    <Button dataCy="button" label="Disabled" onClick={action("Click on Button")} disabled />
+  </StoriesWrapper>
+);
+
 export const Variants = () => (
   <StoriesWrapper>
     <Button dataCy="button" label="Contained" onClick={action("Click on Button")} />

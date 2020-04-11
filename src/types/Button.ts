@@ -23,4 +23,5 @@ export interface ButtonType extends BaseType {
   label?: string;
   onClick: (event: MouseEvent) => void;
   variant?: ButtonVariants;
+  disabled?: boolean;
 }

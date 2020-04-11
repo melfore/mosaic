@@ -8,6 +8,7 @@ export enum LocaleMock {
 
 export enum MessageMock {
   button = "button",
+  switch = "switch",
 }
 
 interface IntlProviderMockType {
@@ -17,9 +18,11 @@ interface IntlProviderMockType {
 export const mockedMessages = {
   [LocaleMock.en]: {
     [MessageMock.button]: "Button",
+    [MessageMock.switch]: "Switch",
   },
   [LocaleMock.it]: {
     [MessageMock.button]: "Bottone",
+    [MessageMock.switch]: "Interruttore",
   },
 };
 

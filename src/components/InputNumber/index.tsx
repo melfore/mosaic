@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { styled } from "@material-ui/core/styles";
 import MUITextField from "@material-ui/core/TextField";
+import { BaseIntlType } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputNumberType } from "../../types/InputNumber";
+import withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUITextField = styled(MUITextField)({
   width: "100%",
@@ -27,13 +29,14 @@ const getNumericValue = (value: string, options: any): number | null => {
 };
 
 /**
- * InputText component made on top of `@material-ui/core/TextField`
+ * InputNumber component made on top of `@material-ui/core/TextField`
+ *
+ * Supports usage inside `IntlProvider` context of `react-intl` using `InputNumberIntl` exported version.
  */
 const InputNumber: FC<InputNumberType> = ({
   dataCy,
   disabled = false,
   integer = true,
-  // TODO#lb: implement labelId
   label,
   minValue = Number.MIN_SAFE_INTEGER,
   maxValue = Number.MAX_SAFE_INTEGER,
@@ -75,5 +78,7 @@ const InputNumber: FC<InputNumberType> = ({
     />
   );
 };
+
+export const InputNumberIntl: FC<InputNumberType & BaseIntlType> = withIntl(InputNumber);
 
 export default InputNumber;

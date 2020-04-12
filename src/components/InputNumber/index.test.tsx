@@ -2,7 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 import { InputNumberType } from "../../types/InputNumber";
 import FormMock from "../../utils/mocks/FormMock";
-import InputNumber from ".";
+import InputNumber, { InputNumberIntl } from ".";
+import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps: InputNumberType = {
   dataCy: "input-number",
@@ -15,6 +16,12 @@ const componentWrapper = ({ onChange, value, ...props }: InputNumberType) => (
   <FormMock onInputChange={onChange!} inputValue={value!}>
     <InputNumber {...defaultProps} {...props} />
   </FormMock>
+);
+
+const intlComponentWrapper = (locale?: LocaleMock) => (
+  <IntlProviderMock locale={locale}>
+    <InputNumberIntl labelId={MessageMock.inputNumber} onChange={() => {}} />
+  </IntlProviderMock>
 );
 
 describe("InputNumber test suite:", () => {
@@ -80,5 +87,13 @@ describe("InputNumber test suite:", () => {
     input.simulate("change", { target: { value: "ajeje" } });
     const updatedInput = wrapper.find("input");
     expect(updatedInput.prop("value")).toBe("");
+  });
+
+  it("with intl", () => {
+    const wrapper = mount(intlComponentWrapper());
+    const input = wrapper.find("input");
+    expect(input.prop("data-cy")).toEqual(MessageMock.inputNumber);
+    // console.log(input.debug());
+    // TODO: test label == mockedMessages[LocaleMock.en][MessageMock.inputNumber]
   });
 });

@@ -3,8 +3,9 @@ import { action } from "@storybook/addon-actions";
 import { boolean, select, number, text } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
 import FormMock from "../../utils/mocks/FormMock";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
-import InputNumber from ".";
+import InputNumber, { InputNumberIntl } from ".";
 
 export default {
   title: "InputNumber",
@@ -71,5 +72,16 @@ export const Variant = () => (
   <StoriesWrapper>
     <InputNumber dataCy="input-number" label="Default" value={10} />
     <InputNumber dataCy="input-number" label="Filled" variant={InputVariant.filled} value={10} />
+  </StoriesWrapper>
+);
+
+export const WithIntl = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  // The `InputNumberIntl` exported version of `InputNumber` uses `labelId` prop to get a localized label.
+  // When using `InputNumberIntl` the prop `dataCy` can be omitted as it defaults to `labelId` value.
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <InputNumberIntl labelId={MessageMock.inputNumber} onChange={action("Click on Button")} />
+    </IntlProviderMock>
   </StoriesWrapper>
 );

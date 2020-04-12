@@ -1,6 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import InputText from ".";
+import InputText, { InputTextIntl } from ".";
+import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps = {
   dataCy: "input-text",
@@ -8,6 +9,12 @@ const defaultProps = {
 };
 
 const componentWrapper = (props = {}) => <InputText {...defaultProps} {...props} />;
+
+const intlComponentWrapper = (locale?: LocaleMock) => (
+  <IntlProviderMock locale={locale}>
+    <InputTextIntl labelId={MessageMock.inputText} onChange={() => {}} />
+  </IntlProviderMock>
+);
 
 describe("InputText test suite:", () => {
   it("default", () => {
@@ -39,5 +46,13 @@ describe("InputText test suite:", () => {
     const input = wrapper.find("input");
     input.simulate("change");
     expect(onChangeHandler).toHaveBeenCalledTimes(1);
+  });
+
+  it("with intl", () => {
+    const wrapper = mount(intlComponentWrapper());
+    const input = wrapper.find("input");
+    expect(input.prop("data-cy")).toEqual(MessageMock.inputText);
+    // console.log(input.debug());
+    // TODO: test mockedMessages[LocaleMock.en][MessageMock.inputText] ?
   });
 });

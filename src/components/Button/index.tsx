@@ -39,6 +39,7 @@ const Button: FC<ButtonType> = ({
   label = "",
   onClick,
   variant = ButtonVariants.contained,
+  disabled = false,
 }) => {
   return (
     <MUIButton
@@ -48,6 +49,7 @@ const Button: FC<ButtonType> = ({
       onClick={onClick}
       variant={variant}
       {...getIcons(dataCy, icon)}
+      disabled={disabled}
     >
       {label}
     </MUIButton>

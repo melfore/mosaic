@@ -24,6 +24,18 @@ Add the package to your project with:
 
 `npm install @melfore/mosaic`
 
+It requires this set of `peerDependencies` to be installed:
+
+```
+"peerDependencies": {
+  "@material-ui/core": "4.9.x",
+  "@material-ui/icons": "4.9.x",
+  "react": "16.13.x",
+  "react-dom": "16.13.x",
+  "react-intl": "4.3.x"
+}
+```
+
 # Contributing
 
 ## Available commands

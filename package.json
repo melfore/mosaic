@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.5",
+  "version": "0.1.10",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -20,6 +20,7 @@
     "@types/react-dom": "^16.9.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-intl": "^4.3.1",
     "react-scripts": "3.4.0",
     "typescript": "3.8.3"
   },

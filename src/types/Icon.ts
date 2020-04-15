@@ -2,8 +2,10 @@ import { BaseType } from "./Base";
 
 export enum Icons {
   add = "add",
+  close = "close",
   delete = "delete",
   edit = "edit",
+  openInNew = "openInNew",
   playlistAddCheck = "playlistAddCheck",
   send = "send",
 }

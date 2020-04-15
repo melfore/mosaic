@@ -93,7 +93,7 @@ describe("InputNumber test suite:", () => {
     const wrapper = mount(intlComponentWrapper());
     const input = wrapper.find("input");
     expect(input.prop("data-cy")).toEqual(MessageMock.inputNumber);
-    // console.log(input.debug());
-    // TODO: test label == mockedMessages[LocaleMock.en][MessageMock.inputNumber]
+    const label = wrapper.find("label");
+    expect(label.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.inputNumber]);
   });
 });

@@ -52,7 +52,7 @@ describe("InputText test suite:", () => {
     const wrapper = mount(intlComponentWrapper());
     const input = wrapper.find("input");
     expect(input.prop("data-cy")).toEqual(MessageMock.inputText);
-    // console.log(input.debug());
-    // TODO: test mockedMessages[LocaleMock.en][MessageMock.inputText] ?
+    const label = wrapper.find("label");
+    expect(label.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.inputText]);
   });
 });

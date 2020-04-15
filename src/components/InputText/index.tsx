@@ -1,8 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
 import { styled } from "@material-ui/core/styles";
 import MUITextField from "@material-ui/core/TextField";
+import { BaseIntlType } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputTextType, MultilineInputType } from "../../types/InputText";
+import withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUITextField = styled(MUITextField)({
   width: "100%",
@@ -17,7 +19,9 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
 
 /**
  * InputText component made on top of `@material-ui/core/TextField`
- */
+ *
+ * Supports usage inside `IntlProvider` context of `react-intl` using `InputTextIntl` exported version.
+ **/
 const InputText: FC<InputTextType> = ({
   dataCy,
   disabled = false,
@@ -62,5 +66,7 @@ const InputText: FC<InputTextType> = ({
     />
   );
 };
+
+export const InputTextIntl: FC<InputTextType & BaseIntlType> = withIntl(InputText);
 
 export default InputText;

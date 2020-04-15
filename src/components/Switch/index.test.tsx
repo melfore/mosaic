@@ -1,8 +1,9 @@
 import React from "react";
 import { mount } from "enzyme";
-import Switch from ".";
+import Switch, { SwitchIntl } from ".";
 import FormMock from "../../utils/mocks/FormMock";
 import { SwitchType } from "../../types/Switch";
+import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps: SwitchType = {
   dataCy: "mySwitch",
@@ -13,6 +14,12 @@ const componentWrapper = ({ onChange, value, ...props }: SwitchType) => (
   <FormMock onInputChange={onChange!} inputValue={value!}>
     <Switch {...defaultProps} {...props} />
   </FormMock>
+);
+
+const intlComponentWrapper = (locale?: LocaleMock) => (
+  <IntlProviderMock locale={locale}>
+    <SwitchIntl labelId={MessageMock.switch} onChange={() => {}} />
+  </IntlProviderMock>
 );
 
 describe("Switch test suite:", () => {
@@ -63,5 +70,11 @@ describe("Switch test suite:", () => {
     const wrapper = mount(component);
     const wrapperSpan = wrapper.find("span[data-cy]");
     expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+  });
+
+  it("with intl", () => {
+    const wrapper = mount(intlComponentWrapper());
+    const wrapperSpan = wrapper.find("span[data-cy]");
+    expect(wrapperSpan.prop("data-cy")).toEqual(MessageMock.switch);
   });
 });

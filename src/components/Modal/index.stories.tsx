@@ -1,10 +1,11 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, object, boolean } from "@storybook/addon-knobs";
+import { text, object, boolean, select } from "@storybook/addon-knobs";
 import { ButtonVariants } from "../../types/Button";
 import ModalMock from "../../utils/mocks/ModalMock";
 import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
-import Modal from ".";
+import Modal, { ModalIntl } from ".";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 
 export default {
   title: "Modal",
@@ -125,5 +126,21 @@ export const ScrollableContent = () => (
         </p>
       </Modal>
     </ModalMock>
+  </StoriesWrapper>
+);
+
+export const WithIntl = () => (
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <ModalMock buttonLabel="With Intl">
+        <ModalIntl
+          cancel={{ labelId: MessageMock.modal_cancel, variant: ButtonVariants.outlined }}
+          confirm={{ labelId: MessageMock.modal_confirm }}
+          labelId={MessageMock.modal_title}
+        >
+          <span>Useful to give another way of dismissal to final user without having actions in modal footer.</span>
+        </ModalIntl>
+      </ModalMock>
+    </IntlProviderMock>
   </StoriesWrapper>
 );

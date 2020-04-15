@@ -20,7 +20,7 @@ export interface ModalType extends BaseType {
   cancel?: CancelModalActionType;
   closable?: boolean;
   confirm?: ConfirmModalActionType;
-  label: string;
+  label?: string;
   onClose?: (event: any, reason?: string) => void;
   open?: boolean;
 }

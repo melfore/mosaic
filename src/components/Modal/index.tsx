@@ -8,8 +8,10 @@ import MUITypography from "@material-ui/core/Typography";
 import { styled } from "@material-ui/core/styles";
 import Button, { ButtonIntl } from "../Button";
 import Icon from "../Icon";
+import { BaseIntlType } from "../../types/Base";
 import { Icons } from "../../types/Icon";
 import { ModalActionType, ModalType } from "../../types/Modal";
+import withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUIDialogTitle = styled(MUIDialogTitle)({
   alignItems: "center",
@@ -66,5 +68,7 @@ const Modal: FC<ModalType> = ({
     </MUIDialog>
   );
 };
+
+export const ModalIntl: FC<ModalType & BaseIntlType> = withIntl(Modal);
 
 export default Modal;

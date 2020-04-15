@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -8,41 +8,49 @@
     "url": "git+https://github.com/melfore/mosaic.git"
   },
   "main": "./dist/index.js",
-  "types": "./dist/types/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
-    "@types/node": "^12.12.29",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-intl": "^4.3.1",
-    "react-scripts": "3.4.0",
-    "typescript": "3.8.3"
-  },
-  "devDependencies": {
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addons": "^5.3.17",
-    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.17",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.29",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.3.0",
     "prettier": "^2.0.2",
-    "ts-jest": "^25.2.1"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-intl": "^4.3.1",
+    "ts-jest": "^25.2.1",
+    "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "4.9.x",
+    "@material-ui/icons": "4.9.x",
+    "react": "16.13.x",
+    "react-dom": "16.13.x",
+    "react-intl": "4.3.x"
   },
   "scripts": {
     "build": "npm run pre-build && tsc",
@@ -52,23 +60,9 @@
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prettify": "prettier --write .",
     "start": "npm run pre-test && start-storybook -p 9009",
-    "test": "npm run pre-test && react-scripts test",
-    "test-coverage": "npm run pre-test && react-scripts test --coverage",
+    "test": "npm run pre-test && jest --c ./.jest/config.js --watch",
+    "test-coverage": "npm run pre-test && jest --c './.jest/config.js' --coverage",
     "upload": "npm run build && npm publish --access public"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.stories.{js,jsx,ts,tsx}"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 85,
-        "functions": 85,
-        "lines": 85,
-        "statements": 85
-      }
-    }
   },
   "browserslist": {
     "production": [

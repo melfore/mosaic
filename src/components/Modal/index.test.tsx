@@ -72,21 +72,21 @@ describe("Modal test suite:", () => {
   it("with intl", () => {
     const wrapper = mount(
       intlComponentWrapper({
-        cancel: { labelId: MessageMock.modal_cancel, variant: ButtonVariants.outlined },
-        confirm: { labelId: MessageMock.modal_confirm },
-        labelId: MessageMock.modal_title,
+        cancel: { labelId: MessageMock.modalCancel, variant: ButtonVariants.outlined },
+        confirm: { labelId: MessageMock.modalConfirm },
+        labelId: MessageMock.modalTitle,
         open: true,
       })
     );
     const modalTitle = wrapper.find("div.MuiDialogTitle-root");
     const title = modalTitle.find("h6");
-    expect(title.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.modal_title]);
+    expect(title.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.modalTitle]);
     const modalActions = wrapper.find("div.MuiDialogActions-root");
     const cancelButton = modalActions.find("button").at(0);
     const cancelButtonLabel = cancelButton.find("span.MuiButton-label");
-    expect(cancelButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modal_cancel]);
+    expect(cancelButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modalCancel]);
     const confirmButton = modalActions.find("button").at(1);
     const confirmButtonLabel = confirmButton.find("span.MuiButton-label");
-    expect(confirmButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modal_confirm]);
+    expect(confirmButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modalConfirm]);
   });
 });

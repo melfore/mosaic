@@ -134,9 +134,9 @@ export const WithIntl = () => (
     <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
       <ModalMock buttonLabel="With Intl">
         <ModalIntl
-          cancel={{ labelId: MessageMock.modal_cancel, variant: ButtonVariants.outlined }}
-          confirm={{ labelId: MessageMock.modal_confirm }}
-          labelId={MessageMock.modal_title}
+          cancel={{ labelId: MessageMock.modalCancel, variant: ButtonVariants.outlined }}
+          confirm={{ labelId: MessageMock.modalConfirm }}
+          labelId={MessageMock.modalTitle}
         >
           <span>Useful to give another way of dismissal to final user without having actions in modal footer.</span>
         </ModalIntl>

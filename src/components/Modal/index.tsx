@@ -37,11 +37,11 @@ const getActionButton = <T extends ModalActionType>(buttonConfig: T, onClose?: F
  * Modal component made on top of `@material-ui/core/Dialog`
  */
 const Modal: FC<ModalType> = ({
-  cancel,
+  cancel = undefined,
   children,
   closable = false,
-  confirm,
-  label,
+  confirm = undefined,
+  label = "",
   onClose = undefined,
   open = false,
 }) => {

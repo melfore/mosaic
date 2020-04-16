@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 import Checkbox, { CheckboxIntl } from ".";
 import FormMock from "../../utils/mocks/FormMock";
-import { CheckboxType } from "../../types/Checkbox";
+import { CheckboxType, CheckboxSize } from "../../types/Checkbox";
 import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps: CheckboxType = {
@@ -62,5 +62,33 @@ describe("Checkbox test suite:", () => {
     const wrapper = mount(intlComponentWrapper());
     const wrapperSpan = wrapper.find("span[data-cy]");
     expect(wrapperSpan.prop("data-cy")).toEqual(MessageMock.checkbox);
+  });
+
+  it("Checkbox without onChange", () => {
+    const component = <Checkbox dataCy="myCheckbox" onChange={undefined} />;
+    const wrapper = mount(component);
+    const wrapperSpan = wrapper.find("span[data-cy]");
+    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+  });
+
+  it("create a small, intermediate, disabled Checkbox", () => {
+    const onChangeHandler = jest.fn();
+    const component = componentWrapper({
+      ...defaultProps,
+      onChange: onChangeHandler,
+      value: true,
+      size: CheckboxSize.small,
+      intermediate: true,
+      disabled: true,
+    });
+    const wrapper = mount(component); // render
+    const wrapperSpan = wrapper.find("span[data-cy]");
+    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
+    inputCheckbox.simulate("change");
+    expect(onChangeHandler).toHaveBeenCalledTimes(1);
+    inputCheckbox.simulate("change", { target: { checked: false } });
+    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
+    expect(inputCheckbox2.prop("checked")).toBe(false);
   });
 });

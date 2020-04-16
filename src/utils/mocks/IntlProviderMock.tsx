@@ -8,9 +8,12 @@ export enum LocaleMock {
 
 export enum MessageMock {
   button = "button",
-  switch = "switch",
   inputText = "inputText",
   inputNumber = "inputNumber",
+  modalCancel = "modalCancel",
+  modalConfirm = "modalConfirm",
+  modalTitle = "modalTitle",
+  switch = "switch",
 }
 
 interface IntlProviderMockType {
@@ -20,15 +23,21 @@ interface IntlProviderMockType {
 export const mockedMessages = {
   [LocaleMock.en]: {
     [MessageMock.button]: "Button",
-    [MessageMock.switch]: "Switch",
-    [MessageMock.inputText]: "Input Text",
     [MessageMock.inputNumber]: "Input Number",
+    [MessageMock.inputText]: "Input Text",
+    [MessageMock.modalCancel]: "Cancel",
+    [MessageMock.modalConfirm]: "Confirm",
+    [MessageMock.modalTitle]: "Title",
+    [MessageMock.switch]: "Switch",
   },
   [LocaleMock.it]: {
     [MessageMock.button]: "Bottone",
-    [MessageMock.switch]: "Interruttore",
-    [MessageMock.inputText]: "Testo in input",
     [MessageMock.inputNumber]: "Numero in input",
+    [MessageMock.inputText]: "Testo in input",
+    [MessageMock.modalCancel]: "Annulla",
+    [MessageMock.modalConfirm]: "Conferma",
+    [MessageMock.modalTitle]: "Titolo",
+    [MessageMock.switch]: "Interruttore",
   },
 };
 

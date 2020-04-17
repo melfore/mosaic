@@ -11,5 +11,10 @@ export { default as InputText } from "./components/InputText";
 export { default as InputNumber } from "./components/InputNumber";
 export { InputSize, InputVariant } from "./types/Input";
 
+export { default as Modal } from "./components/Modal";
+
+export { default as Switch } from "./components/Switch";
+export { SwitchSize } from "./types/Switch";
+
 export { default as Typography } from "./components/Typography";
 export { TypographyVariants } from "./types/Typography";

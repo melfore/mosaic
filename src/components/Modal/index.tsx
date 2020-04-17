@@ -4,13 +4,14 @@ import MUIDialogActions from "@material-ui/core/DialogActions";
 import MUIDialogContent from "@material-ui/core/DialogContent";
 import MUIDialogTitle from "@material-ui/core/DialogTitle";
 import MUIIconButton from "@material-ui/core/IconButton";
-import MUITypography from "@material-ui/core/Typography";
 import { styled } from "@material-ui/core/styles";
 import Button, { ButtonIntl } from "../Button";
 import Icon from "../Icon";
+import Typography from "../Typography";
 import { BaseIntlType } from "../../types/Base";
 import { Icons } from "../../types/Icon";
 import { ModalActionType, ModalType } from "../../types/Modal";
+import { TypographyVariants } from "../../types/Typography";
 import withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUIDialogTitle = styled(MUIDialogTitle)({
@@ -49,8 +50,7 @@ const Modal: FC<ModalType> = ({
   return (
     <MUIDialog aria-labelledby="modal-title" fullWidth maxWidth="sm" onClose={onClose} open={open}>
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        {/* TODO: see #68 */}
-        <MUITypography variant="h6">{label}</MUITypography>
+        <Typography bottomSpacing={false} dataCy="modal-title" label={label} variant={TypographyVariants.title} />
         {closable && (
           // TODO: see #69
           <MUIIconButton size="small" onClick={onClose}>

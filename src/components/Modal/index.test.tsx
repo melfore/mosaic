@@ -29,7 +29,7 @@ describe("Modal test suite:", () => {
     const component = componentWrapper({ onClose: () => {}, open: true });
     const wrapper = mount(component);
     const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const title = modalTitle.find("h6");
+    const title = modalTitle.find("h2");
     expect(title.text()).toEqual("Modal Title");
     const content = wrapper.find("div.MuiDialogContent-root").childAt(0);
     expect(content.matchesElement(defaultProps.children)).toBeTruthy();
@@ -79,7 +79,7 @@ describe("Modal test suite:", () => {
       })
     );
     const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const title = modalTitle.find("h6");
+    const title = modalTitle.find("h2");
     expect(title.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.modalTitle]);
     const modalActions = wrapper.find("div.MuiDialogActions-root");
     const cancelButton = modalActions.find("button").at(0);

@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.13",
+  "version": "0.1.15",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -60,8 +60,8 @@
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prettify": "prettier --write .",
     "start": "npm run pre-test && start-storybook -p 9009",
-    "test": "npm run pre-test && jest --c ./.jest/config.js --watch",
-    "test-coverage": "npm run pre-test && jest --c './.jest/config.js' --coverage",
+    "test": "npm run pre-test && jest --clearCache && jest --c ./.jest/config.js --watch",
+    "test-coverage": "npm run pre-test && jest --clearCache && jest --c './.jest/config.js' --coverage",
     "upload": "npm run build && npm publish --access public"
   },
   "browserslist": {

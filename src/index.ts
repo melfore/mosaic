@@ -1,6 +1,9 @@
 export { default as Button, ButtonIntl } from "./components/Button";
 export { ButtonIconPosition, ButtonVariants } from "./types/Button";
 
+export { default as Checkbox } from "./components/Checkbox";
+export { CheckboxSize } from "./types/Checkbox";
+
 export { default as Icon } from "./components/Icon";
 export { Icons, IconSize } from "./types/Icon";
 
@@ -12,3 +15,6 @@ export { default as Modal } from "./components/Modal";
 
 export { default as Switch } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";
+
+export { default as Typography } from "./components/Typography";
+export { TypographyVariants } from "./types/Typography";

@@ -14,6 +14,7 @@ export enum MessageMock {
   modalConfirm = "modalConfirm",
   modalTitle = "modalTitle",
   switch = "switch",
+  typography = "typography",
 }
 
 interface IntlProviderMockType {
@@ -29,6 +30,7 @@ export const mockedMessages = {
     [MessageMock.modalConfirm]: "Confirm",
     [MessageMock.modalTitle]: "Title",
     [MessageMock.switch]: "Switch",
+    [MessageMock.typography]: "Typography",
   },
   [LocaleMock.it]: {
     [MessageMock.button]: "Bottone",
@@ -38,6 +40,7 @@ export const mockedMessages = {
     [MessageMock.modalConfirm]: "Conferma",
     [MessageMock.modalTitle]: "Titolo",
     [MessageMock.switch]: "Interruttore",
+    [MessageMock.typography]: "Tipografia",
   },
 };
 

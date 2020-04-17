@@ -41,6 +41,11 @@ export const DOCS_PAGE_STRUCTURE = {
               .stories-wrapper > * {
                 margin: 8px;
               }
+              .typography-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+              }
             `,
           }}
         />

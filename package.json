@@ -60,8 +60,8 @@
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prettify": "prettier --write .",
     "start": "npm run pre-test && start-storybook -p 9009",
-    "test": "npm run pre-test && jest --c ./.jest/config.js --watch",
-    "test-coverage": "npm run pre-test && jest --c './.jest/config.js' --coverage",
+    "test": "npm run pre-test && jest --clearCache && jest --c ./.jest/config.js --watch",
+    "test-coverage": "npm run pre-test && jest --clearCache && jest --c './.jest/config.js' --coverage",
     "upload": "npm run build && npm publish --access public"
   },
   "browserslist": {

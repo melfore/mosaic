@@ -7,3 +7,6 @@ export { Icons, IconSize } from "./types/Icon";
 export { default as InputText } from "./components/InputText";
 export { default as InputNumber } from "./components/InputNumber";
 export { InputSize, InputVariant } from "./types/Input";
+
+export { default as Checkbox } from "./components/Checkbox";
+export { CheckboxSize } from "./types/Checkbox";

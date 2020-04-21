@@ -17,4 +17,4 @@ export { default as Switch, SwitchIntl } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";
 
 export { default as Typography, TypographyIntl } from "./components/Typography";
-export { TypographyVariants } from "./types/Typography";
+export { TypographyVariants, TypographyDisplay } from "./types/Typography";

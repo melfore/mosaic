@@ -20,13 +20,7 @@ export const Canvas = () => (
     label={text("label", "Typography example")}
     truncated={boolean("truncated", false)}
     variant={select("variant", TypographyVariants, TypographyVariants.body)}
-    display={select(
-      "display",
-      TypographyDisplay,
-      TypographyDisplay.default,
-      TypographyDisplay.inline
-      // TypographyDisplay.block
-    )}
+    display={select("display", TypographyDisplay, TypographyDisplay.default)}
   />
 );
 

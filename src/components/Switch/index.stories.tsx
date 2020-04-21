@@ -4,6 +4,7 @@ import { boolean, text } from "@storybook/addon-knobs";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Switch from ".";
 import { SwitchSize } from "../../types/Switch";
+import FormMock from "../../utils/mocks/FormMock";
 
 export default {
   title: "Switch",
@@ -14,11 +15,15 @@ export default {
 };
 
 export const Canvas = () => (
-  <Switch
-    dataCy={text("data-cy", "switch-identifier")}
-    value={boolean("value", false)}
-    onChange={action("Change switch")}
-  />
+  // FormMock simulates external form component handling state
+  // In a real case scenario "onChange" and "value" props must be passed to Switch
+  <FormMock inputValue={boolean("value", true)} onInputChange={action("Change switch")}>
+    <Switch
+      dataCy={text("data-cy", "switch-identifier")}
+      value={boolean("value", true)}
+      onChange={action("Change switch")}
+    />
+  </FormMock>
 );
 
 export const Values = () => (

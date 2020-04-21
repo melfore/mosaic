@@ -16,7 +16,7 @@ export default {
 
 export const Canvas = () => (
   // FormMock simulates external form component handling state
-  // In a real case scenario "onChange" and "value" props must be passed to InputNumber
+  // In a real case scenario "onChange" and "value" props must be passed to Checkbox
   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change checkbox")}>
     <Checkbox
       dataCy={text("data-cy", "checkbox-identifier")}

@@ -10,7 +10,7 @@ export default {
   title: "Switch",
   component: Switch,
   parameters: {
-    ...getDocsPageStructure("Switch", ["usage", "canvas"]),
+    ...getDocsPageStructure("Switch", false),
   },
 };
 

@@ -9,7 +9,7 @@ export default {
   title: "Icon",
   component: Icon,
   parameters: {
-    ...getDocsPageStructure("Icon", ["usage", "canvas"]),
+    ...getDocsPageStructure("Icon", false),
   },
 };
 

@@ -10,7 +10,7 @@ export default {
   title: "Checkbox",
   component: Checkbox,
   parameters: {
-    ...getDocsPageStructure("Checkbox", ["usage", "canvas"]),
+    ...getDocsPageStructure("Checkbox", false),
   },
 };
 

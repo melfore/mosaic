@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import CustomDocsPage from "./CustomDocsPage";
 
-export const getDocsPageStructure = (name, blocks) => ({
+export const getDocsPageStructure = (name, intlSupport = true, notes = null) => ({
   docs: {
-    page: () => <CustomDocsPage blocks={blocks} name={name} />,
+    page: () => <CustomDocsPage intlSupport={intlSupport} name={name} notes={notes} />,
   },
 });
 

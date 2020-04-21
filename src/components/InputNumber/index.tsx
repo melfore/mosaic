@@ -30,8 +30,6 @@ const getNumericValue = (value: string, options: any): number | null => {
 
 /**
  * InputNumber component made on top of `@material-ui/core/TextField`
- *
- * Supports usage inside `IntlProvider` context of `react-intl` using `InputNumberIntl` exported version.
  */
 const InputNumber: FC<InputNumberType> = ({
   dataCy,

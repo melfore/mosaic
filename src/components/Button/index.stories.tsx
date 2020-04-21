@@ -4,14 +4,14 @@ import { boolean, object, select, text } from "@storybook/addon-knobs";
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Button, { ButtonIntl } from ".";
 
 export default {
   title: "Button",
   component: Button,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Button"),
   },
 };
 

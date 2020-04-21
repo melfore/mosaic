@@ -4,14 +4,14 @@ import { boolean, select, number, text } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
 import FormMock from "../../utils/mocks/FormMock";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import InputNumber, { InputNumberIntl } from ".";
 
 export default {
   title: "InputNumber",
   component: InputNumber,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("InputNumber"),
   },
 };
 

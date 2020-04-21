@@ -6,18 +6,7 @@ import withIntl from "../../utils/hocs/withIntl";
 import { getBottomSpacing, getTruncate, VARIANT_COMPONENT_MAP } from "./utils";
 
 /**
- * Typography component made on top of `@material-ui/core/Typography`.<br />
- * Usage: `import { Typography } from "@melfore/mosaic";`
- *
- * <b>Support for `react-intl`</b>
- * Supports usage inside `IntlProvider` context of `react-intl` using `TypographyIntl` exported version.<br />
- * Instead of passing `label` prop, provide `labelId` prop with the key-string to translate.<br />
- * Usage: `import { TypographyIntl } from "@melfore/mosaic";`
- *
- * <b>Testing with `cypress`</b>
- * The implementation offered by `@material-ui` doesn't support `dataCy` attribute.<br />
- * The value of the `dataCy` property is being used by `className` with the `data-cy-` prefix.<br />
- * Example: passing `dataCy="typography"` results in `className="data-cy-typography"`.
+ * Typography component made on top of `@material-ui/core/Typography`.
  */
 const Typography: FC<TypographyType> = ({
   bottomSpacing = undefined,

@@ -6,7 +6,7 @@ import { SwitchType, SwitchSize } from "../../types/Switch";
 import withIntl from "../../utils/hocs/withIntl";
 
 /**
- * Switch component made on top of `@material-ui/core/Switch
+ * Switch component made on top of `@material-ui/core/Switch`.
  */
 const Switch: FC<SwitchType> = ({
   dataCy,

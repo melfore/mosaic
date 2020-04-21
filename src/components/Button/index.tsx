@@ -28,9 +28,6 @@ const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
 
 /**
  * Button component made on top of `@material-ui/core/Button`.
- *
- * Supports usage inside `IntlProvider` context of `react-intl` using `ButtonIntl` exported version.
- * For more details have a look <a href="/docs/button--with-intl">here</a>
  */
 const Button: FC<ButtonType> = ({
   dataCy = "button",

@@ -1,16 +1,30 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {} from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Typography, { TypographyIntl } from ".";
 
 export default {
   title: "Typography",
   component: Typography,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Typography", true, {
+      title: "Testing with cypress",
+      subtitle: true,
+      body: (
+        <Fragment>
+          <p>
+            The implementation offered by <code>@material-ui</code> doesn't support dataCy attribute. The value of the
+            <code>dataCy</code> property is being used by <code>className</code> with the <code>data-cy-</code> prefix.
+          </p>
+          <p>
+            Example: passing <code>dataCy="typography"</code> results in <code>className="data-cy-typography"</code>.
+          </p>
+        </Fragment>
+      ),
+    }),
   },
 };
 

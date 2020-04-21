@@ -1,28 +1,33 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, optionsKnob as options, select } from "@storybook/addon-knobs";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Checkbox from ".";
 import { CheckboxSize } from "../../types/Checkbox";
+import FormMock from "../../utils/mocks/FormMock";
 
 export default {
   title: "Checkbox",
   component: Checkbox,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Checkbox", false),
   },
 };
 
 export const Canvas = () => (
-  <Checkbox
-    dataCy={text("data-cy", "checkbox-identifier")}
-    value={boolean("value", false)}
-    onChange={action("Change checkbox")}
-    required={boolean("value", false)}
-    size={select("size", CheckboxSize, CheckboxSize.small, CheckboxSize.default)}
-    disabled={boolean("disabled", false)}
-    intermediate={boolean("intermediate", false)}
-  />
+  // FormMock simulates external form component handling state
+  // In a real case scenario "onChange" and "value" props must be passed to Checkbox
+  <FormMock inputValue={boolean("value", true)} onInputChange={action("Change checkbox")}>
+    <Checkbox
+      dataCy={text("data-cy", "checkbox-identifier")}
+      value={boolean("value", true)}
+      onChange={action("Change checkbox")}
+      required={boolean("value", false)}
+      size={select("size", CheckboxSize, CheckboxSize.small, CheckboxSize.default)}
+      disabled={boolean("disabled", false)}
+      intermediate={boolean("intermediate", false)}
+    />
+  </FormMock>
 );
 
 export const Values = () => (

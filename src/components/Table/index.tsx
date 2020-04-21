@@ -27,7 +27,7 @@ const Table: FC<TableType> = ({
   title = undefined,
 }) => {
   return (
-    <div style={{ maxWidth: "100%" }}>
+    <div style={{ width: "100%" }}>
       <MaterialTable
         actions={actions.map(actionAdapter)}
         columns={columns.map(columnAdapter)}

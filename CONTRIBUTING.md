@@ -39,66 +39,65 @@ We use `VSCode` type-based snippets in order to speed up the development process
 #### New Component
 
 ```
-  "TSReactComponent": {
-    "prefix": "New Component",
-    "body": [
-      "import React, { FC } from 'react';",
-      "import MUI$1 from '@material-ui/core/$1';",
-      "",
-      "interface $2 {",
-      "",
-      "}",
-      "",
-      "/**",
-      " * $3 component made on top of `@material-ui/core/$1`.",
-      " * ",
-      " * Add required documentation, use HTML tags if needed.",
-      " */",
-      "const $3: FC<$2> = ({}) => {",
-      "  return null;",
-      "};",
-      "",
-      "export default $3;",
-      "",
-    ],
-    "description": "Snippet for a new TSReact Component"
-  }
+	"TSReactComponent": {
+		"prefix": "New Component",
+		"body": [
+			"import React, { FC } from 'react';",
+			"import MUI$1 from '@material-ui/core/$1';",
+			"",
+			"// TODO: move this in a dedicated file into /types",
+			"interface $2 {",
+			"",
+			"}",
+			"",
+			"/**",
+			" * $3 component made on top of `@material-ui/core/$1`",
+			" */",
+			"const $3: FC<$2> = ({}) => {",
+			"  return null;",
+			"};",
+			"",
+			"export default $3;",
+			"",
+		],
+		"description": "Snippet for a new TSReact Component"
+	}
 ```
 
 #### New Story
 
 ```
-  "TSReactStory": {
-    "prefix": "New Story",
-    "body": [
-      "import React from 'react';",
-      "import {  } from '@storybook/addon-actions';",
-      "import {  } from '@storybook/addon-knobs';",
-      "import {  } from '../../types/$1';",
-      "import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from '../../utils/stories';",
-      "import $2 from '.';",
-      "",
-      "export default {",
-      "  title: '$2',",
-      "  component: $2,",
-      "  parameters: {",
-      "    ...DOCS_PAGE_STRUCTURE,",
-      "  },",
-      "}",
-      "",
-      "export const Canvas = () => (",
-      "  <$2 />",
-      ");",
-      "",
-      "export const OtherStories = () => (",
-      "  <StoriesWrapper>",
-      "    <$2 />",
-      "  </StoriesWrapper>",
-      ");",
-      "",
-    ],
-    "description": "Snippet for a new TSReact story"
-  }
+	"TSReactStory": {
+		"prefix": "New Story",
+		"body": [
+			"import React from 'react';",
+			"import {  } from '@storybook/addon-actions';",
+			"import {  } from '@storybook/addon-knobs';",
+			"import {  } from '../../types/$1';",
+			"import { getDocsPageStructure, StoriesWrapper } from '../../utils/stories';",
+			"import $1 from '.';",
+			"",
+			"export default {",
+			"  title: '$1',",
+			"  component: $1,",
+			"  parameters: {",
+			"    ...getDocsPageStructure('$1'),",
+			"  },",
+			"}",
+			"",
+			"export const Canvas = () => (",
+			"  <$1 />",
+			");",
+			"",
+			"export const OtherStories = () => (",
+			"  <StoriesWrapper>",
+			"    <$1 />",
+			"  </StoriesWrapper>",
+			");",
+			"",
+		],
+		"description": "Snippet for a new TSReact story"
+	}
 ```
 
 #### New Test

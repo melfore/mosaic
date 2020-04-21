@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import MUITypography from "@material-ui/core/Typography";
 import { BaseIntlType } from "../../types/Base";
-import { TypographyType, TypographyVariants } from "../../types/Typography";
+import { TypographyType, TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import withIntl from "../../utils/hocs/withIntl";
 import { getBottomSpacing, getTruncate, VARIANT_COMPONENT_MAP } from "./utils";
 
@@ -25,6 +25,7 @@ const Typography: FC<TypographyType> = ({
   label,
   truncated = undefined,
   variant = TypographyVariants.body,
+  display = TypographyDisplay.default,
 }) => {
   return (
     <MUITypography
@@ -33,6 +34,7 @@ const Typography: FC<TypographyType> = ({
       noWrap={getTruncate(variant, truncated)}
       variant={variant}
       variantMapping={VARIANT_COMPONENT_MAP}
+      display={display}
     >
       {label}
     </MUITypography>

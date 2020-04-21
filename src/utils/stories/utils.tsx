@@ -21,8 +21,8 @@ export const DEFAULT_BLOCKS = (component: string) => ({
         </p>
         <code className={CUSTOM_CODE_BLOCK_CLASS}>{`import { ${component} } from "melfore/mosaic";`}</code>
         <p>
-          For detailed usage and props settings refer to the <strong>Stories</strong> and <strong>Props</strong>{" "}
-          sections of this page
+          For detailed usage and props settings please refer to the <strong>Canvas</strong>, <strong>Stories</strong> or{" "}
+          <strong>Props</strong> sections of this page.
         </p>
       </Fragment>
     ),
@@ -43,7 +43,7 @@ export const DEFAULT_BLOCKS = (component: string) => ({
           Instead of passing <code>label</code> prop, provide <code>labelId</code> prop with the key-string to translate
           and it will automatically translate it.
           <br />
-          For more details refer to the example shown in the <strong>Stories/With Intl</strong> story.
+          For more details please refer to the example shown in the <strong>Stories/With Intl</strong> story.
         </p>
       </Fragment>
     ),
@@ -54,9 +54,13 @@ export const DEFAULT_BLOCKS = (component: string) => ({
     body: (
       <Fragment>
         <p>
-          The following story lists all available props for the component using <code>@storybook/addon-knobs</code>.
-          <br />
-          Click on the <strong>Show Code</strong> button to discover them all.
+          The following story shows a working example (sometimes mocking external functionalities) and lists all
+          available props for the component using <code>@storybook/addon-knobs</code>. Click on the{" "}
+          <strong>Show Code</strong> button to discover them all.
+        </p>
+        <p>
+          For specific usages and props combinations, please refer to the <strong>Stories</strong> and{" "}
+          <strong>Props</strong> sections of this page.
         </p>
       </Fragment>
     ),

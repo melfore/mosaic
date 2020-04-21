@@ -10,6 +10,7 @@ export default class CustomDocsPage extends PureComponent {
     name: PropTypes.string.isRequired,
     notes: PropTypes.shape({
       body: PropTypes.element.isRequired,
+      subtitle: PropTypes.bool,
       title: PropTypes.string.isRequired,
     }),
   };

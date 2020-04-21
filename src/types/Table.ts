@@ -1,5 +1,20 @@
 import { ReactElement } from "react";
 import { BaseType } from "./Base";
+import { Icons } from "./Icon";
+
+export enum TableActionScope {
+  default = "global",
+  row = "row",
+}
+
+export interface TableActionType {
+  callback: (event: any, data: object | object[]) => void;
+  disabled?: boolean;
+  hidden?: boolean;
+  icon?: Icons;
+  label: string;
+  scope?: TableActionScope;
+}
 
 export interface TableColumnType {
   // TODO#lb: implement in TableColumn
@@ -13,16 +28,11 @@ export interface TableColumnType {
 }
 
 export interface TableType extends BaseType {
-  // TODO#lb: implement in TableType
-  // exportable?: boolean;
-  // fetch: (query: string) => void;
-  // filterable?: boolean;
-  // label?: string;
-  // onRowClick?: (event: any, data: any) => void;
-  // rows?: any[];
-  // searchable?: boolean;
-  // selectable?: boolean;
+  actions?: TableActionType[];
   columns: TableColumnType[];
+  // TODO#lb: implement
+  // exportable?: boolean;
+  filterable?: boolean;
   loading?: boolean;
   onPageChange: (page: number) => void;
   onPageSizeChange: (pageSize: number) => void;
@@ -31,6 +41,14 @@ export interface TableType extends BaseType {
   onSortChange: (path: string | null, criteria: "asc" | "desc") => void;
   page?: number;
   pageSize?: number;
+  paginated?: boolean;
   rows: any[];
+  // TODO#lb: implement
+  // rowsFiltered?: number;
   rowsTotal?: number;
+  searchable?: boolean;
+  // TODO#lb implement
+  // selectable?: boolean;
+  sortable?: boolean;
+  title: string;
 }

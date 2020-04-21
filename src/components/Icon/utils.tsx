@@ -6,6 +6,7 @@ import MUIChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MUICloseIcon from "@material-ui/icons/Close";
 import MUIDeleteIcon from "@material-ui/icons/Delete";
 import MUIEditIcon from "@material-ui/icons/Edit";
+import MUIFilterListIcon from "@material-ui/icons/FilterList";
 import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
 import MUILastPageIcon from "@material-ui/icons/LastPage";
 import MUIOpenInNew from "@material-ui/icons/OpenInNew";
@@ -20,6 +21,7 @@ export const iconsCatalog = {
   [Icons.close]: <MUICloseIcon />,
   [Icons.delete]: <MUIDeleteIcon />,
   [Icons.edit]: <MUIEditIcon />,
+  [Icons.filter]: <MUIFilterListIcon />,
   [Icons.first]: <MUIFirstPageIcon />,
   [Icons.last]: <MUILastPageIcon />,
   [Icons.next]: <MUIChevronRightIcon />,

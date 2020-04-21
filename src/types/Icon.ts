@@ -6,6 +6,7 @@ export enum Icons {
   close = "close",
   delete = "delete",
   edit = "edit",
+  filter = "filter",
   first = "first",
   last = "last",
   next = "next",

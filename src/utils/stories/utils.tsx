@@ -10,8 +10,14 @@ You forgot to pass component name in your story page.
 Please fix the error adding the component name as first parameter for "getDocsPageStructure()" method in your story file.
 `;
 
+export const DEFAULT_BLOCKS_KEYS = {
+  CANVAS: "canvas",
+  INTL: "intl",
+  USAGE: "usage",
+};
+
 export const DEFAULT_BLOCKS = (component: string) => ({
-  usage: {
+  [DEFAULT_BLOCKS_KEYS.USAGE]: {
     title: "Usage",
     subtitle: true,
     body: (
@@ -27,7 +33,7 @@ export const DEFAULT_BLOCKS = (component: string) => ({
       </Fragment>
     ),
   },
-  intl: {
+  [DEFAULT_BLOCKS_KEYS.INTL]: {
     title: "Support for react-intl",
     subtitle: true,
     body: (
@@ -48,7 +54,7 @@ export const DEFAULT_BLOCKS = (component: string) => ({
       </Fragment>
     ),
   },
-  canvas: {
+  [DEFAULT_BLOCKS_KEYS.CANVAS]: {
     title: "Canvas",
     subtitle: true,
     body: (

@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, optionsKnob as options, select } from "@storybook/addon-knobs";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Checkbox from ".";
 import { CheckboxSize } from "../../types/Checkbox";
 
@@ -9,7 +9,7 @@ export default {
   title: "Checkbox",
   component: Checkbox,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Checkbox", ["usage", "canvas"]),
   },
 };
 

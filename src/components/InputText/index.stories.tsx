@@ -3,14 +3,14 @@ import { action } from "@storybook/addon-actions";
 import { boolean, text, object, select } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import InputText, { InputTextIntl } from ".";
 
 export default {
   title: "InputText",
   component: InputText,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("InputText"),
   },
 };
 

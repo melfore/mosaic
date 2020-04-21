@@ -3,14 +3,14 @@ import {} from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { TypographyVariants } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Typography, { TypographyIntl } from ".";
 
 export default {
   title: "Typography",
   component: Typography,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Typography"),
   },
 };
 

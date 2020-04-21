@@ -19,8 +19,6 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
 
 /**
  * InputText component made on top of `@material-ui/core/TextField`
- *
- * Supports usage inside `IntlProvider` context of `react-intl` using `InputTextIntl` exported version.
  **/
 const InputText: FC<InputTextType> = ({
   dataCy,

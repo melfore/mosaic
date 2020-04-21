@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text } from "@storybook/addon-knobs";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Switch from ".";
 import { SwitchSize } from "../../types/Switch";
 
@@ -9,7 +9,7 @@ export default {
   title: "Switch",
   component: Switch,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Switch", ["usage", "canvas"]),
   },
 };
 

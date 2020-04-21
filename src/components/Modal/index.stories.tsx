@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { text, object, boolean, select } from "@storybook/addon-knobs";
 import { ButtonVariants } from "../../types/Button";
 import ModalMock from "../../utils/mocks/ModalMock";
-import { DOCS_PAGE_STRUCTURE, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Modal, { ModalIntl } from ".";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 
@@ -11,7 +11,7 @@ export default {
   title: "Modal",
   component: Modal,
   parameters: {
-    ...DOCS_PAGE_STRUCTURE,
+    ...getDocsPageStructure("Modal"),
   },
 };
 

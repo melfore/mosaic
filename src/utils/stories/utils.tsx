@@ -112,6 +112,7 @@ export const DOCS_PAGE_STYLE: string = `
     color: #EDEDED;
     display: flex;
     padding: 8px;
+    white-space: pre-line;
   }
   .icon-wrapper {
     align-items: center;

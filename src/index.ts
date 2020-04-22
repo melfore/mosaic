@@ -16,5 +16,8 @@ export { default as Modal, ModalIntl } from "./components/Modal";
 export { default as Switch, SwitchIntl } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";
 
+export { default as Table } from "./components/Table";
+export { TableActionScope } from "./types/Table";
+
 export { default as Typography, TypographyIntl } from "./components/Typography";
 export { TypographyVariants, TypographyDisplay } from "./types/Typography";

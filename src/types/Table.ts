@@ -2,6 +2,13 @@ import { ReactElement } from "react";
 import { BaseType } from "./Base";
 import { Icons } from "./Icon";
 
+// TODO#lb: implement
+// export enum TableRowDimension {
+//   large = "default",
+//   medium = "dense",
+//   small = "small",
+// }
+
 export enum TableActionScope {
   default = "global",
   row = "row",
@@ -42,6 +49,8 @@ export interface TableType extends BaseType {
   page?: number;
   pageSize?: number;
   paginated?: boolean;
+  // TODO#lb: implement
+  // rowDimension?: TableRowDimension;
   rows: any[];
   // TODO#lb: implement
   // rowsFiltered?: number;

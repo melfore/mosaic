@@ -57,6 +57,8 @@ const Table: FC<TableType> = ({
         options={{
           ...DEFAULT_TABLE_OPTIONS,
           filtering: filterable,
+          // TODO#lb: implement
+          padding: "dense",
           pageSize,
           paging: paginated,
           search: searchable,

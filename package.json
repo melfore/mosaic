@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -81,5 +81,5 @@
       "last 1 safari version"
     ]
   },
-  "license": "ISC"
+  "license": "MIT"
 }

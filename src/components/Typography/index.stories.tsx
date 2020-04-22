@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import {} from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
-import { TypographyVariants } from "../../types/Typography";
+import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Typography, { TypographyIntl } from ".";
@@ -34,6 +34,7 @@ export const Canvas = () => (
     label={text("label", "Typography example")}
     truncated={boolean("truncated", false)}
     variant={select("variant", TypographyVariants, TypographyVariants.body)}
+    display={select("display", TypographyDisplay, TypographyDisplay.default)}
   />
 );
 
@@ -74,6 +75,17 @@ export const WithBottomSpacing = () => (
       <Typography label="Some text without bottom spacing" />
       <Typography bottomSpacing label="Some text with bottom spacing" />
       <Typography label="Other text" />
+    </div>
+  </StoriesWrapper>
+);
+
+export const Inline = () => (
+  <StoriesWrapper>
+    <div>
+      <Typography label="Body " display={TypographyDisplay.inline} />
+      <Typography label="caption " variant={TypographyVariants.caption} display={TypographyDisplay.inline} />
+      <Typography label="label " variant={TypographyVariants.label} display={TypographyDisplay.inline} />
+      <Typography label="overline " variant={TypographyVariants.overline} display={TypographyDisplay.inline} />
     </div>
   </StoriesWrapper>
 );

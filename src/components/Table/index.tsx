@@ -12,10 +12,10 @@ const Table: FC<TableType> = ({
   columns,
   filterable = false,
   loading = false,
-  onPageChange,
-  onPageSizeChange,
+  onPageChange = undefined,
+  onPageSizeChange = undefined,
   onRowClick = undefined,
-  onSearchChange,
+  onSearchChange = undefined,
   onSortChange,
   page = 0,
   pageSize = 10,
@@ -46,14 +46,32 @@ const Table: FC<TableType> = ({
           SortArrow: iconAdapter(Icons.arrowUp, IconSize.small),
         }}
         isLoading={loading}
-        onChangePage={onPageChange}
-        onChangeRowsPerPage={onPageSizeChange}
-        onOrderChange={(columnIndex: number, criteria: "asc" | "desc") => {
-          const columnPath = columnIndex < 0 ? null : columns[columnIndex].path;
-          onSortChange(columnPath, criteria);
+        onChangePage={(page: number) => {
+          if (paginated && onPageChange) {
+            onPageChange(page);
+          }
         }}
-        onRowClick={onRowClick}
-        onSearchChange={onSearchChange}
+        onChangeRowsPerPage={(pageSize: number) => {
+          if (paginated && onPageSizeChange) {
+            onPageSizeChange(pageSize);
+          }
+        }}
+        onOrderChange={(columnIndex: number, criteria: "asc" | "desc") => {
+          if (sortable && onSortChange) {
+            const columnPath = columnIndex < 0 ? null : columns[columnIndex].path;
+            onSortChange(columnPath, criteria);
+          }
+        }}
+        onRowClick={(event, row) => {
+          if (onRowClick) {
+            onRowClick(event, row);
+          }
+        }}
+        onSearchChange={(query: string) => {
+          if (searchable && onSearchChange) {
+            onSearchChange(query);
+          }
+        }}
         options={{
           ...DEFAULT_TABLE_OPTIONS,
           filtering: filterable,

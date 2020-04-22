@@ -41,10 +41,10 @@ export interface TableType extends BaseType {
   // exportable?: boolean;
   filterable?: boolean;
   loading?: boolean;
-  onPageChange: (page: number) => void;
-  onPageSizeChange: (pageSize: number) => void;
+  onPageChange?: (page: number) => void;
+  onPageSizeChange?: (pageSize: number) => void;
   onRowClick?: (event: any, row: any) => void;
-  onSearchChange: (query: string) => void;
+  onSearchChange?: (query: string) => void;
   onSortChange: (path: string | null, criteria: "asc" | "desc") => void;
   page?: number;
   pageSize?: number;

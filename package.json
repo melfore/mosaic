@@ -22,6 +22,7 @@
     "@babel/core": "^7.9.0",
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.50",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
@@ -53,6 +54,7 @@
   "peerDependencies": {
     "@material-ui/core": "4.9.x",
     "@material-ui/icons": "4.9.x",
+    "@material-ui/lab": "4.x.x",
     "react": "16.13.x",
     "react-dom": "16.13.x",
     "react-intl": "4.3.x"

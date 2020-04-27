@@ -11,6 +11,7 @@ import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
 import MUILastPageIcon from "@material-ui/icons/LastPage";
 import MUIOpenInNew from "@material-ui/icons/OpenInNew";
 import MUIPlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
+import MUIRefreshIcon from "@material-ui/icons/Refresh";
 import MUISearchIcon from "@material-ui/icons/Search";
 import MUISendIcon from "@material-ui/icons/Send";
 import { Icons } from "../../types/Icon";
@@ -28,6 +29,7 @@ export const iconsCatalog = {
   [Icons.openInNew]: <MUIOpenInNew />,
   [Icons.playlistAddCheck]: <MUIPlaylistAddCheckIcon />,
   [Icons.prev]: <MUIChevronLeftIcon />,
+  [Icons.refresh]: <MUIRefreshIcon />,
   [Icons.search]: <MUISearchIcon />,
   [Icons.send]: <MUISendIcon />,
 };

@@ -16,6 +16,7 @@ const Table: FC<TableType> = ({
   onPageSizeChange = undefined,
   onRowClick = undefined,
   onSearchChange = undefined,
+  onSelectionChange = undefined,
   onSortChange,
   page = 0,
   pageSize = 10,
@@ -72,6 +73,11 @@ const Table: FC<TableType> = ({
             onSearchChange(query);
           }
         }}
+        onSelectionChange={(data) => {
+          if (onSelectionChange) {
+            onSelectionChange(data);
+          }
+        }}
         options={{
           ...DEFAULT_TABLE_OPTIONS,
           filtering: filterable,
@@ -81,6 +87,7 @@ const Table: FC<TableType> = ({
           paging: paginated,
           search: searchable,
           sorting: sortable,
+          selection: !!onSelectionChange,
         }}
         page={page}
         title={title}

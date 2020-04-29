@@ -86,25 +86,57 @@ export const Canvas = () => (
   />
 );
 
-export const WithCustomRendering = () => (
+export const Basic = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="Basic"
+  />
+);
+
+export const Loading = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    loading
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="Without Events"
+  />
+);
+
+export const WithCustomColumnRender = () => (
   <StoriesWrapper>
     <Table
-      actions={[
-        {
-          callback: action("On Add Callback"),
-          icon: Icons.add,
-          label: "Add",
-        },
-      ]}
       columns={[
-        { label: "Name", path: "name", render: ({ name }) => <b>{name}</b> },
+        {
+          label: "Name",
+          path: "name",
+          render: ({ name }) => (
+            <div style={{ alignItems: "center", display: "flex" }}>
+              <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} />
+              <b style={{ marginLeft: "8px" }}>{name}</b>
+            </div>
+          ),
+        },
         { label: "Age", path: "age" },
       ]}
-      onPageChange={(page: number) => {}}
-      onPageSizeChange={(pageSize: number) => {}}
-      onRowClick={(event: any, row: any) => {}}
-      onSearchChange={(query: string) => {}}
-      onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
       rows={[
         { name: "John", age: 35 },
         { name: "Nick", age: 45 },
@@ -112,13 +144,35 @@ export const WithCustomRendering = () => (
         { name: "Joey", age: 29 },
         { name: "Luis", age: 78 },
       ]}
-      rowsTotal={5}
       title="Custom Rendering"
     />
   </StoriesWrapper>
 );
 
-export const WithGlobalActions = () => (
+export const WithEvents = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    onPageChange={(page: number) => {}}
+    onPageSizeChange={(pageSize: number) => {}}
+    onRowClick={(row: any) => {}}
+    onSearchChange={(query: string) => {}}
+    onSelectionChange={(data: any[]) => {}}
+    onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="Without Events"
+  />
+);
+
+export const WithGlobalAction = () => (
   <StoriesWrapper>
     <Table
       actions={[
@@ -132,11 +186,6 @@ export const WithGlobalActions = () => (
         { label: "Name", path: "name" },
         { label: "Age", path: "age" },
       ]}
-      onPageChange={(page: number) => {}}
-      onPageSizeChange={(pageSize: number) => {}}
-      onRowClick={(event: any, row: any) => {}}
-      onSearchChange={(query: string) => {}}
-      onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
       rows={[
         { name: "John", age: 35 },
         { name: "Nick", age: 45 },
@@ -144,8 +193,7 @@ export const WithGlobalActions = () => (
         { name: "Joey", age: 29 },
         { name: "Luis", age: 78 },
       ]}
-      rowsTotal={5}
-      title="Global Actions"
+      title="Global Action"
     />
   </StoriesWrapper>
 );
@@ -162,6 +210,7 @@ export const WithRowActions = () => (
         },
         {
           callback: action("On Delete Callback"),
+          disabled: true,
           icon: Icons.delete,
           label: "Delete",
           scope: TableActionScope.row,
@@ -171,11 +220,6 @@ export const WithRowActions = () => (
         { label: "Name", path: "name" },
         { label: "Age", path: "age" },
       ]}
-      onPageChange={(page: number) => {}}
-      onPageSizeChange={(pageSize: number) => {}}
-      onRowClick={(event: any, row: any) => {}}
-      onSearchChange={(query: string) => {}}
-      onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
       rows={[
         { name: "John", age: 35 },
         { name: "Nick", age: 45 },
@@ -183,7 +227,6 @@ export const WithRowActions = () => (
         { name: "Joey", age: 29 },
         { name: "Luis", age: 78 },
       ]}
-      rowsTotal={5}
       title="Row Actions"
     />
   </StoriesWrapper>

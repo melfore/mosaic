@@ -18,14 +18,13 @@ export default {
         <Fragment>
           <p>
             The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
-            table features.
+            table features. Below you can find the properties responsible to handle table events:
           </p>
           <p>
-            <b>Pagination</b>
+            <b>Pagination:</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Properties
-                page: number (default is 0)
+              {`page: number (default is 0)
                 pageSize: number (default is 10)
                 onPageChange={(page: number) => {}}
                 onPageSizeChange={(pageSize: number) => {}}
@@ -33,30 +32,25 @@ export default {
             </code>
           </p>
           <p>
-            <b>Row click</b>
+            <b>Row click:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Properties
-                onRowClick={(event: any, row: any) => {}}
-              `}
-            </code>
+            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
           </p>
           <p>
-            <b>Search</b>
+            <b>Search:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Properties
-                onSearchChange={(query: string) => {}}
-              `}
-            </code>
+            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
           </p>
           <p>
-            <b>Sorting</b>
+            <b>Selection:</b>
+            <br />
+            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
+          </p>
+          <p>
+            <b>Sorting:</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Properties
-                onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
-              `}
+              {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
             </code>
           </p>
         </Fragment>
@@ -76,6 +70,7 @@ export const Canvas = () => (
     onPageSizeChange={action("On Page Size Change")}
     onRowClick={action("On Row Click")}
     onSearchChange={action("On Search Change")}
+    onSelectionChange={action("On Selection Change")}
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
     pageSize={number("pageSize", 10)}

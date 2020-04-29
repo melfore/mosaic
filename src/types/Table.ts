@@ -46,19 +46,14 @@ export interface TableType extends BaseType {
   onRowClick?: (event: any, row: any) => void;
   onSearchChange?: (query: string) => void;
   onSelectionChange?: (data: any[]) => void;
-  onSortChange: (path: string | null, criteria: "asc" | "desc") => void;
+  onSortChange?: (path: string | null, criteria: "asc" | "desc") => void;
   page?: number;
   pageSize?: number;
-  paginated?: boolean;
   // TODO#lb: implement
   // rowDimension?: TableRowDimension;
   rows: any[];
   // TODO#lb: implement
   // rowsFiltered?: number;
   rowsTotal?: number;
-  searchable?: boolean;
-  // TODO#lb implement
-  // selectable?: boolean;
-  sortable?: boolean;
   title: string;
 }

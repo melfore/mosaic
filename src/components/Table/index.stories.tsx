@@ -17,19 +17,16 @@ export default {
       body: (
         <Fragment>
           <p>
-            The <code>Table</code> component requires utilizing project to handle events fired when interacting with the
+            The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
             table features.
           </p>
           <p>
             <b>Pagination</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Props
+              {`// Properties
                 page: number (default is 0)
                 pageSize: number (default is 10)
-                paginated: boolean (default is true)
-
-                // Events (must be implemented to make pagination work)
                 onPageChange={(page: number) => {}}
                 onPageSizeChange={(pageSize: number) => {}}
               `}
@@ -39,7 +36,7 @@ export default {
             <b>Row click</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Event (must be implemented to make row click work)
+              {`// Properties
                 onRowClick={(event: any, row: any) => {}}
               `}
             </code>
@@ -48,10 +45,7 @@ export default {
             <b>Search</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Props
-                searchable: boolean (default is true)
-
-                // Event (must be implemented to make search work)
+              {`// Properties
                 onSearchChange={(query: string) => {}}
               `}
             </code>
@@ -60,10 +54,7 @@ export default {
             <b>Sorting</b>
             <br />
             <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`// Props
-                sortable: boolean (default is true)
-
-                // Event (must be implemented to make sorting work)
+              {`// Properties
                 onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
               `}
             </code>
@@ -89,7 +80,6 @@ export const Canvas = () => (
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
     pageSize={number("pageSize", 10)}
-    paginated={boolean("paginated", true)}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },
@@ -98,8 +88,6 @@ export const Canvas = () => (
       { name: "Luis", age: 78 },
     ]}
     rowsTotal={number("rowsTotal", 5)}
-    searchable={boolean("searchable", true)}
-    sortable={boolean("sortable", true)}
     title={text("title", "Table Title")}
   />
 );

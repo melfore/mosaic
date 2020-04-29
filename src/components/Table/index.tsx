@@ -17,14 +17,11 @@ const Table: FC<TableType> = ({
   onRowClick = undefined,
   onSearchChange = undefined,
   onSelectionChange = undefined,
-  onSortChange,
+  onSortChange = undefined,
   page = 0,
   pageSize = 10,
-  paginated = true,
   rows = [],
   rowsTotal = undefined,
-  searchable = true,
-  sortable = true,
   title = undefined,
 }) => {
   return (
@@ -47,18 +44,18 @@ const Table: FC<TableType> = ({
           SortArrow: iconAdapter(Icons.arrowUp, IconSize.small),
         }}
         isLoading={loading}
-        onChangePage={(page: number) => {
-          if (paginated && onPageChange) {
+        onChangePage={(page) => {
+          if (onPageChange) {
             onPageChange(page);
           }
         }}
-        onChangeRowsPerPage={(pageSize: number) => {
-          if (paginated && onPageSizeChange) {
+        onChangeRowsPerPage={(pageSize) => {
+          if (onPageSizeChange) {
             onPageSizeChange(pageSize);
           }
         }}
-        onOrderChange={(columnIndex: number, criteria: "asc" | "desc") => {
-          if (sortable && onSortChange) {
+        onOrderChange={(columnIndex, criteria) => {
+          if (onSortChange) {
             const columnPath = columnIndex < 0 ? null : columns[columnIndex].path;
             onSortChange(columnPath, criteria);
           }
@@ -68,8 +65,8 @@ const Table: FC<TableType> = ({
             onRowClick(event, row);
           }
         }}
-        onSearchChange={(query: string) => {
-          if (searchable && onSearchChange) {
+        onSearchChange={(query) => {
+          if (onSearchChange) {
             onSearchChange(query);
           }
         }}
@@ -84,9 +81,9 @@ const Table: FC<TableType> = ({
           // TODO#lb: implement
           padding: "dense",
           pageSize,
-          paging: paginated,
-          search: searchable,
-          sorting: sortable,
+          paging: !!onPageChange && !!onPageSizeChange,
+          search: !!onSearchChange,
+          sorting: !!onSortChange,
           selection: !!onSelectionChange,
         }}
         page={page}

@@ -71,7 +71,6 @@ export const Canvas = () => (
       { label: "Name", path: "name" },
       { label: "Age", path: "age" },
     ]}
-    filterable={boolean("filterable", false)}
     loading={boolean("loading", false)}
     onPageChange={action("On Page Change")}
     onPageSizeChange={action("On Page Size Change")}

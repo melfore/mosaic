@@ -10,7 +10,6 @@ import { DEFAULT_TABLE_OPTIONS, actionAdapter, actionComponentAdapter, columnAda
 const Table: FC<TableType> = ({
   actions = [],
   columns,
-  filterable = false,
   loading = false,
   onPageChange = undefined,
   onPageSizeChange = undefined,
@@ -77,8 +76,7 @@ const Table: FC<TableType> = ({
         }}
         options={{
           ...DEFAULT_TABLE_OPTIONS,
-          filtering: filterable,
-          // TODO#lb: implement
+          filtering: false,
           padding: "dense",
           pageSize,
           paging: !!onPageChange && !!onPageSizeChange,

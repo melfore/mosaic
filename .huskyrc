@@ -1,6 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "CI=true npm run test-coverage && npm run build",
-    "pre-push": "CI=true npm run test-coverage && npm run build"
+    "pre-push": "npm run build && CI=true npm run test-coverage"
   }
 }

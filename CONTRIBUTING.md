@@ -9,7 +9,9 @@
   - [Adding snippets](#adding-snippets)
   - [Using snippets](#using-snippets)
 - [Local testing](#local-testing)
-- [Pushing code](#pushing-code)
+- [Git](#git)
+	- [Commit](#commit)
+	- [Push](#push)
 
 # Contributing
 
@@ -205,9 +207,15 @@ Use this guide to locally use/test `@melfore/mosaic` on host projects, while dev
    />
    ```
 
-## Pushing code
+## Git
 
-This project uses [husky](https://github.com/typicode/husky) to verify code before being pushed to origin.
+This project uses [husky](https://github.com/typicode/husky) to verify code before git actions can happen.
+
+### Commit
+
+Currently there are no hooks for the commit action.
+
+### Push
 
 The commands executed before each push to origin are:
 

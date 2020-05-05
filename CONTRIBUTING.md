@@ -9,6 +9,7 @@
   - [Adding snippets](#adding-snippets)
   - [Using snippets](#using-snippets)
 - [Local testing](#local-testing)
+- [Pushing code](#pushing-code)
 
 # Contributing
 
@@ -203,3 +204,14 @@ Use this guide to locally use/test `@melfore/mosaic` on host projects, while dev
        onClick={() => window.open('https://reactjs.org', '_blank')}
    />
    ```
+
+## Pushing code
+
+This project uses [husky](https://github.com/typicode/husky) to verify code before being pushed to origin.
+
+The commands executed before each push to origin are:
+
+- `npm run build`
+- `npm run test-coverage` (in `CI` mode)
+
+You can check their execution looking at git output.

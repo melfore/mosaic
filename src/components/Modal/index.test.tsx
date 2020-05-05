@@ -37,12 +37,10 @@ describe("Modal test suite:", () => {
 
   it("with actions", () => {
     const onCancelHandler = jest.fn();
-    const onCloseHandler = jest.fn();
     const onConfirmHandler = jest.fn();
     const component = componentWrapper({
       cancel: { action: onCancelHandler, label: "Close", variant: ButtonVariants.outlined },
       confirm: { action: onConfirmHandler, disabled: false, label: "Confirm" },
-      onClose: onCloseHandler,
       open: true,
     });
     const wrapper = mount(component);
@@ -50,11 +48,9 @@ describe("Modal test suite:", () => {
     const cancelButton = modalActions.find("button").at(0);
     cancelButton.simulate("click");
     expect(onCancelHandler).toHaveBeenCalledTimes(1);
-    expect(onCloseHandler).toHaveBeenCalledTimes(1);
     const confirmButton = modalActions.find("button").at(1);
     confirmButton.simulate("click");
     expect(onConfirmHandler).toHaveBeenCalledTimes(1);
-    expect(onCloseHandler).toHaveBeenCalledTimes(2);
   });
 
   it("with closable", () => {

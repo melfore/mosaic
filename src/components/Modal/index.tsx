@@ -20,13 +20,12 @@ const StyledMUIDialogTitle = styled(MUIDialogTitle)({
   justifyContent: "space-between",
 });
 
-const getActionButton = <T extends ModalActionType>(buttonConfig: T, onClose?: Function): any => {
+const getActionButton = <T extends ModalActionType>(buttonConfig: T): any => {
   const { action, label, labelId, ...props } = buttonConfig;
   const onClickHandler = (event: any) => {
     event.preventDefault();
     event.stopPropagation();
     action && action();
-    onClose && onClose();
   };
 
   if (!labelId) {
@@ -76,8 +75,8 @@ const Modal: FC<ModalType> = ({
       <MUIDialogContent dividers>{children}</MUIDialogContent>
       {hasActions && (
         <MUIDialogActions>
-          {cancel && getActionButton(cancel, onClose)}
-          {confirm && getActionButton(confirm, onClose)}
+          {cancel && getActionButton(cancel)}
+          {confirm && getActionButton(confirm)}
         </MUIDialogActions>
       )}
     </MUIDialog>

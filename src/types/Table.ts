@@ -2,18 +2,19 @@ import { ReactElement } from "react";
 import { BaseType } from "./Base";
 import { Icons } from "./Icon";
 
-export enum TableActionScope {
-  default = "global",
+export enum TableActionPosition {
+  default = "toolbar",
   row = "row",
+  selection = "toolbarOnSelect",
 }
 
 export interface TableActionType {
-  callback: (event: any, data: object | object[]) => void;
+  callback: (data: object | object[]) => void;
   disabled?: boolean;
   hidden?: boolean;
   icon?: Icons;
   label: string;
-  scope?: TableActionScope;
+  position?: TableActionPosition;
 }
 
 export interface TableColumnType {

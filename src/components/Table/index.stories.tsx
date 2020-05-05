@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, number } from "@storybook/addon-knobs";
-import { TableActionScope } from "../../types/Table";
+import { TableActionPosition } from "../../types/Table";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import { CUSTOM_CODE_BLOCK_CLASS } from "../../utils/stories/utils";
 import Table from ".";
@@ -168,7 +168,7 @@ export const WithEvents = () => (
       { name: "Joey", age: 29 },
       { name: "Luis", age: 78 },
     ]}
-    title="Without Events"
+    title="With Events"
   />
 );
 
@@ -198,22 +198,27 @@ export const WithGlobalAction = () => (
   </StoriesWrapper>
 );
 
-export const WithRowActions = () => (
+export const WithActions = () => (
   <StoriesWrapper>
     <Table
       actions={[
         {
+          callback: action("On Add Callback"),
+          icon: Icons.add,
+          label: "Add",
+        },
+        {
           callback: action("On Edit Callback"),
           icon: Icons.edit,
           label: "Edit",
-          scope: TableActionScope.row,
+          position: TableActionPosition.row,
         },
         {
           callback: action("On Delete Callback"),
           disabled: true,
           icon: Icons.delete,
           label: "Delete",
-          scope: TableActionScope.row,
+          position: TableActionPosition.row,
         },
       ]}
       columns={[

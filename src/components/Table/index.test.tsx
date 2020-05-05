@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 import Table from ".";
 import { Icons } from "../../types/Icon";
-import { TableActionScope } from "../../types/Table";
+import { TableActionPosition } from "../../types/Table";
 
 const defaultProps = {
   columns: [
@@ -61,7 +61,7 @@ describe("Table test suite:", () => {
           callback: actionCallback,
           icon: Icons.delete,
           label: "Delete",
-          scope: TableActionScope.row,
+          position: TableActionPosition.row,
         },
       ],
     });

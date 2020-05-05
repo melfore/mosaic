@@ -1,7 +1,7 @@
 import React, { forwardRef, Fragment } from "react";
 import { Action as MTActionType, Column as MTColumnType, Options as MTOptionsType } from "material-table";
 import { Icons, IconSize } from "../../types/Icon";
-import { TableActionScope, TableActionType, TableColumnType } from "../../types/Table";
+import { TableActionPosition, TableActionType, TableColumnType } from "../../types/Table";
 import Button from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
@@ -20,54 +20,51 @@ export const actionAdapter = (action: TableActionType): MTActionType<object> => 
     disabled = false,
     hidden = false,
     icon = undefined,
-    scope = TableActionScope.default,
+    position = TableActionPosition.default,
   } = action;
   return {
     disabled,
     hidden,
     icon: `${label}$${icon}`,
-    isFreeAction: scope === TableActionScope.default,
-    onClick: callback,
+    onClick: (event, data) => {
+      event.preventDefault();
+      event.stopPropagation();
+      callback(data);
+    },
+    position,
   };
 };
 
 export const actionComponentAdapter = (props: any) => {
   const { data, action } = props;
-  const { disabled, hidden, icon, isFreeAction, onClick }: MTActionType<object> = action;
+  const { disabled, hidden, icon, position, onClick }: MTActionType<object> = action;
   if (hidden) {
     return null;
   }
 
+  const displaysButton = position === TableActionPosition.default;
   const labelAndIconName = icon as string;
   const label = labelAndIconName.split("$")[0];
   const iconName = labelAndIconName.split("$")[1] as Icons;
   return (
     <Fragment>
-      {isFreeAction && (
+      {displaysButton && (
         <Fragment>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <Button
             disabled={disabled}
             icon={!iconName ? undefined : { name: iconName }}
             label={label}
-            onClick={(event: any) => {
-              onClick(event, data);
-              event.preventDefault();
-              event.stopPropagation();
-            }}
+            onClick={(event: any) => onClick(event, data)}
           />
         </Fragment>
       )}
-      {!isFreeAction && (
+      {!displaysButton && (
         <Fragment>
           <IconButton
             disabled={disabled}
             icon={iconName}
-            onClick={(event: any) => {
-              onClick(event, data);
-              event.preventDefault();
-              event.stopPropagation();
-            }}
+            onClick={(event: any) => onClick(event, data)}
             size={IconSize.small}
           />
           <span>&nbsp;&nbsp;</span>

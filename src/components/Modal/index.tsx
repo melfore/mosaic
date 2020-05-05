@@ -25,6 +25,8 @@ const getActionButton = <T extends ModalActionType>(buttonConfig: T, onClose?: F
   const onClickHandler = (event: any) => {
     action && action(event);
     onClose && onClose(event);
+    event.preventDefault();
+    event.stopPropagation();
   };
 
   if (!labelId) {

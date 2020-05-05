@@ -62,10 +62,9 @@ describe("Modal test suite:", () => {
     const component = componentWrapper({ closable: true, onClose: onCloseHandler, open: true });
     const wrapper = mount(component);
     const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const button = modalTitle.find("button");
-    const iconButton = button.find("Icon");
-    expect(iconButton.prop("name")).toEqual("close");
-    button.simulate("click");
+    const iconButton = modalTitle.find("IconButton");
+    expect(iconButton.prop("icon")).toEqual("close");
+    iconButton.simulate("click");
     expect(onCloseHandler).toHaveBeenCalledTimes(1);
   });
 

@@ -3,13 +3,13 @@ import MUIDialog from "@material-ui/core/Dialog";
 import MUIDialogActions from "@material-ui/core/DialogActions";
 import MUIDialogContent from "@material-ui/core/DialogContent";
 import MUIDialogTitle from "@material-ui/core/DialogTitle";
-import MUIIconButton from "@material-ui/core/IconButton";
 import { styled } from "@material-ui/core/styles";
 import Button, { ButtonIntl } from "../Button";
 import Icon from "../Icon";
+import IconButton from "../IconButton";
 import Typography from "../Typography";
 import { BaseIntlType } from "../../types/Base";
-import { Icons } from "../../types/Icon";
+import { Icons, IconSize } from "../../types/Icon";
 import { ModalActionType, ModalType } from "../../types/Modal";
 import { TypographyVariants } from "../../types/Typography";
 import withIntl from "../../utils/hocs/withIntl";
@@ -23,10 +23,10 @@ const StyledMUIDialogTitle = styled(MUIDialogTitle)({
 const getActionButton = <T extends ModalActionType>(buttonConfig: T, onClose?: Function): any => {
   const { action, label, labelId, ...props } = buttonConfig;
   const onClickHandler = (event: any) => {
-    action && action(event);
-    onClose && onClose(event);
     event.preventDefault();
     event.stopPropagation();
+    action && action();
+    onClose && onClose();
   };
 
   if (!labelId) {
@@ -34,6 +34,12 @@ const getActionButton = <T extends ModalActionType>(buttonConfig: T, onClose?: F
   }
 
   return <ButtonIntl {...props} labelId={labelId} onClick={onClickHandler} />;
+};
+
+const onCloseWrapper = (event: any, reason?: string, onClose?: Function) => {
+  event.preventDefault();
+  event.stopPropagation();
+  onClose && onClose(reason);
 };
 
 /**
@@ -50,14 +56,21 @@ const Modal: FC<ModalType> = ({
 }) => {
   const hasActions = cancel || confirm;
   return (
-    <MUIDialog aria-labelledby="modal-title" fullWidth maxWidth="sm" onClose={onClose} open={open}>
+    <MUIDialog
+      aria-labelledby="modal-title"
+      fullWidth
+      maxWidth="sm"
+      onClose={(event, reason) => onCloseWrapper(event, reason, onClose)}
+      open={open}
+    >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
         <Typography bottomSpacing={false} dataCy="modal-title" label={label} variant={TypographyVariants.title} />
         {closable && (
-          // TODO: see #69
-          <MUIIconButton size="small" onClick={onClose}>
-            <Icon name={Icons.close} />
-          </MUIIconButton>
+          <IconButton
+            icon={Icons.close}
+            size={IconSize.small}
+            onClick={(event) => onCloseWrapper(event, undefined, onClose)}
+          />
         )}
       </StyledMUIDialogTitle>
       <MUIDialogContent dividers>{children}</MUIDialogContent>

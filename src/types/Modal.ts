@@ -1,9 +1,8 @@
-import { MouseEvent } from "react";
 import { BaseType } from "./Base";
 import { ButtonVariants } from "./Button";
 
 export interface ModalActionType {
-  action?: (event: MouseEvent<Element, MouseEvent>) => void;
+  action?: () => void;
   label?: string;
   labelId?: string;
 }
@@ -21,6 +20,6 @@ export interface ModalType extends BaseType {
   closable?: boolean;
   confirm?: ConfirmModalActionType;
   label?: string;
-  onClose?: (event: any, reason?: string) => void;
+  onClose?: (reason?: string) => void;
   open?: boolean;
 }

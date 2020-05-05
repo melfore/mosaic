@@ -13,6 +13,7 @@ export enum Icons {
   openInNew = "openInNew",
   playlistAddCheck = "playlistAddCheck",
   prev = "prev",
+  print = "print",
   refresh = "refresh",
   search = "search",
   send = "send",

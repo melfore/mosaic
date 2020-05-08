@@ -24,11 +24,11 @@ const AppBar: FC<AppBarType> = ({ dataCy = "appbar", onNavigationMenuClick = und
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              onNavigationMenuClick;
+              onNavigationMenuClick();
             }}
           />
         )}
-        {(onNavigationMenuClick || title) && <Spacer />}
+        {onNavigationMenuClick && title && <Spacer />}
         {title && (
           <Typography
             bottomSpacing={false}

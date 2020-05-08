@@ -1,3 +1,5 @@
+export { default as AppBar } from "./components/AppBar";
+
 export { default as Button, ButtonIntl } from "./components/Button";
 export { ButtonIconPosition, ButtonVariants } from "./types/Button";
 
@@ -12,6 +14,9 @@ export { default as InputNumber, InputNumberIntl } from "./components/InputNumbe
 export { InputSize, InputVariant } from "./types/Input";
 
 export { default as Modal, ModalIntl } from "./components/Modal";
+
+export { default as Spacer } from "./components/Spacer";
+export { SpacerDirection } from "./types/Spacer";
 
 export { default as Switch, SwitchIntl } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";

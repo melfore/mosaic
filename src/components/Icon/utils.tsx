@@ -9,6 +9,7 @@ import MUIEditIcon from "@material-ui/icons/Edit";
 import MUIFilterListIcon from "@material-ui/icons/FilterList";
 import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
 import MUILastPageIcon from "@material-ui/icons/LastPage";
+import MUIMenuIcon from "@material-ui/icons/Menu";
 import MUIOpenInNew from "@material-ui/icons/OpenInNew";
 import MUIPlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 import MUIPrintIcon from "@material-ui/icons/Print";
@@ -26,6 +27,7 @@ export const iconsCatalog = {
   [Icons.filter]: <MUIFilterListIcon />,
   [Icons.first]: <MUIFirstPageIcon />,
   [Icons.last]: <MUILastPageIcon />,
+  [Icons.menu]: <MUIMenuIcon />,
   [Icons.next]: <MUIChevronRightIcon />,
   [Icons.openInNew]: <MUIOpenInNew />,
   [Icons.playlistAddCheck]: <MUIPlaylistAddCheckIcon />,

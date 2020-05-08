@@ -9,6 +9,7 @@ export enum Icons {
   filter = "filter",
   first = "first",
   last = "last",
+  menu = "menu",
   next = "next",
   openInNew = "openInNew",
   playlistAddCheck = "playlistAddCheck",

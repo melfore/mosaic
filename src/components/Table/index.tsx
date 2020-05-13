@@ -36,11 +36,11 @@ const Table: FC<TableType> = ({
           Filter: iconAdapter(Icons.filter, IconSize.small),
           FirstPage: iconAdapter(Icons.first),
           LastPage: iconAdapter(Icons.last),
-          NextPage: iconAdapter(Icons.next),
-          PreviousPage: iconAdapter(Icons.prev),
+          NextPage: iconAdapter(Icons.right),
+          PreviousPage: iconAdapter(Icons.left),
           ResetSearch: iconAdapter(Icons.close, IconSize.small),
           Search: iconAdapter(Icons.search),
-          SortArrow: iconAdapter(Icons.arrowUp, IconSize.small),
+          SortArrow: iconAdapter(Icons.up_arrow, IconSize.small),
         }}
         isLoading={loading}
         onChangePage={(page) => {

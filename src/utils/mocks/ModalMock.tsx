@@ -19,7 +19,7 @@ const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open Modal", children, in
   return (
     <div>
       <Button
-        icon={{ name: Icons.openInNew }}
+        icon={{ name: Icons.open_new }}
         label={buttonLabel}
         onClick={() => setOpen(!open)}
         variant={ButtonVariants.outlined}

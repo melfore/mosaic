@@ -18,7 +18,7 @@ const Avatar: FC<AvatarType> = ({
   return (
     <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src || undefined} variant={variant}>
       {icon && <Icon name={icon} />}
-      {!icon && <Typography label={text} />}
+      {!icon && text && <Typography label={text} />}
     </StyledMUIAvatar>
   );
 };

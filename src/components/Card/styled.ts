@@ -15,7 +15,7 @@ export const ActionsWrapper = styled(MUIBox)(({ theme }) => ({
 
 export const StyledMUICard = styled(MUICard)(({ theme }) => ({
   margin: `${theme.spacing(2)}px`,
-  width: "100%",
+  width: `calc(100% - ${theme.spacing(4)}px)`,
 }));
 
 export const StyledMUICardActions = styled(MUICardActions)(({ theme }) => ({

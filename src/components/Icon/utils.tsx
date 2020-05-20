@@ -5,6 +5,8 @@ import MUIArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import MUIBlockIcon from "@material-ui/icons/Block";
 import MUIBusinessIcon from "@material-ui/icons/Business";
 import MUICheckIcon from "@material-ui/icons/Check";
+import MUICheckBoxIcon from "@material-ui/icons/CheckBox";
+import MUICheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import MUIChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import MUIChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MUICloseIcon from "@material-ui/icons/Close";
@@ -14,6 +16,7 @@ import MUIEditIcon from "@material-ui/icons/Edit";
 import MUIErrorIcon from "@material-ui/icons/Error";
 import MUIFilterListIcon from "@material-ui/icons/FilterList";
 import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
+import MUIKeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MUIKeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import MUILastPageIcon from "@material-ui/icons/LastPage";
 import MUIListIcon from "@material-ui/icons/List";
@@ -41,9 +44,12 @@ export const iconsCatalog = {
   [Icons.business]: <MUIBusinessIcon />,
   [Icons.chart_timeline]: <MUITimelineIcon />,
   [Icons.check]: <MUICheckIcon />,
+  [Icons.checkbox]: <MUICheckBoxIcon />,
+  [Icons.checkbox_empty]: <MUICheckBoxOutlineBlankIcon />,
   [Icons.clock]: <MUIScheduleIcon />,
   [Icons.close]: <MUICloseIcon />,
   [Icons.delete]: <MUIDeleteIcon />,
+  [Icons.down]: <MUIKeyboardArrowDownIcon />,
   [Icons.edit]: <MUIEditIcon />,
   [Icons.error]: <MUIErrorIcon />,
   [Icons.filter]: <MUIFilterListIcon />,

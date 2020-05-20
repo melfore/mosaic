@@ -9,7 +9,7 @@ export default {
   title: "Avatar",
   component: Avatar,
   parameters: {
-    ...getDocsPageStructure("Avatar"),
+    ...getDocsPageStructure("Avatar", false),
   },
 };
 

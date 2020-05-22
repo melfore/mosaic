@@ -1,8 +1,10 @@
 import React from "react";
+import MUIAccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MUIAddIcon from "@material-ui/icons/Add";
 import MUIAppsIcon from "@material-ui/icons/Apps";
 import MUIArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import MUIBlockIcon from "@material-ui/icons/Block";
+import MUIBrightness4Icon from "@material-ui/icons/Brightness4";
 import MUIBusinessIcon from "@material-ui/icons/Business";
 import MUICheckIcon from "@material-ui/icons/Check";
 import MUICheckBoxIcon from "@material-ui/icons/CheckBox";
@@ -38,9 +40,11 @@ import MUIWarningIcon from "@material-ui/icons/Warning";
 import { Icons } from "../../types/Icon";
 
 export const iconsCatalog = {
+  [Icons.account]: <MUIAccountCircleIcon />,
   [Icons.add]: <MUIAddIcon />,
   [Icons.apps]: <MUIAppsIcon />,
   [Icons.block]: <MUIBlockIcon />,
+  [Icons.brightness]: <MUIBrightness4Icon />,
   [Icons.business]: <MUIBusinessIcon />,
   [Icons.chart_timeline]: <MUITimelineIcon />,
   [Icons.check]: <MUICheckIcon />,

@@ -4,6 +4,7 @@ import { text } from "@storybook/addon-knobs";
 import {} from "../../types/AppBar";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import AppBar from ".";
+import { Icons } from "../../types/Icon";
 
 export default {
   title: "AppBar",
@@ -14,5 +15,11 @@ export default {
 };
 
 export const Canvas = () => (
-  <AppBar onNavigationMenuClick={action("On Menu Click")} title={text("title", "AppBar Title")} />
+  <AppBar
+    actions={[{ icon: Icons.mail, onClick: action("On Mail Click") }]}
+    onNavigationMenuClick={action("On Menu Click")}
+    onTitleClick={action("On Title Click")}
+    title={text("title", "AppBar Title")}
+    userMenu={[{ label: "Logout", onClick: action("On Logout") }]}
+  />
 );

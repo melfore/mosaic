@@ -5,6 +5,7 @@ export enum Icons {
   add = "add",
   apps = "apps",
   block = "block",
+  brightness = "brightness",
   business = "business",
   chart_timeline = "chart_timeline",
   check = "check",

@@ -1,6 +1,7 @@
 import { BaseType } from "./Base";
 
 export enum Icons {
+  account = "account",
   add = "add",
   apps = "apps",
   block = "block",

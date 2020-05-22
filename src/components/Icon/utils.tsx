@@ -1,4 +1,5 @@
 import React from "react";
+import MUIAccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MUIAddIcon from "@material-ui/icons/Add";
 import MUIAppsIcon from "@material-ui/icons/Apps";
 import MUIArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -38,6 +39,7 @@ import MUIWarningIcon from "@material-ui/icons/Warning";
 import { Icons } from "../../types/Icon";
 
 export const iconsCatalog = {
+  [Icons.account]: <MUIAccountCircleIcon />,
   [Icons.add]: <MUIAddIcon />,
   [Icons.apps]: <MUIAppsIcon />,
   [Icons.block]: <MUIBlockIcon />,

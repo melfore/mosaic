@@ -19,6 +19,9 @@ export { default as InputText, InputTextIntl } from "./components/InputText";
 export { default as InputNumber, InputNumberIntl } from "./components/InputNumber";
 export { InputSize, InputVariant } from "./types/Input";
 
+export { default as ListCollapsibleItem } from "./components/ListCollapsibleItem";
+export { default as ListItem } from "./components/ListItem";
+
 export { default as Modal, ModalIntl } from "./components/Modal";
 
 export { default as Spacer } from "./components/Spacer";

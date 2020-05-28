@@ -1,5 +1,6 @@
-import React, { cloneElement, FC, useState, useMemo } from "react";
-import { Collapse as MUICollapse } from "@material-ui/core";
+import React, { cloneElement, FC, Fragment, useState, useMemo } from "react";
+import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
+import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { CardType } from "../../types/Card";
 import { Icons } from "../../types/Icon";
 import { TypographyVariants } from "../../types/Typography";
@@ -22,40 +23,66 @@ const Card: FC<CardType> = ({
   collapsible = undefined,
   content,
   icon = undefined,
+  loading = false,
   title,
   subtitle = undefined,
   unmountCollapsible = false,
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const theme = useTheme();
 
   const cardHeader = useMemo(
     () => (
       <StyledMUICardHeader
-        avatar={icon && <Avatar icon={icon} />}
+        avatar={icon && <Avatar icon={icon} loading={loading} />}
         disableTypography
-        title={<Typography bottomSpacing={false} label={title} truncated variant={TypographyVariants.title} />}
-        subheader={<Typography label={subtitle} truncated variant={TypographyVariants.caption} />}
+        title={
+          <Typography
+            bottomSpacing={false}
+            label={title}
+            loading={loading}
+            truncated
+            variant={TypographyVariants.title}
+          />
+        }
+        subheader={
+          <Typography
+            bottomSpacing={false}
+            label={subtitle}
+            loading={loading}
+            truncated
+            variant={TypographyVariants.caption}
+          />
+        }
       />
     ),
-    [icon, subtitle, title]
+    [icon, loading, subtitle, title]
   );
 
   return (
     <StyledMUICard>
       {cardHeader}
-      <StyledMUICardContent>{content}</StyledMUICardContent>
-      <StyledMUICardActions disableSpacing>
-        {actions.length > 0 && (
-          <ActionsWrapper alignItems="center" display="flex">
-            {actions.map((action, index) => cloneElement(action, { key: `card-action-${index}` }))}
-          </ActionsWrapper>
-        )}
-        {collapsible && <IconButton icon={expanded ? Icons.up : Icons.down} onClick={() => setExpanded(!expanded)} />}
-      </StyledMUICardActions>
-      {collapsible && (
-        <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
-          <StyledMUICardContent>{collapsible}</StyledMUICardContent>
-        </MUICollapse>
+      <StyledMUICardContent>
+        {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : content}
+      </StyledMUICardContent>
+      {!loading && (
+        <Fragment>
+          <StyledMUICardActions disableSpacing>
+            {actions.length > 0 && (
+              <ActionsWrapper alignItems="center" display="flex">
+                {actions.map((action, index) => cloneElement(action, { key: `card-action-${index}` }))}
+              </ActionsWrapper>
+            )}
+            {collapsible && (
+              <IconButton icon={expanded ? Icons.up : Icons.down} onClick={() => setExpanded(!expanded)} />
+            )}
+          </StyledMUICardActions>
+          {collapsible && (
+            <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
+              <StyledMUICardContent>{collapsible}</StyledMUICardContent>
+            </MUICollapse>
+          )}
+        </Fragment>
       )}
     </StyledMUICard>
   );

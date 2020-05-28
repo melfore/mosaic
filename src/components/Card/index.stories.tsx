@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 import { Icons } from "../../types/Icon";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Button from "../Button";
@@ -29,6 +29,7 @@ export const Canvas = () => (
       <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together. Mosaic are used as decoration. Architects use mosaic murals for kitchen backsplash, shower wall and entry floor art. Mosaic Craft items are used as home decor. Cities often decorate public places such as parks with mosaic murals and sculptures." />
     }
     icon={select("icon", Icons, Icons.add)}
+    loading={boolean("loading", false)}
     subtitle={text("subTitle", "Mosaic Card Subtitle")}
     title={text("title", "Mosaic Card")}
   />
@@ -40,6 +41,26 @@ export const Basic = () => (
       content={
         <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
       }
+      title="Mosaic"
+    />
+  </StoriesWrapper>
+);
+
+export const Loading = () => (
+  <StoriesWrapper>
+    <Card
+      content={
+        <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
+      }
+      loading
+      title="Mosaic"
+    />
+    <Card
+      content={
+        <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
+      }
+      icon={Icons.add}
+      loading
       title="Mosaic"
     />
   </StoriesWrapper>

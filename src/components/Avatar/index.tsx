@@ -1,4 +1,5 @@
 import React, { FC, memo } from "react";
+import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { AvatarType, AvatarVariant } from "../../types/Avatar";
 import Icon from "../Icon";
 import Typography from "../Typography";
@@ -11,10 +12,19 @@ const Avatar: FC<AvatarType> = ({
   alt = "avatar",
   dataCy = "avatar",
   icon = undefined,
+  loading = false,
   src = undefined,
   text = undefined,
   variant = AvatarVariant.default,
 }) => {
+  if (loading) {
+    return (
+      <MUISkeleton variant="circle">
+        <StyledMUIAvatar />
+      </MUISkeleton>
+    );
+  }
+
   return (
     <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src || undefined} variant={variant}>
       {icon && <Icon name={icon} />}

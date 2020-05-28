@@ -13,3 +13,7 @@ export interface BaseType {
 export interface BaseIntlType extends BaseType {
   labelId: string;
 }
+
+export interface LoadableType extends BaseType {
+  loading?: boolean;
+}

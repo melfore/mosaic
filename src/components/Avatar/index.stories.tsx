@@ -1,5 +1,5 @@
 import React from "react";
-import { select, text } from "@storybook/addon-knobs";
+import { select, text, boolean } from "@storybook/addon-knobs";
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
@@ -18,6 +18,7 @@ export const Canvas = () => (
     alt={text("alt", "Alt Text")}
     dataCy={text("dataCy", "avatar")}
     icon={select("icon", Icons, Icons.add)}
+    loading={boolean("loading", false)}
     text={text("text", "Avatar Text")}
     variant={select("variant", AvatarVariant, AvatarVariant.default)}
   />
@@ -26,6 +27,12 @@ export const Canvas = () => (
 export const Icon = () => (
   <StoriesWrapper>
     <Avatar icon={Icons.business} />
+  </StoriesWrapper>
+);
+
+export const Loading = () => (
+  <StoriesWrapper>
+    <Avatar loading />
   </StoriesWrapper>
 );
 

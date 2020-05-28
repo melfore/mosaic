@@ -27,6 +27,7 @@ export const Canvas = () => (
       minValue={number("minValue", 0)}
       maxValue={number("maxValue", 9)}
       onChange={action("onChange callback")}
+      placeholder={text("placeholder", "Placeholder Text")}
       required={boolean("required", false)}
       shrink={boolean("shrink", true)}
       size={select("size", InputSize, InputSize.default)}

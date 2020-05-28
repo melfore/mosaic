@@ -1,14 +1,12 @@
 import React, { FC, useState, useEffect } from "react";
-import { styled } from "@material-ui/core/styles";
-import MUITextField from "@material-ui/core/TextField";
+import { InputAdornment } from "@material-ui/core";
+import IconButton from "../IconButton";
 import { BaseIntlType } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputTextType, MultilineInputType } from "../../types/InputText";
 import withIntl from "../../utils/hocs/withIntl";
-
-const StyledMUITextField = styled(MUITextField)({
-  width: "100%",
-});
+import { StyledMUITextField } from "./styled";
+import { Icons, IconSize } from "../../types/Icon";
 
 const getMultilineProps = (multiline?: MultilineInputType) => {
   return {
@@ -28,7 +26,9 @@ const InputText: FC<InputTextType> = ({
   label,
   multiline = undefined,
   onChange = undefined,
+  placeholder = undefined,
   required = false,
+  shrink = false,
   size = InputSize.default,
   variant = InputVariant.default,
 }) => {
@@ -46,6 +46,9 @@ const InputText: FC<InputTextType> = ({
   return (
     <StyledMUITextField
       disabled={disabled}
+      InputLabelProps={{
+        shrink,
+      }}
       inputProps={{
         "data-cy": dataCy,
       }}
@@ -55,6 +58,7 @@ const InputText: FC<InputTextType> = ({
       label={label}
       margin="normal"
       onChange={onChangeHandler}
+      placeholder={placeholder}
       required={required}
       size={size}
       type={InputDataType.default}

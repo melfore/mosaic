@@ -22,7 +22,9 @@ export const Canvas = () => (
     label={text("label", "Label")}
     multiline={object("multiline", undefined)}
     onChange={action("onChange callback")}
+    placeholder={text("placeholder", "Placeholder Text")}
     required={boolean("required", false)}
+    shrink={boolean("shrink", false)}
     size={select("size", InputSize, InputSize.default)}
     variant={select("variant", InputVariant, InputVariant.default)}
   />

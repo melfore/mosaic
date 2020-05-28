@@ -32,6 +32,7 @@ export const Canvas = () => (
   <Typography
     bottomSpacing={boolean("bottomSpacing", false)}
     label={text("label", "Typography example")}
+    loading={boolean("loading", false)}
     truncated={boolean("truncated", false)}
     variant={select("variant", TypographyVariants, TypographyVariants.body)}
     display={select("display", TypographyDisplay, TypographyDisplay.default)}
@@ -86,6 +87,14 @@ export const Inline = () => (
       <Typography label="caption " variant={TypographyVariants.caption} display={TypographyDisplay.inline} />
       <Typography label="label " variant={TypographyVariants.label} display={TypographyDisplay.inline} />
       <Typography label="overline " variant={TypographyVariants.overline} display={TypographyDisplay.inline} />
+    </div>
+  </StoriesWrapper>
+);
+
+export const Loading = () => (
+  <StoriesWrapper>
+    <div className="typography-wrapper">
+      <Typography loading />
     </div>
   </StoriesWrapper>
 );

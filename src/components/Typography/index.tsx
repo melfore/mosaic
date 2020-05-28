@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import MUITypography from "@material-ui/core/Typography";
+import { Skeleton as MUISkeleton } from "@material-ui/lab";
+import { Typography as MUITypography } from "@material-ui/core";
 import { BaseIntlType } from "../../types/Base";
 import { TypographyType, TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import withIntl from "../../utils/hocs/withIntl";
@@ -12,6 +13,7 @@ const Typography: FC<TypographyType> = ({
   bottomSpacing = undefined,
   dataCy = "typography",
   label,
+  loading = false,
   truncated = undefined,
   variant = TypographyVariants.body,
   display = TypographyDisplay.default,
@@ -25,7 +27,7 @@ const Typography: FC<TypographyType> = ({
       variantMapping={VARIANT_COMPONENT_MAP}
       display={display}
     >
-      {label}
+      {loading ? <MUISkeleton /> : label}
     </MUITypography>
   );
 };

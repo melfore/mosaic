@@ -19,7 +19,9 @@ export interface InputType extends BaseType {
   disabled?: boolean;
   label?: string;
   onChange?: Function;
+  placeholder?: string;
   required?: boolean;
+  shrink?: boolean;
   size?: InputSize;
   type?: InputDataType;
   variant?: InputVariant;

@@ -5,6 +5,5 @@ export interface InputNumberType extends InputType {
   minValue?: number;
   maxValue?: number;
   onChange?: (value: number | null) => void | any;
-  shrink?: boolean;
   value?: number | null;
 }

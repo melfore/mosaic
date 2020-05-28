@@ -5,6 +5,7 @@ import { InputSize, InputVariant } from "../../types/Input";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import InputText, { InputTextIntl } from ".";
+import { Icons } from "../../types/Icon";
 
 export default {
   title: "InputText",
@@ -16,13 +17,16 @@ export default {
 
 export const Canvas = () => (
   <InputText
+    adornment={object("adornment", undefined)}
     dataCy="input-text"
     disabled={boolean("disabled", false)}
     initialValue={text("initialValue", "")}
     label={text("label", "Label")}
     multiline={object("multiline", undefined)}
     onChange={action("onChange callback")}
+    placeholder={text("placeholder", "Placeholder Text")}
     required={boolean("required", false)}
+    shrink={boolean("shrink", false)}
     size={select("size", InputSize, InputSize.default)}
     variant={select("variant", InputVariant, InputVariant.default)}
   />
@@ -82,6 +86,29 @@ export const Variant = () => (
   <StoriesWrapper>
     <InputText dataCy="input-text" initialValue="Default" label="Label" />
     <InputText dataCy="input-text" initialValue="Filled" label="Label" variant={InputVariant.filled} />
+  </StoriesWrapper>
+);
+
+export const WithAdornment = () => (
+  <StoriesWrapper>
+    <InputText
+      adornment={{ icon: Icons.search }}
+      dataCy="input-text"
+      initialValue="Adornment used to render icon"
+      label="Label"
+    />
+    <InputText
+      adornment={{ icon: Icons.close, onClick: action("On Clear") }}
+      dataCy="input-text"
+      initialValue="Adornment is clickable and triggers an action"
+      label="Label"
+    />
+  </StoriesWrapper>
+);
+
+export const WithPlaceholder = () => (
+  <StoriesWrapper>
+    <InputText dataCy="input-text" placeholder="Type something..." label="Label" shrink />
   </StoriesWrapper>
 );
 

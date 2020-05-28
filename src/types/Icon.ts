@@ -1,4 +1,4 @@
-import { BaseType } from "./Base";
+import { LoadableType } from "./Base";
 
 export enum Icons {
   account = "account",
@@ -53,7 +53,7 @@ interface IconForwardedType {
   ref?: any;
 }
 
-export interface IconType extends BaseType {
+export interface IconType extends LoadableType {
   forwarded?: IconForwardedType;
   name: Icons;
   size?: IconSize;

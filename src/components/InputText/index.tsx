@@ -1,12 +1,30 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { createElement, FC, useState, useEffect } from "react";
 import { InputAdornment } from "@material-ui/core";
+import Icon from "../Icon";
 import IconButton from "../IconButton";
 import { BaseIntlType } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
-import { InputTextType, MultilineInputType } from "../../types/InputText";
+import { InputTextType, MultilineInputType, InputAdornmentType } from "../../types/InputText";
 import withIntl from "../../utils/hocs/withIntl";
 import { StyledMUITextField } from "./styled";
 import { Icons, IconSize } from "../../types/Icon";
+
+const getAdornment = (adornment?: InputAdornmentType) => {
+  if (!adornment) {
+    return undefined;
+  }
+
+  const { icon, onClick } = adornment;
+  return (
+    <InputAdornment position="end">
+      {!onClick ? (
+        <Icon name={icon} size={IconSize.small} />
+      ) : (
+        <IconButton icon={icon} onClick={onClick} size={IconSize.small} />
+      )}
+    </InputAdornment>
+  );
+};
 
 const getMultilineProps = (multiline?: MultilineInputType) => {
   return {
@@ -19,6 +37,7 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
  * InputText component made on top of `@material-ui/core/TextField`
  **/
 const InputText: FC<InputTextType> = ({
+  adornment = undefined,
   dataCy,
   disabled = false,
   initialValue = "",
@@ -28,7 +47,7 @@ const InputText: FC<InputTextType> = ({
   onChange = undefined,
   placeholder = undefined,
   required = false,
-  shrink = false,
+  shrink = undefined,
   size = InputSize.default,
   variant = InputVariant.default,
 }) => {
@@ -53,6 +72,7 @@ const InputText: FC<InputTextType> = ({
         "data-cy": dataCy,
       }}
       InputProps={{
+        endAdornment: getAdornment(adornment),
         readOnly: disabled,
       }}
       label={label}

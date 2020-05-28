@@ -17,6 +17,14 @@ export const Canvas = () => (
   <Icon dataCy="icon" name={select("icon", Icons, Icons.add)} size={select("size", IconSize, IconSize.default)} />
 );
 
+export const Loading = () => (
+  <StoriesWrapper>
+    <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.small} />
+    <Icon dataCy="loading-icon" loading name={Icons.send} />
+    <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.large} />
+  </StoriesWrapper>
+);
+
 export const Size = () => (
   <StoriesWrapper>
     <Icon dataCy="icon-send" name={Icons.send} size={IconSize.small} />

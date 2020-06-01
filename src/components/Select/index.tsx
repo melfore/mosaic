@@ -1,10 +1,8 @@
 import React, { Fragment } from "react";
-import { TextField as MUITextField, useTheme } from "@material-ui/core";
+import { TextField as MUITextField } from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
-import Icon from "../Icon";
-import Spacer from "../Spacer";
+import Checkbox from "../Checkbox";
 import Typography from "../Typography";
-import { Icons } from "../../types/Icon";
 import { InputVariant } from "../../types/Input";
 import { SelectType } from "../../types/Select";
 import { suppressEvent } from "../../utils";
@@ -14,7 +12,7 @@ import { StyledMUIListSubheader } from "./styled";
  * Select component made on top of `@material-ui/core/Autocomplete`
  */
 
-const Select = <T extends object>({
+const Select = <T extends any>({
   autoComplete = true,
   customOptionRendering = undefined,
   dataCy = "select",
@@ -23,19 +21,23 @@ const Select = <T extends object>({
   getOptionLabel,
   getOptionSelected = undefined,
   groupBy = undefined,
+  initialValue = null,
   label = undefined,
   loading = false,
   multiple = false,
   onChange,
   options,
-  value = null,
 }: SelectType<T>) => {
+  const defaultValue = options.some((option) => option === initialValue) ? initialValue : null;
+  const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : option.toString());
+
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
+      defaultValue={defaultValue}
       disableCloseOnSelect={false}
       disabled={disabled}
-      getOptionLabel={getOptionLabel}
+      getOptionLabel={getLabel}
       getOptionSelected={(option, value) => {
         if (getOptionSelected) {
           return getOptionSelected(option, value);
@@ -52,8 +54,8 @@ const Select = <T extends object>({
         onChange(value);
       }}
       options={options.sort((one: T, another: T) => {
-        const oneLabel = getOptionLabel(one);
-        const anotherLabel = getOptionLabel(another);
+        const oneLabel = getLabel(one);
+        const anotherLabel = getLabel(another);
         const labelSorting = oneLabel.localeCompare(anotherLabel);
         if (!groupBy) {
           return labelSorting;
@@ -88,19 +90,18 @@ const Select = <T extends object>({
           return customOptionRendering(option, selected);
         }
 
-        const optionLabel = getOptionLabel(option);
+        const optionLabel = getLabel(option);
         return (
           <Fragment key={`option-${optionLabel}`}>
-            <Icon
-              dataCy={`${dataCy}-option option-icon-${optionLabel}`}
-              name={selected ? Icons.checkbox : Icons.checkbox_empty}
+            <Checkbox dataCy={`${dataCy}-option option-checkbox-${optionLabel}`} disabled value={selected} />
+            <Typography
+              bottomSpacing={false}
+              dataCy={`${dataCy}-option option-label-${optionLabel}`}
+              label={optionLabel}
             />
-            <Spacer level={2} />
-            <Typography dataCy={`${dataCy}-option option-label-${optionLabel}`} label={optionLabel} />
           </Fragment>
         );
       }}
-      value={options.some((opt) => opt === value) ? value : null}
     />
   );
 };

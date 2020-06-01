@@ -12,48 +12,86 @@ export default {
   },
 };
 
-type DataType = {
-  name: string;
-  type: "CARS" | "TRUCKS";
-};
-
-const value = { name: "", type: "CARS" };
-
-const options: DataType[] = [
-  { name: "Fiat", type: "CARS" },
-  { name: "Ford", type: "CARS" },
-  { name: "Chevrolet", type: "CARS" },
-  { name: "Opel", type: "CARS" },
-  { name: "Peugeot", type: "CARS" },
-  { name: "Abart", type: "CARS" },
-  { name: "Ferrari", type: "CARS" },
-  { name: "Honda", type: "CARS" },
-  { name: "Suzuki", type: "CARS" },
-  { name: "Mercedes", type: "CARS" },
-  { name: "Iveco", type: "TRUCKS" },
-  { name: "Scania", type: "TRUCKS" },
-  { name: "Opel", type: "TRUCKS" },
-  { name: "Mercedes", type: "TRUCKS" },
-];
-
 export const Canvas = () => (
   <Select
     autoComplete={boolean("autoComplete", true)}
     disabled={boolean("disabled", false)}
-    getGroupLabel={(groupName) => groupName.toLowerCase()}
-    getOptionLabel={(option) => option.name}
-    groupBy={(option) => option.type}
     label={text("label", "Label")}
     loading={boolean("loading", false)}
-    multiple={false}
+    multiple={boolean("multiple", false)}
     onChange={action("On Change")}
-    options={options}
-    value={value}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
 );
 
-// export const OtherStories = () => (
-//   <StoriesWrapper>
-//     <Select />
-//   </StoriesWrapper>
-// );
+export const Basic = () => (
+  <Select
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const Disabled = () => (
+  <Select
+    disabled
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const Multiple = () => (
+  <Select
+    label="Arts & Creativity"
+    multiple
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const Grouped = () => (
+  <Select
+    groupBy={(option) => option.slice(0, 1)}
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const InitialValue = () => (
+  <Select
+    initialValue="Mosaic"
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const Loading = () => (
+  <Select
+    label="Arts & Creativity"
+    loading
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const WithCustomGroupLabel = () => (
+  <Select
+    getGroupLabel={(groupName) => `Letter: ${groupName}`}
+    groupBy={(option) => option.slice(0, 1)}
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const WithCustomOptionRendering = () => (
+  <Select
+    customOptionRendering={(option) => <b>{option.slice(0, 3).toUpperCase()}</b>}
+    label="Arts & Creativity"
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);

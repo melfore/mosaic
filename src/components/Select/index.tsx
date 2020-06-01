@@ -28,13 +28,32 @@ const Select = <T extends any>({
   onChange,
   options,
 }: SelectType<T>) => {
-  const defaultValue = options.some((option) => option === initialValue) ? initialValue : null;
+  const getDefaultValue = () => {
+    const INVALID_INITIAL_VALUE_WARNING = "[@melfore/mosaic] Select: initialValue is invalid, will be ignored!";
+    const valueIsIncluded = (value: T | null) => !!value && options.some((option) => option === value);
+    if (!multiple) {
+      if (Array.isArray(initialValue)) {
+        console.warn(INVALID_INITIAL_VALUE_WARNING);
+        return null;
+      }
+
+      return valueIsIncluded(initialValue) ? initialValue : null;
+    }
+
+    if (!Array.isArray(initialValue)) {
+      console.warn(INVALID_INITIAL_VALUE_WARNING);
+      return [];
+    }
+
+    return initialValue.every(valueIsIncluded) ? initialValue : [];
+  };
+
   const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : option.toString());
 
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
-      defaultValue={defaultValue}
+      defaultValue={getDefaultValue()}
       disableCloseOnSelect={false}
       disabled={disabled}
       getOptionLabel={getLabel}

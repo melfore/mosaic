@@ -38,7 +38,7 @@ describe("Select test suite:", () => {
   });
 
   it("multiple with initial", () => {
-    const component = componentWrapper({ initialValue: ["Mosaic"], multiple: true });
+    const component = componentWrapper({ multiple: true, value: ["Mosaic"] });
     const wrapper = mount(component);
   });
 
@@ -61,12 +61,12 @@ describe("Select test suite:", () => {
   });
 
   it("with initial", () => {
-    const component = componentWrapper({ initialValue: "Mosaic" });
+    const component = componentWrapper({ value: "Mosaic" });
     const wrapper = mount(component);
   });
 
   it("with invalid initial", () => {
-    const component = componentWrapper({ initialValue: ["Mosaic"] });
+    const component = componentWrapper({ value: ["Mosaic"] });
     const wrapper = mount(component);
   });
 });

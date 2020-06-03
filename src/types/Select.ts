@@ -1,17 +1,27 @@
-import { LoadableType } from "./Base";
 import { ReactNode } from "react";
+import { LoadableType } from "./Base";
+import { InputType } from "./Input";
 
-export interface SelectType<T> extends LoadableType {
+interface BaseSelectType<T> extends LoadableType, InputType {
   autoComplete?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;
-  disabled?: boolean;
   getGroupLabel?: (groupName: string) => string;
   getOptionLabel?: (option: T) => string;
   getOptionSelected?: (option: T, value: T) => boolean;
   groupBy?: (option: T) => string;
-  initialValue?: T | T[] | null;
-  label?: string;
-  multiple?: boolean;
-  onChange: (value: T | T[] | null) => void;
   options: T[];
 }
+
+interface SingleSelectType<T> extends BaseSelectType<T> {
+  multiple: false;
+  onChange: (value: T | null) => void;
+  value?: T | null;
+}
+
+interface MultipleSelectType<T> extends BaseSelectType<T> {
+  multiple: true;
+  onChange: (value: T[] | null) => void;
+  value?: T[] | null;
+}
+
+export type SelectType<T> = SingleSelectType<T> | MultipleSelectType<T>;

@@ -3,6 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { boolean, text } from "@storybook/addon-knobs";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Select from ".";
+import { InputSize, InputVariant } from "../../types/Input";
 
 export default {
   title: "Select",
@@ -27,6 +28,7 @@ export const Canvas = () => (
 export const Basic = () => (
   <Select
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
@@ -36,6 +38,7 @@ export const Disabled = () => (
   <Select
     disabled
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
@@ -54,6 +57,7 @@ export const Grouped = () => (
   <Select
     groupBy={(option) => option.slice(0, 1)}
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
@@ -61,10 +65,11 @@ export const Grouped = () => (
 
 export const InitialValue = () => (
   <Select
-    initialValue="Mosaic"
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    value="Mosaic"
   />
 );
 
@@ -72,8 +77,39 @@ export const Loading = () => (
   <Select
     label="Arts & Creativity"
     loading
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
+);
+
+export const Required = () => (
+  <Select
+    label="Arts & Creativity"
+    multiple={false}
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    required
+  />
+);
+
+export const Small = () => (
+  <Select
+    label="Arts & Creativity"
+    multiple={false}
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    size={InputSize.small}
+  />
+);
+
+export const Variant = () => (
+  <Select
+    label="Arts & Creativity"
+    multiple={false}
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    variant={InputVariant.filled}
   />
 );
 
@@ -82,6 +118,7 @@ export const WithCustomGroupLabel = () => (
     getGroupLabel={(groupName) => `Letter: ${groupName}`}
     groupBy={(option) => option.slice(0, 1)}
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
@@ -91,6 +128,7 @@ export const WithCustomOptionRendering = () => (
   <Select
     customOptionRendering={(option) => <b>{option.slice(0, 3).toUpperCase()}</b>}
     label="Arts & Creativity"
+    multiple={false}
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />

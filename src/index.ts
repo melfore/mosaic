@@ -24,6 +24,8 @@ export { default as ListItem } from "./components/ListItem";
 
 export { default as Modal, ModalIntl } from "./components/Modal";
 
+export { default as Select } from "./components/Select";
+
 export { default as Spacer } from "./components/Spacer";
 export { SpacerDirection } from "./types/Spacer";
 

@@ -5,6 +5,7 @@ import Select from ".";
 const defaultProps = {
   autocomplete: true,
   label: "Label",
+  multiple: false,
   onChange: () => {},
   options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
 };
@@ -38,7 +39,7 @@ describe("Select test suite:", () => {
   });
 
   it("multiple with initial", () => {
-    const component = componentWrapper({ initialValue: ["Mosaic"], multiple: true });
+    const component = componentWrapper({ multiple: true, onChange: () => {}, value: ["Mosaic"] });
     const wrapper = mount(component);
   });
 
@@ -60,13 +61,18 @@ describe("Select test suite:", () => {
     const wrapper = mount(component);
   });
 
+  it("with custom popper width", () => {
+    const component = componentWrapper({ popperWidth: 500 });
+    const wrapper = mount(component);
+  });
+
   it("with initial", () => {
-    const component = componentWrapper({ initialValue: "Mosaic" });
+    const component = componentWrapper({ value: "Mosaic" });
     const wrapper = mount(component);
   });
 
   it("with invalid initial", () => {
-    const component = componentWrapper({ initialValue: ["Mosaic"] });
+    const component = componentWrapper({ value: ["Mosaic"] });
     const wrapper = mount(component);
   });
 });

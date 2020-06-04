@@ -62,7 +62,7 @@ describe("Select test suite:", () => {
   });
 
   it("with custom popper width", () => {
-    const component = componentWrapper({ customPopperWidth: "500px" });
+    const component = componentWrapper({ popperWidth: 500 });
     const wrapper = mount(component);
   });
 

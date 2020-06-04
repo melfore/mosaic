@@ -2,6 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 import InputText, { InputTextIntl } from ".";
 import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { Icons } from "../../types/Icon";
 
 const defaultProps = {
   dataCy: "input-text",
@@ -46,6 +47,26 @@ describe("InputText test suite:", () => {
     const input = wrapper.find("input");
     input.simulate("change");
     expect(onChangeHandler).toHaveBeenCalledTimes(1);
+  });
+
+  it("with adornment", () => {
+    const component = componentWrapper({
+      adornment: {
+        icon: Icons.search,
+      },
+    });
+    const wrapper = mount(component);
+  });
+
+  it("with clickable adornment", () => {
+    const onAdornmentClick = jest.fn();
+    const component = componentWrapper({
+      adornment: {
+        icon: Icons.search,
+        onClick: onAdornmentClick,
+      },
+    });
+    const wrapper = mount(component);
   });
 
   it("with intl", () => {

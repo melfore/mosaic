@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Popper, useTheme, PopperProps } from "@material-ui/core";
+import { Popper, PopperProps } from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
@@ -15,7 +15,6 @@ import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
 const Select = <T extends any>({
   autoComplete = true,
   customOptionRendering = undefined,
-  customPopperWidth = undefined,
   dataCy = "select",
   disabled = false,
   getGroupLabel = undefined,
@@ -28,18 +27,13 @@ const Select = <T extends any>({
   onChange,
   options,
   placeholder = undefined,
+  popperWidth = undefined,
   required = false,
   size = InputSize.default,
   type = InputDataType.default,
   value = null,
   variant = InputVariant.default,
 }: SelectType<T>) => {
-  const theme = useTheme();
-  let optionsWidth = `calc(100% - ${theme.spacing(2)}px)`;
-  if (!!customPopperWidth) {
-    optionsWidth = customPopperWidth;
-  }
-
   const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : option.toString());
 
   const isSelected = (option: T, value: T): boolean => {
@@ -89,9 +83,13 @@ const Select = <T extends any>({
         const anotherGroup = groupBy(another);
         return oneGroup.localeCompare(anotherGroup) || labelSorting;
       })}
-      PopperComponent={(props: PopperProps) => (
-        <Popper {...props} placement="bottom-start" style={{ width: optionsWidth }} />
-      )}
+      PopperComponent={(props: PopperProps) => {
+        const { anchorEl } = props;
+        const anchorElRef = anchorEl as any;
+        const anchorElWidth = anchorElRef ? anchorElRef.clientWidth : null;
+        const width = !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
+        return <Popper {...props} placement="bottom-start" style={{ width }} />;
+      }}
       renderGroup={(groupProps) => {
         const { children, group, key } = groupProps;
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;

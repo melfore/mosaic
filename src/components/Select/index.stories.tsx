@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text } from "@storybook/addon-knobs";
+import { boolean, text, number } from "@storybook/addon-knobs";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
 import Select from ".";
 import { InputSize, InputVariant } from "../../types/Input";
@@ -16,13 +16,13 @@ export default {
 export const Canvas = () => (
   <Select
     autoComplete={boolean("autoComplete", true)}
-    customPopperWidth={text("customPopperWidth", "100%")}
     disabled={boolean("disabled", false)}
     label={text("label", "Label")}
     loading={boolean("loading", false)}
     multiple={boolean("multiple", false)}
     onChange={action("On Change")}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    popperWidth={number("popperWidth", 300)}
   />
 );
 

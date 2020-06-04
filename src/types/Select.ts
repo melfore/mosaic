@@ -5,12 +5,12 @@ import { InputType } from "./Input";
 interface BaseSelectType<T> extends LoadableType, InputType {
   autoComplete?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;
-  customPopperWidth?: string;
   getGroupLabel?: (groupName: string) => string;
   getOptionLabel?: (option: T) => string;
   getOptionSelected?: (option: T, value: T) => boolean;
   groupBy?: (option: T) => string;
   options: T[];
+  popperWidth?: number;
 }
 
 type SingleSelectDataType<T> = T | null;

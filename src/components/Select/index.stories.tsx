@@ -16,6 +16,7 @@ export default {
 export const Canvas = () => (
   <Select
     autoComplete={boolean("autoComplete", true)}
+    customPopperWidth={text("customPopperWidth", "100%")}
     disabled={boolean("disabled", false)}
     label={text("label", "Label")}
     loading={boolean("loading", false)}

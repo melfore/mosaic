@@ -5,6 +5,7 @@ import Select from ".";
 const defaultProps = {
   autocomplete: true,
   label: "Label",
+  multiple: false,
   onChange: () => {},
   options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
 };
@@ -38,7 +39,7 @@ describe("Select test suite:", () => {
   });
 
   it("multiple with initial", () => {
-    const component = componentWrapper({ multiple: true, value: ["Mosaic"] });
+    const component = componentWrapper({ multiple: true, onChange: () => {}, value: ["Mosaic"] });
     const wrapper = mount(component);
   });
 
@@ -57,6 +58,11 @@ describe("Select test suite:", () => {
 
   it("with custom option rendering", () => {
     const component = componentWrapper({ customOptionRendering: (option: string) => <b>{option}</b> });
+    const wrapper = mount(component);
+  });
+
+  it("with custom popper width", () => {
+    const component = componentWrapper({ customPopperWidth: "500px" });
     const wrapper = mount(component);
   });
 

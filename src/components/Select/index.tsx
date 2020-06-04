@@ -102,8 +102,16 @@ const Select = <T extends any>({
       }}
       renderInput={(inputProps) => {
         const { inputProps: extInputProps } = inputProps;
-        const forwardedInputProps = { ...inputProps, inputProps: { ...extInputProps, "data-cy": `${dataCy}-select` } };
-        const inputComponent = (
+        if (loading) {
+          return (
+            <MUISkeleton width="100%">
+              <StyledMUITextField {...inputProps} margin="normal" size={size} variant={variant} />
+            </MUISkeleton>
+          );
+        }
+
+        const forwardedInputProps = { ...inputProps, inputProps: { ...extInputProps, "data-cy": `${dataCy}` } };
+        return (
           <StyledMUITextField
             {...forwardedInputProps}
             label={label}
@@ -115,11 +123,6 @@ const Select = <T extends any>({
             variant={variant}
           />
         );
-        if (loading) {
-          return <MUISkeleton width="100%">{inputComponent}</MUISkeleton>;
-        }
-
-        return inputComponent;
       }}
       renderOption={(option, { selected }) => {
         if (customOptionRendering) {
@@ -129,12 +132,8 @@ const Select = <T extends any>({
         const optionLabel = getLabel(option);
         return (
           <Fragment key={`option-${optionLabel}`}>
-            <Checkbox dataCy={`${dataCy}-option option-checkbox-${optionLabel}`} disabled value={selected} />
-            <Typography
-              bottomSpacing={false}
-              dataCy={`${dataCy}-option option-label-${optionLabel}`}
-              label={optionLabel}
-            />
+            <Checkbox dataCy={`${dataCy}-${optionLabel}-checkbox`} disabled value={selected} />
+            <Typography bottomSpacing={false} dataCy={`${dataCy}-${optionLabel}-label`} label={optionLabel} />
           </Fragment>
         );
       }}

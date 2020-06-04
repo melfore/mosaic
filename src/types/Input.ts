@@ -13,6 +13,7 @@ export enum InputDataType {
 export enum InputVariant {
   default = "outlined",
   filled = "filled",
+  underlined = "standard",
 }
 
 export interface InputType extends BaseType {

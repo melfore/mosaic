@@ -27,7 +27,7 @@ const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
 const AppBar: FC<AppBarType> = ({
   actions = [],
   dataCy = "appbar",
-  onNavigationMenuClick = undefined,
+  menu = undefined,
   onTitleClick = undefined,
   title = undefined,
   userMenu = [],
@@ -38,18 +38,17 @@ const AppBar: FC<AppBarType> = ({
     <MUIAppBar position="sticky">
       <StyledMUIToolbar>
         <MUIBox alignItems="center" display="flex">
-          {onNavigationMenuClick && (
+          {menu && (
             <IconButton
               color={Color.inherit}
               dataCy={`${dataCy}-navigation-menu`}
-              icon={Icons.menu}
+              icon={menu.icon}
               onClick={(event) => {
                 suppressEvent(event);
-                onNavigationMenuClick();
+                menu.onClick && menu.onClick();
               }}
             />
           )}
-          {onNavigationMenuClick && title && <Spacer />}
           {title && (
             <TitleWrapper
               onClick={(event) => {

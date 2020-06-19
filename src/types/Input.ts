@@ -8,6 +8,7 @@ export enum InputSize {
 export enum InputDataType {
   default = "text",
   number = "number",
+  password = "password",
 }
 
 export enum InputVariant {

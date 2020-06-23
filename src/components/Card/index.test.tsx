@@ -5,7 +5,7 @@ import Card from ".";
 import { Icons } from "../../types/Icon";
 
 const defaultProps = {
-  content: <Typography label="Card Content" />,
+  children: <Typography label="Card Content" />,
   title: "Card Title",
 };
 
@@ -19,7 +19,7 @@ describe("Card test suite:", () => {
     const cardTitle = cardHeader.find("h2");
     expect(cardTitle.text()).toEqual("Card Title");
     const cardContent = wrapper.find("div.MuiCardContent-root").childAt(0);
-    expect(cardContent.matchesElement(defaultProps.content)).toBeTruthy();
+    expect(cardContent.matchesElement(defaultProps.children)).toBeTruthy();
   });
 
   it("with icon", () => {

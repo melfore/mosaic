@@ -49,6 +49,7 @@ const InputText: FC<InputTextType> = ({
   required = false,
   shrink = undefined,
   size = InputSize.default,
+  type = InputDataType.default,
   variant = InputVariant.default,
 }) => {
   const [value, setValue] = useState(initialValue);
@@ -81,7 +82,7 @@ const InputText: FC<InputTextType> = ({
       placeholder={placeholder}
       required={required}
       size={size}
-      type={InputDataType.default}
+      type={type}
       variant={variant}
       value={value}
       {...getMultilineProps(multiline)}

@@ -25,55 +25,39 @@ export const Canvas = () => (
     collapsible={
       <Typography label="Traditional mosaics are made of small, flat, roughly square pieces of stone or glass of different colors, known as tesserae. Some floor mosaics are made of small rounded pieces of stone and called pebble mosaics. Mosaic skinning (covering objects with mosaic glass) is done with thin enameled glass and opaque stained glass. Modern mosaic art is made from any material in any size ranging from carved stone, bottle caps, and found objects." />
     }
-    content={
-      <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together. Mosaic are used as decoration. Architects use mosaic murals for kitchen backsplash, shower wall and entry floor art. Mosaic Craft items are used as home decor. Cities often decorate public places such as parks with mosaic murals and sculptures." />
-    }
     icon={select("icon", Icons, Icons.add)}
     loading={boolean("loading", false)}
     subtitle={text("subTitle", "Mosaic Card Subtitle")}
     title={text("title", "Mosaic Card")}
-  />
+  >
+    <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together. Mosaic are used as decoration. Architects use mosaic murals for kitchen backsplash, shower wall and entry floor art. Mosaic Craft items are used as home decor. Cities often decorate public places such as parks with mosaic murals and sculptures." />
+  </Card>
 );
 
 export const Basic = () => (
   <StoriesWrapper>
-    <Card
-      content={
-        <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
-      }
-      title="Mosaic"
-    />
+    <Card title="Mosaic">
+      <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
+    </Card>
   </StoriesWrapper>
 );
 
 export const Loading = () => (
   <StoriesWrapper>
-    <Card
-      content={
-        <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
-      }
-      loading
-      title="Mosaic"
-    />
-    <Card
-      content={
-        <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
-      }
-      icon={Icons.add}
-      loading
-      title="Mosaic"
-    />
+    <Card loading title="Mosaic">
+      <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
+    </Card>
+    <Card icon={Icons.add} loading title="Mosaic">
+      <Typography label="A mosaic is an artistic picture or design made out of any materials assembled together." />
+    </Card>
   </StoriesWrapper>
 );
 
 export const WithAvatar = () => (
   <StoriesWrapper>
-    <Card
-      content={<Typography label="Opening hours: 9AM - 6PM" />}
-      icon={Icons.business}
-      subtitle="The best in town for components"
-      title="Mosaic Shop"
-    />
+    <Card icon={Icons.business} subtitle="The best in town for components" title="Mosaic Shop">
+      <Typography label="Opening hours: 9AM - 6PM" />
+    </Card>
   </StoriesWrapper>
 );
 
@@ -81,11 +65,12 @@ export const WithActions = () => (
   <StoriesWrapper>
     <Card
       actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
-      content={<Typography label="Opening hours: 9AM - 6PM" />}
       icon={Icons.business}
       subtitle="The best in town for components"
       title="Mosaic Shop"
-    />
+    >
+      <Typography label="Opening hours: 9AM - 6PM" />
+    </Card>
   </StoriesWrapper>
 );
 
@@ -95,9 +80,10 @@ export const WithCollapsible = () => (
       actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
       collapsible={<Typography label="Discover our catalog!" />}
       icon={Icons.business}
-      content={<Typography label="Opening hours: 9AM - 6PM" />}
       subtitle="The best in town for components"
       title="Mosaic Shop"
-    />
+    >
+      <Typography label="Opening hours: 9AM - 6PM" />
+    </Card>
   </StoriesWrapper>
 );

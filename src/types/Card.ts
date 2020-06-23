@@ -5,7 +5,6 @@ import { ReactElement } from "react";
 export interface CardType extends LoadableType {
   actions?: ReactElement[];
   collapsible?: ReactElement;
-  content: ReactElement;
   icon?: Icons;
   title: string;
   subtitle?: string;

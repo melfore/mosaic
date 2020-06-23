@@ -1,6 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import AppBar from ".";
+import { Icons } from "../../types/Icon";
 
 const defaultProps = {};
 
@@ -16,7 +17,7 @@ describe("AppBar test suite:", () => {
 
   it("with menu", () => {
     const navigationMenuClickHandler = jest.fn();
-    const component = componentWrapper({ onNavigationMenuClick: navigationMenuClickHandler });
+    const component = componentWrapper({ menu: { icon: Icons.menu, onClick: navigationMenuClickHandler } });
     const wrapper = mount(component);
     const menuIcon = wrapper.find("IconButton");
     expect(menuIcon.prop("icon")).toEqual("menu");

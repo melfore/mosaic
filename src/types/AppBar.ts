@@ -13,7 +13,7 @@ interface ActionItem {
 
 export interface AppBarType extends BaseType {
   actions?: ActionItem[];
-  onNavigationMenuClick?: () => void;
+  menu?: ActionItem;
   onTitleClick?: () => void;
   title?: string;
   userMenu?: UserMenuItem[];

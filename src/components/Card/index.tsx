@@ -20,8 +20,8 @@ import {
  */
 const Card: FC<CardType> = ({
   actions = [],
+  children,
   collapsible = undefined,
-  content,
   icon = undefined,
   loading = false,
   title,
@@ -63,7 +63,7 @@ const Card: FC<CardType> = ({
     <StyledMUICard>
       {cardHeader}
       <StyledMUICardContent>
-        {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : content}
+        {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
       </StyledMUICardContent>
       {!loading && (
         <Fragment>

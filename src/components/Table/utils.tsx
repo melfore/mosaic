@@ -75,8 +75,9 @@ export const actionComponentAdapter = (props: any) => {
 };
 
 export const columnAdapter = (column: TableColumnType): MTColumnType<object> => {
-  const { label, path, render } = column;
+  const { label, path, render, width } = column;
   return {
+    ...(!!width && ({ width } as object)),
     field: path,
     render,
     title: label,

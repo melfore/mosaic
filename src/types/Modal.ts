@@ -1,6 +1,12 @@
 import { BaseType } from "./Base";
 import { ButtonVariants } from "./Button";
 
+export enum ModalSize {
+  small = "sm",
+  default = "md",
+  large = "lg",
+}
+
 export interface ModalActionType {
   action?: () => void;
   label?: string;
@@ -22,4 +28,5 @@ export interface ModalType extends BaseType {
   label?: string;
   onClose?: (reason?: string) => void;
   open?: boolean;
+  size?: ModalSize;
 }

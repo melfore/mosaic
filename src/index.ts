@@ -23,6 +23,7 @@ export { default as ListCollapsibleItem } from "./components/ListCollapsibleItem
 export { default as ListItem } from "./components/ListItem";
 
 export { default as Modal, ModalIntl } from "./components/Modal";
+export { ModalSize } from "./types/Modal";
 
 export { default as Select } from "./components/Select";
 

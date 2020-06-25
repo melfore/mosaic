@@ -10,7 +10,7 @@ import IconButton from "../IconButton";
 import Typography from "../Typography";
 import { BaseIntlType } from "../../types/Base";
 import { Icons, IconSize } from "../../types/Icon";
-import { ModalActionType, ModalType } from "../../types/Modal";
+import { ModalActionType, ModalType, ModalSize } from "../../types/Modal";
 import { TypographyVariants } from "../../types/Typography";
 import withIntl from "../../utils/hocs/withIntl";
 
@@ -52,13 +52,14 @@ const Modal: FC<ModalType> = ({
   label = "",
   onClose = undefined,
   open = false,
+  size = ModalSize.default,
 }) => {
   const hasActions = cancel || confirm;
   return (
     <MUIDialog
       aria-labelledby="modal-title"
       fullWidth
-      maxWidth="sm"
+      maxWidth={size}
       onClose={(event, reason) => onCloseWrapper(event, reason, onClose)}
       open={open}
     >

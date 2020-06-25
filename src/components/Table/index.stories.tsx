@@ -134,6 +134,7 @@ export const WithCustomColumnRender = () => (
               <b style={{ marginLeft: "8px" }}>{name}</b>
             </div>
           ),
+          width: "50%",
         },
         { label: "Age", path: "age" },
       ]}

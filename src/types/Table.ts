@@ -21,6 +21,7 @@ export interface TableColumnType {
   label?: string;
   path: string;
   render?: (row: any) => ReactElement;
+  width?: number | string;
 }
 
 export interface TableType extends BaseType {

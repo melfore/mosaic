@@ -98,8 +98,9 @@ const AppBar: FC<AppBarType> = ({
                 open={!!userMenuAnchor}
                 onClose={() => setUserMenuAnchor(null)}
               >
-                {userMenu.map(({ label, onClick }) => (
+                {userMenu.map(({ label, onClick }, index) => (
                   <MUIMenuItem
+                    key={`user-menu-${index}`}
                     onClick={(event) => {
                       suppressEvent(event);
                       setUserMenuAnchor(null);

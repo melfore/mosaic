@@ -41,11 +41,11 @@ export default class CustomDocsPage extends PureComponent {
         <Title />
         <Subtitle />
         <Description />
+        <Primary />
         <CustomDocsBlock {...defaultBlocks["usage"]} />
         {intlSupport && <CustomDocsBlock {...defaultBlocks["intl"]} />}
         {!!notes && <CustomDocsBlock {...notes} />}
         <CustomDocsBlock {...defaultBlocks["canvas"]} />
-        <Primary />
         <Stories />
         <CustomDocsTitle title="Props" />
         <Props />

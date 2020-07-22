@@ -25,7 +25,7 @@ export const DEFAULT_BLOCKS = (component: string) => ({
         <p>
           Import <code>{component}</code> component adding this line to your code:
         </p>
-        <code className={CUSTOM_CODE_BLOCK_CLASS}>{`import { ${component} } from "melfore/mosaic";`}</code>
+        <code className={CUSTOM_CODE_BLOCK_CLASS}>{`import { ${component} } from "@melfore/mosaic";`}</code>
         <p>
           For detailed usage and props settings please refer to the <strong>Canvas</strong>, <strong>Stories</strong> or{" "}
           <strong>Props</strong> sections of this page.

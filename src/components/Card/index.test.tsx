@@ -5,7 +5,7 @@ import Card from ".";
 import { Icons } from "../../types/Icon";
 
 const defaultProps = {
-  children: <Typography label="Card Content" />,
+  children: <Typography children="Card Content" />,
   title: "Card Title",
 };
 
@@ -32,7 +32,7 @@ describe("Card test suite:", () => {
   });
 
   it("with collapsible", () => {
-    const collapsibleContent = <Typography label="Card Collapsible Content" />;
+    const collapsibleContent = <Typography children="Card Collapsible Content" />;
     const component = componentWrapper({ collapsible: collapsibleContent });
     const wrapper = mount(component);
     const cardContents = wrapper.find("div.MuiCardContent-root");

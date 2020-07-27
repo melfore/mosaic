@@ -1,8 +1,8 @@
-import { LoadableType } from "./Base";
+import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
 import { ReactElement } from "react";
 
-export interface CardType extends LoadableType {
+export interface CardType extends ILoadable {
   actions?: ReactElement[];
   collapsible?: ReactElement;
   icon?: Icons;

@@ -8,11 +8,11 @@ import Button, { ButtonIntl } from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { Icons, IconSize } from "../../types/Icon";
 import { ModalActionType, ModalType, ModalSize } from "../../types/Modal";
 import { TypographyVariants } from "../../types/Typography";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUIDialogTitle = styled(MUIDialogTitle)({
   alignItems: "center",
@@ -64,7 +64,9 @@ const Modal: FC<ModalType> = ({
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        <Typography bottomSpacing={false} dataCy="modal-title" label={label} variant={TypographyVariants.title} />
+        <Typography bottomSpacing={false} dataCy="modal-title" variant={TypographyVariants.title}>
+          {label}
+        </Typography>
         {closable && (
           <IconButton
             icon={Icons.close}
@@ -84,6 +86,6 @@ const Modal: FC<ModalType> = ({
   );
 };
 
-export const ModalIntl: FC<ModalType & BaseIntlType> = withIntl(Modal);
+export const ModalIntl: FC<ModalType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(Modal);
 
 export default Modal;

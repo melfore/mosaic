@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { styled } from "@material-ui/core/styles";
 import MUITextField from "@material-ui/core/TextField";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputNumberType } from "../../types/InputNumber";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 
 const StyledMUITextField = styled(MUITextField)({
   width: "100%",
@@ -79,6 +79,6 @@ const InputNumber: FC<InputNumberType> = ({
   );
 };
 
-export const InputNumberIntl: FC<InputNumberType & BaseIntlType> = withIntl(InputNumber);
+export const InputNumberIntl: FC<InputNumberType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(InputNumber);
 
 export default InputNumber;

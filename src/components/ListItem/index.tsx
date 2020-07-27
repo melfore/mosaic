@@ -31,7 +31,9 @@ const ListItem: FC<ListItemType> = ({
           title
         )
       ) : (
-        <Typography bottomSpacing={false} label={title} loading={loading} truncated variant={titleVariant} />
+        <Typography bottomSpacing={false} loading={loading} truncated variant={titleVariant}>
+          {title}
+        </Typography>
       ),
     [loading, title, titleVariant]
   );

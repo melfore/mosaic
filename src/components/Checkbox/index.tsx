@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import MUICheckbox from "@material-ui/core/Checkbox";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { CheckboxType, CheckboxSize } from "../../types/Checkbox";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 
 /**
  * Checkbox component made on top of `@material-ui/core/Checkbox`.
@@ -37,6 +37,6 @@ const Checkbox: FC<CheckboxType> = ({
   );
 };
 
-export const CheckboxIntl: FC<CheckboxType & BaseIntlType> = withIntl(Checkbox);
+export const CheckboxIntl: FC<CheckboxType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(Checkbox);
 
 export default Checkbox;

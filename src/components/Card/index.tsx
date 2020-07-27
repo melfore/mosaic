@@ -39,7 +39,7 @@ const Card: FC<CardType> = ({
         title={
           <Typography
             bottomSpacing={false}
-            label={title}
+            children={title}
             loading={loading}
             truncated
             variant={TypographyVariants.title}
@@ -48,7 +48,7 @@ const Card: FC<CardType> = ({
         subheader={
           <Typography
             bottomSpacing={false}
-            label={subtitle}
+            children={subtitle}
             loading={loading}
             truncated
             variant={TypographyVariants.caption}

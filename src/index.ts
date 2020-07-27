@@ -36,5 +36,5 @@ export { SwitchSize } from "./types/Switch";
 export { default as Table } from "./components/Table";
 export { TableActionPosition } from "./types/Table";
 
-export { default as Typography, TypographyIntl } from "./components/Typography";
+export { default as Typography } from "./components/Typography";
 export { TypographyVariants, TypographyDisplay } from "./types/Typography";

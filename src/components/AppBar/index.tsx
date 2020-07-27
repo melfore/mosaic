@@ -56,12 +56,9 @@ const AppBar: FC<AppBarType> = ({
                 onTitleClick && onTitleClick();
               }}
             >
-              <Typography
-                bottomSpacing={false}
-                dataCy={`${dataCy}-title`}
-                label={title}
-                variant={TypographyVariants.title}
-              />
+              <Typography bottomSpacing={false} dataCy={`${dataCy}-title`} variant={TypographyVariants.title}>
+                {title}
+              </Typography>
             </TitleWrapper>
           )}
         </MUIBox>

@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-import { LoadableType } from "./Base";
+import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
 import { TypographyVariants } from "./Typography";
 
-interface BaseListItemType extends LoadableType {
+interface BaseListItemType extends ILoadable {
   dense?: boolean;
   onClick?: () => void;
   selected?: boolean;

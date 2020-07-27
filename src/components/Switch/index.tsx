@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import MUISwitch from "@material-ui/core/Switch";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 
 import { SwitchType, SwitchSize } from "../../types/Switch";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 
 /**
  * Switch component made on top of `@material-ui/core/Switch`.
@@ -36,6 +36,6 @@ const Switch: FC<SwitchType> = ({
   );
 };
 
-export const SwitchIntl: FC<SwitchType & BaseIntlType> = withIntl(Switch);
+export const SwitchIntl: FC<SwitchType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(Switch);
 
 export default Switch;

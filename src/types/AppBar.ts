@@ -1,4 +1,4 @@
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 import { Icons } from "./Icon";
 
 interface UserMenuItem {
@@ -11,7 +11,7 @@ interface ActionItem {
   onClick: () => void;
 }
 
-export interface AppBarType extends BaseType {
+export interface AppBarType extends IBase {
   actions?: ActionItem[];
   menu?: ActionItem;
   onTitleClick?: () => void;

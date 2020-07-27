@@ -1,4 +1,4 @@
-import { LoadableType } from "./Base";
+import { ILoadable, ILocalizable } from "./Base";
 
 export enum TypographyVariants {
   body = "body1",
@@ -15,9 +15,8 @@ export enum TypographyDisplay {
   inline = "inline",
 }
 
-export interface TypographyType extends LoadableType {
+export interface ITypography extends ILoadable, ILocalizable {
   bottomSpacing?: boolean;
-  label?: string;
   truncated?: boolean;
   variant?: TypographyVariants;
   display?: TypographyDisplay;

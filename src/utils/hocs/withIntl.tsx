@@ -1,8 +1,8 @@
 import React, { ComponentType, FC } from "react";
 import { useIntl } from "react-intl";
-import { BaseType, BaseIntlType } from "../../types/Base";
+import { IBase, DEPRECATED_IBaseIntl } from "../../types/Base";
 
-const withIntl = <T extends BaseType>(Component: ComponentType<T>): FC<T & BaseIntlType> => ({
+const DEPRECATED_withIntl = <T extends IBase>(Component: ComponentType<T>): FC<T & DEPRECATED_IBaseIntl> => ({
   dataCy = "",
   labelId,
   ...props
@@ -12,4 +12,4 @@ const withIntl = <T extends BaseType>(Component: ComponentType<T>): FC<T & BaseI
   return <Component {...(props as T)} dataCy={dataCy || labelId} label={localizedLabel} />;
 };
 
-export default withIntl;
+export default DEPRECATED_withIntl;

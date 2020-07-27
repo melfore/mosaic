@@ -1,4 +1,4 @@
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 import { ButtonVariants } from "./Button";
 
 export enum ModalSize {
@@ -21,7 +21,7 @@ export interface ConfirmModalActionType extends ModalActionType {
   disabled?: boolean;
 }
 
-export interface ModalType extends BaseType {
+export interface ModalType extends IBase {
   cancel?: CancelModalActionType;
   closable?: boolean;
   confirm?: ConfirmModalActionType;

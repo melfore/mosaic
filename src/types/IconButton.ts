@@ -1,8 +1,8 @@
 import { MouseEvent } from "react";
 import { Icons, IconSize } from "./Icon";
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 
-export interface IconButtonType extends BaseType {
+export interface IconButtonType extends IBase {
   icon: Icons;
   onClick: (event: MouseEvent) => void;
   disabled?: boolean;

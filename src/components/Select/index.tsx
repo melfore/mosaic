@@ -133,7 +133,9 @@ const Select = <T extends any>({
         return (
           <Fragment key={`option-${optionLabel}`}>
             <Checkbox dataCy={`${dataCy}-${optionLabel}-checkbox`} disabled value={selected} />
-            <Typography bottomSpacing={false} dataCy={`${dataCy}-${optionLabel}-label`} label={optionLabel} />
+            <Typography bottomSpacing={false} dataCy={`${dataCy}-${optionLabel}-label`}>
+              {optionLabel}
+            </Typography>
           </Fragment>
         );
       }}

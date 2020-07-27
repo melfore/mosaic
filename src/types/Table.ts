@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 import { Icons } from "./Icon";
 
 export enum TableActionPosition {
@@ -24,7 +24,7 @@ export interface TableColumnType {
   width?: number | string;
 }
 
-export interface TableType extends BaseType {
+export interface TableType extends IBase {
   actions?: TableActionType[];
   columns: TableColumnType[];
   loading?: boolean;

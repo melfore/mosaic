@@ -50,7 +50,7 @@ describe("Avatar test suite:", () => {
     const avatar = wrapper.find("div.MuiAvatar-root");
     const text = avatar.find("Typography");
     expect(text).toHaveLength(1);
-    expect(text.prop("label")).toEqual("MO");
+    expect(text.prop("children")).toEqual("MO");
   });
 
   it("with custom variant", () => {

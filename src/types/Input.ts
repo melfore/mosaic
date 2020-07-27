@@ -1,4 +1,4 @@
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 
 export enum InputSize {
   default = "medium",
@@ -17,7 +17,7 @@ export enum InputVariant {
   underlined = "standard",
 }
 
-export interface InputType extends BaseType {
+export interface InputType extends IBase {
   disabled?: boolean;
   label?: string;
   onChange?: Function;

@@ -59,7 +59,7 @@ export const Open = () => (
   <StoriesWrapper>
     <ListCollapsibleItem open selected title="Basic List Item">
       <div style={{ border: "1px solid #ccc", padding: "16px" }}>
-        <Typography label="Collapsible content is now expanded" />
+        <Typography children="Collapsible content is now expanded" />
       </div>
     </ListCollapsibleItem>
   </StoriesWrapper>

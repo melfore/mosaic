@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import MUIButton from "@material-ui/core/Button";
 import Icon from "../Icon";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { ButtonIconPosition, ButtonIconType, ButtonType, ButtonVariants } from "../../types/Button";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 
 const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
   const icons = { endIcon: undefined, startIcon: undefined };
@@ -53,6 +53,6 @@ const Button: FC<ButtonType> = ({
   );
 };
 
-export const ButtonIntl: FC<ButtonType & BaseIntlType> = withIntl(Button);
+export const ButtonIntl: FC<ButtonType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(Button);
 
 export default Button;

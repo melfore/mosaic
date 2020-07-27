@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import { BaseType } from "./Base";
+import { IBase } from "./Base";
 import { Icons } from "./Icon";
 
 export enum ButtonIconPosition {
@@ -17,7 +17,7 @@ export enum ButtonVariants {
   outlined = "outlined",
 }
 
-export interface ButtonType extends BaseType {
+export interface ButtonType extends IBase {
   elevated?: boolean;
   icon?: ButtonIconType;
   label?: string;

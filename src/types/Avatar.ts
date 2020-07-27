@@ -1,4 +1,4 @@
-import { LoadableType } from "./Base";
+import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
 
 export enum AvatarVariant {
@@ -7,7 +7,7 @@ export enum AvatarVariant {
   squared = "square",
 }
 
-export interface AvatarType extends LoadableType {
+export interface AvatarType extends ILoadable {
   alt?: string;
   icon?: Icons;
   src?: string;

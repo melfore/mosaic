@@ -2,10 +2,10 @@ import React, { createElement, FC, useState, useEffect } from "react";
 import { InputAdornment } from "@material-ui/core";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { BaseIntlType } from "../../types/Base";
+import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputTextType, MultilineInputType, InputAdornmentType } from "../../types/InputText";
-import withIntl from "../../utils/hocs/withIntl";
+import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 import { StyledMUITextField } from "./styled";
 import { Icons, IconSize } from "../../types/Icon";
 
@@ -90,6 +90,6 @@ const InputText: FC<InputTextType> = ({
   );
 };
 
-export const InputTextIntl: FC<InputTextType & BaseIntlType> = withIntl(InputText);
+export const InputTextIntl: FC<InputTextType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(InputText);
 
 export default InputText;

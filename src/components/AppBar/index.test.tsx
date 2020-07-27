@@ -30,6 +30,6 @@ describe("AppBar test suite:", () => {
     const component = componentWrapper({ title: "App" });
     const wrapper = mount(component);
     const title = wrapper.find("Typography");
-    expect(title.prop("label")).toEqual("App");
+    expect(title.prop("children")).toEqual("App");
   });
 });

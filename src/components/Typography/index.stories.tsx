@@ -45,12 +45,10 @@ allVariantsKeys.forEach((key, index) => (allVariants[key] = allVariantsValues[in
 const getVariant = (variantKey: string) => allVariantsValues.find((vv) => vv === allVariants[variantKey]);
 const allVariantsJsx = allVariantsKeys.map((variantKey) => (
   <div className="typography-wrapper">
-    <Typography children={`${variantKey}`} variant={TypographyVariants.overline} />
-    <Typography
-      dataCy={`typography-${variantKey}`}
-      children={`This is an example text`}
-      variant={getVariant(variantKey)}
-    />
+    <Typography variant={TypographyVariants.overline}>{variantKey}</Typography>
+    <Typography dataCy={`typography-${variantKey}`} variant={getVariant(variantKey)}>
+      This is an example text
+    </Typography>
   </div>
 ));
 
@@ -60,10 +58,10 @@ export const Truncated = () => (
   <StoriesWrapper>
     <div className="typography-wrapper">
       <div style={{ width: "50%" }}>
-        <Typography children="Trucates with respect to parent width (resize window to make it happen)" truncated />
+        <Typography truncated>Trucates with respect to parent width (resize window to make it happen)</Typography>
       </div>
       <div style={{ width: "200px" }}>
-        <Typography children="Truncated all chars after 200px" truncated />
+        <Typography truncated>Truncated all chars after 200px</Typography>
       </div>
     </div>
   </StoriesWrapper>
@@ -72,9 +70,9 @@ export const Truncated = () => (
 export const WithBottomSpacing = () => (
   <StoriesWrapper>
     <div className="typography-wrapper">
-      <Typography children="Some text without bottom spacing" />
-      <Typography bottomSpacing children="Some text with bottom spacing" />
-      <Typography children="Other text" />
+      <Typography>Some text without bottom spacing</Typography>
+      <Typography bottomSpacing>Some text with bottom spacing</Typography>
+      <Typography>Other text</Typography>
     </div>
   </StoriesWrapper>
 );
@@ -82,10 +80,16 @@ export const WithBottomSpacing = () => (
 export const Inline = () => (
   <StoriesWrapper>
     <div>
-      <Typography children="Body " display={TypographyDisplay.inline} />
-      <Typography children="caption " variant={TypographyVariants.caption} display={TypographyDisplay.inline} />
-      <Typography children="label " variant={TypographyVariants.label} display={TypographyDisplay.inline} />
-      <Typography children="overline " variant={TypographyVariants.overline} display={TypographyDisplay.inline} />
+      <Typography display={TypographyDisplay.inline}>Body&nbsp;</Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.caption}>
+        caption&nbsp;
+      </Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.label}>
+        label&nbsp;
+      </Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.overline}>
+        overline
+      </Typography>
     </div>
   </StoriesWrapper>
 );
@@ -98,11 +102,11 @@ export const Loading = () => (
   </StoriesWrapper>
 );
 
-export const WithIntl = () => (
+export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
   <StoriesWrapper>
     <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Typography children={MessageMock.typography} localized />
+      <Typography localized>{MessageMock.typography}</Typography>
     </IntlProviderMock>
   </StoriesWrapper>
 );

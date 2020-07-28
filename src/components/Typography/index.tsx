@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { Typography as MUITypography } from "@material-ui/core";
 import { ITypography, TypographyVariants, TypographyDisplay } from "../../types/Typography";
-import localized from "../../utils/hocs/localized";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 const VARIANT_COMPONENT_MAP = {
   body1: "p",
@@ -13,7 +13,9 @@ const VARIANT_COMPONENT_MAP = {
   subtitle1: "h3",
 };
 
-const DATA_CY_DEFAULT = "typography";
+export const DATA_CY_DEFAULT = "typography";
+export const DATA_CY_SHORTCUT = "children";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "children", type: "string" }];
 
 /**
  * Typography component made on top of `@material-ui/core/Typography`.
@@ -42,6 +44,6 @@ const Typography: FC<ITypography> = ({
 };
 
 export default localized(Typography, {
-  dataCyShortcut: "children",
-  localizableProps: [{ name: "children", type: "string" }],
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
 });

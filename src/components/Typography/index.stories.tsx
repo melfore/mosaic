@@ -3,7 +3,7 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import Typography from ".";
+import Typography, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 export default {
   title: "Typography",

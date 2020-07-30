@@ -43,6 +43,8 @@ const Typography: FC<ITypography> = ({
   );
 };
 
+export const TypographyWithProps = Typography;
+
 export default localized(Typography, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,

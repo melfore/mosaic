@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, number } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Select from ".";
 import { InputSize, InputVariant } from "../../types/Input";
 

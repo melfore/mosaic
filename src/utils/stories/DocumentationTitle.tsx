@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { CUSTOM_TITLES_CLASS } from "./utils";
+import { DOCUMENTATION_TITLE_CLASS } from ".";
 
 interface IDocumentationTitle {
   text: string;
@@ -7,7 +7,11 @@ interface IDocumentationTitle {
 }
 
 const DocumentationTitle: FC<IDocumentationTitle> = ({ subtitle = false, text }) => {
-  return subtitle ? <h3 className={CUSTOM_TITLES_CLASS}>{text}</h3> : <h2 className={CUSTOM_TITLES_CLASS}>{text}</h2>;
+  return subtitle ? (
+    <h3 className={DOCUMENTATION_TITLE_CLASS}>{text}</h3>
+  ) : (
+    <h2 className={DOCUMENTATION_TITLE_CLASS}>{text}</h2>
+  );
 };
 
 export default DocumentationTitle;

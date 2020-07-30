@@ -2,7 +2,8 @@ import React from "react";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
 import Typography, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
 
 export default {

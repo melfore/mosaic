@@ -1,8 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select } from "@storybook/addon-knobs";
-import {} from "../../types/AppBar";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { text } from "@storybook/addon-knobs";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import AppBar from ".";
 import { Icons } from "../../types/Icon";
 

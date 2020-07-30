@@ -8,7 +8,7 @@ export { ButtonIconPosition, ButtonVariants } from "./types/Button";
 
 export { default as Card } from "./components/Card";
 
-export { default as Checkbox, CheckboxIntl } from "./components/Checkbox";
+export { default as Checkbox } from "./components/Checkbox";
 export { CheckboxSize } from "./types/Checkbox";
 
 export { default as Icon } from "./components/Icon";

@@ -3,7 +3,8 @@ import { action } from "@storybook/addon-actions";
 import { boolean, text, object, select } from "@storybook/addon-knobs";
 import { InputSize, InputVariant, InputDataType } from "../../types/Input";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import InputText, { InputTextIntl } from ".";
 import { Icons } from "../../types/Icon";
 

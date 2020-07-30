@@ -4,7 +4,8 @@ import { boolean, select, number, text } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
 import FormMock from "../../utils/mocks/FormMock";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import InputNumber, { InputNumberIntl } from ".";
 
 export default {

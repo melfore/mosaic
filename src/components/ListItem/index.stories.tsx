@@ -3,7 +3,8 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { Icons } from "../../types/Icon";
 import { TypographyVariants } from "../../types/Typography";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import ListItem from ".";
 
 export default {

@@ -17,9 +17,6 @@ export const DATA_CY_DEFAULT = "typography";
 export const DATA_CY_SHORTCUT = "children";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "children", type: "string" }];
 
-/**
- * Typography component made on top of `@material-ui/core/Typography`.
- */
 const Typography: FC<ITypography> = ({
   bottomSpacing = false,
   children,

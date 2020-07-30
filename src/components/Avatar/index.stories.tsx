@@ -2,7 +2,8 @@ import React from "react";
 import { select, text, boolean } from "@storybook/addon-knobs";
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Avatar from ".";
 
 export default {

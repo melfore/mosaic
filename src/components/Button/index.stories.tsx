@@ -4,7 +4,8 @@ import { boolean, object, select, text } from "@storybook/addon-knobs";
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Button, { ButtonIntl } from ".";
 
 export default {

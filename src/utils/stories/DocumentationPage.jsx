@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Primary, Props, Stories, Title } from "@storybook/addon-docs/blocks";
 import DocumentationTitle from "./DocumentationTitle";
-import { DOCS_PAGE_STYLE, CUSTOM_BODY_CLASS, CUSTOM_CODE_BLOCK_CLASS } from "./utils";
+import { DOCS_PAGE_STYLE, DOCUMENTATION_BODY_CLASS, DOCUMENTATION_CODE_BLOCK_CLASS } from "./index";
 
 export default class DocumentationPage extends PureComponent {
   static propTypes = {
@@ -29,7 +29,7 @@ export default class DocumentationPage extends PureComponent {
   render() {
     const { basedOn, component, e2eTestInfo, localizableProps } = this.props;
     return (
-      <div className={CUSTOM_BODY_CLASS}>
+      <div className={DOCUMENTATION_BODY_CLASS}>
         <style
           dangerouslySetInnerHTML={{
             __html: DOCS_PAGE_STYLE,
@@ -51,7 +51,7 @@ export default class DocumentationPage extends PureComponent {
           Import <code>{component}</code> component adding this line to your code:
         </p>
         <p>
-          <code className={CUSTOM_CODE_BLOCK_CLASS}>{`import { ${component} } from "@melfore/mosaic";`}</code>
+          <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`import { ${component} } from "@melfore/mosaic";`}</code>
         </p>
         <p>
           In the <b>Canvas</b> above you have a working example of the component. Discover all its props by clicking the{" "}

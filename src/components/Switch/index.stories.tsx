@@ -1,7 +1,8 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Switch from ".";
 import { SwitchSize } from "../../types/Switch";
 import FormMock from "../../utils/mocks/FormMock";

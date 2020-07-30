@@ -1,8 +1,9 @@
 import React, { Fragment, PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Description, Primary, Props, Stories, Subtitle, Title } from "@storybook/addon-docs/blocks";
-import { CustomDocsBlock, CustomDocsTitle } from "./CustomDocsBlocks";
-import { DEFAULT_BLOCKS, DOCS_PAGE_STYLE, MISSING_COMPONENT_NAME_ERROR } from "./utils";
+import { DOCS_PAGE_STYLE } from ".";
+import { CustomDocsBlock, CustomDocsTitle } from "./DEPRECATED_CustomDocsBlocks";
+import { DEFAULT_BLOCKS, MISSING_COMPONENT_NAME_ERROR } from "./DEPRECATED_utils";
 
 export default class CustomDocsPage extends PureComponent {
   static propTypes = {

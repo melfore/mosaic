@@ -2,7 +2,8 @@ import React from "react";
 import {} from "@storybook/addon-actions";
 import { select } from "@storybook/addon-knobs";
 import { Icons, IconSize } from "../../types/Icon";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Icon from ".";
 
 export default {

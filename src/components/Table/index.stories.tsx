@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, number } from "@storybook/addon-knobs";
 import { TableActionPosition } from "../../types/Table";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import { CUSTOM_CODE_BLOCK_CLASS } from "../../utils/stories/utils";
+import { DOCUMENTATION_CODE_BLOCK_CLASS, StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Table from ".";
 import { Icons } from "../../types/Icon";
 
@@ -23,7 +23,7 @@ export default {
           <p>
             <b>Pagination:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
+            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
               {`page: number (default is 0)
                 pageSize: number (default is 10)
                 onPageChange={(page: number) => {}}
@@ -34,22 +34,22 @@ export default {
           <p>
             <b>Row click:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
+            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
           </p>
           <p>
             <b>Search:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
+            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
           </p>
           <p>
             <b>Selection:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
+            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
           </p>
           <p>
             <b>Sorting:</b>
             <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
+            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
               {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
             </code>
           </p>

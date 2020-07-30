@@ -1,7 +1,7 @@
 import React from "react";
-import {} from "@storybook/addon-actions";
 import { select, number } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
 import Spacer from ".";
 import { SpacerDirection } from "../../types/Spacer";
 

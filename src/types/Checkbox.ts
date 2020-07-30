@@ -5,11 +5,11 @@ export enum CheckboxSize {
   default = "medium",
 }
 
-export interface CheckboxType extends IBase {
-  value?: boolean;
+export interface ICheckbox extends IBase {
+  disabled?: boolean;
+  intermediate?: boolean;
   onChange?: (checked: boolean) => any | void;
   required?: boolean;
   size?: CheckboxSize;
-  disabled?: boolean;
-  intermediate?: boolean;
+  value?: boolean;
 }

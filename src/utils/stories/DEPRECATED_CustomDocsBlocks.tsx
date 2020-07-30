@@ -1,5 +1,5 @@
 import React, { FC, Fragment, ReactElement } from "react";
-import { CUSTOM_BODY_CLASS, CUSTOM_TITLES_CLASS } from "./utils";
+import { DOCUMENTATION_BODY_CLASS, DOCUMENTATION_TITLE_CLASS } from "./index";
 
 interface CustomDocsTitleType {
   title: string;
@@ -7,7 +7,11 @@ interface CustomDocsTitleType {
 }
 
 export const CustomDocsTitle: FC<CustomDocsTitleType> = ({ subtitle = false, title }) => {
-  return subtitle ? <h3 className={CUSTOM_TITLES_CLASS}>{title}</h3> : <h2 className={CUSTOM_TITLES_CLASS}>{title}</h2>;
+  return subtitle ? (
+    <h3 className={DOCUMENTATION_TITLE_CLASS}>{title}</h3>
+  ) : (
+    <h2 className={DOCUMENTATION_TITLE_CLASS}>{title}</h2>
+  );
 };
 
 interface CustomDocsBlockType {
@@ -20,7 +24,7 @@ export const CustomDocsBlock: FC<CustomDocsBlockType> = ({ body, subtitle, title
   return (
     <Fragment>
       <CustomDocsTitle subtitle={subtitle} title={title} />
-      <div className={CUSTOM_BODY_CLASS}>{body}</div>
+      <div className={DOCUMENTATION_BODY_CLASS}>{body}</div>
     </Fragment>
   );
 };

@@ -3,11 +3,11 @@ import { select, text, boolean } from "@storybook/addon-knobs";
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
-import Avatar, { DATA_CY_DEFAULT } from ".";
+import Avatar, { AvatarWithProps, DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Avatar",
-  component: Avatar,
+  component: AvatarWithProps,
   parameters: {
     ...getDocumentationPage({
       basedOn: "@material-ui/core/Avatar",
@@ -37,15 +37,15 @@ export const Icon = () => (
   </StoriesWrapper>
 );
 
-export const Loading = () => (
-  <StoriesWrapper>
-    <Avatar loading />
-  </StoriesWrapper>
-);
-
 export const Image = () => (
   <StoriesWrapper>
     <Avatar src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg" />
+  </StoriesWrapper>
+);
+
+export const Loading = () => (
+  <StoriesWrapper>
+    <Avatar loading />
   </StoriesWrapper>
 );
 

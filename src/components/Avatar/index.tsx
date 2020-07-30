@@ -7,13 +7,14 @@ import { StyledMUIAvatar } from "./styled";
 
 export const DATA_CY_DEFAULT = "avatar";
 
+// TODO: remove undefined from defaults and WithProps export
 const Avatar: FC<IAvatar> = ({
   alt = "avatar",
   dataCy = DATA_CY_DEFAULT,
-  icon,
+  icon = undefined,
   loading = false,
-  src,
-  text,
+  src = undefined,
+  text = undefined,
   variant = AvatarVariant.default,
 }) => {
   if (loading) {
@@ -25,11 +26,14 @@ const Avatar: FC<IAvatar> = ({
   }
 
   return (
-    <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src || undefined} variant={variant}>
+    <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src} variant={variant}>
       {icon && <Icon name={icon} />}
       {!icon && text && <Typography>{text}</Typography>}
     </StyledMUIAvatar>
   );
 };
+
+// TODO: remove undefined from defaults and WithProps export
+export const AvatarWithProps = Avatar;
 
 export default memo(Avatar);

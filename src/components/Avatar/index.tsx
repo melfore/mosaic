@@ -7,7 +7,6 @@ import { StyledMUIAvatar } from "./styled";
 
 export const DATA_CY_DEFAULT = "avatar";
 
-// TODO: remove undefined from defaults and WithProps export
 const Avatar: FC<IAvatar> = ({
   alt = "avatar",
   dataCy = DATA_CY_DEFAULT,
@@ -33,7 +32,6 @@ const Avatar: FC<IAvatar> = ({
   );
 };
 
-// TODO: remove undefined from defaults and WithProps export
 export const AvatarWithProps = Avatar;
 
 export default memo(Avatar);

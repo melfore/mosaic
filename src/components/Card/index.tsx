@@ -1,7 +1,7 @@
 import React, { cloneElement, FC, Fragment, useState, useMemo } from "react";
 import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { CardType } from "../../types/Card";
+import { ICard } from "../../types/Card";
 import { Icons } from "../../types/Icon";
 import { TypographyVariants } from "../../types/Typography";
 import Avatar from "../Avatar";
@@ -14,18 +14,25 @@ import {
   StyledMUICardContent,
   StyledMUICardHeader,
 } from "./styled";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
-/**
- * Card component made on top of `@material-ui/core/Card`
- */
-const Card: FC<CardType> = ({
+export const DATA_CY_DEFAULT = "card";
+export const DATA_CY_SHORTCUT = "title";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "title", type: "string" },
+  { name: "subtitle", type: "string" },
+];
+
+const Card: FC<ICard> = ({
   actions = [],
   children,
   collapsible = undefined,
+  dataCy = DATA_CY_DEFAULT,
   icon = undefined,
   loading = false,
-  title,
+  localized,
   subtitle = undefined,
+  title,
   unmountCollapsible = false,
 }) => {
   const [expanded, setExpanded] = useState(false);
@@ -39,20 +46,18 @@ const Card: FC<CardType> = ({
         title={
           <Typography
             bottomSpacing={false}
-            children={title}
             loading={loading}
+            localized={localized}
             truncated
             variant={TypographyVariants.title}
-          />
+          >
+            {title}
+          </Typography>
         }
         subheader={
-          <Typography
-            bottomSpacing={false}
-            children={subtitle}
-            loading={loading}
-            truncated
-            variant={TypographyVariants.caption}
-          />
+          <Typography bottomSpacing={false} loading={loading} truncated variant={TypographyVariants.caption}>
+            {subtitle}
+          </Typography>
         }
       />
     ),
@@ -88,4 +93,9 @@ const Card: FC<CardType> = ({
   );
 };
 
-export default Card;
+export const CardWithProps = Card;
+
+export default localized(Card, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

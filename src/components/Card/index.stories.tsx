@@ -2,18 +2,25 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, select, boolean } from "@storybook/addon-knobs";
 import { Icons } from "../../types/Icon";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
+import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-import Card from ".";
+import Card, { CardWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 export default {
   title: "Card",
-  component: Card,
+  component: CardWithProps,
   parameters: {
-    ...getDocsPageStructure("Card", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Card",
+      component: "Card",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
+    }),
   },
 };
 

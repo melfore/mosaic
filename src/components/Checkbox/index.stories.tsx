@@ -36,8 +36,6 @@ export const Canvas = () => (
   </FormMock>
 );
 
-// TODO: clean stories
-
 export const Disabled = () => (
   <StoriesWrapper>
     <Checkbox dataCy={"checkbox"} value={false} disabled />

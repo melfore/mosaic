@@ -14,7 +14,6 @@ export default {
       component: "Avatar",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
-        usesClass: true,
       },
     }),
   },

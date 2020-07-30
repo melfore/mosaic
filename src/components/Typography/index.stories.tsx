@@ -16,7 +16,6 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
-        usesClass: true,
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

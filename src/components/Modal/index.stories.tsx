@@ -137,7 +137,7 @@ export const WithIntl = () => (
         <ModalIntl
           cancel={{ labelId: MessageMock.modalCancel, variant: ButtonVariants.outlined }}
           confirm={{ labelId: MessageMock.modalConfirm }}
-          labelId={MessageMock.modalTitle}
+          labelId={MessageMock.title}
         >
           <span>Useful to give another way of dismissal to final user without having actions in modal footer.</span>
         </ModalIntl>

@@ -28,7 +28,7 @@ const Typography: FC<ITypography> = ({
 }) => {
   return (
     <MUITypography
-      className={`data-cy-${dataCy}${loading ? "-loading" : ""}`}
+      data-cy={`${dataCy}${loading ? "-loading" : ""}`}
       display={display}
       gutterBottom={bottomSpacing}
       noWrap={truncated}

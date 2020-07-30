@@ -36,12 +36,7 @@ const localized = <T extends ILocalizable>(Component: ComponentType<T>, options:
   const localizedProps = { ...props } as any;
   localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
 
-  const propsToLocalize =
-    typeof localized === "boolean"
-      ? localizableProps
-      : localizableProps.filter(({ name: propName }) => localized.includes(propName));
-
-  propsToLocalize.forEach(({ name, type }) => {
+  localizableProps.forEach(({ name, type }) => {
     switch (type) {
       case "string":
       default:

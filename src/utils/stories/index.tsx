@@ -73,7 +73,6 @@ interface IDocumentationPage {
   e2eTestInfo: {
     dataCyDefault: string;
     dataCyShortcut?: string;
-    usesClass?: boolean;
   };
   localizableProps?: ILocalizableProperty[];
 }

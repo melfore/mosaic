@@ -25,7 +25,7 @@ const Avatar: FC<IAvatar> = ({
   }
 
   return (
-    <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src} variant={variant}>
+    <StyledMUIAvatar alt={text || alt} data-cy={dataCy} src={src} variant={variant}>
       {icon && <Icon name={icon} />}
       {!icon && text && <Typography>{text}</Typography>}
     </StyledMUIAvatar>

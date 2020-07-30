@@ -15,6 +15,7 @@ import {
   StyledMUICardHeader,
 } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import { getDataCyForSubComponent } from "../../utils";
 
 export const DATA_CY_DEFAULT = "card";
 export const DATA_CY_SHORTCUT = "title";
@@ -41,11 +42,20 @@ const Card: FC<ICard> = ({
   const cardHeader = useMemo(
     () => (
       <StyledMUICardHeader
-        avatar={icon && <Avatar icon={icon} loading={loading} />}
+        avatar={
+          icon && (
+            <Avatar
+              dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "avatar")}
+              icon={icon}
+              loading={loading}
+            />
+          )
+        }
         disableTypography
         title={
           <Typography
             bottomSpacing={false}
+            dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "title")}
             loading={loading}
             localized={localized}
             truncated
@@ -55,7 +65,14 @@ const Card: FC<ICard> = ({
           </Typography>
         }
         subheader={
-          <Typography bottomSpacing={false} loading={loading} truncated variant={TypographyVariants.caption}>
+          <Typography
+            bottomSpacing={false}
+            dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "subtitle")}
+            loading={loading}
+            localized={localized}
+            truncated
+            variant={TypographyVariants.caption}
+          >
             {subtitle}
           </Typography>
         }
@@ -65,9 +82,9 @@ const Card: FC<ICard> = ({
   );
 
   return (
-    <StyledMUICard>
+    <StyledMUICard data-cy={dataCy}>
       {cardHeader}
-      <StyledMUICardContent>
+      <StyledMUICardContent data-cy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "content")}>
         {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
       </StyledMUICardContent>
       {!loading && (
@@ -79,12 +96,18 @@ const Card: FC<ICard> = ({
               </ActionsWrapper>
             )}
             {collapsible && (
-              <IconButton icon={expanded ? Icons.up : Icons.down} onClick={() => setExpanded(!expanded)} />
+              <IconButton
+                dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "collapse")}
+                icon={expanded ? Icons.up : Icons.down}
+                onClick={() => setExpanded(!expanded)}
+              />
             )}
           </StyledMUICardActions>
           {collapsible && (
             <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
-              <StyledMUICardContent>{collapsible}</StyledMUICardContent>
+              <StyledMUICardContent data-cy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "collapsible-content")}>
+                {collapsible}
+              </StyledMUICardContent>
             </MUICollapse>
           )}
         </Fragment>

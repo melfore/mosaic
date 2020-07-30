@@ -11,7 +11,6 @@ export default class DocumentationPage extends PureComponent {
     e2eTestInfo: PropTypes.shape({
       dataCyDefault: PropTypes.string.isRequired,
       dataCyShortcut: PropTypes.string,
-      usesClass: PropTypes.bool,
     }),
     localizableProps: PropTypes.arrayOf(PropTypes.string),
   };
@@ -82,7 +81,6 @@ export default class DocumentationPage extends PureComponent {
             <ul>
               <li>Default data-cy: {e2eTestInfo.dataCyDefault}</li>
               {localizableProps && <li>Shortcut data-cy: {e2eTestInfo.dataCyShortcut}</li>}
-              <li>Uses class: {e2eTestInfo.usesClass ? "yes" : "no"}</li>
             </ul>
           </Fragment>
         )}

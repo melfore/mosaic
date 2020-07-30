@@ -1,20 +1,19 @@
 import React, { FC, memo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { AvatarType, AvatarVariant } from "../../types/Avatar";
+import { IAvatar, AvatarVariant } from "../../types/Avatar";
 import Icon from "../Icon";
 import Typography from "../Typography";
 import { StyledMUIAvatar } from "./styled";
 
-/**
- * Avatar component made on top of `@material-ui/core/Avatar`
- */
-const Avatar: FC<AvatarType> = ({
+export const DATA_CY_DEFAULT = "avatar";
+
+const Avatar: FC<IAvatar> = ({
   alt = "avatar",
-  dataCy = "avatar",
-  icon = undefined,
+  dataCy = DATA_CY_DEFAULT,
+  icon,
   loading = false,
-  src = undefined,
-  text = undefined,
+  src,
+  text,
   variant = AvatarVariant.default,
 }) => {
   if (loading) {

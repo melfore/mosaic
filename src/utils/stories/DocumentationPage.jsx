@@ -81,7 +81,7 @@ export default class DocumentationPage extends PureComponent {
             <p>Useful info:</p>
             <ul>
               <li>Default data-cy: {e2eTestInfo.dataCyDefault}</li>
-              <li>Shortcut data-cy: {e2eTestInfo.dataCyShortcut}</li>
+              {localizableProps && <li>Shortcut data-cy: {e2eTestInfo.dataCyShortcut}</li>}
               <li>Uses class: {e2eTestInfo.usesClass ? "yes" : "no"}</li>
             </ul>
           </Fragment>

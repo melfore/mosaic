@@ -2,15 +2,21 @@ import React from "react";
 import { select, text, boolean } from "@storybook/addon-knobs";
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import Avatar from ".";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import Avatar, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Avatar",
   component: Avatar,
   parameters: {
-    ...getDocsPageStructure("Avatar", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Avatar",
+      component: "Avatar",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        usesClass: true,
+      },
+    }),
   },
 };
 

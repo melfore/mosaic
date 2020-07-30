@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import MUICheckbox from "@material-ui/core/Checkbox";
 import { ICheckbox, CheckboxSize } from "../../types/Checkbox";
 
@@ -14,12 +14,13 @@ const Checkbox: FC<ICheckbox> = ({
   size = CheckboxSize.default,
   value = false,
 }) => {
-  const onChangeHandler = (event: any) => {
-    const value = event.target.checked;
-    if (onChange) {
-      onChange(value);
+  const onChangeHandler = useCallback((event: any, checked: boolean) => {
+    if (!onChange) {
+      return;
     }
-  };
+
+    onChange(checked);
+  }, []);
 
   return (
     <MUICheckbox

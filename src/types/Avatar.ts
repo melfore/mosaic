@@ -7,7 +7,7 @@ export enum AvatarVariant {
   squared = "square",
 }
 
-export interface AvatarType extends ILoadable {
+export interface IAvatar extends ILoadable {
   alt?: string;
   icon?: Icons;
   src?: string;

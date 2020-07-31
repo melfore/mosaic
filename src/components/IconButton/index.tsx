@@ -16,7 +16,7 @@ const IconButton: FC<IIconButton> = ({
   size = IconSize.default,
 }) => {
   return (
-    <MUIIconButton color={Color.primary} data-cy={dataCy} disabled={disabled} onClick={onClick}>
+    <MUIIconButton color={Color.inherit} data-cy={dataCy} disabled={disabled} onClick={onClick}>
       <Icon dataCy={`${dataCy}-icon`} name={icon} size={size} />
     </MUIIconButton>
   );

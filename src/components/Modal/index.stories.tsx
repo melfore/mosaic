@@ -3,16 +3,23 @@ import { action } from "@storybook/addon-actions";
 import { text, object, boolean, select } from "@storybook/addon-knobs";
 import { ButtonVariants } from "../../types/Button";
 import ModalMock from "../../utils/mocks/ModalMock";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import Modal, { ModalIntl } from ".";
+import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import Modal, { ModalWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 
 export default {
   title: "Modal",
-  component: Modal,
+  component: ModalWithProps,
   parameters: {
-    ...getDocsPageStructure("Modal"),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Dialog",
+      component: "Modal",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
+    }),
   },
 };
 
@@ -30,7 +37,8 @@ export const Canvas = () => (
         disabled: false,
         label: "Confirm",
       })}
-      label={text("label", "Modal Title")}
+      localized={boolean("localized", false)}
+      title={text("label", "Modal Title")}
       onClose={action("Optional close action")}
       open={boolean("open", false)}
     />
@@ -40,10 +48,27 @@ export const Canvas = () => (
 export const Closable = () => (
   <StoriesWrapper>
     <ModalMock buttonLabel="Closable">
-      <Modal closable label="Closable Modal">
+      <Modal closable title="Closable Modal">
         <span>Useful to give another way of dismissal to final user without having actions in modal footer.</span>
       </Modal>
     </ModalMock>
+  </StoriesWrapper>
+);
+
+export const Localized = () => (
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <ModalMock buttonLabel="Localized">
+        <Modal
+          cancel={{ action: action("Cancel"), label: MessageMock.cancel, variant: ButtonVariants.outlined }}
+          confirm={{ action: action("Confirm"), label: MessageMock.confirm }}
+          localized
+          title={MessageMock.title}
+        >
+          <span>This content must be localized inside utilizing project.</span>
+        </Modal>
+      </ModalMock>
+    </IntlProviderMock>
   </StoriesWrapper>
 );
 
@@ -53,28 +78,28 @@ export const ModalActions = () => (
       <Modal
         cancel={{ action: () => {}, label: "Cancel", variant: ButtonVariants.outlined }}
         confirm={{ action: () => {}, label: "Confirm" }}
-        label="Default Modal"
+        title="Default Modal"
         onClose={() => {}}
       />
     </ModalMock>
     <ModalMock buttonLabel="Cancel Only">
       <Modal
         cancel={{ action: () => {}, label: "Cancel", variant: ButtonVariants.outlined }}
-        label="Cancel Only Modal"
+        title="Cancel Only Modal"
         onClose={() => {}}
       >
         <span>Useful with text only information, for instance explaining why an action can't be done.</span>
       </Modal>
     </ModalMock>
     <ModalMock buttonLabel="Confirm Only">
-      <Modal confirm={{ action: () => {}, label: "Confirm" }} label="Confirm Only Modal" onClose={() => {}}>
+      <Modal confirm={{ action: () => {}, label: "Confirm" }} title="Confirm Only Modal" onClose={() => {}}>
         <span>Useful when there is no need of having an explicit cancel action.</span>
       </Modal>
     </ModalMock>
     <ModalMock buttonLabel="Confirm Disabled">
       <Modal
         confirm={{ action: () => {}, disabled: true, label: "Confirm" }}
-        label="Confirm Disabled Modal"
+        title="Confirm Disabled Modal"
         onClose={() => {}}
       >
         <span>
@@ -89,7 +114,7 @@ export const ModalActions = () => (
 export const ScrollableContent = () => (
   <StoriesWrapper>
     <ModalMock buttonLabel="Scrollable Content">
-      <Modal closable label="Scrollable Modal">
+      <Modal closable title="Scrollable Modal">
         <img
           alt="Mosaic"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg"
@@ -127,21 +152,5 @@ export const ScrollableContent = () => (
         </p>
       </Modal>
     </ModalMock>
-  </StoriesWrapper>
-);
-
-export const WithIntl = () => (
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <ModalMock buttonLabel="With Intl">
-        <ModalIntl
-          cancel={{ labelId: MessageMock.modalCancel, variant: ButtonVariants.outlined }}
-          confirm={{ labelId: MessageMock.modalConfirm }}
-          labelId={MessageMock.title}
-        >
-          <span>Useful to give another way of dismissal to final user without having actions in modal footer.</span>
-        </ModalIntl>
-      </ModalMock>
-    </IntlProviderMock>
   </StoriesWrapper>
 );

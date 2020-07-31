@@ -8,14 +8,14 @@ export enum LocaleMock {
 
 export enum MessageMock {
   button = "button",
+  cancel = "cancel",
   checkbox = "checkbox",
+  confirm = "confirm",
   inputNumber = "inputNumber",
   inputText = "inputText",
-  modalCancel = "modalCancel",
-  modalConfirm = "modalConfirm",
-  title = "title",
   subtitle = "subtitle",
   switch = "switch",
+  title = "title",
   typography = "typography",
 }
 
@@ -26,26 +26,26 @@ interface IntlProviderMockType {
 export const mockedMessages = {
   [LocaleMock.en]: {
     [MessageMock.button]: "Button",
+    [MessageMock.cancel]: "Cancel",
     [MessageMock.checkbox]: "Checkbox",
+    [MessageMock.confirm]: "Confirm",
     [MessageMock.inputNumber]: "Input Number",
     [MessageMock.inputText]: "Input Text",
-    [MessageMock.modalCancel]: "Cancel",
-    [MessageMock.modalConfirm]: "Confirm",
-    [MessageMock.title]: "Title",
     [MessageMock.subtitle]: "Subtitle",
     [MessageMock.switch]: "Switch",
+    [MessageMock.title]: "Title",
     [MessageMock.typography]: "Typography",
   },
   [LocaleMock.it]: {
     [MessageMock.button]: "Bottone",
+    [MessageMock.cancel]: "Annulla",
     [MessageMock.checkbox]: "Spunta",
+    [MessageMock.confirm]: "Conferma",
     [MessageMock.inputNumber]: "Numero in input",
     [MessageMock.inputText]: "Testo in input",
-    [MessageMock.modalCancel]: "Annulla",
-    [MessageMock.modalConfirm]: "Conferma",
-    [MessageMock.title]: "Titolo",
     [MessageMock.subtitle]: "Sottotitolo",
     [MessageMock.switch]: "Interruttore",
+    [MessageMock.title]: "Titolo",
     [MessageMock.typography]: "Tipografia",
   },
 };

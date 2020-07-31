@@ -4,15 +4,22 @@ import { boolean, select, number, text } from "@storybook/addon-knobs";
 import { InputSize, InputVariant } from "../../types/Input";
 import FormMock from "../../utils/mocks/FormMock";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import InputNumber, { InputNumberIntl } from ".";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import InputNumber, { InputNumberWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 export default {
   title: "InputNumber",
-  component: InputNumber,
+  component: InputNumberWithProps,
   parameters: {
-    ...getDocsPageStructure("InputNumber"),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/TextField",
+      component: "InputNumber",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
+    }),
   },
 };
 
@@ -21,10 +28,11 @@ export const Canvas = () => (
   // In a real case scenario "onChange" and "value" props must be passed to InputNumber
   <FormMock inputValue={number("value", 5)} onInputChange={action("onChange callback")}>
     <InputNumber
-      dataCy="input-text"
+      dataCy={text("dataCy", DATA_CY_DEFAULT)}
       disabled={boolean("disabled", false)}
       integer={boolean("integer", true)}
       label={text("label", "Label")}
+      localized={boolean("localized", false)}
       minValue={number("minValue", 0)}
       maxValue={number("maxValue", 9)}
       onChange={action("onChange callback")}
@@ -57,6 +65,20 @@ export const IntegerAndFloat = () => (
   </StoriesWrapper>
 );
 
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <InputNumber
+        label={MessageMock.inputNumber}
+        localized
+        onChange={action("Click on Button")}
+        placeholder={MessageMock.inputNumber}
+      />
+    </IntlProviderMock>
+  </StoriesWrapper>
+);
+
 export const Required = () => (
   <StoriesWrapper>
     <InputNumber dataCy="input-number" label="Required" required value={10} />
@@ -74,16 +96,5 @@ export const Variant = () => (
   <StoriesWrapper>
     <InputNumber dataCy="input-number" label="Default" value={10} />
     <InputNumber dataCy="input-number" label="Filled" variant={InputVariant.filled} value={10} />
-  </StoriesWrapper>
-);
-
-export const WithIntl = () => (
-  // IntlProviderMock simulates external IntlProvider context
-  // The `InputNumberIntl` exported version of `InputNumber` uses `labelId` prop to get a localized label.
-  // When using `InputNumberIntl` the prop `dataCy` can be omitted as it defaults to `labelId` value.
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <InputNumberIntl labelId={MessageMock.inputNumber} onChange={action("Click on Button")} />
-    </IntlProviderMock>
   </StoriesWrapper>
 );

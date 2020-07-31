@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { ILoadable } from "./Base";
-import { InputType } from "./Input";
+import { IInput } from "./Input";
 
-interface BaseSelectType<T> extends ILoadable, InputType {
+interface BaseSelectType<T> extends ILoadable, IInput {
   autoComplete?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;
   getGroupLabel?: (groupName: string) => string;

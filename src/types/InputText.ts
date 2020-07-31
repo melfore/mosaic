@@ -1,4 +1,4 @@
-import { InputDataType, InputType } from "./Input";
+import { InputDataType, IInput } from "./Input";
 import { Icons } from "./Icon";
 
 export interface MultilineInputType {
@@ -11,7 +11,7 @@ export interface InputAdornmentType {
   onClick?: () => void;
 }
 
-export interface InputTextType extends InputType {
+export interface InputTextType extends IInput {
   adornment?: InputAdornmentType;
   initialValue?: string;
   multiline?: MultilineInputType;

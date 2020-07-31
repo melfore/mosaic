@@ -1,4 +1,4 @@
-import { IBase } from "./Base";
+import { IBase, ILocalizable } from "./Base";
 
 export enum InputSize {
   default = "medium",
@@ -17,7 +17,7 @@ export enum InputVariant {
   underlined = "standard",
 }
 
-export interface InputType extends IBase {
+export interface IInput extends ILocalizable {
   disabled?: boolean;
   label?: string;
   onChange?: Function;

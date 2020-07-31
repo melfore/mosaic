@@ -5,10 +5,10 @@ export enum SwitchSize {
   default = "medium",
 }
 
-export interface SwitchType extends IBase {
-  value?: boolean;
+export interface ISwitch extends IBase {
+  disabled?: boolean;
   onChange?: (checked: boolean) => any | void;
   required?: boolean;
   size?: SwitchSize;
-  disabled?: boolean;
+  value?: boolean;
 }

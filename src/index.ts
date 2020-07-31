@@ -30,7 +30,7 @@ export { default as Select } from "./components/Select";
 export { default as Spacer } from "./components/Spacer";
 export { SpacerDirection } from "./types/Spacer";
 
-export { default as Switch, SwitchIntl } from "./components/Switch";
+export { default as Switch } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";
 
 export { default as Table } from "./components/Table";

@@ -5,7 +5,7 @@ import { ILocalizable } from "../../types/Base";
 
 export interface ILocalizableProperty {
   name: string;
-  type: "any" | "string";
+  type: "any" | "any[]" | "string";
 }
 
 interface ILocalizedOptions {
@@ -62,6 +62,17 @@ const localized = <T extends ILocalizable>(Component: ComponentType<T>, options:
           ...localizedProps[objectName],
           [propertyName]: intl.formatMessage({ id: anyProps[propertyName] as string }),
         };
+        break;
+      case "any[]":
+        const { objectName: arrayName, propertyName: objectProperty } = getValuePath(name);
+        if (!localizedProps[arrayName] || localizedProps[arrayName].length < 1) {
+          break;
+        }
+
+        localizedProps[arrayName] = localizedProps[arrayName].map((arrayElement: any) => ({
+          ...arrayElement,
+          [objectProperty]: intl.formatMessage({ id: arrayElement[objectProperty] as string }),
+        }));
         break;
     }
   });

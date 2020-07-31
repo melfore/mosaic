@@ -26,10 +26,8 @@ const Avatar: FC<IAvatar> = ({
 
   return (
     <StyledMUIAvatar alt={text || alt} data-cy={dataCy} src={src} variant={variant}>
-      {icon && <Icon dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "icon")} name={icon} />}
-      {!icon && text && (
-        <Typography dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "text")}>{text}</Typography>
-      )}
+      {icon && <Icon dataCy={getDataCyForSubComponent(dataCy, "icon")} name={icon} />}
+      {!icon && text && <Typography dataCy={getDataCyForSubComponent(dataCy, "text")}>{text}</Typography>}
     </StyledMUIAvatar>
   );
 };

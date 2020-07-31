@@ -46,10 +46,7 @@ const Modal: FC<IModal> = ({
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        <Typography
-          dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "title")}
-          variant={TypographyVariants.title}
-        >
+        <Typography dataCy={getDataCyForSubComponent(dataCy, "title")} variant={TypographyVariants.title}>
           {title}
         </Typography>
         {closable && (
@@ -60,14 +57,14 @@ const Modal: FC<IModal> = ({
           />
         )}
       </StyledMUIDialogTitle>
-      <MUIDialogContent data-cy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "content")} dividers>
+      <MUIDialogContent data-cy={getDataCyForSubComponent(dataCy, "content")} dividers>
         {children}
       </MUIDialogContent>
       {hasActions && (
         <MUIDialogActions>
           {cancel && (
             <Button
-              dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "action-cancel")}
+              dataCy={getDataCyForSubComponent(dataCy, "action-cancel")}
               disabled={cancel.disabled}
               label={cancel.label}
               onClick={cancel.action}
@@ -76,7 +73,7 @@ const Modal: FC<IModal> = ({
           )}
           {confirm && (
             <Button
-              dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "action-confirm")}
+              dataCy={getDataCyForSubComponent(dataCy, "action-confirm")}
               disabled={confirm.disabled}
               label={confirm.label}
               onClick={confirm.action}

@@ -7,15 +7,15 @@ export enum LocaleMock {
 }
 
 export enum MessageMock {
-  button = "button",
-  cancel = "cancel",
-  checkbox = "checkbox",
-  confirm = "confirm",
-  inputNumber = "inputNumber",
-  inputText = "inputText",
-  subtitle = "subtitle",
-  switch = "switch",
-  title = "title",
+  button = "intl.message.button",
+  cancel = "intl.message.cancel",
+  checkbox = "intl.message.checkbox",
+  confirm = "intl.message.confirm",
+  inputNumber = "intl.message.inputNumber",
+  inputText = "intl.message.inputText",
+  subtitle = "intl.message.subtitle",
+  switch = "intl.message.switch",
+  title = "intl.message.title",
   typography = "typography",
 }
 

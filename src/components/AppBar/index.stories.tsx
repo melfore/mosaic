@@ -1,24 +1,48 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text } from "@storybook/addon-knobs";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import AppBar from ".";
+import { text, boolean, select } from "@storybook/addon-knobs";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import AppBar, { AppBarWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 import { Icons } from "../../types/Icon";
+import IntlProviderMock, { MessageMock, LocaleMock } from "../../utils/mocks/IntlProviderMock";
 
 export default {
   title: "AppBar",
-  component: AppBar,
+  component: AppBarWithProps,
   parameters: {
-    ...getDocsPageStructure("AppBar", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/AppBar",
+      component: "AppBar",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
+    }),
   },
 };
 
 export const Canvas = () => (
   <AppBar
     actions={[{ icon: Icons.mail, onClick: action("On Mail Click") }]}
+    dataCy={text("dataCy", DATA_CY_DEFAULT)}
+    localized={boolean("localized", false)}
     menu={{ icon: Icons.home, onClick: action("On Menu Click") }}
     onTitleClick={action("On Title Click")}
     title={text("title", "AppBar Title")}
     userMenu={[{ label: "Logout", onClick: action("On Logout") }]}
   />
+);
+
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <AppBar
+        localized
+        title={MessageMock.title}
+        userMenu={[{ label: MessageMock.button, onClick: action("Button") }]}
+      />
+    </IntlProviderMock>
+  </StoriesWrapper>
 );

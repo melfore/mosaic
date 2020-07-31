@@ -6,25 +6,26 @@ import {
   MenuItem as MUIMenuItem,
   PopoverOrigin as MUIPopoverOrigin,
 } from "@material-ui/core";
-import { AppBarType } from "../../types/AppBar";
-import { Icons } from "../../types/Icon";
-import { TypographyVariants } from "../../types/Typography";
+import { IAppBar } from "../../types/AppBar";
 import { Color } from "../../types/Base";
-import { suppressEvent } from "../../utils";
-import IconButton from "../IconButton";
-import Typography from "../Typography";
-import Spacer from "../Spacer";
+import { Icons, IconButton, Typography, TypographyVariants } from "../..";
+import { suppressEvent, getDataCyForSubComponent } from "../../utils";
 import { StyledMUIToolbar, TitleWrapper } from "./styled";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   vertical: "top",
   horizontal: "right",
 };
 
-/**
- * AppBar component made on top of `@material-ui/core/AppBar`
- */
-const AppBar: FC<AppBarType> = ({
+export const DATA_CY_DEFAULT = "appbar";
+export const DATA_CY_SHORTCUT = "title";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "title", type: "string" },
+  { name: "userMenu.label", type: "any[]" },
+];
+
+const AppBar: FC<IAppBar> = ({
   actions = [],
   dataCy = "appbar",
   menu = undefined,
@@ -35,13 +36,13 @@ const AppBar: FC<AppBarType> = ({
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
 
   return (
-    <MUIAppBar position="sticky">
+    <MUIAppBar data-cy={dataCy} position="sticky">
       <StyledMUIToolbar>
         <MUIBox alignItems="center" display="flex">
           {menu && (
             <IconButton
               color={Color.inherit}
-              dataCy={`${dataCy}-navigation-menu`}
+              dataCy={getDataCyForSubComponent(dataCy, "menu")}
               icon={menu.icon}
               onClick={(event) => {
                 suppressEvent(event);
@@ -51,12 +52,13 @@ const AppBar: FC<AppBarType> = ({
           )}
           {title && (
             <TitleWrapper
+              data-cy={getDataCyForSubComponent(dataCy, "title-wrapper")}
               onClick={(event) => {
                 suppressEvent(event);
                 onTitleClick && onTitleClick();
               }}
             >
-              <Typography bottomSpacing={false} dataCy={`${dataCy}-title`} variant={TypographyVariants.title}>
+              <Typography dataCy={getDataCyForSubComponent(dataCy, "title")} variant={TypographyVariants.title}>
                 {title}
               </Typography>
             </TitleWrapper>
@@ -65,9 +67,9 @@ const AppBar: FC<AppBarType> = ({
         <MUIBox alignItems="center" display="flex">
           {actions.map(({ icon, onClick }, index) => (
             <IconButton
-              key={`action-button-${index}`}
+              key={`action-${index}`}
               color={Color.inherit}
-              dataCy={`${dataCy}-action-${index}`}
+              dataCy={getDataCyForSubComponent(dataCy, `action-${index}`)}
               icon={icon}
               onClick={(event) => {
                 suppressEvent(event);
@@ -79,7 +81,7 @@ const AppBar: FC<AppBarType> = ({
             <Fragment>
               <IconButton
                 color={Color.inherit}
-                dataCy={`${dataCy}-user-menu`}
+                dataCy={getDataCyForSubComponent(dataCy, `user-menu`)}
                 icon={Icons.account}
                 onClick={(event) => {
                   suppressEvent(event);
@@ -87,7 +89,7 @@ const AppBar: FC<AppBarType> = ({
                 }}
               />
               <MUIMenu
-                id={`${dataCy}-user-menu-items`}
+                id={`${dataCy}-user-menu`}
                 anchorEl={userMenuAnchor}
                 anchorOrigin={MENU_ITEMS_ANCHORING}
                 keepMounted
@@ -98,6 +100,7 @@ const AppBar: FC<AppBarType> = ({
                 {userMenu.map(({ label, onClick }, index) => (
                   <MUIMenuItem
                     key={`user-menu-${index}`}
+                    data-cy={getDataCyForSubComponent(dataCy, `user-menu-${index}`)}
                     onClick={(event) => {
                       suppressEvent(event);
                       setUserMenuAnchor(null);
@@ -116,4 +119,9 @@ const AppBar: FC<AppBarType> = ({
   );
 };
 
-export default AppBar;
+export const AppBarWithProps = AppBar;
+
+export default localized(AppBar, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

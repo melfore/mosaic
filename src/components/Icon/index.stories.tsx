@@ -1,21 +1,31 @@
 import React from "react";
-import {} from "@storybook/addon-actions";
-import { select } from "@storybook/addon-knobs";
+import { select, text, boolean, object } from "@storybook/addon-knobs";
 import { Icons, IconSize } from "../../types/Icon";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import Icon from ".";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import Icon, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Icon",
   component: Icon,
   parameters: {
-    ...getDocsPageStructure("Icon", false),
+    ...getDocumentationPage({
+      basedOn: "",
+      component: "Icon",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+      },
+    }),
   },
 };
 
 export const Canvas = () => (
-  <Icon dataCy="icon" name={select("icon", Icons, Icons.add)} size={select("size", IconSize, IconSize.default)} />
+  <Icon
+    dataCy={text("data-cy", DATA_CY_DEFAULT)}
+    forwarded={object("forwarded", {})}
+    loading={boolean("loading", false)}
+    name={select("icon", Icons, Icons.add)}
+    size={select("size", IconSize, IconSize.default)}
+  />
 );
 
 export const Loading = () => (

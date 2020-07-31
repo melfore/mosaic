@@ -1,9 +1,18 @@
 import React, { FC } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { IconType, IconSize } from "../../types/Icon";
+import { IconSize } from "../..";
+import { IIcon } from "../../types/Icon";
 import { iconsCatalog } from "./utils";
 
-const Icon: FC<IconType> = ({ dataCy, forwarded = {}, loading = false, name, size = IconSize.default }) => {
+export const DATA_CY_DEFAULT = "icon";
+
+const Icon: FC<IIcon> = ({
+  dataCy = DATA_CY_DEFAULT,
+  forwarded = {},
+  loading = false,
+  name,
+  size = IconSize.default,
+}) => {
   if (loading) {
     const dimensions = ((size: IconSize): number => {
       switch (size) {

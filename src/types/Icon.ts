@@ -49,14 +49,14 @@ export enum IconSize {
   small = "small",
 }
 
-interface IconForwardedType {
+interface IForwardedIcon {
   className?: string;
   color?: string;
   ref?: any;
 }
 
-export interface IconType extends ILoadable {
-  forwarded?: IconForwardedType;
+export interface IIcon extends ILoadable {
+  forwarded?: IForwardedIcon;
   name: Icons;
   size?: IconSize;
 }

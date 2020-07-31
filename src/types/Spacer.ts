@@ -5,7 +5,7 @@ export enum SpacerDirection {
   vertical = "vertical",
 }
 
-export interface SpacerType extends IBase {
+export interface ISpacer extends IBase {
   direction?: SpacerDirection;
   level?: number;
 }

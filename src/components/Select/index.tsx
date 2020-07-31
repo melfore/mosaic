@@ -3,7 +3,7 @@ import { Popper, PopperProps } from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
-import { InputVariant, InputSize, InputDataType } from "../../types/Input";
+import { InputVariant, InputSize, InputType } from "../../types/Input";
 import { SelectType } from "../../types/Select";
 import { suppressEvent } from "../../utils";
 import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
@@ -30,7 +30,7 @@ const Select = <T extends any>({
   popperWidth = undefined,
   required = false,
   size = InputSize.default,
-  type = InputDataType.default,
+  type = InputType.default,
   value = null,
   variant = InputVariant.default,
 }: SelectType<T>) => {

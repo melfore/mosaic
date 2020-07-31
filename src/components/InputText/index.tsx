@@ -2,7 +2,7 @@ import React, { createElement, FC, useState, useEffect } from "react";
 import { InputAdornment } from "@material-ui/core";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { InputDataType, InputSize, InputVariant } from "../../types/Input";
+import { InputType, InputSize, InputVariant } from "../../types/Input";
 import { InputTextType, MultilineInputType, InputAdornmentType } from "../../types/InputText";
 import { StyledMUITextField } from "./styled";
 import { IconSize } from "../../types/Icon";
@@ -55,7 +55,7 @@ const InputText: FC<InputTextType> = ({
   required = false,
   shrink = undefined,
   size = InputSize.default,
-  type = InputDataType.default,
+  type = InputType.default,
   variant = InputVariant.default,
 }) => {
   const [value, setValue] = useState(initialValue);

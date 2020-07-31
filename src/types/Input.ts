@@ -5,7 +5,7 @@ export enum InputSize {
   small = "small",
 }
 
-export enum InputDataType {
+export enum InputType {
   default = "text",
   number = "number",
   password = "password",
@@ -25,6 +25,6 @@ export interface IInput extends ILocalizable {
   required?: boolean;
   shrink?: boolean;
   size?: InputSize;
-  type?: InputDataType;
+  type?: InputType;
   variant?: InputVariant;
 }

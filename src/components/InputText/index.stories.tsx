@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, object, select } from "@storybook/addon-knobs";
-import { InputSize, InputVariant, InputDataType } from "../../types/Input";
+import { InputSize, InputVariant, InputType } from "../../types/Input";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 import InputText, { InputTextWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
@@ -36,7 +36,7 @@ export const Canvas = () => (
     required={boolean("required", false)}
     shrink={boolean("shrink", false)}
     size={select("size", InputSize, InputSize.default)}
-    type={select("type", InputDataType, InputDataType.default)}
+    type={select("type", InputType, InputType.default)}
     variant={select("variant", InputVariant, InputVariant.default)}
   />
 );

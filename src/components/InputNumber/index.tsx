@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { InputDataType, InputSize, InputVariant } from "../../types/Input";
+import { InputType, InputSize, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
 import { StyledMUITextField } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -70,7 +70,7 @@ const InputNumber: FC<IInputNumber> = ({
       placeholder={placeholder}
       required={required}
       size={size}
-      type={InputDataType.number}
+      type={InputType.number}
       variant={variant}
       value={getControlledValue(value)}
     />

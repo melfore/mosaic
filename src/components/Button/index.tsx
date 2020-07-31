@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import MUIButton from "@material-ui/core/Button";
-import Icon from "../Icon";
-import { ButtonIconPosition, IButtonIcon, IButton, ButtonVariants } from "../../types/Button";
+import { ButtonIconPosition, ButtonVariants, Icon } from "../..";
+import { IButtonIcon, IButton } from "../../types/Button";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 interface IMUIButtonIcon {

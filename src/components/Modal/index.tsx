@@ -4,12 +4,8 @@ import {
   DialogActions as MUIDialogActions,
   DialogContent as MUIDialogContent,
 } from "@material-ui/core";
-import Button from "../Button";
-import IconButton from "../IconButton";
-import Typography from "../Typography";
-import { Icons, IconSize } from "../../types/Icon";
-import { IModal, ModalSize } from "../../types/Modal";
-import { TypographyVariants } from "../../types/Typography";
+import { Button, Icons, IconSize, IconButton, ModalSize, Typography, TypographyVariants } from "../..";
+import { IModal } from "../../types/Modal";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { getDataCyForSubComponent } from "../../utils";
 import { StyledMUIDialogTitle } from "./styled";

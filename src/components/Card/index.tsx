@@ -2,11 +2,7 @@ import React, { cloneElement, FC, Fragment, useState, useMemo } from "react";
 import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { ICard } from "../../types/Card";
-import { Icons } from "../../types/Icon";
-import { TypographyVariants } from "../../types/Typography";
-import Avatar from "../Avatar";
-import IconButton from "../IconButton";
-import Typography from "../Typography";
+import { Avatar, IconButton, Icons, Typography, TypographyVariants } from "../..";
 import {
   ActionsWrapper,
   StyledMUICard,

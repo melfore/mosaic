@@ -1,9 +1,9 @@
 import React, { FC, memo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { IAvatar, AvatarVariant } from "../../types/Avatar";
-import Icon from "../Icon";
-import Typography from "../Typography";
+import { AvatarVariant, Icon, Typography } from "../..";
+import { IAvatar } from "../../types/Avatar";
 import { StyledMUIAvatar } from "./styled";
+import { getDataCyForSubComponent } from "../../utils";
 
 export const DATA_CY_DEFAULT = "avatar";
 
@@ -26,8 +26,10 @@ const Avatar: FC<IAvatar> = ({
 
   return (
     <StyledMUIAvatar alt={text || alt} data-cy={dataCy} src={src} variant={variant}>
-      {icon && <Icon name={icon} />}
-      {!icon && text && <Typography>{text}</Typography>}
+      {icon && <Icon dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "icon")} name={icon} />}
+      {!icon && text && (
+        <Typography dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "text")}>{text}</Typography>
+      )}
     </StyledMUIAvatar>
   );
 };

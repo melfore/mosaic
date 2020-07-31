@@ -1,6 +1,7 @@
 import React, { FC, useCallback } from "react";
 import MUICheckbox from "@material-ui/core/Checkbox";
-import { ICheckbox, CheckboxSize } from "../../types/Checkbox";
+import { CheckboxSize } from "../..";
+import { ICheckbox } from "../../types/Checkbox";
 
 export const DATA_CY_DEFAULT = "checkbox";
 

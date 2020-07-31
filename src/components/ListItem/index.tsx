@@ -1,45 +1,28 @@
-import React, { FC, memo, ReactElement, useMemo } from "react";
+import React, { FC } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
   ListItemText as MUIListItemText,
 } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { ListItemType } from "../../types/ListItem";
-import { TypographyVariants } from "../../types/Typography";
-import Typography from "../Typography";
+import { IListItem } from "../../types/ListItem";
 import Icon from "../Icon";
+import { getDataCyForSubComponent } from "../../utils";
 
-/**
- * ListItem component made on top of `@material-ui/core/ListItem`
- */
-const ListItem: FC<ListItemType> = ({
+export const DATA_CY_DEFAULT = "list-item";
+
+const ListItem: FC<IListItem> = ({
+  children,
+  dataCy = DATA_CY_DEFAULT,
   dense = true,
   icon = undefined,
   loading = false,
   onClick = undefined,
   selected = false,
-  title,
-  titleVariant = TypographyVariants.body,
 }) => {
-  const text = useMemo(
-    () =>
-      typeof title !== "string" ? (
-        loading ? (
-          <MUISkeleton />
-        ) : (
-          title
-        )
-      ) : (
-        <Typography bottomSpacing={false} loading={loading} truncated variant={titleVariant}>
-          {title}
-        </Typography>
-      ),
-    [loading, title, titleVariant]
-  );
-
   return (
     <MUIListItem
+      data-cy={dataCy}
       dense={dense}
       onClick={(event) => {
         event.preventDefault();
@@ -55,12 +38,17 @@ const ListItem: FC<ListItemType> = ({
     >
       {icon && (
         <MUIListItemIcon>
-          <Icon loading={loading} name={icon} />
+          <Icon dataCy={getDataCyForSubComponent(dataCy, "icon")} loading={loading} name={icon} />
         </MUIListItemIcon>
       )}
-      <MUIListItemText disableTypography>{text}</MUIListItemText>
+      <MUIListItemText
+        data-cy={getDataCyForSubComponent(dataCy, `content${loading ? "-loading" : ""}`)}
+        disableTypography
+      >
+        {loading ? <MUISkeleton /> : children}
+      </MUIListItemText>
     </MUIListItem>
   );
 };
 
-export default memo(ListItem);
+export default ListItem;

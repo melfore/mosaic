@@ -1,73 +1,69 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean, select } from "@storybook/addon-knobs";
-import { TypographyVariants } from "../../types/Typography";
-import { StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import ListCollapsibleItem from ".";
+import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import ListItemCollapsible, { DATA_CY_DEFAULT } from ".";
 import Typography from "../Typography";
 
 export default {
-  title: "ListCollapsibleItem",
-  component: ListCollapsibleItem,
+  title: "ListItemCollapsible",
+  component: ListItemCollapsible,
   parameters: {
-    ...getDocsPageStructure("ListCollapsibleItem", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Collapse",
+      component: "ListItemCollapsible",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+      },
+    }),
   },
 };
 
 export const Canvas = () => (
-  <ListCollapsibleItem
+  <ListItemCollapsible
     children={<span>Collapsible Content</span>}
-    dataCy="list-item"
+    dataCy={text("dataCy", DATA_CY_DEFAULT)}
     dense={boolean("dense", false)}
+    header={<span>Header</span>}
     loading={boolean("loading", false)}
     onClick={action("On ListItem click")}
     open={boolean("open", false)}
     openTimeout={select("openTimeout", ["auto", 1000, 5000], "auto")}
     selected={boolean("selected", false)}
-    title={text("title", "ListItem Title")}
-    titleVariant={select("titleVariant", TypographyVariants, undefined)}
     unmountContent={boolean("unmountContent", false)}
   />
 );
 
 export const Basic = () => (
   <StoriesWrapper>
-    <ListCollapsibleItem title="Basic List Item" />
+    <ListItemCollapsible header={<Typography>Collapsible List Item</Typography>} />
   </StoriesWrapper>
 );
 
 export const Dense = () => (
   <StoriesWrapper>
-    <ListCollapsibleItem title="Basic List Item" />
-    <ListCollapsibleItem dense title="Basic List Item" />
+    <ListItemCollapsible dense header={<Typography>Collapsible List Item</Typography>} />
   </StoriesWrapper>
 );
 
 export const Loading = () => (
   <StoriesWrapper>
-    <ListCollapsibleItem loading title="Basic List Item" />
+    <ListItemCollapsible loading header={<Typography>Collapsible List Item</Typography>} />
   </StoriesWrapper>
 );
 
 export const Selected = () => (
   <StoriesWrapper>
-    <ListCollapsibleItem selected title="Basic List Item" />
+    <ListItemCollapsible selected header={<Typography>Collapsible List Item</Typography>} />
   </StoriesWrapper>
 );
 
 export const Open = () => (
   <StoriesWrapper>
-    <ListCollapsibleItem open selected title="Basic List Item">
+    <ListItemCollapsible open selected header={<Typography>Collapsible List Item</Typography>}>
       <div style={{ border: "1px solid #ccc", padding: "16px" }}>
         <Typography children="Collapsible content is now expanded" />
       </div>
-    </ListCollapsibleItem>
-  </StoriesWrapper>
-);
-
-export const WithTitleVariant = () => (
-  <StoriesWrapper>
-    <ListCollapsibleItem title="Basic List Item" titleVariant={TypographyVariants.caption} />
+    </ListItemCollapsible>
   </StoriesWrapper>
 );

@@ -19,8 +19,8 @@ export { default as InputText } from "./components/InputText";
 export { default as InputNumber } from "./components/InputNumber";
 export { InputSize, InputVariant } from "./types/Input";
 
-export { default as ListCollapsibleItem } from "./components/ListCollapsibleItem";
 export { default as ListItem } from "./components/ListItem";
+export { default as ListItemCollapsible } from "./components/ListItemCollapsible";
 
 export { default as Modal } from "./components/Modal";
 export { ModalSize } from "./types/Modal";

@@ -1,33 +1,36 @@
 import React, { FC, Fragment } from "react";
 import { Collapse as MUICollapse } from "@material-ui/core";
-import { ListCollapsibleItemType } from "../../types/ListItem";
+import { IListItemCollapsible } from "../../types/ListItem";
 import ListItem from "../ListItem";
 import { Icons } from "../../types/Icon";
-import { TypographyVariants } from "../../types/Typography";
+import { getDataCyForSubComponent } from "../../utils";
 
-const ListCollapsibleItem: FC<ListCollapsibleItemType> = ({
+export const DATA_CY_DEFAULT = "list-item-collapsible";
+
+const ListItemCollapsible: FC<IListItemCollapsible> = ({
   children,
+  dataCy = DATA_CY_DEFAULT,
   dense = false,
+  header,
   loading = false,
   onClick,
   open = false,
   openTimeout = "auto",
   selected = false,
-  title,
-  titleVariant = TypographyVariants.body,
   unmountContent = false,
 }) => {
   return (
     <Fragment>
       <ListItem
+        dataCy={getDataCyForSubComponent(dataCy, "header")}
         dense={dense}
         icon={open ? Icons.up : Icons.down}
         loading={loading}
         onClick={onClick}
         selected={selected}
-        title={title}
-        titleVariant={titleVariant}
-      />
+      >
+        {header}
+      </ListItem>
       <MUICollapse in={open} timeout={openTimeout} unmountOnExit={unmountContent}>
         {children}
       </MUICollapse>
@@ -35,4 +38,4 @@ const ListCollapsibleItem: FC<ListCollapsibleItemType> = ({
   );
 };
 
-export default ListCollapsibleItem;
+export default ListItemCollapsible;

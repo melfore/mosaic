@@ -15,8 +15,8 @@ export { default as Icon } from "./components/Icon";
 export { default as IconButton } from "./components/IconButton";
 export { Icons, IconSize } from "./types/Icon";
 
-export { default as InputText, InputTextIntl } from "./components/InputText";
-export { default as InputNumber, InputNumberIntl } from "./components/InputNumber";
+export { default as InputText } from "./components/InputText";
+export { default as InputNumber } from "./components/InputNumber";
 export { InputSize, InputVariant } from "./types/Input";
 
 export { default as ListCollapsibleItem } from "./components/ListCollapsibleItem";

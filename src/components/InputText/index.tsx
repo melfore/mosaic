@@ -2,12 +2,11 @@ import React, { createElement, FC, useState, useEffect } from "react";
 import { InputAdornment } from "@material-ui/core";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { DEPRECATED_IBaseIntl } from "../../types/Base";
 import { InputDataType, InputSize, InputVariant } from "../../types/Input";
 import { InputTextType, MultilineInputType, InputAdornmentType } from "../../types/InputText";
-import DEPRECATED_withIntl from "../../utils/hocs/withIntl";
 import { StyledMUITextField } from "./styled";
-import { Icons, IconSize } from "../../types/Icon";
+import { IconSize } from "../../types/Icon";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 const getAdornment = (adornment?: InputAdornmentType) => {
   if (!adornment) {
@@ -36,12 +35,19 @@ const getMultilineProps = (multiline?: MultilineInputType) => {
 /**
  * InputText component made on top of `@material-ui/core/TextField`
  **/
+
+export const DATA_CY_DEFAULT = "input-text";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "label", type: "string" },
+  { name: "placeholder", type: "string" },
+];
+
 const InputText: FC<InputTextType> = ({
   adornment = undefined,
-  dataCy,
+  dataCy = DATA_CY_DEFAULT,
   disabled = false,
   initialValue = "",
-  // TODO#lb: implement labelId
   label,
   multiline = undefined,
   onChange = undefined,
@@ -90,6 +96,9 @@ const InputText: FC<InputTextType> = ({
   );
 };
 
-export const InputTextIntl: FC<InputTextType & DEPRECATED_IBaseIntl> = DEPRECATED_withIntl(InputText);
+export const InputTextWithProps = InputText;
 
-export default InputText;
+export default localized(InputText, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

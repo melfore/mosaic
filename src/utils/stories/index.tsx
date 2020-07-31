@@ -3,6 +3,7 @@ import DocumentationPage from "./DocumentationPage";
 import { ILocalizableProperty } from "../hocs/localized";
 
 export const DOCUMENTATION_BODY_CLASS = "mosaic-documentation-body";
+export const DOCUMENTATION_CODE_LINE_CLASS = "mosaic-documentation-code-line";
 export const DOCUMENTATION_CODE_BLOCK_CLASS = "mosaic-documentation-code-block";
 export const DOCUMENTATION_TITLE_CLASS = "mosaic-documentation-title";
 
@@ -30,7 +31,8 @@ export const DOCS_PAGE_STYLE: string = `
   h3.${DOCUMENTATION_TITLE_CLASS} {
     font-size: 20px;
   }
-  .${DOCUMENTATION_BODY_CLASS} code {
+  .${DOCUMENTATION_BODY_CLASS} code.${DOCUMENTATION_CODE_LINE_CLASS},
+  .${DOCUMENTATION_BODY_CLASS} code.${DOCUMENTATION_CODE_BLOCK_CLASS} {
     background-color: #F8F8F8;
     font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
     font-size: 13px;

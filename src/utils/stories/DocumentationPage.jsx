@@ -2,7 +2,11 @@ import React, { Fragment, PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Primary, Props, Stories, Title } from "@storybook/addon-docs/blocks";
 import DocumentationTitle from "./DocumentationTitle";
-import { DOCS_PAGE_STYLE, DOCUMENTATION_BODY_CLASS, DOCUMENTATION_CODE_BLOCK_CLASS } from "./index";
+import { DOCS_PAGE_STYLE } from ".";
+
+const DOCUMENTATION_BODY_CLASS = "mosaic-documentation-body";
+const DOCUMENTATION_CODE_LINE_CLASS = "mosaic-documentation-code-line";
+const DOCUMENTATION_CODE_BLOCK_CLASS = "mosaic-documentation-code-block";
 
 export default class DocumentationPage extends PureComponent {
   static propTypes = {
@@ -12,7 +16,12 @@ export default class DocumentationPage extends PureComponent {
       dataCyDefault: PropTypes.string.isRequired,
       dataCyShortcut: PropTypes.string,
     }),
-    localizableProps: PropTypes.arrayOf(PropTypes.string),
+    localizableProps: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+      })
+    ),
   };
 
   static defaultProps = {
@@ -39,7 +48,7 @@ export default class DocumentationPage extends PureComponent {
           <p>
             This component is based on:{" "}
             <a href={`https://www.google.com/search?q=${basedOn}`} target="_blank">
-              <code>{basedOn}</code>
+              <code className={DOCUMENTATION_CODE_LINE_CLASS}>{basedOn}</code>
             </a>
           </p>
         )}
@@ -47,7 +56,8 @@ export default class DocumentationPage extends PureComponent {
         <Primary />
         <DocumentationTitle text="Usage" />
         <p>
-          Import <code>{component}</code> component adding this line to your code:
+          Import <code className={DOCUMENTATION_CODE_LINE_CLASS}>{component}</code> component adding this line to your
+          code:
         </p>
         <p>
           <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`import { ${component} } from "@melfore/mosaic";`}</code>
@@ -57,20 +67,42 @@ export default class DocumentationPage extends PureComponent {
           <b>Show code</b> button.
         </p>
         <p>
-          If you want ready-to-use examples, scroll down to the <b>Stories</b> paragraph.
+          If you want to see ready-to-use examples, scroll down to the <b>Stories</b> paragraph.
         </p>
         {localizableProps && (
           <Fragment>
             <DocumentationTitle text="Intl" subtitle />
-            <p>This component supports localization of its properties. Below all the props that can be localized:</p>
-            <ul>
-              {localizableProps.map(({ name, type }) => (
-                <li>
-                  Name: {name} / Type: {type}
-                </li>
-              ))}
-            </ul>
-            {/* TODO: add doc */}
+            <p>
+              This component supports localization of its properties, using the{" "}
+              <code className={DOCUMENTATION_CODE_LINE_CLASS}>localized</code> boolean property.
+              <br />
+              When setting <code className={DOCUMENTATION_CODE_LINE_CLASS}>localized = true</code> all the properties at
+              the following paths will be localized:
+            </p>
+            <table style={{ textAlign: "left", width: "100%" }}>
+              <thead>
+                <tr>
+                  <th>Property Path</th>
+                  <th>Base Property Type</th>
+                  <th>Nested Property Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {localizableProps.map(({ name, type }) => (
+                  <tr key={name}>
+                    <td>{name}</td>
+                    <td>{type}</td>
+                    <td>{`${("" + name).includes(".") ? "string" : "-"}`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p>
+              <u>Important!</u>
+              <br />
+              If one of the properties above is an array of strings or object, all the values for that path will get
+              localized.
+            </p>
           </Fragment>
         )}
         {e2eTestInfo && (

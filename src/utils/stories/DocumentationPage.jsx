@@ -15,6 +15,12 @@ export default class DocumentationPage extends PureComponent {
     e2eTestInfo: PropTypes.shape({
       dataCyDefault: PropTypes.string.isRequired,
       dataCyShortcut: PropTypes.string,
+      subpartsSuffixes: PropTypes.arrayOf(
+        PropTypes.shape({
+          subpart: PropTypes.string.isRequired,
+          suffix: PropTypes.string.isRequired,
+        })
+      ),
     }),
     localizableProps: PropTypes.arrayOf(
       PropTypes.shape({
@@ -108,12 +114,77 @@ export default class DocumentationPage extends PureComponent {
         {e2eTestInfo && (
           <Fragment>
             <DocumentationTitle text="E2E Testing" subtitle />
-            <p>This component can be tested in e2e (our reference is cypress).</p>
-            <p>Useful info:</p>
-            <ul>
-              <li>Default data-cy: {e2eTestInfo.dataCyDefault}</li>
-              {localizableProps && <li>Shortcut data-cy: {e2eTestInfo.dataCyShortcut}</li>}
-            </ul>
+            <p>
+              This component provides the specific <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> HTML
+              attribute for e2e testing (the reference framework is{" "}
+              <a href="https://www.cypress.io" target="_blank">
+                cypress.io
+              </a>
+              ).
+            </p>
+            <p>
+              By design <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> attribute is not mandatory for
+              the final user, but required for e2e testing, so when not explicitely provided it is defaulted to:{" "}
+              <code className={DOCUMENTATION_CODE_LINE_CLASS}>{e2eTestInfo.dataCyDefault}</code>{" "}
+            </p>
+            <p>Example:</p>
+            <p>
+              <code
+                className={DOCUMENTATION_CODE_BLOCK_CLASS}
+              >{`// Replace the value of the attribute accordingly, here it's defaulted
+              cy.get("[data-cy='${e2eTestInfo.dataCyDefault}']") // Do something with it
+              `}</code>
+            </p>
+            {localizableProps && (
+              <p>
+                <u>Important!</u>
+                <br />
+                When in localized mode <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> will be defaulted
+                with the value of the{" "}
+                <code className={DOCUMENTATION_CODE_LINE_CLASS}>{e2eTestInfo.dataCyShortcut}</code> property.
+              </p>
+            )}
+            {e2eTestInfo.subpartsSuffixes && (
+              <Fragment>
+                <p>
+                  <b>Testing component subparts</b>
+                </p>
+                <p>
+                  There are other <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> HTML attributes exposed
+                  for subparts of this component.
+                  <br />
+                  The value for those subparts is a concatenation of the{" "}
+                  <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> property value (either explicit or
+                  defaulted) and a suffix.
+                </p>
+                <p>Here the list of all subparts with their suffixes:</p>
+                <table style={{ textAlign: "left", width: "100%" }}>
+                  <thead>
+                    <tr>
+                      <th>Subpart</th>
+                      <th>Suffix</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {e2eTestInfo.subpartsSuffixes.map(({ subpart, suffix }) => (
+                      <tr key={subpart}>
+                        <td>{subpart}</td>
+                        <td>{suffix}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p>Example:</p>
+                <p>
+                  <code
+                    className={DOCUMENTATION_CODE_BLOCK_CLASS}
+                  >{`// Getting the ${e2eTestInfo.subpartsSuffixes[0].subpart} subpart
+                  // Replace the base value of the attribute accordingly, here it's defaulted
+                cy.get("[data-cy='${e2eTestInfo.dataCyDefault}-${e2eTestInfo.subpartsSuffixes[0].suffix}']") // Do something with it
+                `}</code>
+                </p>
+              </Fragment>
+            )}
           </Fragment>
         )}
         <DocumentationTitle text="Props" subtitle />

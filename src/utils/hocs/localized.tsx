@@ -5,7 +5,7 @@ import { ILocalizable } from "../../types/Base";
 
 export interface ILocalizableProperty {
   name: string;
-  type: "string";
+  type: "any" | "string";
 }
 
 interface ILocalizedOptions {
@@ -45,27 +45,24 @@ const localized = <T extends ILocalizable>(Component: ComponentType<T>, options:
           break;
         }
 
-        localizedProps[name] = intl.formatMessage({ id: propertyValue });
+        localizedProps[name] = intl.formatMessage({ id: propertyValue as string });
         break;
-      // case "any":
-      //   const { objectName, propertyName } = getValuePath(name);
-      //   anyProps[objectName] = {
-      //     ...anyProps[objectName],
-      //     [propertyName]: intl.formatMessage({ id: anyProps[name] as string }),
-      //   };
-      //   break;
-      // case "any[]":
-      //   const { objectName: arrayName, propertyName: objectPropertyName } = getValuePath(name);
-      //   anyProps[arrayName] = [...anyProps[arrayName]].map((value) => ({
-      //     ...value,
-      //     [objectPropertyName]: intl.formatMessage({
-      //       id: value[objectPropertyName],
-      //     }),
-      //   }));
-      //   break;
-      // case "string[]":
-      //   anyProps[name] = (anyProps[name] as string[]).map((value) => intl.formatMessage({ id: value }));
-      //   break;
+      case "any":
+        const { objectName, propertyName } = getValuePath(name);
+        if (!localizedProps[objectName]) {
+          break;
+        }
+
+        const anyProps = localizedProps[objectName];
+        if (!anyProps[propertyName]) {
+          break;
+        }
+
+        localizedProps[objectName] = {
+          ...localizedProps[objectName],
+          [propertyName]: intl.formatMessage({ id: anyProps[propertyName] as string }),
+        };
+        break;
     }
   });
 

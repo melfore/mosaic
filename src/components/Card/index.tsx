@@ -31,7 +31,6 @@ const Card: FC<ICard> = ({
   dataCy = DATA_CY_DEFAULT,
   icon = undefined,
   loading = false,
-  localized,
   subtitle = undefined,
   title,
   unmountCollapsible = false,
@@ -57,7 +56,6 @@ const Card: FC<ICard> = ({
             bottomSpacing={false}
             dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "title")}
             loading={loading}
-            localized={localized}
             truncated
             variant={TypographyVariants.title}
           >
@@ -69,7 +67,6 @@ const Card: FC<ICard> = ({
             bottomSpacing={false}
             dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "subtitle")}
             loading={loading}
-            localized={localized}
             truncated
             variant={TypographyVariants.caption}
           >

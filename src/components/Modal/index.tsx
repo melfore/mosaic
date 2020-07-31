@@ -24,8 +24,8 @@ export const DATA_CY_DEFAULT = "modal";
 export const DATA_CY_SHORTCUT = "title";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "title", type: "string" },
-  { name: "cancel.label", type: "string" },
-  { name: "confirm.label", type: "string" },
+  { name: "cancel.label", type: "any" },
+  { name: "confirm.label", type: "any" },
 ];
 
 const Modal: FC<IModal> = ({
@@ -34,7 +34,6 @@ const Modal: FC<IModal> = ({
   closable = false,
   confirm = undefined,
   dataCy = DATA_CY_DEFAULT,
-  localized,
   onClose = undefined,
   open = false,
   size = ModalSize.default,
@@ -53,7 +52,6 @@ const Modal: FC<IModal> = ({
       <StyledMUIDialogTitle id="modal-title" disableTypography>
         <Typography
           dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "title")}
-          localized={localized}
           variant={TypographyVariants.title}
         >
           {title}
@@ -76,7 +74,6 @@ const Modal: FC<IModal> = ({
               dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "action-cancel")}
               disabled={cancel.disabled}
               label={cancel.label}
-              localized={localized}
               onClick={cancel.action}
               variant={cancel.variant}
             />
@@ -86,7 +83,6 @@ const Modal: FC<IModal> = ({
               dataCy={getDataCyForSubComponent(dataCy, DATA_CY_DEFAULT, "action-confirm")}
               disabled={confirm.disabled}
               label={confirm.label}
-              localized={localized}
               onClick={confirm.action}
               variant={confirm.variant}
             />

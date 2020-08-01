@@ -1,8 +1,9 @@
 import { Box as MUIBox, styled } from "@material-ui/core";
-import { ISpacer, SpacerDirection } from "../../types/Spacer";
+import { SpacerDirection } from "../../types/Spacer";
 
-export const StyledMUIBox = styled(MUIBox)((props: ISpacer) => {
-  const { direction, level = 1 } = props;
+// TODO: this (props: any) here should be removed
+export const StyledMUIBox = styled(MUIBox)((props: any) => {
+  const { direction, level } = props;
   const size = level * 8;
   return {
     display: "block",

@@ -4,18 +4,22 @@ import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@mater
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
 import { InputVariant, InputSize, InputType } from "../../types/Input";
-import { SelectType } from "../../types/Select";
-import { suppressEvent } from "../../utils";
+import { ISelect } from "../../types/Select";
+import { suppressEvent, getDataCyForSubComponent } from "../../utils";
 import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
-/**
- * Select component made on top of `@material-ui/core/Autocomplete`
- */
+export const DATA_CY_DEFAULT = "select";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "label", type: "string" },
+  { name: "placeholder", type: "string" },
+];
 
 const Select = <T extends any>({
   autoComplete = true,
   customOptionRendering = undefined,
-  dataCy = "select",
+  dataCy = DATA_CY_DEFAULT,
   disabled = false,
   getGroupLabel = undefined,
   getOptionLabel,
@@ -33,8 +37,8 @@ const Select = <T extends any>({
   type = InputType.default,
   value = null,
   variant = InputVariant.default,
-}: SelectType<T>) => {
-  const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : option.toString());
+}: ISelect<T>) => {
+  const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : `${option}`);
 
   const isSelected = (option: T, value: T): boolean => {
     if (getOptionSelected) {
@@ -95,7 +99,9 @@ const Select = <T extends any>({
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
         return (
           <Fragment key={`group-${key}`}>
-            <StyledMUIListSubheader>{groupLabel}</StyledMUIListSubheader>
+            <StyledMUIListSubheader data-cy={getDataCyForSubComponent(dataCy, `option-group-${groupLabel}`)}>
+              {groupLabel}
+            </StyledMUIListSubheader>
             {children}
           </Fragment>
         );
@@ -103,9 +109,13 @@ const Select = <T extends any>({
       renderInput={(inputProps) => {
         const { inputProps: extInputProps } = inputProps;
         if (loading) {
+          const forwardedInputProps = {
+            ...inputProps,
+            inputProps: { "data-cy": getDataCyForSubComponent(dataCy, "loading") },
+          };
           return (
             <MUISkeleton width="100%">
-              <StyledMUITextField {...inputProps} margin="normal" size={size} variant={variant} />
+              <StyledMUITextField {...forwardedInputProps} margin="normal" size={size} variant={variant} />
             </MUISkeleton>
           );
         }
@@ -132,8 +142,12 @@ const Select = <T extends any>({
         const optionLabel = getLabel(option);
         return (
           <Fragment key={`option-${optionLabel}`}>
-            <Checkbox dataCy={`${dataCy}-${optionLabel}-checkbox`} disabled value={selected} />
-            <Typography bottomSpacing={false} dataCy={`${dataCy}-${optionLabel}-label`}>
+            <Checkbox
+              dataCy={getDataCyForSubComponent(dataCy, `option-${optionLabel}-checkbox`)}
+              disabled
+              value={selected}
+            />
+            <Typography dataCy={getDataCyForSubComponent(dataCy, `option-${optionLabel}-label`)}>
               {optionLabel}
             </Typography>
           </Fragment>
@@ -144,4 +158,9 @@ const Select = <T extends any>({
   );
 };
 
-export default Select;
+export const SelectWithProps = Select;
+
+export default localized(Select, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

@@ -1,15 +1,18 @@
 import React, { FC } from "react";
 import MaterialTable from "material-table";
 import { Icons, IconSize } from "../../types/Icon";
-import { TableType } from "../../types/Table";
+import { ITable } from "../../types/Table";
 import { DEFAULT_TABLE_OPTIONS, actionAdapter, actionComponentAdapter, columnAdapter, iconAdapter } from "./utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
-/**
- * Table component made on top of `material-table`
- */
-const Table: FC<TableType> = ({
+export const DATA_CY_DEFAULT = "table";
+export const DATA_CY_SHORTCUT = "title";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "title", type: "string" }];
+
+const Table: FC<ITable> = ({
   actions = [],
   columns,
+  dataCy = DATA_CY_DEFAULT,
   loading = false,
   onPageChange = undefined,
   onPageSizeChange = undefined,
@@ -29,9 +32,10 @@ const Table: FC<TableType> = ({
         actions={actions.map(actionAdapter)}
         columns={columns.map(columnAdapter)}
         components={{
-          Action: actionComponentAdapter,
+          Action: (props: any) => actionComponentAdapter(props, dataCy),
         }}
         data={rows}
+        data-cy={dataCy}
         icons={{
           Filter: iconAdapter(Icons.filter, IconSize.small),
           FirstPage: iconAdapter(Icons.first),
@@ -92,4 +96,9 @@ const Table: FC<TableType> = ({
   );
 };
 
-export default Table;
+export const TableWithProps = Table;
+
+export default localized(Table, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

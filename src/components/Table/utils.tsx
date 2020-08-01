@@ -1,10 +1,11 @@
 import React, { forwardRef, Fragment } from "react";
 import { Action as MTActionType, Column as MTColumnType, Options as MTOptionsType } from "material-table";
 import { Icons, IconSize } from "../../types/Icon";
-import { TableActionPosition, TableActionType, TableColumnType } from "../../types/Table";
+import { TableActionPosition, ITableAction, ITableColumn } from "../../types/Table";
 import Button from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
+import { getDataCyForSubComponent } from "../../utils";
 
 // For default props refer to Options section here https://material-table.com/#/docs/all-props
 export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
@@ -13,7 +14,7 @@ export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
   emptyRowsWhenPaging: false,
 };
 
-export const actionAdapter = (action: TableActionType): MTActionType<object> => {
+export const actionAdapter = (action: ITableAction): MTActionType<object> => {
   const {
     callback,
     label,
@@ -35,7 +36,7 @@ export const actionAdapter = (action: TableActionType): MTActionType<object> => 
   };
 };
 
-export const actionComponentAdapter = (props: any) => {
+export const actionComponentAdapter = (props: any, dataCy: string) => {
   const { data, action } = props;
   const { disabled, hidden, icon, position, onClick }: MTActionType<object> = action;
   if (hidden) {
@@ -52,16 +53,18 @@ export const actionComponentAdapter = (props: any) => {
         <Fragment>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <Button
+            dataCy={getDataCyForSubComponent(dataCy, `action-${label}`)}
             disabled={disabled}
             icon={!iconName ? undefined : { name: iconName }}
             label={label}
-            onClick={(event: any) => onClick(event, data)}
+            onClick={() => onClick({}, data)}
           />
         </Fragment>
       )}
       {!displaysButton && (
         <Fragment>
           <IconButton
+            dataCy={getDataCyForSubComponent(dataCy, `action-${label}`)}
             disabled={disabled}
             icon={iconName}
             onClick={(event: any) => onClick(event, data)}
@@ -74,7 +77,7 @@ export const actionComponentAdapter = (props: any) => {
   );
 };
 
-export const columnAdapter = (column: TableColumnType): MTColumnType<object> => {
+export const columnAdapter = (column: ITableColumn): MTColumnType<object> => {
   const { label, path, render, width } = column;
   return {
     ...(!!width && ({ width } as object)),

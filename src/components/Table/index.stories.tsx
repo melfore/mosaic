@@ -1,60 +1,64 @@
 import React, { Fragment } from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, number } from "@storybook/addon-knobs";
+import { boolean, text, number, select } from "@storybook/addon-knobs";
 import { TableActionPosition } from "../../types/Table";
-import { DOCUMENTATION_CODE_BLOCK_CLASS, StoriesWrapper } from "../../utils/stories";
-import { getDocsPageStructure } from "../../utils/stories/DEPRECATED_index";
-import Table from ".";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import Table, { TableWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 import { Icons } from "../../types/Icon";
+import IntlProviderMock, { MessageMock, LocaleMock } from "../../utils/mocks/IntlProviderMock";
+
+// <Fragment>
+// <p>
+//   The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
+//   table features. Below you can find the properties responsible to handle table events:
+// </p>
+// <p>
+//   <b>Pagination:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
+//     {`page: number (default is 0)
+//       pageSize: number (default is 10)
+//       onPageChange={(page: number) => {}}
+//       onPageSizeChange={(pageSize: number) => {}}
+//     `}
+//   </code>
+// </p>
+// <p>
+//   <b>Row click:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Search:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Selection:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Sorting:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
+//     {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
+//   </code>
+// </p>
+// </Fragment>
 
 export default {
   title: "Table",
-  component: Table,
+  component: TableWithProps,
   parameters: {
-    ...getDocsPageStructure("Table", false, {
-      title: "Interaction and events",
-      subtitle: true,
-      body: (
-        <Fragment>
-          <p>
-            The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
-            table features. Below you can find the properties responsible to handle table events:
-          </p>
-          <p>
-            <b>Pagination:</b>
-            <br />
-            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
-              {`page: number (default is 0)
-                pageSize: number (default is 10)
-                onPageChange={(page: number) => {}}
-                onPageSizeChange={(pageSize: number) => {}}
-              `}
-            </code>
-          </p>
-          <p>
-            <b>Row click:</b>
-            <br />
-            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
-          </p>
-          <p>
-            <b>Search:</b>
-            <br />
-            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
-          </p>
-          <p>
-            <b>Selection:</b>
-            <br />
-            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
-          </p>
-          <p>
-            <b>Sorting:</b>
-            <br />
-            <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
-              {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
-            </code>
-          </p>
-        </Fragment>
-      ),
+    ...getDocumentationPage({
+      basedOn: "material-table",
+      component: "Table",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -119,6 +123,27 @@ export const Loading = () => (
     ]}
     title="Without Events"
   />
+);
+
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Table
+      columns={[
+        { label: "Name", path: "name" },
+        { label: "Age", path: "age" },
+      ]}
+      localized
+      rows={[
+        { name: "John", age: 35 },
+        { name: "Nick", age: 45 },
+        { name: "Emma", age: 32 },
+        { name: "Joey", age: 29 },
+        { name: "Luis", age: 78 },
+      ]}
+      title={MessageMock.title}
+    />
+  </IntlProviderMock>
 );
 
 export const WithCustomColumnRender = () => (

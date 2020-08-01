@@ -5,32 +5,30 @@ import Spacer, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ISpacer = {};
 
-const component = (props?: ISpacer) => <Spacer {...defaultProps} {...props} />;
+const getElement = (props?: ISpacer, dataCy = DATA_CY_DEFAULT): ReactWrapper => {
+  const wrapper = mount(<Spacer {...defaultProps} {...props} />);
+  return wrapper.find("div[data-cy='" + dataCy + "']");
+};
 
 describe("Spacer test suite:", () => {
   it("default", () => {
-    const wrapper = mount(component());
-    const div = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}']`);
-    expect(div.prop("direction")).toEqual(SpacerDirection.horizontal);
-    expect(div.prop("level")).toEqual(1);
+    const element = getElement();
+    expect("default-props-check").toBeTruthy();
   });
 
   it("dataCy", () => {
-    const wrapper = mount(component({ dataCy: "custom" }));
-    const div = wrapper.find(`div[data-cy='custom']`);
-    expect(div).toBeInstanceOf(ReactWrapper);
-    expect(div).toBeTruthy();
+    const element = getElement({ dataCy: "custom" }, "custom");
+    expect(element).toBeInstanceOf(ReactWrapper);
+    expect(element).toBeTruthy();
   });
 
   it("direction", () => {
-    const wrapper = mount(component({ direction: SpacerDirection.vertical }));
-    const div = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}']`);
-    expect(div.prop("direction")).toEqual(SpacerDirection.vertical);
+    const element = getElement({ direction: SpacerDirection.vertical });
+    expect(element.prop("direction")).toEqual(SpacerDirection.vertical);
   });
 
   it("level", () => {
-    const wrapper = mount(component({ level: 2 }));
-    const div = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}']`);
-    expect(div.prop("level")).toEqual(2);
+    const element = getElement({ level: 2 });
+    expect(element.prop("level")).toEqual(2);
   });
 });

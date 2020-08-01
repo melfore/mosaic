@@ -10,10 +10,10 @@ export const DATA_CY_DEFAULT = "avatar";
 const Avatar: FC<IAvatar> = ({
   alt = "avatar",
   dataCy = DATA_CY_DEFAULT,
-  icon = undefined,
+  icon,
   loading = false,
-  src = undefined,
-  text = undefined,
+  src,
+  text,
   variant = AvatarVariant.default,
 }) => {
   if (loading) {

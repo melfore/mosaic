@@ -19,7 +19,7 @@ const Avatar: FC<IAvatar> = ({
   if (loading) {
     return (
       <MUISkeleton variant="circle">
-        <StyledMUIAvatar />
+        <StyledMUIAvatar data-cy={getDataCyForSubComponent(dataCy, "loading")} />
       </MUISkeleton>
     );
   }

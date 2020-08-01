@@ -24,8 +24,7 @@ describe("Avatar test suite:", () => {
 
   it("dataCy", () => {
     const element = getElement({ dataCy: "custom" }, "custom");
-    expect(element).toBeInstanceOf(ReactWrapper);
-    expect(element).toBeTruthy();
+    expect(element).toHaveLength(1);
   });
 
   it("icon", () => {
@@ -43,6 +42,11 @@ describe("Avatar test suite:", () => {
     expect(image).toHaveLength(1);
     expect(image.prop("alt")).toEqual(alt);
     expect(image.prop("src")).toEqual(src);
+  });
+
+  it("loading", () => {
+    const element = getElement({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
+    expect(element).toHaveLength(1);
   });
 
   it("squared", () => {

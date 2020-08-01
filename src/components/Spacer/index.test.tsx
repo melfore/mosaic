@@ -18,8 +18,7 @@ describe("Spacer test suite:", () => {
 
   it("dataCy", () => {
     const element = getElement({ dataCy: "custom" }, "custom");
-    expect(element).toBeInstanceOf(ReactWrapper);
-    expect(element).toBeTruthy();
+    expect(element).toHaveLength(1);
   });
 
   it("direction", () => {

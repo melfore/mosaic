@@ -15,13 +15,7 @@ const Checkbox: FC<ICheckbox> = ({
   size = CheckboxSize.default,
   value = false,
 }) => {
-  const onChangeHandler = useCallback((event: any, checked: boolean) => {
-    if (!onChange) {
-      return;
-    }
-
-    onChange(checked);
-  }, []);
+  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), []);
 
   return (
     <MUICheckbox

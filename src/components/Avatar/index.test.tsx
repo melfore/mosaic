@@ -14,6 +14,7 @@ const getElement = (props?: IAvatar, dataCy = DATA_CY_DEFAULT): ReactWrapper => 
 describe("Avatar test suite:", () => {
   it("default", () => {
     const element = getElement();
+    expect(element).toHaveLength(1);
     const icon = element.find("Icon");
     expect(icon).toHaveLength(0);
     const image = element.find("img");

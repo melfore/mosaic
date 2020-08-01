@@ -13,6 +13,7 @@ const getElement = (props?: ISpacer, dataCy = DATA_CY_DEFAULT): ReactWrapper => 
 describe("Spacer test suite:", () => {
   it("default", () => {
     const element = getElement();
+    expect(element).toHaveLength(1);
     expect("default-props-check").toBeTruthy();
   });
 

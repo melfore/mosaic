@@ -1,65 +1,84 @@
-import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import renderer from "react-test-renderer";
 import { IAvatar, AvatarVariant } from "../../types/Avatar";
-import Avatar, { DATA_CY_DEFAULT } from ".";
 import { Icons } from "../../types/Icon";
+import { getTestable } from "../../utils/tests";
+import Avatar, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: IAvatar = {};
 
-const getElement = (props?: IAvatar, dataCy = DATA_CY_DEFAULT): ReactWrapper => {
-  const wrapper = mount(<Avatar {...defaultProps} {...props} />);
-  return wrapper.find("div[data-cy='" + dataCy + "']");
-};
+const getAvatarTestable = (props?: IAvatar, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Avatar, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
 describe("Avatar test suite:", () => {
   it("default", () => {
-    const element = getElement();
-    expect(element).toHaveLength(1);
-    const icon = element.find("Icon");
+    const { element, wrapper } = getAvatarTestable();
+    expect(wrapper).toHaveLength(1);
+    const icon = wrapper.find("Icon");
     expect(icon).toHaveLength(0);
-    const image = element.find("img");
+    const image = wrapper.find("img");
     expect(image).toHaveLength(0);
-    const text = element.find("Typography");
+    const text = wrapper.find("Typography");
     expect(text).toHaveLength(0);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("dataCy", () => {
-    const element = getElement({ dataCy: "custom" }, "custom");
-    expect(element).toHaveLength(1);
+    const { element, wrapper } = getAvatarTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("icon", () => {
-    const element = getElement({ icon: Icons.business });
-    const icon = element.find("Icon");
+    const { element, wrapper } = getAvatarTestable({ icon: Icons.business });
+    const icon = wrapper.find("Icon");
     expect(icon).toHaveLength(1);
     expect(icon.prop("name")).toEqual(Icons.business);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("image", () => {
     const alt = "Mosaic Image";
     const src = "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg";
-    const element = getElement({ alt, src });
-    const image = element.find("img");
+    const { element, wrapper } = getAvatarTestable({ alt, src });
+    const image = wrapper.find("img");
     expect(image).toHaveLength(1);
     expect(image.prop("alt")).toEqual(alt);
     expect(image.prop("src")).toEqual(src);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("loading", () => {
-    const element = getElement({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
-    expect(element).toHaveLength(1);
+    const { element, wrapper } = getAvatarTestable({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("squared", () => {
-    const element = getElement({ variant: AvatarVariant.squared });
-    expect(element.prop("className")).toContain("MuiAvatar-square");
+    const { element, wrapper } = getAvatarTestable({ variant: AvatarVariant.squared });
+    expect(wrapper.prop("className")).toContain("MuiAvatar-square");
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("text", () => {
     const initials = "MO";
-    const element = getElement({ text: initials });
-    const text = element.find("Typography");
+    const { element, wrapper } = getAvatarTestable({ text: initials });
+    const text = wrapper.find("Typography");
     expect(text).toHaveLength(1);
     expect(text.prop("children")).toEqual(initials);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

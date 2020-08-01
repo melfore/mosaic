@@ -1,34 +1,44 @@
-import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import renderer from "react-test-renderer";
 import { ISpacer, SpacerDirection } from "../../types/Spacer";
+import { getTestable } from "../../utils/tests";
 import Spacer, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ISpacer = {};
 
-const getElement = (props?: ISpacer, dataCy = DATA_CY_DEFAULT): ReactWrapper => {
-  const wrapper = mount(<Spacer {...defaultProps} {...props} />);
-  return wrapper.find("div[data-cy='" + dataCy + "']");
-};
+const getSpacerTestable = (props?: ISpacer, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Spacer, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
 describe("Spacer test suite:", () => {
   it("default", () => {
-    const element = getElement();
-    expect(element).toHaveLength(1);
+    const { element, wrapper } = getSpacerTestable();
+    expect(wrapper).toHaveLength(1);
     expect("default-props-check").toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("dataCy", () => {
-    const element = getElement({ dataCy: "custom" }, "custom");
-    expect(element).toHaveLength(1);
+    const { element, wrapper } = getSpacerTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("direction", () => {
-    const element = getElement({ direction: SpacerDirection.vertical });
-    expect(element.prop("direction")).toEqual(SpacerDirection.vertical);
+    const { element, wrapper } = getSpacerTestable({ direction: SpacerDirection.vertical });
+    expect(wrapper.prop("direction")).toEqual(SpacerDirection.vertical);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("level", () => {
-    const element = getElement({ level: 2 });
-    expect(element.prop("level")).toEqual(2);
+    const { element, wrapper } = getSpacerTestable({ level: 2 });
+    expect(wrapper.prop("level")).toEqual(2);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

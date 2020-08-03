@@ -13,8 +13,9 @@
     "dist"
   ],
   "dependencies": {
-    "@date-io/date-fns": "^2.6.0",
     "@date-io/core": "^2.6.0",
+    "@date-io/date-fns": "^2.6.0",
+    "@semantic-release/changelog": "^5.0.1",
     "date-fns": "^2.12.0",
     "material-table": "^1.57.2"
   },
@@ -26,6 +27,10 @@
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.54",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",

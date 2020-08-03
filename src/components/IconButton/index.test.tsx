@@ -14,12 +14,12 @@ const getIconButtonTestable = (props?: IIconButton, dataCy = DATA_CY_DEFAULT) =>
 
 describe("IconButton test suite:", () => {
   it("default", () => {
-    const onClickHandler = jest.fn();
-    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, onClick: onClickHandler });
+    const onClick = jest.fn();
+    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, onClick });
     expect(wrapper).toHaveLength(1);
     expect(wrapper.prop("disabled")).toBeFalsy();
     wrapper.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
     expect(icon.prop("name")).toEqual(defaultProps.icon);
 

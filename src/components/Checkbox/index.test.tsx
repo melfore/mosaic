@@ -58,12 +58,12 @@ describe("Checkbox test suite:", () => {
   });
 
   it("onChange", () => {
-    const onChangeHandler = jest.fn();
-    const { element, wrapper } = getCheckboxTestable({ onChange: onChangeHandler });
+    const onChange = jest.fn();
+    const { element, wrapper } = getCheckboxTestable({ onChange });
     const inputBefore = wrapper.find("input");
     inputBefore.simulate("change", { target: { checked: true } });
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-    expect(onChangeHandler).toHaveBeenCalledWith(true);
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(true);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -48,10 +48,10 @@ describe("ListItem test suite:", () => {
   });
 
   it("loading", () => {
-    const onClickHandler = jest.fn();
-    const { element, wrapper } = getListItemTestable({ onClick: onClickHandler, loading: true });
+    const onClick = jest.fn();
+    const { element, wrapper } = getListItemTestable({ onClick, loading: true });
     wrapper.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(0);
+    expect(onClick).toHaveBeenCalledTimes(0);
     const contentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-content']`);
     expect(contentWrapper).toHaveLength(0);
     const loadingContentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-content-loading']`);
@@ -62,10 +62,10 @@ describe("ListItem test suite:", () => {
   });
 
   it("onClick", () => {
-    const onClickHandler = jest.fn();
-    const { element, wrapper } = getListItemTestable({ onClick: onClickHandler });
+    const onClick = jest.fn();
+    const { element, wrapper } = getListItemTestable({ onClick: onClick });
     wrapper.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

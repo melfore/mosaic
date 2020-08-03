@@ -10,10 +10,6 @@ export interface IBase {
   dataCy?: string;
 }
 
-export interface DEPRECATED_IBaseIntl extends IBase {
-  labelId: string;
-}
-
 export interface ILoadable extends IBase {
   loading?: boolean;
 }

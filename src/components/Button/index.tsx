@@ -1,8 +1,9 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
 import { ButtonIconPosition, ButtonVariants, Icon } from "../..";
 import { IButtonIcon, IButton } from "../../types/Button";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import { suppressEvent } from "../../utils";
 
 interface IMUIButtonIcon {
   endIcon?: ReactElement;
@@ -33,18 +34,23 @@ const Button: FC<IButton> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   elevated = false,
-  icon = undefined,
+  icon,
   label,
   onClick,
   variant = ButtonVariants.contained,
 }) => {
+  const onClickHandler = useCallback((event: any) => {
+    suppressEvent(event);
+    onClick();
+  }, []);
+
   return (
     <MUIButton
       color="primary"
       data-cy={dataCy}
       disabled={disabled}
       disableElevation={!elevated}
-      onClick={onClick}
+      onClick={onClickHandler}
       variant={variant}
       {...getIcons(dataCy, icon)}
     >

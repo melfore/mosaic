@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card test suite: dataCy 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root WithStyles(ForwardRef(Card))-root-1 WithStyles(ForwardRef(Card))-root-85 MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="custom"
+>
+  <div
+    className="MuiCardHeader-root WithStyles(ForwardRef(CardHeader))-root-32 WithStyles(ForwardRef(CardHeader))-root-86"
+  >
+    <div
+      className="MuiCardHeader-content"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
+        data-cy="custom-title"
+      >
+        Card
+      </h2>
+      <span
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        data-cy="custom-subtitle"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root WithStyles(ForwardRef(CardContent))-root-70 WithStyles(ForwardRef(CardContent))-root-87"
+    data-cy="custom-content"
+  />
+  <div
+    className="MuiCardActions-root WithStyles(ForwardRef(CardActions))-root-73 WithStyles(ForwardRef(CardActions))-root-88"
+  />
+</div>
+`;
+
+exports[`Card test suite: default 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root WithStyles(ForwardRef(Card))-root-1 WithStyles(ForwardRef(Card))-root-77 MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="card"
+>
+  <div
+    className="MuiCardHeader-root WithStyles(ForwardRef(CardHeader))-root-32 WithStyles(ForwardRef(CardHeader))-root-78"
+  >
+    <div
+      className="MuiCardHeader-content"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
+        data-cy="card-title"
+      >
+        Card
+      </h2>
+      <span
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        data-cy="card-subtitle"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root WithStyles(ForwardRef(CardContent))-root-70 WithStyles(ForwardRef(CardContent))-root-79"
+    data-cy="card-content"
+  />
+  <div
+    className="MuiCardActions-root WithStyles(ForwardRef(CardActions))-root-73 WithStyles(ForwardRef(CardActions))-root-80"
+  />
+</div>
+`;
+
+exports[`Card test suite: localized 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root WithStyles(ForwardRef(Card))-root-1 WithStyles(ForwardRef(Card))-root-93 MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="Card"
+>
+  <div
+    className="MuiCardHeader-root WithStyles(ForwardRef(CardHeader))-root-32 WithStyles(ForwardRef(CardHeader))-root-94"
+  >
+    <div
+      className="MuiCardHeader-content"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
+        data-cy="Card-title"
+      >
+        Card
+      </h2>
+      <span
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        data-cy="Card-subtitle"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root WithStyles(ForwardRef(CardContent))-root-70 WithStyles(ForwardRef(CardContent))-root-95"
+    data-cy="Card-content"
+  />
+  <div
+    className="MuiCardActions-root WithStyles(ForwardRef(CardActions))-root-73 WithStyles(ForwardRef(CardActions))-root-96"
+  />
+</div>
+`;

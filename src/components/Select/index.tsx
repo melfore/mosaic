@@ -63,6 +63,7 @@ const Select = <T extends any>({
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
+      data-cy={dataCy}
       disableCloseOnSelect={multiple}
       disabled={disabled}
       getOptionLabel={getLabel}

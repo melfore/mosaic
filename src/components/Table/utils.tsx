@@ -5,7 +5,7 @@ import { TableActionPosition, ITableAction, ITableColumn } from "../../types/Tab
 import Button from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { getDataCyForSubComponent } from "../../utils";
+import { getDataCyForSubComponent, suppressEvent } from "../../utils";
 
 // For default props refer to Options section here https://material-table.com/#/docs/all-props
 export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
@@ -28,8 +28,9 @@ export const actionAdapter = (action: ITableAction): MTActionType<object> => {
     hidden,
     icon: `${label}$${icon}`,
     onClick: (event, data) => {
-      event.preventDefault();
-      event.stopPropagation();
+      if (event) {
+        suppressEvent(event);
+      }
       callback(data);
     },
     position,
@@ -57,7 +58,7 @@ export const actionComponentAdapter = (props: any, dataCy: string) => {
             disabled={disabled}
             icon={!iconName ? undefined : { name: iconName }}
             label={label}
-            onClick={() => onClick({}, data)}
+            onClick={() => onClick(undefined, data)}
           />
         </Fragment>
       )}
@@ -67,7 +68,7 @@ export const actionComponentAdapter = (props: any, dataCy: string) => {
             dataCy={getDataCyForSubComponent(dataCy, `action-${label}`)}
             disabled={disabled}
             icon={iconName}
-            onClick={(event: any) => onClick(event, data)}
+            onClick={() => onClick(undefined, data)}
             size={IconSize.small}
           />
           <span>&nbsp;&nbsp;</span>

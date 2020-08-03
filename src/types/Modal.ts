@@ -18,7 +18,7 @@ export interface IModal extends ILocalizable {
   cancel?: IModalAction;
   closable?: boolean;
   confirm?: IModalAction;
-  onClose?: (reason?: string) => void;
+  onClose?: () => void;
   open?: boolean;
   size?: ModalSize;
   title?: string;

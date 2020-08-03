@@ -7,13 +7,14 @@ import {
 import { Button, Icons, IconSize, IconButton, ModalSize, Typography, TypographyVariants } from "../..";
 import { IModal } from "../../types/Modal";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import { getDataCyForSubComponent } from "../../utils";
+import { getDataCyForSubComponent, suppressEvent } from "../../utils";
 import { StyledMUIDialogTitle } from "./styled";
 
-const onCloseWrapper = (event: any, reason?: string, onClose?: Function) => {
-  event.preventDefault();
-  event.stopPropagation();
-  onClose && onClose(reason);
+const onCloseWrapper = (event?: any, onClose?: Function) => {
+  if (event) {
+    suppressEvent(event);
+  }
+  onClose && onClose();
 };
 
 export const DATA_CY_DEFAULT = "modal";
@@ -42,7 +43,7 @@ const Modal: FC<IModal> = ({
       data-cy={dataCy}
       fullWidth
       maxWidth={size}
-      onClose={(event, reason) => onCloseWrapper(event, reason, onClose)}
+      onClose={(event) => onCloseWrapper(event, onClose)}
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
@@ -50,11 +51,7 @@ const Modal: FC<IModal> = ({
           {title}
         </Typography>
         {closable && (
-          <IconButton
-            icon={Icons.close}
-            size={IconSize.small}
-            onClick={(event) => onCloseWrapper(event, undefined, onClose)}
-          />
+          <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
         )}
       </StyledMUIDialogTitle>
       <MUIDialogContent data-cy={getDataCyForSubComponent(dataCy, "content")} dividers>

@@ -44,10 +44,7 @@ const AppBar: FC<IAppBar> = ({
               color={Color.inherit}
               dataCy={getDataCyForSubComponent(dataCy, "menu")}
               icon={menu.icon}
-              onClick={(event) => {
-                suppressEvent(event);
-                menu.onClick && menu.onClick();
-              }}
+              onClick={menu.onClick}
             />
           )}
           {title && (
@@ -71,10 +68,7 @@ const AppBar: FC<IAppBar> = ({
               color={Color.inherit}
               dataCy={getDataCyForSubComponent(dataCy, `action-${index}`)}
               icon={icon}
-              onClick={(event) => {
-                suppressEvent(event);
-                onClick();
-              }}
+              onClick={onClick}
             />
           ))}
           {userMenu && userMenu.length > 0 && (
@@ -83,10 +77,7 @@ const AppBar: FC<IAppBar> = ({
                 color={Color.inherit}
                 dataCy={getDataCyForSubComponent(dataCy, `user-menu`)}
                 icon={Icons.account}
-                onClick={(event) => {
-                  suppressEvent(event);
-                  setUserMenuAnchor(event.currentTarget);
-                }}
+                onClick={() => setUserMenuAnchor(document.querySelector(`button[data-cy='${dataCy}-user-menu']`))}
               />
               <MUIMenu
                 id={`${dataCy}-user-menu`}

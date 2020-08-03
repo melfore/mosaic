@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+
 import { ILoadable, ILocalizable } from "./Base";
 
 export enum TypographyVariants {

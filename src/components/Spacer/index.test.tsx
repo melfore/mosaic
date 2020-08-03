@@ -1,6 +1,8 @@
 import renderer from "react-test-renderer";
+
 import { ISpacer, SpacerDirection } from "../../types/Spacer";
 import { getTestable } from "../../utils/tests";
+
 import Spacer, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ISpacer = {};

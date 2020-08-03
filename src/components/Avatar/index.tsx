@@ -1,9 +1,11 @@
 import React, { FC, memo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
+
 import { AvatarVariant, Icon, Typography } from "../..";
 import { IAvatar } from "../../types/Avatar";
-import { StyledMUIAvatar } from "./styled";
 import { getComposedDataCy } from "../../utils";
+
+import { StyledMUIAvatar } from "./styled";
 
 export const DATA_CY_DEFAULT = "avatar";
 

@@ -1,10 +1,12 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, number, select } from "@storybook/addon-knobs";
-import Select, { SelectWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import { boolean, number, select, text } from "@storybook/addon-knobs";
+
 import { InputSize, InputVariant } from "../../types/Input";
-import { getDocumentationPage } from "../../utils/stories";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { getDocumentationPage } from "../../utils/stories";
+
+import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps } from ".";
 
 export default {
   title: "Select",

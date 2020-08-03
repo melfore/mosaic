@@ -1,10 +1,12 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
+
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
 import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 export default {

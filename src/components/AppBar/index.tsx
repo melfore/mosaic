@@ -6,12 +6,14 @@ import {
   MenuItem as MUIMenuItem,
   PopoverOrigin as MUIPopoverOrigin,
 } from "@material-ui/core";
+
+import { IconButton, Icons, Typography, TypographyVariants } from "../..";
 import { IAppBar } from "../../types/AppBar";
 import { Color } from "../../types/Base";
-import { Icons, IconButton, Typography, TypographyVariants } from "../..";
-import { suppressEvent, getComposedDataCy } from "../../utils";
-import { StyledMUIToolbar, TitleWrapper } from "./styled";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
+import { StyledMUIToolbar, TitleWrapper } from "./styled";
 
 const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   vertical: "top",

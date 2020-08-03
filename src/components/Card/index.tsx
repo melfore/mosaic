@@ -1,8 +1,12 @@
-import React, { cloneElement, FC, Fragment, useState, useMemo } from "react";
+import React, { cloneElement, FC, Fragment, useMemo, useState } from "react";
 import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { ICard } from "../../types/Card";
+
 import { Avatar, IconButton, Icons, Typography, TypographyVariants } from "../..";
+import { ICard } from "../../types/Card";
+import { getComposedDataCy } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
 import {
   ActionsWrapper,
   StyledMUICard,
@@ -10,8 +14,6 @@ import {
   StyledMUICardContent,
   StyledMUICardHeader,
 } from "./styled";
-import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import { getComposedDataCy } from "../../utils";
 
 export const DATA_CY_DEFAULT = "card";
 export const DATA_CY_SHORTCUT = "title";
@@ -63,7 +65,7 @@ const Card: FC<ICard> = ({
         }
       />
     ),
-    [icon, loading, subtitle, title]
+    [dataCy, icon, loading, subtitle, title]
   );
 
   return (

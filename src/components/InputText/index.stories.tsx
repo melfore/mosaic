@@ -1,11 +1,13 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, object, select } from "@storybook/addon-knobs";
-import { InputSize, InputVariant, InputType } from "../../types/Input";
+import { boolean, object, select, text } from "@storybook/addon-knobs";
+
+import { Icons } from "../../types/Icon";
+import { InputSize, InputType, InputVariant } from "../../types/Input";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
-import InputText, { InputTextWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
-import { Icons } from "../../types/Icon";
+
+import InputText, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputTextWithProps, LOCALIZABLE_PROPS } from ".";
 
 export default {
   title: "InputText",

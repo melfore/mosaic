@@ -1,7 +1,7 @@
-import renderer from "react-test-renderer";
 import { ITable } from "../../types/Table";
 import { getLocalizedTestable } from "../../utils/tests";
-import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
+
+import Table, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ITable = {
   columns: [],
@@ -16,7 +16,7 @@ const getTableTestable = (props?: ITable, dataCy = DATA_CY_DEFAULT) =>
 
 describe("Table test suite:", () => {
   it("default", () => {
-    const { element, wrapper } = getTableTestable();
+    const { wrapper } = getTableTestable();
     // console.log(wrapper.debug());
     expect(wrapper).toHaveLength(1);
     expect("default-props-check").toBeTruthy();
@@ -26,7 +26,7 @@ describe("Table test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getTableTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    const { wrapper } = getTableTestable({ ...defaultProps, dataCy: "custom" }, "custom");
     expect(wrapper).toHaveLength(1);
 
     // const snapshotWrapper = renderer.create(element).toJSON();
@@ -34,12 +34,11 @@ describe("Table test suite:", () => {
   });
 
   xit("localized", () => {
-    const props = { ...defaultProps, localized: true };
-    const { element, wrapper } = getTableTestable({ ...props }, props[DATA_CY_SHORTCUT]);
+    // const props = { ...defaultProps, localized: true };
+    // const { element, wrapper } = getTableTestable({ ...props }, props[DATA_CY_SHORTCUT]);
     // console.log(wrapper.debug());
-    expect("localizable-props-check").toBeTruthy();
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
+    // expect("localizable-props-check").toBeTruthy();
+    // const snapshotWrapper = renderer.create(element).toJSON();
+    // expect(snapshotWrapper).toMatchSnapshot();
   });
 });

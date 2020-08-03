@@ -1,9 +1,10 @@
 import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
+
 import { ButtonIconPosition, ButtonVariants, Icon } from "../..";
-import { IButtonIcon, IButton } from "../../types/Button";
-import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import { IButton, IButtonIcon } from "../../types/Button";
 import { suppressEvent } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 interface IMUIButtonIcon {
   endIcon?: ReactElement;
@@ -39,10 +40,13 @@ const Button: FC<IButton> = ({
   onClick,
   variant = ButtonVariants.contained,
 }) => {
-  const onClickHandler = useCallback((event: any) => {
-    suppressEvent(event);
-    onClick();
-  }, []);
+  const onClickHandler = useCallback(
+    (event: any) => {
+      suppressEvent(event);
+      onClick();
+    },
+    [onClick]
+  );
 
   return (
     <MUIButton

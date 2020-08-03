@@ -1,5 +1,6 @@
 import React, { FC, useCallback } from "react";
 import MUISwitch from "@material-ui/core/Switch";
+
 import { ISwitch, SwitchSize } from "../../types/Switch";
 
 export const DATA_CY_DEFAULT = "switch";
@@ -12,7 +13,7 @@ const Switch: FC<ISwitch> = ({
   size = SwitchSize.default,
   value = false,
 }) => {
-  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), []);
+  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
 
   return (
     <MUISwitch

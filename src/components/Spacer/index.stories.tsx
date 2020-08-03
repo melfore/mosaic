@@ -1,8 +1,10 @@
 import React from "react";
-import { select, number } from "@storybook/addon-knobs";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
-import Spacer, { DATA_CY_DEFAULT } from ".";
+import { number, select } from "@storybook/addon-knobs";
+
 import { SpacerDirection } from "../../types/Spacer";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Spacer, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Spacer",

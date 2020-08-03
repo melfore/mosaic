@@ -1,7 +1,26 @@
 {
   "extends": ["react-app", "prettier"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "simple-import-sort"],
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/sort": [
+          "error",
+          {
+            "groups": [
+              ["^\\u0000"],
+              ["^react", "^@?\\w"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "simple-import-sort/sort": "error"
   }
 }

@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 import MaterialTable from "material-table";
+
 import { Icons, IconSize } from "../../types/Icon";
 import { ITable } from "../../types/Table";
-import { DEFAULT_TABLE_OPTIONS, actionAdapter, actionComponentAdapter, columnAdapter, iconAdapter } from "./utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
+import { actionAdapter, actionComponentAdapter, columnAdapter, DEFAULT_TABLE_OPTIONS, iconAdapter } from "./utils";
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";

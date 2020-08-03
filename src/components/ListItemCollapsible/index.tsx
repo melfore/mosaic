@@ -1,9 +1,10 @@
 import React, { FC, Fragment } from "react";
 import { Collapse as MUICollapse } from "@material-ui/core";
-import { IListItemCollapsible } from "../../types/ListItem";
-import ListItem from "../ListItem";
+
 import { Icons } from "../../types/Icon";
+import { IListItemCollapsible } from "../../types/ListItem";
 import { getComposedDataCy } from "../../utils";
+import ListItem from "../ListItem";
 
 export const DATA_CY_DEFAULT = "list-item-collapsible";
 

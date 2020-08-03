@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+
 import { DOCUMENTATION_TITLE_CLASS } from ".";
 
 interface IDocumentationTitle {

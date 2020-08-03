@@ -1,8 +1,10 @@
 import React from "react";
-import { select, text, boolean } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
 import Avatar, { AvatarWithProps, DATA_CY_DEFAULT } from ".";
 
 export default {

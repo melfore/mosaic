@@ -1,6 +1,8 @@
 import renderer from "react-test-renderer";
+
 import { ISwitch, SwitchSize } from "../../types/Switch";
 import { getTestable } from "../../utils/tests";
+
 import Switch, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ISwitch = {};

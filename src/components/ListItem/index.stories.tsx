@@ -1,10 +1,12 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
+import { Typography } from "../..";
 import { Icons } from "../../types/Icon";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
 import ListItem, { DATA_CY_DEFAULT } from ".";
-import { Typography } from "../..";
 
 export default {
   title: "ListItem",

@@ -1,4 +1,5 @@
 import { Box as MUIBox, styled } from "@material-ui/core";
+
 import { SpacerDirection } from "../../types/Spacer";
 
 // TODO: this (props: any) here should be removed

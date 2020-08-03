@@ -1,9 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
+
+import { Icons } from "../../types/Icon";
 import { IListItem } from "../../types/ListItem";
 import { getTestable } from "../../utils/tests";
+
 import ListItem, { DATA_CY_DEFAULT } from ".";
-import { Icons } from "../../types/Icon";
 
 const defaultProps: IListItem = {};
 

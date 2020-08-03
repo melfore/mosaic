@@ -1,5 +1,5 @@
-import { Icons, IconSize } from "./Icon";
 import { IBase } from "./Base";
+import { Icons, IconSize } from "./Icon";
 
 export interface IIconButton extends IBase {
   disabled?: boolean;

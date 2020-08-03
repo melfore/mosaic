@@ -1,9 +1,11 @@
 import React from "react";
-import { text, select, boolean } from "@storybook/addon-knobs";
-import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
+import { TypographyDisplay, TypographyVariants } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { StoriesWrapper } from "../../utils/stories";
 import { getDocumentationPage } from "../../utils/stories";
+
 import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
 
 export default {

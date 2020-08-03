@@ -1,13 +1,15 @@
 import React, { Fragment } from "react";
 import { Popper, PopperProps } from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
+
+import { InputSize, InputType, InputVariant } from "../../types/Input";
+import { ISelect } from "../../types/Select";
+import { getComposedDataCy, suppressEvent } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
-import { InputVariant, InputSize, InputType } from "../../types/Input";
-import { ISelect } from "../../types/Select";
-import { suppressEvent, getComposedDataCy } from "../../utils";
+
 import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
-import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 export const DATA_CY_DEFAULT = "select";
 export const DATA_CY_SHORTCUT = "label";

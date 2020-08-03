@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
+
 import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
-import { ReactNode } from "react";
 
 interface IBaseListItem extends ILoadable {
   content?: ReactNode;

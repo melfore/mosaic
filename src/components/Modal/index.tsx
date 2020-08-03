@@ -4,10 +4,12 @@ import {
   DialogActions as MUIDialogActions,
   DialogContent as MUIDialogContent,
 } from "@material-ui/core";
-import { Button, Icons, IconSize, IconButton, ModalSize, Typography, TypographyVariants } from "../..";
+
+import { Button, IconButton, Icons, IconSize, ModalSize, Typography, TypographyVariants } from "../..";
 import { IModal } from "../../types/Modal";
-import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { getComposedDataCy, suppressEvent } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
 import { StyledMUIDialogTitle } from "./styled";
 
 const onCloseWrapper = (event?: any, onClose?: Function) => {

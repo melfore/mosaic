@@ -1,10 +1,12 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, select } from "@storybook/addon-knobs";
-import Checkbox, { DATA_CY_DEFAULT } from ".";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
 import { CheckboxSize } from "../../types/Checkbox";
 import FormMock from "../../utils/mocks/FormMock";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Checkbox, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Checkbox",

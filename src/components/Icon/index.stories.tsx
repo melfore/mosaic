@@ -1,7 +1,9 @@
 import React from "react";
-import { select, text, boolean, object } from "@storybook/addon-knobs";
+import { boolean, object, select, text } from "@storybook/addon-knobs";
+
 import { Icons, IconSize } from "../../types/Icon";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
 import Icon, { DATA_CY_DEFAULT } from ".";
 
 export default {

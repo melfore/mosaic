@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, number, select } from "@storybook/addon-knobs";
-import { TableActionPosition } from "../../types/Table";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
-import Table, { TableWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import { boolean, number, select, text } from "@storybook/addon-knobs";
+
 import { Icons } from "../../types/Icon";
-import IntlProviderMock, { MessageMock, LocaleMock } from "../../utils/mocks/IntlProviderMock";
+import { TableActionPosition } from "../../types/Table";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
 
 // <Fragment>
 // <p>
@@ -155,7 +157,7 @@ export const WithCustomColumnRender = () => (
           path: "name",
           render: ({ name }) => (
             <div style={{ alignItems: "center", display: "flex" }}>
-              <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} />
+              {/* <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} /> */}
               <b style={{ marginLeft: "8px" }}>{name}</b>
             </div>
           ),

@@ -1,6 +1,8 @@
-import React, { ReactElement, FC, Fragment } from "react";
-import DocumentationPage from "./DocumentationPage";
+import React, { FC, Fragment, ReactElement } from "react";
+
 import { ILocalizableProperty } from "../hocs/localized";
+
+import DocumentationPage from "./DocumentationPage";
 
 export const DOCUMENTATION_BODY_CLASS = "mosaic-documentation-body";
 export const DOCUMENTATION_CODE_LINE_CLASS = "mosaic-documentation-code-line";

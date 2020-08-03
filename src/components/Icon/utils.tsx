@@ -39,6 +39,7 @@ import MUISendIcon from "@material-ui/icons/Send";
 import MUISettingsIcon from "@material-ui/icons/Settings";
 import MUITimelineIcon from "@material-ui/icons/Timeline";
 import MUIWarningIcon from "@material-ui/icons/Warning";
+
 import { Icons } from "../../types/Icon";
 
 export const iconsCatalog = {

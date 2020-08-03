@@ -1,5 +1,6 @@
-import React, { ComponentType, ReactElement, createElement } from "react";
+import React, { ComponentType, createElement, ReactElement } from "react";
 import { mount, ReactWrapper } from "enzyme";
+
 import { IBase } from "../../types/Base";
 import IntlProviderMock, { LocaleMock } from "../mocks/IntlProviderMock";
 

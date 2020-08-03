@@ -1,11 +1,13 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, object, boolean, select } from "@storybook/addon-knobs";
+import { boolean, object, select, text } from "@storybook/addon-knobs";
+
 import { ButtonVariants } from "../../types/Button";
-import ModalMock from "../../utils/mocks/ModalMock";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
-import Modal, { ModalWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import ModalMock from "../../utils/mocks/ModalMock";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Modal, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, ModalWithProps } from ".";
 
 export default {
   title: "Modal",

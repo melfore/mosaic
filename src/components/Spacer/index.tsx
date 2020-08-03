@@ -1,5 +1,7 @@
 import React, { FC } from "react";
-import { SpacerDirection, ISpacer } from "../../types/Spacer";
+
+import { ISpacer, SpacerDirection } from "../../types/Spacer";
+
 import { StyledMUIBox } from "./styled";
 
 export const DATA_CY_DEFAULT = "spacer";

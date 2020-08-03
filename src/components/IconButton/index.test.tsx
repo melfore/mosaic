@@ -1,8 +1,10 @@
 import renderer from "react-test-renderer";
+
+import { Icons, IconSize } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
 import { getTestable } from "../../utils/tests";
+
 import IconButton, { DATA_CY_DEFAULT } from ".";
-import { Icons, IconSize } from "../../types/Icon";
 
 const defaultProps: IIconButton = {
   icon: Icons.account,

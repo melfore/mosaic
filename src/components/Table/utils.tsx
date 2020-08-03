@@ -1,11 +1,12 @@
 import React, { forwardRef, Fragment } from "react";
 import { Action as MTActionType, Column as MTColumnType, Options as MTOptionsType } from "material-table";
+
 import { Icons, IconSize } from "../../types/Icon";
-import { TableActionPosition, ITableAction, ITableColumn } from "../../types/Table";
+import { ITableAction, ITableColumn, TableActionPosition } from "../../types/Table";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import Button from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { getComposedDataCy, suppressEvent } from "../../utils";
 
 // For default props refer to Options section here https://material-table.com/#/docs/all-props
 export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {

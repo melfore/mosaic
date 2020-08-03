@@ -1,9 +1,11 @@
 import renderer from "react-test-renderer";
+
 import { IAppBar } from "../../types/AppBar";
-import { getLocalizedTestable } from "../../utils/tests";
-import AppBar, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
-import { MessageMock, mockedMessages, LocaleMock } from "../../utils/mocks/IntlProviderMock";
 import { Icons } from "../../types/Icon";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
+
+import AppBar, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
 
 const defaultProps: IAppBar = {};
 

@@ -1,7 +1,8 @@
 import React, { FC } from "react";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { Typography as MUITypography } from "@material-ui/core";
-import { TypographyVariants, TypographyDisplay } from "../..";
+import { Skeleton as MUISkeleton } from "@material-ui/lab";
+
+import { TypographyDisplay, TypographyVariants } from "../..";
 import { ITypography } from "../../types/Typography";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 

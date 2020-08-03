@@ -1,9 +1,11 @@
 import renderer from "react-test-renderer";
-import { IButton, ButtonVariants, ButtonIconPosition } from "../../types/Button";
-import { MessageMock, mockedMessages, LocaleMock } from "../../utils/mocks/IntlProviderMock";
-import { getLocalizedTestable } from "../../utils/tests";
-import Button, { DATA_CY_DEFAULT } from ".";
+
+import { ButtonIconPosition, ButtonVariants, IButton } from "../../types/Button";
 import { Icons } from "../../types/Icon";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
+
+import Button, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: IButton = {
   label: "Button",

@@ -1,7 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { IIcon, Icons, IconSize } from "../../types/Icon";
+
+import { Icons, IconSize, IIcon } from "../../types/Icon";
 import { getTestable } from "../../utils/tests";
+
 import Icon, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: IIcon = {
@@ -32,7 +34,7 @@ describe("Icon test suite:", () => {
   });
 
   it("loading", () => {
-    const { element, wrapper } = getIconTestable({ ...defaultProps, loading: true });
+    const { element } = getIconTestable({ ...defaultProps, loading: true });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

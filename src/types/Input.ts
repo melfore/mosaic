@@ -1,4 +1,4 @@
-import { IBase, ILocalizable } from "./Base";
+import { ILocalizable } from "./Base";
 
 export enum InputSize {
   default = "medium",

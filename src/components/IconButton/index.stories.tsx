@@ -1,8 +1,10 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { select, text, boolean } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
 import { Icons, IconSize } from "../../types/Icon";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
 import IconButton, { DATA_CY_DEFAULT } from ".";
 
 export default {

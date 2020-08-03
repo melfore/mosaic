@@ -1,5 +1,5 @@
-import { InputType, IInput } from "./Input";
 import { Icons } from "./Icon";
+import { IInput, InputType } from "./Input";
 
 export interface MultilineInputType {
   rows: number;

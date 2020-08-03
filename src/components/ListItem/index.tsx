@@ -5,9 +5,10 @@ import {
   ListItemText as MUIListItemText,
 } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
+
 import { IListItem } from "../../types/ListItem";
-import Icon from "../Icon";
 import { getComposedDataCy, suppressEvent } from "../../utils";
+import Icon from "../Icon";
 
 export const DATA_CY_DEFAULT = "list-item";
 

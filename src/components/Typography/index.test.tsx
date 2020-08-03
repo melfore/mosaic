@@ -1,8 +1,10 @@
 import renderer from "react-test-renderer";
-import { ITypography, TypographyVariants, TypographyDisplay } from "../../types/Typography";
+
+import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 import { getLocalizedTestable } from "../../utils/tests";
+
 import Typography, { DATA_CY_DEFAULT } from ".";
-import { MessageMock, mockedMessages, LocaleMock } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps: ITypography = {
   content: "Text",

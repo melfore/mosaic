@@ -1,12 +1,14 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
 import { Icons } from "../../types/Icon";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
+
 import Card, { CardWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 export default {

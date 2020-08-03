@@ -1,7 +1,9 @@
 import renderer from "react-test-renderer";
-import { IAvatar, AvatarVariant } from "../../types/Avatar";
+
+import { AvatarVariant, IAvatar } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getTestable } from "../../utils/tests";
+
 import Avatar, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: IAvatar = {};

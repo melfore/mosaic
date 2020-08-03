@@ -1,5 +1,5 @@
 import React, { ComponentType, FC } from "react";
-import { useIntl, IntlShape } from "react-intl";
+import { IntlShape, useIntl } from "react-intl";
 
 import { ILocalizable } from "../../types/Base";
 

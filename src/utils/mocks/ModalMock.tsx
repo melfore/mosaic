@@ -1,7 +1,8 @@
 import React, { FC, ReactElement, useState } from "react";
+
 import Button from "../../components/Button";
-import { Icons } from "../../types/Icon";
 import { ButtonVariants } from "../../types/Button";
+import { Icons } from "../../types/Icon";
 
 interface ModalMockType {
   buttonLabel?: string;

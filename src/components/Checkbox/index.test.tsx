@@ -1,6 +1,8 @@
 import renderer from "react-test-renderer";
-import { ICheckbox, CheckboxSize } from "../../types/Checkbox";
+
+import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
 import { getTestable } from "../../utils/tests";
+
 import Checkbox, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ICheckbox = {};

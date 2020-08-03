@@ -1,7 +1,9 @@
 import renderer from "react-test-renderer";
+
 import { IInput } from "../../types/Input";
 import { getLocalizedTestable } from "../../utils/tests";
-import InputText, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
+
+import InputText, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: IInput = {};
 
@@ -30,12 +32,11 @@ describe("InputText test suite:", () => {
   });
 
   xit("localized", () => {
-    const props = { ...defaultProps, localized: true };
-    const { element, wrapper } = getInputTextTestable({ ...props }, props[DATA_CY_SHORTCUT]);
+    // const props = { ...defaultProps, localized: true };
+    // const { element, wrapper } = getInputTextTestable({ ...props }, props[DATA_CY_SHORTCUT]);
     // console.log(wrapper.debug());
-    expect("localizable-props-check").toBeTruthy();
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
+    // expect("localizable-props-check").toBeTruthy();
+    // const snapshotWrapper = renderer.create(element).toJSON();
+    // expect(snapshotWrapper).toMatchSnapshot();
   });
 });

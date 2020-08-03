@@ -1,12 +1,14 @@
-import React, { createElement, FC, useState, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { InputAdornment } from "@material-ui/core";
+
+import { IconSize } from "../../types/Icon";
+import { InputSize, InputType, InputVariant } from "../../types/Input";
+import { InputAdornmentType, InputTextType, MultilineInputType } from "../../types/InputText";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
-import { InputType, InputSize, InputVariant } from "../../types/Input";
-import { InputTextType, MultilineInputType, InputAdornmentType } from "../../types/InputText";
+
 import { StyledMUITextField } from "./styled";
-import { IconSize } from "../../types/Icon";
-import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 const getAdornment = (adornment?: InputAdornmentType) => {
   if (!adornment) {

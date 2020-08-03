@@ -1,9 +1,11 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { text, boolean, select } from "@storybook/addon-knobs";
-import { StoriesWrapper, getDocumentationPage } from "../../utils/stories";
-import ListItemCollapsible, { DATA_CY_DEFAULT } from ".";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 import Typography from "../Typography";
+
+import ListItemCollapsible, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "ListItemCollapsible",

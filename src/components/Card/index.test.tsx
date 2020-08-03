@@ -1,7 +1,9 @@
 import renderer from "react-test-renderer";
+
 import { ICard } from "../../types/Card";
 import { getLocalizedTestable } from "../../utils/tests";
-import Card, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
+
+import Card, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ICard = {
   title: "Card",
@@ -32,12 +34,11 @@ describe("Card test suite:", () => {
   });
 
   xit("localized", () => {
-    const props = { ...defaultProps, localized: true };
-    const { element, wrapper } = getCardTestable({ ...props }, props[DATA_CY_SHORTCUT]);
+    // const props = { ...defaultProps, localized: true };
+    // const { element, wrapper } = getCardTestable({ ...props }, props[DATA_CY_SHORTCUT]);
     // console.log(wrapper.debug());
-    expect("localizable-props-check").toBeTruthy();
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
+    // expect("localizable-props-check").toBeTruthy();
+    // const snapshotWrapper = renderer.create(element).toJSON();
+    // expect(snapshotWrapper).toMatchSnapshot();
   });
 });

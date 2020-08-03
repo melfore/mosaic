@@ -1,8 +1,10 @@
 import React, { FC } from "react";
-import { InputType, InputSize, InputVariant } from "../../types/Input";
+
+import { InputSize, InputType, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
-import { StyledMUITextField } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
+import { StyledMUITextField } from "./styled";
 
 const getControlledValue = (value: number | null): any => {
   return value === null ? "" : value;

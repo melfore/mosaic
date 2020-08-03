@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Switch test suite: checked 1`] = `
+<span
+  className="MuiSwitch-root"
+>
+  <span
+    aria-disabled={false}
+    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-14 Mui-checked"
+    data-cy="switch"
+    onBlur={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={null}
+  >
+    <span
+      className="MuiIconButton-label"
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input-16 MuiSwitch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb"
+      />
+    </span>
+  </span>
+  <span
+    className="MuiSwitch-track"
+  />
+</span>
+`;
+
 exports[`Switch test suite: dataCy 1`] = `
 <span
   className="MuiSwitch-root"
@@ -168,6 +211,9 @@ exports[`Switch test suite: onChange - not handled 1`] = `
         className="MuiSwitch-thumb"
       />
     </span>
+    <span
+      className="MuiTouchRipple-root"
+    />
   </span>
   <span
     className="MuiSwitch-track"
@@ -211,9 +257,6 @@ exports[`Switch test suite: onChange 1`] = `
         className="MuiSwitch-thumb"
       />
     </span>
-    <span
-      className="MuiTouchRipple-root"
-    />
   </span>
   <span
     className="MuiSwitch-track"
@@ -257,9 +300,6 @@ exports[`Switch test suite: required 1`] = `
         className="MuiSwitch-thumb"
       />
     </span>
-    <span
-      className="MuiTouchRipple-root"
-    />
   </span>
   <span
     className="MuiSwitch-track"
@@ -303,6 +343,9 @@ exports[`Switch test suite: size 1`] = `
         className="MuiSwitch-thumb"
       />
     </span>
+    <span
+      className="MuiTouchRipple-root"
+    />
   </span>
   <span
     className="MuiSwitch-track"

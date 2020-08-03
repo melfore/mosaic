@@ -29,6 +29,15 @@ describe("Switch test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("checked", () => {
+    const { element, wrapper } = getSwitchTestable({ value: true });
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("disabled", () => {
     const { element, wrapper } = getSwitchTestable({ disabled: true });
     const input = wrapper.find("input");

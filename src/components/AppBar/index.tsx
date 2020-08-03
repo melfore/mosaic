@@ -25,14 +25,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "userMenu.label", type: "any[]" },
 ];
 
-const AppBar: FC<IAppBar> = ({
-  actions = [],
-  dataCy = "appbar",
-  menu = undefined,
-  onTitleClick = undefined,
-  title = undefined,
-  userMenu = [],
-}) => {
+const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleClick, title, userMenu = [] }) => {
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
 
   return (

@@ -12,7 +12,10 @@ describe("Switch test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getSwitchTestable();
     expect(wrapper).toHaveLength(1);
-    expect("default-props-check").toBeTruthy();
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeFalsy();
+    expect(input.prop("disabled")).toBeFalsy();
+    expect(input.prop("required")).toBeFalsy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -5,7 +5,7 @@ import Checkbox from "../Checkbox";
 import Typography from "../Typography";
 import { InputVariant, InputSize, InputType } from "../../types/Input";
 import { ISelect } from "../../types/Select";
-import { suppressEvent, getDataCyForSubComponent } from "../../utils";
+import { suppressEvent, getComposedDataCy } from "../../utils";
 import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
@@ -99,7 +99,7 @@ const Select = <T extends any>({
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
         return (
           <Fragment key={`group-${key}`}>
-            <StyledMUIListSubheader data-cy={getDataCyForSubComponent(dataCy, `option-group-${groupLabel}`)}>
+            <StyledMUIListSubheader data-cy={getComposedDataCy(dataCy, `option-group-${groupLabel}`)}>
               {groupLabel}
             </StyledMUIListSubheader>
             {children}
@@ -111,7 +111,7 @@ const Select = <T extends any>({
         if (loading) {
           const forwardedInputProps = {
             ...inputProps,
-            inputProps: { "data-cy": getDataCyForSubComponent(dataCy, "loading") },
+            inputProps: { "data-cy": getComposedDataCy(dataCy, "loading") },
           };
           return (
             <MUISkeleton width="100%">
@@ -142,14 +142,8 @@ const Select = <T extends any>({
         const optionLabel = getLabel(option);
         return (
           <Fragment key={`option-${optionLabel}`}>
-            <Checkbox
-              dataCy={getDataCyForSubComponent(dataCy, `option-${optionLabel}-checkbox`)}
-              disabled
-              value={selected}
-            />
-            <Typography dataCy={getDataCyForSubComponent(dataCy, `option-${optionLabel}-label`)}>
-              {optionLabel}
-            </Typography>
+            <Checkbox dataCy={getComposedDataCy(dataCy, `option-${optionLabel}-checkbox`)} disabled value={selected} />
+            <Typography dataCy={getComposedDataCy(dataCy, `option-${optionLabel}-label`)}>{optionLabel}</Typography>
           </Fragment>
         );
       }}

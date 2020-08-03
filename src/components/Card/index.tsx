@@ -11,7 +11,7 @@ import {
   StyledMUICardHeader,
 } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import { getDataCyForSubComponent } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 
 export const DATA_CY_DEFAULT = "card";
 export const DATA_CY_SHORTCUT = "title";
@@ -37,12 +37,12 @@ const Card: FC<ICard> = ({
   const cardHeader = useMemo(
     () => (
       <StyledMUICardHeader
-        avatar={icon && <Avatar dataCy={getDataCyForSubComponent(dataCy, "avatar")} icon={icon} loading={loading} />}
+        avatar={icon && <Avatar dataCy={getComposedDataCy(dataCy, "avatar")} icon={icon} loading={loading} />}
         disableTypography
         title={
           <Typography
             bottomSpacing={false}
-            dataCy={getDataCyForSubComponent(dataCy, "title")}
+            dataCy={getComposedDataCy(dataCy, "title")}
             loading={loading}
             truncated
             variant={TypographyVariants.title}
@@ -53,7 +53,7 @@ const Card: FC<ICard> = ({
         subheader={
           <Typography
             bottomSpacing={false}
-            dataCy={getDataCyForSubComponent(dataCy, "subtitle")}
+            dataCy={getComposedDataCy(dataCy, "subtitle")}
             loading={loading}
             truncated
             variant={TypographyVariants.caption}
@@ -69,7 +69,7 @@ const Card: FC<ICard> = ({
   return (
     <StyledMUICard data-cy={dataCy}>
       {cardHeader}
-      <StyledMUICardContent data-cy={getDataCyForSubComponent(dataCy, "content")}>
+      <StyledMUICardContent data-cy={getComposedDataCy(dataCy, "content")}>
         {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
       </StyledMUICardContent>
       {!loading && (
@@ -82,7 +82,7 @@ const Card: FC<ICard> = ({
             )}
             {collapsible && (
               <IconButton
-                dataCy={getDataCyForSubComponent(dataCy, "collapse")}
+                dataCy={getComposedDataCy(dataCy, "collapse")}
                 icon={expanded ? Icons.up : Icons.down}
                 onClick={() => setExpanded(!expanded)}
               />
@@ -90,7 +90,7 @@ const Card: FC<ICard> = ({
           </StyledMUICardActions>
           {collapsible && (
             <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
-              <StyledMUICardContent data-cy={getDataCyForSubComponent(dataCy, "collapsible-content")}>
+              <StyledMUICardContent data-cy={getComposedDataCy(dataCy, "collapsible-content")}>
                 {collapsible}
               </StyledMUICardContent>
             </MUICollapse>

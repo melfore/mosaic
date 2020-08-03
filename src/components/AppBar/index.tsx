@@ -9,7 +9,7 @@ import {
 import { IAppBar } from "../../types/AppBar";
 import { Color } from "../../types/Base";
 import { Icons, IconButton, Typography, TypographyVariants } from "../..";
-import { suppressEvent, getDataCyForSubComponent } from "../../utils";
+import { suppressEvent, getComposedDataCy } from "../../utils";
 import { StyledMUIToolbar, TitleWrapper } from "./styled";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
@@ -35,20 +35,20 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
           {menu && (
             <IconButton
               color={Color.inherit}
-              dataCy={getDataCyForSubComponent(dataCy, "menu")}
+              dataCy={getComposedDataCy(dataCy, "menu")}
               icon={menu.icon}
               onClick={menu.onClick}
             />
           )}
           {title && (
             <TitleWrapper
-              data-cy={getDataCyForSubComponent(dataCy, "title-wrapper")}
+              data-cy={getComposedDataCy(dataCy, "title-wrapper")}
               onClick={(event) => {
                 suppressEvent(event);
                 onTitleClick && onTitleClick();
               }}
             >
-              <Typography dataCy={getDataCyForSubComponent(dataCy, "title")} variant={TypographyVariants.title}>
+              <Typography dataCy={getComposedDataCy(dataCy, "title")} variant={TypographyVariants.title}>
                 {title}
               </Typography>
             </TitleWrapper>
@@ -59,7 +59,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
             <IconButton
               key={`action-${index}`}
               color={Color.inherit}
-              dataCy={getDataCyForSubComponent(dataCy, `action-${index}`)}
+              dataCy={getComposedDataCy(dataCy, `action-${index}`)}
               icon={icon}
               onClick={onClick}
             />
@@ -68,7 +68,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
             <Fragment>
               <IconButton
                 color={Color.inherit}
-                dataCy={getDataCyForSubComponent(dataCy, `user-menu`)}
+                dataCy={getComposedDataCy(dataCy, `user-menu`)}
                 icon={Icons.account}
                 onClick={() => setUserMenuAnchor(document.querySelector(`button[data-cy='${dataCy}-user-menu']`))}
               />
@@ -84,7 +84,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
                 {userMenu.map(({ label, onClick }, index) => (
                   <MUIMenuItem
                     key={`user-menu-${index}`}
-                    data-cy={getDataCyForSubComponent(dataCy, `user-menu-${index}`)}
+                    data-cy={getComposedDataCy(dataCy, `user-menu-${index}`)}
                     onClick={(event) => {
                       suppressEvent(event);
                       setUserMenuAnchor(null);

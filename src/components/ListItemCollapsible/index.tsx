@@ -3,7 +3,7 @@ import { Collapse as MUICollapse } from "@material-ui/core";
 import { IListItemCollapsible } from "../../types/ListItem";
 import ListItem from "../ListItem";
 import { Icons } from "../../types/Icon";
-import { getDataCyForSubComponent } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 
 export const DATA_CY_DEFAULT = "list-item-collapsible";
 
@@ -23,7 +23,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
   return (
     <Fragment>
       <ListItem
-        dataCy={getDataCyForSubComponent(dataCy, "header")}
+        dataCy={getComposedDataCy(dataCy, "header")}
         dense={dense}
         icon={open ? Icons.up : Icons.down}
         loading={loading}
@@ -33,7 +33,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
         {header}
       </ListItem>
       <MUICollapse
-        data-cy={getDataCyForSubComponent(dataCy, "collapse")}
+        data-cy={getComposedDataCy(dataCy, "collapse")}
         in={open}
         timeout={openTimeout}
         unmountOnExit={unmountContent}

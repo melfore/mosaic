@@ -7,7 +7,7 @@ import {
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { IListItem } from "../../types/ListItem";
 import Icon from "../Icon";
-import { getDataCyForSubComponent, suppressEvent } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 
 export const DATA_CY_DEFAULT = "list-item";
 
@@ -38,13 +38,10 @@ const ListItem: FC<IListItem> = ({
     >
       {icon && (
         <MUIListItemIcon>
-          <Icon dataCy={getDataCyForSubComponent(dataCy, "icon")} loading={loading} name={icon} />
+          <Icon dataCy={getComposedDataCy(dataCy, "icon")} loading={loading} name={icon} />
         </MUIListItemIcon>
       )}
-      <MUIListItemText
-        data-cy={getDataCyForSubComponent(dataCy, `content${loading ? "-loading" : ""}`)}
-        disableTypography
-      >
+      <MUIListItemText data-cy={getComposedDataCy(dataCy, `content${loading ? "-loading" : ""}`)} disableTypography>
         {loading ? <MUISkeleton /> : content || children}
       </MUIListItemText>
     </MUIListItem>

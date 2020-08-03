@@ -7,7 +7,7 @@ import {
 import { Button, Icons, IconSize, IconButton, ModalSize, Typography, TypographyVariants } from "../..";
 import { IModal } from "../../types/Modal";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import { getDataCyForSubComponent, suppressEvent } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import { StyledMUIDialogTitle } from "./styled";
 
 const onCloseWrapper = (event?: any, onClose?: Function) => {
@@ -47,21 +47,21 @@ const Modal: FC<IModal> = ({
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        <Typography dataCy={getDataCyForSubComponent(dataCy, "title")} variant={TypographyVariants.title}>
+        <Typography dataCy={getComposedDataCy(dataCy, "title")} variant={TypographyVariants.title}>
           {title}
         </Typography>
         {closable && (
           <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
         )}
       </StyledMUIDialogTitle>
-      <MUIDialogContent data-cy={getDataCyForSubComponent(dataCy, "content")} dividers>
+      <MUIDialogContent data-cy={getComposedDataCy(dataCy, "content")} dividers>
         {children}
       </MUIDialogContent>
       {hasActions && (
         <MUIDialogActions>
           {cancel && (
             <Button
-              dataCy={getDataCyForSubComponent(dataCy, "action-cancel")}
+              dataCy={getComposedDataCy(dataCy, "action-cancel")}
               disabled={cancel.disabled}
               label={cancel.label}
               onClick={cancel.action}
@@ -70,7 +70,7 @@ const Modal: FC<IModal> = ({
           )}
           {confirm && (
             <Button
-              dataCy={getDataCyForSubComponent(dataCy, "action-confirm")}
+              dataCy={getComposedDataCy(dataCy, "action-confirm")}
               disabled={confirm.disabled}
               label={confirm.label}
               onClick={confirm.action}

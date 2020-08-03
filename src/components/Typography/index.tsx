@@ -15,12 +15,15 @@ const VARIANT_COMPONENT_MAP = {
 };
 
 export const DATA_CY_DEFAULT = "typography";
-export const DATA_CY_SHORTCUT = "children";
-export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "children", type: "string" }];
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "children", type: "string" },
+  { name: "content", type: "string" },
+];
 
 const Typography: FC<ITypography> = ({
   bottomSpacing = false,
   children,
+  content,
   dataCy = DATA_CY_DEFAULT,
   loading = false,
   truncated = false,
@@ -36,7 +39,7 @@ const Typography: FC<ITypography> = ({
       variant={variant}
       variantMapping={VARIANT_COMPONENT_MAP}
     >
-      {loading ? <MUISkeleton /> : children}
+      {loading ? <MUISkeleton /> : content || children}
     </MUITypography>
   );
 };
@@ -44,6 +47,6 @@ const Typography: FC<ITypography> = ({
 export const TypographyWithProps = Typography;
 
 export default localized(Typography, {
-  dataCyShortcut: DATA_CY_SHORTCUT,
+  dataCyShortcut: "dataCy",
   localizableProps: LOCALIZABLE_PROPS,
 });

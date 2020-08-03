@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { ILoadable, ILocalizable } from "./Base";
 
 export enum TypographyVariants {
@@ -17,7 +18,8 @@ export enum TypographyDisplay {
 
 export interface ITypography extends ILoadable, ILocalizable {
   bottomSpacing?: boolean;
+  content?: ReactNode;
+  display?: TypographyDisplay;
   truncated?: boolean;
   variant?: TypographyVariants;
-  display?: TypographyDisplay;
 }

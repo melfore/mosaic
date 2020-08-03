@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography test suite: bottomSpacing 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+  data-cy="typography"
+>
+  Text
+</p>
+`;
+
+exports[`Typography test suite: dataCy 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1"
+  data-cy="custom"
+>
+  Text
+</p>
+`;
+
+exports[`Typography test suite: default 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1"
+  data-cy="typography"
+>
+  Text
+</p>
+`;
+
+exports[`Typography test suite: display 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-displayInline"
+  data-cy="typography"
+>
+  Text
+</p>
+`;
+
+exports[`Typography test suite: loading 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1"
+  data-cy="typography-loading"
+>
+  <span
+    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+</p>
+`;
+
+exports[`Typography test suite: localized 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1"
+  data-cy="typography"
+>
+  Typography
+</p>
+`;
+
+exports[`Typography test suite: truncated 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap"
+  data-cy="typography"
+>
+  Text
+</p>
+`;
+
+exports[`Typography test suite: variant 1`] = `
+<h2
+  className="MuiTypography-root MuiTypography-h6"
+  data-cy="typography"
+>
+  Text
+</h2>
+`;

@@ -135,7 +135,7 @@ export default class DocumentationPage extends PureComponent {
               cy.get("[data-cy='${e2eTestInfo.dataCyDefault}']") // Do something with it
               `}</code>
             </p>
-            {localizableProps && (
+            {localizableProps && e2eTestInfo.dataCyShortcut && (
               <p>
                 <u>Important!</u>
                 <br />

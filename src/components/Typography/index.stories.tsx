@@ -4,7 +4,7 @@ import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { StoriesWrapper } from "../../utils/stories";
 import { getDocumentationPage } from "../../utils/stories";
-import Typography, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
+import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
 
 export default {
   title: "Typography",
@@ -15,7 +15,6 @@ export default {
       component: "Typography",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
-        dataCyShortcut: DATA_CY_SHORTCUT,
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

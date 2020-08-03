@@ -3,6 +3,7 @@ import { Icons } from "./Icon";
 import { ReactElement } from "react";
 
 interface IBaseListItem extends ILoadable {
+  content?: ReactElement;
   dense?: boolean;
   onClick?: () => void;
   selected?: boolean;

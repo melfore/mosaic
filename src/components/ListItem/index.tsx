@@ -7,17 +7,18 @@ import {
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 import { IListItem } from "../../types/ListItem";
 import Icon from "../Icon";
-import { getDataCyForSubComponent } from "../../utils";
+import { getDataCyForSubComponent, suppressEvent } from "../../utils";
 
 export const DATA_CY_DEFAULT = "list-item";
 
 const ListItem: FC<IListItem> = ({
   children,
+  content,
   dataCy = DATA_CY_DEFAULT,
-  dense = true,
-  icon = undefined,
+  dense = false,
+  icon,
   loading = false,
-  onClick = undefined,
+  onClick,
   selected = false,
 }) => {
   return (
@@ -25,8 +26,7 @@ const ListItem: FC<IListItem> = ({
       data-cy={dataCy}
       dense={dense}
       onClick={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
+        suppressEvent(event);
         if (loading) {
           return;
         }
@@ -45,7 +45,7 @@ const ListItem: FC<IListItem> = ({
         data-cy={getDataCyForSubComponent(dataCy, `content${loading ? "-loading" : ""}`)}
         disableTypography
       >
-        {loading ? <MUISkeleton /> : children}
+        {loading ? <MUISkeleton /> : content || children}
       </MUIListItemText>
     </MUIListItem>
   );

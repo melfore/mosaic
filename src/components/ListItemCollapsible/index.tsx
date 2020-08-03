@@ -9,6 +9,7 @@ export const DATA_CY_DEFAULT = "list-item-collapsible";
 
 const ListItemCollapsible: FC<IListItemCollapsible> = ({
   children,
+  content,
   dataCy = DATA_CY_DEFAULT,
   dense = false,
   header,
@@ -31,8 +32,13 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
       >
         {header}
       </ListItem>
-      <MUICollapse in={open} timeout={openTimeout} unmountOnExit={unmountContent}>
-        {children}
+      <MUICollapse
+        data-cy={getDataCyForSubComponent(dataCy, "collapse")}
+        in={open}
+        timeout={openTimeout}
+        unmountOnExit={unmountContent}
+      >
+        {content || children}
       </MUICollapse>
     </Fragment>
   );

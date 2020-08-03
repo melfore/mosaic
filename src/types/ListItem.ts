@@ -1,9 +1,9 @@
 import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 interface IBaseListItem extends ILoadable {
-  content?: ReactElement;
+  content?: ReactNode;
   dense?: boolean;
   onClick?: () => void;
   selected?: boolean;
@@ -14,7 +14,7 @@ export interface IListItem extends IBaseListItem {
 }
 
 export interface IListItemCollapsible extends IBaseListItem {
-  header: ReactElement;
+  header: ReactNode;
   open?: boolean;
   openTimeout?: "auto" | number;
   unmountContent?: boolean;

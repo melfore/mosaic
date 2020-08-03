@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { ILocalizable } from "./Base";
 import { Icons } from "./Icon";
 
@@ -20,7 +20,7 @@ export interface ITableAction {
 export interface ITableColumn {
   label?: string;
   path: string;
-  render?: (row: any) => ReactElement;
+  render?: (row: any) => ReactNode;
   width?: number | string;
 }
 

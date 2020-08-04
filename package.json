@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "0.1.45",
+  "version": "1.0.3",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -13,16 +13,25 @@
     "dist"
   ],
   "dependencies": {
-    "@date-io/date-fns": "^2.6.0",
     "@date-io/core": "^2.6.0",
+    "@date-io/date-fns": "^2.6.0",
+    "@semantic-release/changelog": "^5.0.1",
     "date-fns": "^2.12.0",
     "material-table": "^1.57.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@commitlint/prompt-cli": "^9.1.1",
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.54",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
@@ -41,6 +50,8 @@
     "@typescript-eslint/parser": "^2.34.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
@@ -54,6 +65,7 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-plugin-simple-import-sort": "^5.0.3",
+    "git-cz": "^4.7.0",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
     "prettier": "^2.0.2",
@@ -76,6 +88,7 @@
   "scripts": {
     "build": "npm run pre-build && tsc",
     "build-storybook": "build-storybook -o docs --docs",
+    "commit": "npx git-cz",
     "lintify": "eslint '**/*.ts*' --fix",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
@@ -96,6 +109,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   },
   "license": "MIT"
 }

@@ -20,6 +20,8 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: 12
+          # TODO: remove before next deploy
+          registry-url: https://registry.npmjs.org/
 
       - name: Cache Dependencies
         id: cache-dependencies
@@ -69,8 +71,21 @@ jobs:
           git add .
           git commit -m "docs: updated StoryBook" -a
 
-      - name: Release
+      # - name: Release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: npx semantic-release
+
+      - name: Increase Version
+        run: npm version patch
+
+      - name: Push Updates
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Package
+        run: npm run upload
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

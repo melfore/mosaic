@@ -21,6 +21,7 @@ import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
 import MUIHomeIcon from "@material-ui/icons/Home";
 import MUIKeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MUIKeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import MUILanguageIcon from "@material-ui/icons/Language";
 import MUILastPageIcon from "@material-ui/icons/LastPage";
 import MUIListIcon from "@material-ui/icons/List";
 import MUIMailIcon from "@material-ui/icons/Mail";
@@ -62,6 +63,7 @@ export const iconsCatalog = {
   [Icons.filter]: <MUIFilterListIcon />,
   [Icons.first]: <MUIFirstPageIcon />,
   [Icons.home]: <MUIHomeIcon />,
+  [Icons.language]: <MUILanguageIcon />,
   [Icons.last]: <MUILastPageIcon />,
   [Icons.left]: <MUIChevronLeftIcon />,
   [Icons.list_check]: <MUIPlaylistAddCheckIcon />,

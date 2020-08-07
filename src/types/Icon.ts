@@ -20,6 +20,7 @@ export enum Icons {
   filter = "filter",
   first = "first",
   home = "home",
+  language = "language",
   last = "last",
   left = "left",
   list = "list",

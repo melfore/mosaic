@@ -1,6 +1,11 @@
 import React, { Fragment, PureComponent } from "react";
-import PropTypes from "prop-types";
+import { Tooltip } from "@material-ui/core";
 import { Primary, Props, Stories, Title } from "@storybook/addon-docs/blocks";
+import PropTypes from "prop-types";
+
+import { Icon, Spacer } from "../..";
+import { Icons, IconSize } from "../../types/Icon";
+
 import DocumentationTitle from "./DocumentationTitle";
 import { DOCS_PAGE_STYLE } from ".";
 
@@ -36,10 +41,6 @@ export default class DocumentationPage extends PureComponent {
     e2eTestInfo: null,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { basedOn, component, e2eTestInfo, localizableProps } = this.props;
     return (
@@ -49,11 +50,29 @@ export default class DocumentationPage extends PureComponent {
             __html: DOCS_PAGE_STYLE,
           }}
         />
-        <Title />
+        <span style={{ alignItems: "center", display: "flex" }}>
+          <Title />
+          <Spacer level={3} />
+          {localizableProps && (
+            <Tooltip placement="top" title="Localizable">
+              <span>
+                <Icon name={Icons.language} size={IconSize.small} />
+              </span>
+            </Tooltip>
+          )}
+          <Spacer />
+          {e2eTestInfo.dataCyDefault && (
+            <Tooltip placement="top" title="Testable">
+              <span>
+                <Icon name={Icons.search} size={IconSize.small} />
+              </span>
+            </Tooltip>
+          )}
+        </span>
         {basedOn && (
           <p>
             This component is based on:{" "}
-            <a href={`https://www.google.com/search?q=${basedOn}`} target="_blank">
+            <a href={`https://www.google.com/search?q=${basedOn}`} rel="noreferrer" target="_blank">
               <code className={DOCUMENTATION_CODE_LINE_CLASS}>{basedOn}</code>
             </a>
           </p>
@@ -82,27 +101,16 @@ export default class DocumentationPage extends PureComponent {
               This component supports localization of its properties, using the{" "}
               <code className={DOCUMENTATION_CODE_LINE_CLASS}>localized</code> boolean property.
               <br />
-              When setting <code className={DOCUMENTATION_CODE_LINE_CLASS}>localized = true</code> all the properties at
-              the following paths will be localized:
+              When setting <code className={DOCUMENTATION_CODE_LINE_CLASS}>localized = true</code> all the localizable
+              props will be localized using their value as id for{" "}
+              <code className={DOCUMENTATION_CODE_LINE_CLASS}>{`intl.formatMessage({ id: 'property-value'})`}</code>.
             </p>
-            <table style={{ textAlign: "left", width: "100%" }}>
-              <thead>
-                <tr>
-                  <th>Property Path</th>
-                  <th>Base Property Type</th>
-                  <th>Nested Property Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                {localizableProps.map(({ name, type }) => (
-                  <tr key={name}>
-                    <td>{name}</td>
-                    <td>{type}</td>
-                    <td>{`${("" + name).includes(".") ? "string" : "-"}`}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <b>Localizable props:</b>
+            <ul>
+              {localizableProps.map(({ name, type }) => (
+                <li>{name}</li>
+              ))}
+            </ul>
             <p>
               <u>Important!</u>
               <br />
@@ -117,7 +125,7 @@ export default class DocumentationPage extends PureComponent {
             <p>
               This component provides the specific <code className={DOCUMENTATION_CODE_LINE_CLASS}>data-cy</code> HTML
               attribute for e2e testing (the reference framework is{" "}
-              <a href="https://www.cypress.io" target="_blank">
+              <a href="https://www.cypress.io" rel="noreferrer" target="_blank">
                 cypress.io
               </a>
               ).

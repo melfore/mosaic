@@ -27,9 +27,6 @@ export const getAllComposedDataCy = (subpartMap: ISubpartMap): ISubpartSuffix[] 
     suffix: !value ? slugify(label) : value(),
   }));
 
-export const DEPRECATED_getComposedDataCy = (extDataCy: string, component: string): string =>
-  `${extDataCy}${DATA_CY_SUFFIX_SEPARATOR}${component}`;
-
 export const slugify = (value: string) =>
   value
     .toLowerCase()

@@ -4,7 +4,7 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { Avatar, IconButton, Icons, Typography, TypographyVariants } from "../..";
 import { ICard } from "../../types/Card";
-import { DEPRECATED_getComposedDataCy, getComposedDataCy } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 import {

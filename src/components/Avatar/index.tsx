@@ -3,7 +3,7 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { AvatarVariant, Icon, Typography } from "../..";
 import { IAvatar } from "../../types/Avatar";
-import { DEPRECATED_getComposedDataCy, getComposedDataCy } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 
 import { StyledMUIAvatar } from "./styled";
 

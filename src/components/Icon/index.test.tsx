@@ -40,6 +40,20 @@ describe("Icon test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("loading large", () => {
+    const { element } = getIconTestable({ ...defaultProps, loading: true, size: IconSize.large });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("loading small", () => {
+    const { element } = getIconTestable({ ...defaultProps, loading: true, size: IconSize.small });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("size", () => {
     const { element, wrapper } = getIconTestable({ ...defaultProps, size: IconSize.large });
     expect(wrapper.hasClass("MuiSvgIcon-fontSizeLarge"));

@@ -40,6 +40,30 @@ exports[`Icon test suite: loading 1`] = `
 />
 `;
 
+exports[`Icon test suite: loading large 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 35,
+      "width": 35,
+    }
+  }
+/>
+`;
+
+exports[`Icon test suite: loading small 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 20,
+      "width": 20,
+    }
+  }
+/>
+`;
+
 exports[`Icon test suite: size 1`] = `
 <svg
   aria-hidden="true"

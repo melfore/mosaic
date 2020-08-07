@@ -29,7 +29,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 
 export const SUBPARTS_MAP = {
   menuIcon: {
-    label: "Menu Icon",
+    label: "Menu",
   },
   titleClickable: {
     label: "Title Clickable",
@@ -38,15 +38,15 @@ export const SUBPARTS_MAP = {
     label: "Title Text",
   },
   actionIcon: {
-    label: "Action Icon (at index n)",
-    value: (n = `{n}`) => `action-icon-${n}`,
+    label: "Action (at index n)",
+    value: (n = `{n}`) => `action-${n}`,
   },
   userMenuIcon: {
-    label: "User Menu Icon",
+    label: "User Menu",
   },
   userMenuItem: {
     label: "User Menu Item (at index n)",
-    value: (n = `{n}`) => `action-icon-${n}`,
+    value: (n = `{n}`) => `user-menu-item-${n}`,
   },
 };
 

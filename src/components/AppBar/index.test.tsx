@@ -34,9 +34,9 @@ describe("AppBar test suite:", () => {
     const title = MessageMock.title;
     const props = { ...defaultProps, localized: true, title, userMenu: [{ label, onClick: jest.fn() }] };
     const { wrapper } = getAppBarTestable({ ...props }, props[DATA_CY_SHORTCUT]);
-    const titleElement = wrapper.find(`h2[data-cy='${MessageMock.title}-title']`);
+    const titleElement = wrapper.find(`h2[data-cy='${MessageMock.title}-title-text']`);
     expect(titleElement.text()).toEqual(mockedMessages[LocaleMock.en][title]);
-    const userMenuEntry = wrapper.find(`li[data-cy='${MessageMock.title}-user-menu-0']`);
+    const userMenuEntry = wrapper.find(`li[data-cy='${MessageMock.title}-user-menu-item-0']`);
     expect(userMenuEntry.text()).toEqual(mockedMessages[LocaleMock.en][label]);
   });
 
@@ -69,10 +69,10 @@ describe("AppBar test suite:", () => {
   it("title", () => {
     const onTitleClick = jest.fn();
     const { element, wrapper } = getAppBarTestable({ onTitleClick, title: "Title" });
-    const titleWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-title-wrapper']`);
+    const titleWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-title-clickable']`);
     titleWrapper.simulate("click");
     expect(onTitleClick).toHaveBeenCalledTimes(1);
-    const titleElement = wrapper.find(`h2[data-cy='${DATA_CY_DEFAULT}-title']`);
+    const titleElement = wrapper.find(`h2[data-cy='${DATA_CY_DEFAULT}-title-text']`);
     expect(titleElement.text()).toEqual("Title");
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -86,7 +86,7 @@ describe("AppBar test suite:", () => {
     const userMenuButtonIcon = userMenuButton.find(`Icon[dataCy='${DATA_CY_DEFAULT}-user-menu-icon']`);
     expect(userMenuButtonIcon.prop("name")).toEqual(Icons.account);
     userMenuButton.simulate("click");
-    const userMenuEntry = wrapper.find(`li[data-cy='${DATA_CY_DEFAULT}-user-menu-0']`);
+    const userMenuEntry = wrapper.find(`li[data-cy='${DATA_CY_DEFAULT}-user-menu-item-0']`);
     expect(userMenuEntry.text()).toEqual("Logout");
     userMenuEntry.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);

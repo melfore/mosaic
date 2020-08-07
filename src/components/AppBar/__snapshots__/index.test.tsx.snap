@@ -160,12 +160,12 @@ exports[`AppBar test suite: title 1`] = `
     >
       <div
         className="MuiBox-root MuiBox-root-157 Styled(MuiBox)-root-55 Styled(MuiBox)-root-156"
-        data-cy="appbar-title-wrapper"
+        data-cy="appbar-title-clickable"
         onClick={[Function]}
       >
         <h2
           className="MuiTypography-root MuiTypography-h6"
-          data-cy="appbar-title"
+          data-cy="appbar-title-text"
         >
           Title
         </h2>

@@ -4,12 +4,12 @@ import { boolean, number, select, text } from "@storybook/addon-knobs";
 
 import { Icons } from "../../types/Icon";
 import { TableActionPosition } from "../../types/Table";
+import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
-import { getAllComposedDataCy } from "../../utils";
 import { SUBPARTS_MAP } from "./utils";
+import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
 
 // <Fragment>
 // <p>

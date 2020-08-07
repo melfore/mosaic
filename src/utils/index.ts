@@ -18,7 +18,7 @@ export const DATA_CY_SUFFIX_SEPARATOR = "-";
 
 export const getComposedDataCy = (dataCy: string, subpart: ISubpart, args?: any): string => {
   const { label, value } = subpart;
-  return !value ? slugify(label) : value(args);
+  return `${dataCy}${DATA_CY_SUFFIX_SEPARATOR}${!value ? slugify(label) : value(args)}`;
 };
 
 export const getAllComposedDataCy = (subpartMap: ISubpartMap): ISubpartSuffix[] =>

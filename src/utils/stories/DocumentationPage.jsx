@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 import { Icon, Spacer } from "../..";
 import { Icons, IconSize } from "../../types/Icon";
+import { DATA_CY_SUFFIX_SEPARATOR } from "..";
 
 import DocumentationTitle from "./DocumentationTitle";
 import { DOCS_PAGE_STYLE } from ".";
@@ -22,7 +23,7 @@ export default class DocumentationPage extends PureComponent {
       dataCyShortcut: PropTypes.string,
       subpartsSuffixes: PropTypes.arrayOf(
         PropTypes.shape({
-          subpart: PropTypes.string.isRequired,
+          label: PropTypes.string.isRequired,
           suffix: PropTypes.string.isRequired,
         })
       ),
@@ -166,7 +167,7 @@ export default class DocumentationPage extends PureComponent {
                   defaulted) and a suffix.
                 </p>
                 <p>Here the list of all subparts with their suffixes:</p>
-                <table style={{ textAlign: "left", width: "100%" }}>
+                <table style={{ textAlign: "left", minWidth: "75%" }}>
                   <thead>
                     <tr>
                       <th>Subpart</th>
@@ -174,10 +175,10 @@ export default class DocumentationPage extends PureComponent {
                     </tr>
                   </thead>
                   <tbody>
-                    {e2eTestInfo.subpartsSuffixes.map(({ subpart, suffix }) => (
-                      <tr key={subpart}>
-                        <td>{subpart}</td>
-                        <td>{suffix}</td>
+                    {e2eTestInfo.subpartsSuffixes.map(({ label, suffix }) => (
+                      <tr key={label}>
+                        <td>{label}</td>
+                        <td>{`${DATA_CY_SUFFIX_SEPARATOR}${suffix}`}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -186,7 +187,7 @@ export default class DocumentationPage extends PureComponent {
                 <p>
                   <code
                     className={DOCUMENTATION_CODE_BLOCK_CLASS}
-                  >{`// Getting the ${e2eTestInfo.subpartsSuffixes[0].subpart} subpart
+                  >{`// Getting the '${e2eTestInfo.subpartsSuffixes[0].label}' subpart
                   // Replace the base value of the attribute accordingly, here it's defaulted
                 cy.get("[data-cy='${e2eTestInfo.dataCyDefault}-${e2eTestInfo.subpartsSuffixes[0].suffix}']") // Do something with it
                 `}</code>

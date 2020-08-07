@@ -27,6 +27,21 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "confirm.label", type: "any" },
 ];
 
+export const SUBPARTS_MAP = {
+  title: {
+    label: "Title",
+  },
+  content: {
+    label: "Content",
+  },
+  actionCancel: {
+    label: "Action Cancel",
+  },
+  actionConfirm: {
+    label: "Action Confirm",
+  },
+};
+
 const Modal: FC<IModal> = ({
   cancel = undefined,
   children,
@@ -49,21 +64,21 @@ const Modal: FC<IModal> = ({
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        <Typography dataCy={getComposedDataCy(dataCy, "title")} variant={TypographyVariants.title}>
+        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant={TypographyVariants.title}>
           {title}
         </Typography>
         {closable && (
           <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
         )}
       </StyledMUIDialogTitle>
-      <MUIDialogContent data-cy={getComposedDataCy(dataCy, "content")} dividers>
+      <MUIDialogContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)} dividers>
         {children}
       </MUIDialogContent>
       {hasActions && (
         <MUIDialogActions>
           {cancel && (
             <Button
-              dataCy={getComposedDataCy(dataCy, "action-cancel")}
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionCancel)}
               disabled={cancel.disabled}
               label={cancel.label}
               onClick={cancel.action}
@@ -72,7 +87,7 @@ const Modal: FC<IModal> = ({
           )}
           {confirm && (
             <Button
-              dataCy={getComposedDataCy(dataCy, "action-confirm")}
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionConfirm)}
               disabled={confirm.disabled}
               label={confirm.label}
               onClick={confirm.action}

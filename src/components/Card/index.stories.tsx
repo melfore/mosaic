@@ -3,13 +3,14 @@ import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { Icons } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
 
-import Card, { CardWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import Card, { CardWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Card",
@@ -21,6 +22,7 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

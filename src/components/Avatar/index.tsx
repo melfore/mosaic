@@ -3,11 +3,23 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { AvatarVariant, Icon, Typography } from "../..";
 import { IAvatar } from "../../types/Avatar";
-import { getComposedDataCy } from "../../utils";
+import { DEPRECATED_getComposedDataCy, getComposedDataCy } from "../../utils";
 
 import { StyledMUIAvatar } from "./styled";
 
 export const DATA_CY_DEFAULT = "avatar";
+
+export const SUBPARTS_MAP = {
+  loading: {
+    label: "Loading",
+  },
+  icon: {
+    label: "Icon",
+  },
+  text: {
+    label: "Text",
+  },
+};
 
 const Avatar: FC<IAvatar> = ({
   alt = "avatar",
@@ -21,15 +33,15 @@ const Avatar: FC<IAvatar> = ({
   if (loading) {
     return (
       <MUISkeleton variant="circle">
-        <StyledMUIAvatar data-cy={getComposedDataCy(dataCy, "loading")} />
+        <StyledMUIAvatar data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.loading)} />
       </MUISkeleton>
     );
   }
 
   return (
     <StyledMUIAvatar alt={text || alt} data-cy={dataCy} src={src} variant={variant}>
-      {icon && <Icon dataCy={getComposedDataCy(dataCy, "icon")} name={icon} />}
-      {!icon && text && <Typography dataCy={getComposedDataCy(dataCy, "text")}>{text}</Typography>}
+      {icon && <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={icon} />}
+      {!icon && text && <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.text)}>{text}</Typography>}
     </StyledMUIAvatar>
   );
 };

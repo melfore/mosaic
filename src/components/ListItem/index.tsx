@@ -12,6 +12,16 @@ import Icon from "../Icon";
 
 export const DATA_CY_DEFAULT = "list-item";
 
+export const SUBPARTS_MAP = {
+  icon: {
+    label: "Icon",
+  },
+  content: {
+    label: "Content (with loading = true, adds '-loading')",
+    value: (loading = false) => `content${loading ? "-loading" : ""}`,
+  },
+};
+
 const ListItem: FC<IListItem> = ({
   children,
   content,
@@ -39,10 +49,10 @@ const ListItem: FC<IListItem> = ({
     >
       {icon && (
         <MUIListItemIcon>
-          <Icon dataCy={getComposedDataCy(dataCy, "icon")} loading={loading} name={icon} />
+          <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} loading={loading} name={icon} />
         </MUIListItemIcon>
       )}
-      <MUIListItemText data-cy={getComposedDataCy(dataCy, `content${loading ? "-loading" : ""}`)} disableTypography>
+      <MUIListItemText data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content, loading)} disableTypography>
         {loading ? <MUISkeleton /> : content || children}
       </MUIListItemText>
     </MUIListItem>

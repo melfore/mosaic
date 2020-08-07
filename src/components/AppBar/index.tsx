@@ -27,6 +27,29 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "userMenu.label", type: "any[]" },
 ];
 
+export const SUBPARTS_MAP = {
+  menuIcon: {
+    label: "Menu Icon",
+  },
+  titleClickable: {
+    label: "Title Clickable",
+  },
+  titleText: {
+    label: "Title Text",
+  },
+  actionIcon: {
+    label: "Action Icon (at index n)",
+    value: (n = `{n}`) => `action-icon-${n}`,
+  },
+  userMenuIcon: {
+    label: "User Menu Icon",
+  },
+  userMenuItem: {
+    label: "User Menu Item (at index n)",
+    value: (n = `{n}`) => `action-icon-${n}`,
+  },
+};
+
 const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleClick, title, userMenu = [] }) => {
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
 
@@ -37,20 +60,20 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
           {menu && (
             <IconButton
               color={Color.inherit}
-              dataCy={getComposedDataCy(dataCy, "menu")}
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menuIcon)}
               icon={menu.icon}
               onClick={menu.onClick}
             />
           )}
           {title && (
             <TitleWrapper
-              data-cy={getComposedDataCy(dataCy, "title-wrapper")}
+              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
               onClick={(event) => {
                 suppressEvent(event);
                 onTitleClick && onTitleClick();
               }}
             >
-              <Typography dataCy={getComposedDataCy(dataCy, "title")} variant={TypographyVariants.title}>
+              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant={TypographyVariants.title}>
                 {title}
               </Typography>
             </TitleWrapper>
@@ -61,7 +84,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
             <IconButton
               key={`action-${index}`}
               color={Color.inherit}
-              dataCy={getComposedDataCy(dataCy, `action-${index}`)}
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionIcon, index)}
               icon={icon}
               onClick={onClick}
             />
@@ -70,9 +93,13 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
             <Fragment>
               <IconButton
                 color={Color.inherit}
-                dataCy={getComposedDataCy(dataCy, `user-menu`)}
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon)}
                 icon={Icons.account}
-                onClick={() => setUserMenuAnchor(document.querySelector(`button[data-cy='${dataCy}-user-menu']`))}
+                onClick={() =>
+                  setUserMenuAnchor(
+                    document.querySelector(`button[data-cy='${getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon)}']`)
+                  )
+                }
               />
               <MUIMenu
                 id={`${dataCy}-user-menu`}
@@ -86,7 +113,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
                 {userMenu.map(({ label, onClick }, index) => (
                   <MUIMenuItem
                     key={`user-menu-${index}`}
-                    data-cy={getComposedDataCy(dataCy, `user-menu-${index}`)}
+                    data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuItem, index)}
                     onClick={(event) => {
                       suppressEvent(event);
                       setUserMenuAnchor(null);

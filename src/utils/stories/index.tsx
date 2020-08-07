@@ -1,6 +1,7 @@
 import React, { FC, Fragment, ReactElement } from "react";
 
 import { ILocalizableProperty } from "../hocs/localized";
+import { ISubpartSuffix } from "../index";
 
 import DocumentationPage from "./DocumentationPage";
 
@@ -77,6 +78,7 @@ interface IDocumentationPage {
   e2eTestInfo: {
     dataCyDefault: string;
     dataCyShortcut?: string;
+    subpartsSuffixes?: ISubpartSuffix[];
   };
   localizableProps?: ILocalizableProperty[];
 }

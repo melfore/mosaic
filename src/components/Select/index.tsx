@@ -18,6 +18,24 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "placeholder", type: "string" },
 ];
 
+export const SUBPARTS_MAP = {
+  optionGroupLabel: {
+    label: "Option Group (with label)",
+    value: (label = "{label}") => `option-group-${label}`,
+  },
+  loading: {
+    label: "Loading",
+  },
+  optionCheckbox: {
+    label: "Option Checkbox (with label)",
+    value: (label = "{label}") => `option-${label}-checkbox`,
+  },
+  optionLabel: {
+    label: "Option Label (with label)",
+    value: (label = "{label}") => `option-${label}-label`,
+  },
+};
+
 const Select = <T extends any>({
   autoComplete = true,
   customOptionRendering = undefined,
@@ -102,7 +120,7 @@ const Select = <T extends any>({
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
         return (
           <Fragment key={`group-${key}`}>
-            <StyledMUIListSubheader data-cy={getComposedDataCy(dataCy, `option-group-${groupLabel}`)}>
+            <StyledMUIListSubheader data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionGroupLabel, groupLabel)}>
               {groupLabel}
             </StyledMUIListSubheader>
             {children}
@@ -114,7 +132,7 @@ const Select = <T extends any>({
         if (loading) {
           const forwardedInputProps = {
             ...inputProps,
-            inputProps: { "data-cy": getComposedDataCy(dataCy, "loading") },
+            inputProps: { "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.loading) },
           };
           return (
             <MUISkeleton width="100%">
@@ -145,8 +163,14 @@ const Select = <T extends any>({
         const optionLabel = getLabel(option);
         return (
           <Fragment key={`option-${optionLabel}`}>
-            <Checkbox dataCy={getComposedDataCy(dataCy, `option-${optionLabel}-checkbox`)} disabled value={selected} />
-            <Typography dataCy={getComposedDataCy(dataCy, `option-${optionLabel}-label`)}>{optionLabel}</Typography>
+            <Checkbox
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
+              disabled
+              value={selected}
+            />
+            <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>
+              {optionLabel}
+            </Typography>
           </Fragment>
         );
       }}

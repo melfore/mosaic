@@ -3,9 +3,10 @@ import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Avatar, { AvatarWithProps, DATA_CY_DEFAULT } from ".";
+import Avatar, { AvatarWithProps, DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Avatar",
@@ -16,6 +17,7 @@ export default {
       component: "Avatar",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
     }),
   },

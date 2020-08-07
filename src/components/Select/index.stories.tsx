@@ -3,10 +3,11 @@ import { action } from "@storybook/addon-actions";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 
 import { InputSize, InputVariant } from "../../types/Input";
+import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage } from "../../utils/stories";
 
-import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps } from ".";
+import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Select",
@@ -18,6 +19,7 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

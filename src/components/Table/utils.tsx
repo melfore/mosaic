@@ -15,6 +15,13 @@ export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
   emptyRowsWhenPaging: false,
 };
 
+export const SUBPARTS_MAP = {
+  action: {
+    label: "Action (with label)",
+    value: (label = "{label}") => `action-${label}`,
+  },
+};
+
 export const actionAdapter = (action: ITableAction): MTActionType<object> => {
   const {
     callback,
@@ -55,7 +62,7 @@ export const actionComponentAdapter = (props: any, dataCy: string) => {
         <Fragment>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <Button
-            dataCy={getComposedDataCy(dataCy, `action-${label}`)}
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
             disabled={disabled}
             icon={!iconName ? undefined : { name: iconName }}
             label={label}
@@ -66,7 +73,7 @@ export const actionComponentAdapter = (props: any, dataCy: string) => {
       {!displaysButton && (
         <Fragment>
           <IconButton
-            dataCy={getComposedDataCy(dataCy, `action-${label}`)}
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
             disabled={disabled}
             icon={iconName}
             onClick={() => onClick(undefined, data)}

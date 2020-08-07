@@ -4,9 +4,10 @@ import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { Typography } from "../..";
 import { Icons } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import ListItem, { DATA_CY_DEFAULT } from ".";
+import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
   title: "ListItem",
@@ -17,6 +18,7 @@ export default {
       component: "ListItem",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
     }),
   },

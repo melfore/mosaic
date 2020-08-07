@@ -2,10 +2,11 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
+import { getAllComposedDataCy } from "../../utils";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 import Typography from "../Typography";
 
-import ListItemCollapsible, { DATA_CY_DEFAULT } from ".";
+import ListItemCollapsible, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
   title: "ListItemCollapsible",
@@ -16,6 +17,7 @@ export default {
       component: "ListItemCollapsible",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
     }),
   },

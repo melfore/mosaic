@@ -4,7 +4,7 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { Avatar, IconButton, Icons, Typography, TypographyVariants } from "../..";
 import { ICard } from "../../types/Card";
-import { getComposedDataCy } from "../../utils";
+import { DEPRECATED_getComposedDataCy, getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 import {
@@ -21,6 +21,27 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "title", type: "string" },
   { name: "subtitle", type: "string" },
 ];
+
+export const SUBPARTS_MAP = {
+  avatar: {
+    label: "Avatar",
+  },
+  title: {
+    label: "Title",
+  },
+  subtitle: {
+    label: "Subtitle",
+  },
+  content: {
+    label: "Content",
+  },
+  collapse: {
+    label: "Collapse",
+  },
+  collapsibleContent: {
+    label: "Collapsible Content",
+  },
+};
 
 const Card: FC<ICard> = ({
   actions = [],
@@ -39,12 +60,14 @@ const Card: FC<ICard> = ({
   const cardHeader = useMemo(
     () => (
       <StyledMUICardHeader
-        avatar={icon && <Avatar dataCy={getComposedDataCy(dataCy, "avatar")} icon={icon} loading={loading} />}
+        avatar={
+          icon && <Avatar dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.avatar)} icon={icon} loading={loading} />
+        }
         disableTypography
         title={
           <Typography
             bottomSpacing={false}
-            dataCy={getComposedDataCy(dataCy, "title")}
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)}
             loading={loading}
             truncated
             variant={TypographyVariants.title}
@@ -55,7 +78,7 @@ const Card: FC<ICard> = ({
         subheader={
           <Typography
             bottomSpacing={false}
-            dataCy={getComposedDataCy(dataCy, "subtitle")}
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.subtitle)}
             loading={loading}
             truncated
             variant={TypographyVariants.caption}
@@ -71,7 +94,7 @@ const Card: FC<ICard> = ({
   return (
     <StyledMUICard data-cy={dataCy}>
       {cardHeader}
-      <StyledMUICardContent data-cy={getComposedDataCy(dataCy, "content")}>
+      <StyledMUICardContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)}>
         {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
       </StyledMUICardContent>
       {!loading && (
@@ -84,7 +107,7 @@ const Card: FC<ICard> = ({
             )}
             {collapsible && (
               <IconButton
-                dataCy={getComposedDataCy(dataCy, "collapse")}
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapse)}
                 icon={expanded ? Icons.up : Icons.down}
                 onClick={() => setExpanded(!expanded)}
               />
@@ -92,7 +115,7 @@ const Card: FC<ICard> = ({
           </StyledMUICardActions>
           {collapsible && (
             <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
-              <StyledMUICardContent data-cy={getComposedDataCy(dataCy, "collapsible-content")}>
+              <StyledMUICardContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapsibleContent)}>
                 {collapsible}
               </StyledMUICardContent>
             </MUICollapse>

@@ -8,6 +8,15 @@ import ListItem from "../ListItem";
 
 export const DATA_CY_DEFAULT = "list-item-collapsible";
 
+export const SUBPARTS_MAP = {
+  header: {
+    label: "Header",
+  },
+  collapse: {
+    label: "Collapse",
+  },
+};
+
 const ListItemCollapsible: FC<IListItemCollapsible> = ({
   children,
   content,
@@ -24,7 +33,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
   return (
     <Fragment>
       <ListItem
-        dataCy={getComposedDataCy(dataCy, "header")}
+        dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.header)}
         dense={dense}
         icon={open ? Icons.up : Icons.down}
         loading={loading}
@@ -34,7 +43,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
         {header}
       </ListItem>
       <MUICollapse
-        data-cy={getComposedDataCy(dataCy, "collapse")}
+        data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapse)}
         in={open}
         timeout={openTimeout}
         unmountOnExit={unmountContent}

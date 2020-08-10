@@ -1,42 +1,107 @@
 import React from "react";
-import { mount } from "enzyme";
-import Typography from "../Typography";
-import Card from ".";
-import { Icons } from "../../types/Icon";
+import renderer from "react-test-renderer";
 
-const defaultProps = {
-  children: <Typography label="Card Content" />,
-  title: "Card Title",
+import { ICard } from "../../types/Card";
+import { Icons } from "../../types/Icon";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
+import IconButton from "../IconButton";
+import Typography from "../Typography";
+
+import Card, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: ICard = {
+  title: "Card",
 };
 
-const componentWrapper = (props = {}) => <Card {...defaultProps} {...props} />;
+const getCardTestable = (props?: ICard, dataCy = DATA_CY_DEFAULT) =>
+  getLocalizedTestable(Card, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
 describe("Card test suite:", () => {
   it("default", () => {
-    const component = componentWrapper();
-    const wrapper = mount(component);
-    const cardHeader = wrapper.find("div.MuiCardHeader-root");
-    const cardTitle = cardHeader.find("h2");
-    expect(cardTitle.text()).toEqual("Card Title");
-    const cardContent = wrapper.find("div.MuiCardContent-root").childAt(0);
-    expect(cardContent.matchesElement(defaultProps.children)).toBeTruthy();
+    const { element, wrapper } = getCardTestable();
+    expect(wrapper).toHaveLength(1);
+    const title = wrapper.find(`h2[data-cy='${DATA_CY_DEFAULT}-title']`);
+    expect(title.text()).toEqual(defaultProps.title);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with icon", () => {
-    const component = componentWrapper({ icon: Icons.business });
-    const wrapper = mount(component);
-    const cardHeader = wrapper.find("div.MuiCardHeader-root");
-    const cardAvatar = cardHeader.find("div.MuiAvatar-root");
-    const cardIcon = cardAvatar.find("Icon");
-    expect(cardIcon.prop("name")).toEqual(Icons.business);
+  it("dataCy", () => {
+    const { element, wrapper } = getCardTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with collapsible", () => {
-    const collapsibleContent = <Typography label="Card Collapsible Content" />;
-    const component = componentWrapper({ collapsible: collapsibleContent });
-    const wrapper = mount(component);
-    const cardContents = wrapper.find("div.MuiCardContent-root");
-    const cardCollapsibleContent = cardContents.at(1).childAt(0);
-    expect(cardCollapsibleContent.matchesElement(collapsibleContent)).toBeTruthy();
+  it("localized", () => {
+    const title = MessageMock.title;
+    const props = { ...defaultProps, localized: true, title };
+    const { element, wrapper } = getCardTestable({ ...props }, title);
+    const titleWrapper = wrapper.find(`h2[data-cy='${title}-title']`);
+    expect(titleWrapper.text()).toEqual(mockedMessages[LocaleMock.en][title]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("actions", () => {
+    const { element, wrapper } = getCardTestable({
+      ...defaultProps,
+      actions: [
+        <IconButton dataCy="first-action" icon={Icons.account} onClick={() => {}} />,
+        <IconButton dataCy="second-action" icon={Icons.account} onClick={() => {}} />,
+      ],
+    });
+    const firstActionButton = wrapper.find("button[data-cy='first-action']");
+    expect(firstActionButton).toHaveLength(1);
+    const secondActionButton = wrapper.find("button[data-cy='second-action']");
+    expect(secondActionButton).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("collapsible", () => {
+    const { element, wrapper } = getCardTestable({
+      ...defaultProps,
+      collapsible: <Typography dataCy="collapsible-typography">Collapsible</Typography>,
+      unmountCollapsible: true,
+    });
+    const collapseButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-collapse']`);
+    collapseButton.simulate("click");
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon", () => {
+    const { element, wrapper } = getCardTestable({ ...defaultProps, icon: Icons.account });
+    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-avatar-icon']`);
+    expect(icon.prop("name")).toEqual(Icons.account);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("loading", () => {
+    const { element, wrapper } = getCardTestable({ ...defaultProps, loading: true });
+    const placeholder = wrapper.find("span.MuiSkeleton-root");
+    expect(placeholder).toHaveLength(3);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("subtitle", () => {
+    const subtitle = "Subtitle";
+    const { element, wrapper } = getCardTestable({ ...defaultProps, subtitle });
+    const subtitleWrapper = wrapper.find(`span[data-cy='${DATA_CY_DEFAULT}-subtitle']`);
+    expect(subtitleWrapper.text()).toEqual(subtitle);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

@@ -1,4 +1,4 @@
-import { Box as MUIBox, Toolbar as MUIToolbar, styled } from "@material-ui/core";
+import { Box as MUIBox, styled, Toolbar as MUIToolbar } from "@material-ui/core";
 
 export const StyledMUIToolbar = styled(MUIToolbar)({
   alignItems: "center",

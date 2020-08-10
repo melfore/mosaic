@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon test suite: dataCy 1`] = `
+<svg
+  aria-hidden="true"
+  className="MuiSvgIcon-root"
+  data-cy="custom"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;
+
+exports[`Icon test suite: default 1`] = `
+<svg
+  aria-hidden="true"
+  className="MuiSvgIcon-root"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;
+
+exports[`Icon test suite: loading 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 24,
+      "width": 24,
+    }
+  }
+/>
+`;
+
+exports[`Icon test suite: loading large 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 35,
+      "width": 35,
+    }
+  }
+/>
+`;
+
+exports[`Icon test suite: loading small 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 20,
+      "width": 20,
+    }
+  }
+/>
+`;
+
+exports[`Icon test suite: size 1`] = `
+<svg
+  aria-hidden="true"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;

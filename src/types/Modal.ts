@@ -1,4 +1,4 @@
-import { BaseType } from "./Base";
+import { ILocalizable } from "./Base";
 import { ButtonVariants } from "./Button";
 
 export enum ModalSize {
@@ -7,26 +7,19 @@ export enum ModalSize {
   large = "lg",
 }
 
-export interface ModalActionType {
-  action?: () => void;
-  label?: string;
-  labelId?: string;
-}
-
-export interface CancelModalActionType extends ModalActionType {
-  variant: ButtonVariants.outlined;
-}
-
-export interface ConfirmModalActionType extends ModalActionType {
+export interface IModalAction {
+  action: () => void;
   disabled?: boolean;
+  label: string;
+  variant?: ButtonVariants;
 }
 
-export interface ModalType extends BaseType {
-  cancel?: CancelModalActionType;
+export interface IModal extends ILocalizable {
+  cancel?: IModalAction;
   closable?: boolean;
-  confirm?: ConfirmModalActionType;
-  label?: string;
-  onClose?: (reason?: string) => void;
+  confirm?: IModalAction;
+  onClose?: () => void;
   open?: boolean;
   size?: ModalSize;
+  title?: string;
 }

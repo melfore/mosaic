@@ -1,21 +1,21 @@
-import { ReactElement } from "react";
-import { LoadableType } from "./Base";
-import { Icons } from "./Icon";
-import { TypographyVariants } from "./Typography";
+import { ReactNode } from "react";
 
-interface BaseListItemType extends LoadableType {
+import { ILoadable } from "./Base";
+import { Icons } from "./Icon";
+
+interface IBaseListItem extends ILoadable {
+  content?: ReactNode;
   dense?: boolean;
   onClick?: () => void;
   selected?: boolean;
-  title: string | ReactElement;
-  titleVariant?: TypographyVariants;
 }
 
-export interface ListItemType extends BaseListItemType {
+export interface IListItem extends IBaseListItem {
   icon?: Icons;
 }
 
-export interface ListCollapsibleItemType extends BaseListItemType {
+export interface IListItemCollapsible extends IBaseListItem {
+  header: ReactNode;
   open?: boolean;
   openTimeout?: "auto" | number;
   unmountContent?: boolean;

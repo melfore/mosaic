@@ -1,27 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import MUISwitch from "@material-ui/core/Switch";
-import { BaseIntlType } from "../../types/Base";
 
-import { SwitchType, SwitchSize } from "../../types/Switch";
-import withIntl from "../../utils/hocs/withIntl";
+import { ISwitch, SwitchSize } from "../../types/Switch";
 
-/**
- * Switch component made on top of `@material-ui/core/Switch`.
- */
-const Switch: FC<SwitchType> = ({
-  dataCy,
-  value = false,
+export const DATA_CY_DEFAULT = "switch";
+
+const Switch: FC<ISwitch> = ({
+  dataCy = DATA_CY_DEFAULT,
+  disabled = false,
   onChange,
   required = false,
   size = SwitchSize.default,
-  disabled = false,
+  value = false,
 }) => {
-  const onChangeHandler = (event: any) => {
-    const value = event.target.checked;
-    if (onChange) {
-      onChange(value);
-    }
-  };
+  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
 
   return (
     <MUISwitch
@@ -35,7 +27,5 @@ const Switch: FC<SwitchType> = ({
     />
   );
 };
-
-export const SwitchIntl: FC<SwitchType & BaseIntlType> = withIntl(Switch);
 
 export default Switch;

@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar test suite: dataCy 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-12 MuiAvatar-colorDefault"
+  data-cy="custom"
+/>
+`;
+
+exports[`Avatar test suite: default 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-10 MuiAvatar-colorDefault"
+  data-cy="avatar"
+/>
+`;
+
+exports[`Avatar test suite: icon 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-23 MuiAvatar-colorDefault"
+  data-cy="avatar"
+>
+  <svg
+    aria-hidden="true"
+    className="MuiSvgIcon-root"
+    data-cy="avatar-icon"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Avatar test suite: image 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-25"
+  data-cy="avatar"
+>
+  <img
+    alt="Mosaic Image"
+    className="MuiAvatar-img"
+    src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg"
+  />
+</div>
+`;
+
+exports[`Avatar test suite: loading 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-38 MuiAvatar-colorDefault"
+    data-cy="avatar-loading"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root MuiAvatar-fallback"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+      />
+    </svg>
+  </div>
+</span>
+`;
+
+exports[`Avatar test suite: squared 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-square WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-40 MuiAvatar-colorDefault"
+  data-cy="avatar"
+/>
+`;
+
+exports[`Avatar test suite: text 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-72 MuiAvatar-colorDefault"
+  data-cy="avatar"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1"
+    data-cy="avatar-text"
+  >
+    MO
+  </p>
+</div>
+`;

@@ -6,14 +6,20 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  collectCoverageFrom: ["**/*.{js,jsx,ts,tsx}", "!**/*.stories.{js,jsx,ts,tsx}", "!index.ts", "!utils/stories/*"],
+  collectCoverageFrom: [
+    "**/*.{js,jsx,ts,tsx}",
+    "!**/*.stories.{js,jsx,ts,tsx}",
+    "!index.ts",
+    "!utils/mocks/*",
+    "!utils/stories/*",
+  ],
   coverageDirectory: "<rootDir>/../coverage",
   coverageThreshold: {
     global: {
-      branches: 75,
-      functions: 75,
-      lines: 75,
-      statements: 75,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
     },
   },
 };

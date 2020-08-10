@@ -1,29 +1,24 @@
-import React, { Fragment } from "react";
-import {} from "@storybook/addon-actions";
-import { text, select, boolean } from "@storybook/addon-knobs";
-import { TypographyVariants, TypographyDisplay } from "../../types/Typography";
+import React from "react";
+import { boolean, select, text } from "@storybook/addon-knobs";
+
+import { TypographyDisplay, TypographyVariants } from "../../types/Typography";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import Typography, { TypographyIntl } from ".";
+import { StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
+
+import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
 
 export default {
   title: "Typography",
-  component: Typography,
+  component: TypographyWithProps,
   parameters: {
-    ...getDocsPageStructure("Typography", true, {
-      title: "Testing with cypress",
-      subtitle: true,
-      body: (
-        <Fragment>
-          <p>
-            The implementation offered by <code>@material-ui</code> doesn't support dataCy attribute. The value of the
-            <code>dataCy</code> property is being used by <code>className</code> with the <code>data-cy-</code> prefix.
-          </p>
-          <p>
-            Example: passing <code>dataCy="typography"</code> results in <code>className="data-cy-typography"</code>.
-          </p>
-        </Fragment>
-      ),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Typography",
+      component: "Typography",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+      },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -31,11 +26,13 @@ export default {
 export const Canvas = () => (
   <Typography
     bottomSpacing={boolean("bottomSpacing", false)}
-    label={text("label", "Typography example")}
+    children={text("children", "Typography example")}
+    dataCy={text("dataCy", DATA_CY_DEFAULT)}
+    display={select("display", TypographyDisplay, TypographyDisplay.default)}
     loading={boolean("loading", false)}
+    localized={boolean("localized", false)}
     truncated={boolean("truncated", false)}
     variant={select("variant", TypographyVariants, TypographyVariants.body)}
-    display={select("display", TypographyDisplay, TypographyDisplay.default)}
   />
 );
 
@@ -46,36 +43,21 @@ allVariantsKeys.forEach((key, index) => (allVariants[key] = allVariantsValues[in
 const getVariant = (variantKey: string) => allVariantsValues.find((vv) => vv === allVariants[variantKey]);
 const allVariantsJsx = allVariantsKeys.map((variantKey) => (
   <div className="typography-wrapper">
-    <Typography label={`${variantKey}`} variant={TypographyVariants.overline} />
-    <Typography
-      dataCy={`typography-${variantKey}`}
-      label={`This is an example text`}
-      variant={getVariant(variantKey)}
-    />
+    <Typography variant={TypographyVariants.overline}>{variantKey}</Typography>
+    <Typography dataCy={`typography-${variantKey}`} variant={getVariant(variantKey)}>
+      This is an example text
+    </Typography>
   </div>
 ));
 
 export const AllVariants = () => <StoriesWrapper>{allVariantsJsx}</StoriesWrapper>;
 
-export const Truncated = () => (
+export const BottomSpacing = () => (
   <StoriesWrapper>
     <div className="typography-wrapper">
-      <div style={{ width: "50%" }}>
-        <Typography label="Trucates with respect to parent width (resize window to make it happen)" truncated />
-      </div>
-      <div style={{ width: "200px" }}>
-        <Typography label="Truncated all chars after 200px" truncated />
-      </div>
-    </div>
-  </StoriesWrapper>
-);
-
-export const WithBottomSpacing = () => (
-  <StoriesWrapper>
-    <div className="typography-wrapper">
-      <Typography label="Some text without bottom spacing" />
-      <Typography bottomSpacing label="Some text with bottom spacing" />
-      <Typography label="Other text" />
+      <Typography>Some text without bottom spacing</Typography>
+      <Typography bottomSpacing>Some text with bottom spacing</Typography>
+      <Typography>Other text</Typography>
     </div>
   </StoriesWrapper>
 );
@@ -83,10 +65,16 @@ export const WithBottomSpacing = () => (
 export const Inline = () => (
   <StoriesWrapper>
     <div>
-      <Typography label="Body " display={TypographyDisplay.inline} />
-      <Typography label="caption " variant={TypographyVariants.caption} display={TypographyDisplay.inline} />
-      <Typography label="label " variant={TypographyVariants.label} display={TypographyDisplay.inline} />
-      <Typography label="overline " variant={TypographyVariants.overline} display={TypographyDisplay.inline} />
+      <Typography display={TypographyDisplay.inline}>Body&nbsp;</Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.caption}>
+        caption&nbsp;
+      </Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.label}>
+        label&nbsp;
+      </Typography>
+      <Typography display={TypographyDisplay.inline} variant={TypographyVariants.overline}>
+        overline
+      </Typography>
     </div>
   </StoriesWrapper>
 );
@@ -99,13 +87,32 @@ export const Loading = () => (
   </StoriesWrapper>
 );
 
-export const WithIntl = () => (
+export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  // The `TypographyIntl` exported version of `Typography` uses `labelId` prop to get a localized label.
-  // When using `TypographyIntl` the prop `dataCy` can be omitted as it defaults to `labelId` value.
   <StoriesWrapper>
     <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <TypographyIntl labelId={MessageMock.typography} />
+      <Typography localized>{MessageMock.typography}</Typography>
     </IntlProviderMock>
+  </StoriesWrapper>
+);
+
+export const MixedContents = () => (
+  <StoriesWrapper>
+    <Typography>
+      <strong>Strong</strong> Normal <i>Italic</i> <u>Underlined</u>
+    </Typography>
+  </StoriesWrapper>
+);
+
+export const Truncated = () => (
+  <StoriesWrapper>
+    <div className="typography-wrapper">
+      <div style={{ width: "50%" }}>
+        <Typography truncated>Trucates with respect to parent width (resize window to make it happen)</Typography>
+      </div>
+      <div style={{ width: "200px" }}>
+        <Typography truncated>Truncated all chars after 200px</Typography>
+      </div>
+    </div>
   </StoriesWrapper>
 );

@@ -1,87 +1,75 @@
-import React from "react";
-import { mount } from "enzyme";
-import Modal, { ModalIntl } from ".";
-import { ButtonVariants } from "../../types/Button";
-import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
-import { ModalType } from "../../types/Modal";
-import ModalMock from "../../utils/mocks/ModalMock";
+// TODO: temp commenting out snapshots due to scrollTo missing
+// import renderer from "react-test-renderer";
 
-const defaultProps = {
-  children: <span>Modal Content</span>,
-  label: "Modal Title",
+import { IModal, ModalSize } from "../../types/Modal";
+import { getLocalizedTestable } from "../../utils/tests";
+
+import Modal, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: IModal = {
   open: true,
 };
 
-const componentWrapper = ({ onClose, open, ...props }: ModalType) => (
-  <ModalMock initialOpen={open} onClose={onClose}>
-    <Modal {...defaultProps} {...props} />
-  </ModalMock>
-);
+const getModalTestable = (props?: IModal, dataCy = DATA_CY_DEFAULT) =>
+  getLocalizedTestable(Modal, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
-const intlComponentWrapper = (props: any, locale?: LocaleMock) => (
-  <IntlProviderMock locale={locale}>
-    <ModalIntl {...props} />
-  </IntlProviderMock>
-);
+// TODO: missing localized test
 
 describe("Modal test suite:", () => {
   it("default", () => {
-    const component = componentWrapper({ onClose: () => {}, open: true });
-    const wrapper = mount(component);
-    const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const title = modalTitle.find("h2");
-    expect(title.text()).toEqual("Modal Title");
-    const content = wrapper.find("div.MuiDialogContent-root").childAt(0);
-    expect(content.matchesElement(defaultProps.children)).toBeTruthy();
+    const { wrapper } = getModalTestable();
+    expect(wrapper).toHaveLength(1);
   });
 
-  it("with actions", () => {
-    const onCancelHandler = jest.fn();
-    const onConfirmHandler = jest.fn();
-    const component = componentWrapper({
-      cancel: { action: onCancelHandler, label: "Close", variant: ButtonVariants.outlined },
-      confirm: { action: onConfirmHandler, disabled: false, label: "Confirm" },
-      open: true,
-    });
-    const wrapper = mount(component);
-    const modalActions = wrapper.find("div.MuiDialogActions-root");
-    const cancelButton = modalActions.find("button").at(0);
-    cancelButton.simulate("click");
-    expect(onCancelHandler).toHaveBeenCalledTimes(1);
-    const confirmButton = modalActions.find("button").at(1);
-    confirmButton.simulate("click");
-    expect(onConfirmHandler).toHaveBeenCalledTimes(1);
+  it("dataCy", () => {
+    const { wrapper } = getModalTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
   });
 
-  it("with closable", () => {
-    const onCloseHandler = jest.fn();
-    const component = componentWrapper({ closable: true, onClose: onCloseHandler, open: true });
-    const wrapper = mount(component);
-    const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const iconButton = modalTitle.find("IconButton");
-    expect(iconButton.prop("icon")).toEqual("close");
-    iconButton.simulate("click");
-    expect(onCloseHandler).toHaveBeenCalledTimes(1);
+  it("cancel", () => {
+    const action = jest.fn();
+    const label = "Cancel";
+    const { wrapper } = getModalTestable({ cancel: { action, label } });
+    const cancel = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-cancel']`);
+    cancel.simulate("click");
+    expect(action).toHaveBeenCalledTimes(1);
+    const cancelLabel = cancel.find("span.MuiButton-label");
+    expect(cancelLabel.text()).toEqual(label);
   });
 
-  it("with intl", () => {
-    const wrapper = mount(
-      intlComponentWrapper({
-        cancel: { labelId: MessageMock.modalCancel, variant: ButtonVariants.outlined },
-        confirm: { labelId: MessageMock.modalConfirm },
-        labelId: MessageMock.modalTitle,
-        open: true,
-      })
-    );
-    const modalTitle = wrapper.find("div.MuiDialogTitle-root");
-    const title = modalTitle.find("h2");
-    expect(title.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.modalTitle]);
-    const modalActions = wrapper.find("div.MuiDialogActions-root");
-    const cancelButton = modalActions.find("button").at(0);
-    const cancelButtonLabel = cancelButton.find("span.MuiButton-label");
-    expect(cancelButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modalCancel]);
-    const confirmButton = modalActions.find("button").at(1);
-    const confirmButtonLabel = confirmButton.find("span.MuiButton-label");
-    expect(confirmButtonLabel.html()).toContain(mockedMessages[LocaleMock.en][MessageMock.modalConfirm]);
+  // TODO: improve this
+  it("closable", () => {
+    getModalTestable({ closable: true });
+  });
+
+  it("confirm", () => {
+    const action = jest.fn();
+    const label = "Confirm";
+    const { wrapper } = getModalTestable({ confirm: { action, label } });
+    const confirm = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-confirm']`);
+    confirm.simulate("click");
+    expect(action).toHaveBeenCalledTimes(1);
+    const confirmLabel = confirm.find("span.MuiButton-label");
+    expect(confirmLabel.text()).toEqual(label);
+  });
+
+  it("onClose", () => {
+    const onClose = jest.fn();
+    const { wrapper } = getModalTestable({ onClose });
+    const backdrop = wrapper.find("div.MuiBackdrop-root");
+    backdrop.simulate("click");
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  // TODO: improve this
+  it("size", () => {
+    getModalTestable({ size: ModalSize.large });
+  });
+
+  it("title", () => {
+    const title = "Modal";
+    const { wrapper } = getModalTestable({ title });
+    const titleWrapper = wrapper.find("h2.MuiTypography-root");
+    expect(titleWrapper.text()).toEqual(title);
   });
 });

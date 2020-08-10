@@ -1,5 +1,6 @@
-import { ReactElement } from "react";
-import { BaseType } from "./Base";
+import { ReactNode } from "react";
+
+import { ILocalizable } from "./Base";
 import { Icons } from "./Icon";
 
 export enum TableActionPosition {
@@ -8,7 +9,7 @@ export enum TableActionPosition {
   selection = "toolbarOnSelect",
 }
 
-export interface TableActionType {
+export interface ITableAction {
   callback: (data: object | object[]) => void;
   disabled?: boolean;
   hidden?: boolean;
@@ -17,16 +18,16 @@ export interface TableActionType {
   position?: TableActionPosition;
 }
 
-export interface TableColumnType {
+export interface ITableColumn {
   label?: string;
   path: string;
-  render?: (row: any) => ReactElement;
+  render?: (row: any) => ReactNode;
   width?: number | string;
 }
 
-export interface TableType extends BaseType {
-  actions?: TableActionType[];
-  columns: TableColumnType[];
+export interface ITable extends ILocalizable {
+  actions?: ITableAction[];
+  columns: ITableColumn[];
   loading?: boolean;
   onPageChange?: (page: number) => void;
   onPageSizeChange?: (pageSize: number) => void;

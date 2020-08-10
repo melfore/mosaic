@@ -1,80 +1,88 @@
-import React from "react";
-import { mount } from "enzyme";
-import Switch, { SwitchIntl } from ".";
-import FormMock from "../../utils/mocks/FormMock";
-import { SwitchType } from "../../types/Switch";
-import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import renderer from "react-test-renderer";
 
-const defaultProps: SwitchType = {
-  dataCy: "mySwitch",
-  onChange: () => {},
-};
+import { ISwitch, SwitchSize } from "../../types/Switch";
+import { getTestable } from "../../utils/tests";
 
-const componentWrapper = ({ onChange, value, ...props }: SwitchType) => (
-  <FormMock onInputChange={onChange!} inputValue={value!}>
-    <Switch {...defaultProps} {...props} />
-  </FormMock>
-);
+import Switch, { DATA_CY_DEFAULT } from ".";
 
-const intlComponentWrapper = (locale?: LocaleMock) => (
-  <IntlProviderMock locale={locale}>
-    <SwitchIntl labelId={MessageMock.switch} onChange={() => {}} />
-  </IntlProviderMock>
-);
+const defaultProps: ISwitch = {};
+
+const getSwitchTestable = (props?: ISwitch, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Switch, { dataCy, domNode: "span", props: { ...defaultProps, ...props } });
 
 describe("Switch test suite:", () => {
   it("default", () => {
-    const onChangeHandler = jest.fn();
-    const component = componentWrapper({
-      ...defaultProps,
-      onChange: onChangeHandler,
-    });
-    const wrapper = mount(component); // render
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+    const { element, wrapper } = getSwitchTestable();
+    expect(wrapper).toHaveLength(1);
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeFalsy();
+    expect(input.prop("disabled")).toBeFalsy();
+    expect(input.prop("required")).toBeFalsy();
 
-    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
-
-    inputCheckbox.simulate("change");
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-
-    inputCheckbox.simulate("change", { target: { checked: true } });
-    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
-    expect(inputCheckbox2.prop("checked")).toBe(true);
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("create a checked Switch", () => {
-    const onChangeHandler = jest.fn();
-    const component = componentWrapper({
-      ...defaultProps,
-      onChange: onChangeHandler,
-      value: true,
-    });
-    const wrapper = mount(component); // render
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+  it("dataCy", () => {
+    const { element, wrapper } = getSwitchTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
 
-    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
-
-    inputCheckbox.simulate("change");
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-
-    inputCheckbox.simulate("change", { target: { checked: false } });
-    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
-    expect(inputCheckbox2.prop("checked")).toBe(false);
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  // see issue #57
-  it("Switch without onChange", () => {
-    const component = <Switch dataCy="mySwitch" onChange={undefined} />;
-    const wrapper = mount(component);
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+  it("checked", () => {
+    const { element, wrapper } = getSwitchTestable({ value: true });
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with intl", () => {
-    const wrapper = mount(intlComponentWrapper());
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(MessageMock.switch);
+  it("disabled", () => {
+    const { element, wrapper } = getSwitchTestable({ disabled: true });
+    const input = wrapper.find("input");
+    expect(input.prop("disabled")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("onChange", () => {
+    const onChange = jest.fn();
+    const { element, wrapper } = getSwitchTestable({ onChange });
+    const inputBefore = wrapper.find("input");
+    inputBefore.simulate("change", { target: { checked: true } });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(true);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("onChange - not handled", () => {
+    const { element, wrapper } = getSwitchTestable();
+    const inputBefore = wrapper.find("input");
+    inputBefore.simulate("change", { target: { checked: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("required", () => {
+    const { element, wrapper } = getSwitchTestable({ required: true });
+    const input = wrapper.find("input");
+    expect(input.prop("required")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("size", () => {
+    const { element } = getSwitchTestable({ size: SwitchSize.small });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

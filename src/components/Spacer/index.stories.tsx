@@ -1,15 +1,22 @@
 import React from "react";
-import {} from "@storybook/addon-actions";
-import { select, number } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import Spacer from ".";
+import { number, select } from "@storybook/addon-knobs";
+
 import { SpacerDirection } from "../../types/Spacer";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Spacer, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Spacer",
   component: Spacer,
   parameters: {
-    ...getDocsPageStructure("Spacer", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Box",
+      component: "Spacer",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+      },
+    }),
   },
 };
 

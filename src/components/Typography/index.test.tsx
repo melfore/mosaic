@@ -1,52 +1,86 @@
-import React from "react";
-import { mount } from "enzyme";
-import Typography from ".";
-import { TypographyVariants } from "../../types/Typography";
+import renderer from "react-test-renderer";
 
-const defaultProps = {};
+import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
 
-const componentWrapper = (props = {}) => <Typography {...defaultProps} {...props} />;
+import Typography, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: ITypography = {
+  content: "Text",
+};
+
+const getTypographyTestable = (props?: ITypography, dataCy = DATA_CY_DEFAULT, domNode = "p") =>
+  getLocalizedTestable(Typography, { dataCy, domNode, props: { ...defaultProps, ...props } });
 
 describe("Typography test suite:", () => {
   it("default", () => {
-    const component = componentWrapper();
-    const wrapper = mount(component);
-    const styledTypography = wrapper.find("Typography").childAt(0);
-    expect(styledTypography.prop("gutterBottom")).toBeFalsy();
-    expect(styledTypography.prop("noWrap")).toBeFalsy();
-    const paragraph = styledTypography.find("p");
-    expect(paragraph.prop("className")).toContain("MuiTypography-body1");
-    expect(paragraph.prop("className")).toContain("data-cy-typography");
+    const { element, wrapper } = getTypographyTestable();
+    expect(wrapper).toHaveLength(1);
+    expect(wrapper.hasClass("MuiTypography-body1"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("pagetitle", () => {
-    const component = componentWrapper({ variant: TypographyVariants.pagetitle });
-    const wrapper = mount(component);
-    const styledTypography = wrapper.find("Typography").childAt(0);
-    expect(styledTypography.prop("gutterBottom")).toBeTruthy();
-    expect(styledTypography.prop("noWrap")).toBeTruthy();
-    const pageTitle = styledTypography.find("h1");
-    expect(pageTitle.prop("className")).toContain("MuiTypography-h5");
+  it("dataCy", () => {
+    const { element, wrapper } = getTypographyTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with bottom spacing", () => {
-    const component = componentWrapper({ bottomSpacing: true });
-    const wrapper = mount(component);
-    const styledTypography = wrapper.find("Typography").childAt(0);
-    expect(styledTypography.prop("gutterBottom")).toBeTruthy();
+  it("localized", () => {
+    const { element, wrapper } = getTypographyTestable({
+      ...defaultProps,
+      content: MessageMock.typography,
+      localized: true,
+    });
+    expect(wrapper.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.typography]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with custom data-cy", () => {
-    const component = componentWrapper({ dataCy: "custom" });
-    const wrapper = mount(component);
-    const paragraph = wrapper.find("p");
-    expect(paragraph.prop("className")).toContain("data-cy-custom");
+  it("bottomSpacing", () => {
+    const { element, wrapper } = getTypographyTestable({ bottomSpacing: true });
+    expect(wrapper.hasClass("MuiTypography-gutterBottom"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with truncated", () => {
-    const component = componentWrapper({ truncated: true });
-    const wrapper = mount(component);
-    const styledTypography = wrapper.find("Typography").childAt(0);
-    expect(styledTypography.prop("noWrap")).toBeTruthy();
+  it("display", () => {
+    const { element, wrapper } = getTypographyTestable({ display: TypographyDisplay.inline });
+    expect(wrapper.hasClass("MuiTypography-displayInline"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("loading", () => {
+    const { element, wrapper } = getTypographyTestable({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
+    const placeholder = wrapper.find("span.MuiSkeleton-root");
+    expect(placeholder).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("truncated", () => {
+    const { element, wrapper } = getTypographyTestable({ truncated: true });
+    expect(wrapper.hasClass("MuiTypography-noWrap"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("variant", () => {
+    const { element, wrapper } = getTypographyTestable({ variant: TypographyVariants.title }, undefined, "h2");
+    expect(wrapper.hasClass("MuiTypography-h6"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

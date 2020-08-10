@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spacer test suite: dataCy 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-10 Styled(MuiBox)-root-1 Styled(MuiBox)-root-9"
+  data-cy="custom"
+  direction="horizontal"
+  level={1}
+/>
+`;
+
+exports[`Spacer test suite: default 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-6 Styled(MuiBox)-root-1 Styled(MuiBox)-root-5"
+  data-cy="spacer"
+  direction="horizontal"
+  level={1}
+/>
+`;
+
+exports[`Spacer test suite: direction 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-14 Styled(MuiBox)-root-1 Styled(MuiBox)-root-13"
+  data-cy="spacer"
+  direction="vertical"
+  level={1}
+/>
+`;
+
+exports[`Spacer test suite: level 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-18 Styled(MuiBox)-root-1 Styled(MuiBox)-root-17"
+  data-cy="spacer"
+  direction="horizontal"
+  level={2}
+/>
+`;

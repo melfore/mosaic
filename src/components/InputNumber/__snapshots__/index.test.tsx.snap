@@ -1,0 +1,780 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputNumber test suite: dataCy 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="custom"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: default 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: disabled 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root Mui-disabled Mui-disabled MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled Mui-disabled"
+      data-cy="input-number"
+      disabled={true}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={true}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: float 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value={10.1}
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: localized 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+    data-shrink={true}
+  >
+    Title
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="intl.message.title"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="PrivateNotchedOutline-legendLabelled-42 PrivateNotchedOutline-legendNotched-43"
+      >
+        <span>
+          Title
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: min/max 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: numeric values only 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: onChange 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: placeholder 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Placeholder"
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: required 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={true}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: shrink 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: size 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: value 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value={10}
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <legend
+        className="PrivateNotchedOutline-legend-41"
+        style={
+          Object {
+            "width": 0.01,
+          }
+        }
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&#8203;",
+            }
+          }
+        />
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: variant 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+>
+  <div
+    className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiFilledInput-input"
+      data-cy="input-number"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "textAlign": "right",
+        }
+      }
+      type="number"
+      value=""
+    />
+  </div>
+</div>
+`;

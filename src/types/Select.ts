@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
-import { LoadableType } from "./Base";
-import { InputType } from "./Input";
 
-interface BaseSelectType<T> extends LoadableType, InputType {
+import { ILoadable, ILocalizable } from "./Base";
+import { IInput } from "./Input";
+
+interface IBaseSelect<T> extends ILocalizable, ILoadable, IInput {
   autoComplete?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;
   getGroupLabel?: (groupName: string) => string;
@@ -15,7 +16,7 @@ interface BaseSelectType<T> extends LoadableType, InputType {
 
 type SingleSelectDataType<T> = T | null;
 
-interface SingleSelectType<T> extends BaseSelectType<T> {
+interface ISelectSingle<T> extends IBaseSelect<T> {
   multiple: false;
   onChange: (value: SingleSelectDataType<T>) => void;
   value?: SingleSelectDataType<T>;
@@ -23,10 +24,10 @@ interface SingleSelectType<T> extends BaseSelectType<T> {
 
 type MultipleSelectDataType<T> = T[] | null;
 
-interface MultipleSelectType<T> extends BaseSelectType<T> {
+interface ISelectMultiple<T> extends IBaseSelect<T> {
   multiple: true;
   onChange: (value: MultipleSelectDataType<T>) => void;
   value?: MultipleSelectDataType<T>;
 }
 
-export type SelectType<T> = SingleSelectType<T> | MultipleSelectType<T>;
+export type ISelect<T> = ISelectSingle<T> | ISelectMultiple<T>;

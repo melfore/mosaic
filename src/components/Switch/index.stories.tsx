@@ -1,16 +1,24 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import Switch from ".";
+
 import { SwitchSize } from "../../types/Switch";
 import FormMock from "../../utils/mocks/FormMock";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import Switch, { DATA_CY_DEFAULT } from ".";
 
 export default {
   title: "Switch",
   component: Switch,
   parameters: {
-    ...getDocsPageStructure("Switch", false),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Switch",
+      component: "Switch",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+      },
+    }),
   },
 };
 

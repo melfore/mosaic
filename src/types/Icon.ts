@@ -1,4 +1,4 @@
-import { LoadableType } from "./Base";
+import { ILoadable } from "./Base";
 
 export enum Icons {
   account = "account",
@@ -20,6 +20,7 @@ export enum Icons {
   filter = "filter",
   first = "first",
   home = "home",
+  language = "language",
   last = "last",
   left = "left",
   list = "list",
@@ -49,14 +50,14 @@ export enum IconSize {
   small = "small",
 }
 
-interface IconForwardedType {
+interface IForwardedIcon {
   className?: string;
   color?: string;
   ref?: any;
 }
 
-export interface IconType extends LoadableType {
-  forwarded?: IconForwardedType;
+export interface IIcon extends ILoadable {
+  forwarded?: IForwardedIcon;
   name: Icons;
   size?: IconSize;
 }

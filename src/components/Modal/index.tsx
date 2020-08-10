@@ -1,89 +1,112 @@
 import React, { FC } from "react";
-import MUIDialog from "@material-ui/core/Dialog";
-import MUIDialogActions from "@material-ui/core/DialogActions";
-import MUIDialogContent from "@material-ui/core/DialogContent";
-import MUIDialogTitle from "@material-ui/core/DialogTitle";
-import { styled } from "@material-ui/core/styles";
-import Button, { ButtonIntl } from "../Button";
-import Icon from "../Icon";
+import {
+  Dialog as MUIDialog,
+  DialogActions as MUIDialogActions,
+  DialogContent as MUIDialogContent,
+} from "@material-ui/core";
+
+import { Icons, IconSize } from "../../types/Icon";
+import { IModal, ModalSize } from "../../types/Modal";
+import { TypographyVariants } from "../../types/Typography";
+import { getComposedDataCy, suppressEvent } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-import { BaseIntlType } from "../../types/Base";
-import { Icons, IconSize } from "../../types/Icon";
-import { ModalActionType, ModalType, ModalSize } from "../../types/Modal";
-import { TypographyVariants } from "../../types/Typography";
-import withIntl from "../../utils/hocs/withIntl";
 
-const StyledMUIDialogTitle = styled(MUIDialogTitle)({
-  alignItems: "center",
-  display: "flex",
-  justifyContent: "space-between",
-});
+import { StyledMUIDialogTitle } from "./styled";
 
-const getActionButton = <T extends ModalActionType>(buttonConfig: T): any => {
-  const { action, label, labelId, ...props } = buttonConfig;
-  const onClickHandler = (event: any) => {
-    event.preventDefault();
-    event.stopPropagation();
-    action && action();
-  };
-
-  if (!labelId) {
-    return <Button {...props} label={label} onClick={onClickHandler} />;
+const onCloseWrapper = (event?: any, onClose?: Function) => {
+  if (event) {
+    suppressEvent(event);
   }
-
-  return <ButtonIntl {...props} labelId={labelId} onClick={onClickHandler} />;
+  onClose && onClose();
 };
 
-const onCloseWrapper = (event: any, reason?: string, onClose?: Function) => {
-  event.preventDefault();
-  event.stopPropagation();
-  onClose && onClose(reason);
+export const DATA_CY_DEFAULT = "modal";
+export const DATA_CY_SHORTCUT = "title";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "title", type: "string" },
+  { name: "cancel.label", type: "any" },
+  { name: "confirm.label", type: "any" },
+];
+
+export const SUBPARTS_MAP = {
+  title: {
+    label: "Title",
+  },
+  content: {
+    label: "Content",
+  },
+  actionCancel: {
+    label: "Action Cancel",
+  },
+  actionConfirm: {
+    label: "Action Confirm",
+  },
 };
 
-/**
- * Modal component made on top of `@material-ui/core/Dialog`
- */
-const Modal: FC<ModalType> = ({
+const Modal: FC<IModal> = ({
   cancel = undefined,
   children,
   closable = false,
   confirm = undefined,
-  label = "",
+  dataCy = DATA_CY_DEFAULT,
   onClose = undefined,
   open = false,
   size = ModalSize.default,
+  title = "",
 }) => {
   const hasActions = cancel || confirm;
   return (
     <MUIDialog
       aria-labelledby="modal-title"
+      data-cy={dataCy}
       fullWidth
       maxWidth={size}
-      onClose={(event, reason) => onCloseWrapper(event, reason, onClose)}
+      onClose={(event) => onCloseWrapper(event, onClose)}
       open={open}
     >
       <StyledMUIDialogTitle id="modal-title" disableTypography>
-        <Typography bottomSpacing={false} dataCy="modal-title" label={label} variant={TypographyVariants.title} />
+        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant={TypographyVariants.title}>
+          {title}
+        </Typography>
         {closable && (
-          <IconButton
-            icon={Icons.close}
-            size={IconSize.small}
-            onClick={(event) => onCloseWrapper(event, undefined, onClose)}
-          />
+          <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
         )}
       </StyledMUIDialogTitle>
-      <MUIDialogContent dividers>{children}</MUIDialogContent>
+      <MUIDialogContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)} dividers>
+        {children}
+      </MUIDialogContent>
       {hasActions && (
         <MUIDialogActions>
-          {cancel && getActionButton(cancel)}
-          {confirm && getActionButton(confirm)}
+          {cancel && (
+            <Button
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionCancel)}
+              disabled={cancel.disabled}
+              label={cancel.label}
+              onClick={cancel.action}
+              variant={cancel.variant}
+            />
+          )}
+          {confirm && (
+            <Button
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionConfirm)}
+              disabled={confirm.disabled}
+              label={confirm.label}
+              onClick={confirm.action}
+              variant={confirm.variant}
+            />
+          )}
         </MUIDialogActions>
       )}
     </MUIDialog>
   );
 };
 
-export const ModalIntl: FC<ModalType & BaseIntlType> = withIntl(Modal);
+export const ModalWithProps = Modal;
 
-export default Modal;
+export default localized(Modal, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

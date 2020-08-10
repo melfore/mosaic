@@ -1,15 +1,28 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, number } from "@storybook/addon-knobs";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import Select from ".";
+import { boolean, number, select, text } from "@storybook/addon-knobs";
+
 import { InputSize, InputVariant } from "../../types/Input";
+import { getAllComposedDataCy } from "../../utils";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { getDocumentationPage } from "../../utils/stories";
+
+import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Select",
-  component: Select,
+  component: SelectWithProps,
   parameters: {
-    ...getDocsPageStructure("Select"),
+    ...getDocumentationPage({
+      basedOn: "@material-ui/core/Autocomplete",
+      component: "Select",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+      },
+      localizableProps: LOCALIZABLE_PROPS,
+    }),
   },
 };
 
@@ -82,6 +95,20 @@ export const Loading = () => (
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
+);
+
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Select
+      label={MessageMock.title}
+      localized
+      multiple={false}
+      onChange={(value) => {}}
+      options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+      placeholder={MessageMock.title}
+    />
+  </IntlProviderMock>
 );
 
 export const Required = () => (

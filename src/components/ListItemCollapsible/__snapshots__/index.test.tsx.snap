@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItemCollapsible test suite: dataCy 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    data-cy="custom-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        data-cy="custom-header-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+        />
+      </svg>
+    </div>
+    <div
+      className="MuiListItemText-root"
+      data-cy="custom-header-content"
+    >
+      <span>
+        Collapsible Header
+      </span>
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-hidden"
+    data-cy="custom-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`ListItemCollapsible test suite: default 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    data-cy="list-item-collapsible-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        data-cy="list-item-collapsible-header-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+        />
+      </svg>
+    </div>
+    <div
+      className="MuiListItemText-root"
+      data-cy="list-item-collapsible-header-content"
+    >
+      <span>
+        Collapsible Header
+      </span>
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-hidden"
+    data-cy="list-item-collapsible-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`ListItemCollapsible test suite: listItem variants 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-dense MuiListItem-gutters"
+    data-cy="list-item-collapsible-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <span
+        className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+        style={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+      />
+    </div>
+    <div
+      className="MuiListItemText-root MuiListItemText-dense"
+      data-cy="list-item-collapsible-header-content-loading"
+    >
+      <span
+        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+      />
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-hidden"
+    data-cy="list-item-collapsible-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`ListItemCollapsible test suite: open 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    data-cy="list-item-collapsible-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        data-cy="list-item-collapsible-header-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+        />
+      </svg>
+    </div>
+    <div
+      className="MuiListItemText-root"
+      data-cy="list-item-collapsible-header-content"
+    >
+      <span>
+        Collapsible Header
+      </span>
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-entered"
+    data-cy="list-item-collapsible-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`ListItemCollapsible test suite: open 2`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    data-cy="list-item-collapsible-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        data-cy="list-item-collapsible-header-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+        />
+      </svg>
+    </div>
+    <div
+      className="MuiListItemText-root"
+      data-cy="list-item-collapsible-header-content"
+    >
+      <span>
+        Collapsible Header
+      </span>
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-entered"
+    data-cy="list-item-collapsible-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`ListItemCollapsible test suite: open variants 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    data-cy="list-item-collapsible-header"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "default",
+      }
+    }
+  >
+    <div
+      className="MuiListItemIcon-root"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        data-cy="list-item-collapsible-header-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+        />
+      </svg>
+    </div>
+    <div
+      className="MuiListItemText-root"
+      data-cy="list-item-collapsible-header-content"
+    >
+      <span>
+        Collapsible Header
+      </span>
+    </div>
+  </li>,
+  <div
+    className="MuiCollapse-container MuiCollapse-entered"
+    data-cy="list-item-collapsible-collapse"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner"
+      />
+    </div>
+  </div>,
+]
+`;

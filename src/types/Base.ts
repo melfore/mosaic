@@ -5,15 +5,16 @@ export enum Color {
   secondary = "secondary",
 }
 
-export interface BaseType {
+export interface IBase {
   color?: Color;
   dataCy?: string;
 }
 
-export interface BaseIntlType extends BaseType {
-  labelId: string;
+export interface ILoadable extends IBase {
+  loading?: boolean;
 }
 
-export interface LoadableType extends BaseType {
-  loading?: boolean;
+// TODO: door open to allow explicit property localization
+export interface ILocalizable extends IBase {
+  localized?: boolean;
 }

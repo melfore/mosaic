@@ -1,19 +1,19 @@
-import { InputDataType, InputType } from "./Input";
 import { Icons } from "./Icon";
+import { IInput, InputType } from "./Input";
 
-export interface MultilineInputType {
+export interface IMultilineInput {
   rows: number;
   rowsMax?: number;
 }
 
-export interface InputAdornmentType {
+export interface IInputAdornment {
   icon: Icons;
   onClick?: () => void;
 }
 
-export interface InputTextType extends InputType {
-  adornment?: InputAdornmentType;
+export interface IInputText extends IInput {
+  adornment?: IInputAdornment;
   initialValue?: string;
-  multiline?: MultilineInputType;
-  type?: InputDataType;
+  multiline?: IMultilineInput;
+  type?: InputType;
 }

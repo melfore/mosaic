@@ -1,40 +1,56 @@
-import React from "react";
-import { mount } from "enzyme";
-import { Icons, IconSize } from "../../types/Icon";
-import IconButton from ".";
+import renderer from "react-test-renderer";
 
-const defaultProps = {
-  dataCy: "myIconButton",
+import { Icons, IconSize } from "../../types/Icon";
+import { IIconButton } from "../../types/IconButton";
+import { getTestable } from "../../utils/tests";
+
+import IconButton, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: IIconButton = {
+  icon: Icons.account,
   onClick: jest.fn(),
-  icon: Icons.add,
 };
 
-const componentWrapper = (props = {}) => <IconButton {...defaultProps} {...props} />;
+const getIconButtonTestable = (props?: IIconButton, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(IconButton, { dataCy, domNode: "button", props: { ...defaultProps, ...props } });
 
 describe("IconButton test suite:", () => {
   it("default", () => {
-    const onClickHandler = jest.fn();
-    const component = componentWrapper({
-      onClick: onClickHandler,
-    });
-    const wrapper = mount(component);
-    const button = wrapper.find("button");
-    button.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(1);
-    const svg = button.find("svg");
-    expect(svg.prop("data-cy")).toEqual(defaultProps.dataCy);
+    const onClick = jest.fn();
+    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, onClick });
+    expect(wrapper).toHaveLength(1);
+    expect(wrapper.prop("disabled")).toBeFalsy();
+    wrapper.simulate("click");
+    expect(onClick).toHaveBeenCalledTimes(1);
+    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    expect(icon.prop("name")).toEqual(defaultProps.icon);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("dataCy", () => {
+    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("disabled", () => {
-    const onClickHandler = jest.fn();
-    const component = componentWrapper({
-      onClick: onClickHandler,
-      disabled: true,
-      size: IconSize.small,
-    });
-    const wrapper = mount(component);
-    const button = wrapper.find("button");
-    button.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(0);
+    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, disabled: true });
+    expect(wrapper.prop("disabled")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("size", () => {
+    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, size: IconSize.small });
+    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    expect(icon.prop("size")).toEqual(IconSize.small);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

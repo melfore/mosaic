@@ -7,14 +7,15 @@ export enum LocaleMock {
 }
 
 export enum MessageMock {
-  button = "button",
-  checkbox = "checkbox",
-  inputNumber = "inputNumber",
-  inputText = "inputText",
-  modalCancel = "modalCancel",
-  modalConfirm = "modalConfirm",
-  modalTitle = "modalTitle",
-  switch = "switch",
+  button = "intl.message.button",
+  cancel = "intl.message.cancel",
+  checkbox = "intl.message.checkbox",
+  confirm = "intl.message.confirm",
+  inputNumber = "intl.message.inputNumber",
+  inputText = "intl.message.inputText",
+  subtitle = "intl.message.subtitle",
+  switch = "intl.message.switch",
+  title = "intl.message.title",
   typography = "typography",
 }
 
@@ -25,24 +26,26 @@ interface IntlProviderMockType {
 export const mockedMessages = {
   [LocaleMock.en]: {
     [MessageMock.button]: "Button",
+    [MessageMock.cancel]: "Cancel",
     [MessageMock.checkbox]: "Checkbox",
+    [MessageMock.confirm]: "Confirm",
     [MessageMock.inputNumber]: "Input Number",
     [MessageMock.inputText]: "Input Text",
-    [MessageMock.modalCancel]: "Cancel",
-    [MessageMock.modalConfirm]: "Confirm",
-    [MessageMock.modalTitle]: "Title",
+    [MessageMock.subtitle]: "Subtitle",
     [MessageMock.switch]: "Switch",
+    [MessageMock.title]: "Title",
     [MessageMock.typography]: "Typography",
   },
   [LocaleMock.it]: {
     [MessageMock.button]: "Bottone",
+    [MessageMock.cancel]: "Annulla",
     [MessageMock.checkbox]: "Spunta",
+    [MessageMock.confirm]: "Conferma",
     [MessageMock.inputNumber]: "Numero in input",
     [MessageMock.inputText]: "Testo in input",
-    [MessageMock.modalCancel]: "Annulla",
-    [MessageMock.modalConfirm]: "Conferma",
-    [MessageMock.modalTitle]: "Titolo",
+    [MessageMock.subtitle]: "Sottotitolo",
     [MessageMock.switch]: "Interruttore",
+    [MessageMock.title]: "Titolo",
     [MessageMock.typography]: "Tipografia",
   },
 };

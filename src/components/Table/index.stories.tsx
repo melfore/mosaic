@@ -1,60 +1,69 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text, number } from "@storybook/addon-knobs";
-import { TableActionPosition } from "../../types/Table";
-import { getDocsPageStructure, StoriesWrapper } from "../../utils/stories";
-import { CUSTOM_CODE_BLOCK_CLASS } from "../../utils/stories/utils";
-import Table from ".";
+import { boolean, number, select, text } from "@storybook/addon-knobs";
+
 import { Icons } from "../../types/Icon";
+import { TableActionPosition } from "../../types/Table";
+import { getAllComposedDataCy } from "../../utils";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+
+import { SUBPARTS_MAP } from "./utils";
+import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
+
+// <Fragment>
+// <p>
+//   The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
+//   table features. Below you can find the properties responsible to handle table events:
+// </p>
+// <p>
+//   <b>Pagination:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
+//     {`page: number (default is 0)
+//       pageSize: number (default is 10)
+//       onPageChange={(page: number) => {}}
+//       onPageSizeChange={(pageSize: number) => {}}
+//     `}
+//   </code>
+// </p>
+// <p>
+//   <b>Row click:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Search:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Selection:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
+// </p>
+// <p>
+//   <b>Sorting:</b>
+//   <br />
+//   <code className={DOCUMENTATION_CODE_BLOCK_CLASS}>
+//     {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
+//   </code>
+// </p>
+// </Fragment>
 
 export default {
   title: "Table",
-  component: Table,
+  component: TableWithProps,
   parameters: {
-    ...getDocsPageStructure("Table", false, {
-      title: "Interaction and events",
-      subtitle: true,
-      body: (
-        <Fragment>
-          <p>
-            The <code>Table</code> component requires implementing callbacks for each event fired when interacting with
-            table features. Below you can find the properties responsible to handle table events:
-          </p>
-          <p>
-            <b>Pagination:</b>
-            <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`page: number (default is 0)
-                pageSize: number (default is 10)
-                onPageChange={(page: number) => {}}
-                onPageSizeChange={(pageSize: number) => {}}
-              `}
-            </code>
-          </p>
-          <p>
-            <b>Row click:</b>
-            <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onRowClick={(event: any, row: any) => {}}`}</code>
-          </p>
-          <p>
-            <b>Search:</b>
-            <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSearchChange={(query: string) => {}}`}</code>
-          </p>
-          <p>
-            <b>Selection:</b>
-            <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>{`onSelectionChange={(data: any[]) => {}}`}</code>
-          </p>
-          <p>
-            <b>Sorting:</b>
-            <br />
-            <code className={CUSTOM_CODE_BLOCK_CLASS}>
-              {`onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}`}
-            </code>
-          </p>
-        </Fragment>
-      ),
+    ...getDocumentationPage({
+      basedOn: "material-table",
+      component: "Table",
+      e2eTestInfo: {
+        dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+      },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -121,6 +130,27 @@ export const Loading = () => (
   />
 );
 
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Table
+      columns={[
+        { label: "Name", path: "name" },
+        { label: "Age", path: "age" },
+      ]}
+      localized
+      rows={[
+        { name: "John", age: 35 },
+        { name: "Nick", age: 45 },
+        { name: "Emma", age: 32 },
+        { name: "Joey", age: 29 },
+        { name: "Luis", age: 78 },
+      ]}
+      title={MessageMock.title}
+    />
+  </IntlProviderMock>
+);
+
 export const WithCustomColumnRender = () => (
   <StoriesWrapper>
     <Table
@@ -130,7 +160,7 @@ export const WithCustomColumnRender = () => (
           path: "name",
           render: ({ name }) => (
             <div style={{ alignItems: "center", display: "flex" }}>
-              <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} />
+              {/* <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} /> */}
               <b style={{ marginLeft: "8px" }}>{name}</b>
             </div>
           ),

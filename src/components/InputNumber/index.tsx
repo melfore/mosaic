@@ -1,14 +1,10 @@
 import React, { FC } from "react";
-import { styled } from "@material-ui/core/styles";
-import MUITextField from "@material-ui/core/TextField";
-import { BaseIntlType } from "../../types/Base";
-import { InputDataType, InputSize, InputVariant } from "../../types/Input";
-import { InputNumberType } from "../../types/InputNumber";
-import withIntl from "../../utils/hocs/withIntl";
 
-const StyledMUITextField = styled(MUITextField)({
-  width: "100%",
-});
+import { InputSize, InputType, InputVariant } from "../../types/Input";
+import { IInputNumber } from "../../types/InputNumber";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
+import { StyledMUITextField } from "./styled";
 
 const getControlledValue = (value: number | null): any => {
   return value === null ? "" : value;
@@ -28,11 +24,15 @@ const getNumericValue = (value: string, options: any): number | null => {
   return numericValue < minValue ? minValue : maxValue;
 };
 
-/**
- * InputNumber component made on top of `@material-ui/core/TextField`
- */
-const InputNumber: FC<InputNumberType> = ({
-  dataCy,
+export const DATA_CY_DEFAULT = "input-number";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "label", type: "string" },
+  { name: "placeholder", type: "string" },
+];
+
+const InputNumber: FC<IInputNumber> = ({
+  dataCy = DATA_CY_DEFAULT,
   disabled = false,
   integer = true,
   label,
@@ -72,13 +72,16 @@ const InputNumber: FC<InputNumberType> = ({
       placeholder={placeholder}
       required={required}
       size={size}
-      type={InputDataType.number}
+      type={InputType.number}
       variant={variant}
       value={getControlledValue(value)}
     />
   );
 };
 
-export const InputNumberIntl: FC<InputNumberType & BaseIntlType> = withIntl(InputNumber);
+export const InputNumberWithProps = InputNumber;
 
-export default InputNumber;
+export default localized(InputNumber, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

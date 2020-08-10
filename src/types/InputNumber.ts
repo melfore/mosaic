@@ -1,6 +1,6 @@
-import { InputType } from "./Input";
+import { IInput } from "./Input";
 
-export interface InputNumberType extends InputType {
+export interface IInputNumber extends IInput {
   integer?: boolean;
   minValue?: number;
   maxValue?: number;

@@ -1,7 +1,9 @@
 import React, { forwardRef, Fragment } from "react";
 import { Action as MTActionType, Column as MTColumnType, Options as MTOptionsType } from "material-table";
+
 import { Icons, IconSize } from "../../types/Icon";
-import { TableActionPosition, TableActionType, TableColumnType } from "../../types/Table";
+import { ITableAction, ITableColumn, TableActionPosition } from "../../types/Table";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import Button from "../Button";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
@@ -13,7 +15,14 @@ export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
   emptyRowsWhenPaging: false,
 };
 
-export const actionAdapter = (action: TableActionType): MTActionType<object> => {
+export const SUBPARTS_MAP = {
+  action: {
+    label: "Action (with label)",
+    value: (label = "{label}") => `action-${label}`,
+  },
+};
+
+export const actionAdapter = (action: ITableAction): MTActionType<object> => {
   const {
     callback,
     label,
@@ -27,15 +36,16 @@ export const actionAdapter = (action: TableActionType): MTActionType<object> => 
     hidden,
     icon: `${label}$${icon}`,
     onClick: (event, data) => {
-      event.preventDefault();
-      event.stopPropagation();
+      if (event) {
+        suppressEvent(event);
+      }
       callback(data);
     },
     position,
   };
 };
 
-export const actionComponentAdapter = (props: any) => {
+export const actionComponentAdapter = (props: any, dataCy: string) => {
   const { data, action } = props;
   const { disabled, hidden, icon, position, onClick }: MTActionType<object> = action;
   if (hidden) {
@@ -52,19 +62,21 @@ export const actionComponentAdapter = (props: any) => {
         <Fragment>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <Button
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
             disabled={disabled}
             icon={!iconName ? undefined : { name: iconName }}
             label={label}
-            onClick={(event: any) => onClick(event, data)}
+            onClick={() => onClick(undefined, data)}
           />
         </Fragment>
       )}
       {!displaysButton && (
         <Fragment>
           <IconButton
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
             disabled={disabled}
             icon={iconName}
-            onClick={(event: any) => onClick(event, data)}
+            onClick={() => onClick(undefined, data)}
             size={IconSize.small}
           />
           <span>&nbsp;&nbsp;</span>
@@ -74,7 +86,7 @@ export const actionComponentAdapter = (props: any) => {
   );
 };
 
-export const columnAdapter = (column: TableColumnType): MTColumnType<object> => {
+export const columnAdapter = (column: ITableColumn): MTColumnType<object> => {
   const { label, path, render, width } = column;
   return {
     ...(!!width && ({ width } as object)),

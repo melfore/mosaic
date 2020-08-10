@@ -1,28 +1,46 @@
-import React from "react";
-import { mount } from "enzyme";
-import { SpacerDirection } from "../../types/Spacer";
-import Spacer from ".";
+import renderer from "react-test-renderer";
 
-const defaultProps = {
-  direction: SpacerDirection.horizontal,
-};
+import { ISpacer, SpacerDirection } from "../../types/Spacer";
+import { getTestable } from "../../utils/tests";
 
-const componentWrapper = (props = {}) => <Spacer {...defaultProps} {...props} />;
+import Spacer, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: ISpacer = {};
+
+const getSpacerTestable = (props?: ISpacer, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Spacer, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
 describe("Spacer test suite:", () => {
   it("default", () => {
-    const component = componentWrapper();
-    const wrapper = mount(component);
-    const div = wrapper.find("div");
-    expect(div.prop("direction")).toEqual(defaultProps.direction);
-    expect(div.prop("level")).toEqual(1);
+    const { element, wrapper } = getSpacerTestable();
+    expect(wrapper).toHaveLength(1);
+    expect("default-props-check").toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("vertical", () => {
-    const component = componentWrapper({ direction: SpacerDirection.vertical, level: 3 });
-    const wrapper = mount(component);
-    const div = wrapper.find("div");
-    expect(div.prop("direction")).toEqual(SpacerDirection.vertical);
-    expect(div.prop("level")).toEqual(3);
+  it("dataCy", () => {
+    const { element, wrapper } = getSpacerTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("direction", () => {
+    const { element, wrapper } = getSpacerTestable({ direction: SpacerDirection.vertical });
+    expect(wrapper.prop("direction")).toEqual(SpacerDirection.vertical);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("level", () => {
+    const { element, wrapper } = getSpacerTestable({ level: 2 });
+    expect(wrapper.prop("level")).toEqual(2);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

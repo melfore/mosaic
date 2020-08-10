@@ -1,62 +1,86 @@
-import React from "react";
-import { mount } from "enzyme";
-import Avatar from ".";
+import renderer from "react-test-renderer";
+
+import { AvatarVariant, IAvatar } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
-import { AvatarVariant } from "../../types/Avatar";
+import { getTestable } from "../../utils/tests";
 
-const defaultProps = {};
+import Avatar, { DATA_CY_DEFAULT } from ".";
 
-const componentWrapper = (props = {}) => <Avatar {...defaultProps} {...props} />;
+const defaultProps: IAvatar = {};
+
+const getAvatarTestable = (props?: IAvatar, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Avatar, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
 describe("Avatar test suite:", () => {
   it("default", () => {
-    const component = componentWrapper();
-    const wrapper = mount(component);
-    const avatar = wrapper.find("div.MuiAvatar-root");
-    expect(avatar.prop("className")).toContain("data-cy-avatar");
-    const icon = avatar.find("Icon");
+    const { element, wrapper } = getAvatarTestable();
+    expect(wrapper).toHaveLength(1);
+    const icon = wrapper.find("Icon");
     expect(icon).toHaveLength(0);
-    const image = avatar.find("img");
+    const image = wrapper.find("img");
     expect(image).toHaveLength(0);
-    const text = avatar.find("Typography");
+    const text = wrapper.find("Typography");
     expect(text).toHaveLength(0);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("dataCy", () => {
+    const { element, wrapper } = getAvatarTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("icon", () => {
-    const component = componentWrapper({ icon: Icons.business });
-    const wrapper = mount(component);
-    const avatar = wrapper.find("div.MuiAvatar-root");
-    const icon = avatar.find("Icon");
+    const { element, wrapper } = getAvatarTestable({ icon: Icons.business });
+    const icon = wrapper.find("Icon");
     expect(icon).toHaveLength(1);
     expect(icon.prop("name")).toEqual(Icons.business);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("image", () => {
-    const imageSrc =
-      "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg";
-    const component = componentWrapper({
-      src: imageSrc,
-    });
-    const wrapper = mount(component);
-    const avatar = wrapper.find("div.MuiAvatar-root");
-    const image = avatar.find("img");
+    const alt = "Mosaic Image";
+    const src = "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg";
+    const { element, wrapper } = getAvatarTestable({ alt, src });
+    const image = wrapper.find("img");
     expect(image).toHaveLength(1);
-    expect(image.prop("src")).toEqual(imageSrc);
+    expect(image.prop("alt")).toEqual(alt);
+    expect(image.prop("src")).toEqual(src);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("loading", () => {
+    const { element, wrapper } = getAvatarTestable({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("squared", () => {
+    const { element, wrapper } = getAvatarTestable({ variant: AvatarVariant.squared });
+    expect(wrapper.prop("className")).toContain("MuiAvatar-square");
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("text", () => {
-    const component = componentWrapper({ text: "MO" });
-    const wrapper = mount(component);
-    const avatar = wrapper.find("div.MuiAvatar-root");
-    const text = avatar.find("Typography");
+    const initials = "MO";
+    const { element, wrapper } = getAvatarTestable({ text: initials });
+    const text = wrapper.find("Typography");
     expect(text).toHaveLength(1);
-    expect(text.prop("label")).toEqual("MO");
-  });
+    expect(text.prop("children")).toEqual(initials);
 
-  it("with custom variant", () => {
-    const component = componentWrapper({ variant: AvatarVariant.squared });
-    const wrapper = mount(component);
-    const avatar = wrapper.find("div.MuiAvatar-root");
-    expect(avatar.prop("className")).toContain("MuiAvatar-square");
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

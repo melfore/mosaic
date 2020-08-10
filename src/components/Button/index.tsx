@@ -1,58 +1,71 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
-import Icon from "../Icon";
-import { BaseIntlType } from "../../types/Base";
-import { ButtonIconPosition, ButtonIconType, ButtonType, ButtonVariants } from "../../types/Button";
-import withIntl from "../../utils/hocs/withIntl";
 
-const getIcons = (dataCy: string, iconConfig?: ButtonIconType) => {
-  const icons = { endIcon: undefined, startIcon: undefined };
+import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
+import { suppressEvent } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Icon from "../Icon";
+
+interface IMUIButtonIcon {
+  endIcon?: ReactElement;
+  startIcon?: ReactElement;
+}
+
+const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
+  const muiIcon = {};
   if (!iconConfig) {
-    return;
+    return muiIcon;
   }
 
   const { name, position } = iconConfig;
   const icon = <Icon dataCy={`${dataCy}-icon`} name={name} />;
-  if (position === ButtonIconPosition.right) {
-    return {
-      ...icons,
-      endIcon: icon,
-    };
-  }
-
-  return {
-    ...icons,
-    startIcon: icon,
-  };
+  return position === ButtonIconPosition.right
+    ? {
+        endIcon: icon,
+      }
+    : { startIcon: icon };
 };
 
-/**
- * Button component made on top of `@material-ui/core/Button`.
- */
-const Button: FC<ButtonType> = ({
-  dataCy = "button",
+export const DATA_CY_DEFAULT = "button";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
+
+// TODO: handle color
+const Button: FC<IButton> = ({
+  dataCy = DATA_CY_DEFAULT,
+  disabled = false,
   elevated = false,
-  icon = undefined,
-  label = "",
+  icon,
+  label,
   onClick,
   variant = ButtonVariants.contained,
-  disabled = false,
 }) => {
+  const onClickHandler = useCallback(
+    (event: any) => {
+      suppressEvent(event);
+      onClick();
+    },
+    [onClick]
+  );
+
   return (
     <MUIButton
       color="primary"
       data-cy={dataCy}
+      disabled={disabled}
       disableElevation={!elevated}
-      onClick={onClick}
+      onClick={onClickHandler}
       variant={variant}
       {...getIcons(dataCy, icon)}
-      disabled={disabled}
     >
       {label}
     </MUIButton>
   );
 };
 
-export const ButtonIntl: FC<ButtonType & BaseIntlType> = withIntl(Button);
+export const ButtonWithProps = Button;
 
-export default Button;
+export default localized(Button, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

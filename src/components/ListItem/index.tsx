@@ -1,47 +1,43 @@
-import React, { FC, memo, ReactElement, useMemo } from "react";
+import React, { FC } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
   ListItemText as MUIListItemText,
 } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { ListItemType } from "../../types/ListItem";
-import { TypographyVariants } from "../../types/Typography";
-import Typography from "../Typography";
+
+import { IListItem } from "../../types/ListItem";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import Icon from "../Icon";
 
-/**
- * ListItem component made on top of `@material-ui/core/ListItem`
- */
-const ListItem: FC<ListItemType> = ({
-  dense = true,
-  icon = undefined,
-  loading = false,
-  onClick = undefined,
-  selected = false,
-  title,
-  titleVariant = TypographyVariants.body,
-}) => {
-  const text = useMemo(
-    () =>
-      typeof title !== "string" ? (
-        loading ? (
-          <MUISkeleton />
-        ) : (
-          title
-        )
-      ) : (
-        <Typography bottomSpacing={false} label={title} loading={loading} truncated variant={titleVariant} />
-      ),
-    [loading, title, titleVariant]
-  );
+export const DATA_CY_DEFAULT = "list-item";
 
+export const SUBPARTS_MAP = {
+  icon: {
+    label: "Icon",
+  },
+  content: {
+    label: "Content (with loading = true, adds '-loading')",
+    value: (loading = false) => `content${loading ? "-loading" : ""}`,
+  },
+};
+
+const ListItem: FC<IListItem> = ({
+  children,
+  content,
+  dataCy = DATA_CY_DEFAULT,
+  dense = false,
+  icon,
+  loading = false,
+  onClick,
+  selected = false,
+}) => {
   return (
     <MUIListItem
+      data-cy={dataCy}
       dense={dense}
       onClick={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
+        suppressEvent(event);
         if (loading) {
           return;
         }
@@ -53,12 +49,14 @@ const ListItem: FC<ListItemType> = ({
     >
       {icon && (
         <MUIListItemIcon>
-          <Icon loading={loading} name={icon} />
+          <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} loading={loading} name={icon} />
         </MUIListItemIcon>
       )}
-      <MUIListItemText disableTypography>{text}</MUIListItemText>
+      <MUIListItemText data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content, loading)} disableTypography>
+        {loading ? <MUISkeleton /> : content || children}
+      </MUIListItemText>
     </MUIListItem>
   );
 };
 
-export default memo(ListItem);
+export default ListItem;

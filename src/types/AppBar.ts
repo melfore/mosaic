@@ -1,20 +1,20 @@
-import { BaseType } from "./Base";
+import { ILocalizable } from "./Base";
 import { Icons } from "./Icon";
 
-interface UserMenuItem {
+interface IUserMenu {
   label: string;
   onClick: () => void;
 }
 
-interface ActionItem {
+interface IActionItem {
   icon: Icons;
   onClick: () => void;
 }
 
-export interface AppBarType extends BaseType {
-  actions?: ActionItem[];
-  menu?: ActionItem;
+export interface IAppBar extends ILocalizable {
+  actions?: IActionItem[];
+  menu?: IActionItem;
   onTitleClick?: () => void;
   title?: string;
-  userMenu?: UserMenuItem[];
+  userMenu?: IUserMenu[];
 }

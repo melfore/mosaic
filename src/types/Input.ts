@@ -1,11 +1,11 @@
-import { BaseType } from "./Base";
+import { ILocalizable } from "./Base";
 
 export enum InputSize {
   default = "medium",
   small = "small",
 }
 
-export enum InputDataType {
+export enum InputType {
   default = "text",
   number = "number",
   password = "password",
@@ -17,7 +17,7 @@ export enum InputVariant {
   underlined = "standard",
 }
 
-export interface InputType extends BaseType {
+export interface IInput extends ILocalizable {
   disabled?: boolean;
   label?: string;
   onChange?: Function;
@@ -25,6 +25,6 @@ export interface InputType extends BaseType {
   required?: boolean;
   shrink?: boolean;
   size?: InputSize;
-  type?: InputDataType;
+  type?: InputType;
   variant?: InputVariant;
 }

@@ -1,36 +1,52 @@
 import React, { FC, memo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
-import { AvatarType, AvatarVariant } from "../../types/Avatar";
+
+import { AvatarVariant, IAvatar } from "../../types/Avatar";
+import { getComposedDataCy } from "../../utils";
 import Icon from "../Icon";
 import Typography from "../Typography";
+
 import { StyledMUIAvatar } from "./styled";
 
-/**
- * Avatar component made on top of `@material-ui/core/Avatar`
- */
-const Avatar: FC<AvatarType> = ({
+export const DATA_CY_DEFAULT = "avatar";
+
+export const SUBPARTS_MAP = {
+  loading: {
+    label: "Loading",
+  },
+  icon: {
+    label: "Icon",
+  },
+  text: {
+    label: "Text",
+  },
+};
+
+const Avatar: FC<IAvatar> = ({
   alt = "avatar",
-  dataCy = "avatar",
-  icon = undefined,
+  dataCy = DATA_CY_DEFAULT,
+  icon,
   loading = false,
-  src = undefined,
-  text = undefined,
+  src,
+  text,
   variant = AvatarVariant.default,
 }) => {
   if (loading) {
     return (
       <MUISkeleton variant="circle">
-        <StyledMUIAvatar />
+        <StyledMUIAvatar data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.loading)} />
       </MUISkeleton>
     );
   }
 
   return (
-    <StyledMUIAvatar alt={text || alt} className={`data-cy-${dataCy}`} src={src || undefined} variant={variant}>
-      {icon && <Icon name={icon} />}
-      {!icon && text && <Typography label={text} />}
+    <StyledMUIAvatar alt={text || alt} data-cy={dataCy} src={src} variant={variant}>
+      {icon && <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={icon} />}
+      {!icon && text && <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.text)}>{text}</Typography>}
     </StyledMUIAvatar>
   );
 };
+
+export const AvatarWithProps = Avatar;
 
 export default memo(Avatar);

@@ -1,94 +1,98 @@
-import React from "react";
-import { mount } from "enzyme";
-import Checkbox, { CheckboxIntl } from ".";
-import FormMock from "../../utils/mocks/FormMock";
-import { CheckboxType, CheckboxSize } from "../../types/Checkbox";
-import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import renderer from "react-test-renderer";
 
-const defaultProps: CheckboxType = {
-  dataCy: "myCheckbox",
-  onChange: () => {},
-};
+import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
+import { getTestable } from "../../utils/tests";
 
-const componentWrapper = ({ onChange, value, ...props }: CheckboxType) => (
-  <FormMock onInputChange={onChange!} inputValue={value!}>
-    <Checkbox {...defaultProps} {...props} />
-  </FormMock>
-);
+import Checkbox, { DATA_CY_DEFAULT } from ".";
 
-const intlComponentWrapper = (locale?: LocaleMock) => (
-  <IntlProviderMock locale={locale}>
-    <CheckboxIntl labelId={MessageMock.checkbox} onChange={() => {}} />
-  </IntlProviderMock>
-);
+const defaultProps: ICheckbox = {};
+
+const getCheckboxTestable = (props?: ICheckbox, dataCy = DATA_CY_DEFAULT) =>
+  getTestable(Checkbox, { dataCy, domNode: "span", props: { ...defaultProps, ...props } });
 
 describe("Checkbox test suite:", () => {
   it("default", () => {
-    const onChangeHandler = jest.fn();
-    const component = componentWrapper({
-      ...defaultProps,
-      onChange: onChangeHandler,
-    });
-    const wrapper = mount(component); // render
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
-    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
-    inputCheckbox.simulate("change");
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-    inputCheckbox.simulate("change", { target: { checked: true } });
-    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
-    expect(inputCheckbox2.prop("checked")).toBe(true);
+    const { element, wrapper } = getCheckboxTestable();
+    expect(wrapper).toHaveLength(1);
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeFalsy();
+    expect(input.prop("data-indeterminate")).toBeFalsy();
+    expect(input.prop("disabled")).toBeFalsy();
+    expect(input.prop("required")).toBeFalsy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("create a checked Checkbox", () => {
-    const onChangeHandler = jest.fn();
-    const component = componentWrapper({
-      ...defaultProps,
-      onChange: onChangeHandler,
-      value: true,
-    });
-    const wrapper = mount(component); // render
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
-    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
-    inputCheckbox.simulate("change");
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-    inputCheckbox.simulate("change", { target: { checked: false } });
-    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
-    expect(inputCheckbox2.prop("checked")).toBe(false);
+  it("dataCy", () => {
+    const { element, wrapper } = getCheckboxTestable({ dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with intl", () => {
-    const wrapper = mount(intlComponentWrapper());
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(MessageMock.checkbox);
+  it("checked", () => {
+    const { element, wrapper } = getCheckboxTestable({ value: true });
+    const input = wrapper.find("input");
+    expect(input.prop("checked")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("Checkbox without onChange", () => {
-    const component = <Checkbox dataCy="myCheckbox" onChange={undefined} />;
-    const wrapper = mount(component);
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
+  it("disabled", () => {
+    const { element, wrapper } = getCheckboxTestable({ disabled: true });
+    const input = wrapper.find("input");
+    expect(input.prop("disabled")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("create a small, intermediate, disabled Checkbox", () => {
-    const onChangeHandler = jest.fn();
-    const component = componentWrapper({
-      ...defaultProps,
-      onChange: onChangeHandler,
-      value: true,
-      size: CheckboxSize.small,
-      intermediate: true,
-      disabled: true,
-    });
-    const wrapper = mount(component); // render
-    const wrapperSpan = wrapper.find("span[data-cy]");
-    expect(wrapperSpan.prop("data-cy")).toEqual(defaultProps.dataCy);
-    const inputCheckbox = wrapperSpan.find('input[type="checkbox"]');
-    inputCheckbox.simulate("change");
-    expect(onChangeHandler).toHaveBeenCalledTimes(1);
-    inputCheckbox.simulate("change", { target: { checked: false } });
-    const inputCheckbox2 = wrapper.find('input[type="checkbox"]');
-    expect(inputCheckbox2.prop("checked")).toBe(false);
+  it("intermediate", () => {
+    const { element, wrapper } = getCheckboxTestable({ intermediate: true });
+    const input = wrapper.find("input");
+    expect(input.prop("data-indeterminate")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("onChange", () => {
+    const onChange = jest.fn();
+    const { element, wrapper } = getCheckboxTestable({ onChange });
+    const inputBefore = wrapper.find("input");
+    inputBefore.simulate("change", { target: { checked: true } });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(true);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("onChange - not handled", () => {
+    const { element, wrapper } = getCheckboxTestable();
+    const inputBefore = wrapper.find("input");
+    inputBefore.simulate("change", { target: { checked: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("required", () => {
+    const { element, wrapper } = getCheckboxTestable({ required: true });
+    const input = wrapper.find("input");
+    expect(input.prop("required")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("size", () => {
+    const { element } = getCheckboxTestable({ size: CheckboxSize.small });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

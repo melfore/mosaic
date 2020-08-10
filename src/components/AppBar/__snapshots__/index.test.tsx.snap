@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar test suite: actions 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="appbar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-145"
+    />
+    <div
+      className="MuiBox-root MuiBox-root-146"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-cy="appbar-action-0"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root"
+            data-cy="appbar-action-0-icon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`AppBar test suite: dataCy 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="custom"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-52"
+    />
+    <div
+      className="MuiBox-root MuiBox-root-53"
+    />
+  </div>
+</header>
+`;
+
+exports[`AppBar test suite: default 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="appbar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-48"
+    />
+    <div
+      className="MuiBox-root MuiBox-root-49"
+    />
+  </div>
+</header>
+`;
+
+exports[`AppBar test suite: menu 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="appbar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-149"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-cy="appbar-menu"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root"
+            data-cy="appbar-menu-icon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-150"
+    />
+  </div>
+</header>
+`;
+
+exports[`AppBar test suite: title 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="appbar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-155"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-157 Styled(MuiBox)-root-55 Styled(MuiBox)-root-156"
+        data-cy="appbar-title-clickable"
+        onClick={[Function]}
+      >
+        <h2
+          className="MuiTypography-root MuiTypography-h6"
+          data-cy="appbar-title-text"
+        >
+          Title
+        </h2>
+      </div>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-158"
+    />
+  </div>
+</header>
+`;

@@ -1,67 +1,98 @@
-import React from "react";
-import { mount } from "enzyme";
-import { ButtonIconPosition } from "../../types/Button";
-import { Icons } from "../../types/Icon";
-import Button, { ButtonIntl } from ".";
-import IntlProviderMock, { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import renderer from "react-test-renderer";
 
-const defaultProps = {
-  dataCy: "myButton",
-  label: "Click Me",
+import { ButtonIconPosition, ButtonVariants, IButton } from "../../types/Button";
+import { Icons } from "../../types/Icon";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
+
+import Button, { DATA_CY_DEFAULT } from ".";
+
+const defaultProps: IButton = {
+  label: "Button",
   onClick: jest.fn(),
 };
 
-const componentWrapper = (props = {}) => <Button {...defaultProps} {...props} />;
-
-const intlComponentWrapper = (locale?: LocaleMock) => (
-  <IntlProviderMock locale={locale}>
-    <ButtonIntl labelId={MessageMock.button} onClick={() => {}} />
-  </IntlProviderMock>
-);
+const getButtonTestable = (props?: IButton, dataCy = DATA_CY_DEFAULT) =>
+  getLocalizedTestable(Button, { dataCy, domNode: "button", props: { ...defaultProps, ...props } });
 
 describe("Button test suite:", () => {
   it("default", () => {
-    const onClickHandler = jest.fn();
-    const component = componentWrapper({
-      onClick: onClickHandler,
-    });
-    const wrapper = mount(component);
-    const button = wrapper.find("button");
-    expect(button.prop("data-cy")).toEqual(defaultProps.dataCy);
-    button.simulate("click");
-    expect(onClickHandler).toHaveBeenCalledTimes(1);
-    const buttonLabel = button.find("span.MuiButton-label");
-    expect(buttonLabel.text()).toEqual(defaultProps.label);
+    const onClick = jest.fn();
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, onClick });
+    expect(wrapper).toHaveLength(1);
+    expect(wrapper.hasClass("MuiButton-contained"));
+    expect(wrapper.prop("disabled")).toBeFalsy();
+    expect(wrapper.prop("elevated")).toBeFalsy();
+    wrapper.simulate("click");
+    expect(onClick).toHaveBeenCalledTimes(1);
+    const label = wrapper.find("span.MuiButton-label");
+    expect(label.text()).toEqual(defaultProps.label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with icon", () => {
-    const component = componentWrapper({
-      icon: { name: Icons.send },
-    });
-    const wrapper = mount(component);
-    const button = wrapper.find("button");
-    const icon = button.find("span.MuiButton-startIcon > Icon");
-    expect(icon.prop("name")).toEqual(Icons.send);
+  it("dataCy", () => {
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with right icon", () => {
-    const component = componentWrapper({
-      icon: {
-        name: Icons.send,
-        position: ButtonIconPosition.right,
-      },
-    });
-    const wrapper = mount(component);
-    const button = wrapper.find("button");
-    const icon = button.find("span.MuiButton-endIcon > Icon");
-    expect(icon.prop("name")).toEqual(Icons.send);
+  it("localized", () => {
+    const label = MessageMock.button;
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, label, localized: true }, MessageMock.button);
+    const labelElement = wrapper.find("span.MuiButton-label");
+    expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("with intl", () => {
-    const wrapper = mount(intlComponentWrapper());
-    const button = wrapper.find("button");
-    expect(button.prop("data-cy")).toEqual(MessageMock.button);
-    const buttonLabel = button.find("span.MuiButton-label");
-    expect(buttonLabel.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.button]);
+  it("disabled", () => {
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, disabled: true });
+    expect(wrapper.prop("disabled")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("elevated", () => {
+    const { element } = getButtonTestable({ ...defaultProps, elevated: true });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon", () => {
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, icon: { name: Icons.account } });
+    const icon = wrapper.find(`[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    expect(icon.prop("name")).toEqual(Icons.account);
+    expect(icon.parent().hasClass("MuiButton-startIcon"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon right", () => {
+    const { element, wrapper } = getButtonTestable({
+      ...defaultProps,
+      icon: { name: Icons.account, position: ButtonIconPosition.right },
+    });
+    const icon = wrapper.find(`[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    expect(icon.prop("name")).toEqual(Icons.account);
+    expect(icon.parent().hasClass("MuiButton-endIcon"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("outlined", () => {
+    const { element, wrapper } = getButtonTestable({ ...defaultProps, variant: ButtonVariants.outlined });
+    expect(wrapper.hasClass("MuiButton-outlined"));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

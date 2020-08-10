@@ -1,4 +1,5 @@
-import renderer from "react-test-renderer";
+// TODO: temp commenting out snapshots due to id="mui-XXXXX" property
+// import renderer from "react-test-renderer";
 
 import { ISelect } from "../../types/Select";
 import { getLocalizedTestable } from "../../utils/tests";
@@ -8,39 +9,63 @@ import Select, { DATA_CY_DEFAULT } from ".";
 const defaultProps: ISelect<string> = {
   multiple: false,
   onChange: jest.fn(),
-  options: ["A", "B", "C"],
+  options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
 };
 
-const getSelectTestable = (props?: ISelect<string>, dataCy = DATA_CY_DEFAULT) =>
-  getLocalizedTestable(Select, { dataCy, domNode: "input", props: { ...defaultProps } });
+const getSelectTestable = (props: ISelect<string>, dataCy = DATA_CY_DEFAULT, domNode = "input") =>
+  getLocalizedTestable(Select, { dataCy, domNode, props: { ...props } });
 
-// TODO: complete tests
+// TODO: missing localized test
 
-describe("Select test suite:", () => {
+describe("Select Single test suite:", () => {
   it("default", () => {
-    const { element, wrapper } = getSelectTestable();
-    // console.log(wrapper.debug());
+    const { wrapper } = getSelectTestable(defaultProps);
     expect(wrapper).toHaveLength(1);
-    expect("default-props-check").toBeTruthy();
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
+    expect(wrapper.hasClass("MuiOutlinedInput-input"));
+    expect(wrapper.prop("disabled")).toBeFalsy();
+    expect(wrapper.prop("required")).toBeFalsy();
+    expect(wrapper.prop("type")).toEqual("text");
   });
 
-  xit("dataCy", () => {
-    const { element, wrapper } = getSelectTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+  it("dataCy", () => {
+    const { wrapper } = getSelectTestable({ ...defaultProps, dataCy: "custom" }, "custom");
     expect(wrapper).toHaveLength(1);
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  xit("localized", () => {
-    // const props = { ...defaultProps, localized: true };
-    // const { element, wrapper } = getSelectTestable({ ...props }, props[DATA_CY_SHORTCUT]);
-    // console.log(wrapper.debug());
-    // expect("localizable-props-check").toBeTruthy();
-    // const snapshotWrapper = renderer.create(element).toJSON();
-    // expect(snapshotWrapper).toMatchSnapshot();
+  it("disabled", () => {
+    const { wrapper } = getSelectTestable({ ...defaultProps, disabled: true });
+    expect(wrapper.prop("disabled")).toBeTruthy();
+  });
+
+  // TODO: improve this by adding check on options and groupby
+  it("groupBy", () => {
+    getSelectTestable({
+      ...defaultProps,
+      getGroupLabel: (option) => option.slice(0, 1),
+      getOptionLabel: (option) => option.toUpperCase(),
+      groupBy: (option) => option.slice(0, 1),
+    });
+  });
+
+  it("loading", () => {
+    const { wrapper } = getSelectTestable({ ...defaultProps, loading: true }, DATA_CY_DEFAULT, "div");
+    const placeholder = wrapper.find("span.MuiSkeleton-root");
+    expect(placeholder).toHaveLength(1);
+  });
+
+  it("placeholder", () => {
+    const placeholder = "Placeholder";
+    const { wrapper } = getSelectTestable({ ...defaultProps, placeholder });
+    expect(wrapper.prop("placeholder")).toEqual(placeholder);
+  });
+
+  it("required", () => {
+    const { wrapper } = getSelectTestable({ ...defaultProps, required: true });
+    expect(wrapper.prop("required")).toBeTruthy();
+  });
+
+  it("value", () => {
+    const { wrapper } = getSelectTestable({ ...defaultProps, value: defaultProps.options[0] });
+    expect(wrapper.prop("value")).toEqual(defaultProps.options[0]);
   });
 });

@@ -1,3 +1,6 @@
+// TODO: temp commenting out snapshots due to scrollTo missing
+// import renderer from "react-test-renderer";
+
 import { IModal, ModalSize } from "../../types/Modal";
 import { getLocalizedTestable } from "../../utils/tests";
 
@@ -10,6 +13,8 @@ const defaultProps: IModal = {
 const getModalTestable = (props?: IModal, dataCy = DATA_CY_DEFAULT) =>
   getLocalizedTestable(Modal, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
 
+// TODO: missing localized test
+
 describe("Modal test suite:", () => {
   it("default", () => {
     const { wrapper } = getModalTestable();
@@ -19,15 +24,6 @@ describe("Modal test suite:", () => {
   it("dataCy", () => {
     const { wrapper } = getModalTestable({ dataCy: "custom" }, "custom");
     expect(wrapper).toHaveLength(1);
-  });
-
-  xit("localized", () => {
-    // const props = { ...defaultProps, localized: true };
-    // const { element, wrapper } = getModalTestable({ ...props }, props[DATA_CY_SHORTCUT]);
-    // console.log(wrapper.debug());
-    // expect("localizable-props-check").toBeTruthy();
-    // const snapshotWrapper = renderer.create(element).toJSON();
-    // expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("cancel", () => {

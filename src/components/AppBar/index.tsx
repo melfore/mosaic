@@ -7,11 +7,14 @@ import {
   PopoverOrigin as MUIPopoverOrigin,
 } from "@material-ui/core";
 
-import { IconButton, Icons, Typography, TypographyVariants } from "../..";
 import { IAppBar } from "../../types/AppBar";
 import { Color } from "../../types/Base";
+import { Icons } from "../../types/Icon";
+import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import IconButton from "../IconButton";
+import Typography from "../Typography";
 
 import { StyledMUIToolbar, TitleWrapper } from "./styled";
 

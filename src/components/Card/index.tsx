@@ -2,10 +2,14 @@ import React, { cloneElement, FC, Fragment, useMemo, useState } from "react";
 import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { Avatar, IconButton, Icons, Typography, TypographyVariants } from "../..";
 import { ICard } from "../../types/Card";
+import { Icons } from "../../types/Icon";
+import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Avatar from "../Avatar";
+import IconButton from "../IconButton";
+import Typography from "../Typography";
 
 import {
   ActionsWrapper,

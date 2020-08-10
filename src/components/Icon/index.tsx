@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { IconSize } from "../..";
-import { IIcon } from "../../types/Icon";
+import { IconSize, IIcon } from "../../types/Icon";
 
 import { iconsCatalog } from "./utils";
 

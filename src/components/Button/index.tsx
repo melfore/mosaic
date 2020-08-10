@@ -1,10 +1,10 @@
 import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
 
-import { ButtonIconPosition, ButtonVariants, Icon } from "../..";
-import { IButton, IButtonIcon } from "../../types/Button";
+import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
 import { suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Icon from "../Icon";
 
 interface IMUIButtonIcon {
   endIcon?: ReactElement;

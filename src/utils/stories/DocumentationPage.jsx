@@ -3,7 +3,8 @@ import { Tooltip } from "@material-ui/core";
 import { Primary, Props, Stories, Title } from "@storybook/addon-docs/blocks";
 import PropTypes from "prop-types";
 
-import { Icon, Spacer } from "../..";
+import Icon from "../../components/Icon";
+import Spacer from "../../components/Spacer";
 import { Icons, IconSize } from "../../types/Icon";
 import { DATA_CY_SUFFIX_SEPARATOR } from "..";
 

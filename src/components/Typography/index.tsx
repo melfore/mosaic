@@ -2,8 +2,7 @@ import React, { FC } from "react";
 import { Typography as MUITypography } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { TypographyDisplay, TypographyVariants } from "../..";
-import { ITypography } from "../../types/Typography";
+import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 const VARIANT_COMPONENT_MAP = {

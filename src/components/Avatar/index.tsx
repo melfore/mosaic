@@ -1,9 +1,10 @@
 import React, { FC, memo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { AvatarVariant, Icon, Typography } from "../..";
-import { IAvatar } from "../../types/Avatar";
+import { AvatarVariant, IAvatar } from "../../types/Avatar";
 import { getComposedDataCy } from "../../utils";
+import Icon from "../Icon";
+import Typography from "../Typography";
 
 import { StyledMUIAvatar } from "./styled";
 

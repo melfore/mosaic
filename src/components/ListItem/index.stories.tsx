@@ -2,10 +2,10 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
-import Typography from "../Typography";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import Typography from "../Typography";
 
 import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 

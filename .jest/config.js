@@ -6,7 +6,13 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  collectCoverageFrom: ["**/*.{js,jsx,ts,tsx}", "!**/*.stories.{js,jsx,ts,tsx}", "!index.ts", "!utils/stories/*"],
+  collectCoverageFrom: [
+    "**/*.{js,jsx,ts,tsx}",
+    "!**/*.stories.{js,jsx,ts,tsx}",
+    "!index.ts",
+    "!utils/mocks/*",
+    "!utils/stories/*",
+  ],
   coverageDirectory: "<rootDir>/../coverage",
   coverageThreshold: {
     global: {

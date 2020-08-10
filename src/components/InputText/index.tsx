@@ -3,14 +3,14 @@ import { InputAdornment } from "@material-ui/core";
 
 import { IconSize } from "../../types/Icon";
 import { InputSize, InputType, InputVariant } from "../../types/Input";
-import { InputAdornmentType, InputTextType, MultilineInputType } from "../../types/InputText";
+import { IInputAdornment, IInputText, IMultilineInput } from "../../types/InputText";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
 
 import { StyledMUITextField } from "./styled";
 
-const getAdornment = (adornment?: InputAdornmentType) => {
+const getAdornment = (adornment?: IInputAdornment) => {
   if (!adornment) {
     return undefined;
   }
@@ -27,7 +27,7 @@ const getAdornment = (adornment?: InputAdornmentType) => {
   );
 };
 
-const getMultilineProps = (multiline?: MultilineInputType) => {
+const getMultilineProps = (multiline?: IMultilineInput) => {
   return {
     multiline: !!multiline,
     ...(!multiline ? {} : { ...multiline }),
@@ -45,7 +45,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "placeholder", type: "string" },
 ];
 
-const InputText: FC<InputTextType> = ({
+const InputText: FC<IInputText> = ({
   adornment = undefined,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,

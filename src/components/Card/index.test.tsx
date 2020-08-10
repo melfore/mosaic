@@ -2,13 +2,13 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import { ICard } from "../../types/Card";
-import { getLocalizedTestable } from "../../utils/tests";
-
-import Card, { DATA_CY_DEFAULT } from ".";
 import { Icons } from "../../types/Icon";
-import { MessageMock, mockedMessages, LocaleMock } from "../../utils/mocks/IntlProviderMock";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
+
+import Card, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ICard = {
   title: "Card",

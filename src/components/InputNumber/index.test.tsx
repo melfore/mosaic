@@ -2,10 +2,10 @@ import renderer from "react-test-renderer";
 
 import { InputSize, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
+import { MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getLocalizedTestable } from "../../utils/tests";
 
 import InputNumber, { DATA_CY_DEFAULT } from ".";
-import { MessageMock, mockedMessages, LocaleMock } from "../../utils/mocks/IntlProviderMock";
 
 const defaultProps: IInputNumber = {};
 

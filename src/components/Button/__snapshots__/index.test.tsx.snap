@@ -142,7 +142,7 @@ exports[`Button test suite: icon 1`] = `
       className="MuiButton-startIcon MuiButton-iconSizeMedium"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="button-icon"
         focusable="false"
@@ -189,7 +189,7 @@ exports[`Button test suite: icon right 1`] = `
       className="MuiButton-endIcon MuiButton-iconSizeMedium"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="button-icon"
         focusable="false"

@@ -24,9 +24,9 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@commitlint/prompt-cli": "^9.1.1",
-    "@material-ui/core": "^4.9.5",
+    "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.54",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.7",
@@ -78,9 +78,9 @@
     "typescript": "3.8.3"
   },
   "peerDependencies": {
-    "@material-ui/core": "4.9.x",
+    "@material-ui/core": "4.11.x",
     "@material-ui/icons": "4.9.x",
-    "@material-ui/lab": "4.0.0-alpha.54",
+    "@material-ui/lab": "4.0.0-alpha.56",
     "react": "16.13.x",
     "react-dom": "16.13.x",
     "react-intl": "4.3.x"

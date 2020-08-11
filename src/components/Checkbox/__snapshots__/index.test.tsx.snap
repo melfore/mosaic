@@ -3,7 +3,7 @@
 exports[`Checkbox test suite: checked 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-8 Mui-checked MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -23,7 +23,7 @@ exports[`Checkbox test suite: checked 1`] = `
   >
     <input
       checked={true}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -31,7 +31,7 @@ exports[`Checkbox test suite: checked 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ exports[`Checkbox test suite: checked 1`] = `
 exports[`Checkbox test suite: dataCy 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="custom"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -67,7 +67,7 @@ exports[`Checkbox test suite: dataCy 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -75,7 +75,7 @@ exports[`Checkbox test suite: dataCy 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -94,7 +94,7 @@ exports[`Checkbox test suite: dataCy 1`] = `
 exports[`Checkbox test suite: default 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -114,7 +114,7 @@ exports[`Checkbox test suite: default 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -122,7 +122,7 @@ exports[`Checkbox test suite: default 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -138,7 +138,7 @@ exports[`Checkbox test suite: default 1`] = `
 exports[`Checkbox test suite: disabled 1`] = `
 <span
   aria-disabled={true}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-disabled-9 Mui-disabled MuiIconButton-colorPrimary Mui-disabled Mui-disabled"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-disabled-3 Mui-disabled MuiIconButton-colorPrimary Mui-disabled Mui-disabled"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -158,7 +158,7 @@ exports[`Checkbox test suite: disabled 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={true}
       onChange={[Function]}
@@ -166,7 +166,7 @@ exports[`Checkbox test suite: disabled 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -182,7 +182,7 @@ exports[`Checkbox test suite: disabled 1`] = `
 exports[`Checkbox test suite: intermediate 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-indeterminate MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-indeterminate MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -202,7 +202,7 @@ exports[`Checkbox test suite: intermediate 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={true}
       disabled={false}
       onChange={[Function]}
@@ -210,7 +210,7 @@ exports[`Checkbox test suite: intermediate 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -226,7 +226,7 @@ exports[`Checkbox test suite: intermediate 1`] = `
 exports[`Checkbox test suite: onChange - not handled 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -246,7 +246,7 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -254,7 +254,7 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -270,7 +270,7 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
 exports[`Checkbox test suite: onChange 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -290,7 +290,7 @@ exports[`Checkbox test suite: onChange 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -298,7 +298,7 @@ exports[`Checkbox test suite: onChange 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -317,7 +317,7 @@ exports[`Checkbox test suite: onChange 1`] = `
 exports[`Checkbox test suite: required 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -337,7 +337,7 @@ exports[`Checkbox test suite: required 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -345,7 +345,7 @@ exports[`Checkbox test suite: required 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       focusable="false"
       viewBox="0 0 24 24"
@@ -364,7 +364,7 @@ exports[`Checkbox test suite: required 1`] = `
 exports[`Checkbox test suite: size 1`] = `
 <span
   aria-disabled={false}
-  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-7 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
   data-cy="checkbox"
   onBlur={[Function]}
   onDragLeave={[Function]}
@@ -384,7 +384,7 @@ exports[`Checkbox test suite: size 1`] = `
   >
     <input
       checked={false}
-      className="PrivateSwitchBase-input-10"
+      className="PrivateSwitchBase-input-4"
       data-indeterminate={false}
       disabled={false}
       onChange={[Function]}
@@ -392,7 +392,7 @@ exports[`Checkbox test suite: size 1`] = `
       type="checkbox"
     />
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
       focusable="false"
       viewBox="0 0 24 24"

@@ -24,7 +24,7 @@ exports[`IconButton test suite: dataCy 1`] = `
     className="MuiIconButton-label"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       data-cy="custom-icon"
       focusable="false"
@@ -65,7 +65,7 @@ exports[`IconButton test suite: default 1`] = `
     className="MuiIconButton-label"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       data-cy="icon-button-icon"
       focusable="false"
@@ -103,7 +103,7 @@ exports[`IconButton test suite: disabled 1`] = `
     className="MuiIconButton-label"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       data-cy="icon-button-icon"
       focusable="false"
@@ -141,7 +141,7 @@ exports[`IconButton test suite: size 1`] = `
     className="MuiIconButton-label"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
       data-cy="icon-button-icon"
       focusable="false"

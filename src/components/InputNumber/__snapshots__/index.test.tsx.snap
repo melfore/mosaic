@@ -30,7 +30,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -38,7 +38,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -88,7 +88,7 @@ exports[`InputNumber test suite: default 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -96,7 +96,7 @@ exports[`InputNumber test suite: default 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -146,7 +146,7 @@ exports[`InputNumber test suite: disabled 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -154,7 +154,7 @@ exports[`InputNumber test suite: disabled 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -204,7 +204,7 @@ exports[`InputNumber test suite: float 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -212,7 +212,7 @@ exports[`InputNumber test suite: float 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -268,10 +268,10 @@ exports[`InputNumber test suite: localized 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legendLabelled-42 PrivateNotchedOutline-legendNotched-43"
+        className="PrivateNotchedOutline-legendLabelled-4 PrivateNotchedOutline-legendNotched-5"
       >
         <span>
           Title
@@ -312,7 +312,7 @@ exports[`InputNumber test suite: min/max 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -320,7 +320,7 @@ exports[`InputNumber test suite: min/max 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -370,7 +370,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -378,7 +378,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -428,7 +428,7 @@ exports[`InputNumber test suite: onChange 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -436,7 +436,7 @@ exports[`InputNumber test suite: onChange 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -487,7 +487,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -495,7 +495,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -545,7 +545,7 @@ exports[`InputNumber test suite: required 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -553,7 +553,7 @@ exports[`InputNumber test suite: required 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -603,7 +603,7 @@ exports[`InputNumber test suite: shrink 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -611,7 +611,7 @@ exports[`InputNumber test suite: shrink 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -661,7 +661,7 @@ exports[`InputNumber test suite: size 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -669,7 +669,7 @@ exports[`InputNumber test suite: size 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,
@@ -719,7 +719,7 @@ exports[`InputNumber test suite: value 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -727,7 +727,7 @@ exports[`InputNumber test suite: value 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-41"
+        className="PrivateNotchedOutline-legend-3"
         style={
           Object {
             "width": 0.01,

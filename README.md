@@ -64,10 +64,55 @@ The benefits from previous approach are several:
 ### Components
 Some components have breaking changes:
 - `Typography` text can be passed in as `children` or using the `content` property
+
+  Old code:
+
+  ```
+  <Typography label="Text to display" />
+  ```
+
+  New code:
+
+  ```
+  <Typography>
+    Text to display
+  </Typography>
+  ```
+
+- `Typography` property `bottomSpacing` is now defaulted to false
 - `label` property is now mandatory in `Button`
-- `onClick` property of `Button` and `IconButton` now internally handles click event, so method signature becomes `() => void` (previously it was `(event: any) => void`) 
+- `onClick` property of `Button` and `IconButton` now internally handles click event, so method signature becomes `() => void` (previously it was `(event: any) => void`)
+
+  Old code:
+
+  ```
+  <Button onClick={(event: any) => doSomething()} />
+  ```
+
+  New code:
+
+  ```
+  <Button onClick={() => doSomething()} />
+  ```
+
 - `collapsible` property of `Card` is now a `ReactNode` (previously it was a `ReactElement`)
 - `ListItem` and `ListItemCollapsible` no longer support `title` and `titleVariant` properties but rather `header` and `content`
+
+  Old code:
+
+  ```
+  <ListItem title="List Item Text" />
+  ```
+
+  New code:
+
+  ```
+  <ListItem>
+    List Item Text
+  </ListItem>
+  ```
+
+- `ListItem` property `dense` is now defaulted to `false`
 - renamed `InputDataType` enum to `InputType`
 - added new `language` icon
 

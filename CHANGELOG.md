@@ -1,3 +1,5 @@
+## [1.1.1](https://github.com/melfore/mosaic/compare/v1.1.0...v1.1.1) (2020-08-11)
+
 # [1.1.0](https://github.com/melfore/mosaic/compare/v1.0.3...v1.1.0) (2020-08-10)
 
 

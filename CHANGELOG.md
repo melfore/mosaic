@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/melfore/mosaic/compare/v1.1.3...v1.1.4) (2020-08-12)
+
+
+### Bug Fixes
+
+* 🐛 Restored typed export for Select ([a38effd](https://github.com/melfore/mosaic/commit/a38effd9cb77ac3d595e603317b993247c2f2fec))
+
 ## [1.1.3](https://github.com/melfore/mosaic/compare/v1.1.2...v1.1.3) (2020-08-12)
 
 ## [1.1.2](https://github.com/melfore/mosaic/compare/v1.1.1...v1.1.2) (2020-08-11)

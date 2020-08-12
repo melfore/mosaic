@@ -22,7 +22,7 @@ It requires these `peerDependencies` to be installed in host project:
   "@material-ui/lab": "4.0.0-alpha.56",
   "react": "16.13.x",
   "react-dom": "16.13.x",
-  "react-intl": "4.7.x"
+  "react-intl": "5.4.x"
 ```
 
 ## Usage

@@ -184,4 +184,4 @@ export const SelectWithProps = Select;
 export default localized(Select, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
-});
+}) as <T extends any>(props: ISelect<T>) => JSX.Element;

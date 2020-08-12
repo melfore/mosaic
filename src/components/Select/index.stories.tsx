@@ -48,20 +48,27 @@ export const Basic = () => (
   />
 );
 
+export const CustomType = () => {
+  interface ICustom {
+    name: string;
+  }
+
+  return (
+    <Select<ICustom>
+      disabled
+      label="Arts & Creativity"
+      multiple={false}
+      onChange={(value) => value?.name}
+      options={[{ name: "Mosaic" }]}
+    />
+  );
+};
+
 export const Disabled = () => (
   <Select
     disabled
     label="Arts & Creativity"
     multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const Multiple = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple
     onChange={(value) => {}}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
   />
@@ -109,6 +116,15 @@ export const Localized = () => (
       placeholder={MessageMock.title}
     />
   </IntlProviderMock>
+);
+
+export const Multiple = () => (
+  <Select
+    label="Arts & Creativity"
+    multiple
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+  />
 );
 
 export const Required = () => (

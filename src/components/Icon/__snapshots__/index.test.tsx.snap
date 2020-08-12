@@ -2,7 +2,7 @@
 
 exports[`Icon test suite: dataCy 1`] = `
 <svg
-  aria-hidden="true"
+  aria-hidden={true}
   className="MuiSvgIcon-root"
   data-cy="custom"
   focusable="false"
@@ -16,7 +16,7 @@ exports[`Icon test suite: dataCy 1`] = `
 
 exports[`Icon test suite: default 1`] = `
 <svg
-  aria-hidden="true"
+  aria-hidden={true}
   className="MuiSvgIcon-root"
   data-cy="icon"
   focusable="false"
@@ -66,7 +66,7 @@ exports[`Icon test suite: loading small 1`] = `
 
 exports[`Icon test suite: size 1`] = `
 <svg
-  aria-hidden="true"
+  aria-hidden={true}
   className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
   data-cy="icon"
   focusable="false"

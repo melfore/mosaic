@@ -6,13 +6,13 @@ exports[`AppBar test suite: actions 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
   >
     <div
-      className="MuiBox-root MuiBox-root-145"
+      className="MuiBox-root MuiBox-root-17"
     />
     <div
-      className="MuiBox-root MuiBox-root-146"
+      className="MuiBox-root MuiBox-root-18"
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -37,7 +37,7 @@ exports[`AppBar test suite: actions 1`] = `
           className="MuiIconButton-label"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
             data-cy="appbar-action-0-icon"
             focusable="false"
@@ -60,13 +60,13 @@ exports[`AppBar test suite: dataCy 1`] = `
   data-cy="custom"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
   >
     <div
-      className="MuiBox-root MuiBox-root-52"
+      className="MuiBox-root MuiBox-root-8"
     />
     <div
-      className="MuiBox-root MuiBox-root-53"
+      className="MuiBox-root MuiBox-root-9"
     />
   </div>
 </header>
@@ -78,13 +78,13 @@ exports[`AppBar test suite: default 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
   >
     <div
-      className="MuiBox-root MuiBox-root-48"
+      className="MuiBox-root MuiBox-root-4"
     />
     <div
-      className="MuiBox-root MuiBox-root-49"
+      className="MuiBox-root MuiBox-root-5"
     />
   </div>
 </header>
@@ -96,10 +96,10 @@ exports[`AppBar test suite: menu 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
   >
     <div
-      className="MuiBox-root MuiBox-root-149"
+      className="MuiBox-root MuiBox-root-21"
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -124,7 +124,7 @@ exports[`AppBar test suite: menu 1`] = `
           className="MuiIconButton-label"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
             data-cy="appbar-menu-icon"
             focusable="false"
@@ -141,7 +141,7 @@ exports[`AppBar test suite: menu 1`] = `
       </button>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-150"
+      className="MuiBox-root MuiBox-root-22"
     />
   </div>
 </header>
@@ -153,13 +153,13 @@ exports[`AppBar test suite: title 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-40 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
   >
     <div
-      className="MuiBox-root MuiBox-root-155"
+      className="MuiBox-root MuiBox-root-27"
     >
       <div
-        className="MuiBox-root MuiBox-root-157 Styled(MuiBox)-root-55 Styled(MuiBox)-root-156"
+        className="MuiBox-root MuiBox-root-29 Styled(MuiBox)-root-11 Styled(MuiBox)-root-28"
         data-cy="appbar-title-clickable"
         onClick={[Function]}
       >
@@ -172,7 +172,7 @@ exports[`AppBar test suite: title 1`] = `
       </div>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-158"
+      className="MuiBox-root MuiBox-root-30"
     />
   </div>
 </header>

@@ -2,25 +2,25 @@
 
 exports[`Avatar test suite: dataCy 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-12 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-5 MuiAvatar-colorDefault"
   data-cy="custom"
 />
 `;
 
 exports[`Avatar test suite: default 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-10 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-3 MuiAvatar-colorDefault"
   data-cy="avatar"
 />
 `;
 
 exports[`Avatar test suite: icon 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-23 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-7 MuiAvatar-colorDefault"
   data-cy="avatar"
 >
   <svg
-    aria-hidden="true"
+    aria-hidden={true}
     className="MuiSvgIcon-root"
     data-cy="avatar-icon"
     focusable="false"
@@ -35,7 +35,7 @@ exports[`Avatar test suite: icon 1`] = `
 
 exports[`Avatar test suite: image 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-25"
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-9"
   data-cy="avatar"
 >
   <img
@@ -57,11 +57,11 @@ exports[`Avatar test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-38 MuiAvatar-colorDefault"
+    className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-11 MuiAvatar-colorDefault"
     data-cy="avatar-loading"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root MuiAvatar-fallback"
       focusable="false"
       viewBox="0 0 24 24"
@@ -76,14 +76,14 @@ exports[`Avatar test suite: loading 1`] = `
 
 exports[`Avatar test suite: squared 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-square WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-40 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-square WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-13 MuiAvatar-colorDefault"
   data-cy="avatar"
 />
 `;
 
 exports[`Avatar test suite: text 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-72 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-15 MuiAvatar-colorDefault"
   data-cy="avatar"
 >
   <p

@@ -9,7 +9,7 @@ import Icon from "../Icon";
 import IconButton from "../IconButton";
 
 // For default props refer to Options section here https://material-table.com/#/docs/all-props
-export const DEFAULT_TABLE_OPTIONS: MTOptionsType = {
+export const DEFAULT_TABLE_OPTIONS: MTOptionsType<object> = {
   debounceInterval: 500,
   draggable: false,
   emptyRowsWhenPaging: false,

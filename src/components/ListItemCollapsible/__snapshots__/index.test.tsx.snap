@@ -17,7 +17,7 @@ Array [
       className="MuiListItemIcon-root"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="custom-header-icon"
         focusable="false"
@@ -74,7 +74,7 @@ Array [
       className="MuiListItemIcon-root"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         focusable="false"
@@ -192,7 +192,7 @@ Array [
       className="MuiListItemIcon-root"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         focusable="false"
@@ -249,7 +249,7 @@ Array [
       className="MuiListItemIcon-root"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         focusable="false"
@@ -306,7 +306,7 @@ Array [
       className="MuiListItemIcon-root"
     >
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         focusable="false"

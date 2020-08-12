@@ -77,7 +77,7 @@ exports[`ListItem test suite: icon 1`] = `
     className="MuiListItemIcon-root"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="MuiSvgIcon-root"
       data-cy="list-item-icon"
       focusable="false"

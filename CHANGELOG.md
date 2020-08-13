@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/melfore/mosaic/compare/v1.1.4...v1.1.5) (2020-08-13)
+
+
+### Bug Fixes
+
+* 🐛 Select handling immutable options ([6bdd4da](https://github.com/melfore/mosaic/commit/6bdd4da63308670c6601cbc41d7b08e7d60a25f4))
+* 🐛 Table handling immutable options ([d730be0](https://github.com/melfore/mosaic/commit/d730be0aea5e715e9bb39e00219c4d7ca605a948))
+
 ## [1.1.4](https://github.com/melfore/mosaic/compare/v1.1.3...v1.1.4) (2020-08-12)
 
 

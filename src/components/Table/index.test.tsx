@@ -59,4 +59,15 @@ describe("Table test suite:", () => {
       onSortChange: jest.fn(),
     });
   });
+
+  it("immutable options", () => {
+    const frozenRows = Object.freeze([
+      { name: "Mosaic" },
+      { name: "Murales" },
+      { name: "Paintings" },
+      { name: "Photography" },
+      { name: "Sculpture" },
+    ]) as { name: string }[];
+    getTableTestable({ ...defaultProps, rows: frozenRows });
+  });
 });

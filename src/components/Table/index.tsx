@@ -36,7 +36,7 @@ const Table: FC<ITable> = ({
         components={{
           Action: (props: any) => actionComponentAdapter(props, dataCy),
         }}
-        data={rows}
+        data={[...rows]}
         data-cy={dataCy}
         icons={{
           Filter: iconAdapter(Icons.filter, IconSize.small),

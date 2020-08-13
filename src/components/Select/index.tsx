@@ -96,7 +96,7 @@ const Select = <T extends any>({
         suppressEvent(event);
         onChange(value);
       }}
-      options={options.sort((one: T, another: T) => {
+      options={[...options].sort((one: T, another: T) => {
         const oneLabel = getLabel(one);
         const anotherLabel = getLabel(another);
         const labelSorting = oneLabel.localeCompare(anotherLabel);

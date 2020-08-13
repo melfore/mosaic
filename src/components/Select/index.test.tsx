@@ -47,6 +47,11 @@ describe("Select Single test suite:", () => {
     });
   });
 
+  it("immutable options", () => {
+    const frozenOptions = Object.freeze(["Photography", "Sculpture", "Mosaic", "Murales", "Paintings"]) as string[];
+    getSelectTestable({ ...defaultProps, options: frozenOptions });
+  });
+
   it("loading", () => {
     const { wrapper } = getSelectTestable({ ...defaultProps, loading: true }, DATA_CY_DEFAULT, "div");
     const placeholder = wrapper.find("span.MuiSkeleton-root");

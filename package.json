@@ -15,9 +15,8 @@
   "dependencies": {
     "@date-io/core": "^2.8.0",
     "@date-io/date-fns": "^2.8.0",
-    "@semantic-release/changelog": "^5.0.1",
     "date-fns": "^2.15.0",
-    "material-table": "^1.68.0"
+    "material-table": "1.68.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -27,6 +26,7 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.7",
@@ -88,6 +88,7 @@
   "scripts": {
     "build": "npm run pre-build && tsc",
     "build-storybook": "build-storybook -o docs --docs",
+    "clean-workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",
     "lintify": "eslint '**/*.ts*' --fix",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",

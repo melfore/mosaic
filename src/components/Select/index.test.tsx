@@ -53,7 +53,11 @@ describe("Select Single test suite:", () => {
   });
 
   it("loading", () => {
-    const { wrapper } = getSelectTestable({ ...defaultProps, loading: true }, DATA_CY_DEFAULT, "div");
+    const { wrapper } = getSelectTestable(
+      { ...defaultProps, loading: true },
+      `${DATA_CY_DEFAULT}-outer-wrapper`,
+      "div"
+    );
     const placeholder = wrapper.find("span.MuiSkeleton-root");
     expect(placeholder).toHaveLength(1);
   });

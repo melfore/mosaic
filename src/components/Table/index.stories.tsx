@@ -8,7 +8,7 @@ import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import { SUBPARTS_MAP } from "./utils";
+// import { SUBPARTS_MAP } from "./utils";
 import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
 
 // <Fragment>
@@ -61,7 +61,7 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        // subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

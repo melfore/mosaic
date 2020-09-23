@@ -1,11 +1,24 @@
 import React, { FC } from "react";
-import MaterialTable from "material-table";
+import {
+  Paper as MUIPaper,
+  Table as MUITable,
+  TableBody as MUITableBody,
+  TableCell as MUITableCell,
+  TableHead as MUITableHead,
+  TablePagination as MUITablePagination,
+  TableRow as MUITableRow,
+  TableSortLabel as MUITableSortLabel,
+  Toolbar as MUIToolbar,
+} from "@material-ui/core";
 
-import { Icons, IconSize } from "../../types/Icon";
 import { ITable } from "../../types/Table";
+import { TypographyVariants } from "../../types/Typography";
+import { suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Checkbox from "../Checkbox";
+import Typography from "../Typography";
 
-import { actionAdapter, actionComponentAdapter, columnAdapter, DEFAULT_TABLE_OPTIONS, iconAdapter } from "./utils";
+// import { actionAdapter, actionComponentAdapter, columnAdapter, DEFAULT_TABLE_OPTIONS, iconAdapter } from "./utils";
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -28,9 +41,74 @@ const Table: FC<ITable> = ({
   rowsTotal = undefined,
   title = undefined,
 }) => {
+  let enhancedColumns = [...columns];
+  if (onSelectionChange) {
+    enhancedColumns = [{ label: "", padding: "checkbox", path: "", render: () => <Checkbox /> }, ...enhancedColumns];
+  }
+
   return (
-    <div data-cy={dataCy} style={{ width: "100%" }}>
-      <MaterialTable
+    <MUIPaper style={{ position: "relative" }}>
+      {/*
+      {loading && (
+        // TODO
+        <div style={{ position: "absolute", height: "100%", width: "100%", background: "red" }}>Loader...</div>
+      )}
+      */}
+      <MUIToolbar>
+        <Typography variant={TypographyVariants.title}>{title}</Typography>
+      </MUIToolbar>
+      <MUITable size="small">
+        <MUITableHead>
+          <MUITableRow>
+            {enhancedColumns.map(({ label, padding, path }) => (
+              <MUITableCell padding={padding || "default"}>
+                <MUITableSortLabel
+                  onClick={(event) => {
+                    suppressEvent(event);
+                    // TODO
+                    onSortChange && onSortChange(path, "asc");
+                  }}
+                >
+                  {label}
+                </MUITableSortLabel>
+              </MUITableCell>
+            ))}
+          </MUITableRow>
+        </MUITableHead>
+        <MUITableBody>
+          {rows.map((row) => (
+            <MUITableRow
+              onClick={(event) => {
+                suppressEvent(event);
+                onRowClick && onRowClick(row);
+              }}
+            >
+              {enhancedColumns.map(({ padding, path, render }) => (
+                <MUITableCell padding={padding || "default"}>{render ? render(row) : row[path]}</MUITableCell>
+              ))}
+            </MUITableRow>
+          ))}
+        </MUITableBody>
+      </MUITable>
+      {(onPageChange || onPageSizeChange) && (
+        <MUITablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={rowsTotal || 0}
+          rowsPerPage={pageSize}
+          page={page}
+          onChangePage={(event, page) => {
+            suppressEvent(event);
+            onPageChange && onPageChange(page);
+          }}
+          onChangeRowsPerPage={(event) => {
+            const pageSize = parseInt(event.target.value, 10);
+            onPageSizeChange && onPageSizeChange(pageSize);
+          }}
+        />
+      )}
+      {/*
+      <MUITable
         actions={actions.map(actionAdapter)}
         columns={columns.map(columnAdapter)}
         components={{
@@ -94,7 +172,8 @@ const Table: FC<ITable> = ({
         title={title}
         totalCount={rowsTotal}
       />
-    </div>
+      */}
+    </MUIPaper>
   );
 };
 

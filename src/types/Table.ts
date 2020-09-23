@@ -20,6 +20,7 @@ export interface ITableAction {
 
 export interface ITableColumn {
   label?: string;
+  padding?: "checkbox" | "default" | "none";
   path: string;
   render?: (row: any) => ReactNode;
   width?: number | string;
@@ -31,7 +32,7 @@ export interface ITable extends ILocalizable {
   loading?: boolean;
   onPageChange?: (page: number) => void;
   onPageSizeChange?: (pageSize: number) => void;
-  onRowClick?: (event: any, row: any) => void;
+  onRowClick?: (row: any) => void;
   onSearchChange?: (query: string) => void;
   onSelectionChange?: (data: any[]) => void;
   onSortChange?: (path: string | null, criteria: "asc" | "desc") => void;

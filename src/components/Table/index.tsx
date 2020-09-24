@@ -26,7 +26,9 @@ import IconButton from "../IconButton";
 import Typography from "../Typography";
 
 const CHECKBOX_SELECTION_PATH = "checkbox-selection";
-const ROW_ACTIONS_PATH = "row-actions";
+const ROW_ACTION_DIMENSION = 48;
+const ROW_ACTION_PATH = "row-actions";
+const TOOLBAR_DIMENSION = 64;
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -130,7 +132,7 @@ const Table: FC<ITable> = ({
     if (!!rowActions.length) {
       internalColumns = [
         ...internalColumns,
-        { label: "", path: ROW_ACTIONS_PATH, width: `${48 * rowActions.length}px` },
+        { label: "", path: ROW_ACTION_PATH, width: `${ROW_ACTION_DIMENSION * rowActions.length}px` },
       ];
     }
 
@@ -145,10 +147,10 @@ const Table: FC<ITable> = ({
             alignItems: "center",
             backgroundColor: theme.palette.action.hover,
             display: "flex",
-            height: !hideHeader && stickyHeader ? "calc(100% - 64px)" : "100%",
+            height: !hideHeader && stickyHeader ? `calc(100% - ${TOOLBAR_DIMENSION}px)` : "100%",
             justifyContent: "center",
             position: "absolute",
-            top: !hideHeader && stickyHeader ? "64px" : 0,
+            top: !hideHeader && stickyHeader ? `${TOOLBAR_DIMENSION}px` : 0,
             width: "100%",
             zIndex: 2,
           }}
@@ -228,7 +230,7 @@ const Table: FC<ITable> = ({
                 <MUITableCell
                   key={`column-${path || columnIndex}`}
                   onClick={(event) => {
-                    if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTIONS_PATH) {
+                    if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTION_PATH) {
                       return;
                     }
 
@@ -243,7 +245,7 @@ const Table: FC<ITable> = ({
                       onChange={(selected) => onSelection(id)}
                       value={isRowSelected(id)}
                     />
-                  ) : path === ROW_ACTIONS_PATH ? (
+                  ) : path === ROW_ACTION_PATH ? (
                     rowActions.map(({ callback, disabled, icon, label }) => (
                       <IconButton
                         key={`action-${label}`}

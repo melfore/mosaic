@@ -1,8 +1,7 @@
-// TODO: temp commenting out snapshots due to scrollTo missing
-// import renderer from "react-test-renderer";
+import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
-import { ITable } from "../../types/Table";
+import { ITable, TableActionPosition } from "../../types/Table";
 import { getLocalizedTestable } from "../../utils/tests";
 
 import Table, { DATA_CY_DEFAULT } from ".";
@@ -26,25 +25,20 @@ const getTableTestable = (props?: ITable, dataCy = DATA_CY_DEFAULT) =>
 
 describe("Table test suite:", () => {
   it("default", () => {
-    const { wrapper } = getTableTestable();
+    const { element, wrapper } = getTableTestable();
     expect(wrapper).toHaveLength(1);
     expect("default-props-check").toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("dataCy", () => {
-    const { wrapper } = getTableTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    const { element, wrapper } = getTableTestable({ ...defaultProps, dataCy: "custom" }, "custom");
     expect(wrapper).toHaveLength(1);
-  });
 
-  xit("actions", () => {
-    const callback = jest.fn();
-    const label = "Account";
-    const { wrapper } = getTableTestable({ ...defaultProps, actions: [{ callback, icon: Icons.account, label }] });
-    const action = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-${label}']`);
-    action.simulate("click");
-    expect(callback).toHaveBeenCalledTimes(1);
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   // TODO: improve this
@@ -59,6 +53,30 @@ describe("Table test suite:", () => {
     });
   });
 
+  it("global action", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      actions: [{ callback, icon: Icons.account, label }],
+    });
+    const action = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-${label}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    const actionLabel = action.find("span.MuiButton-label");
+    expect(actionLabel.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("hide header", () => {
+    const { element } = getTableTestable({ ...defaultProps, hideHeader: true });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("immutable options", () => {
     const frozenRows = Object.freeze([
       { name: "Mosaic" },
@@ -67,18 +85,52 @@ describe("Table test suite:", () => {
       { name: "Photography" },
       { name: "Sculpture" },
     ]) as { name: string }[];
-    getTableTestable({ ...defaultProps, rows: frozenRows });
+    const { element } = getTableTestable({ ...defaultProps, rows: frozenRows });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("loading", () => {
-    getTableTestable({ ...defaultProps, loading: true });
+    const { element } = getTableTestable({ ...defaultProps, loading: true });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("pre-selection", () => {
-    getTableTestable({ ...defaultProps, selectionFilter: (d) => d.name.startsWith("P") });
+    const { element } = getTableTestable({ ...defaultProps, selectionFilter: (d) => d.name.startsWith("P") });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("pre-sorting", () => {
-    getTableTestable({ ...defaultProps, sorting: { path: "name", ordering: "asc" } });
+    const { element } = getTableTestable({ ...defaultProps, sorting: { path: "name", ordering: "asc" } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("row action", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      actions: [{ callback, icon: Icons.account, label, position: TableActionPosition.row }],
+    });
+    const action = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-${label}']`).first();
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("sticky header", () => {
+    const { element } = getTableTestable({ ...defaultProps, stickyHeader: true });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
   });
 });

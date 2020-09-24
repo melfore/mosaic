@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import {
   CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
@@ -14,21 +14,29 @@ import {
   useTheme,
 } from "@material-ui/core";
 
+import { Button } from "../..";
 import { CheckboxSize } from "../../types/Checkbox";
-import { ITable } from "../../types/Table";
+import { Icons, IconSize } from "../../types/Icon";
+import { ITable, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
-import { suppressEvent } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
+import IconButton from "../IconButton";
 import Typography from "../Typography";
 
-// import { actionAdapter, actionComponentAdapter, columnAdapter, DEFAULT_TABLE_OPTIONS, iconAdapter } from "./utils";
-
 const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+const ROW_ACTIONS_PATH = "row-actions";
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "title", type: "string" }];
+export const SUBPARTS_MAP = {
+  action: {
+    label: "Action (with label)",
+    value: (label = "{label}") => `action-${label}`,
+  },
+};
 
 const Table: FC<ITable> = ({
   actions = [],
@@ -98,23 +106,36 @@ const Table: FC<ITable> = ({
         if (onSelectionChange) {
           onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
         }
-
         return rows;
       }),
     [internalRows, isRowSelected, onSelectionChange]
   );
 
-  let enhancedColumns = [...columns];
-  if (onSelectionChange) {
-    enhancedColumns = [
-      {
-        label: "",
-        padding: "checkbox",
-        path: CHECKBOX_SELECTION_PATH,
-      },
-      ...enhancedColumns,
-    ];
-  }
+  const { defaultActions, internalColumns, rowActions, selectionActions } = useMemo(() => {
+    let internalColumns = [...columns];
+    if (onSelectionChange) {
+      internalColumns = [
+        {
+          label: "",
+          padding: "checkbox",
+          path: CHECKBOX_SELECTION_PATH,
+        },
+        ...internalColumns,
+      ];
+    }
+
+    const defaultActions = actions.filter(({ position }) => !position || position === TableActionPosition.default);
+    const rowActions = actions.filter(({ position }) => position === TableActionPosition.row);
+    const selectionActions = actions.filter(({ position }) => position === TableActionPosition.selection);
+    if (!!rowActions.length) {
+      internalColumns = [
+        ...internalColumns,
+        { label: "", path: ROW_ACTIONS_PATH, width: `${48 * rowActions.length}px` },
+      ];
+    }
+
+    return { defaultActions, internalColumns, rowActions, selectionActions };
+  }, [actions, columns, onSelectionChange]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
@@ -122,27 +143,49 @@ const Table: FC<ITable> = ({
         <div
           style={{
             alignItems: "center",
-            backgroundColor: theme.palette.divider,
+            backgroundColor: theme.palette.action.hover,
             display: "flex",
-            height: "100%",
+            height: !hideHeader && stickyHeader ? "calc(100% - 64px)" : "100%",
             justifyContent: "center",
             position: "absolute",
+            top: !hideHeader && stickyHeader ? "64px" : 0,
             width: "100%",
-            zIndex: 1,
+            zIndex: 2,
           }}
         >
           <MUICircularProgress />
         </div>
       )}
       {!hideHeader && (
-        <MUIToolbar>
-          <Typography variant={TypographyVariants.title}>{title}</Typography>
+        <MUIToolbar
+          style={{
+            alignItems: "center",
+            backgroundColor: !selectedRows.length ? "inherit" : theme.palette.action.selected,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography variant={TypographyVariants.title}>
+            {!selectedRows.length ? title : `${selectedRows.length} selected`}
+          </Typography>
+          <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
+            {(!selectedRows.length ? defaultActions : selectionActions).map(({ callback, disabled, icon, label }) => (
+              <Button
+                key={`action-${label}`}
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                disabled={disabled}
+                icon={!icon ? undefined : { name: icon }}
+                label={label}
+                onClick={() => callback(internalRows.filter((_, index) => selectedRows.includes(index)))}
+              />
+            ))}
+          </div>
         </MUIToolbar>
       )}
       <MUITable size="small" stickyHeader={stickyHeader} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {enhancedColumns.map(({ label, padding, path, width }, index) => (
+            {internalColumns.map(({ label, padding, path, width }, index) => (
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
@@ -181,11 +224,11 @@ const Table: FC<ITable> = ({
         <MUITableBody>
           {internalRows.map(({ id, ...row }) => (
             <MUITableRow key={`row-${id}`}>
-              {enhancedColumns.map(({ padding, path, render }, columnIndex) => (
+              {internalColumns.map(({ padding, path, render }, columnIndex) => (
                 <MUITableCell
                   key={`column-${path || columnIndex}`}
                   onClick={(event) => {
-                    if (path === CHECKBOX_SELECTION_PATH) {
+                    if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTIONS_PATH) {
                       return;
                     }
 
@@ -200,6 +243,17 @@ const Table: FC<ITable> = ({
                       onChange={(selected) => onSelection(id)}
                       value={isRowSelected(id)}
                     />
+                  ) : path === ROW_ACTIONS_PATH ? (
+                    rowActions.map(({ callback, disabled, icon, label }) => (
+                      <IconButton
+                        key={`action-${label}`}
+                        dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                        disabled={disabled}
+                        icon={icon || Icons.settings}
+                        onClick={() => callback(row)}
+                        size={IconSize.small}
+                      />
+                    ))
                   ) : render ? (
                     render(row)
                   ) : (

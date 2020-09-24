@@ -29,16 +29,20 @@ export interface ITableColumn {
 export interface ITable extends ILocalizable {
   actions?: ITableAction[];
   columns: ITableColumn[];
+  height?: number | string;
+  hideHeader?: boolean;
   loading?: boolean;
   onPageChange?: (page: number) => void;
-  onPageSizeChange?: (pageSize: number) => void;
+  onPageSizeChange?: (page: number, pageSize: number) => void;
   onRowClick?: (row: any) => void;
-  onSearchChange?: (query: string) => void;
   onSelectionChange?: (data: any[]) => void;
-  onSortChange?: (path: string | null, criteria: "asc" | "desc") => void;
+  onSortChange?: (path: string | null, criteria: "asc" | "desc" | null) => void;
   page?: number;
   pageSize?: number;
   rows: any[];
   rowsTotal?: number;
+  selectionFilter?: (datum: any) => boolean;
+  sorting?: { path: string | null; ordering: "asc" | "desc" | null };
+  stickyHeader?: boolean;
   title: string;
 }

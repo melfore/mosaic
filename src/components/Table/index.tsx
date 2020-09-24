@@ -1,16 +1,20 @@
-import React, { FC } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import {
+  CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
   Table as MUITable,
   TableBody as MUITableBody,
   TableCell as MUITableCell,
+  TableContainer as MUITableContainer,
   TableHead as MUITableHead,
   TablePagination as MUITablePagination,
   TableRow as MUITableRow,
   TableSortLabel as MUITableSortLabel,
   Toolbar as MUIToolbar,
+  useTheme,
 } from "@material-ui/core";
 
+import { CheckboxSize } from "../../types/Checkbox";
 import { ITable } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { suppressEvent } from "../../utils";
@@ -20,6 +24,8 @@ import Typography from "../Typography";
 
 // import { actionAdapter, actionComponentAdapter, columnAdapter, DEFAULT_TABLE_OPTIONS, iconAdapter } from "./utils";
 
+const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "title", type: "string" }];
@@ -28,63 +34,178 @@ const Table: FC<ITable> = ({
   actions = [],
   columns,
   dataCy = DATA_CY_DEFAULT,
+  height = "100%",
+  hideHeader = false,
   loading = false,
   onPageChange = undefined,
   onPageSizeChange = undefined,
   onRowClick = undefined,
-  onSearchChange = undefined,
   onSelectionChange = undefined,
   onSortChange = undefined,
   page = 0,
   pageSize = 10,
   rows = [],
   rowsTotal = undefined,
+  selectionFilter,
+  sorting = { path: null, ordering: null },
+  stickyHeader = false,
   title = undefined,
 }) => {
+  const theme = useTheme();
+
+  const getInternalRows = useCallback((rows: any) => [...rows].map((row, index) => ({ ...row, id: index })), []);
+
+  const getSelectedRows = useCallback(
+    (rows: any, selectionFilter: any) =>
+      rows
+        .filter((internalRow: any) => (!selectionFilter ? false : selectionFilter(internalRow)))
+        .map(({ id }: any) => id),
+    []
+  );
+
+  const [internalRows, setInternalRows] = useState(getInternalRows(rows));
+  const [selectedRows, setSelectedRows] = useState<number[]>(getSelectedRows(internalRows, selectionFilter));
+  const [internalSorting, setInternalSorting] = useState(sorting);
+
+  useEffect(() => {
+    const internalRows = getInternalRows(rows);
+    const selectedRows = getSelectedRows(internalRows, selectionFilter);
+    setInternalRows(internalRows);
+    setSelectedRows(selectedRows);
+  }, [getInternalRows, getSelectedRows, rows, selectionFilter]);
+
+  useEffect(() => {
+    if (!onSortChange) {
+      return;
+    }
+
+    const { path, ordering } = internalSorting;
+    onSortChange(path, ordering);
+  }, [internalSorting, onSortChange]);
+
+  const isRowSelected = useCallback((index: number) => selectedRows.includes(index), [selectedRows]);
+
+  const onSelection = useCallback(
+    (index: number) =>
+      setSelectedRows((selectedRows) => {
+        let rows = selectedRows;
+        if (!isRowSelected(index)) {
+          rows = [...rows, index];
+        } else {
+          rows = selectedRows.filter((selectedIndex) => selectedIndex !== index);
+        }
+
+        if (onSelectionChange) {
+          onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
+        }
+
+        return rows;
+      }),
+    [internalRows, isRowSelected, onSelectionChange]
+  );
+
   let enhancedColumns = [...columns];
   if (onSelectionChange) {
-    enhancedColumns = [{ label: "", padding: "checkbox", path: "", render: () => <Checkbox /> }, ...enhancedColumns];
+    enhancedColumns = [
+      {
+        label: "",
+        padding: "checkbox",
+        path: CHECKBOX_SELECTION_PATH,
+      },
+      ...enhancedColumns,
+    ];
   }
 
   return (
-    <MUIPaper style={{ position: "relative" }}>
-      {/*
+    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
       {loading && (
-        // TODO
-        <div style={{ position: "absolute", height: "100%", width: "100%", background: "red" }}>Loader...</div>
+        <div
+          style={{
+            alignItems: "center",
+            backgroundColor: theme.palette.divider,
+            display: "flex",
+            height: "100%",
+            justifyContent: "center",
+            position: "absolute",
+            width: "100%",
+            zIndex: 1,
+          }}
+        >
+          <MUICircularProgress />
+        </div>
       )}
-      */}
-      <MUIToolbar>
-        <Typography variant={TypographyVariants.title}>{title}</Typography>
-      </MUIToolbar>
-      <MUITable size="small">
+      {!hideHeader && (
+        <MUIToolbar>
+          <Typography variant={TypographyVariants.title}>{title}</Typography>
+        </MUIToolbar>
+      )}
+      <MUITable size="small" stickyHeader={stickyHeader} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {enhancedColumns.map(({ label, padding, path }) => (
-              <MUITableCell padding={padding || "default"}>
-                <MUITableSortLabel
-                  onClick={(event) => {
-                    suppressEvent(event);
-                    // TODO
-                    onSortChange && onSortChange(path, "asc");
-                  }}
-                >
-                  {label}
-                </MUITableSortLabel>
+            {enhancedColumns.map(({ label, padding, path, width }, index) => (
+              <MUITableCell
+                key={`column-${path || index}`}
+                padding={padding || "default"}
+                style={{ width }}
+                variant="head"
+              >
+                {!onSortChange ? (
+                  label
+                ) : (
+                  <MUITableSortLabel
+                    active={path === internalSorting.path}
+                    direction={path === internalSorting.path ? internalSorting.ordering || undefined : "asc"}
+                    onClick={(event) => {
+                      suppressEvent(event);
+                      const { path: sortingPath, ordering } = internalSorting;
+                      if (!sortingPath || path !== sortingPath) {
+                        setInternalSorting({ path, ordering: "asc" });
+                        return;
+                      }
+
+                      if (path === sortingPath && ordering === "asc") {
+                        setInternalSorting({ path, ordering: "desc" });
+                        return;
+                      }
+
+                      setInternalSorting({ path: null, ordering: null });
+                    }}
+                  >
+                    {label}
+                  </MUITableSortLabel>
+                )}
               </MUITableCell>
             ))}
           </MUITableRow>
         </MUITableHead>
         <MUITableBody>
-          {rows.map((row) => (
-            <MUITableRow
-              onClick={(event) => {
-                suppressEvent(event);
-                onRowClick && onRowClick(row);
-              }}
-            >
-              {enhancedColumns.map(({ padding, path, render }) => (
-                <MUITableCell padding={padding || "default"}>{render ? render(row) : row[path]}</MUITableCell>
+          {internalRows.map(({ id, ...row }) => (
+            <MUITableRow key={`row-${id}`}>
+              {enhancedColumns.map(({ padding, path, render }, columnIndex) => (
+                <MUITableCell
+                  key={`column-${path || columnIndex}`}
+                  onClick={(event) => {
+                    if (path === CHECKBOX_SELECTION_PATH) {
+                      return;
+                    }
+
+                    suppressEvent(event);
+                    onRowClick && onRowClick(row);
+                  }}
+                  padding={padding || "default"}
+                >
+                  {path === CHECKBOX_SELECTION_PATH ? (
+                    <Checkbox
+                      size={CheckboxSize.small}
+                      onChange={(selected) => onSelection(id)}
+                      value={isRowSelected(id)}
+                    />
+                  ) : render ? (
+                    render(row)
+                  ) : (
+                    row[path]
+                  )}
+                </MUITableCell>
               ))}
             </MUITableRow>
           ))}
@@ -103,77 +224,11 @@ const Table: FC<ITable> = ({
           }}
           onChangeRowsPerPage={(event) => {
             const pageSize = parseInt(event.target.value, 10);
-            onPageSizeChange && onPageSizeChange(pageSize);
+            onPageSizeChange && onPageSizeChange(0, pageSize);
           }}
         />
       )}
-      {/*
-      <MUITable
-        actions={actions.map(actionAdapter)}
-        columns={columns.map(columnAdapter)}
-        components={{
-          Action: (props: any) => actionComponentAdapter(props, dataCy),
-        }}
-        data={[...rows]}
-        data-cy={dataCy}
-        icons={{
-          Filter: iconAdapter(Icons.filter, IconSize.small),
-          FirstPage: iconAdapter(Icons.first),
-          LastPage: iconAdapter(Icons.last),
-          NextPage: iconAdapter(Icons.right),
-          PreviousPage: iconAdapter(Icons.left),
-          ResetSearch: iconAdapter(Icons.close, IconSize.small),
-          Search: iconAdapter(Icons.search),
-          SortArrow: iconAdapter(Icons.up_arrow, IconSize.small),
-        }}
-        isLoading={loading}
-        onChangePage={(page) => {
-          if (onPageChange) {
-            onPageChange(page);
-          }
-        }}
-        onChangeRowsPerPage={(pageSize) => {
-          if (onPageSizeChange) {
-            onPageSizeChange(pageSize);
-          }
-        }}
-        onOrderChange={(columnIndex, criteria) => {
-          if (onSortChange) {
-            const columnPath = columnIndex < 0 ? null : columns[columnIndex].path;
-            onSortChange(columnPath, criteria);
-          }
-        }}
-        onRowClick={(event, row) => {
-          if (onRowClick) {
-            onRowClick(event, row);
-          }
-        }}
-        onSearchChange={(query) => {
-          if (onSearchChange) {
-            onSearchChange(query);
-          }
-        }}
-        onSelectionChange={(data) => {
-          if (onSelectionChange) {
-            onSelectionChange(data);
-          }
-        }}
-        options={{
-          ...DEFAULT_TABLE_OPTIONS,
-          filtering: false,
-          padding: "dense",
-          pageSize,
-          paging: !!onPageChange && !!onPageSizeChange,
-          search: !!onSearchChange,
-          sorting: !!onSortChange,
-          selection: !!onSelectionChange,
-        }}
-        page={page}
-        title={title}
-        totalCount={rowsTotal}
-      />
-      */}
-    </MUIPaper>
+    </MUITableContainer>
   );
 };
 

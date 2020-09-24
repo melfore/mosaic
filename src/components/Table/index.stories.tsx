@@ -74,11 +74,11 @@ export const Canvas = () => (
       { label: "Name", path: "name" },
       { label: "Age", path: "age" },
     ]}
+    hideHeader={boolean("hideHeader", false)}
     loading={boolean("loading", false)}
     onPageChange={action("On Page Change")}
     onPageSizeChange={action("On Page Size Change")}
     onRowClick={action("On Row Click")}
-    onSearchChange={action("On Search Change")}
     onSelectionChange={action("On Selection Change")}
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
@@ -91,6 +91,7 @@ export const Canvas = () => (
       { name: "Luis", age: 78 },
     ]}
     rowsTotal={number("rowsTotal", 5)}
+    stickyHeader={boolean("stickyHeader", false)}
     title={text("title", "Table Title")}
   />
 );
@@ -189,9 +190,8 @@ export const WithEvents = () => (
     onPageChange={(page: number) => {}}
     onPageSizeChange={(pageSize: number) => {}}
     onRowClick={(row: any) => {}}
-    onSearchChange={(query: string) => {}}
     onSelectionChange={(data: any[]) => {}}
-    onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
+    onSortChange={(path: string | null, criteria: "asc" | "desc" | null) => {}}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },

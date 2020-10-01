@@ -19,10 +19,6 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 ];
 
 export const SUBPARTS_MAP = {
-  optionGroupLabel: {
-    label: "Option Group (with label)",
-    value: (label = "{label}") => `option-group-${label}`,
-  },
   loading: {
     label: "Loading",
   },
@@ -33,6 +29,13 @@ export const SUBPARTS_MAP = {
   optionLabel: {
     label: "Option Label (with label)",
     value: (label = "{label}") => `option-${label}-label`,
+  },
+  optionGroupLabel: {
+    label: "Option Group (with label)",
+    value: (label = "{label}") => `option-group-${label}`,
+  },
+  outerWrapper: {
+    label: "Outer Wrapper",
   },
 };
 
@@ -83,7 +86,7 @@ const Select = <T extends any>({
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
-      data-cy={dataCy}
+      data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper)}
       disableCloseOnSelect={multiple}
       disabled={disabled}
       getOptionLabel={getLabel}
@@ -141,7 +144,7 @@ const Select = <T extends any>({
           );
         }
 
-        const forwardedInputProps = { ...inputProps, inputProps: { ...extInputProps, "data-cy": `${dataCy}` } };
+        const forwardedInputProps = { ...inputProps, inputProps: { ...extInputProps, "data-cy": dataCy } };
         return (
           <StyledMUITextField
             {...forwardedInputProps}

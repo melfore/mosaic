@@ -127,8 +127,8 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("sticky header", () => {
-    const { element } = getTableTestable({ ...defaultProps, stickyHeader: true });
+  it("sticky", () => {
+    const { element } = getTableTestable({ ...defaultProps, sticky: true });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

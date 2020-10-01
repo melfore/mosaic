@@ -2,14 +2,14 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 
+import { Typography } from "../..";
 import { Icons } from "../../types/Icon";
 import { TableActionPosition } from "../../types/Table";
 import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import { SUBPARTS_MAP } from "./utils";
-import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
+import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, TableWithProps } from ".";
 
 // <Fragment>
 // <p>
@@ -56,7 +56,7 @@ export default {
   component: TableWithProps,
   parameters: {
     ...getDocumentationPage({
-      basedOn: "material-table",
+      basedOn: "@material-ui/core/Table",
       component: "Table",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
@@ -74,11 +74,11 @@ export const Canvas = () => (
       { label: "Name", path: "name" },
       { label: "Age", path: "age" },
     ]}
+    hideHeader={boolean("hideHeader", false)}
     loading={boolean("loading", false)}
     onPageChange={action("On Page Change")}
     onPageSizeChange={action("On Page Size Change")}
     onRowClick={action("On Row Click")}
-    onSearchChange={action("On Search Change")}
     onSelectionChange={action("On Selection Change")}
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
@@ -91,6 +91,7 @@ export const Canvas = () => (
       { name: "Luis", age: 78 },
     ]}
     rowsTotal={number("rowsTotal", 5)}
+    sticky={boolean("sticky", false)}
     title={text("title", "Table Title")}
   />
 );
@@ -112,6 +113,18 @@ export const Basic = () => (
   />
 );
 
+export const EmptyState = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    emptyState={<Typography>Custom Empty State</Typography>}
+    rows={[]}
+    title="Empty State"
+  />
+);
+
 export const Loading = () => (
   <Table
     columns={[
@@ -126,7 +139,7 @@ export const Loading = () => (
       { name: "Joey", age: 29 },
       { name: "Luis", age: 78 },
     ]}
-    title="Without Events"
+    title="Loading"
   />
 );
 
@@ -149,6 +162,53 @@ export const Localized = () => (
       title={MessageMock.title}
     />
   </IntlProviderMock>
+);
+
+export const NoData = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    rows={[]}
+    title="No Data"
+  />
+);
+
+export const Sticky = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    height="500px"
+    onPageChange={(page: number) => {}}
+    onPageSizeChange={(pageSize: number) => {}}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    sticky
+    title="Sticky"
+  />
 );
 
 export const WithCustomColumnRender = () => (
@@ -189,9 +249,8 @@ export const WithEvents = () => (
     onPageChange={(page: number) => {}}
     onPageSizeChange={(pageSize: number) => {}}
     onRowClick={(row: any) => {}}
-    onSearchChange={(query: string) => {}}
     onSelectionChange={(data: any[]) => {}}
-    onSortChange={(path: string | null, criteria: "asc" | "desc") => {}}
+    onSortChange={(path: string | null, criteria: "asc" | "desc" | null) => {}}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },
@@ -239,6 +298,11 @@ export const WithActions = () => (
           label: "Add",
         },
         {
+          callback: action("On Send Callback"),
+          icon: Icons.send,
+          label: "Send",
+        },
+        {
           callback: action("On Edit Callback"),
           icon: Icons.edit,
           label: "Edit",
@@ -263,7 +327,53 @@ export const WithActions = () => (
         { name: "Joey", age: 29 },
         { name: "Luis", age: 78 },
       ]}
-      title="Row Actions"
+      title="With Actions"
+    />
+  </StoriesWrapper>
+);
+
+export const WithSelectionActions = () => (
+  <StoriesWrapper>
+    <Table
+      actions={[
+        {
+          callback: action("On Add Callback"),
+          icon: Icons.add,
+          label: "Add",
+        },
+        {
+          callback: action("On Delete All Callback"),
+          icon: Icons.delete,
+          label: "Delete All",
+          position: TableActionPosition.selection,
+        },
+        {
+          callback: action("On Edit Callback"),
+          icon: Icons.edit,
+          label: "Edit",
+          position: TableActionPosition.row,
+        },
+        {
+          callback: action("On Delete Callback"),
+          disabled: true,
+          icon: Icons.delete,
+          label: "Delete",
+          position: TableActionPosition.row,
+        },
+      ]}
+      columns={[
+        { label: "Name", path: "name" },
+        { label: "Age", path: "age" },
+      ]}
+      onSelectionChange={(data: any[]) => {}}
+      rows={[
+        { name: "John", age: 35 },
+        { name: "Nick", age: 45 },
+        { name: "Emma", age: 32 },
+        { name: "Joey", age: 29 },
+        { name: "Luis", age: 78 },
+      ]}
+      title="Selection Actions"
     />
   </StoriesWrapper>
 );

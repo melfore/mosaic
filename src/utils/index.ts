@@ -33,7 +33,11 @@ export const slugify = (value: string) =>
     .replace(/\s+/g, "-")
     .replace(/[^\w-]+/g, "");
 
-export const suppressEvent = (event: ChangeEvent<any> | MouseEvent) => {
+export const suppressEvent = (event: ChangeEvent<any> | MouseEvent<any, MouseEvent> | null) => {
+  if (!event) {
+    return;
+  }
+
   event.preventDefault();
   event.stopPropagation();
 };

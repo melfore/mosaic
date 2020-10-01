@@ -2,14 +2,14 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 
+import { Typography } from "../..";
 import { Icons } from "../../types/Icon";
 import { TableActionPosition } from "../../types/Table";
 import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-// import { SUBPARTS_MAP } from "./utils";
-import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, TableWithProps } from ".";
+import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, TableWithProps } from ".";
 
 // <Fragment>
 // <p>
@@ -56,12 +56,12 @@ export default {
   component: TableWithProps,
   parameters: {
     ...getDocumentationPage({
-      basedOn: "material-table",
+      basedOn: "@material-ui/core/Table",
       component: "Table",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
-        // subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),
@@ -287,6 +287,52 @@ export const WithActions = () => (
         { name: "Luis", age: 78 },
       ]}
       title="Row Actions"
+    />
+  </StoriesWrapper>
+);
+
+export const WithSelectionActions = () => (
+  <StoriesWrapper>
+    <Table
+      actions={[
+        {
+          callback: action("On Add Callback"),
+          icon: Icons.add,
+          label: "Add",
+        },
+        {
+          callback: action("On Delete All Callback"),
+          icon: Icons.delete,
+          label: "Delete All",
+          position: TableActionPosition.selection,
+        },
+        {
+          callback: action("On Edit Callback"),
+          icon: Icons.edit,
+          label: "Edit",
+          position: TableActionPosition.row,
+        },
+        {
+          callback: action("On Delete Callback"),
+          disabled: true,
+          icon: Icons.delete,
+          label: "Delete",
+          position: TableActionPosition.row,
+        },
+      ]}
+      columns={[
+        { label: "Name", path: "name" },
+        { label: "Age", path: "age" },
+      ]}
+      onSelectionChange={(data: any[]) => {}}
+      rows={[
+        { name: "John", age: 35 },
+        { name: "Nick", age: 45 },
+        { name: "Emma", age: 32 },
+        { name: "Joey", age: 29 },
+        { name: "Luis", age: 78 },
+      ]}
+      title="Selection Actions"
     />
   </StoriesWrapper>
 );

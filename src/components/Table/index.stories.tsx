@@ -139,7 +139,7 @@ export const Loading = () => (
       { name: "Joey", age: 29 },
       { name: "Luis", age: 78 },
     ]}
-    title="Without Events"
+    title="Loading"
   />
 );
 
@@ -172,6 +172,40 @@ export const NoData = () => (
     ]}
     rows={[]}
     title="No Data"
+  />
+);
+
+export const StickyHeader = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    height="500px"
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    stickyHeader
+    title="Sticky Header"
   />
 );
 

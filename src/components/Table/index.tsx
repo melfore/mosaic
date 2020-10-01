@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+import React, { FC, Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import {
   CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
@@ -14,15 +14,16 @@ import {
   useTheme,
 } from "@material-ui/core";
 
-import { Button } from "../..";
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
 import { ITable, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Button from "../Button";
 import Checkbox from "../Checkbox";
 import IconButton from "../IconButton";
+import Spacer from "../Spacer";
 import Typography from "../Typography";
 
 const CHECKBOX_SELECTION_PATH = "checkbox-selection";
@@ -174,16 +175,20 @@ const Table: FC<ITable> = ({
             {!selectedRows.length ? title : `${selectedRows.length} selected`}
           </Typography>
           <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
-            {(!selectedRows.length ? defaultActions : selectionActions).map(({ callback, disabled, icon, label }) => (
-              <Button
-                key={`action-${label}`}
-                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                disabled={disabled}
-                icon={!icon ? undefined : { name: icon }}
-                label={label}
-                onClick={() => callback(internalRows.filter((_, index) => selectedRows.includes(index)))}
-              />
-            ))}
+            {(!selectedRows.length ? defaultActions : selectionActions).map(
+              ({ callback, disabled, icon, label }, index) => (
+                <Fragment key={`action-${label}`}>
+                  {index > 0 && <Spacer />}
+                  <Button
+                    dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                    disabled={disabled}
+                    icon={!icon ? undefined : { name: icon }}
+                    label={label}
+                    onClick={() => callback(internalRows.filter((_, index) => selectedRows.includes(index)))}
+                  />
+                </Fragment>
+              )
+            )}
           </div>
         </MUIToolbar>
       )}

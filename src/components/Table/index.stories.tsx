@@ -296,6 +296,11 @@ export const WithActions = () => (
           label: "Add",
         },
         {
+          callback: action("On Send Callback"),
+          icon: Icons.send,
+          label: "Send",
+        },
+        {
           callback: action("On Edit Callback"),
           icon: Icons.edit,
           label: "Edit",
@@ -320,7 +325,7 @@ export const WithActions = () => (
         { name: "Joey", age: 29 },
         { name: "Luis", age: 78 },
       ]}
-      title="Row Actions"
+      title="With Actions"
     />
   </StoriesWrapper>
 );

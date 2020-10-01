@@ -148,12 +148,13 @@ const Table: FC<ITable> = ({
             alignItems: "center",
             backgroundColor: theme.palette.action.hover,
             display: "flex",
-            height: !hideHeader && stickyHeader ? `calc(100% - ${TOOLBAR_DIMENSION}px)` : "100%",
             justifyContent: "center",
             position: "absolute",
-            top: !hideHeader && stickyHeader ? `${TOOLBAR_DIMENSION}px` : 0,
             width: "100%",
             zIndex: 2,
+            ...(!hideHeader && stickyHeader
+              ? { height: `calc(100% - ${TOOLBAR_DIMENSION}px)`, top: `${TOOLBAR_DIMENSION}px` }
+              : { height: "100%", top: 0 }),
           }}
         >
           <MUICircularProgress />
@@ -166,6 +167,7 @@ const Table: FC<ITable> = ({
             backgroundColor: !selectedRows.length ? "inherit" : theme.palette.action.selected,
             display: "flex",
             justifyContent: "space-between",
+            ...(!stickyHeader ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
           }}
         >
           <Typography variant={TypographyVariants.title}>
@@ -192,7 +194,7 @@ const Table: FC<ITable> = ({
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
-                style={{ width }}
+                style={{ width, ...(!hideHeader && stickyHeader ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
                 variant="head"
               >
                 {!onSortChange ? (

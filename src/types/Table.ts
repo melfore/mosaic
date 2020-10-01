@@ -29,6 +29,7 @@ export interface ITableColumn {
 export interface ITable extends ILocalizable {
   actions?: ITableAction[];
   columns: ITableColumn[];
+  emptyState?: ReactNode;
   height?: number | string;
   hideHeader?: boolean;
   loading?: boolean;

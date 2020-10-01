@@ -113,6 +113,18 @@ export const Basic = () => (
   />
 );
 
+export const EmptyState = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    emptyState={<Typography>Custom Empty State</Typography>}
+    rows={[]}
+    title="Empty State"
+  />
+);
+
 export const Loading = () => (
   <Table
     columns={[
@@ -150,6 +162,17 @@ export const Localized = () => (
       title={MessageMock.title}
     />
   </IntlProviderMock>
+);
+
+export const NoData = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    rows={[]}
+    title="No Data"
+  />
 );
 
 export const WithCustomColumnRender = () => (

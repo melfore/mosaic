@@ -44,6 +44,7 @@ const Table: FC<ITable> = ({
   actions = [],
   columns,
   dataCy = DATA_CY_DEFAULT,
+  emptyState,
   height = "100%",
   hideHeader = false,
   loading = false,
@@ -224,47 +225,60 @@ const Table: FC<ITable> = ({
           </MUITableRow>
         </MUITableHead>
         <MUITableBody>
-          {internalRows.map(({ id, ...row }) => (
-            <MUITableRow key={`row-${id}`}>
-              {internalColumns.map(({ padding, path, render }, columnIndex) => (
-                <MUITableCell
-                  key={`column-${path || columnIndex}`}
-                  onClick={(event) => {
-                    if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTION_PATH) {
-                      return;
-                    }
-
-                    suppressEvent(event);
-                    onRowClick && onRowClick(row);
-                  }}
-                  padding={padding || "default"}
-                >
-                  {path === CHECKBOX_SELECTION_PATH ? (
-                    <Checkbox
-                      size={CheckboxSize.small}
-                      onChange={(selected) => onSelection(id)}
-                      value={isRowSelected(id)}
-                    />
-                  ) : path === ROW_ACTION_PATH ? (
-                    rowActions.map(({ callback, disabled, icon, label }) => (
-                      <IconButton
-                        key={`action-${label}`}
-                        dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                        disabled={disabled}
-                        icon={icon || Icons.settings}
-                        onClick={() => callback(row)}
-                        size={IconSize.small}
-                      />
-                    ))
-                  ) : render ? (
-                    render(row)
-                  ) : (
-                    row[path]
-                  )}
-                </MUITableCell>
-              ))}
+          {!internalRows.length ? (
+            <MUITableRow key={`row-no-data`}>
+              <MUITableCell
+                key={`column-no-data`}
+                colSpan={internalColumns.length}
+                padding="default"
+                style={{ textAlign: "center" }}
+              >
+                {emptyState || <Typography>No data to display</Typography>}
+              </MUITableCell>
             </MUITableRow>
-          ))}
+          ) : (
+            internalRows.map(({ id, ...row }) => (
+              <MUITableRow key={`row-${id}`}>
+                {internalColumns.map(({ padding, path, render }, columnIndex) => (
+                  <MUITableCell
+                    key={`column-${path || columnIndex}`}
+                    onClick={(event) => {
+                      if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTION_PATH) {
+                        return;
+                      }
+
+                      suppressEvent(event);
+                      onRowClick && onRowClick(row);
+                    }}
+                    padding={padding || "default"}
+                  >
+                    {path === CHECKBOX_SELECTION_PATH ? (
+                      <Checkbox
+                        size={CheckboxSize.small}
+                        onChange={(selected) => onSelection(id)}
+                        value={isRowSelected(id)}
+                      />
+                    ) : path === ROW_ACTION_PATH ? (
+                      rowActions.map(({ callback, disabled, icon, label }) => (
+                        <IconButton
+                          key={`action-${label}`}
+                          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                          disabled={disabled}
+                          icon={icon || Icons.settings}
+                          onClick={() => callback(row)}
+                          size={IconSize.small}
+                        />
+                      ))
+                    ) : render ? (
+                      render(row)
+                    ) : (
+                      row[path]
+                    )}
+                  </MUITableCell>
+                ))}
+              </MUITableRow>
+            ))
+          )}
         </MUITableBody>
       </MUITable>
       {(onPageChange || onPageSizeChange) && (

@@ -44,6 +44,6 @@ export interface ITable extends ILocalizable {
   rowsTotal?: number;
   selectionFilter?: (datum: any) => boolean;
   sorting?: { path: string | null; ordering: "asc" | "desc" | null };
-  stickyHeader?: boolean;
+  sticky?: boolean;
   title: string;
 }

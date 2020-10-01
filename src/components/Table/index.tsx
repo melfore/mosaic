@@ -60,7 +60,7 @@ const Table: FC<ITable> = ({
   rowsTotal = undefined,
   selectionFilter,
   sorting = { path: null, ordering: null },
-  stickyHeader = false,
+  sticky = false,
   title = undefined,
 }) => {
   const theme = useTheme();
@@ -153,7 +153,7 @@ const Table: FC<ITable> = ({
             position: "absolute",
             width: "100%",
             zIndex: 2,
-            ...(!hideHeader && stickyHeader
+            ...(!hideHeader && sticky
               ? { height: `calc(100% - ${TOOLBAR_DIMENSION}px)`, top: `${TOOLBAR_DIMENSION}px` }
               : { height: "100%", top: 0 }),
           }}
@@ -168,7 +168,7 @@ const Table: FC<ITable> = ({
             backgroundColor: !selectedRows.length ? "inherit" : theme.palette.action.selected,
             display: "flex",
             justifyContent: "space-between",
-            ...(!stickyHeader ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
+            ...(!sticky ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
           }}
         >
           <Typography variant={TypographyVariants.title}>
@@ -192,14 +192,14 @@ const Table: FC<ITable> = ({
           </div>
         </MUIToolbar>
       )}
-      <MUITable size="small" stickyHeader={stickyHeader} style={{ tableLayout: "fixed" }}>
+      <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
             {internalColumns.map(({ label, padding, path, width }, index) => (
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
-                style={{ width, ...(!hideHeader && stickyHeader ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
+                style={{ width, ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
                 variant="head"
               >
                 {!onSortChange ? (
@@ -302,6 +302,16 @@ const Table: FC<ITable> = ({
           onChangeRowsPerPage={(event) => {
             const pageSize = parseInt(event.target.value, 10);
             onPageSizeChange && onPageSizeChange(0, pageSize);
+          }}
+          style={{
+            backgroundColor: "inherit",
+            ...(sticky
+              ? {
+                  borderTop: `1px solid ${theme.palette.divider}`,
+                  bottom: 0,
+                  position: "sticky",
+                }
+              : { position: "inherit" }),
           }}
         />
       )}

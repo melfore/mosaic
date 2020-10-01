@@ -91,7 +91,7 @@ export const Canvas = () => (
       { name: "Luis", age: 78 },
     ]}
     rowsTotal={number("rowsTotal", 5)}
-    stickyHeader={boolean("stickyHeader", false)}
+    sticky={boolean("sticky", false)}
     title={text("title", "Table Title")}
   />
 );
@@ -175,13 +175,15 @@ export const NoData = () => (
   />
 );
 
-export const StickyHeader = () => (
+export const Sticky = () => (
   <Table
     columns={[
       { label: "Name", path: "name" },
       { label: "Age", path: "age" },
     ]}
     height="500px"
+    onPageChange={(page: number) => {}}
+    onPageSizeChange={(pageSize: number) => {}}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },
@@ -204,8 +206,8 @@ export const StickyHeader = () => (
       { name: "Joey", age: 29 },
       { name: "Luis", age: 78 },
     ]}
-    stickyHeader
-    title="Sticky Header"
+    sticky
+    title="Sticky"
   />
 );
 

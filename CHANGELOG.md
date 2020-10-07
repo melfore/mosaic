@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/melfore/mosaic/compare/v2.0.0...v2.1.0) (2020-10-07)
+
+
+### Features
+
+* 🎸 Added Power icon ([f3fa8b0](https://github.com/melfore/mosaic/commit/f3fa8b02af1f30688ce55f676f71dc45d6873826))
+* 🎸 Added power icon in type mapping enum ([6e62681](https://github.com/melfore/mosaic/commit/6e626815dd45e5da83c41b9587c4a1bf7679f837))
+
 # [2.0.0](https://github.com/melfore/mosaic/compare/v1.1.6...v2.0.0) (2020-10-01)
 
 

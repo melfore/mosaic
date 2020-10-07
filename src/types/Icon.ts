@@ -32,6 +32,7 @@ export enum Icons {
   open_new = "open_new",
   pause = "pause",
   play = "play",
+  power = "power",
   print = "print",
   refresh = "refresh",
   right = "right",

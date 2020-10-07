@@ -31,6 +31,7 @@ import MUIOpenInNew from "@material-ui/icons/OpenInNew";
 import MUIPauseIcon from "@material-ui/icons/Pause";
 import MUIPlayArrowIcon from "@material-ui/icons/PlayArrow";
 import MUIPlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
+import MUIPowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import MUIPrintIcon from "@material-ui/icons/Print";
 import MUIRefreshIcon from "@material-ui/icons/Refresh";
 import MUISaveIcon from "@material-ui/icons/Save";
@@ -75,6 +76,7 @@ export const iconsCatalog = {
   [Icons.open_new]: <MUIOpenInNew />,
   [Icons.pause]: <MUIPauseIcon />,
   [Icons.play]: <MUIPlayArrowIcon />,
+  [Icons.power]: <MUIPowerSettingsNewIcon />,
   [Icons.print]: <MUIPrintIcon />,
   [Icons.refresh]: <MUIRefreshIcon />,
   [Icons.right]: <MUIChevronRightIcon />,

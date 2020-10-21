@@ -16,7 +16,7 @@ import {
 
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
-import { ITable, TableActionPosition } from "../../types/Table";
+import { ITable, ITablePagination, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -41,6 +41,36 @@ export const SUBPARTS_MAP = {
   },
 };
 
+const TablePaginationActions: FC<ITablePagination> = ({ onPageChange, page = 0, pageSize = 10, rowsTotal = 0 }) => {
+  const theme = useTheme();
+
+  const lastPage = useMemo(() => {
+    if (!rowsTotal || !pageSize) {
+      return 0;
+    }
+
+    return Math.ceil(rowsTotal / pageSize) - 1;
+  }, [pageSize, rowsTotal]);
+
+  const pageChangeHandler = useCallback((page: number) => onPageChange && onPageChange(page), [onPageChange]);
+
+  return (
+    <div
+      style={{
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "space-between",
+        padding: `${theme.spacing(1)}px`,
+      }}
+    >
+      <IconButton disabled={!page} icon={Icons.first} onClick={() => pageChangeHandler(0)} />
+      <IconButton disabled={!page} icon={Icons.left} onClick={() => pageChangeHandler(page - 1)} />
+      <IconButton disabled={page >= lastPage} icon={Icons.right} onClick={() => pageChangeHandler(page + 1)} />
+      <IconButton disabled={page >= lastPage} icon={Icons.last} onClick={() => pageChangeHandler(lastPage)} />
+    </div>
+  );
+};
+
 const Table: FC<ITable> = ({
   actions = [],
   columns,
@@ -57,7 +87,7 @@ const Table: FC<ITable> = ({
   page = 0,
   pageSize = 10,
   rows = [],
-  rowsTotal = undefined,
+  rowsTotal = 0,
   selectionFilter,
   sorting = { path: null, ordering: null },
   sticky = false,
@@ -290,11 +320,11 @@ const Table: FC<ITable> = ({
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
         <MUITablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          ActionsComponent={() => (
+            <TablePaginationActions onPageChange={onPageChange} page={page} pageSize={pageSize} rowsTotal={rowsTotal} />
+          )}
           component="div"
           count={rowsTotal || 0}
-          rowsPerPage={pageSize}
-          page={page}
           onChangePage={(event, page) => {
             suppressEvent(event);
             onPageChange && onPageChange(page);
@@ -303,6 +333,9 @@ const Table: FC<ITable> = ({
             const pageSize = parseInt(event.target.value, 10);
             onPageSizeChange && onPageSizeChange(0, pageSize);
           }}
+          page={page}
+          rowsPerPage={pageSize}
+          rowsPerPageOptions={[5, 10, 25]}
           style={{
             backgroundColor: "inherit",
             ...(sticky

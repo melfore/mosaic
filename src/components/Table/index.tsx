@@ -39,6 +39,10 @@ export const SUBPARTS_MAP = {
     label: "Action (with label)",
     value: (label = "{label}") => `action-${label}`,
   },
+  pagination: {
+    label: "Pagination (with label)",
+    value: (label = "{label}") => `pagination-${label}`,
+  },
 };
 
 const Table: FC<ITable> = ({
@@ -57,7 +61,7 @@ const Table: FC<ITable> = ({
   page = 0,
   pageSize = 10,
   rows = [],
-  rowsTotal = undefined,
+  rowsTotal = 0,
   selectionFilter,
   sorting = { path: null, ordering: null },
   sticky = false,
@@ -114,6 +118,45 @@ const Table: FC<ITable> = ({
       }),
     [internalRows, isRowSelected, onSelectionChange]
   );
+
+  const tablePaginationActions = useCallback(() => {
+    const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
+    return (
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          padding: `${theme.spacing(1)}px`,
+        }}
+      >
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
+          disabled={!page}
+          icon={Icons.first}
+          onClick={() => onPageChange && onPageChange(0)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
+          disabled={!page}
+          icon={Icons.left}
+          onClick={() => onPageChange && onPageChange(page - 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
+          disabled={page >= lastPage}
+          icon={Icons.right}
+          onClick={() => onPageChange && onPageChange(page + 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
+          disabled={page >= lastPage}
+          icon={Icons.last}
+          onClick={() => onPageChange && onPageChange(lastPage)}
+        />
+      </div>
+    );
+  }, [dataCy, onPageChange, page, pageSize, rowsTotal, theme]);
 
   const { defaultActions, internalColumns, rowActions, selectionActions } = useMemo(() => {
     let internalColumns = [...columns];
@@ -290,11 +333,9 @@ const Table: FC<ITable> = ({
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
         <MUITablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          ActionsComponent={() => tablePaginationActions()}
           component="div"
           count={rowsTotal || 0}
-          rowsPerPage={pageSize}
-          page={page}
           onChangePage={(event, page) => {
             suppressEvent(event);
             onPageChange && onPageChange(page);
@@ -303,6 +344,9 @@ const Table: FC<ITable> = ({
             const pageSize = parseInt(event.target.value, 10);
             onPageSizeChange && onPageSizeChange(0, pageSize);
           }}
+          page={page}
+          rowsPerPage={pageSize}
+          rowsPerPageOptions={[5, 10, 25]}
           style={{
             backgroundColor: "inherit",
             ...(sticky

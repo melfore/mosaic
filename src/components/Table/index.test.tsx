@@ -98,6 +98,27 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("pagination - links", () => {
+    const onPageChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      onPageChange,
+      pageSize: 3,
+      rowsTotal: defaultProps.rows.length,
+    });
+    const firstPageButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-pagination-first']`);
+    expect(firstPageButton.prop("disabled")).toBeTruthy();
+
+    const lastPageButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-pagination-last']`);
+    expect(lastPageButton.prop("disabled")).toBeFalsy();
+    lastPageButton.simulate("click");
+    expect(onPageChange).toHaveBeenCalledTimes(1);
+    expect(onPageChange).toHaveBeenCalledWith(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("pre-selection", () => {
     const { element } = getTableTestable({ ...defaultProps, selectionFilter: (d) => d.name.startsWith("P") });
 

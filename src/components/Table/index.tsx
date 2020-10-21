@@ -16,7 +16,7 @@ import {
 
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
-import { ITable, ITablePagination, TableActionPosition } from "../../types/Table";
+import { ITable, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -39,36 +39,10 @@ export const SUBPARTS_MAP = {
     label: "Action (with label)",
     value: (label = "{label}") => `action-${label}`,
   },
-};
-
-const TablePaginationActions: FC<ITablePagination> = ({ onPageChange, page = 0, pageSize = 10, rowsTotal = 0 }) => {
-  const theme = useTheme();
-
-  const lastPage = useMemo(() => {
-    if (!rowsTotal || !pageSize) {
-      return 0;
-    }
-
-    return Math.ceil(rowsTotal / pageSize) - 1;
-  }, [pageSize, rowsTotal]);
-
-  const pageChangeHandler = useCallback((page: number) => onPageChange && onPageChange(page), [onPageChange]);
-
-  return (
-    <div
-      style={{
-        alignItems: "center",
-        display: "flex",
-        justifyContent: "space-between",
-        padding: `${theme.spacing(1)}px`,
-      }}
-    >
-      <IconButton disabled={!page} icon={Icons.first} onClick={() => pageChangeHandler(0)} />
-      <IconButton disabled={!page} icon={Icons.left} onClick={() => pageChangeHandler(page - 1)} />
-      <IconButton disabled={page >= lastPage} icon={Icons.right} onClick={() => pageChangeHandler(page + 1)} />
-      <IconButton disabled={page >= lastPage} icon={Icons.last} onClick={() => pageChangeHandler(lastPage)} />
-    </div>
-  );
+  pagination: {
+    label: "Pagination (with label)",
+    value: (label = "{label}") => `action-${label}`,
+  },
 };
 
 const Table: FC<ITable> = ({
@@ -144,6 +118,45 @@ const Table: FC<ITable> = ({
       }),
     [internalRows, isRowSelected, onSelectionChange]
   );
+
+  const tablePaginationActions = useCallback(() => {
+    const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
+    return (
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          padding: `${theme.spacing(1)}px`,
+        }}
+      >
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
+          disabled={!page}
+          icon={Icons.first}
+          onClick={() => onPageChange && onPageChange(0)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
+          disabled={!page}
+          icon={Icons.left}
+          onClick={() => onPageChange && onPageChange(page - 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
+          disabled={page >= lastPage}
+          icon={Icons.right}
+          onClick={() => onPageChange && onPageChange(page + 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
+          disabled={page >= lastPage}
+          icon={Icons.last}
+          onClick={() => onPageChange && onPageChange(lastPage)}
+        />
+      </div>
+    );
+  }, [dataCy, onPageChange, page, pageSize, rowsTotal, theme]);
 
   const { defaultActions, internalColumns, rowActions, selectionActions } = useMemo(() => {
     let internalColumns = [...columns];
@@ -320,9 +333,7 @@ const Table: FC<ITable> = ({
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
         <MUITablePagination
-          ActionsComponent={() => (
-            <TablePaginationActions onPageChange={onPageChange} page={page} pageSize={pageSize} rowsTotal={rowsTotal} />
-          )}
+          ActionsComponent={() => tablePaginationActions()}
           component="div"
           count={rowsTotal || 0}
           onChangePage={(event, page) => {

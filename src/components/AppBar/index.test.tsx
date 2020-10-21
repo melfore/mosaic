@@ -103,4 +103,13 @@ describe("AppBar test suite:", () => {
     //   onClose={() => setUserMenuAnchor(null)}
     // >
   });
+
+  it("username", () => {
+    const onClick = jest.fn();
+    const username = "mos@ic";
+    const { wrapper } = getAppBarTestable({ userMenu: [{ label: "Logout", onClick }], username });
+    const userMenuButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-user-menu']`);
+    const userMenuButtonLabel = userMenuButton.find(".MuiButton-label");
+    expect(userMenuButtonLabel.text()).toEqual(username);
+  });
 });

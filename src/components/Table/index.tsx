@@ -215,7 +215,7 @@ const Table: FC<ITable> = ({
           }}
         >
           <Typography variant={TypographyVariants.title}>
-            {!selectedRows.length ? title : `${selectedRows.length} selected`}
+            {!selectedRows.length ? title : `${selectedRows.length} row(s) selected`}
           </Typography>
           <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
             {(!selectedRows.length ? defaultActions : selectionActions).map(

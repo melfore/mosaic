@@ -27,6 +27,7 @@ import Spacer from "../Spacer";
 import Typography from "../Typography";
 
 const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
 const ROW_ACTION_PATH = "row-actions";
 const TOOLBAR_DIMENSION = 64;
@@ -194,9 +195,11 @@ const Table: FC<ITable> = ({
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
               intermediate={!!selectedRows.length && selectedRows.length !== internalRows.length}
               onChange={(selected) => onBulkSelection(selected)}
+              size={CheckboxSize.small}
               value={selectedRows.length === internalRows.length}
             />
           ),
+          width: `${CHECKBOX_SELECTION_WIDTH}px`,
         },
         ...internalColumns,
       ];
@@ -273,11 +276,17 @@ const Table: FC<ITable> = ({
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
-                style={{ width, ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
+                style={{
+                  width,
+                  ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}),
+                  ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
+                }}
                 variant="head"
               >
-                {render ? (
-                  render({})
+                {path === CHECKBOX_SELECTION_PATH ? (
+                  !render ? null : (
+                    render({})
+                  )
                 ) : !onSortChange ? (
                   label
                 ) : (
@@ -322,7 +331,7 @@ const Table: FC<ITable> = ({
           ) : (
             internalRows.map(({ id, ...row }) => (
               <MUITableRow key={`row-${id}`}>
-                {internalColumns.map(({ padding, path, render }, columnIndex) => (
+                {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}
                     onClick={(event) => {
@@ -334,6 +343,10 @@ const Table: FC<ITable> = ({
                       onRowClick && onRowClick(row);
                     }}
                     padding={padding || "default"}
+                    style={{
+                      width,
+                      ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
+                    }}
                   >
                     {path === CHECKBOX_SELECTION_PATH ? (
                       <Checkbox

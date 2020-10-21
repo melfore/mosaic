@@ -43,6 +43,9 @@ export const SUBPARTS_MAP = {
     label: "Pagination (with label)",
     value: (label = "{label}") => `pagination-${label}`,
   },
+  selectAll: {
+    label: "Select All",
+  },
 };
 
 const Table: FC<ITable> = ({
@@ -101,6 +104,25 @@ const Table: FC<ITable> = ({
 
   const isRowSelected = useCallback((index: number) => selectedRows.includes(index), [selectedRows]);
 
+  const onBulkSelection = useCallback(
+    (selected: boolean) =>
+      setSelectedRows((selectedRows) => {
+        let rows = selectedRows;
+        if (!selected) {
+          rows = [];
+        } else {
+          rows = new Array(internalRows.length).fill(0).map((_, index) => index);
+        }
+
+        if (onSelectionChange) {
+          onSelectionChange(!selected ? [] : internalRows);
+        }
+
+        return rows;
+      }),
+    [internalRows, onSelectionChange]
+  );
+
   const onSelection = useCallback(
     (index: number) =>
       setSelectedRows((selectedRows) => {
@@ -114,6 +136,7 @@ const Table: FC<ITable> = ({
         if (onSelectionChange) {
           onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
         }
+
         return rows;
       }),
     [internalRows, isRowSelected, onSelectionChange]
@@ -166,6 +189,14 @@ const Table: FC<ITable> = ({
           label: "",
           padding: "checkbox",
           path: CHECKBOX_SELECTION_PATH,
+          render: () => (
+            <Checkbox
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
+              intermediate={!!selectedRows.length && selectedRows.length !== internalRows.length}
+              onChange={(selected) => onBulkSelection(selected)}
+              value={selectedRows.length === internalRows.length}
+            />
+          ),
         },
         ...internalColumns,
       ];
@@ -182,7 +213,7 @@ const Table: FC<ITable> = ({
     }
 
     return { defaultActions, internalColumns, rowActions, selectionActions };
-  }, [actions, columns, onSelectionChange]);
+  }, [actions, columns, dataCy, internalRows, selectedRows, onBulkSelection, onSelectionChange]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
@@ -238,14 +269,16 @@ const Table: FC<ITable> = ({
       <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {internalColumns.map(({ label, padding, path, width }, index) => (
+            {internalColumns.map(({ label, padding, path, render, width }, index) => (
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
                 style={{ width, ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
                 variant="head"
               >
-                {!onSortChange ? (
+                {render ? (
+                  render({})
+                ) : !onSortChange ? (
                   label
                 ) : (
                   <MUITableSortLabel

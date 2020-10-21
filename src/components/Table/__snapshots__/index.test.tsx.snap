@@ -62,7 +62,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           scope="col"
           style={
             Object {
-              "width": undefined,
+              "padding": "0 8px",
+              "width": "36px",
             }
           }
         >
@@ -97,7 +98,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               />
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -134,6 +135,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -181,6 +188,11 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -193,6 +205,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -240,6 +258,11 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -252,6 +275,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -299,6 +328,11 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -311,6 +345,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -358,6 +398,11 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -370,6 +415,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -417,6 +468,11 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -488,7 +544,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           scope="col"
           style={
             Object {
-              "width": undefined,
+              "padding": "0 8px",
+              "width": "36px",
             }
           }
         >
@@ -523,7 +580,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               />
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -563,6 +620,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -613,6 +676,11 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -625,6 +693,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -675,6 +749,11 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -687,6 +766,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -737,6 +822,11 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -749,6 +839,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -799,6 +895,11 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -811,6 +912,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "padding": "0 8px",
+              "width": "36px",
+            }
+          }
         >
           <span
             aria-disabled={false}
@@ -861,6 +968,11 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -952,6 +1064,11 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -964,6 +1081,11 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -976,6 +1098,11 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -988,6 +1115,11 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1000,6 +1132,11 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1091,6 +1228,11 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1103,6 +1245,11 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1115,6 +1262,11 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1127,6 +1279,11 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1139,6 +1296,11 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1271,6 +1433,11 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1283,6 +1450,11 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1295,6 +1467,11 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1307,6 +1484,11 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1319,6 +1501,11 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1382,6 +1569,11 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1394,6 +1586,11 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1406,6 +1603,11 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1418,6 +1620,11 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1430,6 +1637,11 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1521,6 +1733,11 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1533,6 +1750,11 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1545,6 +1767,11 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1557,6 +1784,11 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1569,6 +1801,11 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1701,6 +1938,11 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1713,6 +1955,11 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1725,6 +1972,11 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1737,6 +1989,11 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1749,6 +2006,11 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -1840,6 +2102,11 @@ exports[`Table test suite: pagination - links 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -1852,6 +2119,11 @@ exports[`Table test suite: pagination - links 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -1864,6 +2136,11 @@ exports[`Table test suite: pagination - links 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -1876,6 +2153,11 @@ exports[`Table test suite: pagination - links 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -1888,6 +2170,11 @@ exports[`Table test suite: pagination - links 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -2198,6 +2485,11 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -2210,6 +2502,11 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -2222,6 +2519,11 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -2234,6 +2536,11 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -2246,6 +2553,11 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -2337,6 +2649,11 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -2349,6 +2666,11 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -2361,6 +2683,11 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -2373,6 +2700,11 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -2385,6 +2717,11 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -2488,6 +2825,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -2495,6 +2837,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
         >
           <button
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2544,6 +2891,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -2551,6 +2903,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
         >
           <button
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2600,6 +2957,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -2607,6 +2969,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
         >
           <button
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2656,6 +3023,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -2663,6 +3035,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
         >
           <button
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2712,6 +3089,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>
@@ -2719,6 +3101,11 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
         >
           <button
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2850,6 +3237,11 @@ exports[`Table test suite: sticky 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Mosaic
         </td>
@@ -2862,6 +3254,11 @@ exports[`Table test suite: sticky 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Murales
         </td>
@@ -2874,6 +3271,11 @@ exports[`Table test suite: sticky 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Paintings
         </td>
@@ -2886,6 +3288,11 @@ exports[`Table test suite: sticky 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Photography
         </td>
@@ -2898,6 +3305,11 @@ exports[`Table test suite: sticky 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
           onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
         >
           Sculpture
         </td>

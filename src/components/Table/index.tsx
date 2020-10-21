@@ -41,7 +41,7 @@ export const SUBPARTS_MAP = {
   },
   pagination: {
     label: "Pagination (with label)",
-    value: (label = "{label}") => `action-${label}`,
+    value: (label = "{label}") => `pagination-${label}`,
   },
 };
 

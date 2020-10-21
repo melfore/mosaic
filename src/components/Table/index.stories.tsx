@@ -82,7 +82,7 @@ export const Canvas = () => (
     onSelectionChange={action("On Selection Change")}
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
-    pageSize={number("pageSize", 10)}
+    pageSize={number("pageSize", 5)}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },
@@ -90,7 +90,7 @@ export const Canvas = () => (
       { name: "Joey", age: 29 },
       { name: "Luis", age: 78 },
     ]}
-    rowsTotal={number("rowsTotal", 5)}
+    rowsTotal={number("rowsTotal", 10)}
     sticky={boolean("sticky", false)}
     title={text("title", "Table Title")}
   />

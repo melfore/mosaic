@@ -17,4 +17,5 @@ export interface IAppBar extends ILocalizable {
   onTitleClick?: () => void;
   title?: string;
   userMenu?: IUserMenu[];
+  username?: string;
 }

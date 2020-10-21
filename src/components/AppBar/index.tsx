@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useState } from "react";
+import React, { FC, Fragment, useMemo, useState } from "react";
 import {
   AppBar as MUIAppBar,
   Box as MUIBox,
@@ -9,10 +9,12 @@ import {
 
 import { IAppBar } from "../../types/AppBar";
 import { Color } from "../../types/Base";
+import { ButtonIconPosition } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
 
@@ -53,8 +55,34 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleClick, title, userMenu = [] }) => {
+const AppBar: FC<IAppBar> = ({
+  actions = [],
+  dataCy = "appbar",
+  menu,
+  onTitleClick,
+  title,
+  userMenu = [],
+  username,
+}) => {
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
+
+  const userMenuButton = useMemo(() => {
+    const userMenuDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon);
+    const userMenuIcon: Icons = Icons.account;
+    const userMenuOnClickCallback = () =>
+      setUserMenuAnchor(document.querySelector(`button[data-cy='${userMenuDataCy}']`));
+
+    return !username ? (
+      <IconButton color={Color.inherit} dataCy={userMenuDataCy} icon={userMenuIcon} onClick={userMenuOnClickCallback} />
+    ) : (
+      <Button
+        dataCy={userMenuDataCy}
+        icon={{ name: userMenuIcon, position: ButtonIconPosition.right }}
+        label={username}
+        onClick={userMenuOnClickCallback}
+      />
+    );
+  }, [dataCy, username]);
 
   return (
     <MUIAppBar data-cy={dataCy} position="sticky">
@@ -94,16 +122,7 @@ const AppBar: FC<IAppBar> = ({ actions = [], dataCy = "appbar", menu, onTitleCli
           ))}
           {userMenu && userMenu.length > 0 && (
             <Fragment>
-              <IconButton
-                color={Color.inherit}
-                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon)}
-                icon={Icons.account}
-                onClick={() =>
-                  setUserMenuAnchor(
-                    document.querySelector(`button[data-cy='${getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon)}']`)
-                  )
-                }
-              />
+              {userMenuButton}
               <MUIMenu
                 id={`${dataCy}-user-menu`}
                 anchorEl={userMenuAnchor}

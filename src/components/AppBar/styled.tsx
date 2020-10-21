@@ -4,6 +4,9 @@ export const StyledMUIToolbar = styled(MUIToolbar)({
   alignItems: "center",
   display: "flex",
   justifyContent: "space-between",
+  "& button[data-cy$='-user-menu']": {
+    textTransform: "lowercase",
+  },
 });
 
 export const TitleWrapper = styled(MUIBox)(({ theme }) => ({

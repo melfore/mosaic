@@ -355,16 +355,18 @@ const Table: FC<ITable> = ({
                         value={isRowSelected(id)}
                       />
                     ) : path === ROW_ACTION_PATH ? (
-                      rowActions.map(({ callback, disabled, icon, label }) => (
-                        <IconButton
-                          key={`action-${label}`}
-                          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                          disabled={disabled}
-                          icon={icon || Icons.settings}
-                          onClick={() => callback(row)}
-                          size={IconSize.small}
-                        />
-                      ))
+                      <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
+                        {rowActions.map(({ callback, disabled, icon, label }) => (
+                          <IconButton
+                            key={`action-${label}`}
+                            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                            disabled={disabled}
+                            icon={icon || Icons.settings}
+                            onClick={() => callback(row)}
+                            size={IconSize.small}
+                          />
+                        ))}
+                      </div>
                     ) : render ? (
                       render(row)
                     ) : (

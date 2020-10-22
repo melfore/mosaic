@@ -94,15 +94,6 @@ const Table: FC<ITable> = ({
     setSelectedRows(selectedRows);
   }, [getInternalRows, getSelectedRows, rows, selectionFilter]);
 
-  useEffect(() => {
-    if (!onSortChange) {
-      return;
-    }
-
-    const { path, ordering } = internalSorting;
-    onSortChange(path, ordering);
-  }, [internalSorting, onSortChange]);
-
   const isRowSelected = useCallback((index: number) => selectedRows.includes(index), [selectedRows]);
 
   const onBulkSelection = useCallback(
@@ -298,15 +289,18 @@ const Table: FC<ITable> = ({
                       const { path: sortingPath, ordering } = internalSorting;
                       if (!sortingPath || path !== sortingPath) {
                         setInternalSorting({ path, ordering: "asc" });
+                        onSortChange(path, "asc");
                         return;
                       }
 
                       if (path === sortingPath && ordering === "asc") {
                         setInternalSorting({ path, ordering: "desc" });
+                        onSortChange(path, "desc");
                         return;
                       }
 
                       setInternalSorting({ path: null, ordering: null });
+                      onSortChange(null, null);
                     }}
                   >
                     {label}

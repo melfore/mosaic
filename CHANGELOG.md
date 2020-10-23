@@ -1,3 +1,19 @@
+# [2.2.0](https://github.com/melfore/mosaic/compare/v2.1.0...v2.2.0) (2020-10-23)
+
+
+### Bug Fixes
+
+* 🐛 Fix row selection message ([e8193b8](https://github.com/melfore/mosaic/commit/e8193b830e86d4398ecdd1f4f523ceec32d7c4db))
+* 🐛 Improved Table loading state ([c6f488e](https://github.com/melfore/mosaic/commit/c6f488ef621bf82d97a5a0b29114808969e7b2c8))
+* 🐛 Removed effect for sort change ([535e501](https://github.com/melfore/mosaic/commit/535e501591a5d7e1fe1aa9abb8cc38af5b24f908))
+
+
+### Features
+
+* 🎸 Added first and last links for Table pagination ([0cfbcab](https://github.com/melfore/mosaic/commit/0cfbcab372bbd46f45173d941e836c72fa749f21))
+* 🎸 Added multiple selection in Table ([ae289c7](https://github.com/melfore/mosaic/commit/ae289c73d213147000dc91e71ab1c4a8d4855cfc))
+* 🎸 Added username display in AppBar component ([b5e1ca8](https://github.com/melfore/mosaic/commit/b5e1ca8f9e13f24e34a59400f42a310d06f51d4d))
+
 # [2.1.0](https://github.com/melfore/mosaic/compare/v2.0.0...v2.1.0) (2020-10-07)
 
 

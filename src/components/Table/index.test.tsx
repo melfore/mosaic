@@ -53,6 +53,38 @@ describe("Table test suite:", () => {
     });
   });
 
+  it("bulk selection - select all", () => {
+    const onSelectionChange = jest.fn();
+    const { element, wrapper } = getTableTestable({ ...defaultProps, onSelectionChange });
+    const bulkSelection = wrapper.find(`[data-cy='${DATA_CY_DEFAULT}-select-all']`);
+    const bulkSelectionInput = bulkSelection.find("input");
+    bulkSelectionInput.simulate("change", { target: { checked: true } });
+    expect(onSelectionChange).toHaveBeenCalledTimes(1);
+    expect(onSelectionChange).toHaveBeenCalledWith([
+      { id: 0, name: "Mosaic" },
+      { id: 1, name: "Murales" },
+      { id: 2, name: "Paintings" },
+      { id: 3, name: "Photography" },
+      { id: 4, name: "Sculpture" },
+    ]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("bulk selection - select none", () => {
+    const onSelectionChange = jest.fn();
+    const { element, wrapper } = getTableTestable({ ...defaultProps, onSelectionChange });
+    const bulkSelection = wrapper.find(`[data-cy='${DATA_CY_DEFAULT}-select-all']`);
+    const bulkSelectionInput = bulkSelection.find("input");
+    bulkSelectionInput.simulate("change", { target: { checked: false } });
+    expect(onSelectionChange).toHaveBeenCalledTimes(1);
+    expect(onSelectionChange).toHaveBeenCalledWith([]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("global action", () => {
     const callback = jest.fn();
     const label = "Account";
@@ -93,6 +125,27 @@ describe("Table test suite:", () => {
 
   it("loading", () => {
     const { element } = getTableTestable({ ...defaultProps, loading: true });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("pagination - links", () => {
+    const onPageChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      onPageChange,
+      pageSize: 3,
+      rowsTotal: defaultProps.rows.length,
+    });
+    const firstPageButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-pagination-first']`);
+    expect(firstPageButton.prop("disabled")).toBeTruthy();
+
+    const lastPageButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-pagination-last']`);
+    expect(lastPageButton.prop("disabled")).toBeFalsy();
+    lastPageButton.simulate("click");
+    expect(onPageChange).toHaveBeenCalledTimes(1);
+    expect(onPageChange).toHaveBeenCalledWith(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

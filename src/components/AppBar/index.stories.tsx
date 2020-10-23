@@ -35,6 +35,7 @@ export const Canvas = () => (
     onTitleClick={action("On Title Click")}
     title={text("title", "AppBar Title")}
     userMenu={[{ label: "Logout", onClick: action("On Logout") }]}
+    username={text("username", "mosaic")}
   />
 );
 
@@ -49,4 +50,15 @@ export const Localized = () => (
       />
     </IntlProviderMock>
   </StoriesWrapper>
+);
+
+export const WithUsername = () => (
+  <AppBar
+    title="Mosaic"
+    userMenu={[
+      { label: "View Details", onClick: action("View Details") },
+      { label: "Logout", onClick: action("Logout") },
+    ]}
+    username="mosaic@github.com"
+  />
 );

@@ -27,6 +27,7 @@ import Spacer from "../Spacer";
 import Typography from "../Typography";
 
 const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
 const ROW_ACTION_PATH = "row-actions";
 const TOOLBAR_DIMENSION = 64;
@@ -38,6 +39,13 @@ export const SUBPARTS_MAP = {
   action: {
     label: "Action (with label)",
     value: (label = "{label}") => `action-${label}`,
+  },
+  pagination: {
+    label: "Pagination (with label)",
+    value: (label = "{label}") => `pagination-${label}`,
+  },
+  selectAll: {
+    label: "Select All",
   },
 };
 
@@ -57,7 +65,7 @@ const Table: FC<ITable> = ({
   page = 0,
   pageSize = 10,
   rows = [],
-  rowsTotal = undefined,
+  rowsTotal = 0,
   selectionFilter,
   sorting = { path: null, ordering: null },
   sticky = false,
@@ -86,16 +94,26 @@ const Table: FC<ITable> = ({
     setSelectedRows(selectedRows);
   }, [getInternalRows, getSelectedRows, rows, selectionFilter]);
 
-  useEffect(() => {
-    if (!onSortChange) {
-      return;
-    }
-
-    const { path, ordering } = internalSorting;
-    onSortChange(path, ordering);
-  }, [internalSorting, onSortChange]);
-
   const isRowSelected = useCallback((index: number) => selectedRows.includes(index), [selectedRows]);
+
+  const onBulkSelection = useCallback(
+    (selected: boolean) =>
+      setSelectedRows((selectedRows) => {
+        let rows = selectedRows;
+        if (!selected) {
+          rows = [];
+        } else {
+          rows = new Array(internalRows.length).fill(0).map((_, index) => index);
+        }
+
+        if (onSelectionChange) {
+          onSelectionChange(!selected ? [] : internalRows);
+        }
+
+        return rows;
+      }),
+    [internalRows, onSelectionChange]
+  );
 
   const onSelection = useCallback(
     (index: number) =>
@@ -110,10 +128,50 @@ const Table: FC<ITable> = ({
         if (onSelectionChange) {
           onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
         }
+
         return rows;
       }),
     [internalRows, isRowSelected, onSelectionChange]
   );
+
+  const tablePaginationActions = useCallback(() => {
+    const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
+    return (
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          padding: `${theme.spacing(1)}px`,
+        }}
+      >
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
+          disabled={!page}
+          icon={Icons.first}
+          onClick={() => onPageChange && onPageChange(0)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
+          disabled={!page}
+          icon={Icons.left}
+          onClick={() => onPageChange && onPageChange(page - 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
+          disabled={page >= lastPage}
+          icon={Icons.right}
+          onClick={() => onPageChange && onPageChange(page + 1)}
+        />
+        <IconButton
+          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
+          disabled={page >= lastPage}
+          icon={Icons.last}
+          onClick={() => onPageChange && onPageChange(lastPage)}
+        />
+      </div>
+    );
+  }, [dataCy, onPageChange, page, pageSize, rowsTotal, theme]);
 
   const { defaultActions, internalColumns, rowActions, selectionActions } = useMemo(() => {
     let internalColumns = [...columns];
@@ -123,6 +181,16 @@ const Table: FC<ITable> = ({
           label: "",
           padding: "checkbox",
           path: CHECKBOX_SELECTION_PATH,
+          render: () => (
+            <Checkbox
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
+              intermediate={!!selectedRows.length && selectedRows.length !== rows.length}
+              onChange={(selected) => onBulkSelection(selected)}
+              size={CheckboxSize.small}
+              value={loading ? false : selectedRows.length === rows.length}
+            />
+          ),
+          width: `${CHECKBOX_SELECTION_WIDTH}px`,
         },
         ...internalColumns,
       ];
@@ -139,7 +207,7 @@ const Table: FC<ITable> = ({
     }
 
     return { defaultActions, internalColumns, rowActions, selectionActions };
-  }, [actions, columns, onSelectionChange]);
+  }, [actions, columns, dataCy, loading, rows, selectedRows, onBulkSelection, onSelectionChange]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
@@ -172,7 +240,7 @@ const Table: FC<ITable> = ({
           }}
         >
           <Typography variant={TypographyVariants.title}>
-            {!selectedRows.length ? title : `${selectedRows.length} selected`}
+            {!selectedRows.length ? title : `${selectedRows.length} row(s) selected`}
           </Typography>
           <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
             {(!selectedRows.length ? defaultActions : selectionActions).map(
@@ -195,14 +263,22 @@ const Table: FC<ITable> = ({
       <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {internalColumns.map(({ label, padding, path, width }, index) => (
+            {internalColumns.map(({ label, padding, path, render, width }, index) => (
               <MUITableCell
                 key={`column-${path || index}`}
                 padding={padding || "default"}
-                style={{ width, ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}) }}
+                style={{
+                  width,
+                  ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}),
+                  ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
+                }}
                 variant="head"
               >
-                {!onSortChange ? (
+                {path === CHECKBOX_SELECTION_PATH ? (
+                  !render ? null : (
+                    render({})
+                  )
+                ) : !onSortChange ? (
                   label
                 ) : (
                   <MUITableSortLabel
@@ -213,15 +289,18 @@ const Table: FC<ITable> = ({
                       const { path: sortingPath, ordering } = internalSorting;
                       if (!sortingPath || path !== sortingPath) {
                         setInternalSorting({ path, ordering: "asc" });
+                        onSortChange(path, "asc");
                         return;
                       }
 
                       if (path === sortingPath && ordering === "asc") {
                         setInternalSorting({ path, ordering: "desc" });
+                        onSortChange(path, "desc");
                         return;
                       }
 
                       setInternalSorting({ path: null, ordering: null });
+                      onSortChange(null, null);
                     }}
                   >
                     {label}
@@ -232,7 +311,7 @@ const Table: FC<ITable> = ({
           </MUITableRow>
         </MUITableHead>
         <MUITableBody>
-          {!internalRows.length ? (
+          {!loading && !rows.length ? (
             <MUITableRow key={`row-no-data`}>
               <MUITableCell
                 key={`column-no-data`}
@@ -246,7 +325,7 @@ const Table: FC<ITable> = ({
           ) : (
             internalRows.map(({ id, ...row }) => (
               <MUITableRow key={`row-${id}`}>
-                {internalColumns.map(({ padding, path, render }, columnIndex) => (
+                {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}
                     onClick={(event) => {
@@ -258,6 +337,10 @@ const Table: FC<ITable> = ({
                       onRowClick && onRowClick(row);
                     }}
                     padding={padding || "default"}
+                    style={{
+                      width,
+                      ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
+                    }}
                   >
                     {path === CHECKBOX_SELECTION_PATH ? (
                       <Checkbox
@@ -266,16 +349,18 @@ const Table: FC<ITable> = ({
                         value={isRowSelected(id)}
                       />
                     ) : path === ROW_ACTION_PATH ? (
-                      rowActions.map(({ callback, disabled, icon, label }) => (
-                        <IconButton
-                          key={`action-${label}`}
-                          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                          disabled={disabled}
-                          icon={icon || Icons.settings}
-                          onClick={() => callback(row)}
-                          size={IconSize.small}
-                        />
-                      ))
+                      <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
+                        {rowActions.map(({ callback, disabled, icon, label }) => (
+                          <IconButton
+                            key={`action-${label}`}
+                            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                            disabled={disabled}
+                            icon={icon || Icons.settings}
+                            onClick={() => callback(row)}
+                            size={IconSize.small}
+                          />
+                        ))}
+                      </div>
                     ) : render ? (
                       render(row)
                     ) : (
@@ -290,11 +375,9 @@ const Table: FC<ITable> = ({
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
         <MUITablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          ActionsComponent={() => tablePaginationActions()}
           component="div"
           count={rowsTotal || 0}
-          rowsPerPage={pageSize}
-          page={page}
           onChangePage={(event, page) => {
             suppressEvent(event);
             onPageChange && onPageChange(page);
@@ -303,6 +386,9 @@ const Table: FC<ITable> = ({
             const pageSize = parseInt(event.target.value, 10);
             onPageSizeChange && onPageSizeChange(0, pageSize);
           }}
+          page={page}
+          rowsPerPage={pageSize}
+          rowsPerPageOptions={[5, 10, 25]}
           style={{
             backgroundColor: "inherit",
             ...(sticky

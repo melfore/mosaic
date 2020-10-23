@@ -184,10 +184,10 @@ const Table: FC<ITable> = ({
           render: () => (
             <Checkbox
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
-              intermediate={!!selectedRows.length && selectedRows.length !== internalRows.length}
+              intermediate={!!selectedRows.length && selectedRows.length !== rows.length}
               onChange={(selected) => onBulkSelection(selected)}
               size={CheckboxSize.small}
-              value={selectedRows.length === internalRows.length}
+              value={loading ? false : selectedRows.length === rows.length}
             />
           ),
           width: `${CHECKBOX_SELECTION_WIDTH}px`,
@@ -207,7 +207,7 @@ const Table: FC<ITable> = ({
     }
 
     return { defaultActions, internalColumns, rowActions, selectionActions };
-  }, [actions, columns, dataCy, internalRows, selectedRows, onBulkSelection, onSelectionChange]);
+  }, [actions, columns, dataCy, loading, rows, selectedRows, onBulkSelection, onSelectionChange]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
@@ -311,7 +311,7 @@ const Table: FC<ITable> = ({
           </MUITableRow>
         </MUITableHead>
         <MUITableBody>
-          {!internalRows.length ? (
+          {!loading && !rows.length ? (
             <MUITableRow key={`row-no-data`}>
               <MUITableCell
                 key={`column-no-data`}

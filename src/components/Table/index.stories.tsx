@@ -378,3 +378,21 @@ export const WithSelectionActions = () => (
     />
   </StoriesWrapper>
 );
+
+export const WithRowBackground = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    getRowStyle={(row) => ({ backgroundColor: row.age > 40 ? "yellow" : "green" })}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="No Data"
+  />
+);

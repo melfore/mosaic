@@ -130,6 +130,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -200,6 +201,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -270,6 +272,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -340,6 +343,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -410,6 +414,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -615,6 +620,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -688,6 +694,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -761,6 +768,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -834,6 +842,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -907,6 +916,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -975,6 +985,207 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           Sculpture
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: complex column path 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Value
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          01
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          23
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          45
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          67
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          89
         </td>
       </tr>
     </tbody>
@@ -1059,6 +1270,7 @@ exports[`Table test suite: dataCy 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1076,6 +1288,7 @@ exports[`Table test suite: dataCy 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1093,6 +1306,7 @@ exports[`Table test suite: dataCy 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1110,6 +1324,7 @@ exports[`Table test suite: dataCy 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1127,6 +1342,7 @@ exports[`Table test suite: dataCy 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1223,6 +1439,7 @@ exports[`Table test suite: default 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1240,6 +1457,7 @@ exports[`Table test suite: default 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1257,6 +1475,7 @@ exports[`Table test suite: default 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1274,6 +1493,7 @@ exports[`Table test suite: default 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1291,6 +1511,7 @@ exports[`Table test suite: default 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1387,6 +1608,9 @@ exports[`Table test suite: global action 1`] = `
           </span>
           Account
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
     </div>
   </div>
@@ -1428,6 +1652,7 @@ exports[`Table test suite: global action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1445,6 +1670,7 @@ exports[`Table test suite: global action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1462,6 +1688,7 @@ exports[`Table test suite: global action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1479,6 +1706,7 @@ exports[`Table test suite: global action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1496,6 +1724,7 @@ exports[`Table test suite: global action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1564,6 +1793,7 @@ exports[`Table test suite: hide header 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1581,6 +1811,7 @@ exports[`Table test suite: hide header 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1598,6 +1829,7 @@ exports[`Table test suite: hide header 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1615,6 +1847,7 @@ exports[`Table test suite: hide header 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1632,6 +1865,7 @@ exports[`Table test suite: hide header 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1728,6 +1962,7 @@ exports[`Table test suite: immutable options 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1745,6 +1980,7 @@ exports[`Table test suite: immutable options 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1762,6 +1998,7 @@ exports[`Table test suite: immutable options 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1779,6 +2016,7 @@ exports[`Table test suite: immutable options 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1796,6 +2034,7 @@ exports[`Table test suite: immutable options 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1933,6 +2172,7 @@ exports[`Table test suite: loading 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1950,6 +2190,7 @@ exports[`Table test suite: loading 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1967,6 +2208,7 @@ exports[`Table test suite: loading 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -1984,6 +2226,7 @@ exports[`Table test suite: loading 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2001,6 +2244,7 @@ exports[`Table test suite: loading 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2097,6 +2341,7 @@ exports[`Table test suite: pagination - links 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2114,6 +2359,7 @@ exports[`Table test suite: pagination - links 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2131,6 +2377,7 @@ exports[`Table test suite: pagination - links 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2148,6 +2395,7 @@ exports[`Table test suite: pagination - links 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2165,6 +2413,7 @@ exports[`Table test suite: pagination - links 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2198,6 +2447,7 @@ exports[`Table test suite: pagination - links 1`] = `
       />
       <p
         className="MuiTypography-root MuiTablePagination-caption MuiTypography-body2 MuiTypography-colorInherit"
+        id="mui-72690"
       >
         Rows per page:
       </p>
@@ -2207,7 +2457,9 @@ exports[`Table test suite: pagination - links 1`] = `
       >
         <div
           aria-haspopup="listbox"
+          aria-labelledby="mui-72690 mui-25546"
           className="MuiSelect-root MuiSelect-select MuiTablePagination-select MuiSelect-selectMenu MuiInputBase-input"
+          id="mui-25546"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -2480,6 +2732,7 @@ exports[`Table test suite: pre-selection 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2497,6 +2750,7 @@ exports[`Table test suite: pre-selection 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2514,6 +2768,7 @@ exports[`Table test suite: pre-selection 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2531,6 +2786,7 @@ exports[`Table test suite: pre-selection 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2548,6 +2804,7 @@ exports[`Table test suite: pre-selection 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2644,6 +2901,7 @@ exports[`Table test suite: pre-sorting 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2661,6 +2919,7 @@ exports[`Table test suite: pre-sorting 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2678,6 +2937,7 @@ exports[`Table test suite: pre-sorting 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2695,6 +2955,7 @@ exports[`Table test suite: pre-sorting 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2712,6 +2973,7 @@ exports[`Table test suite: pre-sorting 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2820,6 +3082,7 @@ exports[`Table test suite: row action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2896,6 +3159,7 @@ exports[`Table test suite: row action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -2972,6 +3236,7 @@ exports[`Table test suite: row action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3048,6 +3313,7 @@ exports[`Table test suite: row action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3124,6 +3390,7 @@ exports[`Table test suite: row action 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3195,6 +3462,170 @@ exports[`Table test suite: row action 1`] = `
               />
             </button>
           </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: row style 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Name
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
         </td>
       </tr>
     </tbody>
@@ -3282,6 +3713,7 @@ exports[`Table test suite: sticky 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3299,6 +3731,7 @@ exports[`Table test suite: sticky 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3316,6 +3749,7 @@ exports[`Table test suite: sticky 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3333,6 +3767,7 @@ exports[`Table test suite: sticky 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}
@@ -3350,6 +3785,7 @@ exports[`Table test suite: sticky 1`] = `
       <tr
         className="MuiTableRow-root"
         role={null}
+        style={Object {}}
       >
         <td
           aria-sort={null}

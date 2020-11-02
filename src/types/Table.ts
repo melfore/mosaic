@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 import { ILocalizable } from "./Base";
 import { Icons } from "./Icon";
@@ -30,6 +30,7 @@ export interface ITable extends ILocalizable {
   actions?: ITableAction[];
   columns: ITableColumn[];
   emptyState?: ReactNode;
+  getRowStyle?: (data: any) => CSSProperties;
   height?: number | string;
   hideHeader?: boolean;
   loading?: boolean;

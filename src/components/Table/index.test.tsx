@@ -202,6 +202,15 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("row style", () => {
+    const getRowStyle = jest.fn();
+    const { element } = getTableTestable({ ...defaultProps, getRowStyle });
+    expect(getRowStyle).toHaveBeenCalledTimes(defaultProps.rows.length * 2);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("sticky", () => {
     const { element } = getTableTestable({ ...defaultProps, sticky: true });
 

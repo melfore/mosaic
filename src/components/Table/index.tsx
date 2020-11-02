@@ -54,6 +54,7 @@ const Table: FC<ITable> = ({
   columns,
   dataCy = DATA_CY_DEFAULT,
   emptyState,
+  getRowStyle,
   height = "100%",
   hideHeader = false,
   loading = false,
@@ -324,7 +325,7 @@ const Table: FC<ITable> = ({
             </MUITableRow>
           ) : (
             internalRows.map(({ id, ...row }) => (
-              <MUITableRow key={`row-${id}`}>
+              <MUITableRow key={`row-${id}`} style={getRowStyle ? getRowStyle(row) : {}}>
                 {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}

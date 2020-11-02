@@ -85,6 +85,28 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("complex column path", () => {
+    const rows = [
+      { data: { value: "01" } },
+      {},
+      { data: { value: "23" } },
+      { data: { value: "45" } },
+      { data: { value: "67" } },
+      { data: null },
+      { data: { value: "89" } },
+    ];
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      columns: [{ label: "Value", path: "data.value" }],
+      rows,
+    });
+    const dataCells = wrapper.find("td.MuiTableCell-root");
+    dataCells.forEach((dataCell, index) => expect(dataCell.text()).toEqual(rows[index].data?.value || ""));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("global action", () => {
     const callback = jest.fn();
     const label = "Account";

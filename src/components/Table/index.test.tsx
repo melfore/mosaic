@@ -154,7 +154,7 @@ describe("Table test suite:", () => {
 
   it("pagination - links", () => {
     const onPageChange = jest.fn();
-    const { element, wrapper } = getTableTestable({
+    const { wrapper } = getTableTestable({
       ...defaultProps,
       onPageChange,
       pageSize: 3,
@@ -168,9 +168,6 @@ describe("Table test suite:", () => {
     lastPageButton.simulate("click");
     expect(onPageChange).toHaveBeenCalledTimes(1);
     expect(onPageChange).toHaveBeenCalledWith(1);
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("pre-selection", () => {

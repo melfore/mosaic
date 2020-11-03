@@ -1,3 +1,11 @@
+# [2.3.0](https://github.com/melfore/mosaic/compare/v2.2.0...v2.3.0) (2020-11-03)
+
+
+### Features
+
+* 🎸 Added getRowStyle method in Table interface ([e6edcaa](https://github.com/melfore/mosaic/commit/e6edcaa85d2e2161e88e678a4f4126f91695836f))
+* 🎸 Added support for nested paths in Table ([702733f](https://github.com/melfore/mosaic/commit/702733f6e505a04d4b9977b81297a482269d9c56))
+
 # [2.2.0](https://github.com/melfore/mosaic/compare/v2.1.0...v2.2.0) (2020-10-23)
 
 

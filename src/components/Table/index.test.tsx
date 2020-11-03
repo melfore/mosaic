@@ -85,6 +85,28 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("complex column path", () => {
+    const rows = [
+      { data: { value: "01" } },
+      {},
+      { data: { value: "23" } },
+      { data: { value: "45" } },
+      { data: { value: "67" } },
+      { data: null },
+      { data: { value: "89" } },
+    ];
+    const { element, wrapper } = getTableTestable({
+      ...defaultProps,
+      columns: [{ label: "Value", path: "data.value" }],
+      rows,
+    });
+    const dataCells = wrapper.find("td.MuiTableCell-root");
+    dataCells.forEach((dataCell, index) => expect(dataCell.text()).toEqual(rows[index].data?.value || ""));
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("global action", () => {
     const callback = jest.fn();
     const label = "Account";
@@ -132,7 +154,7 @@ describe("Table test suite:", () => {
 
   it("pagination - links", () => {
     const onPageChange = jest.fn();
-    const { element, wrapper } = getTableTestable({
+    const { wrapper } = getTableTestable({
       ...defaultProps,
       onPageChange,
       pageSize: 3,
@@ -146,9 +168,6 @@ describe("Table test suite:", () => {
     lastPageButton.simulate("click");
     expect(onPageChange).toHaveBeenCalledTimes(1);
     expect(onPageChange).toHaveBeenCalledWith(1);
-
-    const snapshotWrapper = renderer.create(element).toJSON();
-    expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("pre-selection", () => {
@@ -175,6 +194,15 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-${label}']`).first();
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("row style", () => {
+    const getRowStyle = jest.fn();
+    const { element } = getTableTestable({ ...defaultProps, getRowStyle });
+    expect(getRowStyle).toHaveBeenCalledTimes(defaultProps.rows.length * 2);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

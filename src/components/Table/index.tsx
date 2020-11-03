@@ -18,7 +18,7 @@ import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
 import { ITable, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
-import { getComposedDataCy, suppressEvent } from "../../utils";
+import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
@@ -54,6 +54,7 @@ const Table: FC<ITable> = ({
   columns,
   dataCy = DATA_CY_DEFAULT,
   emptyState,
+  getRowStyle,
   height = "100%",
   hideHeader = false,
   loading = false,
@@ -324,7 +325,7 @@ const Table: FC<ITable> = ({
             </MUITableRow>
           ) : (
             internalRows.map(({ id, ...row }) => (
-              <MUITableRow key={`row-${id}`}>
+              <MUITableRow key={`row-${id}`} style={getRowStyle ? getRowStyle(row) : {}}>
                 {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}
@@ -364,7 +365,7 @@ const Table: FC<ITable> = ({
                     ) : render ? (
                       render(row)
                     ) : (
-                      row[path]
+                      getObjectProperty(row, path)
                     )}
                   </MUITableCell>
                 ))}

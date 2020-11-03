@@ -101,13 +101,14 @@ export const Basic = () => (
     columns={[
       { label: "Name", path: "name" },
       { label: "Age", path: "age" },
+      { label: "Role", path: "info.role" },
     ]}
     rows={[
-      { name: "John", age: 35 },
-      { name: "Nick", age: 45 },
-      { name: "Emma", age: 32 },
-      { name: "Joey", age: 29 },
-      { name: "Luis", age: 78 },
+      { name: "John", age: 35, info: { role: "Developer" } },
+      { name: "Nick", age: 45, info: { role: "Manager" } },
+      { name: "Emma", age: 32, info: { role: "Designer" } },
+      { name: "Joey", age: 29, info: { role: "Tester" } },
+      { name: "Luis", age: 78, info: { role: "Developer" } },
     ]}
     title="Basic"
   />
@@ -376,4 +377,22 @@ export const WithSelectionActions = () => (
       title="Selection Actions"
     />
   </StoriesWrapper>
+);
+
+export const WithRowBackground = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    getRowStyle={(row) => ({ backgroundColor: row.age > 40 ? "yellow" : "green" })}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="No Data"
+  />
 );

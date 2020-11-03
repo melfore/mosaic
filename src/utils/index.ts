@@ -27,6 +27,25 @@ export const getAllComposedDataCy = (subpartMap: ISubpartMap): ISubpartSuffix[] 
     suffix: !value ? slugify(label) : value(),
   }));
 
+export const getObjectProperty = (object: any, path: string): any => {
+  if (!object) {
+    return undefined;
+  }
+
+  if (!path.includes(".")) {
+    return object[path];
+  }
+
+  const pathParts = path.split(".");
+  const basePath = pathParts[0];
+  if (!object[basePath]) {
+    return undefined;
+  }
+
+  const baseObject = object[basePath];
+  return getObjectProperty(baseObject, path.replace(`${basePath}.`, ""));
+};
+
 export const slugify = (value: string) =>
   value
     .toLowerCase()

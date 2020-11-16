@@ -23,6 +23,7 @@ const Switch: FC<ISwitch> = ({
   onChange,
   required = false,
   size = SwitchSize.default,
+  style,
   value = false,
 }) => {
   const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
@@ -31,13 +32,14 @@ const Switch: FC<ISwitch> = ({
     <MUIFormControlLabel
       control={
         <MUISwitch
+          checked={value}
           color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.input)}
-          checked={value}
+          disabled={disabled}
           onChange={onChangeHandler}
           required={required}
           size={size}
-          disabled={disabled}
+          style={style}
         />
       }
       data-cy={dataCy}

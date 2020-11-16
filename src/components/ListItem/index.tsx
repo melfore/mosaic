@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { CSSProperties, FC } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
@@ -31,7 +31,10 @@ const ListItem: FC<IListItem> = ({
   loading = false,
   onClick,
   selected = false,
+  style,
 }) => {
+  const baseStyle: CSSProperties = { cursor: !loading && onClick ? "pointer" : "default" };
+
   return (
     <MUIListItem
       data-cy={dataCy}
@@ -45,7 +48,7 @@ const ListItem: FC<IListItem> = ({
         onClick && onClick();
       }}
       selected={!loading && selected}
-      style={{ cursor: !loading && onClick ? "pointer" : "default" }}
+      style={{ ...baseStyle, ...style }}
     >
       {icon && (
         <MUIListItemIcon>

@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
 import Typography from "../Typography";
 
 import ListItemCollapsible, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -38,36 +38,25 @@ export const Canvas = () => (
   />
 );
 
-export const Basic = () => (
-  <StoriesWrapper>
-    <ListItemCollapsible header={<Typography>Collapsible List Item</Typography>} />
-  </StoriesWrapper>
+export const Basic = () => <ListItemCollapsible header={<Typography>Collapsible List Item</Typography>} />;
+
+export const CustomStyle = () => (
+  <ListItemCollapsible
+    header={<Typography>Custom Style</Typography>}
+    style={{ backgroundColor: "red", color: "white" }}
+  />
 );
 
-export const Dense = () => (
-  <StoriesWrapper>
-    <ListItemCollapsible dense header={<Typography>Collapsible List Item</Typography>} />
-  </StoriesWrapper>
-);
+export const Dense = () => <ListItemCollapsible dense header={<Typography>Collapsible List Item</Typography>} />;
 
-export const Loading = () => (
-  <StoriesWrapper>
-    <ListItemCollapsible loading header={<Typography>Collapsible List Item</Typography>} />
-  </StoriesWrapper>
-);
+export const Loading = () => <ListItemCollapsible loading header={<Typography>Collapsible List Item</Typography>} />;
 
-export const Selected = () => (
-  <StoriesWrapper>
-    <ListItemCollapsible selected header={<Typography>Collapsible List Item</Typography>} />
-  </StoriesWrapper>
-);
+export const Selected = () => <ListItemCollapsible selected header={<Typography>Collapsible List Item</Typography>} />;
 
 export const Open = () => (
-  <StoriesWrapper>
-    <ListItemCollapsible open selected header={<Typography>Collapsible List Item</Typography>}>
-      <div style={{ border: "1px solid #ccc", padding: "16px" }}>
-        <Typography children="Collapsible content is now expanded" />
-      </div>
-    </ListItemCollapsible>
-  </StoriesWrapper>
+  <ListItemCollapsible open selected header={<Typography>Collapsible List Item</Typography>}>
+    <div style={{ border: "1px solid #ccc", padding: "16px" }}>
+      <Typography children="Collapsible content is now expanded" />
+    </div>
+  </ListItemCollapsible>
 );

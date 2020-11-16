@@ -31,6 +31,10 @@ export const Canvas = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <IconButton icon={Icons.add} onClick={() => {}} style={{ backgroundColor: "red", color: "white" }} />
+);
+
 export const Disabled = () => (
   <StoriesWrapper>
     <IconButton icon={Icons.add} onClick={() => {}} />

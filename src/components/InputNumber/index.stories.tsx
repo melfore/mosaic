@@ -48,55 +48,52 @@ export const Canvas = () => (
   </FormMock>
 );
 
-export const Bounded = () => (
-  <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Bounded 0-9" minValue={0} maxValue={9} required value={5} />
-  </StoriesWrapper>
+export const Bounded = () => <InputNumber label="Bounded 0-9" minValue={0} maxValue={9} required value={5} />;
+
+export const CustomStyle = () => (
+  <InputNumber
+    label="Custom Style"
+    minValue={0}
+    maxValue={9}
+    required
+    style={{ color: "red", fontWeight: "bold", fontSize: "large", textAlign: "center" }}
+    value={5}
+  />
 );
 
-export const DefaultNull = () => (
-  <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Default null" />
-  </StoriesWrapper>
-);
+export const DefaultNull = () => <InputNumber label="Default null" />;
 
 export const IntegerAndFloat = () => (
   <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Integer" value={5} />
-    <InputNumber dataCy="input-number" integer={false} label="Float" value={5.5} />
+    <InputNumber label="Integer" value={5} />
+    <InputNumber integer={false} label="Float" value={5.5} />
   </StoriesWrapper>
 );
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <InputNumber
-        label={MessageMock.inputNumber}
-        localized
-        onChange={action("Click on Button")}
-        placeholder={MessageMock.inputNumber}
-      />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <InputNumber
+      label={MessageMock.inputNumber}
+      localized
+      onChange={action("Click on Button")}
+      placeholder={MessageMock.inputNumber}
+    />
+  </IntlProviderMock>
 );
 
-export const Required = () => (
-  <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Required" required value={10} />
-  </StoriesWrapper>
-);
+export const Required = () => <InputNumber label="Required" required value={10} />;
 
 export const Size = () => (
   <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Default" value={10} />
-    <InputNumber dataCy="input-number" label="Small" size={InputSize.small} value={10} />
+    <InputNumber label="Default" value={10} />
+    <InputNumber label="Small" size={InputSize.small} value={10} />
   </StoriesWrapper>
 );
 
 export const Variant = () => (
   <StoriesWrapper>
-    <InputNumber dataCy="input-number" label="Default" value={10} />
-    <InputNumber dataCy="input-number" label="Filled" variant={InputVariant.filled} value={10} />
+    <InputNumber label="Default" value={10} />
+    <InputNumber label="Filled" variant={InputVariant.filled} value={10} />
   </StoriesWrapper>
 );

@@ -45,44 +45,44 @@ export const Canvas = () => (
   </FormMock>
 );
 
+export const CustomStyle = () => <Checkbox style={{ backgroundColor: "red", color: "white" }} value />;
+
 export const Disabled = () => (
   <StoriesWrapper>
-    <Checkbox dataCy={"checkbox"} value={false} disabled />
-    <Checkbox dataCy={"checkbox"} value={true} disabled />
-    <Checkbox dataCy={"checkbox"} intermediate disabled />
+    <Checkbox disabled />
+    <Checkbox disabled value />
+    <Checkbox disabled intermediate />
   </StoriesWrapper>
 );
 
 export const Label = () => (
   <StoriesWrapper>
-    <Checkbox label="Checkbox" value={false} />
-    <Checkbox label="Checkbox" labelPlacement="end" value={true} />
+    <Checkbox label="Checkbox" />
+    <Checkbox label="Checkbox" labelPlacement="end" value />
   </StoriesWrapper>
 );
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Checkbox label={MessageMock.checkbox} localized />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Checkbox label={MessageMock.checkbox} localized />
+  </IntlProviderMock>
 );
 
 export const Size = () => (
   <StoriesWrapper>
-    <Checkbox dataCy={"checkbox-identifier"} value={true} />
-    <Checkbox dataCy={"checkbox-identifier"} value={true} size={CheckboxSize.small} />
-    <Checkbox dataCy={"checkbox-identifier"} value={false} />
-    <Checkbox dataCy={"checkbox-identifier"} value={false} size={CheckboxSize.small} />
+    <Checkbox value />
+    <Checkbox value size={CheckboxSize.small} />
+    <Checkbox />
+    <Checkbox size={CheckboxSize.small} />
   </StoriesWrapper>
 );
 
 export const Values = () => (
   <StoriesWrapper>
-    <Checkbox dataCy={"checkbox-identifier"} value={false} onChange={() => {}} />
-    <Checkbox dataCy={"checkbox-identifier"} value={true} onChange={() => {}} />
-    <Checkbox dataCy={"checkbox-identifier"} value={false} intermediate onChange={() => {}} />
-    <Checkbox dataCy={"checkbox-identifier"} value={true} intermediate onChange={() => {}} />
+    <Checkbox onChange={() => {}} />
+    <Checkbox value onChange={() => {}} />
+    <Checkbox intermediate onChange={() => {}} />
+    <Checkbox value intermediate onChange={() => {}} />
   </StoriesWrapper>
 );

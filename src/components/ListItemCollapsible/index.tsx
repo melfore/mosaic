@@ -28,6 +28,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
   open = false,
   openTimeout = "auto",
   selected = false,
+  style,
   unmountContent = false,
 }) => {
   return (
@@ -39,6 +40,7 @@ const ListItemCollapsible: FC<IListItemCollapsible> = ({
         loading={loading}
         onClick={onClick}
         selected={selected}
+        style={style}
       >
         {header}
       </ListItem>

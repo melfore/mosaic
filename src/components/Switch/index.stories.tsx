@@ -32,7 +32,7 @@ export const Canvas = () => (
   // In a real case scenario "onChange" and "value" props must be passed to Switch
   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change switch")}>
     <Switch
-      dataCy={text("data-cy", "switch-identifier")}
+      dataCy={text("data-cy", "switch")}
       label={text("label", "Switch")}
       labelPlacement={select("labelPlacement", ["end", "start"], "start")}
       onChange={action("Change switch")}
@@ -41,41 +41,41 @@ export const Canvas = () => (
   </FormMock>
 );
 
+export const CustomStyle = () => <Switch style={{ color: "red" }} value />;
+
 export const Disabled = () => (
   <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={false} disabled />
-    <Switch dataCy={"switch-identifier"} value={true} disabled />
+    <Switch disabled />
+    <Switch value disabled />
   </StoriesWrapper>
 );
 
 export const Label = () => (
   <StoriesWrapper>
-    <Switch label="Switch" value={false} />
-    <Switch label="Switch" labelPlacement="end" value={true} />
+    <Switch label="Switch" />
+    <Switch label="Switch" labelPlacement="end" value />
   </StoriesWrapper>
 );
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Switch label={MessageMock.switch} localized />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Switch label={MessageMock.switch} localized />
+  </IntlProviderMock>
 );
 
 export const Size = () => (
   <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={true} />
-    <Switch dataCy={"switch-identifier"} value={true} size={SwitchSize.small} />
-    <Switch dataCy={"switch-identifier"} value={false} />
-    <Switch dataCy={"switch-identifier"} value={false} size={SwitchSize.small} />
+    <Switch value />
+    <Switch value size={SwitchSize.small} />
+    <Switch />
+    <Switch size={SwitchSize.small} />
   </StoriesWrapper>
 );
 
 export const Values = () => (
   <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={false} onChange={() => {}} />
-    <Switch dataCy={"switch-identifier"} value={true} onChange={() => {}} />
+    <Switch onChange={() => {}} />
+    <Switch value onChange={() => {}} />
   </StoriesWrapper>
 );

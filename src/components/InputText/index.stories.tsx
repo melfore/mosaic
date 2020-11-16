@@ -28,7 +28,6 @@ export default {
 export const Canvas = () => (
   <InputText
     adornment={object("adornment", undefined)}
-    dataCy="input-text"
     disabled={boolean("disabled", false)}
     initialValue={text("initialValue", "")}
     label={text("label", "Label")}
@@ -43,31 +42,36 @@ export const Canvas = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <InputText
+    initialValue="Some text"
+    label="Custom Style"
+    style={{ color: "red", fontWeight: "bold", fontSize: "large", textAlign: "center" }}
+  />
+);
+
 export const Disabled = () => (
   <StoriesWrapper>
-    <InputText dataCy="input-text" disabled label="Label" />
-    <InputText dataCy="input-text" disabled initialValue="Disabled" label="Label" />
+    <InputText disabled label="Label" />
+    <InputText disabled initialValue="Disabled" label="Label" />
   </StoriesWrapper>
 );
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <InputText
-        label={MessageMock.inputText}
-        localized
-        onChange={action("Click on Button")}
-        placeholder={MessageMock.inputText}
-      />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <InputText
+      label={MessageMock.inputText}
+      localized
+      onChange={action("Click on Button")}
+      placeholder={MessageMock.inputText}
+    />
+  </IntlProviderMock>
 );
 
 export const Multiline = () => (
   <StoriesWrapper>
     <InputText
-      dataCy="input-text"
       initialValue="Multiline by one"
       label="Label"
       multiline={{
@@ -75,7 +79,6 @@ export const Multiline = () => (
       }}
     />
     <InputText
-      dataCy="input-text"
       initialValue="Multiline by three"
       label="Label"
       multiline={{
@@ -83,7 +86,6 @@ export const Multiline = () => (
       }}
     />
     <InputText
-      dataCy="input-text"
       initialValue="Multiline max five, broken in MUI"
       label="Label"
       multiline={{
@@ -94,45 +96,31 @@ export const Multiline = () => (
   </StoriesWrapper>
 );
 
-export const Required = () => (
-  <StoriesWrapper>
-    <InputText dataCy="input-text" initialValue="Required" label="Label" required />
-  </StoriesWrapper>
-);
+export const Required = () => <InputText initialValue="Required" label="Label" required />;
 
 export const Size = () => (
   <StoriesWrapper>
-    <InputText dataCy="input-text" initialValue="Default" label="Label" />
-    <InputText dataCy="input-text" initialValue="Small" label="Label" size={InputSize.small} />
+    <InputText initialValue="Default" label="Label" />
+    <InputText initialValue="Small" label="Label" size={InputSize.small} />
   </StoriesWrapper>
 );
 
 export const Variant = () => (
   <StoriesWrapper>
-    <InputText dataCy="input-text" initialValue="Default" label="Label" />
-    <InputText dataCy="input-text" initialValue="Filled" label="Label" variant={InputVariant.filled} />
+    <InputText initialValue="Default" label="Label" />
+    <InputText initialValue="Filled" label="Label" variant={InputVariant.filled} />
   </StoriesWrapper>
 );
 
 export const WithAdornment = () => (
   <StoriesWrapper>
-    <InputText
-      adornment={{ icon: Icons.search }}
-      dataCy="input-text"
-      initialValue="Adornment used to render icon"
-      label="Label"
-    />
+    <InputText adornment={{ icon: Icons.search }} initialValue="Adornment used to render icon" label="Label" />
     <InputText
       adornment={{ icon: Icons.close, onClick: action("On Clear") }}
-      dataCy="input-text"
       initialValue="Adornment is clickable and triggers an action"
       label="Label"
     />
   </StoriesWrapper>
 );
 
-export const WithPlaceholder = () => (
-  <StoriesWrapper>
-    <InputText dataCy="input-text" placeholder="Type something..." label="Label" shrink />
-  </StoriesWrapper>
-);
+export const WithPlaceholder = () => <InputText placeholder="Type something..." label="Label" shrink />;

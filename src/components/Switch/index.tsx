@@ -19,6 +19,7 @@ const Switch: FC<ISwitch> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   label,
+  labelPlacement = "start",
   onChange,
   required = false,
   size = SwitchSize.default,
@@ -41,6 +42,7 @@ const Switch: FC<ISwitch> = ({
       }
       data-cy={dataCy}
       label={label}
+      labelPlacement={labelPlacement}
     />
   );
 };

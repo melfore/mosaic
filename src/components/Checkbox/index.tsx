@@ -21,6 +21,7 @@ const Checkbox: FC<ICheckbox> = ({
   disabled = false,
   intermediate = false,
   label,
+  labelPlacement = "start",
   onChange,
   required = false,
   size = CheckboxSize.default,
@@ -44,6 +45,7 @@ const Checkbox: FC<ICheckbox> = ({
       }
       data-cy={dataCy}
       label={label}
+      labelPlacement={labelPlacement}
     />
   );
 };

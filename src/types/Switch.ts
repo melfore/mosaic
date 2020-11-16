@@ -8,6 +8,7 @@ export enum SwitchSize {
 export interface ISwitch extends ILocalizable {
   disabled?: boolean;
   label?: string;
+  labelPlacement?: "end" | "start";
   onChange?: (checked: boolean) => any | void;
   required?: boolean;
   size?: SwitchSize;

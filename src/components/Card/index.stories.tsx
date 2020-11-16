@@ -5,7 +5,7 @@ import { boolean, select, text } from "@storybook/addon-knobs";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
@@ -60,61 +60,60 @@ export const Canvas = () => (
 );
 
 export const Basic = () => (
-  <StoriesWrapper>
-    <Card title="Mosaic">
-      <Typography>A mosaic is an artistic picture or design made out of any materials assembled together.</Typography>
-    </Card>
-  </StoriesWrapper>
+  <Card title="Mosaic">
+    <Typography>A mosaic is an artistic picture or design made out of any materials assembled together.</Typography>
+  </Card>
+);
+
+export const CustomStyle = () => (
+  <Card
+    icon={Icons.business}
+    style={{ backgroundColor: "red", color: "white" }}
+    subtitle="The best in town for components"
+    title="Mosaic Shop"
+  >
+    <Typography>Opening hours: 9AM - 6PM</Typography>
+  </Card>
 );
 
 export const Collapsible = () => (
-  <StoriesWrapper>
-    <Card
-      actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
-      collapsible={<Typography children="Discover our catalog!" />}
-      icon={Icons.business}
-      subtitle="The best in town for components"
-      title="Mosaic Shop"
-    >
-      <Typography>Opening hours: 9AM - 6PM</Typography>
-    </Card>
-  </StoriesWrapper>
+  <Card
+    actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
+    collapsible={<Typography children="Discover our catalog!" />}
+    icon={Icons.business}
+    subtitle="The best in town for components"
+    title="Mosaic Shop"
+  >
+    <Typography>Opening hours: 9AM - 6PM</Typography>
+  </Card>
 );
 
 export const Loading = () => (
-  <StoriesWrapper>
-    <Card icon={Icons.add} loading title="Mosaic">
-      <Typography>A mosaic is an artistic picture or design made out of any materials assembled together.</Typography>
-    </Card>
-  </StoriesWrapper>
+  <Card icon={Icons.add} loading title="Mosaic">
+    <Typography>A mosaic is an artistic picture or design made out of any materials assembled together.</Typography>
+  </Card>
 );
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Card icon={Icons.business} localized title={MessageMock.title} subtitle={MessageMock.subtitle} />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Card icon={Icons.business} localized title={MessageMock.title} subtitle={MessageMock.subtitle} />
+  </IntlProviderMock>
 );
 
 export const WithAvatar = () => (
-  <StoriesWrapper>
-    <Card icon={Icons.business} subtitle="The best in town for components" title="Mosaic Shop">
-      <Typography>Opening hours: 9AM - 6PM</Typography>
-    </Card>
-  </StoriesWrapper>
+  <Card icon={Icons.business} subtitle="The best in town for components" title="Mosaic Shop">
+    <Typography>Opening hours: 9AM - 6PM</Typography>
+  </Card>
 );
 
 export const WithActions = () => (
-  <StoriesWrapper>
-    <Card
-      actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
-      icon={Icons.business}
-      subtitle="The best in town for components"
-      title="Mosaic Shop"
-    >
-      <Typography>Opening hours: 9AM - 6PM</Typography>
-    </Card>
-  </StoriesWrapper>
+  <Card
+    actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
+    icon={Icons.business}
+    subtitle="The best in town for components"
+    title="Mosaic Shop"
+  >
+    <Typography>Opening hours: 9AM - 6PM</Typography>
+  </Card>
 );

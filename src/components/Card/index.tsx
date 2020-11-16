@@ -1,5 +1,13 @@
 import React, { cloneElement, FC, Fragment, useMemo, useState } from "react";
-import { Collapse as MUICollapse, useTheme } from "@material-ui/core";
+import {
+  Box as MUIBox,
+  Card as MUICard,
+  CardActions as MUICardActions,
+  CardContent as MUICardContent,
+  CardHeader as MUICardHeader,
+  Collapse as MUICollapse,
+  useTheme,
+} from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { ICard } from "../../types/Card";
@@ -10,14 +18,6 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Avatar from "../Avatar";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-
-import {
-  ActionsWrapper,
-  StyledMUICard,
-  StyledMUICardActions,
-  StyledMUICardContent,
-  StyledMUICardHeader,
-} from "./styled";
 
 export const DATA_CY_DEFAULT = "card";
 export const DATA_CY_SHORTCUT = "title";
@@ -50,11 +50,12 @@ export const SUBPARTS_MAP = {
 const Card: FC<ICard> = ({
   actions = [],
   children,
-  collapsible = undefined,
+  collapsible,
   dataCy = DATA_CY_DEFAULT,
-  icon = undefined,
+  icon,
   loading = false,
-  subtitle = undefined,
+  style,
+  subtitle,
   title,
   unmountCollapsible = false,
 }) => {
@@ -63,7 +64,7 @@ const Card: FC<ICard> = ({
 
   const cardHeader = useMemo(
     () => (
-      <StyledMUICardHeader
+      <MUICardHeader
         avatar={
           icon && <Avatar dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.avatar)} icon={icon} loading={loading} />
         }
@@ -96,18 +97,36 @@ const Card: FC<ICard> = ({
   );
 
   return (
-    <StyledMUICard data-cy={dataCy}>
+    <MUICard
+      data-cy={dataCy}
+      style={{ margin: `${theme.spacing(2)}px`, width: `calc(100% - ${theme.spacing(4)}px)`, ...style }}
+    >
       {cardHeader}
-      <StyledMUICardContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)}>
+      <MUICardContent
+        data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)}
+        style={{ padding: `${theme.spacing(1)}px ${theme.spacing(2)}px` }}
+      >
         {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
-      </StyledMUICardContent>
+      </MUICardContent>
       {!loading && (
         <Fragment>
-          <StyledMUICardActions disableSpacing>
+          <MUICardActions
+            disableSpacing
+            style={{
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "space-between",
+              padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
+            }}
+          >
             {actions.length > 0 && (
-              <ActionsWrapper alignItems="center" display="flex">
-                {actions.map((action, index) => cloneElement(action, { key: `card-action-${index}` }))}
-              </ActionsWrapper>
+              <MUIBox alignItems="center" display="flex">
+                {actions.map((action, index) => (
+                  <MUIBox style={{ marginRight: `${theme.spacing(2)}px` }}>
+                    {cloneElement(action, { key: `card-action-${index}` })}{" "}
+                  </MUIBox>
+                ))}
+              </MUIBox>
             )}
             {collapsible && (
               <IconButton
@@ -116,17 +135,20 @@ const Card: FC<ICard> = ({
                 onClick={() => setExpanded(!expanded)}
               />
             )}
-          </StyledMUICardActions>
+          </MUICardActions>
           {collapsible && (
             <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
-              <StyledMUICardContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapsibleContent)}>
+              <MUICardContent
+                data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapsibleContent)}
+                style={{ padding: `${theme.spacing(1)}px ${theme.spacing(2)}px` }}
+              >
                 {collapsible}
-              </StyledMUICardContent>
+              </MUICardContent>
             </MUICollapse>
           )}
         </Fragment>
       )}
-    </StyledMUICard>
+    </MUICard>
   );
 };
 

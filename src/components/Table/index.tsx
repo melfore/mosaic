@@ -70,6 +70,7 @@ const Table: FC<ITable> = ({
   selectionFilter,
   sorting = { path: null, ordering: null },
   sticky = false,
+  style,
   title = undefined,
 }) => {
   const theme = useTheme();
@@ -211,7 +212,7 @@ const Table: FC<ITable> = ({
   }, [actions, columns, dataCy, loading, rows, selectedRows, onBulkSelection, onSelectionChange]);
 
   return (
-    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative" }}>
+    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...style }}>
       {loading && (
         <div
           style={{

@@ -5,7 +5,7 @@ import { boolean, select, text } from "@storybook/addon-knobs";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
 
 import AppBar, { AppBarWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
@@ -39,17 +39,23 @@ export const Canvas = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <AppBar
+    actions={[
+      { icon: Icons.language, onClick: () => {}, style: { backgroundColor: "yellow", color: "black" } },
+      { icon: Icons.notifications, onClick: () => {}, style: { backgroundColor: "green", color: "white" } },
+    ]}
+    style={{ backgroundColor: "red" }}
+    title="AppBar"
+    userMenu={[{ label: "Logout", onClick: () => {} }]}
+  />
+);
+
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <AppBar
-        localized
-        title={MessageMock.title}
-        userMenu={[{ label: MessageMock.button, onClick: action("Button") }]}
-      />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <AppBar localized title={MessageMock.title} userMenu={[{ label: MessageMock.button, onClick: action("Button") }]} />
+  </IntlProviderMock>
 );
 
 export const WithUsername = () => (

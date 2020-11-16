@@ -5,6 +5,8 @@ import {
   Menu as MUIMenu,
   MenuItem as MUIMenuItem,
   PopoverOrigin as MUIPopoverOrigin,
+  Toolbar as MUIToolbar,
+  useTheme,
 } from "@material-ui/core";
 
 import { IAppBar } from "../../types/AppBar";
@@ -16,8 +18,6 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-
-import { StyledMUIToolbar, TitleWrapper } from "./styled";
 
 const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   vertical: "top",
@@ -59,10 +59,13 @@ const AppBar: FC<IAppBar> = ({
   dataCy = "appbar",
   menu,
   onTitleClick,
+  style,
   title,
   userMenu = [],
   username,
 }) => {
+  const theme = useTheme();
+
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
 
   const userMenuButton = useMemo(() => {
@@ -79,13 +82,14 @@ const AppBar: FC<IAppBar> = ({
         icon={{ name: userMenuIcon, position: ButtonIconPosition.right }}
         label={username}
         onClick={userMenuOnClickCallback}
+        style={{ textTransform: "lowercase" }}
       />
     );
   }, [dataCy, username]);
 
   return (
-    <MUIAppBar data-cy={dataCy} position="sticky">
-      <StyledMUIToolbar>
+    <MUIAppBar data-cy={dataCy} position="sticky" style={style}>
+      <MUIToolbar style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
         <MUIBox alignItems="center" display="flex">
           {menu && (
             <IconButton
@@ -95,26 +99,33 @@ const AppBar: FC<IAppBar> = ({
             />
           )}
           {title && (
-            <TitleWrapper
+            <MUIBox
               data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
               onClick={(event) => {
                 suppressEvent(event);
                 onTitleClick && onTitleClick();
               }}
+              style={{
+                borderRadius: `${theme.shape.borderRadius}px`,
+                cursor: onTitleClick ? "pointer" : "default",
+                padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
+                userSelect: "none",
+              }}
             >
               <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant={TypographyVariants.title}>
                 {title}
               </Typography>
-            </TitleWrapper>
+            </MUIBox>
           )}
         </MUIBox>
         <MUIBox alignItems="center" display="flex">
-          {actions.map(({ icon, onClick }, index) => (
+          {actions.map(({ icon, onClick, style }, index) => (
             <IconButton
               key={`action-${index}`}
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionIcon, index)}
               icon={icon}
               onClick={onClick}
+              style={{ marginRight: `${theme.spacing(0.5)}px`, ...style }}
             />
           ))}
           {userMenu && userMenu.length > 0 && (
@@ -146,7 +157,7 @@ const AppBar: FC<IAppBar> = ({
             </Fragment>
           )}
         </MUIBox>
-      </StyledMUIToolbar>
+      </MUIToolbar>
     </MUIAppBar>
   );
 };

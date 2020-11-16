@@ -35,11 +35,7 @@ describe("Checkbox test suite:", () => {
 
   it("localized", () => {
     const label = MessageMock.checkbox;
-    const { element, wrapper } = getCheckboxTestable(
-      { ...defaultProps, label, localized: true },
-      MessageMock.checkbox,
-      "label"
-    );
+    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label, localized: true }, MessageMock.checkbox);
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
     expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
 

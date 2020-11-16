@@ -69,11 +69,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="table-select-all"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="table-select-all"
+              data-cy="table-select-all-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -152,11 +153,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -230,11 +232,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -308,11 +311,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -386,11 +390,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -464,11 +469,12 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -598,11 +604,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="table-select-all"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="table-select-all"
+              data-cy="table-select-all-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -684,11 +691,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -765,11 +773,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -846,11 +855,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -927,11 +937,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -1008,11 +1019,12 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           <label
             className="MuiFormControlLabel-root"
+            data-cy="checkbox"
           >
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox"
+              data-cy="checkbox-input"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}

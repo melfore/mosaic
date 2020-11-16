@@ -3,10 +3,12 @@ import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { CheckboxSize } from "../../types/Checkbox";
+import { getAllComposedDataCy } from "../../utils";
 import FormMock from "../../utils/mocks/FormMock";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Checkbox, { DATA_CY_DEFAULT } from ".";
+import Checkbox, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Checkbox",
@@ -17,7 +19,10 @@ export default {
       component: "Checkbox",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -30,6 +35,8 @@ export const Canvas = () => (
       dataCy={text("data-cy", "checkbox")}
       disabled={boolean("disabled", false)}
       intermediate={boolean("intermediate", false)}
+      label={text("label", "Checkbox")}
+      labelPlacement={select("labelPlacement", ["end", "start"], "start")}
       onChange={action("Change checkbox")}
       required={boolean("value", false)}
       size={select("size", CheckboxSize, CheckboxSize.small, CheckboxSize.default)}
@@ -43,6 +50,22 @@ export const Disabled = () => (
     <Checkbox dataCy={"checkbox"} value={false} disabled />
     <Checkbox dataCy={"checkbox"} value={true} disabled />
     <Checkbox dataCy={"checkbox"} intermediate disabled />
+  </StoriesWrapper>
+);
+
+export const Label = () => (
+  <StoriesWrapper>
+    <Checkbox label="Checkbox" value={false} />
+    <Checkbox label="Checkbox" labelPlacement="end" value={true} />
+  </StoriesWrapper>
+);
+
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <Checkbox label={MessageMock.checkbox} localized />
+    </IntlProviderMock>
   </StoriesWrapper>
 );
 

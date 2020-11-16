@@ -1,14 +1,15 @@
 import renderer from "react-test-renderer";
 
 import { ISwitch, SwitchSize } from "../../types/Switch";
-import { getTestable } from "../../utils/tests";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
 
 import Switch, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ISwitch = {};
 
-const getSwitchTestable = (props?: ISwitch, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(Switch, { dataCy, domNode: "span", props: { ...defaultProps, ...props } });
+const getSwitchTestable = (props?: ISwitch, dataCy = DATA_CY_DEFAULT, domNode = "label") =>
+  getLocalizedTestable(Switch, { dataCy, domNode, props: { ...defaultProps, ...props } });
 
 describe("Switch test suite:", () => {
   it("default", () => {
@@ -31,6 +32,16 @@ describe("Switch test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("localized", () => {
+    const label = MessageMock.switch;
+    const { element, wrapper } = getSwitchTestable({ ...defaultProps, label, localized: true }, MessageMock.switch);
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("checked", () => {
     const { element, wrapper } = getSwitchTestable({ value: true });
     const input = wrapper.find("input");
@@ -44,6 +55,26 @@ describe("Switch test suite:", () => {
     const { element, wrapper } = getSwitchTestable({ disabled: true });
     const input = wrapper.find("input");
     expect(input.prop("disabled")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("label", () => {
+    const label = "Switch";
+    const { element, wrapper } = getSwitchTestable({ ...defaultProps, label });
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("label placement", () => {
+    const label = "Switch";
+    const { element, wrapper } = getSwitchTestable({ ...defaultProps, label, labelPlacement: "end" });
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

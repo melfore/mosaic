@@ -1,354 +1,583 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch test suite: checked 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-2 Mui-checked"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-2 Mui-checked"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
-      <input
-        checked={true}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={true}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+      <span
+        className="MuiTouchRipple-root"
       />
     </span>
+    <span
+      className="MuiSwitch-track"
+    />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
   />
-</span>
+</label>
 `;
 
 exports[`Switch test suite: dataCy 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="custom"
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="custom"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="custom-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+      <span
+        className="MuiTouchRipple-root"
       />
     </span>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiSwitch-track"
     />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
   />
-</span>
+</label>
 `;
 
 exports[`Switch test suite: default 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
-      />
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
     </span>
+    <span
+      className="MuiSwitch-track"
+    />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
   />
-</span>
+</label>
 `;
 
 exports[`Switch test suite: disabled 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-disabled"
+  data-cy="switch"
 >
   <span
-    aria-disabled={true}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-disabled-3 Mui-disabled Mui-disabled Mui-disabled"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={-1}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={true}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-disabled-3 Mui-disabled Mui-disabled Mui-disabled"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={true}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
-      />
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={true}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
     </span>
+    <span
+      className="MuiSwitch-track"
+    />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1"
   />
-</span>
+</label>
+`;
+
+exports[`Switch test suite: label 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Switch test suite: label placement 1`] = `
+<label
+  className="MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Switch test suite: localized 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="intl.message.switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="intl.message.switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  >
+    Switch
+  </span>
+</label>
 `;
 
 exports[`Switch test suite: onChange - not handled 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
-      />
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
     </span>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiSwitch-track"
     />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
   />
-</span>
+</label>
 `;
 
 exports[`Switch test suite: onChange 1`] = `
-<span
-  className="MuiSwitch-root"
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
+    className="MuiSwitch-root"
   >
     <span
-      className="MuiIconButton-label"
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
       <span
-        className="MuiSwitch-thumb"
-      />
-    </span>
-  </span>
-  <span
-    className="MuiSwitch-track"
-  />
-</span>
-`;
-
-exports[`Switch test suite: required 1`] = `
-<span
-  className="MuiSwitch-root"
->
-  <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
-  >
-    <span
-      className="MuiIconButton-label"
-    >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={true}
-        type="checkbox"
-      />
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
       <span
-        className="MuiSwitch-thumb"
-      />
-    </span>
-  </span>
-  <span
-    className="MuiSwitch-track"
-  />
-</span>
-`;
-
-exports[`Switch test suite: size 1`] = `
-<span
-  className="MuiSwitch-root MuiSwitch-sizeSmall"
->
-  <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
-    data-cy="switch"
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={null}
-  >
-    <span
-      className="MuiIconButton-label"
-    >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4 MuiSwitch-input"
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
-      />
-      <span
-        className="MuiSwitch-thumb"
+        className="MuiTouchRipple-root"
       />
     </span>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiSwitch-track"
     />
   </span>
   <span
-    className="MuiSwitch-track"
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
   />
-</span>
+</label>
+`;
+
+exports[`Switch test suite: required 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={true}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  />
+</label>
+`;
+
+exports[`Switch test suite: size 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeSmall"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  />
+</label>
 `;

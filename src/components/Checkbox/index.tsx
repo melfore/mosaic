@@ -1,15 +1,27 @@
 import React, { FC, useCallback } from "react";
-import MUICheckbox from "@material-ui/core/Checkbox";
+import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@material-ui/core";
 
 import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
+import { getComposedDataCy } from "../../utils";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 export const DATA_CY_DEFAULT = "checkbox";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
+
+export const SUBPARTS_MAP = {
+  input: {
+    label: "Input",
+  },
+};
 
 // TODO: handle color
 const Checkbox: FC<ICheckbox> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   intermediate = false,
+  label,
+  labelPlacement = "start",
   onChange,
   required = false,
   size = CheckboxSize.default,
@@ -18,17 +30,29 @@ const Checkbox: FC<ICheckbox> = ({
   const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
 
   return (
-    <MUICheckbox
-      checked={value}
-      color="primary"
+    <MUIFormControlLabel
+      control={
+        <MUICheckbox
+          checked={value}
+          color="primary"
+          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.input)}
+          disabled={disabled}
+          indeterminate={intermediate}
+          onChange={onChangeHandler}
+          required={required}
+          size={size}
+        />
+      }
       data-cy={dataCy}
-      disabled={disabled}
-      indeterminate={intermediate}
-      onChange={onChangeHandler}
-      required={required}
-      size={size}
+      label={label}
+      labelPlacement={labelPlacement}
     />
   );
 };
 
-export default Checkbox;
+export const CheckboxWithProps = Checkbox;
+
+export default localized(Checkbox, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

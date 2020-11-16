@@ -2,7 +2,7 @@
 
 exports[`Switch test suite: checked 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span
@@ -56,7 +56,7 @@ exports[`Switch test suite: checked 1`] = `
 
 exports[`Switch test suite: dataCy 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="custom"
 >
   <span
@@ -110,7 +110,7 @@ exports[`Switch test suite: dataCy 1`] = `
 
 exports[`Switch test suite: default 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span
@@ -161,7 +161,7 @@ exports[`Switch test suite: default 1`] = `
 
 exports[`Switch test suite: disabled 1`] = `
 <label
-  className="MuiFormControlLabel-root Mui-disabled"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-disabled"
   data-cy="switch"
 >
   <span
@@ -210,9 +210,118 @@ exports[`Switch test suite: disabled 1`] = `
 </label>
 `;
 
-exports[`Switch test suite: localized 1`] = `
+exports[`Switch test suite: label 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Switch test suite: label placement 1`] = `
 <label
   className="MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-input"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Switch test suite: localized 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="intl.message.switch"
 >
   <span
@@ -265,7 +374,7 @@ exports[`Switch test suite: localized 1`] = `
 
 exports[`Switch test suite: onChange - not handled 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span
@@ -316,7 +425,7 @@ exports[`Switch test suite: onChange - not handled 1`] = `
 
 exports[`Switch test suite: onChange 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span
@@ -370,7 +479,7 @@ exports[`Switch test suite: onChange 1`] = `
 
 exports[`Switch test suite: required 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span
@@ -424,7 +533,7 @@ exports[`Switch test suite: required 1`] = `
 
 exports[`Switch test suite: size 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
   data-cy="switch"
 >
   <span

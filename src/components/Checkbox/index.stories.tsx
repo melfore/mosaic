@@ -36,6 +36,7 @@ export const Canvas = () => (
       disabled={boolean("disabled", false)}
       intermediate={boolean("intermediate", false)}
       label={text("label", "Checkbox")}
+      labelPlacement={select("labelPlacement", ["end", "start"], "start")}
       onChange={action("Change checkbox")}
       required={boolean("value", false)}
       size={select("size", CheckboxSize, CheckboxSize.small, CheckboxSize.default)}
@@ -49,6 +50,13 @@ export const Disabled = () => (
     <Checkbox dataCy={"checkbox"} value={false} disabled />
     <Checkbox dataCy={"checkbox"} value={true} disabled />
     <Checkbox dataCy={"checkbox"} intermediate disabled />
+  </StoriesWrapper>
+);
+
+export const Label = () => (
+  <StoriesWrapper>
+    <Checkbox label="Checkbox" value={false} />
+    <Checkbox label="Checkbox" labelPlacement="end" value={true} />
   </StoriesWrapper>
 );
 

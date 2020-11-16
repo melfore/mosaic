@@ -70,6 +70,26 @@ describe("Checkbox test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("label", () => {
+    const label = "Checkbox";
+    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label });
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("label placement", () => {
+    const label = "Checkbox";
+    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label, labelPlacement: "end" });
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("onChange", () => {
     const onChange = jest.fn();
     const { element, wrapper } = getCheckboxTestable({ onChange });

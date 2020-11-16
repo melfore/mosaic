@@ -68,7 +68,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="table-select-all"
           >
             <span
@@ -152,7 +152,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -231,7 +231,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -310,7 +310,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -389,7 +389,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -468,7 +468,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -603,7 +603,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="table-select-all"
           >
             <span
@@ -690,7 +690,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -772,7 +772,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -854,7 +854,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -936,7 +936,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span
@@ -1018,7 +1018,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           <label
-            className="MuiFormControlLabel-root"
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
             data-cy="checkbox"
           >
             <span

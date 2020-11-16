@@ -34,6 +34,7 @@ export const Canvas = () => (
     <Switch
       dataCy={text("data-cy", "switch-identifier")}
       label={text("label", "Switch")}
+      labelPlacement={select("labelPlacement", ["end", "start"], "start")}
       onChange={action("Change switch")}
       value={boolean("value", true)}
     />
@@ -44,6 +45,13 @@ export const Disabled = () => (
   <StoriesWrapper>
     <Switch dataCy={"switch-identifier"} value={false} disabled />
     <Switch dataCy={"switch-identifier"} value={true} disabled />
+  </StoriesWrapper>
+);
+
+export const Label = () => (
+  <StoriesWrapper>
+    <Switch label="Switch" value={false} />
+    <Switch label="Switch" labelPlacement="end" value={true} />
   </StoriesWrapper>
 );
 

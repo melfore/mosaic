@@ -1,7 +1,6 @@
 import React, { FC, useCallback } from "react";
 import MUIIconButton from "@material-ui/core/IconButton";
 
-import { Color } from "../../types/Base";
 import { IconSize } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
 import { suppressEvent } from "../../utils";
@@ -26,7 +25,7 @@ const IconButton: FC<IIconButton> = ({
   );
 
   return (
-    <MUIIconButton color={Color.inherit} data-cy={dataCy} disabled={disabled} onClick={onClickHandler}>
+    <MUIIconButton color="inherit" data-cy={dataCy} disabled={disabled} onClick={onClickHandler}>
       <Icon dataCy={`${dataCy}-icon`} name={icon} size={size} />
     </MUIIconButton>
   );

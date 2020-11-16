@@ -1,12 +1,4 @@
-export enum Color {
-  default = "default",
-  inherit = "inherit",
-  primary = "primary",
-  secondary = "secondary",
-}
-
 export interface IBase {
-  color?: Color;
   dataCy?: string;
 }
 

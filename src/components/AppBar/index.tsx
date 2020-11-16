@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 
 import { IAppBar } from "../../types/AppBar";
-import { Color } from "../../types/Base";
 import { ButtonIconPosition } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { TypographyVariants } from "../../types/Typography";
@@ -73,7 +72,7 @@ const AppBar: FC<IAppBar> = ({
       setUserMenuAnchor(document.querySelector(`button[data-cy='${userMenuDataCy}']`));
 
     return !username ? (
-      <IconButton color={Color.inherit} dataCy={userMenuDataCy} icon={userMenuIcon} onClick={userMenuOnClickCallback} />
+      <IconButton dataCy={userMenuDataCy} icon={userMenuIcon} onClick={userMenuOnClickCallback} />
     ) : (
       <Button
         dataCy={userMenuDataCy}
@@ -90,7 +89,6 @@ const AppBar: FC<IAppBar> = ({
         <MUIBox alignItems="center" display="flex">
           {menu && (
             <IconButton
-              color={Color.inherit}
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menuIcon)}
               icon={menu.icon}
               onClick={menu.onClick}
@@ -114,7 +112,6 @@ const AppBar: FC<IAppBar> = ({
           {actions.map(({ icon, onClick }, index) => (
             <IconButton
               key={`action-${index}`}
-              color={Color.inherit}
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionIcon, index)}
               icon={icon}
               onClick={onClick}

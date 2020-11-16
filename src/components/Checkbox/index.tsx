@@ -48,6 +48,7 @@ const Checkbox: FC<ICheckbox> = ({
       data-cy={dataCy}
       label={label}
       labelPlacement={labelPlacement}
+      style={{ ...(!label ? { margin: 0 } : {}) }}
     />
   );
 };

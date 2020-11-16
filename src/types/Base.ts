@@ -1,5 +1,8 @@
+import { CSSProperties } from "react";
+
 export interface IBase {
   dataCy?: string;
+  style?: CSSProperties;
 }
 
 export interface ILoadable extends IBase {

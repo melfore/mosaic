@@ -1,12 +1,14 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { SwitchSize } from "../../types/Switch";
+import { getAllComposedDataCy } from "../../utils";
 import FormMock from "../../utils/mocks/FormMock";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Switch, { DATA_CY_DEFAULT } from ".";
+import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Switch",
@@ -17,7 +19,10 @@ export default {
       component: "Switch",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -28,17 +33,11 @@ export const Canvas = () => (
   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change switch")}>
     <Switch
       dataCy={text("data-cy", "switch-identifier")}
-      value={boolean("value", true)}
+      label={text("label", "Switch")}
       onChange={action("Change switch")}
+      value={boolean("value", true)}
     />
   </FormMock>
-);
-
-export const Values = () => (
-  <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={false} onChange={() => {}} />
-    <Switch dataCy={"switch-identifier"} value={true} onChange={() => {}} />
-  </StoriesWrapper>
 );
 
 export const Disabled = () => (
@@ -48,11 +47,27 @@ export const Disabled = () => (
   </StoriesWrapper>
 );
 
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <StoriesWrapper>
+    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+      <Switch label={MessageMock.switch} localized />
+    </IntlProviderMock>
+  </StoriesWrapper>
+);
+
 export const Size = () => (
   <StoriesWrapper>
     <Switch dataCy={"switch-identifier"} value={true} />
     <Switch dataCy={"switch-identifier"} value={true} size={SwitchSize.small} />
     <Switch dataCy={"switch-identifier"} value={false} />
     <Switch dataCy={"switch-identifier"} value={false} size={SwitchSize.small} />
+  </StoriesWrapper>
+);
+
+export const Values = () => (
+  <StoriesWrapper>
+    <Switch dataCy={"switch-identifier"} value={false} onChange={() => {}} />
+    <Switch dataCy={"switch-identifier"} value={true} onChange={() => {}} />
   </StoriesWrapper>
 );

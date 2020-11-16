@@ -2,7 +2,13 @@
 
 exports[`InputNumber test suite: dataCy 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -23,6 +29,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -30,7 +37,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -38,7 +45,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -60,7 +67,13 @@ exports[`InputNumber test suite: dataCy 1`] = `
 
 exports[`InputNumber test suite: default 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -81,6 +94,7 @@ exports[`InputNumber test suite: default 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -88,7 +102,7 @@ exports[`InputNumber test suite: default 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -96,7 +110,7 @@ exports[`InputNumber test suite: default 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -118,7 +132,13 @@ exports[`InputNumber test suite: default 1`] = `
 
 exports[`InputNumber test suite: disabled 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root Mui-disabled Mui-disabled MuiInputBase-formControl"
@@ -139,6 +159,7 @@ exports[`InputNumber test suite: disabled 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -146,7 +167,7 @@ exports[`InputNumber test suite: disabled 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -154,7 +175,7 @@ exports[`InputNumber test suite: disabled 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -176,7 +197,13 @@ exports[`InputNumber test suite: disabled 1`] = `
 
 exports[`InputNumber test suite: float 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -197,6 +224,7 @@ exports[`InputNumber test suite: float 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -204,7 +232,7 @@ exports[`InputNumber test suite: float 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -212,7 +240,7 @@ exports[`InputNumber test suite: float 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -234,7 +262,13 @@ exports[`InputNumber test suite: float 1`] = `
 
 exports[`InputNumber test suite: localized 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <label
     className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
@@ -261,6 +295,7 @@ exports[`InputNumber test suite: localized 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -268,10 +303,10 @@ exports[`InputNumber test suite: localized 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legendLabelled-4 PrivateNotchedOutline-legendNotched-5"
+        className="PrivateNotchedOutline-legendLabelled-3 PrivateNotchedOutline-legendNotched-4"
       >
         <span>
           Title
@@ -284,7 +319,13 @@ exports[`InputNumber test suite: localized 1`] = `
 
 exports[`InputNumber test suite: min/max 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -305,6 +346,7 @@ exports[`InputNumber test suite: min/max 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -312,7 +354,7 @@ exports[`InputNumber test suite: min/max 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -320,7 +362,7 @@ exports[`InputNumber test suite: min/max 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -342,7 +384,13 @@ exports[`InputNumber test suite: min/max 1`] = `
 
 exports[`InputNumber test suite: numeric values only 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -363,6 +411,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -370,7 +419,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -378,7 +427,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -400,7 +449,13 @@ exports[`InputNumber test suite: numeric values only 1`] = `
 
 exports[`InputNumber test suite: onChange 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -421,6 +476,7 @@ exports[`InputNumber test suite: onChange 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -428,7 +484,7 @@ exports[`InputNumber test suite: onChange 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -436,7 +492,7 @@ exports[`InputNumber test suite: onChange 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -458,7 +514,13 @@ exports[`InputNumber test suite: onChange 1`] = `
 
 exports[`InputNumber test suite: placeholder 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -480,6 +542,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -487,7 +550,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -495,7 +558,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -517,7 +580,13 @@ exports[`InputNumber test suite: placeholder 1`] = `
 
 exports[`InputNumber test suite: required 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -538,6 +607,7 @@ exports[`InputNumber test suite: required 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -545,7 +615,7 @@ exports[`InputNumber test suite: required 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -553,7 +623,7 @@ exports[`InputNumber test suite: required 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -575,7 +645,13 @@ exports[`InputNumber test suite: required 1`] = `
 
 exports[`InputNumber test suite: shrink 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -596,6 +672,7 @@ exports[`InputNumber test suite: shrink 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -603,7 +680,7 @@ exports[`InputNumber test suite: shrink 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -611,7 +688,7 @@ exports[`InputNumber test suite: shrink 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -633,7 +710,13 @@ exports[`InputNumber test suite: shrink 1`] = `
 
 exports[`InputNumber test suite: size 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
@@ -654,6 +737,7 @@ exports[`InputNumber test suite: size 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -661,7 +745,7 @@ exports[`InputNumber test suite: size 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -669,7 +753,7 @@ exports[`InputNumber test suite: size 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -691,7 +775,13 @@ exports[`InputNumber test suite: size 1`] = `
 
 exports[`InputNumber test suite: value 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -712,6 +802,7 @@ exports[`InputNumber test suite: value 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"
@@ -719,7 +810,7 @@ exports[`InputNumber test suite: value 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -727,7 +818,7 @@ exports[`InputNumber test suite: value 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -749,7 +840,13 @@ exports[`InputNumber test suite: value 1`] = `
 
 exports[`InputNumber test suite: variant 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
@@ -770,6 +867,7 @@ exports[`InputNumber test suite: variant 1`] = `
       style={
         Object {
           "textAlign": "right",
+          "width": "100%",
         }
       }
       type="number"

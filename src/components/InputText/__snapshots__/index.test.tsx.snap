@@ -2,7 +2,12 @@
 
 exports[`InputText test suite: adornment 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
@@ -20,6 +25,11 @@ exports[`InputText test suite: adornment 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
@@ -64,7 +74,7 @@ exports[`InputText test suite: adornment 1`] = `
     </div>
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -72,7 +82,7 @@ exports[`InputText test suite: adornment 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -94,7 +104,12 @@ exports[`InputText test suite: adornment 1`] = `
 
 exports[`InputText test suite: dataCy 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -112,12 +127,17 @@ exports[`InputText test suite: dataCy 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -125,7 +145,7 @@ exports[`InputText test suite: dataCy 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -147,7 +167,12 @@ exports[`InputText test suite: dataCy 1`] = `
 
 exports[`InputText test suite: default 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -165,12 +190,17 @@ exports[`InputText test suite: default 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -178,7 +208,7 @@ exports[`InputText test suite: default 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -200,7 +230,12 @@ exports[`InputText test suite: default 1`] = `
 
 exports[`InputText test suite: disabled 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root Mui-disabled Mui-disabled MuiInputBase-formControl"
@@ -218,12 +253,17 @@ exports[`InputText test suite: disabled 1`] = `
       onFocus={[Function]}
       readOnly={true}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -231,7 +271,7 @@ exports[`InputText test suite: disabled 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -253,7 +293,12 @@ exports[`InputText test suite: disabled 1`] = `
 
 exports[`InputText test suite: localized 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <label
     className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
@@ -277,15 +322,20 @@ exports[`InputText test suite: localized 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legendLabelled-4"
+        className="PrivateNotchedOutline-legendLabelled-3"
       >
         <span>
           Title
@@ -298,7 +348,12 @@ exports[`InputText test suite: localized 1`] = `
 
 exports[`InputText test suite: onChange 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -316,12 +371,17 @@ exports[`InputText test suite: onChange 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -329,7 +389,7 @@ exports[`InputText test suite: onChange 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -351,7 +411,12 @@ exports[`InputText test suite: onChange 1`] = `
 
 exports[`InputText test suite: password 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -369,12 +434,17 @@ exports[`InputText test suite: password 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="password"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -382,7 +452,7 @@ exports[`InputText test suite: password 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -404,7 +474,12 @@ exports[`InputText test suite: password 1`] = `
 
 exports[`InputText test suite: placeholder 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -423,12 +498,17 @@ exports[`InputText test suite: placeholder 1`] = `
       placeholder="Placeholder"
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -436,7 +516,7 @@ exports[`InputText test suite: placeholder 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -458,7 +538,12 @@ exports[`InputText test suite: placeholder 1`] = `
 
 exports[`InputText test suite: required 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -476,12 +561,17 @@ exports[`InputText test suite: required 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={true}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -489,7 +579,7 @@ exports[`InputText test suite: required 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -511,7 +601,12 @@ exports[`InputText test suite: required 1`] = `
 
 exports[`InputText test suite: size 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
@@ -529,12 +624,17 @@ exports[`InputText test suite: size 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -542,7 +642,7 @@ exports[`InputText test suite: size 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -564,7 +664,12 @@ exports[`InputText test suite: size 1`] = `
 
 exports[`InputText test suite: value 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
@@ -582,12 +687,17 @@ exports[`InputText test suite: value 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value="Initial Text Value"
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
         Object {
           "paddingLeft": 8,
@@ -595,7 +705,7 @@ exports[`InputText test suite: value 1`] = `
       }
     >
       <legend
-        className="PrivateNotchedOutline-legend-3"
+        className="PrivateNotchedOutline-legend-2"
         style={
           Object {
             "width": 0.01,
@@ -617,7 +727,12 @@ exports[`InputText test suite: value 1`] = `
 
 exports[`InputText test suite: variant 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-1 MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
@@ -635,6 +750,11 @@ exports[`InputText test suite: variant 1`] = `
       onFocus={[Function]}
       readOnly={false}
       required={false}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
       type="text"
       value=""
     />

@@ -1,14 +1,15 @@
 import renderer from "react-test-renderer";
 
 import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
-import { getTestable } from "../../utils/tests";
+import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedTestable } from "../../utils/tests";
 
 import Checkbox, { DATA_CY_DEFAULT } from ".";
 
 const defaultProps: ICheckbox = {};
 
-const getCheckboxTestable = (props?: ICheckbox, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(Checkbox, { dataCy, domNode: "span", props: { ...defaultProps, ...props } });
+const getCheckboxTestable = (props?: ICheckbox, dataCy = DATA_CY_DEFAULT, domNode = "label") =>
+  getLocalizedTestable(Checkbox, { dataCy, domNode, props: { ...defaultProps, ...props } });
 
 describe("Checkbox test suite:", () => {
   it("default", () => {
@@ -27,6 +28,20 @@ describe("Checkbox test suite:", () => {
   it("dataCy", () => {
     const { element, wrapper } = getCheckboxTestable({ dataCy: "custom" }, "custom");
     expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("localized", () => {
+    const label = MessageMock.checkbox;
+    const { element, wrapper } = getCheckboxTestable(
+      { ...defaultProps, label, localized: true },
+      MessageMock.checkbox,
+      "label"
+    );
+    const labelElement = wrapper.find("span.MuiFormControlLabel-label");
+    expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

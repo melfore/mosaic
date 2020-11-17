@@ -1,6 +1,5 @@
 import React, { cloneElement, FC, Fragment, useMemo, useState } from "react";
 import {
-  Box as MUIBox,
   Card as MUICard,
   CardActions as MUICardActions,
   CardContent as MUICardContent,
@@ -120,13 +119,13 @@ const Card: FC<ICard> = ({
             }}
           >
             {actions.length > 0 && (
-              <MUIBox alignItems="center" display="flex">
+              <div style={{ alignItems: "center", display: "flex" }}>
                 {actions.map((action, index) => (
-                  <MUIBox key={`card-action-${index}`} style={{ marginRight: `${theme.spacing(2)}px` }}>
+                  <div key={`card-action-${index}`} style={{ marginRight: `${theme.spacing(2)}px` }}>
                     {cloneElement(action)}{" "}
-                  </MUIBox>
+                  </div>
                 ))}
-              </MUIBox>
+              </div>
             )}
             {collapsible && (
               <IconButton

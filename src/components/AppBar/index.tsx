@@ -1,7 +1,6 @@
 import React, { FC, Fragment, useMemo, useState } from "react";
 import {
   AppBar as MUIAppBar,
-  Box as MUIBox,
   Menu as MUIMenu,
   MenuItem as MUIMenuItem,
   PopoverOrigin as MUIPopoverOrigin,
@@ -90,7 +89,7 @@ const AppBar: FC<IAppBar> = ({
   return (
     <MUIAppBar data-cy={dataCy} position="sticky" style={style}>
       <MUIToolbar style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
-        <MUIBox alignItems="center" display="flex">
+        <div style={{ alignItems: "center", display: "flex" }}>
           {menu && (
             <IconButton
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menuIcon)}
@@ -99,7 +98,7 @@ const AppBar: FC<IAppBar> = ({
             />
           )}
           {title && (
-            <MUIBox
+            <div
               data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
               onClick={(event) => {
                 suppressEvent(event);
@@ -115,10 +114,10 @@ const AppBar: FC<IAppBar> = ({
               <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant={TypographyVariants.title}>
                 {title}
               </Typography>
-            </MUIBox>
+            </div>
           )}
-        </MUIBox>
-        <MUIBox alignItems="center" display="flex">
+        </div>
+        <div style={{ alignItems: "center", display: "flex" }}>
           {actions.map(({ icon, onClick, style }, index) => (
             <IconButton
               key={`action-${index}`}
@@ -156,7 +155,7 @@ const AppBar: FC<IAppBar> = ({
               </MUIMenu>
             </Fragment>
           )}
-        </MUIBox>
+        </div>
       </MUIToolbar>
     </MUIAppBar>
   );

@@ -62,6 +62,10 @@ export const BottomSpacing = () => (
   </StoriesWrapper>
 );
 
+export const CustomStyle = () => (
+  <Typography style={{ backgroundColor: "red", color: "white" }}>Custom Style</Typography>
+);
+
 export const Inline = () => (
   <StoriesWrapper>
     <div>
@@ -89,19 +93,15 @@ export const Loading = () => (
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Typography localized>{MessageMock.typography}</Typography>
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Typography localized>{MessageMock.typography}</Typography>
+  </IntlProviderMock>
 );
 
 export const MixedContents = () => (
-  <StoriesWrapper>
-    <Typography>
-      <strong>Strong</strong> Normal <i>Italic</i> <u>Underlined</u>
-    </Typography>
-  </StoriesWrapper>
+  <Typography>
+    <strong>Strong</strong> Normal <i>Italic</i> <u>Underlined</u>
+  </Typography>
 );
 
 export const Truncated = () => (

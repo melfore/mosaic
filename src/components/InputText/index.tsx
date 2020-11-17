@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { InputAdornment } from "@material-ui/core";
+import React, { CSSProperties, FC, useEffect, useState } from "react";
+import { InputAdornment as MUIInputAdornment, TextField as MUITextField } from "@material-ui/core";
 
 import { IconSize } from "../../types/Icon";
 import { InputSize, InputType, InputVariant } from "../../types/Input";
@@ -8,8 +8,6 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Icon from "../Icon";
 import IconButton from "../IconButton";
 
-import { StyledMUITextField } from "./styled";
-
 const getAdornment = (adornment?: IInputAdornment) => {
   if (!adornment) {
     return undefined;
@@ -17,13 +15,13 @@ const getAdornment = (adornment?: IInputAdornment) => {
 
   const { icon, onClick } = adornment;
   return (
-    <InputAdornment position="end">
+    <MUIInputAdornment position="end">
       {!onClick ? (
         <Icon name={icon} size={IconSize.small} />
       ) : (
         <IconButton icon={icon} onClick={onClick} size={IconSize.small} />
       )}
-    </InputAdornment>
+    </MUIInputAdornment>
   );
 };
 
@@ -57,9 +55,12 @@ const InputText: FC<IInputText> = ({
   required = false,
   shrink = undefined,
   size = InputSize.default,
+  style,
   type = InputType.default,
   variant = InputVariant.default,
 }) => {
+  const baseStyle: CSSProperties = { width: "100%" };
+
   const [value, setValue] = useState(initialValue);
   useEffect(() => setValue(initialValue), [initialValue]);
 
@@ -72,13 +73,14 @@ const InputText: FC<IInputText> = ({
   };
 
   return (
-    <StyledMUITextField
+    <MUITextField
       disabled={disabled}
       InputLabelProps={{
         shrink,
       }}
       inputProps={{
         "data-cy": dataCy,
+        style: { ...baseStyle, ...style },
       }}
       InputProps={{
         endAdornment: getAdornment(adornment),
@@ -90,6 +92,7 @@ const InputText: FC<IInputText> = ({
       placeholder={placeholder}
       required={required}
       size={size}
+      style={{ ...baseStyle }}
       type={type}
       variant={variant}
       value={value}

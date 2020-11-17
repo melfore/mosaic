@@ -25,6 +25,7 @@ const Checkbox: FC<ICheckbox> = ({
   onChange,
   required = false,
   size = CheckboxSize.default,
+  style,
   value = false,
 }) => {
   const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
@@ -41,11 +42,13 @@ const Checkbox: FC<ICheckbox> = ({
           onChange={onChangeHandler}
           required={required}
           size={size}
+          style={style}
         />
       }
       data-cy={dataCy}
       label={label}
       labelPlacement={labelPlacement}
+      style={{ ...(!label ? { margin: 0 } : {}) }}
     />
   );
 };

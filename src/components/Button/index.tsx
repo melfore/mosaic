@@ -38,6 +38,7 @@ const Button: FC<IButton> = ({
   icon,
   label,
   onClick,
+  style,
   variant = ButtonVariants.contained,
 }) => {
   const onClickHandler = useCallback(
@@ -55,6 +56,7 @@ const Button: FC<IButton> = ({
       disabled={disabled}
       disableElevation={!elevated}
       onClick={onClickHandler}
+      style={style}
       variant={variant}
       {...getIcons(dataCy, icon)}
     >

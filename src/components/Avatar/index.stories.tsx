@@ -4,7 +4,7 @@ import { boolean, select, text } from "@storybook/addon-knobs";
 import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import { getDocumentationPage } from "../../utils/stories";
 
 import Avatar, { AvatarWithProps, DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
@@ -34,26 +34,14 @@ export const Canvas = () => (
   />
 );
 
-export const Icon = () => (
-  <StoriesWrapper>
-    <Avatar icon={Icons.business} />
-  </StoriesWrapper>
-);
+export const CustomStyle = () => <Avatar icon={Icons.business} style={{ backgroundColor: "red", color: "white" }} />;
+
+export const Icon = () => <Avatar icon={Icons.business} />;
 
 export const Image = () => (
-  <StoriesWrapper>
-    <Avatar src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg" />
-  </StoriesWrapper>
+  <Avatar src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg" />
 );
 
-export const Loading = () => (
-  <StoriesWrapper>
-    <Avatar loading />
-  </StoriesWrapper>
-);
+export const Loading = () => <Avatar loading />;
 
-export const Text = () => (
-  <StoriesWrapper>
-    <Avatar text="MO" />
-  </StoriesWrapper>
-);
+export const Text = () => <Avatar text="MO" />;

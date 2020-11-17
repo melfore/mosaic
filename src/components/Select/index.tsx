@@ -1,5 +1,11 @@
-import React, { Fragment } from "react";
-import { Popper, PopperProps } from "@material-ui/core";
+import React, { CSSProperties, Fragment } from "react";
+import {
+  ListSubheader as MUIListSubheader,
+  Popper as MUIPopper,
+  PopperProps as MUIPopperProps,
+  TextField as MUITextField,
+  useTheme,
+} from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { InputSize, InputType, InputVariant } from "../../types/Input";
@@ -8,8 +14,6 @@ import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
-
-import { StyledMUIListSubheader, StyledMUITextField } from "./styled";
 
 export const DATA_CY_DEFAULT = "select";
 export const DATA_CY_SHORTCUT = "label";
@@ -57,10 +61,13 @@ const Select = <T extends any>({
   popperWidth = undefined,
   required = false,
   size = InputSize.default,
+  style,
   type = InputType.default,
   value = null,
   variant = InputVariant.default,
 }: ISelect<T>) => {
+  const theme = useTheme();
+
   const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : `${option}`);
 
   const isSelected = (option: T, value: T): boolean => {
@@ -111,48 +118,66 @@ const Select = <T extends any>({
         const anotherGroup = groupBy(another);
         return oneGroup.localeCompare(anotherGroup) || labelSorting;
       })}
-      PopperComponent={(props: PopperProps) => {
+      PopperComponent={(props: MUIPopperProps) => {
         const { anchorEl } = props;
         const anchorElRef = anchorEl as any;
         const anchorElWidth = anchorElRef ? anchorElRef.clientWidth : null;
         const width = !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
-        return <Popper {...props} placement="bottom-start" style={{ width }} />;
+        return <MUIPopper {...props} placement="bottom-start" style={{ width }} />;
       }}
       renderGroup={(groupProps) => {
         const { children, group, key } = groupProps;
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
         return (
           <Fragment key={`group-${key}`}>
-            <StyledMUIListSubheader data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionGroupLabel, groupLabel)}>
+            <MUIListSubheader
+              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionGroupLabel, groupLabel)}
+              style={{ backgroundColor: theme.palette.background.default }}
+            >
               {groupLabel}
-            </StyledMUIListSubheader>
+            </MUIListSubheader>
             {children}
           </Fragment>
         );
       }}
       renderInput={(inputProps) => {
         const { inputProps: extInputProps } = inputProps;
+        const baseStyle: CSSProperties = { width: "100%" };
+
         if (loading) {
           const forwardedInputProps = {
             ...inputProps,
-            inputProps: { "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.loading) },
+            inputProps: {
+              "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.loading),
+              style: { ...baseStyle, ...style },
+            },
           };
           return (
             <MUISkeleton width="100%">
-              <StyledMUITextField {...forwardedInputProps} margin="normal" size={size} variant={variant} />
+              <MUITextField
+                {...forwardedInputProps}
+                margin="normal"
+                size={size}
+                variant={variant}
+                style={{ ...baseStyle }}
+              />
             </MUISkeleton>
           );
         }
 
-        const forwardedInputProps = { ...inputProps, inputProps: { ...extInputProps, "data-cy": dataCy } };
+        const forwardedInputProps = {
+          ...inputProps,
+          inputProps: { ...extInputProps, "data-cy": dataCy, style: { ...baseStyle, ...style } },
+        };
         return (
-          <StyledMUITextField
+          <MUITextField
             {...forwardedInputProps}
             label={label}
             margin="normal"
             placeholder={placeholder}
             required={required}
             size={size}
+            style={{ width: "100%", ...style }}
             type={type}
             variant={variant}
           />
@@ -169,6 +194,7 @@ const Select = <T extends any>({
             <Checkbox
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
               disabled
+              labelPlacement="end"
               value={selected}
             />
             <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>

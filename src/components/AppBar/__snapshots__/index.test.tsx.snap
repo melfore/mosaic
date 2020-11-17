@@ -6,13 +6,30 @@ exports[`AppBar test suite: actions 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
   >
     <div
-      className="MuiBox-root MuiBox-root-17"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-18"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -30,6 +47,11 @@ exports[`AppBar test suite: actions 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        style={
+          Object {
+            "marginRight": "4px",
+          }
+        }
         tabIndex={0}
         type="button"
       >
@@ -60,13 +82,30 @@ exports[`AppBar test suite: dataCy 1`] = `
   data-cy="custom"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
   >
     <div
-      className="MuiBox-root MuiBox-root-8"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-9"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -78,13 +117,30 @@ exports[`AppBar test suite: default 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
   >
     <div
-      className="MuiBox-root MuiBox-root-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-5"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -96,10 +152,22 @@ exports[`AppBar test suite: menu 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
   >
     <div
-      className="MuiBox-root MuiBox-root-21"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -141,7 +209,12 @@ exports[`AppBar test suite: menu 1`] = `
       </button>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-22"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -153,15 +226,34 @@ exports[`AppBar test suite: title 1`] = `
   data-cy="appbar"
 >
   <div
-    className="MuiToolbar-root MuiToolbar-regular WithStyles(ForwardRef(Toolbar))-root-1 MuiToolbar-gutters"
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
   >
     <div
-      className="MuiBox-root MuiBox-root-27"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <div
-        className="MuiBox-root MuiBox-root-29 Styled(MuiBox)-root-11 Styled(MuiBox)-root-28"
         data-cy="appbar-title-clickable"
         onClick={[Function]}
+        style={
+          Object {
+            "borderRadius": "4px",
+            "cursor": "pointer",
+            "padding": "4px 8px",
+            "userSelect": "none",
+          }
+        }
       >
         <h2
           className="MuiTypography-root MuiTypography-h6"
@@ -172,7 +264,12 @@ exports[`AppBar test suite: title 1`] = `
       </div>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-30"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>

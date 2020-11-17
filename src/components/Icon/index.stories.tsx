@@ -30,6 +30,10 @@ export const Canvas = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <Icon name={Icons.send} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }} />
+);
+
 export const Loading = () => (
   <StoriesWrapper>
     <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.small} />

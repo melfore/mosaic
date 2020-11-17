@@ -13,12 +13,15 @@ export enum Icons {
   checkbox_empty = "checkbox_empty",
   clock = "clock",
   close = "close",
+  connection_slow = "connection_slow",
+  crop = "crop",
   delete = "delete",
   down = "down",
   edit = "edit",
   error = "error",
   filter = "filter",
   first = "first",
+  group = "group",
   home = "home",
   language = "language",
   last = "last",
@@ -43,6 +46,8 @@ export enum Icons {
   up = "up",
   up_arrow = "up_arrow",
   warn = "warn",
+  wifi_on = "wifi",
+  wifi_off = "wifi_offline",
 }
 
 export enum IconSize {

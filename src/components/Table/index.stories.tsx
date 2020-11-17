@@ -114,6 +114,25 @@ export const Basic = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+      { label: "Role", path: "info.role" },
+    ]}
+    rows={[
+      { name: "John", age: 35, info: { role: "Developer" } },
+      { name: "Nick", age: 45, info: { role: "Manager" } },
+      { name: "Emma", age: 32, info: { role: "Designer" } },
+      { name: "Joey", age: 29, info: { role: "Tester" } },
+      { name: "Luis", age: 78, info: { role: "Developer" } },
+    ]}
+    style={{ backgroundColor: "red", color: "white" }}
+    title="Basic"
+  />
+);
+
 export const EmptyState = () => (
   <Table
     columns={[
@@ -213,32 +232,30 @@ export const Sticky = () => (
 );
 
 export const WithCustomColumnRender = () => (
-  <StoriesWrapper>
-    <Table
-      columns={[
-        {
-          label: "Name",
-          path: "name",
-          render: ({ name }) => (
-            <div style={{ alignItems: "center", display: "flex" }}>
-              {/* <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} /> */}
-              <b style={{ marginLeft: "8px" }}>{name}</b>
-            </div>
-          ),
-          width: "50%",
-        },
-        { label: "Age", path: "age" },
-      ]}
-      rows={[
-        { name: "John", age: 35 },
-        { name: "Nick", age: 45 },
-        { name: "Emma", age: 32 },
-        { name: "Joey", age: 29 },
-        { name: "Luis", age: 78 },
-      ]}
-      title="Custom Rendering"
-    />
-  </StoriesWrapper>
+  <Table
+    columns={[
+      {
+        label: "Name",
+        path: "name",
+        render: ({ name }) => (
+          <div style={{ alignItems: "center", display: "flex" }}>
+            {/* <img src={`https://eu.ui-avatars.com/api/?name=${name}&rounded=true&size=24`} /> */}
+            <b style={{ marginLeft: "8px" }}>{name}</b>
+          </div>
+        ),
+        width: "50%",
+      },
+      { label: "Age", path: "age" },
+    ]}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+      { name: "Joey", age: 29 },
+      { name: "Luis", age: 78 },
+    ]}
+    title="Custom Rendering"
+  />
 );
 
 export const WithEvents = () => (

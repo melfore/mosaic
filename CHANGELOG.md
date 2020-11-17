@@ -1,3 +1,26 @@
+# [3.0.0](https://github.com/melfore/mosaic/compare/v2.3.0...v3.0.0) (2020-11-17)
+
+
+### Features
+
+* 🎸 Added label and localize support to Checkbox ([b956dfe](https://github.com/melfore/mosaic/commit/b956dfe6a663132542c9228d45936fa226b2ff9b))
+* 🎸 Added label and localize support to Switch ([afd7426](https://github.com/melfore/mosaic/commit/afd74266990f6c25e9dc6cd9ea28d18c0cb575fa))
+* 🎸 Added labelPlacement for Checkbox and Switch ([371be8b](https://github.com/melfore/mosaic/commit/371be8bf1e95087201d595c6fbc8235ad3157f3e))
+* 🎸 Added new Icons ([8fa18b3](https://github.com/melfore/mosaic/commit/8fa18b33d4d9ecc6597957918f6dda4c6ba441b9))
+* 🎸 Added style property to IBase interface ([c650f14](https://github.com/melfore/mosaic/commit/c650f149c790179822992111aec39b3596264df7))
+
+
+### BREAKING CHANGES
+
+* 🧨 Usage of FormControlLabel moved the root dataCy one level above, due to
+this the selector for the input needs the suffix '-input'
+
+✅ Closes: 172, 97
+* 🧨 Usage of FormControlLabel moved the root dataCy one level above, due to
+this the selector for the input needs the suffix '-input'
+
+✅ Closes: 172
+
 # [2.3.0](https://github.com/melfore/mosaic/compare/v2.2.0...v2.3.0) (2020-11-03)
 
 

@@ -16,10 +16,20 @@ exports[`AppBar test suite: actions 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-14"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-15"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -82,10 +92,20 @@ exports[`AppBar test suite: dataCy 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-7"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-8"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -107,10 +127,20 @@ exports[`AppBar test suite: default 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-3"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
     <div
-      className="MuiBox-root MuiBox-root-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -132,7 +162,12 @@ exports[`AppBar test suite: menu 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-18"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -174,7 +209,12 @@ exports[`AppBar test suite: menu 1`] = `
       </button>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-19"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>
@@ -196,10 +236,14 @@ exports[`AppBar test suite: title 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-23"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <div
-        className="MuiBox-root MuiBox-root-24"
         data-cy="appbar-title-clickable"
         onClick={[Function]}
         style={
@@ -220,7 +264,12 @@ exports[`AppBar test suite: title 1`] = `
       </div>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-25"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     />
   </div>
 </header>

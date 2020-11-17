@@ -29,16 +29,14 @@ describe("Spacer test suite:", () => {
   });
 
   it("direction", () => {
-    const { element, wrapper } = getSpacerTestable({ direction: SpacerDirection.vertical });
-    expect(wrapper.prop("direction")).toEqual(SpacerDirection.vertical);
+    const { element } = getSpacerTestable({ direction: SpacerDirection.vertical });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("level", () => {
-    const { element, wrapper } = getSpacerTestable({ level: 2 });
-    expect(wrapper.prop("level")).toEqual(2);
+    const { element } = getSpacerTestable({ level: 2 });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

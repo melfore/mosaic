@@ -50,10 +50,14 @@ exports[`Card test suite: actions 1`] = `
     }
   >
     <div
-      className="MuiBox-root MuiBox-root-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
     >
       <div
-        className="MuiBox-root MuiBox-root-5"
         style={
           Object {
             "marginRight": "16px",
@@ -98,7 +102,6 @@ exports[`Card test suite: actions 1`] = `
          
       </div>
       <div
-        className="MuiBox-root MuiBox-root-6"
         style={
           Object {
             "marginRight": "16px",

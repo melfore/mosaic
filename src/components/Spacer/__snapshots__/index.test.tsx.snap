@@ -2,36 +2,52 @@
 
 exports[`Spacer test suite: dataCy 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-9 Styled(MuiBox)-root-1 Styled(MuiBox)-root-8"
   data-cy="custom"
-  direction="horizontal"
-  level={1}
+  style={
+    Object {
+      "display": "block",
+      "height": 0,
+      "width": "8px",
+    }
+  }
 />
 `;
 
 exports[`Spacer test suite: default 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-5 Styled(MuiBox)-root-1 Styled(MuiBox)-root-4"
   data-cy="spacer"
-  direction="horizontal"
-  level={1}
+  style={
+    Object {
+      "display": "block",
+      "height": 0,
+      "width": "8px",
+    }
+  }
 />
 `;
 
 exports[`Spacer test suite: direction 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-13 Styled(MuiBox)-root-1 Styled(MuiBox)-root-12"
   data-cy="spacer"
-  direction="vertical"
-  level={1}
+  style={
+    Object {
+      "display": "block",
+      "height": "8px",
+      "width": 0,
+    }
+  }
 />
 `;
 
 exports[`Spacer test suite: level 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-17 Styled(MuiBox)-root-1 Styled(MuiBox)-root-16"
   data-cy="spacer"
-  direction="horizontal"
-  level={2}
+  style={
+    Object {
+      "display": "block",
+      "height": 0,
+      "width": "16px",
+    }
+  }
 />
 `;

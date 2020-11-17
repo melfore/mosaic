@@ -37,19 +37,21 @@ export const Canvas = () => (
 );
 
 export const Basic = () => (
-  <StoriesWrapper>
-    <ListItem>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-  </StoriesWrapper>
+  <ListItem>
+    <Typography>Basic List Item</Typography>
+  </ListItem>
+);
+
+export const CustomStyle = () => (
+  <ListItem style={{ backgroundColor: "red", color: "white" }}>
+    <Typography>Custom Style</Typography>
+  </ListItem>
 );
 
 export const Dense = () => (
-  <StoriesWrapper>
-    <ListItem dense>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-  </StoriesWrapper>
+  <ListItem dense>
+    <Typography>Basic List Item</Typography>
+  </ListItem>
 );
 
 export const Loading = () => (
@@ -64,17 +66,13 @@ export const Loading = () => (
 );
 
 export const Selected = () => (
-  <StoriesWrapper>
-    <ListItem selected>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-  </StoriesWrapper>
+  <ListItem selected>
+    <Typography>Basic List Item</Typography>
+  </ListItem>
 );
 
 export const WithIcon = () => (
-  <StoriesWrapper>
-    <ListItem icon={Icons.add}>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-  </StoriesWrapper>
+  <ListItem icon={Icons.add}>
+    <Typography>Basic List Item</Typography>
+  </ListItem>
 );

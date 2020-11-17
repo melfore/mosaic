@@ -3,6 +3,7 @@ import {
   Dialog as MUIDialog,
   DialogActions as MUIDialogActions,
   DialogContent as MUIDialogContent,
+  DialogTitle as MUIDialogTitle,
 } from "@material-ui/core";
 
 import { Icons, IconSize } from "../../types/Icon";
@@ -13,8 +14,6 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-
-import { StyledMUIDialogTitle } from "./styled";
 
 const onCloseWrapper = (event?: any, onClose?: Function) => {
   if (event) {
@@ -46,6 +45,7 @@ export const SUBPARTS_MAP = {
   },
 };
 
+// TODO#lb: should handle style?
 const Modal: FC<IModal> = ({
   cancel = undefined,
   children,
@@ -67,14 +67,18 @@ const Modal: FC<IModal> = ({
       onClose={(event) => onCloseWrapper(event, onClose)}
       open={open}
     >
-      <StyledMUIDialogTitle id="modal-title" disableTypography>
+      <MUIDialogTitle
+        id="modal-title"
+        disableTypography
+        style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}
+      >
         <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant={TypographyVariants.title}>
           {title}
         </Typography>
         {closable && (
           <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
         )}
-      </StyledMUIDialogTitle>
+      </MUIDialogTitle>
       <MUIDialogContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)} dividers>
         {children}
       </MUIDialogContent>
@@ -86,6 +90,7 @@ const Modal: FC<IModal> = ({
               disabled={cancel.disabled}
               label={cancel.label}
               onClick={cancel.action}
+              style={cancel.style}
               variant={cancel.variant}
             />
           )}
@@ -95,6 +100,7 @@ const Modal: FC<IModal> = ({
               disabled={confirm.disabled}
               label={confirm.label}
               onClick={confirm.action}
+              style={confirm.style}
               variant={confirm.variant}
             />
           )}

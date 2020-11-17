@@ -1,15 +1,12 @@
 import { ILocalizable } from "./Base";
-import { Icons } from "./Icon";
+import { IIconButton } from "./IconButton";
 
 interface IUserMenu {
   label: string;
   onClick: () => void;
 }
 
-interface IActionItem {
-  icon: Icons;
-  onClick: () => void;
-}
+type IActionItem = Pick<IIconButton, "icon" | "onClick" | "style">;
 
 export interface IAppBar extends ILocalizable {
   actions?: IActionItem[];

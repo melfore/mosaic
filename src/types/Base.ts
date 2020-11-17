@@ -1,13 +1,8 @@
-export enum Color {
-  default = "default",
-  inherit = "inherit",
-  primary = "primary",
-  secondary = "secondary",
-}
+import { CSSProperties } from "react";
 
 export interface IBase {
-  color?: Color;
   dataCy?: string;
+  style?: CSSProperties;
 }
 
 export interface ILoadable extends IBase {

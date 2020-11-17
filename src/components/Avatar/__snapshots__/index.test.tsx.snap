@@ -2,22 +2,40 @@
 
 exports[`Avatar test suite: dataCy 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-5 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
   data-cy="custom"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 />
 `;
 
 exports[`Avatar test suite: default 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-3 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
   data-cy="avatar"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 />
 `;
 
 exports[`Avatar test suite: icon 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-7 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
   data-cy="avatar"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 >
   <svg
     aria-hidden={true}
@@ -35,8 +53,14 @@ exports[`Avatar test suite: icon 1`] = `
 
 exports[`Avatar test suite: image 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-9"
+  className="MuiAvatar-root MuiAvatar-circle"
   data-cy="avatar"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 >
   <img
     alt="Mosaic Image"
@@ -57,7 +81,7 @@ exports[`Avatar test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-11 MuiAvatar-colorDefault"
+    className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
     data-cy="avatar-loading"
   >
     <svg
@@ -76,15 +100,27 @@ exports[`Avatar test suite: loading 1`] = `
 
 exports[`Avatar test suite: squared 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-square WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-13 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault"
   data-cy="avatar"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 />
 `;
 
 exports[`Avatar test suite: text 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle WithStyles(ForwardRef(Avatar))-root-1 WithStyles(ForwardRef(Avatar))-root-15 MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
   data-cy="avatar"
+  style={
+    Object {
+      "backgroundColor": "#3f51b5",
+      "color": "#fff",
+    }
+  }
 >
   <p
     className="MuiTypography-root MuiTypography-body1"

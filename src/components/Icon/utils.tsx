@@ -12,12 +12,14 @@ import MUICheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank
 import MUIChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import MUIChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MUICloseIcon from "@material-ui/icons/Close";
+import MUICropIcon from "@material-ui/icons/Crop";
 import MUIDeleteIcon from "@material-ui/icons/Delete";
 import MUIDraftsIcon from "@material-ui/icons/Drafts";
 import MUIEditIcon from "@material-ui/icons/Edit";
 import MUIErrorIcon from "@material-ui/icons/Error";
 import MUIFilterListIcon from "@material-ui/icons/FilterList";
 import MUIFirstPageIcon from "@material-ui/icons/FirstPage";
+import MUIGroupWorkIcon from "@material-ui/icons/GroupWork";
 import MUIHomeIcon from "@material-ui/icons/Home";
 import MUIKeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MUIKeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
@@ -39,8 +41,11 @@ import MUIScheduleIcon from "@material-ui/icons/Schedule";
 import MUISearchIcon from "@material-ui/icons/Search";
 import MUISendIcon from "@material-ui/icons/Send";
 import MUISettingsIcon from "@material-ui/icons/Settings";
+import MUISignalWifi1BarOutlinedIcon from "@material-ui/icons/SignalWifi1BarOutlined";
 import MUITimelineIcon from "@material-ui/icons/Timeline";
 import MUIWarningIcon from "@material-ui/icons/Warning";
+import MUIWifiOffOutlinedIcon from "@material-ui/icons/WifiOffOutlined";
+import MUIWifiOutlinedIcon from "@material-ui/icons/WifiOutlined";
 
 import { Icons } from "../../types/Icon";
 
@@ -57,12 +62,15 @@ export const iconsCatalog = {
   [Icons.checkbox_empty]: <MUICheckBoxOutlineBlankIcon />,
   [Icons.clock]: <MUIScheduleIcon />,
   [Icons.close]: <MUICloseIcon />,
+  [Icons.connection_slow]: <MUISignalWifi1BarOutlinedIcon />,
+  [Icons.crop]: <MUICropIcon />,
   [Icons.delete]: <MUIDeleteIcon />,
   [Icons.down]: <MUIKeyboardArrowDownIcon />,
   [Icons.edit]: <MUIEditIcon />,
   [Icons.error]: <MUIErrorIcon />,
   [Icons.filter]: <MUIFilterListIcon />,
   [Icons.first]: <MUIFirstPageIcon />,
+  [Icons.group]: <MUIGroupWorkIcon />,
   [Icons.home]: <MUIHomeIcon />,
   [Icons.language]: <MUILanguageIcon />,
   [Icons.last]: <MUILastPageIcon />,
@@ -87,4 +95,6 @@ export const iconsCatalog = {
   [Icons.up_arrow]: <MUIArrowUpwardIcon />,
   [Icons.up]: <MUIKeyboardArrowUpIcon />,
   [Icons.warn]: <MUIWarningIcon />,
+  [Icons.wifi_off]: <MUIWifiOffOutlinedIcon />,
+  [Icons.wifi_on]: <MUIWifiOutlinedIcon />,
 };

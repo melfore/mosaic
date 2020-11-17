@@ -1,12 +1,14 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean, text } from "@storybook/addon-knobs";
+import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { SwitchSize } from "../../types/Switch";
+import { getAllComposedDataCy } from "../../utils";
 import FormMock from "../../utils/mocks/FormMock";
+import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Switch, { DATA_CY_DEFAULT } from ".";
+import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Switch",
@@ -17,7 +19,10 @@ export default {
       component: "Switch",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
+      localizableProps: LOCALIZABLE_PROPS,
     }),
   },
 };
@@ -27,32 +32,50 @@ export const Canvas = () => (
   // In a real case scenario "onChange" and "value" props must be passed to Switch
   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change switch")}>
     <Switch
-      dataCy={text("data-cy", "switch-identifier")}
-      value={boolean("value", true)}
+      dataCy={text("data-cy", "switch")}
+      label={text("label", "Switch")}
+      labelPlacement={select("labelPlacement", ["end", "start"], "start")}
       onChange={action("Change switch")}
+      value={boolean("value", true)}
     />
   </FormMock>
 );
 
-export const Values = () => (
-  <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={false} onChange={() => {}} />
-    <Switch dataCy={"switch-identifier"} value={true} onChange={() => {}} />
-  </StoriesWrapper>
-);
+export const CustomStyle = () => <Switch style={{ color: "red" }} value />;
 
 export const Disabled = () => (
   <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={false} disabled />
-    <Switch dataCy={"switch-identifier"} value={true} disabled />
+    <Switch disabled />
+    <Switch value disabled />
   </StoriesWrapper>
+);
+
+export const Label = () => (
+  <StoriesWrapper>
+    <Switch label="Switch" />
+    <Switch label="Switch" labelPlacement="end" value />
+  </StoriesWrapper>
+);
+
+export const Localized = () => (
+  // IntlProviderMock simulates external IntlProvider context
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Switch label={MessageMock.switch} localized />
+  </IntlProviderMock>
 );
 
 export const Size = () => (
   <StoriesWrapper>
-    <Switch dataCy={"switch-identifier"} value={true} />
-    <Switch dataCy={"switch-identifier"} value={true} size={SwitchSize.small} />
-    <Switch dataCy={"switch-identifier"} value={false} />
-    <Switch dataCy={"switch-identifier"} value={false} size={SwitchSize.small} />
+    <Switch value />
+    <Switch value size={SwitchSize.small} />
+    <Switch />
+    <Switch size={SwitchSize.small} />
+  </StoriesWrapper>
+);
+
+export const Values = () => (
+  <StoriesWrapper>
+    <Switch onChange={() => {}} />
+    <Switch value onChange={() => {}} />
   </StoriesWrapper>
 );

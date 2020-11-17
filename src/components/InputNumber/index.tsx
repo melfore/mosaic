@@ -1,10 +1,9 @@
-import React, { FC } from "react";
+import React, { CSSProperties, FC } from "react";
+import { TextField as MUITextField } from "@material-ui/core";
 
 import { InputSize, InputType, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-
-import { StyledMUITextField } from "./styled";
 
 const getControlledValue = (value: number | null): any => {
   return value === null ? "" : value;
@@ -43,9 +42,12 @@ const InputNumber: FC<IInputNumber> = ({
   required = false,
   shrink = true,
   size = InputSize.default,
+  style,
   value = null,
   variant = InputVariant.default,
 }) => {
+  const baseStyle: CSSProperties = { textAlign: "right", width: "100%" };
+
   const onChangeHandler = (event: any) => {
     const numericValue = getNumericValue(event.target.value, { integer, minValue, maxValue });
     if (onChange) {
@@ -54,14 +56,14 @@ const InputNumber: FC<IInputNumber> = ({
   };
 
   return (
-    <StyledMUITextField
+    <MUITextField
       disabled={disabled}
       InputLabelProps={{
         shrink,
       }}
       inputProps={{
         "data-cy": dataCy,
-        style: { textAlign: "right" },
+        style: { ...baseStyle, ...style },
       }}
       InputProps={{
         readOnly: disabled,
@@ -72,6 +74,7 @@ const InputNumber: FC<IInputNumber> = ({
       placeholder={placeholder}
       required={required}
       size={size}
+      style={{ ...baseStyle }}
       type={InputType.number}
       variant={variant}
       value={getControlledValue(value)}

@@ -38,39 +38,32 @@ export const Canvas = () => (
   />
 );
 
-export const Disabled = () => (
-  <StoriesWrapper>
-    <Button dataCy="button" label="Disabled" onClick={action("Click on Button")} disabled />
-  </StoriesWrapper>
+export const CustomStyle = () => (
+  <Button label="Custom Style" onClick={action("Click on Button")} style={{ backgroundColor: "red", color: "white" }} />
 );
 
-export const Elevated = () => (
-  <StoriesWrapper>
-    <Button dataCy="button" elevated label="Contained" onClick={action("Click on Button")} />
-  </StoriesWrapper>
-);
+export const Disabled = () => <Button disabled label="Disabled" onClick={action("Click on Button")} />;
+
+export const Elevated = () => <Button elevated label="Contained" onClick={action("Click on Button")} />;
 
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
-  <StoriesWrapper>
-    <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-      <Button label={MessageMock.button} localized onClick={action("Click on Button")} />
-    </IntlProviderMock>
-  </StoriesWrapper>
+  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
+    <Button label={MessageMock.button} localized onClick={action("Click on Button")} />
+  </IntlProviderMock>
 );
 
 export const Variants = () => (
   <StoriesWrapper>
-    <Button dataCy="button" label="Contained" onClick={action("Click on Button")} />
-    <Button dataCy="button" label="Outlined" onClick={action("Click on Button")} variant={ButtonVariants.outlined} />
+    <Button label="Contained" onClick={action("Click on Button")} />
+    <Button label="Outlined" onClick={action("Click on Button")} variant={ButtonVariants.outlined} />
   </StoriesWrapper>
 );
 
 export const WithIcon = () => (
   <StoriesWrapper>
-    <Button dataCy="button" icon={{ name: Icons.send }} label="Left Icon" onClick={action("Click on Button")} />
+    <Button icon={{ name: Icons.send }} label="Left Icon" onClick={action("Click on Button")} />
     <Button
-      dataCy="button"
       icon={{ name: Icons.send, position: ButtonIconPosition.right }}
       label="Right Icon"
       onClick={action("Click on Button")}

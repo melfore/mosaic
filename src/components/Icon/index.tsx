@@ -13,6 +13,7 @@ const Icon: FC<IIcon> = ({
   loading = false,
   name,
   size = IconSize.default,
+  style,
 }) => {
   if (loading) {
     const dimensions = ((size: IconSize): number => {
@@ -31,7 +32,7 @@ const Icon: FC<IIcon> = ({
   }
 
   const icon = iconsCatalog[name];
-  return React.cloneElement(icon, { ...forwarded, "data-cy": dataCy, fontSize: size });
+  return React.cloneElement(icon, { ...forwarded, "data-cy": dataCy, fontSize: size, style });
 };
 
 export default Icon;

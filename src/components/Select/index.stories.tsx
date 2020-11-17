@@ -48,6 +48,16 @@ export const Basic = () => (
   />
 );
 
+export const CustomStyle = () => (
+  <Select
+    label="Custom Style"
+    multiple={false}
+    onChange={(value) => {}}
+    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
+    style={{ color: "red", fontWeight: "bold", fontSize: "large", textAlign: "center" }}
+  />
+);
+
 export const CustomType = () => {
   interface ICustom {
     name: string;

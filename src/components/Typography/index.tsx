@@ -25,10 +25,11 @@ const Typography: FC<ITypography> = ({
   children,
   content,
   dataCy = DATA_CY_DEFAULT,
+  display = TypographyDisplay.default,
   loading = false,
+  style,
   truncated = false,
   variant = TypographyVariants.body,
-  display = TypographyDisplay.default,
 }) => {
   return (
     <MUITypography
@@ -36,6 +37,7 @@ const Typography: FC<ITypography> = ({
       display={display}
       gutterBottom={bottomSpacing}
       noWrap={truncated}
+      style={style}
       variant={variant}
       variantMapping={VARIANT_COMPONENT_MAP}
     >

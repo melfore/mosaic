@@ -1,5 +1,5 @@
 import { ILocalizable } from "./Base";
-import { ButtonVariants } from "./Button";
+import { IButton } from "./Button";
 
 export enum ModalSize {
   small = "sm",
@@ -7,12 +7,9 @@ export enum ModalSize {
   large = "lg",
 }
 
-export interface IModalAction {
+type IModalAction = Pick<IButton, "disabled" | "label" | "style" | "variant"> & {
   action: () => void;
-  disabled?: boolean;
-  label: string;
-  variant?: ButtonVariants;
-}
+};
 
 export interface IModal extends ILocalizable {
   cancel?: IModalAction;

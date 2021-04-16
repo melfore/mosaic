@@ -17,9 +17,9 @@
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.1",
     "@commitlint/prompt-cli": "^9.1.1",
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -65,19 +65,19 @@
     "prettier": "^2.0.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-intl": "^5.4.7",
+    "react-intl": "^5.15.8",
     "react-test-renderer": "^16.13.1",
     "semantic-release": "^17.1.1",
     "ts-jest": "^26.2.0",
     "typescript": "3.8.3"
   },
   "peerDependencies": {
-    "@material-ui/core": "4.11.x",
-    "@material-ui/icons": "4.9.x",
-    "@material-ui/lab": "4.0.0-alpha.56",
+    "@material-ui/core": ">= 4.11.0 < 5",
+    "@material-ui/icons": ">= 4.9.x < 5",
+    "@material-ui/lab": ">= 4.0.0-alpha.56 < 5",
     "react": "16.13.x",
     "react-dom": "16.13.x",
-    "react-intl": "5.4.x"
+    "react-intl": ">= 5.4.x < 6"
   },
   "scripts": {
     "build": "npm run pre-build && tsc",

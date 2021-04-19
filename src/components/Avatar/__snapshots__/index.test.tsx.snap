@@ -2,7 +2,7 @@
 
 exports[`Avatar test suite: dataCy 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="custom"
   style={
     Object {
@@ -15,7 +15,7 @@ exports[`Avatar test suite: dataCy 1`] = `
 
 exports[`Avatar test suite: default 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
     Object {
@@ -28,7 +28,7 @@ exports[`Avatar test suite: default 1`] = `
 
 exports[`Avatar test suite: icon 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
     Object {
@@ -53,7 +53,7 @@ exports[`Avatar test suite: icon 1`] = `
 
 exports[`Avatar test suite: image 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle"
+  className="MuiAvatar-root MuiAvatar-circular"
   data-cy="avatar"
   style={
     Object {
@@ -113,7 +113,7 @@ exports[`Avatar test suite: squared 1`] = `
 
 exports[`Avatar test suite: text 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
     Object {

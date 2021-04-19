@@ -363,7 +363,7 @@ exports[`Card test suite: icon 1`] = `
       className="MuiCardHeader-avatar"
     >
       <div
-        className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+        className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
         data-cy="card-avatar"
         style={
           Object {

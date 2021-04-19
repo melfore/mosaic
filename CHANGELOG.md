@@ -1,3 +1,34 @@
+# [4.0.0](https://github.com/melfore/mosaic/compare/v3.0.0...v4.0.0) (2021-04-19)
+
+
+### Documentation
+
+* ✏️ Updated peer dependencies list ([bc59ea9](https://github.com/melfore/mosaic/commit/bc59ea9bcdcb661b9dd392102779c22f07bb4a34))
+
+
+### Features
+
+* 🎸 Added visibility and details icons ([bf792fa](https://github.com/melfore/mosaic/commit/bf792fa52784480c9ce8ce387b6f1e7520dcd5c9))
+* 🎸 Default AvatarVariant changed to "circular" ([5eace79](https://github.com/melfore/mosaic/commit/5eace7968070a156f3a608d4a452dd9883f7535f))
+* 🎸 Removed internal state from InputText ([49c30d2](https://github.com/melfore/mosaic/commit/49c30d2ffb7a1d363ee17f8f7cde479b4f533cfe))
+
+
+### BREAKING CHANGES
+
+* 🧨 Updated minimum peerDependencies for @material-ui/* libraries
+
+✅ Closes: 178
+* 🧨 Avatar component no longer supports "circle" value for "variant"
+property, has been replaced by "circular". As a consequence of this
+minimum version of @material-ui/* in peer dependencies needed to be
+updated to v4.11.3
+
+✅ Closes: 178
+* 🧨 Deprecated "initialValue" of InputText component, it must be replaced by
+"value".
+
+✅ Closes: 177
+
 # [3.0.0](https://github.com/melfore/mosaic/compare/v2.3.0...v3.0.0) (2020-11-17)
 
 
@@ -318,4 +349,3 @@ Meaning that each commit must respect most common commit message guidelines.
 Using the script `npm run commit` a commit prompt is shown to guide the user in writing the commit message (thanks to `git-cz` package).
 
 This kicks-in the `semantic-release` package that from next-version-on will take care of versioning, writing release notes and changelogs automagically.
-

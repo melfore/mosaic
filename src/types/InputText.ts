@@ -13,7 +13,7 @@ export interface IInputAdornment {
 
 export interface IInputText extends IInput {
   adornment?: IInputAdornment;
-  initialValue?: string;
   multiline?: IMultilineInput;
   type?: InputType;
+  value?: string;
 }

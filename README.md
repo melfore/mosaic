@@ -15,9 +15,9 @@ Add the package to your project with:
 It requires these `peerDependencies` to be installed in host project:
 
 ```
-  "@material-ui/core": ">= 4.11.0 < 5",
-  "@material-ui/icons": ">= 4.9.0 < 5",
-  "@material-ui/lab": ">= 4.0.0-alpha.56 < 5",
+  "@material-ui/core": ">= 4.11.3 < 5",
+  "@material-ui/icons": ">= 4.11.2 < 5",
+  "@material-ui/lab": ">= 4.0.0-alpha.57 < 5",
   "react": ">= 16.13.0 < 17",
   "react-dom": ">= 16.13.0 < 17",
   "react-intl": ">= 5.4.x < 6"

@@ -14,6 +14,7 @@ import MUIChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MUICloseIcon from "@material-ui/icons/Close";
 import MUICropIcon from "@material-ui/icons/Crop";
 import MUIDeleteIcon from "@material-ui/icons/Delete";
+import MUIDetailsIcon from "@material-ui/icons/Details";
 import MUIDraftsIcon from "@material-ui/icons/Drafts";
 import MUIEditIcon from "@material-ui/icons/Edit";
 import MUIErrorIcon from "@material-ui/icons/Error";
@@ -43,6 +44,8 @@ import MUISendIcon from "@material-ui/icons/Send";
 import MUISettingsIcon from "@material-ui/icons/Settings";
 import MUISignalWifi1BarOutlinedIcon from "@material-ui/icons/SignalWifi1BarOutlined";
 import MUITimelineIcon from "@material-ui/icons/Timeline";
+import MUIVisibilityIcon from "@material-ui/icons/Visibility";
+import MUIVisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import MUIWarningIcon from "@material-ui/icons/Warning";
 import MUIWifiOffOutlinedIcon from "@material-ui/icons/WifiOffOutlined";
 import MUIWifiOutlinedIcon from "@material-ui/icons/WifiOutlined";
@@ -65,6 +68,7 @@ export const iconsCatalog = {
   [Icons.connection_slow]: <MUISignalWifi1BarOutlinedIcon />,
   [Icons.crop]: <MUICropIcon />,
   [Icons.delete]: <MUIDeleteIcon />,
+  [Icons.details]: <MUIDetailsIcon />,
   [Icons.down]: <MUIKeyboardArrowDownIcon />,
   [Icons.edit]: <MUIEditIcon />,
   [Icons.error]: <MUIErrorIcon />,
@@ -94,6 +98,8 @@ export const iconsCatalog = {
   [Icons.settings]: <MUISettingsIcon />,
   [Icons.up_arrow]: <MUIArrowUpwardIcon />,
   [Icons.up]: <MUIKeyboardArrowUpIcon />,
+  [Icons.visibility]: <MUIVisibilityIcon />,
+  [Icons.visibility_off]: <MUIVisibilityOffIcon />,
   [Icons.warn]: <MUIWarningIcon />,
   [Icons.wifi_off]: <MUIWifiOffOutlinedIcon />,
   [Icons.wifi_on]: <MUIWifiOutlinedIcon />,

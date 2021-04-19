@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useEffect, useState } from "react";
+import React, { CSSProperties, FC } from "react";
 import { InputAdornment as MUIInputAdornment, TextField as MUITextField } from "@material-ui/core";
 
 import { IconSize } from "../../types/Icon";
@@ -47,7 +47,6 @@ const InputText: FC<IInputText> = ({
   adornment = undefined,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
-  initialValue = "",
   label,
   multiline = undefined,
   onChange = undefined,
@@ -57,19 +56,14 @@ const InputText: FC<IInputText> = ({
   size = InputSize.default,
   style,
   type = InputType.default,
+  value = "",
   variant = InputVariant.default,
 }) => {
   const baseStyle: CSSProperties = { width: "100%" };
 
-  const [value, setValue] = useState(initialValue);
-  useEffect(() => setValue(initialValue), [initialValue]);
-
   const onChangeHandler = (event: any) => {
     const value = event.target.value;
-    setValue(value);
-    if (onChange) {
-      onChange(value);
-    }
+    onChange && onChange(value);
   };
 
   return (

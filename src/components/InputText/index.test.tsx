@@ -119,9 +119,9 @@ describe("InputText test suite:", () => {
   });
 
   it("value", () => {
-    const initialValue = "Initial Text Value";
-    const { element, wrapper } = getInputTextTestable({ initialValue });
-    expect(wrapper.prop("value")).toEqual(initialValue);
+    const value = "Initial Text Value";
+    const { element, wrapper } = getInputTextTestable({ value });
+    expect(wrapper.prop("value")).toEqual(value);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

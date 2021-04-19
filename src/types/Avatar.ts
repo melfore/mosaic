@@ -2,7 +2,7 @@ import { ILoadable } from "./Base";
 import { Icons } from "./Icon";
 
 export enum AvatarVariant {
-  default = "circle",
+  default = "circular",
   rounded = "rounded",
   squared = "square",
 }

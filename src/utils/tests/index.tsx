@@ -17,7 +17,9 @@ export interface ITestOptions<T> {
   props: T;
 }
 
-export type IPartialTestOptions<T> = Partial<ITestOptions<T>>;
+export type IPartialTestOptions<T> = Partial<Omit<ITestOptions<T>, "props">> & {
+  props?: Partial<T>;
+};
 
 /**
  * Creates ReactElement using Component and specified options
@@ -59,7 +61,12 @@ export const getTestableComponent = <T extends IBase>(
   defaultOptions: ITestOptions<T>,
   partialOptions?: IPartialTestOptions<T>
 ): ITestableComponent => {
-  const options = { ...defaultOptions, ...partialOptions };
+  const options: ITestOptions<T> = {
+    ...defaultOptions,
+    ...partialOptions,
+    props: { ...defaultOptions.props, ...partialOptions?.props },
+  };
+
   const element = getReactElement(Component, options);
   const wrapper = getReactWrapper(element, options);
   return { element, wrapper };

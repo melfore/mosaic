@@ -2,25 +2,31 @@
 // import renderer from "react-test-renderer";
 
 import { ISelect } from "../../types/Select";
-import { getLocalizedTestable } from "../../utils/tests";
+import { getComposedDataCy } from "../../utils";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import Select, { DATA_CY_DEFAULT } from ".";
+import Select, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: ISelect<string> = {
-  multiple: false,
-  onChange: jest.fn(),
-  options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
+const DEFAULT_TEST_OPTIONS: ITestOptions<ISelect<any>> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "input",
+  localized: true,
+  props: {
+    multiple: false,
+    onChange: jest.fn(),
+    options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
+  },
 };
 
-const getSelectTestable = (props: ISelect<string>, dataCy = DATA_CY_DEFAULT, domNode = "input") =>
-  getLocalizedTestable(Select, { dataCy, domNode, props: { ...props } });
+const getSelectTestable = (options?: IPartialTestOptions<ISelect<any>>) =>
+  getTestableComponent(Select, DEFAULT_TEST_OPTIONS, options);
 
 // TODO: missing localized test
-
 describe("Select Single test suite:", () => {
   it("default", () => {
-    const { wrapper } = getSelectTestable(defaultProps);
+    const { wrapper } = getSelectTestable();
     expect(wrapper).toHaveLength(1);
+
     expect(wrapper.hasClass("MuiOutlinedInput-input"));
     expect(wrapper.prop("disabled")).toBeFalsy();
     expect(wrapper.prop("required")).toBeFalsy();
@@ -28,53 +34,93 @@ describe("Select Single test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { wrapper } = getSelectTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { wrapper } = getSelectTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
   });
 
   it("disabled", () => {
-    const { wrapper } = getSelectTestable({ ...defaultProps, disabled: true });
+    const { wrapper } = getSelectTestable({ props: { disabled: true } });
     expect(wrapper.prop("disabled")).toBeTruthy();
   });
 
   // TODO: improve this by adding check on options and groupby
   it("groupBy", () => {
     getSelectTestable({
-      ...defaultProps,
-      getGroupLabel: (option) => option.slice(0, 1),
-      getOptionLabel: (option) => option.toUpperCase(),
-      groupBy: (option) => option.slice(0, 1),
+      props: {
+        getGroupLabel: (option) => option.slice(0, 1),
+        getOptionLabel: (option) => option.toUpperCase(),
+        groupBy: (option) => option.slice(0, 1),
+      },
     });
   });
 
   it("immutable options", () => {
     const frozenOptions = Object.freeze(["Photography", "Sculpture", "Mosaic", "Murales", "Paintings"]) as string[];
-    getSelectTestable({ ...defaultProps, options: frozenOptions });
+    getSelectTestable({ props: { options: frozenOptions } });
   });
 
   it("loading", () => {
-    const { wrapper } = getSelectTestable(
-      { ...defaultProps, loading: true },
-      `${DATA_CY_DEFAULT}-outer-wrapper`,
-      "div"
-    );
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({ dataCy: outerWrapperDataCy, domNode: "div", props: { loading: true } });
     const placeholder = wrapper.find("span.MuiSkeleton-root");
     expect(placeholder).toHaveLength(1);
   });
 
+  it("onChange - single", () => {
+    const onChangeCallback = jest.fn();
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: { onChange: onChangeCallback },
+    });
+
+    const input = wrapper.find(`input[data-cy='select']`);
+    input.simulate("mousedown");
+
+    const mosaicOption = wrapper.find(`li[data-option-index=0]`);
+    mosaicOption.simulate("click");
+
+    expect(onChangeCallback).toHaveBeenCalledTimes(1);
+    expect(onChangeCallback).toHaveBeenCalledWith("Mosaic");
+  });
+
+  it("onChange - multiple", () => {
+    const onChangeCallback = jest.fn();
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: { multiple: true, onChange: onChangeCallback, value: [] },
+    });
+
+    const input = wrapper.find(`input[data-cy='select']`);
+    input.simulate("mousedown");
+
+    const mosaicOption = wrapper.find(`li[data-option-index=0]`);
+    mosaicOption.simulate("click");
+
+    expect(onChangeCallback).toHaveBeenCalledTimes(1);
+    expect(onChangeCallback).toHaveBeenCalledWith(["Mosaic"]);
+  });
+
   it("placeholder", () => {
     const placeholder = "Placeholder";
-    const { wrapper } = getSelectTestable({ ...defaultProps, placeholder });
+    const { wrapper } = getSelectTestable({ props: { placeholder } });
     expect(wrapper.prop("placeholder")).toEqual(placeholder);
   });
 
   it("required", () => {
-    const { wrapper } = getSelectTestable({ ...defaultProps, required: true });
+    const { wrapper } = getSelectTestable({ props: { required: true } });
     expect(wrapper.prop("required")).toBeTruthy();
   });
 
   it("value", () => {
-    const { wrapper } = getSelectTestable({ ...defaultProps, value: defaultProps.options[0] });
-    expect(wrapper.prop("value")).toEqual(defaultProps.options[0]);
+    const value = DEFAULT_TEST_OPTIONS.props.options[0];
+    const { wrapper } = getSelectTestable({ props: { value } });
+    expect(wrapper.prop("value")).toEqual(value);
   });
 });

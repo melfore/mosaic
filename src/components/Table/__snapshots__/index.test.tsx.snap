@@ -79,7 +79,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="table-select-all-input"
+              data-cy="table-select-all-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -99,6 +99,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="table-select-all-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -168,7 +169,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -188,6 +189,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -252,7 +254,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -272,6 +274,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -336,7 +339,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -356,6 +359,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -420,7 +424,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -440,6 +444,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -504,7 +509,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -524,6 +529,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -644,7 +650,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="table-select-all-input"
+              data-cy="table-select-all-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -664,6 +670,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="table-select-all-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -736,7 +743,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -756,6 +763,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -823,7 +831,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -843,6 +851,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -910,7 +919,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -930,6 +939,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -997,7 +1007,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -1017,6 +1027,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}
@@ -1084,7 +1095,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             <span
               aria-disabled={false}
               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-              data-cy="checkbox-input"
+              data-cy="checkbox-check"
               onBlur={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
@@ -1104,6 +1115,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
                 <input
                   checked={false}
                   className="PrivateSwitchBase-input-4"
+                  data-cy="checkbox-input"
                   data-indeterminate={false}
                   disabled={false}
                   onChange={[Function]}

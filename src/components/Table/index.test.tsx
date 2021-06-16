@@ -14,11 +14,11 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<ITable> = {
   props: {
     columns: [{ path: "name", label: "Name" }],
     rows: [
-      { name: "Mosaic" },
-      { name: "Murales" },
-      { name: "Paintings" },
-      { name: "Photography" },
-      { name: "Sculpture" },
+      { id: "1", name: "Mosaic" },
+      { id: "2", name: "Murales" },
+      { id: "3", name: "Paintings" },
+      { id: "4", name: "Photography" },
+      { id: "5", name: "Sculpture" },
     ],
     title: "Table",
   },
@@ -66,17 +66,10 @@ describe("Table test suite:", () => {
 
     const bulkSelectionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.selectAll);
     const bulkSelection = wrapper.find(`[data-cy='${bulkSelectionDataCy}']`);
-
     const bulkSelectionInput = bulkSelection.find("input");
     bulkSelectionInput.simulate("change", { target: { checked: true } });
     expect(onSelectionChange).toHaveBeenCalledTimes(1);
-    expect(onSelectionChange).toHaveBeenCalledWith([
-      { id: 0, name: "Mosaic" },
-      { id: 1, name: "Murales" },
-      { id: 2, name: "Paintings" },
-      { id: 3, name: "Photography" },
-      { id: 4, name: "Sculpture" },
-    ]);
+    expect(onSelectionChange).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -131,6 +124,7 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([]);
 
     const actionLabel = action.find("span.MuiButton-label");
     expect(actionLabel.text()).toEqual(label);
@@ -211,6 +205,7 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -220,6 +215,32 @@ describe("Table test suite:", () => {
     const getRowStyle = jest.fn();
     const { element } = getTableTestable({ props: { getRowStyle } });
     expect(getRowStyle).toHaveBeenCalledTimes(DEFAULT_TEST_OPTIONS.props.rows.length * 2);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("selection action", () => {
+    const callback = jest.fn();
+    const label = "Selection";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, icon: Icons.account, label, position: TableActionPosition.selection }],
+        selectionFilter: (d) => d.name.startsWith("P"),
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([
+      { id: "3", name: "Paintings" },
+      { id: "4", name: "Photography" },
+    ]);
+
+    const actionLabel = action.find("span.MuiButton-label");
+    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

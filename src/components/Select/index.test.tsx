@@ -14,7 +14,7 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<ISelect<any>> = {
   props: {
     multiple: false,
     onChange: jest.fn(),
-    options: ["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"],
+    options: ["Sculpture", "Photography", "Paintings", "Murales", "Mosaic"],
   },
 };
 
@@ -77,7 +77,7 @@ describe("Select Single test suite:", () => {
       props: { onChange: onChangeCallback },
     });
 
-    const input = wrapper.find(`input[data-cy='select']`);
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
     input.simulate("mousedown");
 
     const mosaicOption = wrapper.find(`li[data-option-index=0]`);
@@ -97,7 +97,7 @@ describe("Select Single test suite:", () => {
       props: { multiple: true, onChange: onChangeCallback, value: [] },
     });
 
-    const input = wrapper.find(`input[data-cy='select']`);
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
     input.simulate("mousedown");
 
     const mosaicOption = wrapper.find(`li[data-option-index=0]`);
@@ -105,6 +105,23 @@ describe("Select Single test suite:", () => {
 
     expect(onChangeCallback).toHaveBeenCalledTimes(1);
     expect(onChangeCallback).toHaveBeenCalledWith(["Mosaic"]);
+  });
+
+  it("options - default", () => {
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`p[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options.reverse());
   });
 
   it("placeholder", () => {

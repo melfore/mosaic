@@ -5,6 +5,7 @@ import { IInput } from "./Input";
 
 interface IBaseSelect<T> extends ILocalizable, ILoadable, IInput {
   autoComplete?: boolean;
+  autoSort?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;
   getGroupLabel?: (groupName: string) => string;
   getOptionLabel?: (option: T) => string;

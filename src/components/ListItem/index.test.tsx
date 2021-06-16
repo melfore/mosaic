@@ -3,21 +3,28 @@ import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
 import { IListItem } from "../../types/ListItem";
-import { getTestable } from "../../utils/tests";
+import { getComposedDataCy } from "../../utils";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import ListItem, { DATA_CY_DEFAULT } from ".";
+import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: IListItem = {};
+const DEFAULT_TEST_OPTIONS: ITestOptions<IListItem> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "li",
+  props: {},
+};
 
-const getListItemTestable = (props?: IListItem, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(ListItem, { dataCy, domNode: "li", props: { ...defaultProps, ...props } });
+const getListItemTestable = (options?: IPartialTestOptions<IListItem>) =>
+  getTestableComponent(ListItem, DEFAULT_TEST_OPTIONS, options);
 
 describe("ListItem test suite:", () => {
   it("default", () => {
     const content = <span>"List Item"</span>;
-    const { element, wrapper } = getListItemTestable({ content });
+    const { element, wrapper } = getListItemTestable({ props: { content } });
     expect(wrapper).toHaveLength(1);
-    const contentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-content']`);
+
+    const contentDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.content);
+    const contentWrapper = wrapper.find(`div[data-cy='${contentDataCy}']`);
     expect(contentWrapper.childAt(0).matchesElement(content)).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -25,7 +32,8 @@ describe("ListItem test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getListItemTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getListItemTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -33,7 +41,7 @@ describe("ListItem test suite:", () => {
   });
 
   it("dense", () => {
-    const { element, wrapper } = getListItemTestable({ dense: true });
+    const { element, wrapper } = getListItemTestable({ props: { dense: true } });
     expect(wrapper.hasClass("MuiListItem-dense"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -41,8 +49,10 @@ describe("ListItem test suite:", () => {
   });
 
   it("icon", () => {
-    const { element, wrapper } = getListItemTestable({ icon: Icons.account });
-    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    const { element, wrapper } = getListItemTestable({ props: { icon: Icons.account } });
+
+    const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
+    const icon = wrapper.find(`Icon[dataCy='${iconDataCy}']`);
     expect(icon.prop("name")).toEqual(Icons.account);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -51,7 +61,8 @@ describe("ListItem test suite:", () => {
 
   it("loading", () => {
     const onClick = jest.fn();
-    const { element, wrapper } = getListItemTestable({ onClick, loading: true });
+    const { element, wrapper } = getListItemTestable({ props: { onClick, loading: true } });
+
     wrapper.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(0);
     const contentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-content']`);
@@ -65,7 +76,8 @@ describe("ListItem test suite:", () => {
 
   it("onClick", () => {
     const onClick = jest.fn();
-    const { element, wrapper } = getListItemTestable({ onClick: onClick });
+    const { element, wrapper } = getListItemTestable({ props: { onClick } });
+
     wrapper.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
 
@@ -74,7 +86,7 @@ describe("ListItem test suite:", () => {
   });
 
   it("selected", () => {
-    const { element, wrapper } = getListItemTestable({ selected: true });
+    const { element, wrapper } = getListItemTestable({ props: { selected: true } });
     expect(wrapper.hasClass("MuiListItem-selected"));
 
     const snapshotWrapper = renderer.create(element).toJSON();

@@ -2,16 +2,20 @@
 // import renderer from "react-test-renderer";
 
 import { IModal, ModalSize } from "../../types/Modal";
-import { getLocalizedTestable } from "../../utils/tests";
+import { getComposedDataCy } from "../../utils";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import Modal, { DATA_CY_DEFAULT } from ".";
+import Modal, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: IModal = {
-  open: true,
+const DEFAULT_TEST_OPTIONS: ITestOptions<IModal> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "div",
+  localized: true,
+  props: { open: true },
 };
 
-const getModalTestable = (props?: IModal, dataCy = DATA_CY_DEFAULT) =>
-  getLocalizedTestable(Modal, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
+const getModalTestable = (options?: IPartialTestOptions<IModal>) =>
+  getTestableComponent(Modal, DEFAULT_TEST_OPTIONS, options);
 
 // TODO: missing localized test
 
@@ -22,40 +26,47 @@ describe("Modal test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { wrapper } = getModalTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { wrapper } = getModalTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
   });
 
   it("cancel", () => {
     const action = jest.fn();
     const label = "Cancel";
-    const { wrapper } = getModalTestable({ cancel: { action, label } });
-    const cancel = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-cancel']`);
+    const { wrapper } = getModalTestable({ props: { cancel: { action, label } } });
+
+    const cancelDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.actionCancel);
+    const cancel = wrapper.find(`button[data-cy='${cancelDataCy}']`);
     cancel.simulate("click");
     expect(action).toHaveBeenCalledTimes(1);
+
     const cancelLabel = cancel.find("span.MuiButton-label");
     expect(cancelLabel.text()).toEqual(label);
   });
 
   // TODO: improve this
   it("closable", () => {
-    getModalTestable({ closable: true });
+    getModalTestable({ props: { closable: true } });
   });
 
   it("confirm", () => {
     const action = jest.fn();
     const label = "Confirm";
-    const { wrapper } = getModalTestable({ confirm: { action, label } });
-    const confirm = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-confirm']`);
+    const { wrapper } = getModalTestable({ props: { confirm: { action, label } } });
+
+    const confirmDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.actionConfirm);
+    const confirm = wrapper.find(`button[data-cy='${confirmDataCy}']`);
     confirm.simulate("click");
     expect(action).toHaveBeenCalledTimes(1);
+
     const confirmLabel = confirm.find("span.MuiButton-label");
     expect(confirmLabel.text()).toEqual(label);
   });
 
   it("onClose", () => {
     const onClose = jest.fn();
-    const { wrapper } = getModalTestable({ onClose });
+    const { wrapper } = getModalTestable({ props: { onClose } });
     const backdrop = wrapper.find("div.MuiBackdrop-root");
     backdrop.simulate("click");
     expect(onClose).toHaveBeenCalledTimes(1);
@@ -63,12 +74,13 @@ describe("Modal test suite:", () => {
 
   // TODO: improve this
   it("size", () => {
-    getModalTestable({ size: ModalSize.large });
+    getModalTestable({ props: { size: ModalSize.large } });
   });
 
   it("title", () => {
     const title = "Modal";
-    const { wrapper } = getModalTestable({ title });
+    const { wrapper } = getModalTestable({ props: { title } });
+
     const titleWrapper = wrapper.find("h2.MuiTypography-root");
     expect(titleWrapper.text()).toEqual(title);
   });

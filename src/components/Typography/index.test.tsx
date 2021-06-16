@@ -2,21 +2,25 @@ import renderer from "react-test-renderer";
 
 import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
 import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
-import { getLocalizedTestable } from "../../utils/tests";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Typography, { DATA_CY_DEFAULT } from ".";
 
-const defaultProps: ITypography = {
-  content: "Text",
+const DEFAULT_TEST_OPTIONS: ITestOptions<ITypography> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "p",
+  localized: true,
+  props: { content: "Text" },
 };
 
-const getTypographyTestable = (props?: ITypography, dataCy = DATA_CY_DEFAULT, domNode = "p") =>
-  getLocalizedTestable(Typography, { dataCy, domNode, props: { ...defaultProps, ...props } });
+const getTypographyTestable = (options?: IPartialTestOptions<ITypography>) =>
+  getTestableComponent(Typography, DEFAULT_TEST_OPTIONS, options);
 
 describe("Typography test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getTypographyTestable();
     expect(wrapper).toHaveLength(1);
+
     expect(wrapper.hasClass("MuiTypography-body1"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -24,7 +28,8 @@ describe("Typography test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getTypographyTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getTypographyTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -33,10 +38,12 @@ describe("Typography test suite:", () => {
 
   it("localized", () => {
     const { element, wrapper } = getTypographyTestable({
-      ...defaultProps,
-      content: MessageMock.typography,
-      localized: true,
+      props: {
+        content: MessageMock.typography,
+        localized: true,
+      },
     });
+
     expect(wrapper.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.typography]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -44,7 +51,7 @@ describe("Typography test suite:", () => {
   });
 
   it("bottomSpacing", () => {
-    const { element, wrapper } = getTypographyTestable({ bottomSpacing: true });
+    const { element, wrapper } = getTypographyTestable({ props: { bottomSpacing: true } });
     expect(wrapper.hasClass("MuiTypography-gutterBottom"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -52,7 +59,7 @@ describe("Typography test suite:", () => {
   });
 
   it("display", () => {
-    const { element, wrapper } = getTypographyTestable({ display: TypographyDisplay.inline });
+    const { element, wrapper } = getTypographyTestable({ props: { display: TypographyDisplay.inline } });
     expect(wrapper.hasClass("MuiTypography-displayInline"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -60,7 +67,9 @@ describe("Typography test suite:", () => {
   });
 
   it("loading", () => {
-    const { element, wrapper } = getTypographyTestable({ loading: true }, `${DATA_CY_DEFAULT}-loading`);
+    const loadingDataCy = `${DATA_CY_DEFAULT}-loading`;
+    const { element, wrapper } = getTypographyTestable({ dataCy: loadingDataCy, props: { loading: true } });
+
     const placeholder = wrapper.find("span.MuiSkeleton-root");
     expect(placeholder).toHaveLength(1);
 
@@ -69,7 +78,7 @@ describe("Typography test suite:", () => {
   });
 
   it("truncated", () => {
-    const { element, wrapper } = getTypographyTestable({ truncated: true });
+    const { element, wrapper } = getTypographyTestable({ props: { truncated: true } });
     expect(wrapper.hasClass("MuiTypography-noWrap"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -77,7 +86,7 @@ describe("Typography test suite:", () => {
   });
 
   it("variant", () => {
-    const { element, wrapper } = getTypographyTestable({ variant: TypographyVariants.title }, undefined, "h2");
+    const { element, wrapper } = getTypographyTestable({ domNode: "h2", props: { variant: TypographyVariants.title } });
     expect(wrapper.hasClass("MuiTypography-h6"));
 
     const snapshotWrapper = renderer.create(element).toJSON();

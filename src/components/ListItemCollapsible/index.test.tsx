@@ -3,23 +3,27 @@ import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
 import { IListItemCollapsible } from "../../types/ListItem";
-import { getTestable } from "../../utils/tests";
+import { getComposedDataCy } from "../../utils";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import ListItemCollapsible, { DATA_CY_DEFAULT } from ".";
+import ListItemCollapsible, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: IListItemCollapsible = {
-  header: <span>Collapsible Header</span>,
+const DEFAULT_TEST_OPTIONS: ITestOptions<IListItemCollapsible> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "li",
+  props: { header: <span>Collapsible Header</span> },
 };
 
-// TODO: unify dataCy generation
-const getListItemCollapsibleTestable = (props?: IListItemCollapsible, dataCy = DATA_CY_DEFAULT, domNode = "li") =>
-  getTestable(ListItemCollapsible, { dataCy, domNode, props: { ...defaultProps, ...props } });
+const getListItemCollapsibleTestable = (options?: IPartialTestOptions<IListItemCollapsible>) =>
+  getTestableComponent(ListItemCollapsible, DEFAULT_TEST_OPTIONS, options);
 
 describe("ListItemCollapsible test suite:", () => {
   it("default", () => {
-    const { element, wrapper } = getListItemCollapsibleTestable({ ...defaultProps }, `${DATA_CY_DEFAULT}-header`);
+    const headerDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.header);
+    const { element, wrapper } = getListItemCollapsibleTestable({ dataCy: headerDataCy });
     expect(wrapper).toHaveLength(1);
-    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-header-icon']`);
+
+    const icon = wrapper.find(`Icon[dataCy='${headerDataCy}-icon']`);
     expect(icon.prop("name")).toEqual(Icons.down);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -27,7 +31,11 @@ describe("ListItemCollapsible test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getListItemCollapsibleTestable({ ...defaultProps, dataCy: "custom" }, "custom-header");
+    const dataCy = "custom";
+    const { element, wrapper } = getListItemCollapsibleTestable({
+      dataCy: getComposedDataCy(dataCy, SUBPARTS_MAP.header),
+      props: { dataCy },
+    });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -35,15 +43,19 @@ describe("ListItemCollapsible test suite:", () => {
   });
 
   it("listItem variants", () => {
-    const { element, wrapper } = getListItemCollapsibleTestable(
-      { ...defaultProps, dense: true, loading: true, selected: true },
-      `${DATA_CY_DEFAULT}-header`
-    );
+    const headerDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.header);
+    const { element, wrapper } = getListItemCollapsibleTestable({
+      dataCy: headerDataCy,
+      props: { dense: true, loading: true, selected: true },
+    });
+
     expect(wrapper.hasClass("MuiListItem-dense"));
     expect(wrapper.hasClass("MuiListItem-selected"));
-    const contentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-header-content']`);
+
+    const contentWrapper = wrapper.find(`div[data-cy='${headerDataCy}-content']`);
     expect(contentWrapper).toHaveLength(0);
-    const loadingContentWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-header-content-loading']`);
+
+    const loadingContentWrapper = wrapper.find(`div[data-cy='${headerDataCy}-content-loading']`);
     expect(loadingContentWrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -51,18 +63,22 @@ describe("ListItemCollapsible test suite:", () => {
   });
 
   it("open", () => {
-    const { element: header, wrapper: headerWrapper } = getListItemCollapsibleTestable(
-      { ...defaultProps, open: true },
-      `${DATA_CY_DEFAULT}-header`
-    );
-    const icon = headerWrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-header-icon']`);
+    const headerDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.header);
+    const { element: header, wrapper: headerWrapper } = getListItemCollapsibleTestable({
+      dataCy: headerDataCy,
+      props: { open: true },
+    });
+
+    const icon = headerWrapper.find(`Icon[dataCy='${headerDataCy}-icon']`);
     expect(icon.prop("name")).toEqual(Icons.up);
 
-    const { element: collapsible, wrapper: collapsibleWrapper } = getListItemCollapsibleTestable(
-      { ...defaultProps, open: true },
-      `${DATA_CY_DEFAULT}-collapse`,
-      "div"
-    );
+    const collapseDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.collapse);
+    const { element: collapsible, wrapper: collapsibleWrapper } = getListItemCollapsibleTestable({
+      dataCy: collapseDataCy,
+      domNode: "div",
+      props: { open: true },
+    });
+
     expect(collapsibleWrapper).toHaveLength(1);
     expect(collapsibleWrapper.hasClass("MuiCollapse-entered"));
 
@@ -73,11 +89,12 @@ describe("ListItemCollapsible test suite:", () => {
   });
 
   it("open variants", () => {
-    const { element } = getListItemCollapsibleTestable(
-      { ...defaultProps, open: true, openTimeout: 5, unmountContent: true },
-      `${DATA_CY_DEFAULT}-collapse`,
-      "div"
-    );
+    const collapseDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.collapse);
+    const { element } = getListItemCollapsibleTestable({
+      dataCy: collapseDataCy,
+      domNode: "div",
+      props: { open: true, openTimeout: 5, unmountContent: true },
+    });
 
     const snapshotHeaderWrapper = renderer.create(element).toJSON();
     expect(snapshotHeaderWrapper).toMatchSnapshot();

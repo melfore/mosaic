@@ -47,12 +47,12 @@ export const SUBPARTS_MAP = {
 
 // TODO#lb: should handle style?
 const Modal: FC<IModal> = ({
-  cancel = undefined,
+  cancel,
   children,
   closable = false,
-  confirm = undefined,
+  confirm,
   dataCy = DATA_CY_DEFAULT,
-  onClose = undefined,
+  onClose,
   open = false,
   size = ModalSize.default,
   title = "",

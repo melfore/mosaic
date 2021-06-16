@@ -44,15 +44,15 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 ];
 
 const InputText: FC<IInputText> = ({
-  adornment = undefined,
+  adornment,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   label,
-  multiline = undefined,
-  onChange = undefined,
-  placeholder = undefined,
+  multiline,
+  onChange,
+  placeholder,
   required = false,
-  shrink = undefined,
+  shrink,
   size = InputSize.default,
   style,
   type = InputType.default,

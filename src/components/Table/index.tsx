@@ -58,11 +58,11 @@ const Table: FC<ITable> = ({
   height = "100%",
   hideHeader = false,
   loading = false,
-  onPageChange = undefined,
-  onPageSizeChange = undefined,
-  onRowClick = undefined,
-  onSelectionChange = undefined,
-  onSortChange = undefined,
+  onPageChange,
+  onPageSizeChange,
+  onRowClick,
+  onSelectionChange,
+  onSortChange,
   page = 0,
   pageSize = 10,
   rows = [],
@@ -71,7 +71,7 @@ const Table: FC<ITable> = ({
   sorting = { path: null, ordering: null },
   sticky = false,
   style,
-  title = undefined,
+  title,
 }) => {
   const theme = useTheme();
 

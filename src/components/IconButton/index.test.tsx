@@ -2,35 +2,41 @@ import renderer from "react-test-renderer";
 
 import { Icons, IconSize } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
-import { getTestable } from "../../utils/tests";
+import { getComposedDataCy } from "../../utils";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import IconButton, { DATA_CY_DEFAULT } from ".";
+import IconButton, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: IIconButton = {
-  icon: Icons.account,
-  onClick: jest.fn(),
+const DEFAULT_TEST_OPTION: ITestOptions<IIconButton> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "button",
+  props: { icon: Icons.account, onClick: jest.fn() },
 };
 
-const getIconButtonTestable = (props?: IIconButton, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(IconButton, { dataCy, domNode: "button", props: { ...defaultProps, ...props } });
+const getIconButtonTestable = (options?: IPartialTestOptions<IIconButton>) =>
+  getTestableComponent(IconButton, DEFAULT_TEST_OPTION, options);
 
 describe("IconButton test suite:", () => {
   it("default", () => {
     const onClick = jest.fn();
-    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, onClick });
+    const { element, wrapper } = getIconButtonTestable({ props: { onClick } });
     expect(wrapper).toHaveLength(1);
+
     expect(wrapper.prop("disabled")).toBeFalsy();
     wrapper.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
-    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
-    expect(icon.prop("name")).toEqual(defaultProps.icon);
+
+    const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
+    const icon = wrapper.find(`Icon[dataCy='${iconDataCy}']`);
+    expect(icon.prop("name")).toEqual(DEFAULT_TEST_OPTION.props.icon);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getIconButtonTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -38,7 +44,7 @@ describe("IconButton test suite:", () => {
   });
 
   it("disabled", () => {
-    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, disabled: true });
+    const { element, wrapper } = getIconButtonTestable({ props: { disabled: true } });
     expect(wrapper.prop("disabled")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -46,8 +52,10 @@ describe("IconButton test suite:", () => {
   });
 
   it("size", () => {
-    const { element, wrapper } = getIconButtonTestable({ ...defaultProps, size: IconSize.small });
-    const icon = wrapper.find(`Icon[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    const { element, wrapper } = getIconButtonTestable({ props: { size: IconSize.small } });
+
+    const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
+    const icon = wrapper.find(`Icon[dataCy='${iconDataCy}']`);
     expect(icon.prop("size")).toEqual(IconSize.small);
 
     const snapshotWrapper = renderer.create(element).toJSON();

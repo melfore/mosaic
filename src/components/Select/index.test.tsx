@@ -80,11 +80,11 @@ describe("Select Single test suite:", () => {
     const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
     input.simulate("mousedown");
 
-    const mosaicOption = wrapper.find(`li[data-option-index=0]`);
-    mosaicOption.simulate("click");
+    const firstOption = wrapper.find(`li[data-option-index=0]`);
+    firstOption.simulate("click");
 
     expect(onChangeCallback).toHaveBeenCalledTimes(1);
-    expect(onChangeCallback).toHaveBeenCalledWith("Mosaic");
+    expect(onChangeCallback).toHaveBeenCalledWith("Sculpture");
   });
 
   it("onChange - multiple", () => {
@@ -100,11 +100,11 @@ describe("Select Single test suite:", () => {
     const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
     input.simulate("mousedown");
 
-    const mosaicOption = wrapper.find(`li[data-option-index=0]`);
-    mosaicOption.simulate("click");
+    const firstOption = wrapper.find(`li[data-option-index=0]`);
+    firstOption.simulate("click");
 
     expect(onChangeCallback).toHaveBeenCalledTimes(1);
-    expect(onChangeCallback).toHaveBeenCalledWith(["Mosaic"]);
+    expect(onChangeCallback).toHaveBeenCalledWith(["Sculpture"]);
   });
 
   it("options - default", () => {
@@ -113,6 +113,24 @@ describe("Select Single test suite:", () => {
       dataCy: outerWrapperDataCy,
       domNode: "div",
       mountOnly: true,
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`p[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options);
+  });
+
+  it("options - autoSort", () => {
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: { autoSort: true },
     });
 
     const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);

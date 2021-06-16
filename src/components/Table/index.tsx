@@ -75,13 +75,16 @@ const Table: FC<ITable> = ({
 }) => {
   const theme = useTheme();
 
-  const getInternalRows = useCallback((rows: any) => [...rows].map((row, index) => ({ ...row, id: index })), []);
+  const getInternalRows = useCallback(
+    (rows: any) => [...rows].map((row, index) => ({ ...row, __mosaicTableId: index })),
+    []
+  );
 
   const getSelectedRows = useCallback(
     (rows: any, selectionFilter: any) =>
       rows
         .filter((internalRow: any) => (!selectionFilter ? false : selectionFilter(internalRow)))
-        .map(({ id }: any) => id),
+        .map(({ __mosaicTableId }: any) => __mosaicTableId),
     []
   );
 
@@ -109,7 +112,9 @@ const Table: FC<ITable> = ({
         }
 
         if (onSelectionChange) {
-          onSelectionChange(!selected ? [] : internalRows);
+          onSelectionChange(
+            !selected ? [] : internalRows.map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow }))
+          );
         }
 
         return rows;
@@ -128,7 +133,11 @@ const Table: FC<ITable> = ({
         }
 
         if (onSelectionChange) {
-          onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
+          onSelectionChange(
+            internalRows
+              .filter((_, index) => rows.includes(index))
+              .map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow }))
+          );
         }
 
         return rows;
@@ -254,7 +263,13 @@ const Table: FC<ITable> = ({
                     disabled={disabled}
                     icon={!icon ? undefined : { name: icon }}
                     label={label}
-                    onClick={() => callback(internalRows.filter((_, index) => selectedRows.includes(index)))}
+                    onClick={() =>
+                      callback(
+                        internalRows
+                          .filter((_, index) => selectedRows.includes(index))
+                          .map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow }))
+                      )
+                    }
                   />
                 </Fragment>
               )
@@ -325,8 +340,8 @@ const Table: FC<ITable> = ({
               </MUITableCell>
             </MUITableRow>
           ) : (
-            internalRows.map(({ id, ...row }) => (
-              <MUITableRow key={`row-${id}`} style={getRowStyle ? getRowStyle(row) : {}}>
+            internalRows.map(({ __mosaicTableId, ...row }) => (
+              <MUITableRow key={`row-${__mosaicTableId}`} style={getRowStyle ? getRowStyle(row) : {}}>
                 {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}
@@ -347,8 +362,8 @@ const Table: FC<ITable> = ({
                     {path === CHECKBOX_SELECTION_PATH ? (
                       <Checkbox
                         size={CheckboxSize.small}
-                        onChange={(selected) => onSelection(id)}
-                        value={isRowSelected(id)}
+                        onChange={(selected) => onSelection(__mosaicTableId)}
+                        value={isRowSelected(__mosaicTableId)}
                       />
                     ) : path === ROW_ACTION_PATH ? (
                       <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>

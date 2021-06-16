@@ -1,4 +1,4 @@
-import React, { CSSProperties, Fragment } from "react";
+import React, { CSSProperties, Fragment, useCallback, useMemo } from "react";
 import {
   ListSubheader as MUIListSubheader,
   Popper as MUIPopper,
@@ -49,14 +49,14 @@ const Select = <T extends any>({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   getGroupLabel,
-  getOptionLabel,
+  getOptionLabel: externalGetOptionLabel,
   getOptionSelected,
   groupBy,
   label,
   loading = false,
   multiple = false,
-  onChange,
-  options,
+  onChange: externalOnChange,
+  options: externalOptions,
   placeholder,
   popperWidth,
   required = false,
@@ -68,47 +68,35 @@ const Select = <T extends any>({
 }: ISelect<T>) => {
   const theme = useTheme();
 
-  const getLabel = (option: T): string => (getOptionLabel ? getOptionLabel(option) : `${option}`);
+  const getOptionLabel = useCallback(
+    (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
+    [externalGetOptionLabel]
+  );
 
-  const isSelected = (option: T, value: T): boolean => {
-    if (getOptionSelected) {
-      return getOptionSelected(option, value);
-    }
+  const isOptionSelected = useCallback(
+    (option: T, value: T): boolean => {
+      if (getOptionSelected) {
+        return getOptionSelected(option, value);
+      }
 
-    return !!value && option === value;
-  };
+      return !!value && option === value;
+    },
+    [getOptionSelected]
+  );
 
-  const isSelectable = (value: T | null): boolean => !!value && options.some((option) => isSelected(option, value));
+  const onChange = useCallback(
+    (event, value: any) => {
+      suppressEvent(event);
+      externalOnChange(value);
+    },
+    [externalOnChange]
+  );
 
-  const validateValue = (value: T | T[] | null): T | T[] | null => {
-    if (multiple) {
-      const isValidMultipleValue = Array.isArray(value) && value.length > 0 && value.every(isSelectable);
-      return isValidMultipleValue ? value : [];
-    }
-
-    const isValidValue = !Array.isArray(value) && isSelectable(value);
-    return isValidValue ? value : null;
-  };
-
-  return (
-    <MUIAutocomplete<T, boolean>
-      autoComplete={autoComplete}
-      data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper)}
-      disableCloseOnSelect={multiple}
-      disabled={disabled}
-      getOptionLabel={getLabel}
-      getOptionSelected={isSelected}
-      groupBy={groupBy}
-      ListboxProps={{ style: { padding: 0, width: "100%" } }}
-      loading={loading}
-      multiple={multiple}
-      onChange={(event, value: any) => {
-        suppressEvent(event);
-        onChange(value);
-      }}
-      options={[...options].sort((one: T, another: T) => {
-        const oneLabel = getLabel(one);
-        const anotherLabel = getLabel(another);
+  const options = useMemo(
+    () =>
+      [...externalOptions].sort((one: T, another: T) => {
+        const oneLabel = getOptionLabel(one);
+        const anotherLabel = getOptionLabel(another);
         const labelSorting = oneLabel.localeCompare(anotherLabel);
         if (!groupBy) {
           return labelSorting;
@@ -117,7 +105,42 @@ const Select = <T extends any>({
         const oneGroup = groupBy(one);
         const anotherGroup = groupBy(another);
         return oneGroup.localeCompare(anotherGroup) || labelSorting;
-      })}
+      }),
+    [externalOptions, getOptionLabel, groupBy]
+  );
+
+  const isOptionSelectable = useCallback(
+    (value: T | null): boolean => !!value && options.some((option) => isOptionSelected(option, value)),
+    [options, isOptionSelected]
+  );
+
+  const validateValue = useCallback(
+    (value: T | T[] | null): T | T[] | null => {
+      if (multiple) {
+        const isValidMultipleValue = Array.isArray(value) && value.length > 0 && value.every(isOptionSelectable);
+        return isValidMultipleValue ? value : [];
+      }
+
+      const isValidValue = !Array.isArray(value) && isOptionSelectable(value);
+      return isValidValue ? value : null;
+    },
+    [isOptionSelectable, multiple]
+  );
+
+  return (
+    <MUIAutocomplete<T, boolean>
+      autoComplete={autoComplete}
+      data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper)}
+      disableCloseOnSelect={multiple}
+      disabled={disabled}
+      getOptionLabel={getOptionLabel}
+      getOptionSelected={isOptionSelected}
+      groupBy={groupBy}
+      ListboxProps={{ style: { padding: 0, width: "100%" } }}
+      loading={loading}
+      multiple={multiple}
+      onChange={onChange}
+      options={options}
       PopperComponent={(props: MUIPopperProps) => {
         const { anchorEl } = props;
         const anchorElRef = anchorEl as any;
@@ -128,6 +151,7 @@ const Select = <T extends any>({
       renderGroup={(groupProps) => {
         const { children, group, key } = groupProps;
         const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
+
         return (
           <Fragment key={`group-${key}`}>
             <MUIListSubheader
@@ -152,6 +176,7 @@ const Select = <T extends any>({
               style: { ...baseStyle, ...style },
             },
           };
+
           return (
             <MUISkeleton width="100%">
               <MUITextField
@@ -169,6 +194,7 @@ const Select = <T extends any>({
           ...inputProps,
           inputProps: { ...extInputProps, "data-cy": dataCy, style: { ...baseStyle, ...style } },
         };
+
         return (
           <MUITextField
             {...forwardedInputProps}
@@ -188,7 +214,8 @@ const Select = <T extends any>({
           return customOptionRendering(option, selected);
         }
 
-        const optionLabel = getLabel(option);
+        const optionLabel = getOptionLabel(option);
+
         return (
           <Fragment key={`option-${optionLabel}`}>
             <Checkbox

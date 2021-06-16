@@ -45,6 +45,7 @@ export const SUBPARTS_MAP = {
 
 const Select = <T extends any>({
   autoComplete = true,
+  autoSort = false,
   customOptionRendering,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
@@ -92,22 +93,25 @@ const Select = <T extends any>({
     [externalOnChange]
   );
 
-  const options = useMemo(
-    () =>
-      [...externalOptions].sort((one: T, another: T) => {
-        const oneLabel = getOptionLabel(one);
-        const anotherLabel = getOptionLabel(another);
-        const labelSorting = oneLabel.localeCompare(anotherLabel);
-        if (!groupBy) {
-          return labelSorting;
-        }
+  const options = useMemo(() => {
+    let options = [...externalOptions];
+    if (!autoSort) {
+      return options;
+    }
 
-        const oneGroup = groupBy(one);
-        const anotherGroup = groupBy(another);
-        return oneGroup.localeCompare(anotherGroup) || labelSorting;
-      }),
-    [externalOptions, getOptionLabel, groupBy]
-  );
+    return options.sort((one: T, another: T) => {
+      const oneLabel = getOptionLabel(one);
+      const anotherLabel = getOptionLabel(another);
+      const labelSorting = oneLabel.localeCompare(anotherLabel);
+      if (!groupBy) {
+        return labelSorting;
+      }
+
+      const oneGroup = groupBy(one);
+      const anotherGroup = groupBy(another);
+      return oneGroup.localeCompare(anotherGroup) || labelSorting;
+    });
+  }, [autoSort, externalOptions, getOptionLabel, groupBy]);
 
   const isOptionSelectable = useCallback(
     (value: T | null): boolean => !!value && options.some((option) => isOptionSelected(option, value)),

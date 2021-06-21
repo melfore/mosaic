@@ -12,13 +12,16 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<ITable> = {
   domNode: "div",
   localized: true,
   props: {
-    columns: [{ path: "name", label: "Name" }],
+    columns: [
+      { path: "name", label: "Name" },
+      { path: "rating", label: "Rating" },
+    ],
     rows: [
-      { name: "Mosaic" },
-      { name: "Murales" },
-      { name: "Paintings" },
-      { name: "Photography" },
-      { name: "Sculpture" },
+      { id: "1", name: "Mosaic", rating: 4 },
+      { id: "2", name: "Murales", rating: 3 },
+      { id: "3", name: "Paintings", rating: 2.5 },
+      { id: "4", name: "Photography", rating: 5 },
+      { id: "5", name: "Sculpture", rating: 3 },
     ],
     title: "Table",
   },
@@ -66,17 +69,10 @@ describe("Table test suite:", () => {
 
     const bulkSelectionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.selectAll);
     const bulkSelection = wrapper.find(`[data-cy='${bulkSelectionDataCy}']`);
-
     const bulkSelectionInput = bulkSelection.find("input");
     bulkSelectionInput.simulate("change", { target: { checked: true } });
     expect(onSelectionChange).toHaveBeenCalledTimes(1);
-    expect(onSelectionChange).toHaveBeenCalledWith([
-      { id: 0, name: "Mosaic" },
-      { id: 1, name: "Murales" },
-      { id: 2, name: "Paintings" },
-      { id: 3, name: "Photography" },
-      { id: 4, name: "Sculpture" },
-    ]);
+    expect(onSelectionChange).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -131,6 +127,7 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([]);
 
     const actionLabel = action.find("span.MuiButton-label");
     expect(actionLabel.text()).toEqual(label);
@@ -211,6 +208,7 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -225,8 +223,102 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("selection action", () => {
+    const callback = jest.fn();
+    const label = "Selection";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, icon: Icons.account, label, position: TableActionPosition.selection }],
+        selectionFilter: (d) => d.name.startsWith("P"),
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([
+      { id: "3", name: "Paintings", rating: 2.5 },
+      { id: "4", name: "Photography", rating: 5 },
+    ]);
+
+    const actionLabel = action.find("span.MuiButton-label");
+    expect(actionLabel.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("sticky", () => {
     const { element } = getTableTestable({ props: { sticky: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("sortable - table defined", () => {
+    const nameColumn = DEFAULT_TEST_OPTIONS.props.columns[0].label;
+    const ratingColumn = DEFAULT_TEST_OPTIONS.props.columns[1].label;
+    const onSortChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      props: { onSortChange, sorting: { ordering: "asc", path: "name" } },
+    });
+
+    const ratingHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, ratingColumn);
+    const ratingHeader = wrapper.find(`th[data-cy='${ratingHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(1);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "asc");
+
+    const nameHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, nameColumn);
+    const nameHeader = wrapper.find(`th[data-cy='${nameHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(2);
+    expect(onSortChange).toHaveBeenCalledWith("name", "asc");
+
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(3);
+    expect(onSortChange).toHaveBeenCalledWith("name", "desc");
+
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(4);
+    expect(onSortChange).toHaveBeenCalledWith(null, null);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("sortable - column defined", () => {
+    const nameColumn = DEFAULT_TEST_OPTIONS.props.columns[0].label;
+    const ratingColumn = DEFAULT_TEST_OPTIONS.props.columns[1].label;
+    const onSortChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      props: {
+        columns: DEFAULT_TEST_OPTIONS.props.columns.map((column) => ({
+          ...column,
+          sortable: column.label !== nameColumn,
+        })),
+        onSortChange,
+      },
+    });
+
+    const nameHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, nameColumn);
+    const nameHeader = wrapper.find(`th[data-cy='${nameHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    expect(nameHeader.length).toEqual(0);
+
+    const ratingHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, ratingColumn);
+    const ratingHeader = wrapper.find(`th[data-cy='${ratingHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(1);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "asc");
+
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(2);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "desc");
+
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(3);
+    expect(onSortChange).toHaveBeenCalledWith(null, null);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -9,14 +9,13 @@ import {
   TableHead as MUITableHead,
   TablePagination as MUITablePagination,
   TableRow as MUITableRow,
-  TableSortLabel as MUITableSortLabel,
   Toolbar as MUIToolbar,
   useTheme,
 } from "@material-ui/core";
 
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
-import { ITable, TableActionPosition } from "../../types/Table";
+import { ITable, ITableOnSortCallback, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -26,11 +25,12 @@ import IconButton from "../IconButton";
 import Spacer from "../Spacer";
 import Typography from "../Typography";
 
-const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+import TableHeadCell from "./components/HeadCell";
+import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
+
 const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
 const ROW_ACTION_PATH = "row-actions";
-const TOOLBAR_DIMENSION = 64;
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -39,6 +39,10 @@ export const SUBPARTS_MAP = {
   action: {
     label: "Action (with label)",
     value: (label = "{label}") => `action-${label}`,
+  },
+  headerCell: {
+    label: "Header Cell (with label)",
+    value: (label = "{label}") => `header-cell-${label}`,
   },
   pagination: {
     label: "Pagination (with label)",
@@ -51,7 +55,7 @@ export const SUBPARTS_MAP = {
 
 const Table: FC<ITable> = ({
   actions = [],
-  columns,
+  columns: externalColumns,
   dataCy = DATA_CY_DEFAULT,
   emptyState,
   getRowStyle,
@@ -65,75 +69,79 @@ const Table: FC<ITable> = ({
   onSortChange,
   page = 0,
   pageSize = 10,
-  rows = [],
+  rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
-  sorting = { path: null, ordering: null },
+  sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
   style,
   title,
 }) => {
   const theme = useTheme();
 
-  const getInternalRows = useCallback((rows: any) => [...rows].map((row, index) => ({ ...row, id: index })), []);
+  const getRows = useCallback((rows: any) => [...rows].map((row, index) => ({ ...row, __mosaicTableId: index })), []);
 
-  const getSelectedRows = useCallback(
-    (rows: any, selectionFilter: any) =>
+  const getSelectedRowsIndexes = useCallback(
+    (rows: any): number[] =>
       rows
-        .filter((internalRow: any) => (!selectionFilter ? false : selectionFilter(internalRow)))
-        .map(({ id }: any) => id),
-    []
+        .filter((row: any) => (!selectionFilter ? false : selectionFilter(row)))
+        .map(({ __mosaicTableId }: any) => __mosaicTableId),
+    [selectionFilter]
   );
 
-  const [internalRows, setInternalRows] = useState(getInternalRows(rows));
-  const [selectedRows, setSelectedRows] = useState<number[]>(getSelectedRows(internalRows, selectionFilter));
-  const [internalSorting, setInternalSorting] = useState(sorting);
+  const [rows, setRows] = useState(getRows(externalRows));
+  const [selectedRowsIndexes, setSelectedRowsIndexes] = useState(getSelectedRowsIndexes(rows));
+  const [sorting, setSorting] = useState(externalSorting);
 
   useEffect(() => {
-    const internalRows = getInternalRows(rows);
-    const selectedRows = getSelectedRows(internalRows, selectionFilter);
-    setInternalRows(internalRows);
-    setSelectedRows(selectedRows);
-  }, [getInternalRows, getSelectedRows, rows, selectionFilter]);
+    const rows = getRows(externalRows);
+    const selectedRowsIndexes = getSelectedRowsIndexes(rows);
+    setRows(rows);
+    setSelectedRowsIndexes(selectedRowsIndexes);
+  }, [externalRows, getRows, getSelectedRowsIndexes]);
 
-  const isRowSelected = useCallback((index: number) => selectedRows.includes(index), [selectedRows]);
+  const isRowSelected = useCallback((index: number) => selectedRowsIndexes.includes(index), [selectedRowsIndexes]);
 
   const onBulkSelection = useCallback(
     (selected: boolean) =>
-      setSelectedRows((selectedRows) => {
-        let rows = selectedRows;
+      setSelectedRowsIndexes((prevSelectedIndexes) => {
+        let selectedIndexes = prevSelectedIndexes;
         if (!selected) {
-          rows = [];
+          selectedIndexes = [];
         } else {
-          rows = new Array(internalRows.length).fill(0).map((_, index) => index);
+          selectedIndexes = new Array(rows.length).fill(0).map((_, index) => index);
         }
 
         if (onSelectionChange) {
-          onSelectionChange(!selected ? [] : internalRows);
+          onSelectionChange(!selected ? [] : rows.map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow })));
         }
 
-        return rows;
+        return selectedIndexes;
       }),
-    [internalRows, onSelectionChange]
+    [rows, onSelectionChange]
   );
 
   const onSelection = useCallback(
     (index: number) =>
-      setSelectedRows((selectedRows) => {
-        let rows = selectedRows;
+      setSelectedRowsIndexes((prevSelectedIndexes) => {
+        let selectedIndexes = prevSelectedIndexes;
         if (!isRowSelected(index)) {
-          rows = [...rows, index];
+          selectedIndexes = [...selectedIndexes, index];
         } else {
-          rows = selectedRows.filter((selectedIndex) => selectedIndex !== index);
+          selectedIndexes = prevSelectedIndexes.filter((selectedIndex) => selectedIndex !== index);
         }
 
         if (onSelectionChange) {
-          onSelectionChange(internalRows.filter((_, index) => rows.includes(index)));
+          onSelectionChange(
+            rows
+              .filter((_, index) => selectedIndexes.includes(index))
+              .map(({ __mosaicTableId, ...row }) => ({ ...row }))
+          );
         }
 
-        return rows;
+        return selectedIndexes;
       }),
-    [internalRows, isRowSelected, onSelectionChange]
+    [rows, isRowSelected, onSelectionChange]
   );
 
   const tablePaginationActions = useCallback(() => {
@@ -175,10 +183,10 @@ const Table: FC<ITable> = ({
     );
   }, [dataCy, onPageChange, page, pageSize, rowsTotal, theme]);
 
-  const { defaultActions, internalColumns, rowActions, selectionActions } = useMemo(() => {
-    let internalColumns = [...columns];
+  const { defaultActions, columns, rowActions, selectionActions } = useMemo(() => {
+    let columns = [...externalColumns];
     if (onSelectionChange) {
-      internalColumns = [
+      columns = [
         {
           label: "",
           padding: "checkbox",
@@ -186,15 +194,15 @@ const Table: FC<ITable> = ({
           render: () => (
             <Checkbox
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
-              intermediate={!!selectedRows.length && selectedRows.length !== rows.length}
+              intermediate={!!selectedRowsIndexes.length && selectedRowsIndexes.length !== externalRows.length}
               onChange={(selected) => onBulkSelection(selected)}
               size={CheckboxSize.small}
-              value={loading ? false : selectedRows.length === rows.length}
+              value={loading ? false : selectedRowsIndexes.length === externalRows.length}
             />
           ),
           width: `${CHECKBOX_SELECTION_WIDTH}px`,
         },
-        ...internalColumns,
+        ...columns,
       ];
     }
 
@@ -202,14 +210,31 @@ const Table: FC<ITable> = ({
     const rowActions = actions.filter(({ position }) => position === TableActionPosition.row);
     const selectionActions = actions.filter(({ position }) => position === TableActionPosition.selection);
     if (!!rowActions.length) {
-      internalColumns = [
-        ...internalColumns,
+      columns = [
+        ...columns,
         { label: "", path: ROW_ACTION_PATH, width: `${ROW_ACTION_DIMENSION * rowActions.length}px` },
       ];
     }
 
-    return { defaultActions, internalColumns, rowActions, selectionActions };
-  }, [actions, columns, dataCy, loading, rows, selectedRows, onBulkSelection, onSelectionChange]);
+    return { defaultActions, columns, rowActions, selectionActions };
+  }, [
+    actions,
+    externalColumns,
+    dataCy,
+    loading,
+    externalRows,
+    selectedRowsIndexes,
+    onBulkSelection,
+    onSelectionChange,
+  ]);
+
+  const onSortWrapper: ITableOnSortCallback = useCallback(
+    (path, ordering) => {
+      setSorting({ path, ordering });
+      onSortChange && onSortChange(path, ordering);
+    },
+    [onSortChange]
+  );
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...style }}>
@@ -235,17 +260,17 @@ const Table: FC<ITable> = ({
         <MUIToolbar
           style={{
             alignItems: "center",
-            backgroundColor: !selectedRows.length ? "inherit" : theme.palette.action.selected,
+            backgroundColor: !selectedRowsIndexes.length ? "inherit" : theme.palette.action.selected,
             display: "flex",
             justifyContent: "space-between",
             ...(!sticky ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
           }}
         >
           <Typography variant={TypographyVariants.title}>
-            {!selectedRows.length ? title : `${selectedRows.length} row(s) selected`}
+            {!selectedRowsIndexes.length ? title : `${selectedRowsIndexes.length} row(s) selected`}
           </Typography>
           <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
-            {(!selectedRows.length ? defaultActions : selectionActions).map(
+            {(!selectedRowsIndexes.length ? defaultActions : selectionActions).map(
               ({ callback, disabled, icon, label }, index) => (
                 <Fragment key={`action-${label}`}>
                   {index > 0 && <Spacer />}
@@ -254,7 +279,13 @@ const Table: FC<ITable> = ({
                     disabled={disabled}
                     icon={!icon ? undefined : { name: icon }}
                     label={label}
-                    onClick={() => callback(internalRows.filter((_, index) => selectedRows.includes(index)))}
+                    onClick={() =>
+                      callback(
+                        rows
+                          .filter((_, index) => selectedRowsIndexes.includes(index))
+                          .map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow }))
+                      )
+                    }
                   />
                 </Fragment>
               )
@@ -265,59 +296,25 @@ const Table: FC<ITable> = ({
       <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {internalColumns.map(({ label, padding, path, render, width }, index) => (
-              <MUITableCell
-                key={`column-${path || index}`}
-                padding={padding || "default"}
-                style={{
-                  width,
-                  ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}),
-                  ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
-                }}
-                variant="head"
-              >
-                {path === CHECKBOX_SELECTION_PATH ? (
-                  !render ? null : (
-                    render({})
-                  )
-                ) : !onSortChange ? (
-                  label
-                ) : (
-                  <MUITableSortLabel
-                    active={path === internalSorting.path}
-                    direction={path === internalSorting.path ? internalSorting.ordering || undefined : "asc"}
-                    onClick={(event) => {
-                      suppressEvent(event);
-                      const { path: sortingPath, ordering } = internalSorting;
-                      if (!sortingPath || path !== sortingPath) {
-                        setInternalSorting({ path, ordering: "asc" });
-                        onSortChange(path, "asc");
-                        return;
-                      }
-
-                      if (path === sortingPath && ordering === "asc") {
-                        setInternalSorting({ path, ordering: "desc" });
-                        onSortChange(path, "desc");
-                        return;
-                      }
-
-                      setInternalSorting({ path: null, ordering: null });
-                      onSortChange(null, null);
-                    }}
-                  >
-                    {label}
-                  </MUITableSortLabel>
-                )}
-              </MUITableCell>
+            {columns.map((column, index) => (
+              <TableHeadCell
+                key={`column-${column.path || index}`}
+                column={column}
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.headerCell, column.label || `${index}`)}
+                onSort={onSortWrapper}
+                sortable={!!onSortChange}
+                sorting={sorting}
+                stickyHeader={!hideHeader && sticky}
+              />
             ))}
           </MUITableRow>
         </MUITableHead>
         <MUITableBody>
-          {!loading && !rows.length ? (
+          {!loading && !externalRows.length ? (
             <MUITableRow key={`row-no-data`}>
               <MUITableCell
                 key={`column-no-data`}
-                colSpan={internalColumns.length}
+                colSpan={columns.length}
                 padding="default"
                 style={{ textAlign: "center" }}
               >
@@ -325,9 +322,9 @@ const Table: FC<ITable> = ({
               </MUITableCell>
             </MUITableRow>
           ) : (
-            internalRows.map(({ id, ...row }) => (
-              <MUITableRow key={`row-${id}`} style={getRowStyle ? getRowStyle(row) : {}}>
-                {internalColumns.map(({ padding, path, render, width }, columnIndex) => (
+            rows.map(({ __mosaicTableId, ...row }) => (
+              <MUITableRow key={`row-${__mosaicTableId}`} style={getRowStyle ? getRowStyle(row) : {}}>
+                {columns.map(({ padding, path, render, width }, columnIndex) => (
                   <MUITableCell
                     key={`column-${path || columnIndex}`}
                     onClick={(event) => {
@@ -347,8 +344,8 @@ const Table: FC<ITable> = ({
                     {path === CHECKBOX_SELECTION_PATH ? (
                       <Checkbox
                         size={CheckboxSize.small}
-                        onChange={(selected) => onSelection(id)}
-                        value={isRowSelected(id)}
+                        onChange={(selected) => onSelection(__mosaicTableId)}
+                        value={isRowSelected(__mosaicTableId)}
                       />
                     ) : path === ROW_ACTION_PATH ? (
                       <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>

@@ -1,20 +1,29 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@material-ui/core";
 
+import { IBase } from "../../../../types/Base";
 import { ITableColumn, ITableOnSortCallback, ITableSorting } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
 import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "../../utils";
 
-interface ITableHeadCell {
+interface ITableHeadCell extends IBase {
   column: ITableColumn;
+  dataCy: string;
   onSort: ITableOnSortCallback;
   sortable: boolean;
   sorting: ITableSorting;
   stickyHeader: boolean;
 }
 
-const TableHeadCell: FC<ITableHeadCell> = ({ column, onSort, sortable: tableSortable, sorting, stickyHeader }) => {
-  const { label, path, padding, render, width } = column;
+const TableHeadCell: FC<ITableHeadCell> = ({
+  column,
+  dataCy,
+  onSort,
+  sortable: tableSortable,
+  sorting,
+  stickyHeader,
+}) => {
+  const { label, path, padding, render, sortable: columnSortable, width } = column;
   const theme = useTheme();
 
   const cellPadding = useMemo(() => padding || "default", [padding]);
@@ -56,6 +65,18 @@ const TableHeadCell: FC<ITableHeadCell> = ({ column, onSort, sortable: tableSort
     [path, onSort, sorting]
   );
 
+  const sortable = useMemo(() => {
+    if (!tableSortable) {
+      return false;
+    }
+
+    if (columnSortable === undefined || columnSortable === null) {
+      return tableSortable;
+    }
+
+    return columnSortable;
+  }, [columnSortable, tableSortable]);
+
   const sortActive = useMemo(() => path === sorting.path, [path, sorting]);
 
   const sortDirection = useMemo(() => (path === sorting.path ? sorting.ordering || undefined : "asc"), [path, sorting]);
@@ -69,8 +90,8 @@ const TableHeadCell: FC<ITableHeadCell> = ({ column, onSort, sortable: tableSort
   }
 
   return (
-    <MUITableCell padding={cellPadding} style={cellStyle} variant="head">
-      {!tableSortable ? (
+    <MUITableCell data-cy={dataCy} padding={cellPadding} style={cellStyle} variant="head">
+      {!sortable ? (
         label
       ) : (
         <MUITableSortLabel active={sortActive} direction={sortDirection} onClick={onSortWrapper}>

@@ -40,6 +40,10 @@ export const SUBPARTS_MAP = {
     label: "Action (with label)",
     value: (label = "{label}") => `action-${label}`,
   },
+  headerCell: {
+    label: "Header Cell (with label)",
+    value: (label = "{label}") => `header-cell-${label}`,
+  },
   pagination: {
     label: "Pagination (with label)",
     value: (label = "{label}") => `pagination-${label}`,
@@ -296,6 +300,7 @@ const Table: FC<ITable> = ({
               <TableHeadCell
                 key={`column-${column.path || index}`}
                 column={column}
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.headerCell, column.label || `${index}`)}
                 onSort={onSortWrapper}
                 sortable={!!onSortChange}
                 sorting={sorting}

@@ -23,6 +23,7 @@ export interface ITableColumn {
   padding?: "checkbox" | "default" | "none";
   path: string;
   render?: (row: any) => ReactNode;
+  sortable?: boolean;
   width?: number | string;
 }
 

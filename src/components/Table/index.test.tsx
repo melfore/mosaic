@@ -12,13 +12,16 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<ITable> = {
   domNode: "div",
   localized: true,
   props: {
-    columns: [{ path: "name", label: "Name" }],
+    columns: [
+      { path: "name", label: "Name" },
+      { path: "rating", label: "Rating" },
+    ],
     rows: [
-      { id: "1", name: "Mosaic" },
-      { id: "2", name: "Murales" },
-      { id: "3", name: "Paintings" },
-      { id: "4", name: "Photography" },
-      { id: "5", name: "Sculpture" },
+      { id: "1", name: "Mosaic", rating: 4 },
+      { id: "2", name: "Murales", rating: 3 },
+      { id: "3", name: "Paintings", rating: 2.5 },
+      { id: "4", name: "Photography", rating: 5 },
+      { id: "5", name: "Sculpture", rating: 3 },
     ],
     title: "Table",
   },
@@ -235,8 +238,8 @@ describe("Table test suite:", () => {
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith([
-      { id: "3", name: "Paintings" },
-      { id: "4", name: "Photography" },
+      { id: "3", name: "Paintings", rating: 2.5 },
+      { id: "4", name: "Photography", rating: 5 },
     ]);
 
     const actionLabel = action.find("span.MuiButton-label");
@@ -248,6 +251,74 @@ describe("Table test suite:", () => {
 
   it("sticky", () => {
     const { element } = getTableTestable({ props: { sticky: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("sortable - table defined", () => {
+    const nameColumn = DEFAULT_TEST_OPTIONS.props.columns[0].label;
+    const ratingColumn = DEFAULT_TEST_OPTIONS.props.columns[1].label;
+    const onSortChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      props: { onSortChange, sorting: { ordering: "asc", path: "name" } },
+    });
+
+    const ratingHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, ratingColumn);
+    const ratingHeader = wrapper.find(`th[data-cy='${ratingHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(1);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "asc");
+
+    const nameHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, nameColumn);
+    const nameHeader = wrapper.find(`th[data-cy='${nameHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(2);
+    expect(onSortChange).toHaveBeenCalledWith("name", "asc");
+
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(3);
+    expect(onSortChange).toHaveBeenCalledWith("name", "desc");
+
+    nameHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(4);
+    expect(onSortChange).toHaveBeenCalledWith(null, null);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("sortable - column defined", () => {
+    const nameColumn = DEFAULT_TEST_OPTIONS.props.columns[0].label;
+    const ratingColumn = DEFAULT_TEST_OPTIONS.props.columns[1].label;
+    const onSortChange = jest.fn();
+    const { element, wrapper } = getTableTestable({
+      props: {
+        columns: DEFAULT_TEST_OPTIONS.props.columns.map((column) => ({
+          ...column,
+          sortable: column.label !== nameColumn,
+        })),
+        onSortChange,
+      },
+    });
+
+    const nameHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, nameColumn);
+    const nameHeader = wrapper.find(`th[data-cy='${nameHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    expect(nameHeader.length).toEqual(0);
+
+    const ratingHeaderDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.headerCell, ratingColumn);
+    const ratingHeader = wrapper.find(`th[data-cy='${ratingHeaderDataCy}'] span.MuiTableSortLabel-root`);
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(1);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "asc");
+
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(2);
+    expect(onSortChange).toHaveBeenCalledWith("rating", "desc");
+
+    ratingHeader.simulate("click");
+    expect(onSortChange).toHaveBeenCalledTimes(3);
+    expect(onSortChange).toHaveBeenCalledWith(null, null);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

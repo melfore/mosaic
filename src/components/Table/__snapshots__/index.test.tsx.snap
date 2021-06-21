@@ -126,9 +126,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -220,6 +229,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -304,6 +325,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -390,6 +423,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -475,6 +520,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -559,6 +616,18 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -695,9 +764,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -792,6 +870,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -879,6 +969,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -968,6 +1070,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1055,6 +1169,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           }
         >
           Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
         </td>
       </tr>
       <tr
@@ -1144,6 +1270,18 @@ exports[`Table test suite: bulk selection - select none 1`] = `
         >
           Sculpture
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
       </tr>
     </tbody>
   </table>
@@ -1209,6 +1347,7 @@ exports[`Table test suite: complex column path 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Value"
           scope="col"
         >
           Value
@@ -1405,9 +1544,18 @@ exports[`Table test suite: dataCy 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="custom-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="custom-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -1432,6 +1580,18 @@ exports[`Table test suite: dataCy 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1449,6 +1609,18 @@ exports[`Table test suite: dataCy 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -1468,6 +1640,18 @@ exports[`Table test suite: dataCy 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1486,6 +1670,18 @@ exports[`Table test suite: dataCy 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1503,6 +1699,18 @@ exports[`Table test suite: dataCy 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -1569,9 +1777,18 @@ exports[`Table test suite: default 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -1596,6 +1813,18 @@ exports[`Table test suite: default 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1613,6 +1842,18 @@ exports[`Table test suite: default 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -1632,6 +1873,18 @@ exports[`Table test suite: default 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1650,6 +1903,18 @@ exports[`Table test suite: default 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1667,6 +1932,18 @@ exports[`Table test suite: default 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -1777,9 +2054,18 @@ exports[`Table test suite: global action 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -1804,6 +2090,18 @@ exports[`Table test suite: global action 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1821,6 +2119,18 @@ exports[`Table test suite: global action 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -1840,6 +2150,18 @@ exports[`Table test suite: global action 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1858,6 +2180,18 @@ exports[`Table test suite: global action 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1875,6 +2209,18 @@ exports[`Table test suite: global action 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -1913,9 +2259,18 @@ exports[`Table test suite: hide header 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -1940,6 +2295,18 @@ exports[`Table test suite: hide header 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1957,6 +2324,18 @@ exports[`Table test suite: hide header 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -1976,6 +2355,18 @@ exports[`Table test suite: hide header 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -1994,6 +2385,18 @@ exports[`Table test suite: hide header 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2011,6 +2414,18 @@ exports[`Table test suite: hide header 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -2077,9 +2492,18 @@ exports[`Table test suite: immutable options 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -2104,6 +2528,16 @@ exports[`Table test suite: immutable options 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2122,6 +2556,16 @@ exports[`Table test suite: immutable options 1`] = `
         >
           Murales
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2140,6 +2584,16 @@ exports[`Table test suite: immutable options 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2158,6 +2612,16 @@ exports[`Table test suite: immutable options 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2176,6 +2640,16 @@ exports[`Table test suite: immutable options 1`] = `
         >
           Sculpture
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        />
       </tr>
     </tbody>
   </table>
@@ -2282,9 +2756,18 @@ exports[`Table test suite: loading 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -2309,6 +2792,18 @@ exports[`Table test suite: loading 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2326,6 +2821,18 @@ exports[`Table test suite: loading 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -2345,6 +2852,18 @@ exports[`Table test suite: loading 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2363,6 +2882,18 @@ exports[`Table test suite: loading 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2380,6 +2911,18 @@ exports[`Table test suite: loading 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -2446,9 +2989,18 @@ exports[`Table test suite: pre-selection 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -2473,6 +3025,18 @@ exports[`Table test suite: pre-selection 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2490,6 +3054,18 @@ exports[`Table test suite: pre-selection 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -2509,6 +3085,18 @@ exports[`Table test suite: pre-selection 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2527,6 +3115,18 @@ exports[`Table test suite: pre-selection 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2544,6 +3144,18 @@ exports[`Table test suite: pre-selection 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -2610,9 +3222,18 @@ exports[`Table test suite: pre-sorting 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -2637,6 +3258,18 @@ exports[`Table test suite: pre-sorting 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2654,6 +3287,18 @@ exports[`Table test suite: pre-sorting 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -2673,6 +3318,18 @@ exports[`Table test suite: pre-sorting 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2691,6 +3348,18 @@ exports[`Table test suite: pre-sorting 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -2708,6 +3377,18 @@ exports[`Table test suite: pre-sorting 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -2774,6 +3455,7 @@ exports[`Table test suite: row action 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
@@ -2781,6 +3463,15 @@ exports[`Table test suite: row action 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-2"
           scope="col"
           style={
             Object {
@@ -2812,6 +3503,18 @@ exports[`Table test suite: row action 1`] = `
           }
         >
           Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
         </td>
         <td
           aria-sort={null}
@@ -2896,6 +3599,18 @@ exports[`Table test suite: row action 1`] = `
           onClick={[Function]}
           style={
             Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
               "width": "48px",
             }
           }
@@ -2966,6 +3681,18 @@ exports[`Table test suite: row action 1`] = `
           }
         >
           Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
         </td>
         <td
           aria-sort={null}
@@ -3050,6 +3777,18 @@ exports[`Table test suite: row action 1`] = `
           onClick={[Function]}
           style={
             Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
               "width": "48px",
             }
           }
@@ -3120,6 +3859,18 @@ exports[`Table test suite: row action 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
         <td
           aria-sort={null}
@@ -3245,9 +3996,18 @@ exports[`Table test suite: row style 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -3271,6 +4031,18 @@ exports[`Table test suite: row style 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3287,6 +4059,18 @@ exports[`Table test suite: row style 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -3305,6 +4089,18 @@ exports[`Table test suite: row style 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3322,6 +4118,18 @@ exports[`Table test suite: row style 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3338,6 +4146,18 @@ exports[`Table test suite: row style 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -3448,9 +4268,18 @@ exports[`Table test suite: selection action 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
           scope="col"
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -3475,6 +4304,18 @@ exports[`Table test suite: selection action 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3492,6 +4333,18 @@ exports[`Table test suite: selection action 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -3511,6 +4364,18 @@ exports[`Table test suite: selection action 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3529,6 +4394,18 @@ exports[`Table test suite: selection action 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3546,6 +4423,571 @@ exports[`Table test suite: selection action 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: sortable - column defined 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiTableSortLabel-root"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Rating
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: sortable - table defined 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-active"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Name
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiTableSortLabel-root"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Rating
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>
@@ -3614,6 +5056,7 @@ exports[`Table test suite: sticky 1`] = `
         <th
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall MuiTableCell-stickyHeader"
+          data-cy="table-header-cell-Name"
           scope="col"
           style={
             Object {
@@ -3622,6 +5065,19 @@ exports[`Table test suite: sticky 1`] = `
           }
         >
           Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall MuiTableCell-stickyHeader"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+          style={
+            Object {
+              "top": "64px",
+            }
+          }
+        >
+          Rating
         </th>
       </tr>
     </thead>
@@ -3646,6 +5102,18 @@ exports[`Table test suite: sticky 1`] = `
         >
           Mosaic
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3663,6 +5131,18 @@ exports[`Table test suite: sticky 1`] = `
           }
         >
           Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
       <tr
@@ -3682,6 +5162,18 @@ exports[`Table test suite: sticky 1`] = `
         >
           Paintings
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3700,6 +5192,18 @@ exports[`Table test suite: sticky 1`] = `
         >
           Photography
         </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
       </tr>
       <tr
         className="MuiTableRow-root"
@@ -3717,6 +5221,18 @@ exports[`Table test suite: sticky 1`] = `
           }
         >
           Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
         </td>
       </tr>
     </tbody>

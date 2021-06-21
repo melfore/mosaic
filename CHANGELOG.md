@@ -1,3 +1,28 @@
+# [5.0.0](https://github.com/melfore/mosaic/compare/v4.0.0...v5.0.0) (2021-06-21)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Changed internal row identifier ([47494f7](https://github.com/melfore/mosaic/commit/47494f7d00fe3a3f9120a4a761c9ec0f33e246ca))
+
+
+### Features
+
+* 🎸 [Checkbox] Added check subpart ([8442bc0](https://github.com/melfore/mosaic/commit/8442bc0155c68931b1bd5c64701d8284b3f9ce00))
+* 🎸 [IconButton] Added icon subpart ([cb5660d](https://github.com/melfore/mosaic/commit/cb5660d0d65f26dae6ea6461aa98e362095797e4))
+* 🎸 [Select] Added autoSort to enable alphabetical sorting ([2a7ee58](https://github.com/melfore/mosaic/commit/2a7ee587dc2a8f499643115d6459bdc3c18a34e2))
+* 🎸 [Switch] Added toggle subpart ([3697afd](https://github.com/melfore/mosaic/commit/3697afd895a700ed75b97cdd9a25de589c18ebb0))
+* 🎸 [Table] Sortable columns and dataCy for Header Cell ([c348a8b](https://github.com/melfore/mosaic/commit/c348a8b6b83029c0bcb92e6ac63020076f4ec418))
+
+
+### BREAKING CHANGES
+
+* 🧨 Previously Select component was automatically sorting in alphabetical
+order its options. Please review usage of the component setting
+"autoSort" property when needed.
+
+✅ Closes: 185
+
 # [4.0.0](https://github.com/melfore/mosaic/compare/v3.0.0...v4.0.0) (2021-04-19)
 
 

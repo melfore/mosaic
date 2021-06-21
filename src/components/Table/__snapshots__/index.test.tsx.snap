@@ -127,11 +127,6 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -701,11 +696,6 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -1220,11 +1210,6 @@ exports[`Table test suite: complex column path 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Value
         </th>
@@ -1421,11 +1406,6 @@ exports[`Table test suite: dataCy 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -1590,11 +1570,6 @@ exports[`Table test suite: default 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -1803,11 +1778,6 @@ exports[`Table test suite: global action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -1944,11 +1914,6 @@ exports[`Table test suite: hide header 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -2113,11 +2078,6 @@ exports[`Table test suite: immutable options 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -2323,11 +2283,6 @@ exports[`Table test suite: loading 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -2492,11 +2447,6 @@ exports[`Table test suite: pre-selection 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -2661,11 +2611,6 @@ exports[`Table test suite: pre-sorting 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -2830,11 +2775,6 @@ exports[`Table test suite: row action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -3306,11 +3246,6 @@ exports[`Table test suite: row style 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -3514,11 +3449,6 @@ exports[`Table test suite: selection action 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
           scope="col"
-          style={
-            Object {
-              "width": undefined,
-            }
-          }
         >
           Name
         </th>
@@ -3688,7 +3618,6 @@ exports[`Table test suite: sticky 1`] = `
           style={
             Object {
               "top": "64px",
-              "width": undefined,
             }
           }
         >

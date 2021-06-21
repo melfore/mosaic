@@ -9,14 +9,13 @@ import {
   TableHead as MUITableHead,
   TablePagination as MUITablePagination,
   TableRow as MUITableRow,
-  TableSortLabel as MUITableSortLabel,
   Toolbar as MUIToolbar,
   useTheme,
 } from "@material-ui/core";
 
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
-import { ITable, TableActionPosition } from "../../types/Table";
+import { ITable, ITableOnSortCallback, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -26,11 +25,12 @@ import IconButton from "../IconButton";
 import Spacer from "../Spacer";
 import Typography from "../Typography";
 
-const CHECKBOX_SELECTION_PATH = "checkbox-selection";
+import TableHeadCell from "./components/HeadCell";
+import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
+
 const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
 const ROW_ACTION_PATH = "row-actions";
-const TOOLBAR_DIMENSION = 64;
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -224,6 +224,14 @@ const Table: FC<ITable> = ({
     onSelectionChange,
   ]);
 
+  const onSortWrapper: ITableOnSortCallback = useCallback(
+    (path, ordering) => {
+      setSorting({ path, ordering });
+      onSortChange && onSortChange(path, ordering);
+    },
+    [onSortChange]
+  );
+
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...style }}>
       {loading && (
@@ -284,50 +292,15 @@ const Table: FC<ITable> = ({
       <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
           <MUITableRow>
-            {columns.map(({ label, padding, path, render, width }, index) => (
-              <MUITableCell
-                key={`column-${path || index}`}
-                padding={padding || "default"}
-                style={{
-                  width,
-                  ...(!hideHeader && sticky ? { top: `${TOOLBAR_DIMENSION}px` } : {}),
-                  ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
-                }}
-                variant="head"
-              >
-                {path === CHECKBOX_SELECTION_PATH ? (
-                  !render ? null : (
-                    render({})
-                  )
-                ) : !onSortChange ? (
-                  label
-                ) : (
-                  <MUITableSortLabel
-                    active={path === sorting.path}
-                    direction={path === sorting.path ? sorting.ordering || undefined : "asc"}
-                    onClick={(event) => {
-                      suppressEvent(event);
-                      const { path: sortingPath, ordering } = sorting;
-                      if (!sortingPath || path !== sortingPath) {
-                        setSorting({ path, ordering: "asc" });
-                        onSortChange(path, "asc");
-                        return;
-                      }
-
-                      if (path === sortingPath && ordering === "asc") {
-                        setSorting({ path, ordering: "desc" });
-                        onSortChange(path, "desc");
-                        return;
-                      }
-
-                      setSorting({ path: null, ordering: null });
-                      onSortChange(null, null);
-                    }}
-                  >
-                    {label}
-                  </MUITableSortLabel>
-                )}
-              </MUITableCell>
+            {columns.map((column, index) => (
+              <TableHeadCell
+                key={`column-${column.path || index}`}
+                column={column}
+                onSort={onSortWrapper}
+                sortable={!!onSortChange}
+                sorting={sorting}
+                stickyHeader={!hideHeader && sticky}
+              />
             ))}
           </MUITableRow>
         </MUITableHead>

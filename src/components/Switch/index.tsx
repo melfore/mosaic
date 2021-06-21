@@ -13,6 +13,9 @@ export const SUBPARTS_MAP = {
   input: {
     label: "Input",
   },
+  toggle: {
+    label: "Toggle",
+  },
 };
 
 const Switch: FC<ISwitch> = ({
@@ -34,8 +37,13 @@ const Switch: FC<ISwitch> = ({
         <MUISwitch
           checked={value}
           color="primary"
-          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.input)}
+          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.toggle)}
           disabled={disabled}
+          inputProps={
+            {
+              "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.input),
+            } as any
+          }
           onChange={onChangeHandler}
           required={required}
           size={size}

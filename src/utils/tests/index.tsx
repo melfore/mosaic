@@ -4,30 +4,70 @@ import { mount, ReactWrapper } from "enzyme";
 import { IBase } from "../../types/Base";
 import IntlProviderMock, { LocaleMock } from "../mocks/IntlProviderMock";
 
-interface ITestable {
+interface ITestableComponent {
   element: ReactElement;
   wrapper: ReactWrapper;
 }
 
-interface ITestConfig<T> {
+export interface ITestOptions<T> {
   dataCy: string;
   domNode: string;
+  localized?: boolean;
+  mountOnly?: boolean;
   props: T;
 }
 
-export const getTestable = <T extends IBase>(Component: ComponentType<T>, config: ITestConfig<T>): ITestable => {
-  const { dataCy, domNode, props } = config;
-  const element = createElement(Component, props);
-  const wrapper = mount(element).find(`${domNode}[data-cy='${dataCy}']`);
-  return { element, wrapper };
+export type IPartialTestOptions<T> = Partial<Omit<ITestOptions<T>, "props">> & {
+  props?: Partial<T>;
 };
 
-export const getLocalizedTestable = <T extends IBase>(
+/**
+ * Creates ReactElement using Component and specified options
+ * @param Component the React component to test
+ * @param options the test options to apply
+ */
+const getReactElement = <T extends IBase>(Component: ComponentType<T>, options: ITestOptions<T>): ReactElement => {
+  const { localized, props } = options;
+  let element = createElement(Component, props);
+  if (localized) {
+    element = <IntlProviderMock locale={LocaleMock.en}>{createElement(Component, props)}</IntlProviderMock>;
+  }
+
+  return element;
+};
+
+/**
+ * Mounts element and gets ReactWrapper for element with specified options
+ * @param element the ReactElement to mount
+ * @param options the test options to apply
+ */
+const getReactWrapper = <T extends IBase>(element: ReactElement, options: ITestOptions<T>): ReactWrapper => {
+  const { dataCy, domNode, mountOnly } = options;
+  let wrapper = mount(element);
+  if (mountOnly) {
+    return wrapper;
+  }
+
+  return wrapper.find(`${domNode}[data-cy='${dataCy}']`);
+};
+
+/**
+ * Gets TestableComponent for Component and specified options
+ * @param Component the React component to test
+ * @param options the test options to apply
+ */
+export const getTestableComponent = <T extends IBase>(
   Component: ComponentType<T>,
-  config: ITestConfig<T>
-): ITestable => {
-  const { dataCy, domNode, props } = config;
-  const element = <IntlProviderMock locale={LocaleMock.en}>{createElement(Component, props)}</IntlProviderMock>;
-  const wrapper = mount(element).find(`${domNode}[data-cy='${dataCy}']`);
+  defaultOptions: ITestOptions<T>,
+  partialOptions?: IPartialTestOptions<T>
+): ITestableComponent => {
+  const options: ITestOptions<T> = {
+    ...defaultOptions,
+    ...partialOptions,
+    props: { ...defaultOptions.props, ...partialOptions?.props },
+  };
+
+  const element = getReactElement(Component, options);
+  const wrapper = getReactWrapper(element, options);
   return { element, wrapper };
 };

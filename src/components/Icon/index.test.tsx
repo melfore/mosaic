@@ -2,19 +2,20 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import { Icons, IconSize, IIcon } from "../../types/Icon";
-import { getTestable } from "../../utils/tests";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Icon, { DATA_CY_DEFAULT } from ".";
 
-const defaultProps: IIcon = {
-  name: Icons.add,
+const DEFAULT_TEST_OPTIONS: ITestOptions<IIcon> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "svg",
+  props: { name: Icons.add },
 };
 
-const getIconTestable = (props?: IIcon, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(Icon, { dataCy, domNode: "svg", props: { ...defaultProps, ...props } });
+const getIconTestable = (options?: IPartialTestOptions<IIcon>) =>
+  getTestableComponent(Icon, DEFAULT_TEST_OPTIONS, options);
 
 // TODO: improve tests
-
 describe("Icon test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getIconTestable();
@@ -26,7 +27,8 @@ describe("Icon test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getIconTestable({ ...defaultProps, dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getIconTestable({ dataCy: "custom", props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -34,28 +36,28 @@ describe("Icon test suite:", () => {
   });
 
   it("loading", () => {
-    const { element } = getIconTestable({ ...defaultProps, loading: true });
+    const { element } = getIconTestable({ props: { loading: true } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("loading large", () => {
-    const { element } = getIconTestable({ ...defaultProps, loading: true, size: IconSize.large });
+    const { element } = getIconTestable({ props: { loading: true, size: IconSize.large } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("loading small", () => {
-    const { element } = getIconTestable({ ...defaultProps, loading: true, size: IconSize.small });
+    const { element } = getIconTestable({ props: { loading: true, size: IconSize.small } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("size", () => {
-    const { element, wrapper } = getIconTestable({ ...defaultProps, size: IconSize.large });
+    const { element, wrapper } = getIconTestable({ props: { size: IconSize.large } });
     expect(wrapper.hasClass("MuiSvgIcon-fontSizeLarge"));
 
     const snapshotWrapper = renderer.create(element).toJSON();

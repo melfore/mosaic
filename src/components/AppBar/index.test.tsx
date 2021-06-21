@@ -2,15 +2,21 @@ import renderer from "react-test-renderer";
 
 import { IAppBar } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
+import { getComposedDataCy } from "../../utils";
 import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
-import { getLocalizedTestable } from "../../utils/tests";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import AppBar, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT } from ".";
+import AppBar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: IAppBar = {};
+const DEFAULT_TEST_OPTIONS: ITestOptions<IAppBar> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "header",
+  localized: true,
+  props: {},
+};
 
-const getAppBarTestable = (props?: IAppBar, dataCy = DATA_CY_DEFAULT) =>
-  getLocalizedTestable(AppBar, { dataCy, domNode: "header", props: { ...defaultProps, ...props } });
+const getAppBarTestable = (options?: IPartialTestOptions<IAppBar>) =>
+  getTestableComponent(AppBar, DEFAULT_TEST_OPTIONS, options);
 
 describe("AppBar test suite:", () => {
   it("default", () => {
@@ -22,7 +28,8 @@ describe("AppBar test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getAppBarTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getAppBarTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -32,21 +39,31 @@ describe("AppBar test suite:", () => {
   it("localized", () => {
     const label = MessageMock.confirm;
     const title = MessageMock.title;
-    const props = { ...defaultProps, localized: true, title, userMenu: [{ label, onClick: jest.fn() }] };
-    const { wrapper } = getAppBarTestable({ ...props }, props[DATA_CY_SHORTCUT]);
-    const titleElement = wrapper.find(`h2[data-cy='${MessageMock.title}-title-text']`);
+    const { wrapper } = getAppBarTestable({
+      dataCy: title,
+      props: { localized: true, title, userMenu: [{ label, onClick: jest.fn() }] },
+    });
+
+    const titleElementDataCy = getComposedDataCy(title, SUBPARTS_MAP.titleText);
+    const titleElement = wrapper.find(`h2[data-cy='${titleElementDataCy}']`);
     expect(titleElement.text()).toEqual(mockedMessages[LocaleMock.en][title]);
-    const userMenuEntry = wrapper.find(`li[data-cy='${MessageMock.title}-user-menu-item-0']`);
+
+    const userMenuEntryDataCy = getComposedDataCy(title, SUBPARTS_MAP.userMenuItem, 0);
+    const userMenuEntry = wrapper.find(`li[data-cy='${userMenuEntryDataCy}']`);
     expect(userMenuEntry.text()).toEqual(mockedMessages[LocaleMock.en][label]);
   });
 
   it("actions", () => {
     const onClick = jest.fn();
-    const { element, wrapper } = getAppBarTestable({ actions: [{ icon: Icons.account, onClick }] });
-    const actionButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-action-0']`);
+    const { element, wrapper } = getAppBarTestable({ props: { actions: [{ icon: Icons.account, onClick }] } });
+
+    const actionButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, 0);
+    const actionButton = wrapper.find(`button[data-cy='${actionButtonDataCy}']`);
     actionButton.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
-    const actionButtonIcon = actionButton.find(`Icon[dataCy='${DATA_CY_DEFAULT}-action-0-icon']`);
+
+    const actionButtonIconDataCy = `${actionButtonDataCy}-icon`;
+    const actionButtonIcon = actionButton.find(`Icon[dataCy='${actionButtonIconDataCy}']`);
     expect(actionButtonIcon.prop("name")).toEqual(Icons.account);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -55,11 +72,15 @@ describe("AppBar test suite:", () => {
 
   it("menu", () => {
     const onClick = jest.fn();
-    const { element, wrapper } = getAppBarTestable({ menu: { icon: Icons.account, onClick } });
-    const menuButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-menu']`);
+    const { element, wrapper } = getAppBarTestable({ props: { menu: { icon: Icons.account, onClick } } });
+
+    const menuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.menu);
+    const menuButton = wrapper.find(`button[data-cy='${menuButtonDataCy}']`);
     menuButton.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
-    const menuButtonIcon = menuButton.find(`Icon[dataCy='${DATA_CY_DEFAULT}-menu-icon']`);
+
+    const menuButtonIconDataCy = `${menuButtonDataCy}-icon`;
+    const menuButtonIcon = menuButton.find(`Icon[dataCy='${menuButtonIconDataCy}']`);
     expect(menuButtonIcon.prop("name")).toEqual(Icons.account);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -68,11 +89,15 @@ describe("AppBar test suite:", () => {
 
   it("title", () => {
     const onTitleClick = jest.fn();
-    const { element, wrapper } = getAppBarTestable({ onTitleClick, title: "Title" });
-    const titleWrapper = wrapper.find(`div[data-cy='${DATA_CY_DEFAULT}-title-clickable']`);
+    const { element, wrapper } = getAppBarTestable({ props: { onTitleClick, title: "Title" } });
+
+    const titleWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.titleClickable);
+    const titleWrapper = wrapper.find(`div[data-cy='${titleWrapperDataCy}']`);
     titleWrapper.simulate("click");
     expect(onTitleClick).toHaveBeenCalledTimes(1);
-    const titleElement = wrapper.find(`h2[data-cy='${DATA_CY_DEFAULT}-title-text']`);
+
+    const titleTextDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.titleText);
+    const titleElement = wrapper.find(`h2[data-cy='${titleTextDataCy}']`);
     expect(titleElement.text()).toEqual("Title");
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -81,18 +106,23 @@ describe("AppBar test suite:", () => {
 
   it("userMenu", () => {
     const onClick = jest.fn();
-    const { wrapper } = getAppBarTestable({ userMenu: [{ label: "Logout", onClick }] });
-    const userMenuButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-user-menu']`);
-    const userMenuButtonIcon = userMenuButton.find(`Icon[dataCy='${DATA_CY_DEFAULT}-user-menu-icon']`);
+    const { wrapper } = getAppBarTestable({ props: { userMenu: [{ label: "Logout", onClick }] } });
+
+    const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
+    const userMenuButton = wrapper.find(`button[data-cy='${userMenuButtonDataCy}']`);
+    const userMenuButtonIconDataCy = `${userMenuButtonDataCy}-icon`;
+    const userMenuButtonIcon = userMenuButton.find(`Icon[dataCy='${userMenuButtonIconDataCy}']`);
     expect(userMenuButtonIcon.prop("name")).toEqual(Icons.account);
     userMenuButton.simulate("click");
-    const userMenuEntry = wrapper.find(`li[data-cy='${DATA_CY_DEFAULT}-user-menu-item-0']`);
+
+    const userMenuEntryDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenuItem, 0);
+    const userMenuEntry = wrapper.find(`li[data-cy='${userMenuEntryDataCy}']`);
     expect(userMenuEntry.text()).toEqual("Logout");
     userMenuEntry.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
     userMenuButton.simulate("blur");
 
-    // TODO: add coverage for setUserMenuAnchor(null) when closing userMenu
+    // TODO#lb: add coverage for setUserMenuAnchor(null) when closing userMenu
     // <MUIMenu
     //   id={`${dataCy}-user-menu`}
     //   anchorEl={userMenuAnchor}
@@ -107,8 +137,10 @@ describe("AppBar test suite:", () => {
   it("username", () => {
     const onClick = jest.fn();
     const username = "mos@ic";
-    const { wrapper } = getAppBarTestable({ userMenu: [{ label: "Logout", onClick }], username });
-    const userMenuButton = wrapper.find(`button[data-cy='${DATA_CY_DEFAULT}-user-menu']`);
+    const { wrapper } = getAppBarTestable({ props: { userMenu: [{ label: "Logout", onClick }], username } });
+
+    const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
+    const userMenuButton = wrapper.find(`button[data-cy='${userMenuButtonDataCy}']`);
     const userMenuButtonLabel = userMenuButton.find(".MuiButton-label");
     expect(userMenuButtonLabel.text()).toEqual(username);
   });

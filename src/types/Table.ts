@@ -23,8 +23,18 @@ export interface ITableColumn {
   padding?: "checkbox" | "default" | "none";
   path: string;
   render?: (row: any) => ReactNode;
+  sortable?: boolean;
   width?: number | string;
 }
+
+export type ITableSortingCriteria = "asc" | "desc" | null;
+
+export interface ITableSorting {
+  path: string | null;
+  ordering: ITableSortingCriteria;
+}
+
+export type ITableOnSortCallback = (path: string | null, criteria: ITableSortingCriteria) => void;
 
 export interface ITable extends ILocalizable {
   actions?: ITableAction[];
@@ -38,13 +48,13 @@ export interface ITable extends ILocalizable {
   onPageSizeChange?: (page: number, pageSize: number) => void;
   onRowClick?: (row: any) => void;
   onSelectionChange?: (data: any[]) => void;
-  onSortChange?: (path: string | null, criteria: "asc" | "desc" | null) => void;
+  onSortChange?: ITableOnSortCallback;
   page?: number;
   pageSize?: number;
   rows: any[];
   rowsTotal?: number;
   selectionFilter?: (datum: any) => boolean;
-  sorting?: { path: string | null; ordering: "asc" | "desc" | null };
+  sorting?: ITableSorting;
   sticky?: boolean;
   title: string;
 }

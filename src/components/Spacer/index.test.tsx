@@ -1,19 +1,24 @@
 import renderer from "react-test-renderer";
 
 import { ISpacer, SpacerDirection } from "../../types/Spacer";
-import { getTestable } from "../../utils/tests";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Spacer, { DATA_CY_DEFAULT } from ".";
 
-const defaultProps: ISpacer = {};
+const DEFAULT_TEST_OPTIONS: ITestOptions<ISpacer> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "div",
+  props: {},
+};
 
-const getSpacerTestable = (props?: ISpacer, dataCy = DATA_CY_DEFAULT) =>
-  getTestable(Spacer, { dataCy, domNode: "div", props: { ...defaultProps, ...props } });
+const getSpacerTestable = (options?: IPartialTestOptions<ISpacer>) =>
+  getTestableComponent(Spacer, DEFAULT_TEST_OPTIONS, options);
 
 describe("Spacer test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getSpacerTestable();
     expect(wrapper).toHaveLength(1);
+
     expect("default-props-check").toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -21,7 +26,8 @@ describe("Spacer test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getSpacerTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getSpacerTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -29,14 +35,14 @@ describe("Spacer test suite:", () => {
   });
 
   it("direction", () => {
-    const { element } = getSpacerTestable({ direction: SpacerDirection.vertical });
+    const { element } = getSpacerTestable({ props: { direction: SpacerDirection.vertical } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("level", () => {
-    const { element } = getSpacerTestable({ level: 2 });
+    const { element } = getSpacerTestable({ props: { level: 2 } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

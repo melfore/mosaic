@@ -10,6 +10,9 @@ export const DATA_CY_SHORTCUT = "label";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
 
 export const SUBPARTS_MAP = {
+  check: {
+    label: "Check",
+  },
   input: {
     label: "Input",
   },
@@ -36,9 +39,14 @@ const Checkbox: FC<ICheckbox> = ({
         <MUICheckbox
           checked={value}
           color="primary"
-          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.input)}
+          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.check)}
           disabled={disabled}
           indeterminate={intermediate}
+          inputProps={
+            {
+              "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.input),
+            } as any
+          }
           onChange={onChangeHandler}
           required={required}
           size={size}

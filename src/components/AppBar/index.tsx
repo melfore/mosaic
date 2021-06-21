@@ -26,12 +26,12 @@ const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
 export const DATA_CY_DEFAULT = "appbar";
 export const DATA_CY_SHORTCUT = "title";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
-  { name: "title", type: "string" },
+  { name: DATA_CY_SHORTCUT, type: "string" },
   { name: "userMenu.label", type: "any[]" },
 ];
 
 export const SUBPARTS_MAP = {
-  menuIcon: {
+  menu: {
     label: "Menu",
   },
   titleClickable: {
@@ -40,11 +40,11 @@ export const SUBPARTS_MAP = {
   titleText: {
     label: "Title Text",
   },
-  actionIcon: {
+  action: {
     label: "Action (at index n)",
     value: (n = `{n}`) => `action-${n}`,
   },
-  userMenuIcon: {
+  userMenu: {
     label: "User Menu",
   },
   userMenuItem: {
@@ -55,7 +55,7 @@ export const SUBPARTS_MAP = {
 
 const AppBar: FC<IAppBar> = ({
   actions = [],
-  dataCy = "appbar",
+  dataCy = DATA_CY_DEFAULT,
   menu,
   onTitleClick,
   style,
@@ -68,7 +68,7 @@ const AppBar: FC<IAppBar> = ({
   const [userMenuAnchor, setUserMenuAnchor] = useState<any>(null);
 
   const userMenuButton = useMemo(() => {
-    const userMenuDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.userMenuIcon);
+    const userMenuDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.userMenu);
     const userMenuIcon: Icons = Icons.account;
     const userMenuOnClickCallback = () =>
       setUserMenuAnchor(document.querySelector(`button[data-cy='${userMenuDataCy}']`));
@@ -91,11 +91,7 @@ const AppBar: FC<IAppBar> = ({
       <MUIToolbar style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
         <div style={{ alignItems: "center", display: "flex" }}>
           {menu && (
-            <IconButton
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menuIcon)}
-              icon={menu.icon}
-              onClick={menu.onClick}
-            />
+            <IconButton dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menu)} icon={menu.icon} onClick={menu.onClick} />
           )}
           {title && (
             <div
@@ -121,7 +117,7 @@ const AppBar: FC<IAppBar> = ({
           {actions.map(({ icon, onClick, style }, index) => (
             <IconButton
               key={`action-${index}`}
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.actionIcon, index)}
+              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, index)}
               icon={icon}
               onClick={onClick}
               style={{ marginRight: `${theme.spacing(0.5)}px`, ...style }}

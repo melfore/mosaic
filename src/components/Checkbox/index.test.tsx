@@ -1,21 +1,29 @@
 import renderer from "react-test-renderer";
 
 import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
+import { getComposedDataCy } from "../../utils";
 import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
-import { getLocalizedTestable } from "../../utils/tests";
+import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import Checkbox, { DATA_CY_DEFAULT } from ".";
+import Checkbox, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const defaultProps: ICheckbox = {};
+const DEFAULT_TEST_OPTIONS: ITestOptions<ICheckbox> = {
+  dataCy: DATA_CY_DEFAULT,
+  domNode: "label",
+  localized: true,
+  props: {},
+};
 
-const getCheckboxTestable = (props?: ICheckbox, dataCy = DATA_CY_DEFAULT, domNode = "label") =>
-  getLocalizedTestable(Checkbox, { dataCy, domNode, props: { ...defaultProps, ...props } });
+const getCheckboxTestable = (options?: IPartialTestOptions<ICheckbox>) =>
+  getTestableComponent(Checkbox, DEFAULT_TEST_OPTIONS, options);
 
 describe("Checkbox test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getCheckboxTestable();
     expect(wrapper).toHaveLength(1);
-    const input = wrapper.find("input");
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
     expect(input.prop("checked")).toBeFalsy();
     expect(input.prop("data-indeterminate")).toBeFalsy();
     expect(input.prop("disabled")).toBeFalsy();
@@ -26,7 +34,8 @@ describe("Checkbox test suite:", () => {
   });
 
   it("dataCy", () => {
-    const { element, wrapper } = getCheckboxTestable({ dataCy: "custom" }, "custom");
+    const dataCy = "custom";
+    const { element, wrapper } = getCheckboxTestable({ dataCy, props: { dataCy } });
     expect(wrapper).toHaveLength(1);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -35,7 +44,8 @@ describe("Checkbox test suite:", () => {
 
   it("localized", () => {
     const label = MessageMock.checkbox;
-    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label, localized: true }, MessageMock.checkbox);
+    const { element, wrapper } = getCheckboxTestable({ dataCy: label, props: { label, localized: true } });
+
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
     expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
 
@@ -44,8 +54,10 @@ describe("Checkbox test suite:", () => {
   });
 
   it("checked", () => {
-    const { element, wrapper } = getCheckboxTestable({ value: true });
-    const input = wrapper.find("input");
+    const { element, wrapper } = getCheckboxTestable({ props: { value: true } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
     expect(input.prop("checked")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -53,8 +65,10 @@ describe("Checkbox test suite:", () => {
   });
 
   it("disabled", () => {
-    const { element, wrapper } = getCheckboxTestable({ disabled: true });
-    const input = wrapper.find("input");
+    const { element, wrapper } = getCheckboxTestable({ props: { disabled: true } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
     expect(input.prop("disabled")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -62,8 +76,10 @@ describe("Checkbox test suite:", () => {
   });
 
   it("intermediate", () => {
-    const { element, wrapper } = getCheckboxTestable({ intermediate: true });
-    const input = wrapper.find("input");
+    const { element, wrapper } = getCheckboxTestable({ props: { intermediate: true } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
     expect(input.prop("data-indeterminate")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -72,7 +88,8 @@ describe("Checkbox test suite:", () => {
 
   it("label", () => {
     const label = "Checkbox";
-    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label });
+    const { element, wrapper } = getCheckboxTestable({ props: { label } });
+
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
     expect(labelElement.text()).toEqual(label);
 
@@ -82,7 +99,8 @@ describe("Checkbox test suite:", () => {
 
   it("label placement", () => {
     const label = "Checkbox";
-    const { element, wrapper } = getCheckboxTestable({ ...defaultProps, label, labelPlacement: "end" });
+    const { element, wrapper } = getCheckboxTestable({ props: { label, labelPlacement: "end" } });
+
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
     expect(labelElement.text()).toEqual(label);
 
@@ -92,9 +110,11 @@ describe("Checkbox test suite:", () => {
 
   it("onChange", () => {
     const onChange = jest.fn();
-    const { element, wrapper } = getCheckboxTestable({ onChange });
-    const inputBefore = wrapper.find("input");
-    inputBefore.simulate("change", { target: { checked: true } });
+    const { element, wrapper } = getCheckboxTestable({ props: { onChange } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
+    input.simulate("change", { target: { checked: true } });
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenCalledWith(true);
 
@@ -104,16 +124,20 @@ describe("Checkbox test suite:", () => {
 
   it("onChange - not handled", () => {
     const { element, wrapper } = getCheckboxTestable();
-    const inputBefore = wrapper.find("input");
-    inputBefore.simulate("change", { target: { checked: true } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
+    input.simulate("change", { target: { checked: true } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("required", () => {
-    const { element, wrapper } = getCheckboxTestable({ required: true });
-    const input = wrapper.find("input");
+    const { element, wrapper } = getCheckboxTestable({ props: { required: true } });
+
+    const inputDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.input);
+    const input = wrapper.find(`input[data-cy='${inputDataCy}']`);
     expect(input.prop("required")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -121,7 +145,7 @@ describe("Checkbox test suite:", () => {
   });
 
   it("size", () => {
-    const { element } = getCheckboxTestable({ size: CheckboxSize.small });
+    const { element } = getCheckboxTestable({ props: { size: CheckboxSize.small } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

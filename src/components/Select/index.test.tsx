@@ -44,15 +44,45 @@ describe("Select Single test suite:", () => {
     expect(wrapper.prop("disabled")).toBeTruthy();
   });
 
-  // TODO: improve this by adding check on options and groupby
-  it("groupBy", () => {
-    getSelectTestable({
+  it("groupBy - default", () => {
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
       props: {
-        getGroupLabel: (option) => option.slice(0, 1),
-        getOptionLabel: (option) => option.toUpperCase(),
         groupBy: (option) => option.slice(0, 1),
       },
     });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`p[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(["Murales", "Mosaic", "Photography", "Paintings", "Sculpture"]);
+  });
+
+  it("groupBy - autosort", () => {
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: {
+        autoSort: true,
+        groupBy: (option) => option.slice(0, 1),
+      },
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`p[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]);
   });
 
   it("immutable options", () => {

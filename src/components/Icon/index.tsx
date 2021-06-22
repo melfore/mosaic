@@ -1,11 +1,17 @@
 import React, { FC, useMemo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { IconSize, IIcon } from "../../types/Icon";
+import { IconSize, IIcon, IIconDimensions } from "../../types/Icon";
 
 import { iconsCatalog } from "./utils";
 
 export const DATA_CY_DEFAULT = "icon";
+
+const ICON_DIMENSIONS: IIconDimensions = {
+  [IconSize.default]: 24,
+  [IconSize.large]: 35,
+  [IconSize.small]: 20,
+};
 
 const Icon: FC<IIcon> = ({
   dataCy = DATA_CY_DEFAULT,
@@ -15,17 +21,7 @@ const Icon: FC<IIcon> = ({
   size = IconSize.default,
   style,
 }) => {
-  const iconDimension = useMemo(() => {
-    switch (size) {
-      case IconSize.small:
-        return 20;
-      case IconSize.large:
-        return 35;
-      case IconSize.default:
-      default:
-        return 24;
-    }
-  }, [size]);
+  const iconDimension = useMemo(() => ICON_DIMENSIONS[size], [size]);
 
   if (loading) {
     return <MUISkeleton height={iconDimension} variant="rect" width={iconDimension} />;

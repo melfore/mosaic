@@ -65,6 +65,10 @@ interface IForwardedIcon {
   ref?: any;
 }
 
+export type IIconDimensions = {
+  [key in IconSize]: number;
+};
+
 export interface IIcon extends ILoadable {
   forwarded?: IForwardedIcon;
   name: Icons;

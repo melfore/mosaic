@@ -3,7 +3,7 @@
 
 ### Features
 
-* 🎸 [Table] GroupBy preserves options order ([2dd9532](https://github.com/melfore/mosaic/commit/2dd9532a59ebf71b1e10410fe30b3f701cda47e9))
+* 🎸 [Select] GroupBy preserves options order ([2dd9532](https://github.com/melfore/mosaic/commit/2dd9532a59ebf71b1e10410fe30b3f701cda47e9))
 
 # [5.0.0](https://github.com/melfore/mosaic/compare/v4.0.0...v5.0.0) (2021-06-21)
 

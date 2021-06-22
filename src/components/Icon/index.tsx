@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { IconSize, IIcon } from "../../types/Icon";
@@ -15,20 +15,20 @@ const Icon: FC<IIcon> = ({
   size = IconSize.default,
   style,
 }) => {
-  if (loading) {
-    const dimensions = ((size: IconSize): number => {
-      switch (size) {
-        case IconSize.small:
-          return 20;
-        default:
-        case IconSize.default:
-          return 24;
-        case IconSize.large:
-          return 35;
-      }
-    })(size);
+  const iconDimension = useMemo(() => {
+    switch (size) {
+      case IconSize.small:
+        return 20;
+      case IconSize.large:
+        return 35;
+      case IconSize.default:
+      default:
+        return 24;
+    }
+  }, [size]);
 
-    return <MUISkeleton height={dimensions} variant="rect" width={dimensions} />;
+  if (loading) {
+    return <MUISkeleton height={iconDimension} variant="rect" width={iconDimension} />;
   }
 
   const icon = iconsCatalog[name];

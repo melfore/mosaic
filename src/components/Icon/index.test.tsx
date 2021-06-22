@@ -42,14 +42,14 @@ describe("Icon test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("loading large", () => {
+  it("loading - size large", () => {
     const { element } = getIconTestable({ props: { loading: true, size: IconSize.large } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("loading small", () => {
+  it("loading - size small", () => {
     const { element } = getIconTestable({ props: { loading: true, size: IconSize.small } });
 
     const snapshotWrapper = renderer.create(element).toJSON();

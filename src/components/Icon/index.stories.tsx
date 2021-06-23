@@ -42,6 +42,14 @@ export const Loading = () => (
   </StoriesWrapper>
 );
 
+export const Rotate = () => (
+  <StoriesWrapper>
+    <Icon name={Icons.refresh} rotate size={IconSize.small} />
+    <Icon name={Icons.refresh} rotate />
+    <Icon name={Icons.refresh} rotate size={IconSize.large} />
+  </StoriesWrapper>
+);
+
 export const Size = () => (
   <StoriesWrapper>
     <Icon dataCy="icon-send" name={Icons.send} size={IconSize.small} />

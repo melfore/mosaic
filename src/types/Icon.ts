@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 import { ILoadable } from "./Base";
 
 export enum Icons {
@@ -69,8 +71,15 @@ export type IIconDimensions = {
   [key in IconSize]: number;
 };
 
+export interface IRenderedIcon extends IForwardedIcon {
+  "data-cy": string;
+  fontSize: IconSize;
+  style?: CSSProperties;
+}
+
 export interface IIcon extends ILoadable {
   forwarded?: IForwardedIcon;
   name: Icons;
+  rotate?: boolean;
   size?: IconSize;
 }

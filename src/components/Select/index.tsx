@@ -95,22 +95,27 @@ const Select = <T extends any>({
 
   const options = useMemo(() => {
     let options = [...externalOptions];
-    if (!autoSort) {
+    if (!autoSort && !groupBy) {
       return options;
     }
 
-    return options.sort((one: T, another: T) => {
-      const oneLabel = getOptionLabel(one);
-      const anotherLabel = getOptionLabel(another);
-      const labelSorting = oneLabel.localeCompare(anotherLabel);
-      if (!groupBy) {
-        return labelSorting;
-      }
+    if (groupBy) {
+      options = options.sort((one: T, another: T) => {
+        const oneGroup = groupBy(one);
+        const anotherGroup = groupBy(another);
+        return oneGroup.localeCompare(anotherGroup);
+      });
+    }
 
-      const oneGroup = groupBy(one);
-      const anotherGroup = groupBy(another);
-      return oneGroup.localeCompare(anotherGroup) || labelSorting;
-    });
+    if (autoSort) {
+      options = options.sort((one: T, another: T) => {
+        const oneLabel = getOptionLabel(one);
+        const anotherLabel = getOptionLabel(another);
+        return oneLabel.localeCompare(anotherLabel);
+      });
+    }
+
+    return options;
   }, [autoSort, externalOptions, getOptionLabel, groupBy]);
 
   const isOptionSelectable = useCallback(

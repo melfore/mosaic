@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { IconSize, IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
+import { logWarn } from "../../utils/logger";
 
 import { iconsCatalog } from "./utils";
 
@@ -76,7 +77,7 @@ const Icon: FC<IIcon> = ({
   }
 
   if (!name) {
-    // TODO#lb: add logger util
+    logWarn("Icon", "Skip rendering, both children and name are not set");
     return null;
   }
 

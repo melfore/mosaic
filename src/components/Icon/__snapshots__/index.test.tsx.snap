@@ -28,6 +28,20 @@ exports[`Icon test suite: default 1`] = `
 </svg>
 `;
 
+exports[`Icon test suite: forwarded props 1`] = `
+<svg
+  aria-hidden={true}
+  className="MuiSvgIcon-root forwarded-classname"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;
+
 exports[`Icon test suite: loading - size large 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
@@ -62,6 +76,20 @@ exports[`Icon test suite: loading 1`] = `
     }
   }
 />
+`;
+
+exports[`Icon test suite: rotate 1`] = `
+<svg
+  aria-hidden={true}
+  className="MuiSvgIcon-root makeStyles-rotate-2"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
 `;
 
 exports[`Icon test suite: size 1`] = `

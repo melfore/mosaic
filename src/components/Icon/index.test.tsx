@@ -15,7 +15,6 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<IIcon> = {
 const getIconTestable = (options?: IPartialTestOptions<IIcon>) =>
   getTestableComponent(Icon, DEFAULT_TEST_OPTIONS, options);
 
-// TODO: improve tests
 describe("Icon test suite:", () => {
   it("default", () => {
     const { element, wrapper } = getIconTestable();
@@ -30,6 +29,15 @@ describe("Icon test suite:", () => {
     const dataCy = "custom";
     const { element, wrapper } = getIconTestable({ dataCy: "custom", props: { dataCy } });
     expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("forwarded props", () => {
+    const forwardedClassName = "forwarded-classname";
+    const { element, wrapper } = getIconTestable({ props: { forwarded: { className: forwardedClassName } } });
+    expect(wrapper.hasClass(forwardedClassName)).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -51,6 +59,14 @@ describe("Icon test suite:", () => {
 
   it("loading - size small", () => {
     const { element } = getIconTestable({ props: { loading: true, size: IconSize.small } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("rotate", () => {
+    const { element, wrapper } = getIconTestable({ props: { rotate: true } });
+    expect(wrapper.hasClass("makeStyles-rotate-2")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

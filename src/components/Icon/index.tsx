@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { cloneElement, FC, ReactElement, useMemo } from "react";
 import { makeStyles } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
@@ -29,6 +29,7 @@ const useAnimations = makeStyles({
 });
 
 const Icon: FC<IIcon> = ({
+  children,
   dataCy = DATA_CY_DEFAULT,
   forwarded = {},
   loading = false,
@@ -39,29 +40,48 @@ const Icon: FC<IIcon> = ({
 }) => {
   const { rotate: rotateAnimation } = useAnimations();
 
-  const dimension = useMemo(() => ICON_DIMENSIONS[size], [size]);
+  const dimensions = useMemo(() => {
+    const dimension = ICON_DIMENSIONS[size];
+    return { height: dimension, width: dimension };
+  }, [size]);
 
   const props = useMemo(() => {
     let props: IRenderedIcon = {
       ...forwarded,
       "data-cy": dataCy,
       fontSize: size,
-      style: externalStyle,
     };
+
+    if (externalStyle) {
+      props = { ...props, style: { ...externalStyle } };
+    }
+
+    if (children) {
+      props = { ...props, style: { ...props.style, ...dimensions } };
+    }
 
     if (rotate) {
       props = { ...props, className: rotateAnimation };
     }
 
     return props;
-  }, [dataCy, externalStyle, forwarded, rotate, rotateAnimation, size]);
+  }, [children, dataCy, dimensions, externalStyle, forwarded, rotate, rotateAnimation, size]);
 
   if (loading) {
-    return <MUISkeleton height={dimension} variant="rect" width={dimension} />;
+    return <MUISkeleton variant="rect" style={{ ...dimensions }} />;
+  }
+
+  if (children) {
+    return <div {...props}>{cloneElement(children as ReactElement<any>, { style: { ...dimensions } })}</div>;
+  }
+
+  if (!name) {
+    // TODO#lb: add logger util
+    return null;
   }
 
   const icon = iconsCatalog[name];
-  return React.cloneElement(icon, { ...props });
+  return cloneElement(icon, { ...props });
 };
 
 export default Icon;

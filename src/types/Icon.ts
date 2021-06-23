@@ -79,7 +79,7 @@ export interface IRenderedIcon extends IForwardedIcon {
 
 export interface IIcon extends ILoadable {
   forwarded?: IForwardedIcon;
-  name: Icons;
+  name?: Icons;
   rotate?: boolean;
   size?: IconSize;
 }

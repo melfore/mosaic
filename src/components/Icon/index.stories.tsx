@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
 import { Icons, IconSize } from "../../types/Icon";
@@ -28,6 +29,20 @@ export const Canvas = () => (
     name={select("icon", Icons, Icons.add)}
     size={select("size", IconSize, IconSize.default)}
   />
+);
+
+export const CustomIcon = () => (
+  <StoriesWrapper>
+    <Icon size={IconSize.small}>
+      <MUIStyleIcon />
+    </Icon>
+    <Icon rotate>
+      <MUIStyleIcon />
+    </Icon>
+    <Icon size={IconSize.large} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }}>
+      <MUIStyleIcon />
+    </Icon>
+  </StoriesWrapper>
 );
 
 export const CustomStyle = () => (

@@ -1,4 +1,4 @@
-import { ILocalizable } from "./Base";
+import { IClickable, ILocalizable } from "./Base";
 import { Icons } from "./Icon";
 
 export enum ButtonIconPosition {
@@ -11,16 +11,18 @@ export enum ButtonVariants {
   outlined = "outlined",
 }
 
+export interface IBaseButton extends IClickable {
+  label: string;
+}
+
 export interface IButtonIcon {
   name: Icons;
   position?: ButtonIconPosition;
 }
 
-export interface IButton extends ILocalizable {
+export interface IButton extends IBaseButton, ILocalizable {
   disabled?: boolean;
   elevated?: boolean;
   icon?: IButtonIcon;
-  label: string;
-  onClick: () => void;
   variant?: ButtonVariants;
 }

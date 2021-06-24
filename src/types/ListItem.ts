@@ -1,18 +1,15 @@
 import { ReactNode } from "react";
 
-import { ILoadable } from "./Base";
-import { Icons } from "./Icon";
+import { ILoadable, IPartialClickable } from "./Base";
+import { IPartialIconUtilizer } from "./Icon";
 
-interface IBaseListItem extends ILoadable {
+interface IBaseListItem extends ILoadable, IPartialClickable {
   content?: ReactNode;
   dense?: boolean;
-  onClick?: () => void;
   selected?: boolean;
 }
 
-export interface IListItem extends IBaseListItem {
-  icon?: Icons;
-}
+export interface IListItem extends IBaseListItem, IPartialIconUtilizer {}
 
 export interface IListItemCollapsible extends IBaseListItem {
   header: ReactNode;

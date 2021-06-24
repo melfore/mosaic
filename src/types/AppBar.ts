@@ -1,18 +1,12 @@
 import { ILocalizable } from "./Base";
-import { IIconButton } from "./IconButton";
-
-interface IUserMenu {
-  label: string;
-  onClick: () => void;
-}
-
-type IActionItem = Pick<IIconButton, "icon" | "onClick" | "style">;
+import { IBaseButton } from "./Button";
+import { IBaseIconButton } from "./IconButton";
 
 export interface IAppBar extends ILocalizable {
-  actions?: IActionItem[];
-  menu?: IActionItem;
+  actions?: IBaseIconButton[];
+  menu?: IBaseIconButton;
   onTitleClick?: () => void;
   title?: string;
-  userMenu?: IUserMenu[];
+  userMenu?: IBaseButton[];
   username?: string;
 }

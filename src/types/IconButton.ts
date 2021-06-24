@@ -1,9 +1,9 @@
-import { IBase } from "./Base";
-import { Icons, IconSize } from "./Icon";
+import { IClickable } from "./Base";
+import { IconSize, IIconUtilizer } from "./Icon";
 
-export interface IIconButton extends IBase {
+export interface IBaseIconButton extends IClickable, IIconUtilizer {}
+
+export interface IIconButton extends IBaseIconButton {
   disabled?: boolean;
-  icon: Icons;
-  onClick: () => void;
   size?: IconSize;
 }

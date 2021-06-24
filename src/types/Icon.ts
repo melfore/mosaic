@@ -67,19 +67,25 @@ interface IForwardedIcon {
   ref?: any;
 }
 
-export type IIconDimensions = {
-  [key in IconSize]: number;
-};
-
-export interface IRenderedIcon extends IForwardedIcon {
-  "data-cy": string;
-  fontSize: IconSize;
-  style?: CSSProperties;
-}
-
 export interface IIcon extends ILoadable {
   forwarded?: IForwardedIcon;
   name?: Icons;
   rotate?: boolean;
   size?: IconSize;
+}
+
+export type IIconDimensions = {
+  [key in IconSize]: number;
+};
+
+export interface IIconUtilizer {
+  icon: Icons;
+}
+
+export type IPartialIconUtilizer = Partial<IIconUtilizer>;
+
+export interface IRenderedIcon extends IForwardedIcon {
+  "data-cy": string;
+  fontSize: IconSize;
+  style?: CSSProperties;
 }

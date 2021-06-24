@@ -1,5 +1,5 @@
 import { ILoadable } from "./Base";
-import { Icons } from "./Icon";
+import { IPartialIconUtilizer } from "./Icon";
 
 export enum AvatarVariant {
   default = "circular",
@@ -7,9 +7,8 @@ export enum AvatarVariant {
   squared = "square",
 }
 
-export interface IAvatar extends ILoadable {
+export interface IAvatar extends ILoadable, IPartialIconUtilizer {
   alt?: string;
-  icon?: Icons;
   src?: string;
   text?: string;
   variant?: AvatarVariant;

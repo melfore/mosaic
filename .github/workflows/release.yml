@@ -83,6 +83,6 @@ jobs:
         uses: Co-qn/google-chat-notification@releases/v1
         with:
           name: Mosaic CI - Release
-          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          url: ${{ secrets.GOOGLE_CHAT_MOSAIC }}
           status: ${{ job.status }}
         if: always()

@@ -2,14 +2,20 @@ import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
 
 import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
-import { suppressEvent } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Icon from "../Icon";
+import IconWrapper from "../IconWrapper";
 
 interface IMUIButtonIcon {
   endIcon?: ReactElement;
   startIcon?: ReactElement;
 }
+
+export const SUBPARTS_MAP = {
+  icon: {
+    label: "Icon",
+  },
+};
 
 const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
   const muiIcon = {};
@@ -17,13 +23,18 @@ const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
     return muiIcon;
   }
 
-  const { name, position } = iconConfig;
-  const icon = <Icon dataCy={`${dataCy}-icon`} name={name} />;
-  return position === ButtonIconPosition.right
-    ? {
-        endIcon: icon,
-      }
-    : { startIcon: icon };
+  const { component, name, position, rotate } = iconConfig;
+  const icon = (
+    <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name || component} rotate={rotate} />
+  );
+
+  switch (position) {
+    case ButtonIconPosition.left:
+    default:
+      return { startIcon: icon };
+    case ButtonIconPosition.right:
+      return { endIcon: icon };
+  }
 };
 
 export const DATA_CY_DEFAULT = "button";

@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode } from "react";
 
 import { ILocalizable } from "./Base";
-import { Icons } from "./Icon";
+import { IPartialIconUtilizer } from "./Icon";
 
 export enum TableActionPosition {
   default = "toolbar",
@@ -9,11 +9,10 @@ export enum TableActionPosition {
   selection = "toolbarOnSelect",
 }
 
-export interface ITableAction {
+export interface ITableAction extends IPartialIconUtilizer {
   callback: (data: object | object[]) => void;
   disabled?: boolean;
   hidden?: boolean;
-  icon?: Icons;
   label: string;
   position?: TableActionPosition;
 }

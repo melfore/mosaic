@@ -1,3 +1,5 @@
+import { CSSProperties, ReactElement } from "react";
+
 import { ILoadable } from "./Base";
 
 export enum Icons {
@@ -67,6 +69,23 @@ interface IForwardedIcon {
 
 export interface IIcon extends ILoadable {
   forwarded?: IForwardedIcon;
-  name: Icons;
+  name?: Icons;
+  rotate?: boolean;
   size?: IconSize;
+}
+
+export type IIconDimensions = {
+  [key in IconSize]: number;
+};
+
+export interface IIconUtilizer {
+  icon: Icons | ReactElement;
+}
+
+export type IPartialIconUtilizer = Partial<IIconUtilizer>;
+
+export interface IRenderedIcon extends IForwardedIcon {
+  "data-cy": string;
+  fontSize: IconSize;
+  style?: CSSProperties;
 }

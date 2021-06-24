@@ -4,7 +4,7 @@ import MUIIconButton from "@material-ui/core/IconButton";
 import { IconSize } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
 import { getComposedDataCy, suppressEvent } from "../../utils";
-import Icon from "../Icon";
+import IconWrapper from "../IconWrapper";
 
 export const DATA_CY_DEFAULT = "icon-button";
 
@@ -19,6 +19,7 @@ const IconButton: FC<IIconButton> = ({
   icon,
   onClick,
   disabled = false,
+  rotate = false,
   size = IconSize.default,
   style,
 }) => {
@@ -32,7 +33,7 @@ const IconButton: FC<IIconButton> = ({
 
   return (
     <MUIIconButton color="inherit" data-cy={dataCy} disabled={disabled} onClick={onClickHandler} style={style}>
-      <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={icon} size={size} />
+      <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={icon} rotate={rotate} size={size} />
     </MUIIconButton>
   );
 };

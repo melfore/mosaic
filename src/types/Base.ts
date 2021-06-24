@@ -5,6 +5,12 @@ export interface IBase {
   style?: CSSProperties;
 }
 
+export interface IClickable extends IBase {
+  onClick: () => void;
+}
+
+export type IPartialClickable = Partial<IClickable>;
+
 export interface ILoadable extends IBase {
   loading?: boolean;
 }

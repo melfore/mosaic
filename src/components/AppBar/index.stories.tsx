@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
@@ -39,13 +40,13 @@ export const Canvas = () => (
   />
 );
 
-export const CustomStyle = () => (
+export const CustomIconsAndStyle = () => (
   <AppBar
     actions={[
-      { icon: Icons.language, onClick: () => {}, style: { backgroundColor: "yellow", color: "black" } },
-      { icon: Icons.notifications, onClick: () => {}, style: { backgroundColor: "green", color: "white" } },
+      { icon: <MUIStyleIcon />, onClick: () => {} },
+      { icon: Icons.notifications, onClick: () => {}, style: { backgroundColor: "lightslategray" } },
     ]}
-    style={{ backgroundColor: "red" }}
+    style={{ border: "2px solid #3f51b5", borderRadius: "4px", backgroundColor: "#6495ed" }}
     title="AppBar"
     userMenu={[{ label: "Logout", onClick: () => {} }]}
   />
@@ -58,7 +59,7 @@ export const Localized = () => (
   </IntlProviderMock>
 );
 
-export const WithUsername = () => (
+export const Username = () => (
   <AppBar
     title="Mosaic"
     userMenu={[

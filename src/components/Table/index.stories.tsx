@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 
@@ -231,7 +232,7 @@ export const Sticky = () => (
   />
 );
 
-export const WithCustomColumnRender = () => (
+export const CustomColumnRender = () => (
   <Table
     columns={[
       {
@@ -258,7 +259,7 @@ export const WithCustomColumnRender = () => (
   />
 );
 
-export const WithEvents = () => (
+export const Events = () => (
   <Table
     columns={[
       { label: "Name", path: "name" },
@@ -280,7 +281,7 @@ export const WithEvents = () => (
   />
 );
 
-export const WithGlobalAction = () => (
+export const GlobalAction = () => (
   <StoriesWrapper>
     <Table
       actions={[
@@ -306,7 +307,7 @@ export const WithGlobalAction = () => (
   </StoriesWrapper>
 );
 
-export const WithActions = () => (
+export const Actions = () => (
   <StoriesWrapper>
     <Table
       actions={[
@@ -316,9 +317,20 @@ export const WithActions = () => (
           label: "Add",
         },
         {
+          callback: action("On Custom Callback"),
+          icon: <MUIStyleIcon />,
+          label: "Custom",
+        },
+        {
           callback: action("On Send Callback"),
           icon: Icons.send,
           label: "Send",
+        },
+        {
+          callback: action("On Custom Callback"),
+          icon: <MUIStyleIcon />,
+          label: "Custom",
+          position: TableActionPosition.row,
         },
         {
           callback: action("On Edit Callback"),
@@ -350,7 +362,7 @@ export const WithActions = () => (
   </StoriesWrapper>
 );
 
-export const WithSelectionActions = () => (
+export const SelectionActions = () => (
   <StoriesWrapper>
     <Table
       actions={[
@@ -396,7 +408,7 @@ export const WithSelectionActions = () => (
   </StoriesWrapper>
 );
 
-export const WithRowBackground = () => (
+export const RowBackground = () => (
   <Table
     columns={[
       { label: "Name", path: "name" },

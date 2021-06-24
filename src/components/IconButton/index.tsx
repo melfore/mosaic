@@ -19,6 +19,7 @@ const IconButton: FC<IIconButton> = ({
   icon,
   onClick,
   disabled = false,
+  rotate = false,
   size = IconSize.default,
   style,
 }) => {
@@ -32,7 +33,7 @@ const IconButton: FC<IIconButton> = ({
 
   return (
     <MUIIconButton color="inherit" data-cy={dataCy} disabled={disabled} onClick={onClickHandler} style={style}>
-      <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={icon} size={size} />
+      <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={icon} rotate={rotate} size={size} />
     </MUIIconButton>
   );
 };

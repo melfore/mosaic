@@ -47,6 +47,8 @@ export const Disabled = () => (
   </StoriesWrapper>
 );
 
+export const Rotate = () => <IconButton icon={Icons.account} rotate size={IconSize.small} onClick={() => {}} />;
+
 export const Size = () => (
   <StoriesWrapper>
     <IconButton icon={Icons.add} size={IconSize.small} onClick={() => {}} />

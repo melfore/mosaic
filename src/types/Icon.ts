@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactElement } from "react";
 
 import { ILoadable } from "./Base";
 
@@ -79,7 +79,7 @@ export type IIconDimensions = {
 };
 
 export interface IIconUtilizer {
-  icon: Icons;
+  icon: Icons | ReactElement;
 }
 
 export type IPartialIconUtilizer = Partial<IIconUtilizer>;

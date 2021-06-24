@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 
-import { IconSize } from "../../types/Icon";
+import { IconSize, IIcon } from "../../types/Icon";
 import { IIconWrapper } from "../../types/IconWrapper";
 import { logWarn } from "../../utils/logger";
 import Icon from "../Icon";
@@ -16,22 +16,29 @@ const IconWrapper: FC<IIconWrapper> = ({
   size = IconSize.default,
   style,
 }) => {
+  const props = useMemo(
+    (): IIcon => ({
+      dataCy,
+      forwarded,
+      loading,
+      rotate,
+      size,
+      style,
+    }),
+    [dataCy, forwarded, loading, rotate, size, style]
+  );
+
   if (!icon) {
     logWarn("IconWrapper", "Skip rendering, both children and name are not set");
     return null;
   }
 
-  return (
-    <Icon
-      dataCy={dataCy}
-      forwarded={forwarded}
-      loading={loading}
-      name={icon}
-      rotate={rotate}
-      size={size}
-      style={style}
-    />
-  );
+  // Using Mosaic mapped Icons
+  if (typeof icon === "string") {
+    return <Icon {...props} name={icon} />;
+  }
+
+  return <Icon {...props}>{icon}</Icon>;
 };
 
 export default IconWrapper;

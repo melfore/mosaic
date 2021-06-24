@@ -84,3 +84,10 @@ export const CustomIcon = () => (
     />
   </StoriesWrapper>
 );
+
+export const RotateIcon = () => (
+  <StoriesWrapper>
+    <Button icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
+    <Button disabled icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
+  </StoriesWrapper>
+);

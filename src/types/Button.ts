@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 import { IClickable, ILocalizable } from "./Base";
-import { Icons } from "./Icon";
+import { Icons, IIcon } from "./Icon";
 
 export enum ButtonIconPosition {
   left = "left",
@@ -17,12 +17,11 @@ export interface IBaseButton extends IClickable {
   label: string;
 }
 
-// TODO: add rotate reusing IIcon props
-export interface IButtonIcon {
+export type IButtonIcon = Pick<IIcon, "rotate"> & {
   component?: ReactElement;
   name?: Icons;
   position?: ButtonIconPosition;
-}
+};
 
 export interface IButton extends IBaseButton, ILocalizable {
   disabled?: boolean;

@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 import { IClickable, ILocalizable } from "./Base";
 import { Icons } from "./Icon";
 
@@ -17,7 +19,8 @@ export interface IBaseButton extends IClickable {
 
 // TODO: add rotate reusing IIcon props
 export interface IButtonIcon {
-  name: Icons;
+  component?: ReactElement;
+  name?: Icons;
   position?: ButtonIconPosition;
 }
 

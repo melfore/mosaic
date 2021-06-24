@@ -23,8 +23,8 @@ const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
     return muiIcon;
   }
 
-  const { name, position } = iconConfig;
-  const icon = <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name} />;
+  const { component, name, position } = iconConfig;
+  const icon = <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name || component} />;
 
   switch (position) {
     case ButtonIconPosition.left:

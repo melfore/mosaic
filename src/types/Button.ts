@@ -15,6 +15,7 @@ export interface IBaseButton extends IClickable {
   label: string;
 }
 
+// TODO: add rotate reusing IIcon props
 export interface IButtonIcon {
   name: Icons;
   position?: ButtonIconPosition;

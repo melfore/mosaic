@@ -3,9 +3,10 @@ import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { Icons, IconSize } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import IconButton, { DATA_CY_DEFAULT } from ".";
+import IconButton, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
   title: "IconButton",
@@ -16,6 +17,7 @@ export default {
       component: "IconButton",
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
     }),
   },

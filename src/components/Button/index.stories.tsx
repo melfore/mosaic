@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
@@ -62,14 +63,24 @@ export const Variants = () => (
   </StoriesWrapper>
 );
 
-export const WithIcon = () => (
+export const Icon = () => (
   <StoriesWrapper>
     <Button icon={{ name: Icons.send }} label="Left Icon" onClick={action("Click on Button")} />
     <Button
       icon={{ name: Icons.send, position: ButtonIconPosition.right }}
       label="Right Icon"
       onClick={action("Click on Button")}
-      variant={ButtonVariants.outlined}
+    />
+  </StoriesWrapper>
+);
+
+export const CustomIcon = () => (
+  <StoriesWrapper>
+    <Button icon={{ component: <MUIStyleIcon /> }} label="Custom Left Icon" onClick={action("Click on Button")} />
+    <Button
+      icon={{ component: <MUIStyleIcon />, position: ButtonIconPosition.right }}
+      label="Custom Right Icon"
+      onClick={action("Click on Button")}
     />
   </StoriesWrapper>
 );

@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
@@ -36,6 +37,8 @@ export const Canvas = () => (
 export const CustomStyle = () => (
   <IconButton icon={Icons.add} onClick={() => {}} style={{ backgroundColor: "red", color: "white" }} />
 );
+
+export const CustomIcon = () => <IconButton icon={<MUIStyleIcon />} onClick={() => {}} />;
 
 export const Disabled = () => (
   <StoriesWrapper>

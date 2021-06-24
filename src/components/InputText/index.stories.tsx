@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
@@ -123,6 +124,12 @@ export const WithAdornment = () => (
       adornment={{ icon: Icons.close, onClick: action("On Clear") }}
       label="Label"
       value="Adornment is clickable and triggers an action"
+    />
+    <InputText adornment={{ icon: <MUIStyleIcon /> }} value="Custom adornment used to render icon" label="Label" />
+    <InputText
+      adornment={{ icon: <MUIStyleIcon />, onClick: action("On Clear") }}
+      label="Label"
+      value="Custom adornment is clickable and triggers an action"
     />
   </StoriesWrapper>
 );

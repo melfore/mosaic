@@ -51,6 +51,17 @@ describe("IconButton test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("rotate", () => {
+    const { element, wrapper } = getIconButtonTestable({ props: { rotate: true } });
+
+    const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
+    const svg = wrapper.find(`svg[data-cy='${iconDataCy}']`);
+    expect(svg.hasClass("makeStyles-rotate-2")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("size", () => {
     const { element, wrapper } = getIconButtonTestable({ props: { size: IconSize.small } });
 

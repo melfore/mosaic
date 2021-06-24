@@ -1,3 +1,15 @@
+# [5.2.0](https://github.com/melfore/mosaic/compare/v5.1.1...v5.2.0) (2021-06-24)
+
+
+### Features
+
+* 🎸 [Button] Added rotate icon property ([a74a2d0](https://github.com/melfore/mosaic/commit/a74a2d0557628ab14780e1f1d5353100c29b4389))
+* 🎸 [Icon] Added handling of custom Icon or svg component ([994fce9](https://github.com/melfore/mosaic/commit/994fce9037b58f932296847f50589524587ad4d2))
+* 🎸 [Icon] Added rotate property ([880b71c](https://github.com/melfore/mosaic/commit/880b71cc5a1ad5314d18a97d3e79f0b9c8ffc52f))
+* 🎸 [IconButton] Added rotate property ([451e3d0](https://github.com/melfore/mosaic/commit/451e3d007a94917fc43c7f711ae4d8de0ec262b6))
+* 🎸 [IconWrapper] Added component to centralize Icon usage ([c8d6359](https://github.com/melfore/mosaic/commit/c8d6359a59684b8eee35a6ac06e3de02d437d691))
+* 🎸 [IconWrapper] Handling custom Icon or svg component ([d43d458](https://github.com/melfore/mosaic/commit/d43d458ba70af6897f226834196a3d000f2e81c3))
+
 ## [5.1.1](https://github.com/melfore/mosaic/compare/v5.1.0...v5.1.1) (2021-06-22)
 
 # [5.1.0](https://github.com/melfore/mosaic/compare/v5.0.0...v5.1.0) (2021-06-21)

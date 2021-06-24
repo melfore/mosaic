@@ -5,7 +5,6 @@ import { IconSize } from "../../types/Icon";
 import { InputSize, InputType, InputVariant } from "../../types/Input";
 import { IInputAdornment, IInputText, IMultilineInput } from "../../types/InputText";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Icon from "../Icon";
 import IconButton from "../IconButton";
 
 const getAdornment = (adornment?: IInputAdornment) => {
@@ -16,11 +15,7 @@ const getAdornment = (adornment?: IInputAdornment) => {
   const { icon, onClick } = adornment;
   return (
     <MUIInputAdornment position="end">
-      {!onClick ? (
-        <Icon name={icon} size={IconSize.small} />
-      ) : (
-        <IconButton icon={icon} onClick={onClick} size={IconSize.small} />
-      )}
+      <IconButton disabled={!onClick} icon={icon} onClick={onClick!} size={IconSize.small} />
     </MUIInputAdornment>
   );
 };

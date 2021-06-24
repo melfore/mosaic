@@ -4,7 +4,7 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { AvatarVariant, IAvatar } from "../../types/Avatar";
 import { getComposedDataCy } from "../../utils";
-import Icon from "../Icon";
+import IconWrapper from "../IconWrapper";
 import Typography from "../Typography";
 
 export const DATA_CY_DEFAULT = "avatar";
@@ -47,7 +47,7 @@ const Avatar: FC<IAvatar> = ({
 
   return (
     <MUIAvatar alt={text || alt} data-cy={dataCy} src={src} style={{ ...baseStyle, ...style }} variant={variant}>
-      {icon && <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={icon} />}
+      {icon && <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={icon} />}
       {!icon && text && <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.text)}>{text}</Typography>}
     </MUIAvatar>
   );

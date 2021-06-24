@@ -277,7 +277,7 @@ const Table: FC<ITable> = ({
                   <Button
                     dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
                     disabled={disabled}
-                    icon={!icon ? undefined : { name: icon }}
+                    icon={typeof icon === "string" ? { name: icon } : { component: icon }}
                     label={label}
                     onClick={() =>
                       callback(

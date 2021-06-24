@@ -167,7 +167,7 @@ export const Variant = () => (
   />
 );
 
-export const WithCustomGroupLabel = () => (
+export const CustomGroupLabel = () => (
   <Select
     getGroupLabel={(groupName) => `Letter: ${groupName}`}
     groupBy={(option) => option.slice(0, 1)}
@@ -178,7 +178,7 @@ export const WithCustomGroupLabel = () => (
   />
 );
 
-export const WithCustomOptionRendering = () => (
+export const CustomOptionRendering = () => (
   <Select
     customOptionRendering={(option) => <b>{option.slice(0, 3).toUpperCase()}</b>}
     label="Arts & Creativity"

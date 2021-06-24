@@ -1,5 +1,7 @@
-import { ILocalizable } from "./Base";
-import { Icons } from "./Icon";
+import { ReactElement } from "react";
+
+import { IClickable, ILocalizable } from "./Base";
+import { Icons, IIcon } from "./Icon";
 
 export enum ButtonIconPosition {
   left = "left",
@@ -11,16 +13,19 @@ export enum ButtonVariants {
   outlined = "outlined",
 }
 
-export interface IButtonIcon {
-  name: Icons;
-  position?: ButtonIconPosition;
+export interface IBaseButton extends IClickable {
+  label: string;
 }
 
-export interface IButton extends ILocalizable {
+export type IButtonIcon = Pick<IIcon, "rotate"> & {
+  component?: ReactElement;
+  name?: Icons;
+  position?: ButtonIconPosition;
+};
+
+export interface IButton extends IBaseButton, ILocalizable {
   disabled?: boolean;
   elevated?: boolean;
   icon?: IButtonIcon;
-  label: string;
-  onClick: () => void;
   variant?: ButtonVariants;
 }

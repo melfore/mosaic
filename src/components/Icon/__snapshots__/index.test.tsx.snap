@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Icon test suite: custom icon 1`] = `
+<div
+  data-cy="icon"
+  fontSize="default"
+  style={
+    Object {
+      "height": 24,
+      "width": 24,
+    }
+  }
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root"
+    focusable="false"
+    style={
+      Object {
+        "height": 24,
+        "width": 24,
+      }
+    }
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M2.53 19.65l1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61zm19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Icon test suite: dataCy 1`] = `
 <svg
   aria-hidden={true}
@@ -28,6 +58,44 @@ exports[`Icon test suite: default 1`] = `
 </svg>
 `;
 
+exports[`Icon test suite: forwarded props 1`] = `
+<svg
+  aria-hidden={true}
+  className="MuiSvgIcon-root forwarded-classname"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;
+
+exports[`Icon test suite: loading - size large 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 35,
+      "width": 35,
+    }
+  }
+/>
+`;
+
+exports[`Icon test suite: loading - size small 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": 20,
+      "width": 20,
+    }
+  }
+/>
+`;
+
 exports[`Icon test suite: loading 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
@@ -40,28 +108,20 @@ exports[`Icon test suite: loading 1`] = `
 />
 `;
 
-exports[`Icon test suite: loading large 1`] = `
-<span
-  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-  style={
-    Object {
-      "height": 35,
-      "width": 35,
-    }
-  }
-/>
-`;
+exports[`Icon test suite: render null 1`] = `null`;
 
-exports[`Icon test suite: loading small 1`] = `
-<span
-  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
-  style={
-    Object {
-      "height": 20,
-      "width": 20,
-    }
-  }
-/>
+exports[`Icon test suite: rotate 1`] = `
+<svg
+  aria-hidden={true}
+  className="MuiSvgIcon-root makeStyles-rotate-2"
+  data-cy="icon"
+  focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
 `;
 
 exports[`Icon test suite: size 1`] = `
@@ -70,6 +130,26 @@ exports[`Icon test suite: size 1`] = `
   className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
   data-cy="icon"
   focusable="false"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+  />
+</svg>
+`;
+
+exports[`Icon test suite: styled 1`] = `
+<svg
+  aria-hidden={true}
+  className="MuiSvgIcon-root"
+  data-cy="icon"
+  focusable="false"
+  style={
+    Object {
+      "backgroundColor": "red",
+      "color": "white",
+    }
+  }
   viewBox="0 0 24 24"
 >
   <path

@@ -1,13 +1,15 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Button",
@@ -19,6 +21,7 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),
@@ -60,14 +63,31 @@ export const Variants = () => (
   </StoriesWrapper>
 );
 
-export const WithIcon = () => (
+export const Icon = () => (
   <StoriesWrapper>
     <Button icon={{ name: Icons.send }} label="Left Icon" onClick={action("Click on Button")} />
     <Button
       icon={{ name: Icons.send, position: ButtonIconPosition.right }}
       label="Right Icon"
       onClick={action("Click on Button")}
-      variant={ButtonVariants.outlined}
     />
+  </StoriesWrapper>
+);
+
+export const CustomIcon = () => (
+  <StoriesWrapper>
+    <Button icon={{ component: <MUIStyleIcon /> }} label="Custom Left Icon" onClick={action("Click on Button")} />
+    <Button
+      icon={{ component: <MUIStyleIcon />, position: ButtonIconPosition.right }}
+      label="Custom Right Icon"
+      onClick={action("Click on Button")}
+    />
+  </StoriesWrapper>
+);
+
+export const RotateIcon = () => (
+  <StoriesWrapper>
+    <Button icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
+    <Button disabled icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
   </StoriesWrapper>
 );

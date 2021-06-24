@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
@@ -101,13 +102,19 @@ export const Localized = () => (
   </IntlProviderMock>
 );
 
-export const WithAvatar = () => (
+export const Avatar = () => (
   <Card icon={Icons.business} subtitle="The best in town for components" title="Mosaic Shop">
     <Typography>Opening hours: 9AM - 6PM</Typography>
   </Card>
 );
 
-export const WithActions = () => (
+export const CustomAvatar = () => (
+  <Card icon={<MUIStyleIcon />} subtitle="The best in town for components" title="Mosaic Shop">
+    <Typography>Opening hours: 9AM - 6PM</Typography>
+  </Card>
+);
+
+export const Actions = () => (
   <Card
     actions={[<Button icon={{ name: Icons.open_new }} label="Discover" onClick={action("Discover")} />]}
     icon={Icons.business}

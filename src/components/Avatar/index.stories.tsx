@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
 import { AvatarVariant } from "../../types/Avatar";
@@ -37,6 +38,8 @@ export const Canvas = () => (
 export const CustomStyle = () => <Avatar icon={Icons.business} style={{ backgroundColor: "red", color: "white" }} />;
 
 export const Icon = () => <Avatar icon={Icons.business} />;
+
+export const CustomIcon = () => <Avatar icon={<MUIStyleIcon />} />;
 
 export const Image = () => (
   <Avatar src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg" />

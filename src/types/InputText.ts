@@ -1,4 +1,5 @@
-import { Icons } from "./Icon";
+import { IPartialClickable } from "./Base";
+import { IIconUtilizer } from "./Icon";
 import { IInput, InputType } from "./Input";
 
 export interface IMultilineInput {
@@ -6,10 +7,7 @@ export interface IMultilineInput {
   rowsMax?: number;
 }
 
-export interface IInputAdornment {
-  icon: Icons;
-  onClick?: () => void;
-}
+export interface IInputAdornment extends IIconUtilizer, IPartialClickable {}
 
 export interface IInputText extends IInput {
   adornment?: IInputAdornment;

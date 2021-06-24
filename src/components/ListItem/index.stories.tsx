@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { action } from "@storybook/addon-actions";
 import { boolean, select, text } from "@storybook/addon-knobs";
 
@@ -71,8 +72,14 @@ export const Selected = () => (
   </ListItem>
 );
 
-export const WithIcon = () => (
+export const Icon = () => (
   <ListItem icon={Icons.add}>
+    <Typography>Basic List Item</Typography>
+  </ListItem>
+);
+
+export const CustomIcon = () => (
+  <ListItem icon={<MUIStyleIcon />}>
     <Typography>Basic List Item</Typography>
   </ListItem>
 );

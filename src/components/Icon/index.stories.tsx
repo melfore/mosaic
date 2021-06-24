@@ -1,4 +1,5 @@
 import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
 import { Icons, IconSize } from "../../types/Icon";
@@ -30,6 +31,20 @@ export const Canvas = () => (
   />
 );
 
+export const CustomIcon = () => (
+  <StoriesWrapper>
+    <Icon size={IconSize.small}>
+      <MUIStyleIcon />
+    </Icon>
+    <Icon rotate>
+      <MUIStyleIcon />
+    </Icon>
+    <Icon size={IconSize.large} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }}>
+      <MUIStyleIcon />
+    </Icon>
+  </StoriesWrapper>
+);
+
 export const CustomStyle = () => (
   <Icon name={Icons.send} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }} />
 );
@@ -39,6 +54,14 @@ export const Loading = () => (
     <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.small} />
     <Icon dataCy="loading-icon" loading name={Icons.send} />
     <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.large} />
+  </StoriesWrapper>
+);
+
+export const Rotate = () => (
+  <StoriesWrapper>
+    <Icon name={Icons.refresh} rotate size={IconSize.small} />
+    <Icon name={Icons.refresh} rotate />
+    <Icon name={Icons.refresh} rotate size={IconSize.large} />
   </StoriesWrapper>
 );
 

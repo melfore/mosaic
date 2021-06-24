@@ -4,10 +4,11 @@ import { boolean, object, select, text } from "@storybook/addon-knobs";
 
 import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
+import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
 
-import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
 export default {
   title: "Button",
@@ -19,6 +20,7 @@ export default {
       e2eTestInfo: {
         dataCyDefault: DATA_CY_DEFAULT,
         dataCyShortcut: DATA_CY_SHORTCUT,
+        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
       },
       localizableProps: LOCALIZABLE_PROPS,
     }),

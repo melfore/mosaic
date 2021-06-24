@@ -2,7 +2,7 @@ import React, { FC, ReactElement, useCallback } from "react";
 import MUIButton from "@material-ui/core/Button";
 
 import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
-import { suppressEvent } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Icon from "../Icon";
 
@@ -11,6 +11,12 @@ interface IMUIButtonIcon {
   startIcon?: ReactElement;
 }
 
+export const SUBPARTS_MAP = {
+  icon: {
+    label: "Icon",
+  },
+};
+
 const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
   const muiIcon = {};
   if (!iconConfig) {
@@ -18,12 +24,15 @@ const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
   }
 
   const { name, position } = iconConfig;
-  const icon = <Icon dataCy={`${dataCy}-icon`} name={name} />;
-  return position === ButtonIconPosition.right
-    ? {
-        endIcon: icon,
-      }
-    : { startIcon: icon };
+  const icon = <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={name} />;
+
+  switch (position) {
+    case ButtonIconPosition.left:
+    default:
+      return { startIcon: icon };
+    case ButtonIconPosition.right:
+      return { endIcon: icon };
+  }
 };
 
 export const DATA_CY_DEFAULT = "button";

@@ -4,7 +4,7 @@ import MUIButton from "@material-ui/core/Button";
 import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Icon from "../Icon";
+import IconWrapper from "../IconWrapper";
 
 interface IMUIButtonIcon {
   endIcon?: ReactElement;
@@ -24,7 +24,7 @@ const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
   }
 
   const { name, position } = iconConfig;
-  const icon = <Icon dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} name={name} />;
+  const icon = <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name} />;
 
   switch (position) {
     case ButtonIconPosition.left:

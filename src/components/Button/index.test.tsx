@@ -99,6 +99,19 @@ describe("Button test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("icon - rotate", () => {
+    const { element, wrapper } = getButtonTestable({
+      props: { icon: { name: Icons.account, rotate: true } },
+    });
+
+    const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
+    const icon = wrapper.find(`svg[data-cy='${iconDataCy}']`);
+    expect(icon.hasClass("makeStyles-rotate-2")).toBeTruthy();
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("outlined", () => {
     const { element, wrapper } = getButtonTestable({ props: { variant: ButtonVariants.outlined } });
     expect(wrapper.hasClass("MuiButton-outlined"));

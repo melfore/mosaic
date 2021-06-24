@@ -55,8 +55,8 @@ describe("IconButton test suite:", () => {
     const { element, wrapper } = getIconButtonTestable({ props: { rotate: true } });
 
     const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
-    const svg = wrapper.find(`svg[data-cy='${iconDataCy}']`);
-    expect(svg.hasClass("makeStyles-rotate-2")).toBeTruthy();
+    const icon = wrapper.find(`svg[data-cy='${iconDataCy}']`);
+    expect(icon.hasClass("makeStyles-rotate-2")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

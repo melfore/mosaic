@@ -2,10 +2,11 @@ import renderer from "react-test-renderer";
 
 import { ButtonIconPosition, ButtonVariants, IButton } from "../../types/Button";
 import { Icons } from "../../types/Icon";
+import { getComposedDataCy } from "../../utils";
 import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
-import Button, { DATA_CY_DEFAULT } from ".";
+import Button, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 const DEFAULT_TEST_OPTIONS: ITestOptions<IButton> = {
   dataCy: DATA_CY_DEFAULT,
@@ -77,7 +78,7 @@ describe("Button test suite:", () => {
   it("icon", () => {
     const { element, wrapper } = getButtonTestable({ props: { icon: { name: Icons.account } } });
 
-    const icon = wrapper.find(`[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    const icon = wrapper.find(`Icon[dataCy='${getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon)}']`);
     expect(icon.prop("name")).toEqual(Icons.account);
     expect(icon.parent().hasClass("MuiButton-startIcon"));
 
@@ -85,12 +86,12 @@ describe("Button test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("icon right", () => {
+  it("icon - right", () => {
     const { element, wrapper } = getButtonTestable({
       props: { icon: { name: Icons.account, position: ButtonIconPosition.right } },
     });
 
-    const icon = wrapper.find(`[dataCy='${DATA_CY_DEFAULT}-icon']`);
+    const icon = wrapper.find(`Icon[dataCy='${getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon)}']`);
     expect(icon.prop("name")).toEqual(Icons.account);
     expect(icon.parent().hasClass("MuiButton-endIcon"));
 

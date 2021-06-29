@@ -41,6 +41,7 @@ describe("AppBar test suite:", () => {
     const title = MessageMock.title;
     const { wrapper } = getAppBarTestable({
       dataCy: title,
+      // TODO: review for localized hoc
       props: { localized: true, title, userMenu: [{ label, onClick: jest.fn() }] },
     });
 
@@ -68,6 +69,37 @@ describe("AppBar test suite:", () => {
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("locale", () => {
+    const onItemClick = jest.fn();
+    const { wrapper } = getAppBarTestable({
+      props: {
+        locale: {
+          items: [
+            { label: "English", value: "en" },
+            { label: "Italian", value: "it" },
+          ],
+          label: "en",
+          onItemClick,
+        },
+      },
+    });
+
+    const localeButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.localesMenu);
+    const localeButton = wrapper.find(`button[data-cy='${localeButtonDataCy}']`);
+    const localeButtonIconDataCy = `${localeButtonDataCy}-icon`;
+    const localeButtonIcon = localeButton.find(`Icon[dataCy='${localeButtonIconDataCy}']`);
+    expect(localeButtonIcon.prop("name")).toEqual(Icons.language);
+    localeButton.simulate("click");
+
+    const localeEntryDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.localesMenuItem, 1);
+    const localeEntry = wrapper.find(`li[data-cy='${localeEntryDataCy}']`);
+    expect(localeEntry.text()).toEqual("Italian");
+    localeEntry.simulate("click");
+    expect(onItemClick).toHaveBeenCalledTimes(1);
+    expect(onItemClick).toHaveBeenCalledWith("it");
+    localeButton.simulate("blur");
   });
 
   it("menu", () => {
@@ -106,7 +138,9 @@ describe("AppBar test suite:", () => {
 
   it("userMenu", () => {
     const onClick = jest.fn();
-    const { wrapper } = getAppBarTestable({ props: { userMenu: [{ label: "Logout", onClick }] } });
+    const { wrapper } = getAppBarTestable({
+      props: { user: { items: [{ label: "Logout", onClick, value: "logout" }] } },
+    });
 
     const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
     const userMenuButton = wrapper.find(`button[data-cy='${userMenuButtonDataCy}']`);
@@ -137,7 +171,9 @@ describe("AppBar test suite:", () => {
   it("username", () => {
     const onClick = jest.fn();
     const username = "mos@ic";
-    const { wrapper } = getAppBarTestable({ props: { userMenu: [{ label: "Logout", onClick }], username } });
+    const { wrapper } = getAppBarTestable({
+      props: { user: { items: [{ label: "Logout", onClick, value: "logout" }], label: username } },
+    });
 
     const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
     const userMenuButton = wrapper.find(`button[data-cy='${userMenuButtonDataCy}']`);

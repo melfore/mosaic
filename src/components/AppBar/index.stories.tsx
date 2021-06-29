@@ -31,12 +31,22 @@ export const Canvas = () => (
   <AppBar
     actions={[{ icon: Icons.mail, onClick: action("On Mail Click") }]}
     dataCy={text("dataCy", DATA_CY_DEFAULT)}
+    locale={{
+      items: [
+        { label: "English", value: "en" },
+        { label: "Italian", value: "it" },
+      ],
+      label: "en",
+      onItemClick: action("On Locale Change"),
+    }}
     localized={boolean("localized", false)}
     menu={{ icon: Icons.home, onClick: action("On Menu Click") }}
     onTitleClick={action("On Title Click")}
     title={text("title", "AppBar Title")}
-    userMenu={[{ label: "Logout", onClick: action("On Logout") }]}
-    username={text("username", "mosaic")}
+    user={{
+      items: [{ label: "Logout", onClick: action("On Logout"), value: "logout" }],
+      label: text("username", "mosaic"),
+    }}
   />
 );
 
@@ -46,12 +56,31 @@ export const CustomIconsAndStyle = () => (
       { icon: <MUIStyleIcon />, onClick: () => {} },
       { icon: Icons.notifications, onClick: () => {}, style: { backgroundColor: "lightslategray" } },
     ]}
+    dataCy="custom-icons-and-style"
     style={{ border: "2px solid #3f51b5", borderRadius: "4px", backgroundColor: "#6495ed" }}
     title="AppBar"
-    userMenu={[{ label: "Logout", onClick: () => {} }]}
+    user={{
+      items: [{ label: "Logout", onClick: action("On Logout"), value: "logout" }],
+    }}
   />
 );
 
+export const Locale = () => (
+  <AppBar
+    dataCy="locale"
+    locale={{
+      items: [
+        { label: "English", value: "en" },
+        { label: "Italian", value: "it" },
+      ],
+      label: "en",
+      onItemClick: action("On Locale Change"),
+    }}
+    title="AppBar"
+  />
+);
+
+// TODO: review for localized hoc
 export const Localized = () => (
   // IntlProviderMock simulates external IntlProvider context
   <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
@@ -61,11 +90,14 @@ export const Localized = () => (
 
 export const Username = () => (
   <AppBar
+    dataCy="username"
     title="Mosaic"
-    userMenu={[
-      { label: "View Details", onClick: action("View Details") },
-      { label: "Logout", onClick: action("Logout") },
-    ]}
-    username="mosaic@github.com"
+    user={{
+      items: [
+        { label: "View Details", onClick: action("View Details"), value: "details" },
+        { label: "Logout", onClick: action("On Logout"), value: "logout" },
+      ],
+      label: "mosaic@github.com",
+    }}
   />
 );

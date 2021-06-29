@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/melfore/mosaic/compare/v5.2.2...v5.3.0) (2021-06-29)
+
+
+### Features
+
+* 🎸 [AppBar] Added locale support using Menu component ([c8f9c6d](https://github.com/melfore/mosaic/commit/c8f9c6d663814182d10295b72ccd0912cfd54691))
+
 ## [5.2.2](https://github.com/melfore/mosaic/compare/v5.2.1...v5.2.2) (2021-06-24)
 
 ## [5.2.1](https://github.com/melfore/mosaic/compare/v5.2.0...v5.2.1) (2021-06-24)

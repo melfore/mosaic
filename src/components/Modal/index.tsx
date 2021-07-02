@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import {
   Dialog as MUIDialog,
   DialogActions as MUIDialogActions,
@@ -14,13 +14,6 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
-
-const onCloseWrapper = (event?: any, onClose?: Function) => {
-  if (event) {
-    suppressEvent(event);
-  }
-  onClose && onClose();
-};
 
 export const DATA_CY_DEFAULT = "modal";
 export const DATA_CY_SHORTCUT = "title";
@@ -52,21 +45,26 @@ const Modal: FC<IModal> = ({
   closable = false,
   confirm,
   dataCy = DATA_CY_DEFAULT,
-  onClose,
+  onClose: externalOnClose,
   open = false,
   size = ModalSize.default,
   title = "",
 }) => {
-  const hasActions = cancel || confirm;
+  const hasActions = useMemo(() => cancel || confirm, [cancel, confirm]);
+
+  const onClose = useCallback(
+    (event?: any) => {
+      if (event) {
+        suppressEvent(event);
+      }
+
+      externalOnClose && externalOnClose();
+    },
+    [externalOnClose]
+  );
+
   return (
-    <MUIDialog
-      aria-labelledby="modal-title"
-      data-cy={dataCy}
-      fullWidth
-      maxWidth={size}
-      onClose={(event) => onCloseWrapper(event, onClose)}
-      open={open}
-    >
+    <MUIDialog aria-labelledby="modal-title" data-cy={dataCy} fullWidth maxWidth={size} onClose={onClose} open={open}>
       <MUIDialogTitle
         id="modal-title"
         disableTypography
@@ -75,9 +73,7 @@ const Modal: FC<IModal> = ({
         <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant={TypographyVariants.title}>
           {title}
         </Typography>
-        {closable && (
-          <IconButton icon={Icons.close} size={IconSize.small} onClick={() => onCloseWrapper(undefined, onClose)} />
-        )}
+        {closable && <IconButton icon={Icons.close} size={IconSize.small} onClick={onClose} />}
       </MUIDialogTitle>
       <MUIDialogContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)} dividers>
         {children}

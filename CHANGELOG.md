@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/melfore/mosaic/compare/v5.3.0...v5.4.0) (2021-07-02)
+
+
+### Features
+
+* 🎸 [Modal] Added support for fullscreen size ([42446b2](https://github.com/melfore/mosaic/commit/42446b23df45f8a256ac8d8ef146d9d66f8fb57c))
+
 # [5.3.0](https://github.com/melfore/mosaic/compare/v5.2.2...v5.3.0) (2021-06-29)
 
 

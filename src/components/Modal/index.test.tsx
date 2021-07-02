@@ -18,7 +18,6 @@ const getModalTestable = (options?: IPartialTestOptions<IModal>) =>
   getTestableComponent(Modal, DEFAULT_TEST_OPTIONS, options);
 
 // TODO: missing localized test
-
 describe("Modal test suite:", () => {
   it("default", () => {
     const { wrapper } = getModalTestable();
@@ -73,7 +72,12 @@ describe("Modal test suite:", () => {
   });
 
   // TODO: improve this
-  it("size", () => {
+  it("size - fullscreen", () => {
+    getModalTestable({ props: { size: ModalSize.fullScreen } });
+  });
+
+  // TODO: improve this
+  it("size - large", () => {
     getModalTestable({ props: { size: ModalSize.large } });
   });
 

@@ -2,9 +2,10 @@ import { ILocalizable } from "./Base";
 import { IButton } from "./Button";
 
 export enum ModalSize {
-  small = "sm",
   default = "md",
+  fullScreen = "xl",
   large = "lg",
+  small = "sm",
 }
 
 type IModalAction = Pick<IButton, "disabled" | "label" | "style" | "variant"> & {

@@ -3,6 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { boolean, object, select, text } from "@storybook/addon-knobs";
 
 import { ButtonVariants } from "../../types/Button";
+import { ModalSize } from "../../types/Modal";
 import { getAllComposedDataCy } from "../../utils";
 import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
 import ModalMock from "../../utils/mocks/ModalMock";
@@ -56,6 +57,14 @@ export const Closable = () => (
       <Typography>
         Useful to give another way of dismissal to final user without having actions in modal footer.
       </Typography>
+    </Modal>
+  </ModalMock>
+);
+
+export const FullScreen = () => (
+  <ModalMock buttonLabel="Full Screen">
+    <Modal closable size={ModalSize.fullScreen} title="Full Screen Modal">
+      <Typography>Useful to display larger contents or for mobile devices</Typography>
     </Modal>
   </ModalMock>
 );

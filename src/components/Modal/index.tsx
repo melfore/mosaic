@@ -64,7 +64,15 @@ const Modal: FC<IModal> = ({
   );
 
   return (
-    <MUIDialog aria-labelledby="modal-title" data-cy={dataCy} fullWidth maxWidth={size} onClose={onClose} open={open}>
+    <MUIDialog
+      aria-labelledby="modal-title"
+      data-cy={dataCy}
+      fullScreen={size === ModalSize.fullScreen}
+      fullWidth
+      maxWidth={size}
+      onClose={onClose}
+      open={open}
+    >
       <MUIDialogTitle
         id="modal-title"
         disableTypography

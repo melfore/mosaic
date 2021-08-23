@@ -75,8 +75,8 @@ export const Size = () => (
 
 const allIcons = Object.values(Icons);
 const getIcon = (icon: string) => allIcons.find((i) => i === icon);
-const allIconsJsx = allIcons.map((icon) => (
-  <div className="icon-wrapper">
+const allIconsJsx = allIcons.map((icon, index) => (
+  <div key={index} className="icon-wrapper">
     <Icon dataCy={`icon-${icon}`} name={getIcon(icon) || Icons.add} />
     <span>{icon}</span>
   </div>

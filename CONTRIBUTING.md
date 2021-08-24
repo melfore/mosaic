@@ -1,17 +1,12 @@
 # Contents
 
 - [Scripts](#scripts)
-- [Snippets for VSCode](#snippets-for-vscode)
-  - [Available snippets](#available-snippets)
-    - [New Component](#new-component)
-    - [New Story](#new-story)
-    - [New Test](#new-test)
-  - [Adding snippets](#adding-snippets)
-  - [Using snippets](#using-snippets)
 - [Local testing](#local-testing)
-- [Git](#git)
-	- [Commit](#commit)
-	- [Push](#push)
+- [Git Hooks](#git-hooks)
+- [Commit](#commit)
+	- [How to commit](#how-to-commit)
+- [Push](#push)
+- [Release process](#release-process)
 
 # Contributing
 
@@ -32,132 +27,6 @@
 - `npm run test-coverage`
 
   Launches `Jest` test suite in coverage mode and saves the output into `/coverage`
-
-## Snippets for VSCode
-
-We use `VSCode` type-based snippets in order to speed up the development process.
-
-### Available snippets
-
-#### New Component
-
-```
-	"TSReactComponent": {
-		"prefix": "New Component",
-		"body": [
-			"import React, { FC } from 'react';",
-			"import MUI$1 from '@material-ui/core/$1';",
-			"",
-			"// TODO: move this in a dedicated file into /types",
-			"interface $2 {",
-			"",
-			"}",
-			"",
-			"/**",
-			" * $3 component made on top of `@material-ui/core/$1`",
-			" */",
-			"const $3: FC<$2> = ({}) => {",
-			"  return null;",
-			"};",
-			"",
-			"export default $3;",
-			"",
-		],
-		"description": "Snippet for a new TSReact Component"
-	}
-```
-
-#### New Story
-
-```
-	"TSReactStory": {
-		"prefix": "New Story",
-		"body": [
-			"import React from 'react';",
-			"import {  } from '@storybook/addon-actions';",
-			"import {  } from '@storybook/addon-knobs';",
-			"import {  } from '../../types/$1';",
-			"import { getDocsPageStructure, StoriesWrapper } from '../../utils/stories';",
-			"import $1 from '.';",
-			"",
-			"export default {",
-			"  title: '$1',",
-			"  component: $1,",
-			"  parameters: {",
-			"    ...getDocsPageStructure('$1'),",
-			"  },",
-			"}",
-			"",
-			"export const Canvas = () => (",
-			"  <$1 />",
-			");",
-			"",
-			"export const OtherStories = () => (",
-			"  <StoriesWrapper>",
-			"    <$1 />",
-			"  </StoriesWrapper>",
-			");",
-			"",
-		],
-		"description": "Snippet for a new TSReact story"
-	}
-```
-
-#### New Test
-
-```
-	"TSReactTest": {
-		"prefix": "New Test",
-		"body": [
-			"import React from 'react';",
-			"import { mount } from 'enzyme';",
-			"import $1 from '.';",
-			"",
-			"const defaultProps = {};",
-			"",
-			"const componentWrapper = (props = {}) => (",
-			"  <$1",
-			"    {...defaultProps}",
-			"    {...props}",
-			"  />",
-			");",
-			"",
-			"describe('$1 test suite:', () => {",
-			"  it('default', () => {",
-			"    const component = componentWrapper();",
-			"    const wrapper = mount(component);",
-			"    expect('something').toEqual('something');",
-			"  });",
-			"});",
-			"",
-		],
-		"description": "Snippet for a new TSReact story"
-	}
-```
-
-### Adding snippets
-
-Here's how to add the snippets for the category `typescriptreact` in `VSCode`:
-
-1. Open the `VSCode > Preferences > User Snippets` menu
-
-2. Scroll down the list of categories till you find `typescriptreact`
-
-3. Copy and paste the desired code snippets (pick from available [here](#available-snippets) into the file opened by `VSCode`.
-
-4. Save
-
-### Using snippets
-
-Here's how to use the snippets for the category `typescriptreact` in `VSCode`:
-
-1. To use a snippet (ex: creating a new component), create the empty file in the desired location (ex: `NewComponent > index.tsx`).
-
-2. Then open `VSCode` shortcuts menu (`CMD + Shift + P` on MacOS) and search for `Insert Snippet` option, it will give you hints based on file type
-
-3. Pick the desired snipped by pressing enter
-
-4. Start developing 🚀
 
 ## Local testing
 
@@ -207,19 +76,148 @@ Use this guide to locally use/test `@melfore/mosaic` on host projects, while dev
    />
    ```
 
-## Git
+## Git Hooks
 
 This project uses [husky](https://github.com/typicode/husky) to verify code before git actions can happen.
 
-### Commit
+```
+{
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "pre-commit": "npm run lintify && npm run prettify",
+    "pre-push": "npm run build && CI=true npm run test-coverage"
+  }
+}
+```
 
-Currently there are no hooks for the commit action.
+*commit-msg*
 
-### Push
+Commits are generated using `commitlint`, this allows to properly manage versions and changelog with no extra effort required. See [Commit](#commit) section for more details.
 
-The commands executed before each push to origin are:
+*pre-commit*
 
-- `npm run build`
-- `npm run test-coverage` (in `CI` mode)
+Before adding a commit code is always linted with ESLint (lintify command) and prettied with Prettier (prettify command).
 
-You can check their execution looking at git output.
+If a file required transformation, it will be added to current changes of the workspace.
+
+*pre-push*
+
+Before pushing code is always built and tested. Tests are executed with code coverage checks (required 80% to pass).
+
+If build fails or code coverage is not met, the push is aborted. Bugs or failing tests must be solved before pushing to the remote.
+
+## Commit
+
+Commits are handled and generated using `commitlint`, this allows to properly manage versions and changelog with no extra effort required. For more info please visit [`commitlint` official website](https://commitlint.js.org/#/).
+
+As general rule of thumb, commits should:
+- be self explanatory
+- stay as much atomic as they could be
+- not compromise stability of the library (avoid broken WIPs)
+
+### How to commit
+
+1. Add current changes to the stage
+
+You have to add your local changes to a stage to prepare the commit. Feel free to use git (`git add .`) or your preferred git tool (VSCode, SourceTree, SmartGit)
+
+2. Create a commit with `commitlint`
+
+Commits cannot be done via cmd line or other tools unless some specific plugins are configured (at the time being there is no support for this).
+
+Run `npm run commit`.
+
+3. Select commit type
+
+A prompt will appear, asking for the type of change to commit:
+
+![commit type](./assets/commit-type.png)
+
+Use arrows keys to reveal all options and then pick the most appropriate pressing enter key (e.g. docs)
+
+4. Commit message
+
+Another prompt asks to *Write a short, imperative mood description of the change* (# of chars is limited).
+
+Examples can be:
+
+- Added commitlint tutorial
+- [Button] Added color property
+- Updating dependency @material-ui to latest
+
+Please note that when a commit refers to a specific component it is good practice to put component name into brackets. This will improve readibility of Changelog.
+
+5. Commit description (optional)
+
+This step is optional and asks to *Provide a longer description of the change*.
+
+Here developer can give more details (no limit on # of chars) about the change to be committed. Not so useful since will not be displayed in Changelog, it will be only visible in commits list.
+
+Can be skipped pressing enter key.
+
+6. Breaking changes!
+
+This is fundamental to highlight that a new feature is breaking with respect to current version of the library on master.
+
+It is a textual description that will be took into consideration by `commitlint` when deciding the next version number. It will be shown also in Changelog file.
+
+The more detailed the better.
+
+Examples can be:
+
+- Previously Select component was automatically sorting in alphabetical
+order its options. Please review usage of the component setting
+"autoSort" property when needed
+- Avatar component no longer supports "circle" value for "variant"
+property, has been replaced by "circular"
+
+If the change is not a breaking one, it can be skipped pressing enter key.
+
+7. Related issues
+
+If your commit is part of (or exactly the) resolution of an open issue (it should always be like this) please write down the related id.
+
+A commit may target several issues at the same time, in this situation, separate ids with comma.
+
+Examples:
+
+- 45
+- 45, 76
+
+Press enter key to confirm.
+
+8. Commit!
+
+Once you are okay with values inserted press enter key once again to proceed.
+Husky will run *pre-commit* routine and then *git commit*.
+
+In case you want to review or change one of the option before, you can abort the commit process using `ctrl+c` combo.
+
+## Push
+
+Once commits are added to the tree, you can push them to the remote ref.
+This can be done via git (`git push`) or your preferred git tool (VSCode, SourceTree, SmartGit).
+
+Husky will run *pre-push* routine to check validity of contents to be pushed.
+
+## Release process
+
+This repository has CI/CD enabled using GitHub Actions tool.
+
+Once the code is pushed to the remote ref a new PR must be created on GitHub page of this repository.
+
+PR should always point to `master` branch, however if multiple issues are going to be closed at the same time the PRs can lead to the `release-candidate` branch.
+
+Write a meaningful title, add an approver and write a description.
+If your work targets an open issue, please use the GitHub keywords to refer to it (for more info see [here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)).
+
+Every new PR must undergo an automated `test` CI Action, which starts immediately after creating the PR. It checks out the project and runs tests with coverage (similar to *pre-push* hook).
+
+For more details see [test](./.github/workflows/test.yml) workflow.
+
+Once the PR is approved and tested it can be merged.
+Another CI Action takes care of preparing the bundle and uploading it to npm.
+
+For more details see [release](./.github/workflows/release.yml) workflow.
+
+

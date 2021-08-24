@@ -12,6 +12,7 @@ export const DATA_CY_DEFAULT = "icon";
 const ICON_DIMENSIONS: IIconDimensions = {
   [IconSize.default]: 24,
   [IconSize.large]: 35,
+  [IconSize.medium]: 24,
   [IconSize.small]: 20,
 };
 
@@ -36,7 +37,7 @@ const Icon: FC<IIcon> = ({
   loading = false,
   name,
   rotate = false,
-  size = IconSize.default,
+  size = IconSize.medium,
   style: externalStyle,
 }) => {
   const { rotate: rotateAnimation } = useAnimations();

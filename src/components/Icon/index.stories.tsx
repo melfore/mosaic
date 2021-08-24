@@ -27,7 +27,7 @@ export const Canvas = () => (
     forwarded={object("forwarded", {})}
     loading={boolean("loading", false)}
     name={select("icon", Icons, Icons.add)}
-    size={select("size", IconSize, IconSize.default)}
+    size={select("size", IconSize, IconSize.medium)}
   />
 );
 

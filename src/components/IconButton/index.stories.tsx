@@ -30,7 +30,7 @@ export const Canvas = () => (
     disabled={boolean("disabled", false)}
     icon={select("icon", Icons, Icons.add)}
     onClick={action("Click on IconButton")}
-    size={select("size", IconSize, IconSize.default)}
+    size={select("size", IconSize, IconSize.medium)}
   />
 );
 

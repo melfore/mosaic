@@ -1,3 +1,22 @@
+## [5.4.2](https://github.com/melfore/mosaic/compare/v5.4.1...v5.4.2) (2021-08-25)
+
+
+### Bug Fixes
+
+* Warning: Each child in a list should have a unique "key" prop. ([f72d6ab](https://github.com/melfore/mosaic/commit/f72d6ab3eb0c20547a38ea44ad1201e8fafdd046))
+
+
+### chore
+
+* 🤖 updated packages and peer dependencies ([029fb9b](https://github.com/melfore/mosaic/commit/029fb9bd82eec450689f7ddc4fa764ecd830fb92))
+
+
+### BREAKING CHANGES
+
+* 🧨 upgraded @material-ui/core to 4.12.3
+
+✅ Closes: 200
+
 ## [5.4.1](https://github.com/melfore/mosaic/compare/v5.4.0...v5.4.1) (2021-08-24)
 
 # [5.4.0](https://github.com/melfore/mosaic/compare/v5.3.0...v5.4.0) (2021-07-02)

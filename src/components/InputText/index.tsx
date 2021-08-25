@@ -23,7 +23,8 @@ const getAdornment = (adornment?: IInputAdornment) => {
 const getMultilineProps = (multiline?: IMultilineInput) => {
   return {
     multiline: !!multiline,
-    ...(!multiline ? {} : { ...multiline }),
+    minRows: multiline?.rows,
+    maxRows: multiline?.rowsMax,
   };
 };
 

@@ -109,8 +109,8 @@ export default class DocumentationPage extends PureComponent {
             </p>
             <b>Localizable props:</b>
             <ul>
-              {localizableProps.map(({ name, type }) => (
-                <li>{name}</li>
+              {localizableProps.map(({ name, type }, index) => (
+                <li key={index}>{name}</li>
               ))}
             </ul>
             <p>

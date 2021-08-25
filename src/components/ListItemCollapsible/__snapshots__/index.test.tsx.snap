@@ -38,7 +38,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-hidden"
     data-cy="custom-collapse"
     style={
       Object {
@@ -95,7 +95,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-hidden"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -156,7 +156,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-hidden"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -213,7 +213,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-entered"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -270,7 +270,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-entered"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -327,7 +327,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-container MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-entered"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {

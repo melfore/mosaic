@@ -73,38 +73,38 @@ const localizeAnyArray = (propName: string, allProps: any, intl: IntlShape): any
   };
 };
 
-const localized = <T extends ILocalizable>(Component: ComponentType<T>, options: ILocalizedOptions): FC<T> => (
-  props
-) => {
-  const { dataCy, localized } = props;
-  const { dataCyShortcut, localizableProps } = options;
-  if (!localized) {
-    return <Component {...props} />;
-  }
-
-  const intl = useIntl();
-  let localizedProps = { ...props } as any;
-  localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
-
-  localizableProps.forEach(({ name, type }) => {
-    switch (type) {
-      case "any":
-        localizedProps = localizeAnyObject(name, localizedProps, intl);
-        break;
-      case "any[]":
-        localizedProps = localizeAnyArray(name, localizedProps, intl);
-        break;
-      case "string":
-      default:
-        localizedProps = localizeString(name, localizedProps, intl);
-        break;
-      case "string[]":
-        localizedProps = localizeStringArray(name, localizedProps, intl);
-        break;
+const localized =
+  <T extends ILocalizable>(Component: ComponentType<T>, options: ILocalizedOptions): FC<T> =>
+  (props) => {
+    const { dataCy, localized } = props;
+    const { dataCyShortcut, localizableProps } = options;
+    if (!localized) {
+      return <Component {...props} />;
     }
-  });
 
-  return <Component {...localizedProps} />;
-};
+    const intl = useIntl();
+    let localizedProps = { ...props } as any;
+    localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
+
+    localizableProps.forEach(({ name, type }) => {
+      switch (type) {
+        case "any":
+          localizedProps = localizeAnyObject(name, localizedProps, intl);
+          break;
+        case "any[]":
+          localizedProps = localizeAnyArray(name, localizedProps, intl);
+          break;
+        case "string":
+        default:
+          localizedProps = localizeString(name, localizedProps, intl);
+          break;
+        case "string[]":
+          localizedProps = localizeStringArray(name, localizedProps, intl);
+          break;
+      }
+    });
+
+    return <Component {...localizedProps} />;
+  };
 
 export default localized;

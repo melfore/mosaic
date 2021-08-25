@@ -26,7 +26,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   const { label, path, padding, render, sortable: columnSortable, width } = column;
   const theme = useTheme();
 
-  const cellPadding = useMemo(() => padding || "default", [padding]);
+  const cellPadding = useMemo(() => padding || "normal", [padding]);
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;

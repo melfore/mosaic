@@ -19,7 +19,7 @@ export interface ITableAction extends IPartialIconUtilizer {
 
 export interface ITableColumn {
   label?: string;
-  padding?: "checkbox" | "default" | "none";
+  padding?: "checkbox" | "normal" | "default" | "none";
   path: string;
   render?: (row: any) => ReactNode;
   sortable?: boolean;

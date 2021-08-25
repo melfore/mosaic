@@ -81,7 +81,7 @@ exports[`Avatar test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
     data-cy="avatar-loading"
   >
     <svg

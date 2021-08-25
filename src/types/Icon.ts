@@ -56,7 +56,7 @@ export enum Icons {
 }
 
 export enum IconSize {
-  default = "default",
+  default = "medium",
   large = "large",
   small = "small",
 }

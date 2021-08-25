@@ -315,7 +315,7 @@ const Table: FC<ITable> = ({
               <MUITableCell
                 key={`column-no-data`}
                 colSpan={columns.length}
-                padding="default"
+                padding="normal"
                 style={{ textAlign: "center" }}
               >
                 {emptyState || <Typography>No data to display</Typography>}
@@ -335,7 +335,7 @@ const Table: FC<ITable> = ({
                       suppressEvent(event);
                       onRowClick && onRowClick(row);
                     }}
-                    padding={padding || "default"}
+                    padding={padding || "normal"}
                     style={{
                       width,
                       ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
@@ -377,11 +377,11 @@ const Table: FC<ITable> = ({
           ActionsComponent={() => tablePaginationActions()}
           component="div"
           count={rowsTotal || 0}
-          onChangePage={(event, page) => {
+          onPageChange={(event, page) => {
             suppressEvent(event);
             onPageChange && onPageChange(page);
           }}
-          onChangeRowsPerPage={(event) => {
+          onRowsPerPageChange={(event) => {
             const pageSize = parseInt(event.target.value, 10);
             onPageSizeChange && onPageSizeChange(0, pageSize);
           }}

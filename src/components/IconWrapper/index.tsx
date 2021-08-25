@@ -13,7 +13,7 @@ const IconWrapper: FC<IIconWrapper> = ({
   icon,
   loading = false,
   rotate = false,
-  size = IconSize.medium,
+  size = IconSize.default,
   style,
 }) => {
   const props = useMemo(

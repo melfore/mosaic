@@ -20,7 +20,7 @@ const IconButton: FC<IIconButton> = ({
   onClick,
   disabled = false,
   rotate = false,
-  size = IconSize.medium,
+  size = IconSize.default,
   style,
 }) => {
   const onClickHandler = useCallback(

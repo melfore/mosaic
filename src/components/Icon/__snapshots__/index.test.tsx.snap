@@ -3,7 +3,7 @@
 exports[`Icon test suite: custom icon 1`] = `
 <div
   data-cy="icon"
-  fontSize="default"
+  fontSize="medium"
   style={
     Object {
       "height": 24,

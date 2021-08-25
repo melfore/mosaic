@@ -31,7 +31,7 @@ exports[`IconWrapper test suite: default 1`] = `
 exports[`IconWrapper test suite: icon - custom element 1`] = `
 <div
   data-cy="icon-wrapper"
-  fontSize="default"
+  fontSize="medium"
   style={
     Object {
       "height": 24,

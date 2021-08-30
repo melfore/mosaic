@@ -2,6 +2,7 @@
 
 - [Scripts](#scripts)
 - [Local testing](#local-testing)
+- [Creating branch](#creating-branch)
 - [Git Hooks](#git-hooks)
 - [Commit](#commit)
 	- [How to commit](#how-to-commit)
@@ -75,6 +76,25 @@ Use this guide to locally use/test `@melfore/mosaic` on host projects, while dev
        onClick={() => window.open('https://reactjs.org', '_blank')}
    />
    ```
+## Creating branch
+
+To create a new feature branch, start always from the latest status of branch `master`:
+
+```git pull origin master```
+
+Then create locally a branch:
+
+```git checkout -b "my-local-branch"```
+
+Do your changes and commit them using dedicated npm command ```npm run commit``` (see [Commit](#commit) chapter).
+
+Set tracking info for current branch and push:
+
+```git push --set-upstream origin my-local-branch```
+
+Next pushes can be done simply with:
+
+```git push```
 
 ## Git Hooks
 

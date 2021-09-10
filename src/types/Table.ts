@@ -1,6 +1,7 @@
 import { CSSProperties, ReactNode } from "react";
+import { TablePaginationProps as MUITablePaginationProps } from "@material-ui/core";
 
-import { ILocalizable } from "./Base";
+import { IBase, ILocalizable, ISubpartItem } from "./Base";
 import { IPartialIconUtilizer } from "./Icon";
 
 export enum TableActionPosition {
@@ -35,26 +36,41 @@ export interface ITableSorting {
 
 export type ITableOnSortCallback = (path: string | null, criteria: ITableSortingCriteria) => void;
 
-export interface ITable extends ILocalizable {
-  actions?: ITableAction[];
-  columns: ITableColumn[];
-  emptyState?: ReactNode;
-  getRowStyle?: (data: any) => CSSProperties;
-  height?: number | string;
-  hideHeader?: boolean;
-  loading?: boolean;
-  onPageChange?: (page: number) => void;
-  onPageSizeChange?: (page: number, pageSize: number) => void;
-  onRowClick?: (row: any) => void;
-  onSelectionChange?: (data: any[]) => void;
-  onSortChange?: ITableOnSortCallback;
-  page?: number;
-  pageSize?: number;
-  pageSizeOptions?: number[];
-  rows: any[];
-  rowsTotal?: number;
-  selectionFilter?: (datum: any) => boolean;
-  sorting?: ITableSorting;
-  sticky?: boolean;
-  title: string;
+export interface ITableHeadCell extends IBase {
+  column: ITableColumn;
+  dataCy: string;
+  onSort: ITableOnSortCallback;
+  sortable: boolean;
+  sorting: ITableSorting;
+  stickyHeader: boolean;
 }
+
+export interface ITablePagination extends ISubpartItem {
+  onPageChange: (page: number) => void;
+  onPageSizeChange: (page: number, pageSize: number) => void;
+  page: number;
+  pageSize: number;
+  pageSizeOptions: number[];
+  rowsTotal: number;
+}
+
+export type ITablePaginationActions = MUITablePaginationProps & ISubpartItem;
+
+export type ITable = ILocalizable &
+  Partial<ITablePagination> & {
+    actions?: ITableAction[];
+    columns: ITableColumn[];
+    emptyState?: ReactNode;
+    getRowStyle?: (data: any) => CSSProperties;
+    height?: number | string;
+    hideHeader?: boolean;
+    loading?: boolean;
+    onRowClick?: (row: any) => void;
+    onSelectionChange?: (data: any[]) => void;
+    onSortChange?: ITableOnSortCallback;
+    rows: any[];
+    selectionFilter?: (datum: any) => boolean;
+    sorting?: ITableSorting;
+    sticky?: boolean;
+    title: string;
+  };

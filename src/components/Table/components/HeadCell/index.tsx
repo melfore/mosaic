@@ -1,19 +1,9 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@material-ui/core";
 
-import { IBase } from "../../../../types/Base";
-import { ITableColumn, ITableOnSortCallback, ITableSorting } from "../../../../types/Table";
+import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
 import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "../../utils";
-
-interface ITableHeadCell extends IBase {
-  column: ITableColumn;
-  dataCy: string;
-  onSort: ITableOnSortCallback;
-  sortable: boolean;
-  sorting: ITableSorting;
-  stickyHeader: boolean;
-}
 
 const TableHeadCell: FC<ITableHeadCell> = ({
   column,

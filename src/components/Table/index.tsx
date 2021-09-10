@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import React, { CSSProperties, FC, Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import {
   CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
@@ -7,8 +7,6 @@ import {
   TableCell as MUITableCell,
   TableContainer as MUITableContainer,
   TableHead as MUITableHead,
-  TablePagination as MUITablePagination,
-  TablePaginationProps as MUITablePaginationProps,
   TableRow as MUITableRow,
   Toolbar as MUIToolbar,
   useTheme,
@@ -27,6 +25,7 @@ import Spacer from "../Spacer";
 import Typography from "../Typography";
 
 import TableHeadCell from "./components/HeadCell";
+import TablePagination from "./components/Pagination";
 import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
 
 const CHECKBOX_SELECTION_WIDTH = 36;
@@ -149,48 +148,6 @@ const Table: FC<ITable> = ({
     [rows, isRowSelected, onSelectionChange]
   );
 
-  const tablePaginationActions = useCallback(
-    ({ count: rowsTotal, onPageChange, page, rowsPerPage: pageSize }: MUITablePaginationProps) => {
-      const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
-      return (
-        <div
-          style={{
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "space-between",
-            padding: `${theme.spacing(1)}px`,
-          }}
-        >
-          <IconButton
-            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
-            disabled={!page}
-            icon={Icons.first}
-            onClick={() => onPageChange(null, 0)}
-          />
-          <IconButton
-            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
-            disabled={!page}
-            icon={Icons.left}
-            onClick={() => onPageChange(null, page - 1)}
-          />
-          <IconButton
-            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
-            disabled={page >= lastPage}
-            icon={Icons.right}
-            onClick={() => onPageChange(null, page + 1)}
-          />
-          <IconButton
-            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
-            disabled={page >= lastPage}
-            icon={Icons.last}
-            onClick={() => onPageChange(null, lastPage)}
-          />
-        </div>
-      );
-    },
-    [dataCy, theme]
-  );
-
   const { defaultActions, columns, rowActions, selectionActions } = useMemo(() => {
     let columns = [...externalColumns];
     if (onSelectionChange) {
@@ -243,6 +200,20 @@ const Table: FC<ITable> = ({
     },
     [onSortChange]
   );
+
+  const paginationStyle = useMemo((): CSSProperties => {
+    const DEFAULT_PAGINATION_STYLE: CSSProperties = { backgroundColor: "inherit", position: "inherit" };
+    if (!sticky) {
+      return DEFAULT_PAGINATION_STYLE;
+    }
+
+    return {
+      ...DEFAULT_PAGINATION_STYLE,
+      borderTop: `1px solid ${theme.palette.divider}`,
+      bottom: 0,
+      position: "sticky",
+    };
+  }, [sticky, theme]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...style }}>
@@ -381,31 +352,16 @@ const Table: FC<ITable> = ({
         </MUITableBody>
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
-        <MUITablePagination
-          ActionsComponent={tablePaginationActions}
-          component="div"
-          count={rowsTotal || 0}
-          onPageChange={(event, page) => {
-            suppressEvent(event);
-            onPageChange && onPageChange(page);
-          }}
-          onRowsPerPageChange={(event) => {
-            const pageSize = parseInt(event.target.value, 10);
-            onPageSizeChange && onPageSizeChange(0, pageSize);
-          }}
+        <TablePagination
+          dataCy={dataCy}
+          onPageChange={onPageChange!}
+          onPageSizeChange={onPageSizeChange!}
           page={page}
-          rowsPerPage={pageSize}
-          rowsPerPageOptions={pageSizeOptions}
-          style={{
-            backgroundColor: "inherit",
-            ...(sticky
-              ? {
-                  borderTop: `1px solid ${theme.palette.divider}`,
-                  bottom: 0,
-                  position: "sticky",
-                }
-              : { position: "inherit" }),
-          }}
+          pageSize={pageSize}
+          pageSizeOptions={pageSizeOptions}
+          rowsTotal={rowsTotal}
+          style={paginationStyle}
+          subpart={SUBPARTS_MAP.pagination}
         />
       )}
     </MUITableContainer>

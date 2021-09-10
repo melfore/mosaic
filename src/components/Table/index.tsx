@@ -8,6 +8,7 @@ import {
   TableContainer as MUITableContainer,
   TableHead as MUITableHead,
   TablePagination as MUITablePagination,
+  TablePaginationProps as MUITablePaginationProps,
   TableRow as MUITableRow,
   Toolbar as MUIToolbar,
   useTheme,
@@ -31,6 +32,9 @@ import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
 const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
 const ROW_ACTION_PATH = "row-actions";
+
+const DEFAULT_PAGESIZE = 10;
+const DEFAULT_PAGESIZE_OPTIONS = [5, 10, 25];
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -68,7 +72,8 @@ const Table: FC<ITable> = ({
   onSelectionChange,
   onSortChange,
   page = 0,
-  pageSize = 10,
+  pageSize = DEFAULT_PAGESIZE,
+  pageSizeOptions = DEFAULT_PAGESIZE_OPTIONS,
   rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
@@ -144,44 +149,47 @@ const Table: FC<ITable> = ({
     [rows, isRowSelected, onSelectionChange]
   );
 
-  const tablePaginationActions = useCallback(() => {
-    const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
-    return (
-      <div
-        style={{
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "space-between",
-          padding: `${theme.spacing(1)}px`,
-        }}
-      >
-        <IconButton
-          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
-          disabled={!page}
-          icon={Icons.first}
-          onClick={() => onPageChange && onPageChange(0)}
-        />
-        <IconButton
-          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
-          disabled={!page}
-          icon={Icons.left}
-          onClick={() => onPageChange && onPageChange(page - 1)}
-        />
-        <IconButton
-          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
-          disabled={page >= lastPage}
-          icon={Icons.right}
-          onClick={() => onPageChange && onPageChange(page + 1)}
-        />
-        <IconButton
-          dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
-          disabled={page >= lastPage}
-          icon={Icons.last}
-          onClick={() => onPageChange && onPageChange(lastPage)}
-        />
-      </div>
-    );
-  }, [dataCy, onPageChange, page, pageSize, rowsTotal, theme]);
+  const tablePaginationActions = useCallback(
+    ({ count: rowsTotal, onPageChange, page, rowsPerPage: pageSize }: MUITablePaginationProps) => {
+      const lastPage = !rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1;
+      return (
+        <div
+          style={{
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "space-between",
+            padding: `${theme.spacing(1)}px`,
+          }}
+        >
+          <IconButton
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "first")}
+            disabled={!page}
+            icon={Icons.first}
+            onClick={() => onPageChange(null, 0)}
+          />
+          <IconButton
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "prev")}
+            disabled={!page}
+            icon={Icons.left}
+            onClick={() => onPageChange(null, page - 1)}
+          />
+          <IconButton
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "next")}
+            disabled={page >= lastPage}
+            icon={Icons.right}
+            onClick={() => onPageChange(null, page + 1)}
+          />
+          <IconButton
+            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.pagination, "last")}
+            disabled={page >= lastPage}
+            icon={Icons.last}
+            onClick={() => onPageChange(null, lastPage)}
+          />
+        </div>
+      );
+    },
+    [dataCy, theme]
+  );
 
   const { defaultActions, columns, rowActions, selectionActions } = useMemo(() => {
     let columns = [...externalColumns];
@@ -374,7 +382,7 @@ const Table: FC<ITable> = ({
       </MUITable>
       {(onPageChange || onPageSizeChange) && (
         <MUITablePagination
-          ActionsComponent={() => tablePaginationActions()}
+          ActionsComponent={tablePaginationActions}
           component="div"
           count={rowsTotal || 0}
           onPageChange={(event, page) => {
@@ -387,7 +395,7 @@ const Table: FC<ITable> = ({
           }}
           page={page}
           rowsPerPage={pageSize}
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={pageSizeOptions}
           style={{
             backgroundColor: "inherit",
             ...(sticky

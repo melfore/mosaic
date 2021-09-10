@@ -50,6 +50,7 @@ export interface ITable extends ILocalizable {
   onSortChange?: ITableOnSortCallback;
   page?: number;
   pageSize?: number;
+  pageSizeOptions?: number[];
   rows: any[];
   rowsTotal?: number;
   selectionFilter?: (datum: any) => boolean;

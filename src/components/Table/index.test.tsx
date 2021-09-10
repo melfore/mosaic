@@ -1,3 +1,4 @@
+import React from "react";
 import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
@@ -120,7 +121,12 @@ describe("Table test suite:", () => {
     const callback = jest.fn();
     const label = "Account";
     const { element, wrapper } = getTableTestable({
-      props: { actions: [{ callback, icon: Icons.account, label }] },
+      props: {
+        actions: [
+          { callback, icon: Icons.account, label },
+          { callback, icon: <div />, label: "Custom Icon" },
+        ],
+      },
     });
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
@@ -138,6 +144,29 @@ describe("Table test suite:", () => {
 
   it("hide header", () => {
     const { element } = getTableTestable({ props: { hideHeader: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon action", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [
+          { callback, icon: Icons.account, label, position: TableActionPosition.icon },
+          { callback, label: "No Icon", position: TableActionPosition.icon },
+          { callback, icon: <div />, label: "Custom Icon", position: TableActionPosition.icon },
+        ],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -2005,6 +2005,11 @@ exports[`Table test suite: global action 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "none",
+          }
+        }
         tabIndex={0}
         type="button"
       >
@@ -2027,6 +2032,62 @@ exports[`Table test suite: global action 1`] = `
             </svg>
           </span>
           Account
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+        data-cy="table-action-Custom Icon"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "8px",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <span
+            className="MuiButton-startIcon MuiButton-iconSizeMedium"
+          >
+            <div
+              data-cy="table-action-Custom Icon-icon"
+              fontSize="medium"
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+              />
+            </div>
+          </span>
+          Custom Icon
         </span>
         <span
           className="MuiTouchRipple-root"
@@ -2239,6 +2300,377 @@ exports[`Table test suite: hide header 1`] = `
     }
   }
 >
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: icon action 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-cy="table-action-Account"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "none",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            data-cy="table-action-Account-icon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-cy="table-action-No Icon"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "8px",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            data-cy="table-action-No Icon-icon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-cy="table-action-Custom Icon"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "8px",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <div
+            data-cy="table-action-Custom Icon-icon"
+            fontSize="medium"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+            />
+          </div>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
   <table
     className="MuiTable-root"
     role={null}
@@ -3569,9 +4001,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -3658,9 +4087,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -3747,9 +4173,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -3836,9 +4259,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -3925,9 +4345,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -4219,6 +4636,11 @@ exports[`Table test suite: selection action 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "none",
+          }
+        }
         tabIndex={0}
         type="button"
       >
@@ -4242,9 +4664,6 @@ exports[`Table test suite: selection action 1`] = `
           </span>
           Selection
         </span>
-        <span
-          className="MuiTouchRipple-root"
-        />
       </button>
     </div>
   </div>

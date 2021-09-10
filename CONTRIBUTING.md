@@ -80,7 +80,10 @@ Use this guide to locally use/test `@melfore/mosaic` on host projects, while dev
 
 To create a new feature branch, start always from the latest status of branch `master`:
 
-```git pull origin master```
+```
+git checkout master
+git pull
+```
 
 Then create locally a branch:
 

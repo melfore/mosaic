@@ -166,21 +166,51 @@ describe("Table test suite:", () => {
 
   it("pagination - links", () => {
     const onPageChange = jest.fn();
+    const rowsTotal = 30;
+    const rows = new Array(rowsTotal).fill({ name: "", rating: Math.random() });
+
     const { wrapper } = getTableTestable({
-      props: { onPageChange, pageSize: 3, rowsTotal: DEFAULT_TEST_OPTIONS.props.rows.length },
+      props: {
+        onPageChange,
+        page: 1,
+        pageSize: 3,
+        pageSizeOptions: [3, 6, 9],
+        rows,
+        rowsTotal,
+      },
     });
 
     const firstPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "first");
     const firstPageButton = wrapper.find(`button[data-cy='${firstPageButtonDataCy}']`);
-    expect(firstPageButton.prop("disabled")).toBeTruthy();
+    expect(firstPageButton.prop("disabled")).toBeFalsy();
+    firstPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(1);
+    expect(onPageChange).toHaveBeenCalledWith(0);
+
+    const prevPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "prev");
+    const prevPageButton = wrapper.find(`button[data-cy='${prevPageButtonDataCy}']`);
+    expect(prevPageButton.prop("disabled")).toBeFalsy();
+    prevPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(2);
+    expect(onPageChange).toHaveBeenCalledWith(0);
+
+    const nextPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "next");
+    const nextPageButton = wrapper.find(`button[data-cy='${nextPageButtonDataCy}']`);
+    expect(nextPageButton.prop("disabled")).toBeFalsy();
+    nextPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(3);
+    expect(onPageChange).toHaveBeenCalledWith(2);
 
     const lastPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "last");
     const lastPageButton = wrapper.find(`button[data-cy='${lastPageButtonDataCy}']`);
     expect(lastPageButton.prop("disabled")).toBeFalsy();
     lastPageButton.simulate("click");
 
-    expect(onPageChange).toHaveBeenCalledTimes(1);
-    expect(onPageChange).toHaveBeenCalledWith(1);
+    expect(onPageChange).toHaveBeenCalledTimes(4);
+    expect(onPageChange).toHaveBeenCalledWith(9);
   });
 
   it("pre-selection", () => {

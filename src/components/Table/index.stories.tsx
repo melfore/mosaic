@@ -348,6 +348,12 @@ export const Actions = () => (
           label: "Send",
         },
         {
+          callback: action("On Filter Callback"),
+          icon: Icons.filter,
+          label: "Filter",
+          position: TableActionPosition.icon,
+        },
+        {
           callback: action("On Custom Callback"),
           icon: <MUIStyleIcon />,
           label: "Custom",

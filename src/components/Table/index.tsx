@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import React, { CSSProperties, FC, useCallback, useEffect, useMemo, useState } from "react";
 import {
   CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
@@ -14,18 +14,17 @@ import {
 
 import { CheckboxSize } from "../../types/Checkbox";
 import { Icons, IconSize } from "../../types/Icon";
-import { ITable, ITableOnSortCallback, TableActionPosition } from "../../types/Table";
+import { ITable, ITableAction, ITableOnSortCallback, TableActionPosition } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Button from "../Button";
 import Checkbox from "../Checkbox";
 import IconButton from "../IconButton";
-import Spacer from "../Spacer";
 import Typography from "../Typography";
 
 import TableHeadCell from "./components/HeadCell";
 import TablePagination from "./components/Pagination";
+import TableToolbarAction from "./components/ToolbarAction";
 import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
 
 const CHECKBOX_SELECTION_WIDTH = 36;
@@ -171,15 +170,39 @@ const Table: FC<ITable> = ({
       ];
     }
 
-    const defaultActions = actions.filter(({ position }) => !position || position === TableActionPosition.default);
-    const rowActions = actions.filter(({ position }) => position === TableActionPosition.row);
-    const selectionActions = actions.filter(({ position }) => position === TableActionPosition.selection);
+    let rowActions: ITableAction[] = [];
+    let selectionActions: ITableAction[] = [];
+    let toolbarActions: ITableAction[] = [];
+
+    actions.forEach((action) => {
+      const { position } = action;
+      switch (position) {
+        case TableActionPosition.default:
+        case TableActionPosition.icon:
+          toolbarActions = [...toolbarActions, { ...action }];
+          break;
+        case TableActionPosition.row:
+          rowActions = [...rowActions, { ...action }];
+          break;
+        case TableActionPosition.selection:
+          selectionActions = [...selectionActions, { ...action }];
+          break;
+        default:
+          toolbarActions = [...toolbarActions, { ...action, position: TableActionPosition.default }];
+          break;
+      }
+    });
+
     if (!!rowActions.length) {
       columns = [
         ...columns,
         { label: "", path: ROW_ACTION_PATH, width: `${ROW_ACTION_DIMENSION * rowActions.length}px` },
       ];
     }
+
+    const defaultActions = toolbarActions.sort(
+      ({ position }, { position: another }) => -1 * position!.localeCompare(another!)
+    );
 
     return { defaultActions, columns, rowActions, selectionActions };
   }, [
@@ -192,6 +215,14 @@ const Table: FC<ITable> = ({
     onBulkSelection,
     onSelectionChange,
   ]);
+
+  const onCallbackData = useMemo(
+    () =>
+      rows
+        .filter((_, index) => selectedRowsIndexes.includes(index))
+        .map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow })),
+    [rows, selectedRowsIndexes]
+  );
 
   const onSortWrapper: ITableOnSortCallback = useCallback(
     (path, ordering) => {
@@ -249,26 +280,16 @@ const Table: FC<ITable> = ({
             {!selectedRowsIndexes.length ? title : `${selectedRowsIndexes.length} row(s) selected`}
           </Typography>
           <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
-            {(!selectedRowsIndexes.length ? defaultActions : selectionActions).map(
-              ({ callback, disabled, icon, label }, index) => (
-                <Fragment key={`action-${label}`}>
-                  {index > 0 && <Spacer />}
-                  <Button
-                    dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                    disabled={disabled}
-                    icon={typeof icon === "string" ? { name: icon } : { component: icon }}
-                    label={label}
-                    onClick={() =>
-                      callback(
-                        rows
-                          .filter((_, index) => selectedRowsIndexes.includes(index))
-                          .map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow }))
-                      )
-                    }
-                  />
-                </Fragment>
-              )
-            )}
+            {(!selectedRowsIndexes.length ? defaultActions : selectionActions).map((action, index) => (
+              <TableToolbarAction
+                {...action}
+                key={`action-${action.label}`}
+                data={onCallbackData}
+                dataCy={dataCy}
+                index={index}
+                subpart={SUBPARTS_MAP.action}
+              />
+            ))}
           </div>
         </MUIToolbar>
       )}

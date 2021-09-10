@@ -6,6 +6,7 @@ import { IPartialIconUtilizer } from "./Icon";
 
 export enum TableActionPosition {
   default = "toolbar",
+  icon = "icon",
   row = "row",
   selection = "toolbarOnSelect",
 }
@@ -16,6 +17,11 @@ export interface ITableAction extends IPartialIconUtilizer {
   hidden?: boolean;
   label: string;
   position?: TableActionPosition;
+}
+
+export interface ITableToolbarAction extends ISubpartItem, ITableAction {
+  data: object | object[];
+  index: number;
 }
 
 export interface ITableColumn {

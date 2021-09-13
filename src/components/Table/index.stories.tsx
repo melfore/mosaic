@@ -84,6 +84,7 @@ export const Canvas = () => (
     onSortChange={action("On Sort Change")}
     page={number("page", 0)}
     pageSize={number("pageSize", 5)}
+    pageSizeOptions={[5, 10, 25, 50]}
     rows={[
       { name: "John", age: 35 },
       { name: "Nick", age: 45 },
@@ -259,6 +260,26 @@ export const CustomColumnRender = () => (
   />
 );
 
+export const CustomPageSize = () => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    onPageChange={action("onPageChange")}
+    onPageSizeChange={action("onPageSizeChange")}
+    pageSize={3}
+    pageSizeOptions={[3, 6, 9]}
+    rows={[
+      { name: "John", age: 35 },
+      { name: "Nick", age: 45 },
+      { name: "Emma", age: 32 },
+    ]}
+    rowsTotal={27}
+    title="Custom Page Size"
+  />
+);
+
 export const Events = () => (
   <Table
     columns={[
@@ -325,6 +346,12 @@ export const Actions = () => (
           callback: action("On Send Callback"),
           icon: Icons.send,
           label: "Send",
+        },
+        {
+          callback: action("On Filter Callback"),
+          icon: Icons.filter,
+          label: "Filter",
+          position: TableActionPosition.icon,
         },
         {
           callback: action("On Custom Callback"),

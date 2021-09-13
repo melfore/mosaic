@@ -1,6 +1,6 @@
 import { ChangeEvent, MouseEvent } from "react";
 
-interface ISubpart {
+export interface ISubpart {
   label: string;
   value?: Function;
 }

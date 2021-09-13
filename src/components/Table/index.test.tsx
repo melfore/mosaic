@@ -1,3 +1,4 @@
+import React from "react";
 import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
@@ -120,7 +121,12 @@ describe("Table test suite:", () => {
     const callback = jest.fn();
     const label = "Account";
     const { element, wrapper } = getTableTestable({
-      props: { actions: [{ callback, icon: Icons.account, label }] },
+      props: {
+        actions: [
+          { callback, icon: Icons.account, label },
+          { callback, icon: <div />, label: "Custom Icon" },
+        ],
+      },
     });
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
@@ -138,6 +144,29 @@ describe("Table test suite:", () => {
 
   it("hide header", () => {
     const { element } = getTableTestable({ props: { hideHeader: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon action", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [
+          { callback, icon: Icons.account, label, position: TableActionPosition.icon },
+          { callback, label: "No Icon", position: TableActionPosition.icon },
+          { callback, icon: <div />, label: "Custom Icon", position: TableActionPosition.icon },
+        ],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith([]);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -166,21 +195,51 @@ describe("Table test suite:", () => {
 
   it("pagination - links", () => {
     const onPageChange = jest.fn();
+    const rowsTotal = 30;
+    const rows = new Array(rowsTotal).fill({ name: "", rating: Math.random() });
+
     const { wrapper } = getTableTestable({
-      props: { onPageChange, pageSize: 3, rowsTotal: DEFAULT_TEST_OPTIONS.props.rows.length },
+      props: {
+        onPageChange,
+        page: 1,
+        pageSize: 3,
+        pageSizeOptions: [3, 6, 9],
+        rows,
+        rowsTotal,
+      },
     });
 
     const firstPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "first");
     const firstPageButton = wrapper.find(`button[data-cy='${firstPageButtonDataCy}']`);
-    expect(firstPageButton.prop("disabled")).toBeTruthy();
+    expect(firstPageButton.prop("disabled")).toBeFalsy();
+    firstPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(1);
+    expect(onPageChange).toHaveBeenCalledWith(0);
+
+    const prevPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "prev");
+    const prevPageButton = wrapper.find(`button[data-cy='${prevPageButtonDataCy}']`);
+    expect(prevPageButton.prop("disabled")).toBeFalsy();
+    prevPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(2);
+    expect(onPageChange).toHaveBeenCalledWith(0);
+
+    const nextPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "next");
+    const nextPageButton = wrapper.find(`button[data-cy='${nextPageButtonDataCy}']`);
+    expect(nextPageButton.prop("disabled")).toBeFalsy();
+    nextPageButton.simulate("click");
+
+    expect(onPageChange).toHaveBeenCalledTimes(3);
+    expect(onPageChange).toHaveBeenCalledWith(2);
 
     const lastPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "last");
     const lastPageButton = wrapper.find(`button[data-cy='${lastPageButtonDataCy}']`);
     expect(lastPageButton.prop("disabled")).toBeFalsy();
     lastPageButton.simulate("click");
 
-    expect(onPageChange).toHaveBeenCalledTimes(1);
-    expect(onPageChange).toHaveBeenCalledWith(1);
+    expect(onPageChange).toHaveBeenCalledTimes(4);
+    expect(onPageChange).toHaveBeenCalledWith(9);
   });
 
   it("pre-selection", () => {

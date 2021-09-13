@@ -1,3 +1,12 @@
+# [5.5.0](https://github.com/melfore/mosaic/compare/v5.4.3...v5.5.0) (2021-09-13)
+
+
+### Features
+
+* 🎸 [Table] Added option to sort toolbar actions ([48e2106](https://github.com/melfore/mosaic/commit/48e21068c41831d7a1efebb309caa6e16d636ebd))
+* 🎸 [Table] Added pageSizeOptions property ([4bc0f08](https://github.com/melfore/mosaic/commit/4bc0f08003a01abc3a47031af251d6ae862450f0))
+* 🎸 [Table] Added TableActionPosition icon ([71e4c4b](https://github.com/melfore/mosaic/commit/71e4c4b19bd3306cf12c17332698db9387001858))
+
 ## [5.4.3](https://github.com/melfore/mosaic/compare/v5.4.2...v5.4.3) (2021-08-30)
 
 ## [5.4.2](https://github.com/melfore/mosaic/compare/v5.4.1...v5.4.2) (2021-08-25)

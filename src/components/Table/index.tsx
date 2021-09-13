@@ -57,6 +57,7 @@ export const SUBPARTS_MAP = {
 
 const Table: FC<ITable> = ({
   actions = [],
+  actionsOrder = "list",
   columns: externalColumns,
   dataCy = DATA_CY_DEFAULT,
   emptyState,
@@ -200,13 +201,22 @@ const Table: FC<ITable> = ({
       ];
     }
 
-    const defaultActions = toolbarActions.sort(
-      ({ position }, { position: another }) => -1 * position!.localeCompare(another!)
-    );
+    let defaultActions = toolbarActions;
+    switch (actionsOrder) {
+      case "buttons-first":
+        defaultActions.sort(({ position }, { position: another }) => -1 * position!.localeCompare(another!));
+        break;
+      case "icons-first":
+        defaultActions.sort(({ position }, { position: another }) => position!.localeCompare(another!));
+        break;
+      default:
+        break;
+    }
 
     return { defaultActions, columns, rowActions, selectionActions };
   }, [
     actions,
+    actionsOrder,
     externalColumns,
     dataCy,
     loading,

@@ -19,6 +19,8 @@ export interface ITableAction extends IPartialIconUtilizer {
   position?: TableActionPosition;
 }
 
+export type ITableActionsOrder = "buttons-first" | "icons-first" | "list";
+
 export interface ITableToolbarAction extends ISubpartItem, ITableAction {
   data: object | object[];
   index: number;
@@ -65,6 +67,7 @@ export type ITablePaginationActions = MUITablePaginationProps & ISubpartItem;
 export type ITable = ILocalizable &
   Partial<ITablePagination> & {
     actions?: ITableAction[];
+    actionsOrder?: "list" | "buttons-first" | "icons-first";
     columns: ITableColumn[];
     emptyState?: ReactNode;
     getRowStyle?: (data: any) => CSSProperties;

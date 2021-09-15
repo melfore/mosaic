@@ -242,6 +242,35 @@ describe("Table test suite:", () => {
     expect(onPageChange).toHaveBeenCalledWith(9);
   });
 
+  it("pagination - safe", () => {
+    const onPageChange = jest.fn();
+
+    const { wrapper } = getTableTestable({
+      props: {
+        onPageChange,
+        page: 3,
+        rows: [],
+        rowsTotal: 0,
+      },
+    });
+
+    const firstPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "first");
+    const firstPageButton = wrapper.find(`button[data-cy='${firstPageButtonDataCy}']`);
+    expect(firstPageButton.prop("disabled")).toBeTruthy();
+
+    const prevPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "prev");
+    const prevPageButton = wrapper.find(`button[data-cy='${prevPageButtonDataCy}']`);
+    expect(prevPageButton.prop("disabled")).toBeTruthy();
+
+    const nextPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "next");
+    const nextPageButton = wrapper.find(`button[data-cy='${nextPageButtonDataCy}']`);
+    expect(nextPageButton.prop("disabled")).toBeTruthy();
+
+    const lastPageButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "last");
+    const lastPageButton = wrapper.find(`button[data-cy='${lastPageButtonDataCy}']`);
+    expect(lastPageButton.prop("disabled")).toBeTruthy();
+  });
+
   it("pre-selection", () => {
     const { element } = getTableTestable({ props: { selectionFilter: (d) => d.name.startsWith("P") } });
 

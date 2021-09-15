@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import {
   TablePagination as MUITablePagination,
   TablePaginationProps as MUITablePaginationProps,
@@ -24,11 +24,15 @@ const TablePagination: FC<ITablePagination> = ({
     [dataCy, subpart]
   );
 
+  const safeCount = useMemo(() => rowsTotal || 0, [rowsTotal]);
+
+  const safePage = useMemo(() => (!safeCount ? 0 : page), [page, safeCount]);
+
   return (
     <MUITablePagination
       ActionsComponent={paginationActions}
       component="div"
-      count={rowsTotal || 0}
+      count={safeCount}
       onPageChange={(event, page) => {
         suppressEvent(event);
         onPageChange && onPageChange(page);
@@ -37,7 +41,7 @@ const TablePagination: FC<ITablePagination> = ({
         const pageSize = parseInt(event.target.value, 10);
         onPageSizeChange && onPageSizeChange(0, pageSize);
       }}
-      page={page}
+      page={safePage}
       rowsPerPage={pageSize}
       rowsPerPageOptions={pageSizeOptions}
       style={style}

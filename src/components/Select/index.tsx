@@ -1,4 +1,4 @@
-import React, { CSSProperties, Fragment, useCallback, useMemo } from "react";
+import React, { CSSProperties, Fragment, SyntheticEvent, useCallback, useMemo } from "react";
 import {
   ListSubheader as MUIListSubheader,
   Popper as MUIPopper,
@@ -57,6 +57,7 @@ const Select = <T extends any>({
   loading = false,
   multiple = false,
   onChange: externalOnChange,
+  onScrollEnd,
   options: externalOptions,
   placeholder,
   popperWidth,
@@ -91,6 +92,21 @@ const Select = <T extends any>({
       externalOnChange(value);
     },
     [externalOnChange]
+  );
+
+  const onScroll = useCallback(
+    ({ currentTarget: listboxNode }: SyntheticEvent) => {
+      if (!listboxNode || !onScrollEnd) {
+        return;
+      }
+
+      const { clientHeight, scrollHeight, scrollTop } = listboxNode;
+      const scrollEnded = clientHeight + scrollTop === scrollHeight;
+      if (scrollEnded) {
+        onScrollEnd();
+      }
+    },
+    [onScrollEnd]
   );
 
   const options = useMemo(() => {
@@ -145,7 +161,13 @@ const Select = <T extends any>({
       getOptionLabel={getOptionLabel}
       getOptionSelected={isOptionSelected}
       groupBy={groupBy}
-      ListboxProps={{ style: { padding: 0, width: "100%" } }}
+      ListboxProps={{
+        onScroll,
+        style: {
+          padding: 0,
+          width: "100%",
+        },
+      }}
       loading={loading}
       multiple={multiple}
       onChange={onChange}

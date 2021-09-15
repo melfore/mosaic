@@ -137,6 +137,25 @@ describe("Select Single test suite:", () => {
     expect(onChangeCallback).toHaveBeenCalledWith(["Sculpture"]);
   });
 
+  it("onScroll", () => {
+    const onScrollEndCallback = jest.fn();
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: { onScrollEnd: onScrollEndCallback },
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const listbox = wrapper.find("ul.MuiAutocomplete-listbox");
+    listbox.simulate("scroll", { clientHeight: 100, scrollHeight: 100, scrollTop: 0 });
+
+    expect(onScrollEndCallback).toHaveBeenCalledTimes(1);
+  });
+
   it("options - default", () => {
     const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
     const { wrapper } = getSelectTestable({

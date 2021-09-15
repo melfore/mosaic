@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/melfore/mosaic/compare/v5.5.1...v5.6.0) (2021-09-15)
+
+
+### Features
+
+* 🎸 [Select] Added onScroll listener and scrollEnd callback ([dbf2e88](https://github.com/melfore/mosaic/commit/dbf2e885ee77eec5424ae167b5f4065ae65d1234))
+
 ## [5.5.1](https://github.com/melfore/mosaic/compare/v5.5.0...v5.5.1) (2021-09-15)
 
 

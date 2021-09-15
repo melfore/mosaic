@@ -1,3 +1,10 @@
+## [5.5.1](https://github.com/melfore/mosaic/compare/v5.5.0...v5.5.1) (2021-09-15)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Fixed page out of range in MUITablePagination ([a16c4b6](https://github.com/melfore/mosaic/commit/a16c4b622361482cab81a0d391113b24338f0fa6))
+
 # [5.5.0](https://github.com/melfore/mosaic/compare/v5.4.3...v5.5.0) (2021-09-13)
 
 

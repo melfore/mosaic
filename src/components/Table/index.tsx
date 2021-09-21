@@ -176,21 +176,25 @@ const Table: FC<ITable> = ({
     let toolbarActions: ITableAction[] = [];
 
     actions.forEach((action) => {
-      const { position } = action;
+      const { hidden, position } = action;
+      if (hidden) {
+        return;
+      }
+
       switch (position) {
         case TableActionPosition.default:
         case TableActionPosition.icon:
           toolbarActions = [...toolbarActions, { ...action }];
-          break;
+          return;
         case TableActionPosition.row:
           rowActions = [...rowActions, { ...action }];
-          break;
+          return;
         case TableActionPosition.selection:
           selectionActions = [...selectionActions, { ...action }];
-          break;
+          return;
         default:
           toolbarActions = [...toolbarActions, { ...action, position: TableActionPosition.default }];
-          break;
+          return;
       }
     });
 

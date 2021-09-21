@@ -354,6 +354,13 @@ export const Actions = () => (
           position: TableActionPosition.icon,
         },
         {
+          callback: action("On Hidden Callback"),
+          hidden: true,
+          icon: Icons.visibility_off,
+          label: "Hidden",
+          position: TableActionPosition.icon,
+        },
+        {
           callback: action("On Custom Callback"),
           icon: <MUIStyleIcon />,
           label: "Custom",

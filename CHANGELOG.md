@@ -1,3 +1,10 @@
+## [5.6.1](https://github.com/melfore/mosaic/compare/v5.6.0...v5.6.1) (2021-09-21)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Hidden actions not rendered anymore ([f5597b4](https://github.com/melfore/mosaic/commit/f5597b4218ab61f8b09d0bb148ad039db9fea0b0))
+
 # [5.6.0](https://github.com/melfore/mosaic/compare/v5.5.1...v5.6.0) (2021-09-15)
 
 

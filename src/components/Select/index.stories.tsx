@@ -34,6 +34,7 @@ export const Canvas = () => (
     loading={boolean("loading", false)}
     multiple={boolean("multiple", false)}
     onChange={action("On Change")}
+    onInputChange={action("On Input Change")}
     options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
     popperWidth={number("popperWidth", 300)}
   />

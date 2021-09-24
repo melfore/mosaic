@@ -11,6 +11,7 @@ interface IBaseSelect<T> extends ILocalizable, ILoadable, IInput {
   getOptionLabel?: (option: T) => string;
   getOptionSelected?: (option: T, value: T) => boolean;
   groupBy?: (option: T) => string;
+  onInputChange?: (input: string) => void;
   onScrollEnd?: () => void;
   options: T[];
   popperWidth?: number;

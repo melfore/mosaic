@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/melfore/mosaic/compare/v5.6.1...v5.7.0) (2021-09-24)
+
+
+### Features
+
+* 🎸 [Select] Added onInputChange callback ([5e405bb](https://github.com/melfore/mosaic/commit/5e405bb7fd48a4a632f7d54e2022fc24cb6a38e9))
+
 ## [5.6.1](https://github.com/melfore/mosaic/compare/v5.6.0...v5.6.1) (2021-09-21)
 
 

@@ -57,6 +57,7 @@ const Select = <T extends any>({
   loading = false,
   multiple = false,
   onChange: externalOnChange,
+  onInputChange: externalOnInputChange,
   onScrollEnd,
   options: externalOptions,
   placeholder,
@@ -92,6 +93,18 @@ const Select = <T extends any>({
       externalOnChange(value);
     },
     [externalOnChange]
+  );
+
+  const onInputChange = useCallback(
+    (event, value: any) => {
+      if (!externalOnInputChange) {
+        return;
+      }
+
+      suppressEvent(event);
+      externalOnInputChange!(value);
+    },
+    [externalOnInputChange]
   );
 
   const onScroll = useCallback(
@@ -171,6 +184,7 @@ const Select = <T extends any>({
       loading={loading}
       multiple={multiple}
       onChange={onChange}
+      onInputChange={onInputChange}
       options={options}
       PopperComponent={(props: MUIPopperProps) => {
         const { anchorEl } = props;

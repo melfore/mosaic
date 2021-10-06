@@ -137,6 +137,26 @@ describe("Select Single test suite:", () => {
     expect(onChangeCallback).toHaveBeenCalledWith(["Sculpture"]);
   });
 
+  it("onClose", () => {
+    const onCloseCallback = jest.fn();
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: { onClose: onCloseCallback },
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const firstOption = wrapper.find(`li[data-option-index=0]`);
+    firstOption.simulate("click");
+    input.simulate("click");
+
+    expect(onCloseCallback).toHaveBeenCalledTimes(1);
+  });
+
   it("onInputChange", () => {
     const onInputChangeCallback = jest.fn();
     const { wrapper } = getSelectTestable({

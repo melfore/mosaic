@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/melfore/mosaic/compare/v5.7.0...v5.8.0) (2021-10-06)
+
+
+### Features
+
+* 🎸 [Select] Added onClose property ([35baab3](https://github.com/melfore/mosaic/commit/35baab3e33b76c79e96cdb79ce820a1c5d37ee5c))
+
 # [5.7.0](https://github.com/melfore/mosaic/compare/v5.6.1...v5.7.0) (2021-09-24)
 
 

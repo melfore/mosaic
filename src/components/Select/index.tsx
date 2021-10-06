@@ -57,6 +57,7 @@ const Select = <T extends any>({
   loading = false,
   multiple = false,
   onChange: externalOnChange,
+  onClose: externalOnClose,
   onInputChange: externalOnInputChange,
   onScrollEnd,
   options: externalOptions,
@@ -93,6 +94,18 @@ const Select = <T extends any>({
       externalOnChange(value);
     },
     [externalOnChange]
+  );
+
+  const onClose = useCallback(
+    (event) => {
+      if (!externalOnClose) {
+        return;
+      }
+
+      suppressEvent(event);
+      externalOnClose();
+    },
+    [externalOnClose]
   );
 
   const onInputChange = useCallback(
@@ -184,6 +197,7 @@ const Select = <T extends any>({
       loading={loading}
       multiple={multiple}
       onChange={onChange}
+      onClose={onClose}
       onInputChange={onInputChange}
       options={options}
       PopperComponent={(props: MUIPopperProps) => {

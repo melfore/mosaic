@@ -1,39 +1,51 @@
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
-import { boolean, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { AvatarVariant } from "../../types/Avatar";
+// import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage } from "../../utils/stories";
+import { getDocsPage } from "../../utils/stories";
 
-import Avatar, { AvatarWithProps, DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
+import Avatar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
+// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 export default {
-  title: "Avatar",
-  component: AvatarWithProps,
+  title: "Basic/Avatar",
+  component: Avatar,
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/Avatar",
-      component: "Avatar",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: "@material-ui/core/Avatar",
+        component: "Avatar",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+      }),
+    },
   },
-};
+  argTypes: {},
+} as ComponentMeta<typeof Avatar>;
 
-export const Canvas = () => (
-  <Avatar
-    alt={text("alt", "Alt Text")}
-    dataCy={text("dataCy", "avatar")}
-    icon={select("icon", Icons, Icons.add)}
-    loading={boolean("loading", false)}
-    text={text("text", "Avatar Text")}
-    variant={select("variant", AvatarVariant, AvatarVariant.default)}
-  />
-);
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+// export const Canvas = () => (
+//   <Avatar
+//     alt={text("alt", "Alt Text")}
+//     dataCy={text("dataCy", "avatar")}
+//     icon={select("icon", Icons, Icons.add)}
+//     loading={boolean("loading", false)}
+//     text={text("text", "Avatar Text")}
+//     variant={select("variant", AvatarVariant, AvatarVariant.default)}
+//   />
+// );
+export const Primary = Template.bind({});
+Primary.args = {
+  icon: Icons.add,
+};
 
 export const CustomStyle = () => <Avatar icon={Icons.business} style={{ backgroundColor: "red", color: "white" }} />;
 

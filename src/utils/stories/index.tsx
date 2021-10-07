@@ -1,9 +1,6 @@
 import React, { FC, Fragment, ReactElement } from "react";
 
-import { ILocalizableProperty } from "../hocs/localized";
-import { ISubpartSuffix } from "../index";
-
-import DocumentationPage from "./DocumentationPage";
+import DocsPage, { IDocsPage } from "./DocsPage";
 
 export const DOCUMENTATION_BODY_CLASS = "mosaic-documentation-body";
 export const DOCUMENTATION_CODE_LINE_CLASS = "mosaic-documentation-code-line";
@@ -72,27 +69,12 @@ export const DOCS_PAGE_STYLE: string = `
   }
 `;
 
-interface IDocumentationPage {
-  basedOn?: string;
-  component: string;
-  e2eTestInfo: {
-    dataCyDefault: string;
-    dataCyShortcut?: string;
-    subpartsSuffixes?: ISubpartSuffix[];
-  };
-  localizableProps?: ILocalizableProperty[];
+interface IDocsStructure {
+  page: () => ReactElement;
 }
 
-interface IDocumentationStructure {
-  docs: {
-    page: () => ReactElement;
-  };
-}
-
-export const getDocumentationPage = (options: IDocumentationPage): IDocumentationStructure => ({
-  docs: {
-    page: () => <DocumentationPage {...options} />,
-  },
+export const getDocsPage = (options: IDocsPage): IDocsStructure => ({
+  page: () => <DocsPage {...options} />,
 });
 
 export const StoriesWrapper: FC = ({ children }) => (

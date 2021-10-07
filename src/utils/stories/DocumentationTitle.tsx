@@ -2,12 +2,12 @@ import React, { FC } from "react";
 
 import { DOCUMENTATION_TITLE_CLASS } from ".";
 
-interface IDocumentationTitle {
+interface IDocsTitle {
   text: string;
   subtitle?: boolean;
 }
 
-const DocumentationTitle: FC<IDocumentationTitle> = ({ subtitle = false, text }) => {
+const DocsTitle: FC<IDocsTitle> = ({ subtitle = false, text }) => {
   return subtitle ? (
     <h3 className={DOCUMENTATION_TITLE_CLASS}>{text}</h3>
   ) : (
@@ -15,4 +15,4 @@ const DocumentationTitle: FC<IDocumentationTitle> = ({ subtitle = false, text })
   );
 };
 
-export default DocumentationTitle;
+export default DocsTitle;

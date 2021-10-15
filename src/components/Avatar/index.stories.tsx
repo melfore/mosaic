@@ -9,7 +9,7 @@ import getDocsPage from "../../utils/stories";
 import Avatar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
-  title: "Basic/Avatar",
+  title: "Display/Avatar",
   component: Avatar,
   parameters: {
     docs: {
@@ -26,10 +26,9 @@ export default {
       }),
     },
   },
-  // argTypes: {},
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} dataCy="avatar" />;
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -41,15 +40,6 @@ CustomIcon.args = {
   icon: <MUIStyleIcon />,
 };
 
-export const CustomStyle = Template.bind({});
-CustomStyle.args = {
-  ...Primary.args,
-  style: {
-    backgroundColor: "red",
-    color: "white",
-  },
-};
-
 export const Image = Template.bind({});
 Image.args = {
   src: "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg",
@@ -58,6 +48,15 @@ Image.args = {
 export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    color: "white",
+  },
 };
 
 export const Text = Template.bind({});

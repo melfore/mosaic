@@ -2,7 +2,6 @@ import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 // import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
@@ -74,7 +73,7 @@ IconRight.args = {
   ...Primary.args,
   icon: {
     name: Icons.send,
-    position: ButtonIconPosition.right,
+    position: "right",
   },
 };
 
@@ -114,5 +113,5 @@ Styled.args = {
 export const VariantOutlined = Template.bind({});
 VariantOutlined.args = {
   ...Primary.args,
-  variant: ButtonVariants.outlined,
+  variant: "outlined",
 };

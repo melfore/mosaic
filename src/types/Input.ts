@@ -17,8 +17,14 @@ export enum InputVariant {
   underlined = "standard",
 }
 
-export interface IInput extends ILocalizable {
+export interface IDisablable {
+  /**
+   * Adds disabled state and prevents interaction
+   */
   disabled?: boolean;
+}
+
+export interface IInput extends IDisablable, ILocalizable {
   label?: string;
   onChange?: Function;
   placeholder?: string;

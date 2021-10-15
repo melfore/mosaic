@@ -8,7 +8,7 @@ export interface IBase {
    */
   dataCy?: string;
   /**
-   * Custom styling applied to root element of rendered component
+   * Custom styling applied to root element
    */
   style?: CSSProperties;
 }

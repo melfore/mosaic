@@ -1,11 +1,16 @@
 import { ILoadable } from "./Base";
 import { IPartialIconUtilizer } from "./Icon";
 
+/**
+ * @deprecated Use "circular" | "rounded" | "square"
+ */
 export enum AvatarVariant {
   default = "circular",
   rounded = "rounded",
   squared = "square",
 }
+
+type IAvatarVariant = "circular" | "rounded" | "square";
 
 export interface IAvatar extends ILoadable, IPartialIconUtilizer {
   /**
@@ -23,5 +28,5 @@ export interface IAvatar extends ILoadable, IPartialIconUtilizer {
   /**
    * Variant for avatar shape
    */
-  variant?: AvatarVariant;
+  variant?: IAvatarVariant | AvatarVariant;
 }

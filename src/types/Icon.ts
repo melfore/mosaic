@@ -78,8 +78,13 @@ export type IIconDimensions = {
   [key in IconSize]: number;
 };
 
+type IIconElement = Icons | ReactElement;
+
 export interface IIconUtilizer {
-  icon: Icons | ReactElement;
+  /**
+   * Icon
+   */
+  icon: IIconElement;
 }
 
 export type IPartialIconUtilizer = Partial<IIconUtilizer>;

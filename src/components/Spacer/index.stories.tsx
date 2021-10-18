@@ -12,7 +12,7 @@ export default {
     docs: {
       ...getDocsPage({
         basedOn: { label: "HTML Div" },
-        component: "Display/Spacer",
+        component: "Spacer",
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
         },

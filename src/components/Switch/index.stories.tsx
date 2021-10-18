@@ -8,6 +8,10 @@ import getDocsPage from "../../utils/stories";
 
 import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, SwitchWithProps } from ".";
 
+const COMPONENT_NAME = "Switch";
+Switch.displayName = COMPONENT_NAME;
+SwitchWithProps.displayName = COMPONENT_NAME;
+
 export default {
   title: "Inputs/Switch",
   component: SwitchWithProps,
@@ -18,7 +22,7 @@ export default {
           label: "MUI Switch Component",
           url: "https://v4.mui.com/components/switches/",
         },
-        component: "Switch",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
           dataCyShortcut: DATA_CY_SHORTCUT,

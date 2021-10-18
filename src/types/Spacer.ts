@@ -11,6 +11,12 @@ export enum SpacerDirection {
 type ISpacerDirection = "horizontal" | "vertical";
 
 export interface ISpacer extends IBase {
+  /**
+   * Direction of spacing
+   */
   direction?: ISpacerDirection | SpacerDirection;
+  /**
+   * Size of spacing
+   */
   level?: number;
 }

@@ -1,88 +1,84 @@
-// import React from "react";
-// import { action } from "@storybook/addon-actions";
-// import { boolean, select, text } from "@storybook/addon-knobs";
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-// import { CheckboxSize } from "../../types/Checkbox";
-// import { getAllComposedDataCy } from "../../utils";
+import { getAllComposedDataCy } from "../../utils";
 // import FormMock from "../../utils/mocks/FormMock";
 // import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-// import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import getDocsPage from "../../utils/stories";
 
-// import Checkbox, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import Checkbox, { CheckboxWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
-// export default {
-//   title: "Checkbox",
-//   component: Checkbox,
-//   parameters: {
-//     ...getDocumentationPage({
-//       basedOn: "@material-ui/core/Checkbox",
-//       component: "Checkbox",
-//       e2eTestInfo: {
-//         dataCyDefault: DATA_CY_DEFAULT,
-//         dataCyShortcut: DATA_CY_SHORTCUT,
-//         subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-//       },
-//       localizableProps: LOCALIZABLE_PROPS,
-//     }),
-//   },
-// };
+const COMPONENT_NAME = "Checkbox";
+Checkbox.displayName = COMPONENT_NAME;
+CheckboxWithProps.displayName = COMPONENT_NAME;
 
-// export const Canvas = () => (
-//   // FormMock simulates external form component handling state
-//   // In a real case scenario "onChange" and "value" props must be passed to Checkbox
-//   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change checkbox")}>
-//     <Checkbox
-//       dataCy={text("data-cy", "checkbox")}
-//       disabled={boolean("disabled", false)}
-//       intermediate={boolean("intermediate", false)}
-//       label={text("label", "Checkbox")}
-//       labelPlacement={select("labelPlacement", ["end", "start"], "start")}
-//       onChange={action("Change checkbox")}
-//       required={boolean("value", false)}
-//       size={select("size", CheckboxSize, CheckboxSize.small, CheckboxSize.default)}
-//       value={boolean("value", true)}
-//     />
-//   </FormMock>
-// );
+export default {
+  title: "Inputs/Checkbox",
+  component: CheckboxWithProps,
+  parameters: {
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Checkbox Component",
+          url: "https://v4.mui.com/components/checkboxes/",
+        },
+        component: COMPONENT_NAME,
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+        localizableProps: LOCALIZABLE_PROPS,
+      }),
+      source: {
+        excludeDecorators: true,
+      },
+    },
+  },
+} as ComponentMeta<typeof CheckboxWithProps>;
 
-// export const CustomStyle = () => <Checkbox style={{ backgroundColor: "red", color: "white" }} value />;
+const Template: ComponentStory<typeof CheckboxWithProps> = (args) => <Checkbox {...args} dataCy={DATA_CY_DEFAULT} />;
 
-// export const Disabled = () => (
-//   <StoriesWrapper>
-//     <Checkbox disabled />
-//     <Checkbox disabled value />
-//     <Checkbox disabled intermediate />
-//   </StoriesWrapper>
-// );
+export const Primary = Template.bind({});
+Primary.args = {
+  value: true,
+};
 
-// export const Label = () => (
-//   <StoriesWrapper>
-//     <Checkbox label="Checkbox" />
-//     <Checkbox label="Checkbox" labelPlacement="end" value />
-//   </StoriesWrapper>
-// );
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Primary.args,
+  disabled: true,
+};
 
-// export const Localized = () => (
-//   // IntlProviderMock simulates external IntlProvider context
-//   <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-//     <Checkbox label={MessageMock.checkbox} localized />
-//   </IntlProviderMock>
-// );
+export const Intermediate = Template.bind({});
+Intermediate.args = {
+  ...Primary.args,
+  intermediate: true,
+};
 
-// export const Size = () => (
-//   <StoriesWrapper>
-//     <Checkbox value />
-//     <Checkbox value size={CheckboxSize.small} />
-//     <Checkbox />
-//     <Checkbox size={CheckboxSize.small} />
-//   </StoriesWrapper>
-// );
+export const Label = Template.bind({});
+Label.args = {
+  ...Primary.args,
+  label: "Checkbox",
+};
 
-// export const Values = () => (
-//   <StoriesWrapper>
-//     <Checkbox onChange={() => {}} />
-//     <Checkbox value onChange={() => {}} />
-//     <Checkbox intermediate onChange={() => {}} />
-//     <Checkbox value intermediate onChange={() => {}} />
-//   </StoriesWrapper>
-// );
+export const LabelEnd = Template.bind({});
+LabelEnd.args = {
+  ...Label.args,
+  labelPlacement: "end",
+};
+
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Primary.args,
+  size: "small",
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    color: "white",
+  },
+};

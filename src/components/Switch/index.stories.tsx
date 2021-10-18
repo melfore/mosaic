@@ -1,81 +1,70 @@
-// import React from "react";
-// import { action } from "@storybook/addon-actions";
-// import { boolean, select, text } from "@storybook/addon-knobs";
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-// import { SwitchSize } from "../../types/Switch";
-// import { getAllComposedDataCy } from "../../utils";
+import { getAllComposedDataCy } from "../../utils";
 // import FormMock from "../../utils/mocks/FormMock";
 // import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-// import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import getDocsPage from "../../utils/stories";
 
-// import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, SwitchWithProps } from ".";
 
-// export default {
-//   title: "Switch",
-//   component: Switch,
-//   parameters: {
-//     ...getDocumentationPage({
-//       basedOn: "@material-ui/core/Switch",
-//       component: "Switch",
-//       e2eTestInfo: {
-//         dataCyDefault: DATA_CY_DEFAULT,
-//         dataCyShortcut: DATA_CY_SHORTCUT,
-//         subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-//       },
-//       localizableProps: LOCALIZABLE_PROPS,
-//     }),
-//   },
-// };
+export default {
+  title: "Inputs/Switch",
+  component: SwitchWithProps,
+  parameters: {
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Switch Component",
+          url: "https://v4.mui.com/components/switches/",
+        },
+        component: "Switch",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+        localizableProps: LOCALIZABLE_PROPS,
+      }),
+    },
+  },
+} as ComponentMeta<typeof SwitchWithProps>;
 
-// export const Canvas = () => (
-//   // FormMock simulates external form component handling state
-//   // In a real case scenario "onChange" and "value" props must be passed to Switch
-//   <FormMock inputValue={boolean("value", true)} onInputChange={action("Change switch")}>
-//     <Switch
-//       dataCy={text("data-cy", "switch")}
-//       label={text("label", "Switch")}
-//       labelPlacement={select("labelPlacement", ["end", "start"], "start")}
-//       onChange={action("Change switch")}
-//       value={boolean("value", true)}
-//     />
-//   </FormMock>
-// );
+const Template: ComponentStory<typeof SwitchWithProps> = (args) => <Switch {...args} dataCy={DATA_CY_DEFAULT} />;
 
-// export const CustomStyle = () => <Switch style={{ color: "red" }} value />;
+export const Primary = Template.bind({});
+Primary.args = {
+  value: true,
+};
 
-// export const Disabled = () => (
-//   <StoriesWrapper>
-//     <Switch disabled />
-//     <Switch value disabled />
-//   </StoriesWrapper>
-// );
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Primary.args,
+  disabled: true,
+};
 
-// export const Label = () => (
-//   <StoriesWrapper>
-//     <Switch label="Switch" />
-//     <Switch label="Switch" labelPlacement="end" value />
-//   </StoriesWrapper>
-// );
+export const Label = Template.bind({});
+Label.args = {
+  ...Primary.args,
+  label: "Switch",
+};
 
-// export const Localized = () => (
-//   // IntlProviderMock simulates external IntlProvider context
-//   <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-//     <Switch label={MessageMock.switch} localized />
-//   </IntlProviderMock>
-// );
+export const LabelEnd = Template.bind({});
+LabelEnd.args = {
+  ...Label.args,
+  labelPlacement: "end",
+};
 
-// export const Size = () => (
-//   <StoriesWrapper>
-//     <Switch value />
-//     <Switch value size={SwitchSize.small} />
-//     <Switch />
-//     <Switch size={SwitchSize.small} />
-//   </StoriesWrapper>
-// );
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Primary.args,
+  size: "small",
+};
 
-// export const Values = () => (
-//   <StoriesWrapper>
-//     <Switch onChange={() => {}} />
-//     <Switch value onChange={() => {}} />
-//   </StoriesWrapper>
-// );
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    color: "red",
+  },
+};

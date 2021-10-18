@@ -78,17 +78,17 @@
   },
   "scripts": {
     "build": "npm run pre-build && tsc",
+    "build-storybook": "build-storybook -o docs --docs",
     "clean-workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",
     "lintify": "eslint '**/*.ts*' --fix",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prettify": "prettier --write .",
+    "start": "npm run pre-test && start-storybook -p 9009",
     "test": "npm run pre-test && jest --clearCache && jest --c ./.jest/config.js --watch",
     "test-coverage": "npm run pre-test && jest --clearCache && jest --c './.jest/config.js' --coverage",
-    "upload": "npm run build && npm publish --access public",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "upload": "npm run build && npm publish --access public"
   },
   "browserslist": {
     "production": [

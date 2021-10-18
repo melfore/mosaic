@@ -4,7 +4,7 @@ type ILabelPlacement = "start" | "end";
 
 export interface IInputBoolean extends IBaseInput {
   /**
-   * Positioning of checkbox label
+   * Positioning of label
    */
   labelPlacement?: ILabelPlacement;
   /**
@@ -12,7 +12,7 @@ export interface IInputBoolean extends IBaseInput {
    */
   onChange?: (value: boolean) => void;
   /**
-   * Value to set checked status
+   * Value to set status
    */
   value?: boolean;
 }

@@ -2,7 +2,7 @@ import React, { FC, useCallback } from "react";
 import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@material-ui/core";
 
 import { ICheckbox } from "../../types/Checkbox";
-import { getComposedDataCy } from "../../utils";
+import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 export const DATA_CY_DEFAULT = "checkbox";
@@ -30,7 +30,13 @@ const Checkbox: FC<ICheckbox> = ({
   style,
   value = false,
 }) => {
-  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
+  const onChangeHandler = useCallback(
+    (event: any, checked: boolean) => {
+      suppressEvent(event);
+      onChange && onChange(checked);
+    },
+    [onChange]
+  );
 
   return (
     <MUIFormControlLabel

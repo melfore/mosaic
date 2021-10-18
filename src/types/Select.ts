@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 import { ILoadable, ILocalizable } from "./Base";
-import { IInput } from "./Input";
+import { IInputField } from "./Input";
 
-interface IBaseSelect<T> extends ILocalizable, ILoadable, IInput {
+interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
   autoComplete?: boolean;
   autoSort?: boolean;
   customOptionRendering?: (option: T, selected: boolean) => ReactNode;

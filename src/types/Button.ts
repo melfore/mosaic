@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { IClickable, ILocalizable } from "./Base";
 import { Icons, IIcon } from "./Icon";
-import { IDisablable } from "./Input";
+import { IDisablableInput } from "./Input";
 
 /**
  * @deprecated Use "left" | "right"
@@ -42,7 +42,7 @@ export interface IBaseButton extends IClickable {
   label: string;
 }
 
-export interface IButton extends IBaseButton, IDisablable, ILocalizable {
+export interface IButton extends IBaseButton, IDisablableInput, ILocalizable {
   /**
    * Component elevated state, adds shadowing
    */

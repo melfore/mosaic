@@ -1,27 +1,11 @@
-import React, { CSSProperties, FC } from "react";
+import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import { TextField as MUITextField } from "@material-ui/core";
 
-import { InputSize, InputType, InputVariant } from "../../types/Input";
-import { IInputNumber } from "../../types/InputNumber";
+import { IInputNumber, INullableNumber } from "../../types/InputNumber";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import { getAdornment } from "../Input/utils";
 
-const getControlledValue = (value: number | null): any => {
-  return value === null ? "" : value;
-};
-
-const getNumericValue = (value: string, options: any): number | null => {
-  const { integer, minValue, maxValue } = options;
-  const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
-  if (isNaN(numericValue)) {
-    return null;
-  }
-
-  if (numericValue >= minValue && numericValue <= maxValue) {
-    return numericValue;
-  }
-
-  return numericValue < minValue ? minValue : maxValue;
-};
+const BASE_STYLE: CSSProperties = { textAlign: "right", width: "100%" };
 
 export const DATA_CY_DEFAULT = "input-number";
 export const DATA_CY_SHORTCUT = "label";
@@ -31,6 +15,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 ];
 
 const InputNumber: FC<IInputNumber> = ({
+  adornment: externalAdornment,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   integer = true,
@@ -41,19 +26,38 @@ const InputNumber: FC<IInputNumber> = ({
   placeholder,
   required = false,
   shrink = true,
-  size = InputSize.default,
+  size = "medium",
   style,
   value = null,
-  variant = InputVariant.default,
+  variant = "outlined",
 }) => {
-  const baseStyle: CSSProperties = { textAlign: "right", width: "100%" };
+  const adornment = useMemo(() => getAdornment(externalAdornment), [externalAdornment]);
 
-  const onChangeHandler = (event: any) => {
-    const numericValue = getNumericValue(event.target.value, { integer, minValue, maxValue });
-    if (onChange) {
-      onChange(numericValue);
-    }
-  };
+  const getControlledValue = useCallback((value: INullableNumber) => (value === null ? "" : value), []);
+
+  const getNumericValue = useCallback(
+    (value: string): INullableNumber => {
+      const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      if (isNaN(numericValue)) {
+        return null;
+      }
+
+      if (numericValue >= minValue && numericValue <= maxValue) {
+        return numericValue;
+      }
+
+      return numericValue < minValue ? minValue : maxValue;
+    },
+    [integer, minValue, maxValue]
+  );
+
+  const onChangeHandler = useCallback(
+    (event: any) => {
+      const numericValue = getNumericValue(event.target.value);
+      onChange && onChange(numericValue);
+    },
+    [getNumericValue, onChange]
+  );
 
   return (
     <MUITextField
@@ -63,9 +67,10 @@ const InputNumber: FC<IInputNumber> = ({
       }}
       inputProps={{
         "data-cy": dataCy,
-        style: { ...baseStyle, ...style },
+        style: { ...BASE_STYLE, ...style },
       }}
       InputProps={{
+        endAdornment: adornment,
         readOnly: disabled,
       }}
       label={label}
@@ -74,8 +79,8 @@ const InputNumber: FC<IInputNumber> = ({
       placeholder={placeholder}
       required={required}
       size={size}
-      style={{ ...baseStyle }}
-      type={InputType.number}
+      style={{ ...BASE_STYLE }}
+      type="number"
       variant={variant}
       value={getControlledValue(value)}
     />

@@ -6,6 +6,9 @@ interface IMultilineInput {
 }
 
 export interface IInputText extends IInputField {
+  /**
+   * Setup for multiline input: { rows: number, rowsMax?: number }
+   */
   multiline?: IMultilineInput;
   onChange?: (value: string) => void;
   value?: string;

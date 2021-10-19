@@ -77,6 +77,7 @@ export const Placeholder = Template.bind({});
 Placeholder.args = {
   label: "Label",
   placeholder: "Enter value...",
+  value: undefined,
 };
 
 export const Required = Template.bind({});

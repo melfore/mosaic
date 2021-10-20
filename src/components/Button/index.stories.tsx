@@ -35,12 +35,6 @@ export default {
   },
 } as ComponentMeta<typeof ButtonWithProps>;
 
-// const LocalizedTemplate: ComponentStory<any> = (args) => (
-//   <IntlProviderMock>
-//     <Button label={MessageMock.button} localized {...args} />
-//   </IntlProviderMock>
-// );
-
 const Template: ComponentStory<typeof ButtonWithProps> = (args) => <Button {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
@@ -68,6 +62,14 @@ Icon.args = {
   },
 };
 
+export const IconCustom = Template.bind({});
+IconCustom.args = {
+  ...Primary.args,
+  icon: {
+    component: <MUIStyleIcon />,
+  },
+};
+
 export const IconRight = Template.bind({});
 IconRight.args = {
   ...Primary.args,
@@ -86,20 +88,6 @@ IconRotate.args = {
   },
   label: "Loading",
 };
-
-export const IconCustom = Template.bind({});
-IconCustom.args = {
-  ...Primary.args,
-  icon: {
-    component: <MUIStyleIcon />,
-  },
-};
-
-// export const Localized = LocalizedTemplate.bind({});
-// Localized.args = {
-//   ...Primary.args,
-//   label: MessageMock.button,
-// };
 
 export const Styled = Template.bind({});
 Styled.args = {

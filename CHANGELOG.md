@@ -1,3 +1,5 @@
+## [5.8.1-beta.2](https://github.com/melfore/mosaic/compare/v5.8.1-beta.1...v5.8.1-beta.2) (2021-11-11)
+
 ## [5.8.1-beta.1](https://github.com/melfore/mosaic/compare/v5.8.0...v5.8.1-beta.1) (2021-11-11)
 
 

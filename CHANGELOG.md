@@ -1,3 +1,15 @@
+## [5.8.1-beta.1](https://github.com/melfore/mosaic/compare/v5.8.0...v5.8.1-beta.1) (2021-11-11)
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
+
 # [5.8.0](https://github.com/melfore/mosaic/compare/v5.7.0...v5.8.0) (2021-10-06)
 
 

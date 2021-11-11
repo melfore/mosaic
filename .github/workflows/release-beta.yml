@@ -1,4 +1,4 @@
-name: Mosaic CI - Release
+name: Mosaic CI - Release Beta
 
 on:
   push:

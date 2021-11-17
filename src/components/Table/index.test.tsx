@@ -8,6 +8,12 @@ import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../u
 
 import Table, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
+interface ITableMockedData {
+  id: string;
+  name: string;
+  rating: number;
+}
+
 const DEFAULT_TEST_OPTIONS: ITestOptions<ITable> = {
   dataCy: DATA_CY_DEFAULT,
   domNode: "div",
@@ -348,6 +354,32 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(0);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("row action - disabled by data", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [
+          {
+            callback,
+            disabled: (data: ITableMockedData) => data.id === "3",
+            icon: Icons.account,
+            label,
+            position: TableActionPosition.row,
+          },
+        ],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`).at(2);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(0);
 

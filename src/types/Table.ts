@@ -13,7 +13,7 @@ export enum TableActionPosition {
 
 export interface ITableAction extends IPartialIconUtilizer {
   callback: (data: object | object[]) => void;
-  disabled?: boolean;
+  disabled?: boolean | ((data: any) => boolean);
   hidden?: boolean;
   label: string;
   position?: TableActionPosition;

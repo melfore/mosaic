@@ -1951,7 +1951,7 @@ exports[`Table test suite: default 1`] = `
 </div>
 `;
 
-exports[`Table test suite: global action 1`] = `
+exports[`Table test suite: global action - disabled 1`] = `
 <div
   className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="table"
@@ -1990,9 +1990,9 @@ exports[`Table test suite: global action 1`] = `
       }
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation Mui-disabled Mui-disabled"
         data-cy="table-action-Account"
-        disabled={false}
+        disabled={true}
         onBlur={[Function]}
         onClick={[Function]}
         onDragLeave={[Function]}
@@ -2010,7 +2010,7 @@ exports[`Table test suite: global action 1`] = `
             "marginLeft": "none",
           }
         }
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <span
@@ -2033,65 +2033,6 @@ exports[`Table test suite: global action 1`] = `
           </span>
           Account
         </span>
-        <span
-          className="MuiTouchRipple-root"
-        />
-      </button>
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
-        data-cy="table-action-Custom Icon"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        style={
-          Object {
-            "marginLeft": "8px",
-          }
-        }
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="MuiButton-label"
-        >
-          <span
-            className="MuiButton-startIcon MuiButton-iconSizeMedium"
-          >
-            <div
-              data-cy="table-action-Custom Icon-icon"
-              fontSize="medium"
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "height": 24,
-                    "width": 24,
-                  }
-                }
-              />
-            </div>
-          </span>
-          Custom Icon
-        </span>
-        <span
-          className="MuiTouchRipple-root"
-        />
       </button>
     </div>
   </div>
@@ -2289,7 +2230,7 @@ exports[`Table test suite: global action 1`] = `
 </div>
 `;
 
-exports[`Table test suite: hidden action 1`] = `
+exports[`Table test suite: global action - hidden 1`] = `
 <div
   className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="table"
@@ -2327,6 +2268,344 @@ exports[`Table test suite: hidden action 1`] = `
         }
       }
     />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: global action 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+        data-cy="table-action-Account"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "none",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <span
+            className="MuiButton-startIcon MuiButton-iconSizeMedium"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              data-cy="table-action-Account-icon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+              />
+            </svg>
+          </span>
+          Account
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+        data-cy="table-action-Custom Icon"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "8px",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <span
+            className="MuiButton-startIcon MuiButton-iconSizeMedium"
+          >
+            <div
+              data-cy="table-action-Custom Icon-icon"
+              fontSize="medium"
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+              />
+            </div>
+          </span>
+          Custom Icon
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
   </div>
   <table
     className="MuiTable-root"
@@ -2804,6 +3083,9 @@ exports[`Table test suite: icon action 1`] = `
             />
           </svg>
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2844,6 +3126,9 @@ exports[`Table test suite: icon action 1`] = `
             />
           </svg>
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
       <button
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -2892,6 +3177,9 @@ exports[`Table test suite: icon action 1`] = `
             />
           </div>
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
     </div>
   </div>
@@ -4052,6 +4340,1291 @@ exports[`Table test suite: pre-sorting 1`] = `
 </div>
 `;
 
+exports[`Table test suite: row action - disabled 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-2"
+          scope="col"
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: row action - disabled by data 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-2"
+          scope="col"
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              data-cy="table-action-Account"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              data-cy="table-action-Account"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Mui-disabled Mui-disabled"
+              data-cy="table-action-Account"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              data-cy="table-action-Account"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "justifyContent": "flex-end",
+              }
+            }
+          >
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              data-cy="table-action-Account"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  data-cy="table-action-Account-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table test suite: row action - hidden 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+  data-cy="table"
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "inherit",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "position": "inherit",
+      }
+    }
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h6"
+      data-cy="typography"
+    >
+      Table
+    </h2>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </div>
+  <table
+    className="MuiTable-root"
+    role={null}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          data-cy="table-header-cell-Rating"
+          scope="col"
+        >
+          Rating
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Mosaic
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          4
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Murales
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Paintings
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          2.5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Photography
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          5
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+        style={Object {}}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          Sculpture
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+          onClick={[Function]}
+          style={
+            Object {
+              "width": undefined,
+            }
+          }
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`Table test suite: row action 1`] = `
 <div
   className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
@@ -4225,9 +5798,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -4314,9 +5884,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -4403,9 +5970,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -4492,9 +6056,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>
@@ -4581,9 +6142,6 @@ exports[`Table test suite: row action 1`] = `
                   />
                 </svg>
               </span>
-              <span
-                className="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </td>

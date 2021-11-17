@@ -1,3 +1,11 @@
+# [5.9.0](https://github.com/melfore/mosaic/compare/v5.8.0...v5.9.0) (2021-11-17)
+
+
+### Features
+
+* 🎸 [Table] Ignore disabled by data for other actions ([4a32fac](https://github.com/melfore/mosaic/commit/4a32facaef4c540659816d1cdd3fec6736e213b8))
+* 🎸 [Table] Row actions can be disabled based on data ([0e3b3be](https://github.com/melfore/mosaic/commit/0e3b3beaacf576660d174f3d3620678ed6e5b580))
+
 # [5.8.0](https://github.com/melfore/mosaic/compare/v5.7.0...v5.8.0) (2021-10-06)
 
 

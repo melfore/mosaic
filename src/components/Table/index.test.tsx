@@ -142,7 +142,25 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("hidden action", () => {
+  it("global action - disabled", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, disabled: true, icon: Icons.account, label }],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(0);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("global action - hidden", () => {
     const callback = jest.fn();
     const label = "Account";
     const { element, wrapper } = getTableTestable({
@@ -314,6 +332,41 @@ describe("Table test suite:", () => {
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0]);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("row action - disabled", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, disabled: true, icon: Icons.account, label, position: TableActionPosition.row }],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(0);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("row action - hidden", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, hidden: true, icon: Icons.account, label, position: TableActionPosition.row }],
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
+    expect(action).toHaveLength(0);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

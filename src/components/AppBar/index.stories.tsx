@@ -18,8 +18,8 @@ export default {
     docs: {
       ...getDocsPage({
         basedOn: {
-          label: "",
-          url: "",
+          label: "MUI AppBar Component",
+          url: "https://v4.mui.com/components/app-bar/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

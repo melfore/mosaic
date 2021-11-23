@@ -1,78 +1,78 @@
-// import React from "react";
-// import MUIStyleIcon from "@material-ui/icons/Style";
-// import { boolean, object, select, text } from "@storybook/addon-knobs";
+import React from "react";
+import MUIStyleIcon from "@material-ui/icons/Style";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-// import { Icons, IconSize } from "../../types/Icon";
-// import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import getDocsPage from "../../utils/stories";
 
-// import Icon, { DATA_CY_DEFAULT } from ".";
+import Icon, { DATA_CY_DEFAULT } from ".";
 
-// export default {
-//   title: "Icon",
-//   component: Icon,
-//   parameters: {
-//     ...getDocumentationPage({
-//       basedOn: "",
-//       component: "Icon",
-//       e2eTestInfo: {
-//         dataCyDefault: DATA_CY_DEFAULT,
-//       },
-//     }),
-//   },
-// };
+export default {
+  title: "Display/Icon",
+  component: Icon,
+  parameters: {
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Icon Component",
+          url: "https://v4.mui.com/components/icons/",
+        },
+        component: "Icon",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+        },
+      }),
+    },
+  },
+} as ComponentMeta<typeof Icon>;
 
-// export const Canvas = () => (
-//   <Icon
-//     dataCy={text("data-cy", DATA_CY_DEFAULT)}
-//     forwarded={object("forwarded", {})}
-//     loading={boolean("loading", false)}
-//     name={select("icon", Icons, Icons.add)}
-//     size={select("size", IconSize, IconSize.default)}
-//   />
-// );
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} dataCy={DATA_CY_DEFAULT} />;
 
-// export const CustomIcon = () => (
-//   <StoriesWrapper>
-//     <Icon size={IconSize.small}>
-//       <MUIStyleIcon />
-//     </Icon>
-//     <Icon rotate>
-//       <MUIStyleIcon />
-//     </Icon>
-//     <Icon size={IconSize.large} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }}>
-//       <MUIStyleIcon />
-//     </Icon>
-//   </StoriesWrapper>
-// );
+export const Primary = Template.bind({});
+Primary.args = {
+  name: "account",
+};
 
-// export const CustomStyle = () => (
-//   <Icon name={Icons.send} style={{ backgroundColor: "red", borderRadius: "4px", color: "white", padding: "4px" }} />
-// );
+export const IconCustom = Template.bind({});
+IconCustom.args = {
+  children: <MUIStyleIcon />,
+};
 
-// export const Loading = () => (
-//   <StoriesWrapper>
-//     <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.small} />
-//     <Icon dataCy="loading-icon" loading name={Icons.send} />
-//     <Icon dataCy="loading-icon" loading name={Icons.send} size={IconSize.large} />
-//   </StoriesWrapper>
-// );
+export const Loading = Template.bind({});
+Loading.args = {
+  ...Primary.args,
+  loading: true,
+};
 
-// export const Rotate = () => (
-//   <StoriesWrapper>
-//     <Icon name={Icons.refresh} rotate size={IconSize.small} />
-//     <Icon name={Icons.refresh} rotate />
-//     <Icon name={Icons.refresh} rotate size={IconSize.large} />
-//   </StoriesWrapper>
-// );
+export const Rotate = Template.bind({});
+Rotate.args = {
+  ...Primary.args,
+  rotate: true,
+};
 
-// export const Size = () => (
-//   <StoriesWrapper>
-//     <Icon dataCy="icon-send" name={Icons.send} size={IconSize.small} />
-//     <Icon dataCy="icon-send" name={Icons.send} />
-//     <Icon dataCy="icon-send" name={Icons.send} size={IconSize.large} />
-//   </StoriesWrapper>
-// );
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Primary.args,
+  size: "small",
+};
 
+export const SizeLarge = Template.bind({});
+SizeLarge.args = {
+  ...Primary.args,
+  size: "large",
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    borderRadius: "4px",
+    color: "white",
+    padding: "4px",
+  },
+};
+
+// TODO: add this story using union type
 // const allIcons = Object.values(Icons);
 // const getIcon = (icon: string) => allIcons.find((i) => i === icon);
 // const allIconsJsx = allIcons.map((icon, index) => (

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { DATA_CY_SUFFIX_SEPARATOR } from "../..";
 import { Spacer, SpacerDirection } from "../../..";
+import { DATA_CY_SUFFIX_SEPARATOR } from "../..";
 import { DOCS_CODEBLOCK_CLASS, DOCS_CODELINE_CLASS } from "../utils";
 
 import DocsTitle from "./DocsTitle";

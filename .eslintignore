@@ -7,3 +7,6 @@
 /dist/*
 /docs/*
 /node_modules/*
+
+# ignore snapshots
+*.snap

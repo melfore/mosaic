@@ -2,7 +2,7 @@ import React, { cloneElement, FC, ReactElement, useMemo } from "react";
 import { makeStyles } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { IconSize, IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
+import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
 
 import { iconsCatalog } from "./utils";
@@ -10,9 +10,9 @@ import { iconsCatalog } from "./utils";
 export const DATA_CY_DEFAULT = "icon";
 
 const ICON_DIMENSIONS: IIconDimensions = {
-  [IconSize.default]: 24,
-  [IconSize.large]: 35,
-  [IconSize.small]: 20,
+  small: 20,
+  medium: 24,
+  large: 35,
 };
 
 const useAnimations = makeStyles({
@@ -36,7 +36,7 @@ const Icon: FC<IIcon> = ({
   loading = false,
   name,
   rotate = false,
-  size = IconSize.default,
+  size = "medium",
   style: externalStyle,
 }) => {
   const { rotate: rotateAnimation } = useAnimations();

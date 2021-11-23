@@ -2,6 +2,7 @@ module.exports = {
   rootDir: "../src",
   setupFilesAfterEnv: ["<rootDir>/../.jest/enzyme.ts"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testEnvironment: "jsdom",
   testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",

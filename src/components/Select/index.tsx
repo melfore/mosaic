@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { InputSize, InputType, InputVariant } from "../../types/Input";
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -64,11 +63,11 @@ const Select = <T extends any>({
   placeholder,
   popperWidth,
   required = false,
-  size = InputSize.default,
+  size = "medium",
   style,
-  type = InputType.default,
+  type = "text",
   value = null,
-  variant = InputVariant.default,
+  variant = "outlined",
 }: ISelect<T>) => {
   const theme = useTheme();
 

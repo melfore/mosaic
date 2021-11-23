@@ -51,9 +51,13 @@ export enum Icons {
   visibility = "visibility",
   visibility_off = "visibility_off",
   warn = "warn",
-  wifi_on = "wifi",
-  wifi_off = "wifi_offline",
+  wifi_off = "wifi_off",
+  wifi_on = "wifi_on",
 }
+
+export type IIconsCatalog = {
+  [key in Icons]: ReactElement;
+};
 
 /**
  * @deprecated Use "small" | "medium" | "large"

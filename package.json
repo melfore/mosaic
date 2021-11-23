@@ -84,6 +84,7 @@
     "lintify": "eslint '**/*.ts*' --fix",
     "pre-build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre-test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
+    "prepare": "husky install",
     "prettify": "prettier --write .",
     "start": "npm run pre-test && start-storybook -p 9009",
     "test": "npm run pre-test && jest --clearCache && jest --c ./.jest/config.js --watch",

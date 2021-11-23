@@ -1,7 +1,7 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 
 import { Icons } from "../../../../types/Icon";
-import { ITableToolbarAction, TableActionPosition } from "../../../../types/Table";
+import { ITableToolbarAction } from "../../../../types/Table";
 import { getComposedDataCy } from "../../../../utils";
 import { logWarn } from "../../../../utils/logger";
 import Button from "../../../Button";
@@ -24,7 +24,7 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
     if (typeof externalDisabled === "function") {
       logWarn(
         "Table",
-        "Invalid type for disabled property: action won't be disabled as type function is valid only for TableActionPosition.row"
+        "Invalid type for disabled property: action won't be disabled as type function is valid only for position='row'"
       );
       return false;
     }
@@ -34,7 +34,7 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
 
   const onClick = useCallback(() => callback(data), [callback, data]);
 
-  const secondary = useMemo(() => position === TableActionPosition.icon, [position]);
+  const secondary = useMemo(() => position === "icon", [position]);
 
   const style = useMemo((): CSSProperties => ({ marginLeft: index > 0 ? "8px" : "none" }), [index]);
 

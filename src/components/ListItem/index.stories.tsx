@@ -9,7 +9,7 @@ import getDocsPage from "../../utils/stories";
 import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
-  title: "ListItem",
+  title: "Display/ListItem",
   component: ListItem,
   parameters: {
     docs: {

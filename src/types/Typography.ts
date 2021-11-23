@@ -2,6 +2,9 @@ import { ReactNode } from "react";
 
 import { ILoadable, ILocalizable } from "./Base";
 
+/**
+ * @deprecated Use "body" | "caption" | "label" | "overline" | "pagetitle" | "title"
+ */
 export enum TypographyVariants {
   body = "body1",
   caption = "caption",
@@ -11,16 +14,38 @@ export enum TypographyVariants {
   title = "h6",
 }
 
+type ITypographyVariants = "body" | "caption" | "label" | "overline" | "pagetitle" | "title";
+
+/**
+ * @deprecated Use "block" | "initial" | "inline"
+ */
 export enum TypographyDisplay {
   default = "initial",
   block = "block",
   inline = "inline",
 }
 
+type ITypographyDisplay = "block" | "initial" | "inline";
+
 export interface ITypography extends ILoadable, ILocalizable {
+  /**
+   * Adds bottom spacing
+   */
   bottomSpacing?: boolean;
+  /**
+   * Content of Typography, can also be expressed via children
+   */
   content?: ReactNode;
-  display?: TypographyDisplay;
+  /**
+   * Display mode
+   */
+  display?: ITypographyDisplay | TypographyDisplay;
+  /**
+   * Enables truncated mode (useful when container has width constraints)
+   */
   truncated?: boolean;
-  variant?: TypographyVariants;
+  /**
+   * Variant mode
+   */
+  variant?: ITypographyVariants | TypographyVariants;
 }

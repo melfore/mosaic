@@ -21,8 +21,20 @@ interface IBaseListItem extends ILoadable, IPartialClickable {
 export interface IListItem extends IBaseListItem, IPartialIconUtilizer {}
 
 export interface IListItemCollapsible extends IBaseListItem {
+  /**
+   * Header of ListItem
+   */
   header: ReactNode;
+  /**
+   * Opens collapsible content
+   */
   open?: boolean;
+  /**
+   * Duration of the open transition in millis (or "auto")
+   */
   openTimeout?: "auto" | number;
+  /**
+   * Unmounts content on collapsible closed
+   */
   unmountContent?: boolean;
 }

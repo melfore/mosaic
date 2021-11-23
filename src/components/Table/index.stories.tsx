@@ -373,6 +373,13 @@
 //           position: TableActionPosition.row,
 //         },
 //         {
+//           callback: action("On Notify Callback"),
+//           disabled: (data) => data.age > 40,
+//           icon: Icons.notifications,
+//           label: "Notify",
+//           position: TableActionPosition.row,
+//         },
+//         {
 //           callback: action("On Delete Callback"),
 //           disabled: true,
 //           icon: Icons.delete,

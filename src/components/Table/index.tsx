@@ -363,16 +363,25 @@ const Table: FC<ITable> = ({
                       />
                     ) : path === ROW_ACTION_PATH ? (
                       <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
-                        {rowActions.map(({ callback, disabled, icon, label }) => (
-                          <IconButton
-                            key={`action-${label}`}
-                            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                            disabled={disabled}
-                            icon={icon || Icons.settings}
-                            onClick={() => callback(row)}
-                            size={IconSize.small}
-                          />
-                        ))}
+                        {rowActions.map(({ callback, disabled, icon, label }) => {
+                          let rowActionDisabled = false;
+                          if (typeof disabled === "boolean") {
+                            rowActionDisabled = disabled;
+                          } else {
+                            rowActionDisabled = disabled ? disabled(row) : false;
+                          }
+
+                          return (
+                            <IconButton
+                              key={`action-${label}`}
+                              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                              disabled={rowActionDisabled}
+                              icon={icon || Icons.settings}
+                              onClick={() => callback(row)}
+                              size={IconSize.small}
+                            />
+                          );
+                        })}
                       </div>
                     ) : render ? (
                       render(row)

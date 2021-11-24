@@ -1,30 +1,35 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { cloneElement, FC, ReactElement, useCallback, useMemo, useState } from "react";
 
 import Button from "../../components/Button";
-import { ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 
 interface ModalMockType {
   buttonLabel?: string;
-  initialOpen?: null | number | string | boolean;
-  onClose?: Function;
+  open?: boolean;
+  onClose?: () => void;
 }
 
-const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open Modal", children, initialOpen, onClose }) => {
-  const [open, setOpen] = useState(initialOpen);
-  const onCloseCallback = () => {
-    onClose && onClose();
+const ModalMock: FC<ModalMockType> = ({
+  buttonLabel = "Open Modal",
+  children,
+  open: externalOpen = false,
+  onClose: externalOnClose,
+}) => {
+  const [open, setOpen] = useState(externalOpen);
+
+  const onClose = useCallback(() => {
+    externalOnClose && externalOnClose();
     setOpen(false);
-  };
-  const wrappedModal = React.cloneElement(children as ReactElement<any>, { onClose: onCloseCallback, open });
+  }, [externalOnClose]);
+
+  const wrappedModal = useMemo(
+    () => cloneElement(children as ReactElement<any>, { onClose, open }),
+    [children, onClose, open]
+  );
+
   return (
     <div>
-      <Button
-        icon={{ name: Icons.open_new }}
-        label={buttonLabel}
-        onClick={() => setOpen(!open)}
-        variant={ButtonVariants.outlined}
-      />
+      <Button icon={{ name: Icons.open_new }} label={buttonLabel} onClick={() => setOpen(!open)} variant="outlined" />
       {wrappedModal}
     </div>
   );

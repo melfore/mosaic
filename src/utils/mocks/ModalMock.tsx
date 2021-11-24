@@ -10,7 +10,7 @@ interface ModalMockType {
 }
 
 const ModalMock: FC<ModalMockType> = ({
-  buttonLabel = "Open Modal",
+  buttonLabel = "Open",
   children,
   open: externalOpen = false,
   onClose: externalOnClose,

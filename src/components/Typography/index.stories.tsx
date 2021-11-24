@@ -10,7 +10,7 @@ Typography.displayName = COMPONENT_NAME;
 TypographyWithProps.displayName = COMPONENT_NAME;
 
 export default {
-  title: "Typography",
+  title: "Display/Typography",
   component: TypographyWithProps,
   parameters: {
     docs: {

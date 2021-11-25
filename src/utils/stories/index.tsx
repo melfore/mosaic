@@ -13,6 +13,10 @@ export interface IDocsPage extends IDocsBasedOn, IDocsE2ETestInfo, IDocsLocale {
 
 interface IDocsStructure {
   page: () => ReactElement;
+  source: {
+    excludeDecorators: boolean;
+    type: "dynamic";
+  };
 }
 
 const DocsPage: FC<IDocsPage> = ({ basedOn, component, e2eTestInfo, localizableProps }) => {
@@ -41,6 +45,10 @@ const DocsPage: FC<IDocsPage> = ({ basedOn, component, e2eTestInfo, localizableP
 
 const getDocsPage = (options: IDocsPage): IDocsStructure => ({
   page: () => <DocsPage {...options} />,
+  source: {
+    excludeDecorators: true,
+    type: "dynamic",
+  },
 });
 
 export default getDocsPage;

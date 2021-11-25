@@ -3,17 +3,19 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { ISelect } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
+import { formDecorator } from "../../utils/mocks/FormMock";
 import getDocsPage from "../../utils/stories";
 
 import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
 
 const COMPONENT_NAME = "Select";
-Select.displayName = COMPONENT_NAME;
-SelectWithProps.displayName = COMPONENT_NAME;
+(Select as any).displayName = COMPONENT_NAME;
+(SelectWithProps as any).displayName = COMPONENT_NAME;
 
 export default {
   title: "Inputs/Select",
   component: SelectWithProps,
+  decorators: [formDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -83,6 +85,13 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...Primary.args,
   loading: true,
+};
+
+export const Multiple = Template.bind({});
+Multiple.args = {
+  ...Primary.args,
+  multiple: true,
+  value: [],
 };
 
 export const OptionCustomRendering = Template.bind({});

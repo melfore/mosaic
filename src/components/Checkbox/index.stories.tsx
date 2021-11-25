@@ -2,8 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-// import FormMock from "../../utils/mocks/FormMock";
-// import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { formDecorator } from "../../utils/mocks/FormMock";
 import getDocsPage from "../../utils/stories";
 
 import Checkbox, { CheckboxWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
@@ -15,6 +14,7 @@ CheckboxWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Inputs/Checkbox",
   component: CheckboxWithProps,
+  decorators: [formDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -30,9 +30,6 @@ export default {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
-      source: {
-        excludeDecorators: true,
-      },
     },
   },
 } as ComponentMeta<typeof CheckboxWithProps>;

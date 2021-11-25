@@ -2,8 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
-// import FormMock from "../../utils/mocks/FormMock";
-// import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { formDecorator } from "../../utils/mocks/FormMock";
 import getDocsPage from "../../utils/stories";
 
 import InputNumber, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputNumberWithProps, LOCALIZABLE_PROPS } from ".";
@@ -15,6 +14,7 @@ InputNumberWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Inputs/InputNumber",
   component: InputNumberWithProps,
+  decorators: [formDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

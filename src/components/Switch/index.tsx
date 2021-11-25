@@ -1,8 +1,8 @@
-import React, { FC, useCallback } from "react";
+import React, { ChangeEvent, FC, useCallback } from "react";
 import { FormControlLabel as MUIFormControlLabel, Switch as MUISwitch } from "@material-ui/core";
 
 import { ISwitch } from "../../types/Switch";
-import { getComposedDataCy, suppressEvent } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 export const DATA_CY_DEFAULT = "switch";
@@ -30,10 +30,7 @@ const Switch: FC<ISwitch> = ({
   value = false,
 }) => {
   const onChangeHandler = useCallback(
-    (event: any, checked: boolean) => {
-      suppressEvent(event);
-      onChange && onChange(checked);
-    },
+    ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => onChange && onChange(checked),
     [onChange]
   );
 

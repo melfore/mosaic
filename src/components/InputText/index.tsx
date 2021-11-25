@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
 import { TextField as MUITextField } from "@material-ui/core";
 
 import { IInputText } from "../../types/InputText";
@@ -33,10 +33,7 @@ const InputText: FC<IInputText> = ({
   const adornment = useMemo(() => getAdornment(externalAdornment), [externalAdornment]);
 
   const onChangeHandler = useCallback(
-    (event: any) => {
-      const value = event.target.value;
-      onChange && onChange(value);
-    },
+    ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => onChange && onChange(value),
     [onChange]
   );
 

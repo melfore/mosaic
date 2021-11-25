@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
 import { TextField as MUITextField } from "@material-ui/core";
 
 import { IInputNumber, INullableNumber } from "../../types/InputNumber";
@@ -52,8 +52,8 @@ const InputNumber: FC<IInputNumber> = ({
   );
 
   const onChangeHandler = useCallback(
-    (event: any) => {
-      const numericValue = getNumericValue(event.target.value);
+    ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const numericValue = getNumericValue(value);
       onChange && onChange(numericValue);
     },
     [getNumericValue, onChange]

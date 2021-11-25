@@ -41,7 +41,7 @@ jobs:
           git pull
 
       - name: Unit Tests
-        run: npm run test-coverage
+        run: npm run test:coverage
         env:
           CI: true
 

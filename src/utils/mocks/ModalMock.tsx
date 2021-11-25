@@ -1,4 +1,5 @@
 import React, { cloneElement, FC, ReactElement, useCallback, useMemo, useState } from "react";
+import { DecoratorFn } from "@storybook/react";
 
 import Button from "../../components/Button";
 import { Icons } from "../../types/Icon";
@@ -6,21 +7,12 @@ import { Icons } from "../../types/Icon";
 interface ModalMockType {
   buttonLabel?: string;
   open?: boolean;
-  onClose?: () => void;
 }
 
-const ModalMock: FC<ModalMockType> = ({
-  buttonLabel = "Open",
-  children,
-  open: externalOpen = false,
-  onClose: externalOnClose,
-}) => {
+const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open", children, open: externalOpen = false }) => {
   const [open, setOpen] = useState(externalOpen);
 
-  const onClose = useCallback(() => {
-    externalOnClose && externalOnClose();
-    setOpen(false);
-  }, [externalOnClose]);
+  const onClose = useCallback(() => setOpen(false), []);
 
   const wrappedModal = useMemo(
     () => cloneElement(children as ReactElement<any>, { onClose, open }),
@@ -35,4 +27,6 @@ const ModalMock: FC<ModalMockType> = ({
   );
 };
 
-export default ModalMock;
+const modalDecorator: DecoratorFn = (Story, { args }) => <ModalMock>{Story()}</ModalMock>;
+
+export { modalDecorator, ModalMock };

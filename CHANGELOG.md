@@ -1,3 +1,10 @@
+## [5.9.3](https://github.com/melfore/mosaic/compare/v5.9.2...v5.9.3) (2021-11-25)
+
+
+### Bug Fixes
+
+* 🐛 [InputText] Restore onChange type definition ([0778146](https://github.com/melfore/mosaic/commit/07781469fb61a7d8f7439775a21b51c954a84212))
+
 ## [5.9.2](https://github.com/melfore/mosaic/compare/v5.9.1...v5.9.2) (2021-11-25)
 
 ## [5.9.1](https://github.com/melfore/mosaic/compare/v5.9.0...v5.9.1) (2021-11-25)

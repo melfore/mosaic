@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "5.9.2",
+  "version": "5.9.3",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {

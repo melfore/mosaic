@@ -1,29 +1,34 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { cloneElement, FC, ReactElement, useMemo, useState } from "react";
+import { DecoratorFn } from "@storybook/react";
+
+type IFormValue = boolean | number | string | null;
 
 interface FormMockType {
-  onInputChange: Function;
-  inputValue: null | number | string | boolean;
   onChangePropName?: string;
+  value: IFormValue;
   valuePropName?: string;
 }
 
 const FormMock: FC<FormMockType> = ({
   children,
-  onInputChange,
-  inputValue,
   onChangePropName = "onChange",
+  value: externalValue,
   valuePropName = "value",
 }) => {
-  const [value, setValue] = useState(inputValue);
-  const wrappedOnChange = (value: null | number | string | boolean) => {
-    setValue(value);
-    onInputChange(value);
-  };
+  const [value, setValue] = useState(externalValue);
 
-  return React.cloneElement(children as ReactElement<any>, {
-    [onChangePropName]: wrappedOnChange,
-    [valuePropName]: value,
-  });
+  const wrappedFormElement = useMemo(
+    () =>
+      cloneElement(children as ReactElement<any>, {
+        [onChangePropName]: setValue,
+        [valuePropName]: value,
+      }),
+    [children, onChangePropName, value, valuePropName]
+  );
+
+  return wrappedFormElement;
 };
 
-export default FormMock;
+const formDecorator: DecoratorFn = (Story, { args }) => <FormMock value={args.value}>{Story()}</FormMock>;
+
+export { formDecorator, FormMock };

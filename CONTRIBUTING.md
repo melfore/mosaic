@@ -25,7 +25,7 @@
 
   Launches `Jest` test suite
 
-- `npm run test-coverage`
+- `npm run test:coverage`
 
   Launches `Jest` test suite in coverage mode and saves the output into `/coverage`
 
@@ -103,15 +103,19 @@ Next pushes can be done simply with:
 
 This project uses [husky](https://github.com/typicode/husky) to verify code before git actions can happen.
 
+Husky v4.x rules:
+
 ```
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "pre-commit": "npm run lintify && npm run prettify",
-    "pre-push": "npm run build && CI=true npm run test-coverage"
+    "pre-push": "npm run build && CI=true npm run test:coverage"
   }
 }
 ```
+
+After migration to Husky v7.x hooks are stored in dedicated files under `.husky` folder.
 
 *commit-msg*
 

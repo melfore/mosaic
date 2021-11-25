@@ -1,58 +1,82 @@
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
-import { action } from "@storybook/addon-actions";
-import { boolean, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Icons, IconSize } from "../../types/Icon";
+import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import getDocsPage from "../../utils/stories";
 
 import IconButton, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
-  title: "IconButton",
+  title: "Inputs/IconButton",
   component: IconButton,
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/IconButton",
-      component: "IconButton",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "@material-ui/core/IconButton",
+          url: "",
+        },
+        component: "IconButton",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+      }),
+    },
+  },
+} as ComponentMeta<typeof IconButton>;
+
+const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} dataCy={DATA_CY_DEFAULT} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  icon: Icons.add,
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  icon: <MUIStyleIcon />,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Primary.args,
+  disabled: true,
+};
+
+export const Rotate = Template.bind({});
+Rotate.args = {
+  ...Primary.args,
+  rotate: true,
+};
+
+export const SizeLarge = Template.bind({});
+SizeLarge.args = {
+  ...Primary.args,
+  size: "large",
+};
+
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Primary.args,
+  size: "small",
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    color: "white",
   },
 };
 
-export const Canvas = () => (
-  <IconButton
-    dataCy={text("data-cy", DATA_CY_DEFAULT)}
-    disabled={boolean("disabled", false)}
-    icon={select("icon", Icons, Icons.add)}
-    onClick={action("Click on IconButton")}
-    size={select("size", IconSize, IconSize.default)}
-  />
-);
-
-export const CustomStyle = () => (
-  <IconButton icon={Icons.add} onClick={() => {}} style={{ backgroundColor: "red", color: "white" }} />
-);
-
-export const CustomIcon = () => <IconButton icon={<MUIStyleIcon />} onClick={() => {}} />;
-
-export const Disabled = () => (
-  <StoriesWrapper>
-    <IconButton icon={Icons.add} onClick={() => {}} />
-    <IconButton icon={Icons.add} onClick={() => {}} disabled />
-  </StoriesWrapper>
-);
-
-export const Rotate = () => <IconButton icon={Icons.account} rotate size={IconSize.small} onClick={() => {}} />;
-
-export const Size = () => (
-  <StoriesWrapper>
-    <IconButton icon={Icons.add} size={IconSize.small} onClick={() => {}} />
-    <IconButton icon={Icons.add} onClick={() => {}} />
-    <IconButton icon={Icons.add} size={IconSize.large} onClick={() => {}} />
-  </StoriesWrapper>
-);
+// export const Size = () => (
+//   <StoriesWrapper>
+//     <IconButton icon={Icons.add} size={IconSize.small} onClick={() => {}} />
+//     <IconButton icon={Icons.add} onClick={() => {}} />
+//     <IconButton icon={Icons.add} size={IconSize.large} onClick={() => {}} />
+//   </StoriesWrapper>
+// );

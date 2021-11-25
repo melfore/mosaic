@@ -1,9 +1,20 @@
-import { IInput } from "./Input";
+import { IInputField } from "./Input";
 
-export interface IInputNumber extends IInput {
+export type INullableNumber = number | null;
+
+export interface IInputNumber extends IInputField {
+  /**
+   * Integer or decimal number
+   */
   integer?: boolean;
+  /**
+   * Minimum allowed value
+   */
   minValue?: number;
+  /**
+   * Maximum allowed value
+   */
   maxValue?: number;
-  onChange?: (value: number | null) => void | any;
-  value?: number | null;
+  onChange?: (value: INullableNumber) => void;
+  value?: INullableNumber;
 }

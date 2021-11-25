@@ -1,33 +1,32 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { cloneElement, FC, ReactElement, useCallback, useMemo, useState } from "react";
+import { DecoratorFn } from "@storybook/react";
 
 import Button from "../../components/Button";
-import { ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 
 interface ModalMockType {
   buttonLabel?: string;
-  initialOpen?: null | number | string | boolean;
-  onClose?: Function;
+  open?: boolean;
 }
 
-const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open Modal", children, initialOpen, onClose }) => {
-  const [open, setOpen] = useState(initialOpen);
-  const onCloseCallback = () => {
-    onClose && onClose();
-    setOpen(false);
-  };
-  const wrappedModal = React.cloneElement(children as ReactElement<any>, { onClose: onCloseCallback, open });
+const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open", children, open: externalOpen = false }) => {
+  const [open, setOpen] = useState(externalOpen);
+
+  const onClose = useCallback(() => setOpen(false), []);
+
+  const wrappedModal = useMemo(
+    () => cloneElement(children as ReactElement<any>, { onClose, open }),
+    [children, onClose, open]
+  );
+
   return (
     <div>
-      <Button
-        icon={{ name: Icons.open_new }}
-        label={buttonLabel}
-        onClick={() => setOpen(!open)}
-        variant={ButtonVariants.outlined}
-      />
+      <Button icon={{ name: Icons.open_new }} label={buttonLabel} onClick={() => setOpen(!open)} variant="outlined" />
       {wrappedModal}
     </div>
   );
 };
 
-export default ModalMock;
+const modalDecorator: DecoratorFn = (Story, { args }) => <ModalMock>{Story()}</ModalMock>;
+
+export { modalDecorator, ModalMock };

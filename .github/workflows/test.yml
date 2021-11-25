@@ -19,6 +19,8 @@ jobs:
       
     - name: Install NodeJS
       uses: actions/setup-node@master
+      with:
+        node-version: lts/fermium
 
     - name: Cache Dependencies
       id: cache-dependencies

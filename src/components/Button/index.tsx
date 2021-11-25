@@ -1,15 +1,10 @@
-import React, { FC, ReactElement, useCallback } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import MUIButton from "@material-ui/core/Button";
 
-import { ButtonIconPosition, ButtonVariants, IButton, IButtonIcon } from "../../types/Button";
+import { IButton, IMUIButtonIcon } from "../../types/Button";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import IconWrapper from "../IconWrapper";
-
-interface IMUIButtonIcon {
-  endIcon?: ReactElement;
-  startIcon?: ReactElement;
-}
 
 export const SUBPARTS_MAP = {
   icon: {
@@ -17,41 +12,40 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const getIcons = (dataCy: string, iconConfig?: IButtonIcon): IMUIButtonIcon => {
-  const muiIcon = {};
-  if (!iconConfig) {
-    return muiIcon;
-  }
-
-  const { component, name, position, rotate } = iconConfig;
-  const icon = (
-    <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name || component} rotate={rotate} />
-  );
-
-  switch (position) {
-    case ButtonIconPosition.left:
-    default:
-      return { startIcon: icon };
-    case ButtonIconPosition.right:
-      return { endIcon: icon };
-  }
-};
-
 export const DATA_CY_DEFAULT = "button";
 export const DATA_CY_SHORTCUT = "label";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
 
-// TODO: handle color
 const Button: FC<IButton> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   elevated = false,
-  icon,
+  icon: externalIcon,
   label,
   onClick,
   style,
-  variant = ButtonVariants.contained,
+  variant = "contained",
 }) => {
+  const icon = useMemo(() => {
+    const muiIcon: IMUIButtonIcon = {};
+    if (!externalIcon) {
+      return muiIcon;
+    }
+
+    const { component, name, position, rotate } = externalIcon;
+    const icon = (
+      <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name || component} rotate={rotate} />
+    );
+
+    switch (position) {
+      case "left":
+      default:
+        return { startIcon: icon };
+      case "right":
+        return { endIcon: icon };
+    }
+  }, [dataCy, externalIcon]);
+
   const onClickHandler = useCallback(
     (event: any) => {
       suppressEvent(event);
@@ -69,7 +63,7 @@ const Button: FC<IButton> = ({
       onClick={onClickHandler}
       style={style}
       variant={variant}
-      {...getIcons(dataCy, icon)}
+      {...icon}
     >
       {label}
     </MUIButton>

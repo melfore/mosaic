@@ -1,191 +1,136 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
-import { boolean, number, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { InputSize, InputVariant } from "../../types/Input";
+import { ISelect } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
-import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocumentationPage } from "../../utils/stories";
+import { formDecorator } from "../../utils/mocks/FormMock";
+import getDocsPage from "../../utils/stories";
 
 import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
 
+const COMPONENT_NAME = "Select";
+(Select as any).displayName = COMPONENT_NAME;
+(SelectWithProps as any).displayName = COMPONENT_NAME;
+
 export default {
-  title: "Select",
+  title: "Inputs/Select",
   component: SelectWithProps,
+  decorators: [formDecorator],
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/Autocomplete",
-      component: "Select",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        dataCyShortcut: DATA_CY_SHORTCUT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-      localizableProps: LOCALIZABLE_PROPS,
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Autocomplete Component",
+          url: "https://v4.mui.com/components/autocomplete/",
+        },
+        component: COMPONENT_NAME,
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+        localizableProps: LOCALIZABLE_PROPS,
+      }),
+    },
+  },
+} as ComponentMeta<typeof SelectWithProps>;
+
+const Template: ComponentStory<typeof SelectWithProps> = (args: ISelect<any>) => (
+  <Select {...args} dataCy={DATA_CY_DEFAULT} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {
+  label: "Select",
+  multiple: false,
+  onChange: () => {},
+  onClose: () => {},
+  onInputChange: () => {},
+  onScrollEnd: () => {},
+  options: ["Paintings", "Sculpture", "Mosaic", "Murales", "Photography"],
+  placeholder: "Select a value",
+};
+
+export const Autocomplete = Template.bind({});
+Autocomplete.args = {
+  ...Primary.args,
+  autoComplete: false,
+};
+
+export const AutoSort = Template.bind({});
+AutoSort.args = {
+  ...Primary.args,
+  autoSort: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Primary.args,
+  disabled: true,
+};
+
+export const Grouped = Template.bind({});
+Grouped.args = {
+  ...Primary.args,
+  groupBy: (option) => (option as string).slice(0, 1),
+};
+
+export const GroupedCustomLabel = Template.bind({});
+GroupedCustomLabel.args = {
+  ...Grouped.args,
+  getGroupLabel: (groupName) => `Letter: ${groupName}`,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  ...Primary.args,
+  loading: true,
+};
+
+export const Multiple = Template.bind({});
+Multiple.args = {
+  ...Primary.args,
+  multiple: true,
+  value: [],
+};
+
+export const OptionCustomRendering = Template.bind({});
+OptionCustomRendering.args = {
+  ...Primary.args,
+  customOptionRendering: (option) => <b>{(option as string).slice(0, 3).toUpperCase()}</b>,
+};
+
+export const Required = Template.bind({});
+Required.args = {
+  ...Primary.args,
+  required: true,
+};
+
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Primary.args,
+  size: "small",
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    color: "red",
+    fontWeight: "bold",
+    fontSize: "large",
+    textAlign: "center",
   },
 };
 
-export const Canvas = () => (
-  <Select
-    autoComplete={boolean("autoComplete", true)}
-    disabled={boolean("disabled", false)}
-    label={text("label", "Label")}
-    loading={boolean("loading", false)}
-    multiple={boolean("multiple", false)}
-    onChange={action("On Change")}
-    onClose={action("On Close")}
-    onInputChange={action("On Input Change")}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    popperWidth={number("popperWidth", 300)}
-  />
-);
-
-export const Basic = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const CustomStyle = () => (
-  <Select
-    label="Custom Style"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    style={{ color: "red", fontWeight: "bold", fontSize: "large", textAlign: "center" }}
-  />
-);
-
-export const CustomType = () => {
-  interface ICustom {
-    name: string;
-  }
-
-  return (
-    <Select<ICustom>
-      disabled
-      label="Arts & Creativity"
-      multiple={false}
-      onChange={(value) => value?.name}
-      options={[{ name: "Mosaic" }]}
-    />
-  );
+export const VariantFilled = Template.bind({});
+VariantFilled.args = {
+  ...Primary.args,
+  variant: "filled",
 };
 
-export const Disabled = () => (
-  <Select
-    disabled
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const Grouped = () => (
-  <Select
-    groupBy={(option) => option.slice(0, 1)}
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const InitialValue = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    value="Mosaic"
-  />
-);
-
-export const Loading = () => (
-  <Select
-    label="Arts & Creativity"
-    loading
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const Localized = () => (
-  // IntlProviderMock simulates external IntlProvider context
-  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-    <Select
-      label={MessageMock.title}
-      localized
-      multiple={false}
-      onChange={(value) => {}}
-      options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-      placeholder={MessageMock.title}
-    />
-  </IntlProviderMock>
-);
-
-export const Multiple = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const Required = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    required
-  />
-);
-
-export const Small = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    size={InputSize.small}
-  />
-);
-
-export const Variant = () => (
-  <Select
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-    variant={InputVariant.filled}
-  />
-);
-
-export const CustomGroupLabel = () => (
-  <Select
-    getGroupLabel={(groupName) => `Letter: ${groupName}`}
-    groupBy={(option) => option.slice(0, 1)}
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
-
-export const CustomOptionRendering = () => (
-  <Select
-    customOptionRendering={(option) => <b>{option.slice(0, 3).toUpperCase()}</b>}
-    label="Arts & Creativity"
-    multiple={false}
-    onChange={(value) => {}}
-    options={["Mosaic", "Murales", "Paintings", "Photography", "Sculpture"]}
-  />
-);
+export const VariantStandard = Template.bind({});
+VariantStandard.args = {
+  ...Primary.args,
+  variant: "standard",
+};

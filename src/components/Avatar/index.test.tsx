@@ -80,6 +80,18 @@ describe("Avatar test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("loading - squared", () => {
+    const loadingDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.loading);
+    const { element, wrapper } = getAvatarTestable({
+      dataCy: loadingDataCy,
+      props: { loading: true, variant: "square" },
+    });
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("squared", () => {
     const { element, wrapper } = getAvatarTestable({ props: { variant: AvatarVariant.squared } });
     expect(wrapper.prop("className")).toContain("MuiAvatar-square");

@@ -70,6 +70,34 @@ exports[`Avatar test suite: image 1`] = `
 </div>
 `;
 
+exports[`Avatar test suite: loading - squared 1`] = `
+<span
+  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
+  style={
+    Object {
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+    data-cy="avatar-loading"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiAvatar-fallback"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+      />
+    </svg>
+  </div>
+</span>
+`;
+
 exports[`Avatar test suite: loading 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"

@@ -1,17 +1,16 @@
-import { ILocalizable } from "./Base";
+import { IInputBoolean } from "./InputBoolean";
 
+/**
+ * @deprecated Use "small" | "medium"
+ */
 export enum CheckboxSize {
   small = "small",
   default = "medium",
 }
 
-export interface ICheckbox extends ILocalizable {
-  disabled?: boolean;
+export interface ICheckbox extends IInputBoolean {
+  /**
+   * Adds intermediate state
+   */
   intermediate?: boolean;
-  label?: string;
-  labelPlacement?: "end" | "start";
-  onChange?: (checked: boolean) => void;
-  required?: boolean;
-  size?: CheckboxSize;
-  value?: boolean;
 }

@@ -1,7 +1,7 @@
-import React, { FC, useCallback } from "react";
+import React, { ChangeEvent, FC, useCallback } from "react";
 import { FormControlLabel as MUIFormControlLabel, Switch as MUISwitch } from "@material-ui/core";
 
-import { ISwitch, SwitchSize } from "../../types/Switch";
+import { ISwitch } from "../../types/Switch";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
@@ -25,11 +25,14 @@ const Switch: FC<ISwitch> = ({
   labelPlacement = "start",
   onChange,
   required = false,
-  size = SwitchSize.default,
+  size = "medium",
   style,
   value = false,
 }) => {
-  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
+  const onChangeHandler = useCallback(
+    ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => onChange && onChange(checked),
+    [onChange]
+  );
 
   return (
     <MUIFormControlLabel

@@ -1,85 +1,72 @@
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
-import { action } from "@storybook/addon-actions";
-import { boolean, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
-import Typography from "../Typography";
+import getDocsPage from "../../utils/stories";
 
 import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
-  title: "ListItem",
+  title: "Display/ListItem",
   component: ListItem,
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/ListItem",
-      component: "ListItem",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI ListItem Component",
+          url: "https://v4.mui.com/components/lists/",
+        },
+        component: "ListItem",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+      }),
+    },
   },
+} as ComponentMeta<typeof ListItem>;
+
+const Template: ComponentStory<typeof ListItem> = (args) => <ListItem {...args} dataCy={DATA_CY_DEFAULT} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  content: "John Doe",
 };
 
-export const Canvas = () => (
-  <ListItem
-    children={<span>List Item</span>}
-    dataCy={text("dataCy", DATA_CY_DEFAULT)}
-    dense={boolean("dense", false)}
-    icon={select("icon", Icons, undefined)}
-    loading={boolean("loading", false)}
-    onClick={action("On ListItem click")}
-    selected={boolean("selected", false)}
-  />
-);
+export const Dense = Template.bind({});
+Dense.args = {
+  ...Primary.args,
+  dense: true,
+};
 
-export const Basic = () => (
-  <ListItem>
-    <Typography>Basic List Item</Typography>
-  </ListItem>
-);
+export const Icon = Template.bind({});
+Icon.args = {
+  ...Primary.args,
+  icon: Icons.account,
+};
 
-export const CustomStyle = () => (
-  <ListItem style={{ backgroundColor: "red", color: "white" }}>
-    <Typography>Custom Style</Typography>
-  </ListItem>
-);
+export const IconCustom = Template.bind({});
+IconCustom.args = {
+  ...Primary.args,
+  icon: <MUIStyleIcon />,
+};
 
-export const Dense = () => (
-  <ListItem dense>
-    <Typography>Basic List Item</Typography>
-  </ListItem>
-);
+export const IconLoading = Template.bind({});
+IconLoading.args = {
+  ...Icon.args,
+  loading: true,
+};
 
-export const Loading = () => (
-  <StoriesWrapper>
-    <ListItem loading>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-    <ListItem icon={Icons.add} loading>
-      <Typography>Basic List Item</Typography>
-    </ListItem>
-  </StoriesWrapper>
-);
+export const Loading = Template.bind({});
+Loading.args = {
+  ...Primary.args,
+  loading: true,
+};
 
-export const Selected = () => (
-  <ListItem selected>
-    <Typography>Basic List Item</Typography>
-  </ListItem>
-);
-
-export const Icon = () => (
-  <ListItem icon={Icons.add}>
-    <Typography>Basic List Item</Typography>
-  </ListItem>
-);
-
-export const CustomIcon = () => (
-  <ListItem icon={<MUIStyleIcon />}>
-    <Typography>Basic List Item</Typography>
-  </ListItem>
-);
+export const Selected = Template.bind({});
+Selected.args = {
+  ...Primary.args,
+  selected: true,
+};

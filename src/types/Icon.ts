@@ -51,41 +51,85 @@ export enum Icons {
   visibility = "visibility",
   visibility_off = "visibility_off",
   warn = "warn",
-  wifi_on = "wifi",
-  wifi_off = "wifi_offline",
+  wifi_off = "wifi_off",
+  wifi_on = "wifi_on",
 }
 
+export type IIconsCatalog = {
+  [key in Icons]: ReactElement;
+};
+
+/**
+ * @deprecated Use "small" | "medium" | "large"
+ */
 export enum IconSize {
   default = "medium",
   large = "large",
   small = "small",
 }
 
+type IIconSize = "small" | "medium" | "large";
+
 interface IForwardedIcon {
+  /**
+   * Classname to allow styling
+   */
   className?: string;
+  /**
+   * Icon color
+   */
   color?: string;
+  /**
+   * Reference
+   */
   ref?: any;
 }
 
 export interface IIcon extends ILoadable {
+  /**
+   * Props forwarded to svg icon
+   */
   forwarded?: IForwardedIcon;
+  /**
+   * Icon name
+   */
   name?: Icons;
+  /**
+   * Adds rotating animation
+   */
   rotate?: boolean;
-  size?: IconSize;
+  /**
+   * Icon size
+   */
+  size?: IIconSize | IconSize;
 }
 
 export type IIconDimensions = {
-  [key in IconSize]: number;
+  [key in IIconSize]: number;
 };
 
+type IIconElement = Icons | ReactElement;
+
 export interface IIconUtilizer {
-  icon: Icons | ReactElement;
+  /**
+   * Icon expressed as Mosaic.Icons or ReactElement
+   */
+  icon: IIconElement;
 }
 
 export type IPartialIconUtilizer = Partial<IIconUtilizer>;
 
 export interface IRenderedIcon extends IForwardedIcon {
+  /**
+   * DataCy attribute
+   */
   "data-cy": string;
-  fontSize: IconSize;
+  /**
+   * Icon size in px
+   */
+  fontSize: IIconSize | IconSize;
+  /**
+   * Custom styling applied to root element
+   */
   style?: CSSProperties;
 }

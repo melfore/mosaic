@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC } from "react";
+import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
@@ -29,24 +29,32 @@ const ListItem: FC<IListItem> = ({
   dense = false,
   icon,
   loading = false,
-  onClick,
+  onClick: externalOnClick,
   selected = false,
   style,
 }) => {
-  const baseStyle: CSSProperties = { cursor: !loading && onClick ? "pointer" : "default" };
+  const baseStyle: CSSProperties = useMemo(
+    () => ({ cursor: !loading && externalOnClick ? "pointer" : "default" }),
+    [externalOnClick, loading]
+  );
+
+  const onClick = useCallback(
+    (event) => {
+      suppressEvent(event);
+      if (loading) {
+        return;
+      }
+
+      externalOnClick && externalOnClick();
+    },
+    [externalOnClick, loading]
+  );
 
   return (
     <MUIListItem
       data-cy={dataCy}
       dense={dense}
-      onClick={(event) => {
-        suppressEvent(event);
-        if (loading) {
-          return;
-        }
-
-        onClick && onClick();
-      }}
+      onClick={onClick}
       selected={!loading && selected}
       style={{ ...baseStyle, ...style }}
     >

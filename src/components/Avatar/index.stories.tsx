@@ -1,50 +1,77 @@
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
-import { boolean, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { AvatarVariant } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { getDocumentationPage } from "../../utils/stories";
+import getDocsPage from "../../utils/stories";
 
-import Avatar, { AvatarWithProps, DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
+import Avatar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 export default {
-  title: "Avatar",
-  component: AvatarWithProps,
+  title: "Display/Avatar",
+  component: Avatar,
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/Avatar",
-      component: "Avatar",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Avatar Component",
+          url: "https://v4.mui.com/components/avatars/",
+        },
+        component: "Avatar",
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+      }),
+    },
+  },
+} as ComponentMeta<typeof Avatar>;
+
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} dataCy={DATA_CY_DEFAULT} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  icon: Icons.add,
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  icon: <MUIStyleIcon />,
+};
+
+export const Image = Template.bind({});
+Image.args = {
+  src: "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg",
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
+};
+
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    color: "white",
   },
 };
 
-export const Canvas = () => (
-  <Avatar
-    alt={text("alt", "Alt Text")}
-    dataCy={text("dataCy", "avatar")}
-    icon={select("icon", Icons, Icons.add)}
-    loading={boolean("loading", false)}
-    text={text("text", "Avatar Text")}
-    variant={select("variant", AvatarVariant, AvatarVariant.default)}
-  />
-);
+export const Text = Template.bind({});
+Text.args = {
+  text: "MO",
+};
 
-export const CustomStyle = () => <Avatar icon={Icons.business} style={{ backgroundColor: "red", color: "white" }} />;
+export const VariantRounded = Template.bind({});
+VariantRounded.args = {
+  ...Primary.args,
+  variant: "rounded",
+};
 
-export const Icon = () => <Avatar icon={Icons.business} />;
-
-export const CustomIcon = () => <Avatar icon={<MUIStyleIcon />} />;
-
-export const Image = () => (
-  <Avatar src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg" />
-);
-
-export const Loading = () => <Avatar loading />;
-
-export const Text = () => <Avatar text="MO" />;
+export const VariantSquare = Template.bind({});
+VariantSquare.args = {
+  ...Primary.args,
+  variant: "square",
+};

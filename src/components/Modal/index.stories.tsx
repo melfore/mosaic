@@ -12,7 +12,7 @@ Modal.displayName = COMPONENT_NAME;
 ModalWithProps.displayName = COMPONENT_NAME;
 
 export default {
-  title: "Modal",
+  title: "Feedback/Modal",
   component: ModalWithProps,
   parameters: {
     docs: {

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import ModalMock from "../../utils/mocks/ModalMock";
+import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
 
 import Modal, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, ModalWithProps, SUBPARTS_MAP } from ".";
@@ -14,6 +14,7 @@ ModalWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Feedback/Modal",
   component: ModalWithProps,
+  decorators: [modalDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -33,11 +34,7 @@ export default {
   },
 } as ComponentMeta<typeof ModalWithProps>;
 
-const Template: ComponentStory<typeof ModalWithProps> = (args) => (
-  <ModalMock>
-    <Modal {...args} dataCy={DATA_CY_DEFAULT} />
-  </ModalMock>
-);
+const Template: ComponentStory<typeof ModalWithProps> = (args) => <Modal {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

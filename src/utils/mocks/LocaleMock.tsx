@@ -1,10 +1,9 @@
-import React, { FC } from "react";
-import { IntlProvider } from "react-intl";
+import React from "react";
+import { DecoratorFn } from "@storybook/react";
 
-export enum LocaleMock {
-  en = "en",
-  it = "it-IT",
-}
+import { LocalizedContextProvider } from "../../contexts/Localized";
+
+export type ILocaleMock = "en" | "it-IT";
 
 export enum MessageMock {
   button = "intl.message.button",
@@ -19,12 +18,14 @@ export enum MessageMock {
   typography = "typography",
 }
 
-interface IntlProviderMockType {
-  locale?: LocaleMock;
-}
+type IMessagesMock = {
+  [key in ILocaleMock]: {
+    [key in MessageMock]: string;
+  };
+};
 
-export const mockedMessages = {
-  [LocaleMock.en]: {
+export const MESSAGES_MOCK: IMessagesMock = {
+  en: {
     [MessageMock.button]: "Button",
     [MessageMock.cancel]: "Cancel",
     [MessageMock.checkbox]: "Checkbox",
@@ -36,7 +37,7 @@ export const mockedMessages = {
     [MessageMock.title]: "Title",
     [MessageMock.typography]: "Typography",
   },
-  [LocaleMock.it]: {
+  "it-IT": {
     [MessageMock.button]: "Bottone",
     [MessageMock.cancel]: "Annulla",
     [MessageMock.checkbox]: "Spunta",
@@ -50,12 +51,12 @@ export const mockedMessages = {
   },
 };
 
-const IntlProviderMock: FC<IntlProviderMockType> = ({ children, locale = LocaleMock.en }) => {
-  return (
-    <IntlProvider locale={locale} messages={mockedMessages[locale]}>
-      {children}
-    </IntlProvider>
-  );
-};
+const getLocalizedMessage = (key: MessageMock, locale: ILocaleMock): string => MESSAGES_MOCK[locale][key];
 
-export default IntlProviderMock;
+const localeDecorator: DecoratorFn = (Story) => (
+  <LocalizedContextProvider localize={(key) => getLocalizedMessage(key as MessageMock, "it-IT")}>
+    {Story()}
+  </LocalizedContextProvider>
+);
+
+export { getLocalizedMessage, localeDecorator };

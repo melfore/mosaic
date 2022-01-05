@@ -1,6 +1,6 @@
-import React, { ComponentType, FC } from "react";
-import { IntlShape, useIntl } from "react-intl";
+import React, { ComponentType, FC, useContext } from "react";
 
+import LocalizedContext, { ILocalizeMethod } from "../../contexts/Localized";
 import { ILocalizable } from "../../types/Base";
 
 export interface ILocalizableProperty {
@@ -23,7 +23,7 @@ const getValuePath = (name: string): ILocalizableValuePath => ({
   propertyName: name.split(".")[1],
 });
 
-const localizeString = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeString = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   if (!allProps || !allProps[propName]) {
     return { ...allProps };
   }
@@ -31,11 +31,11 @@ const localizeString = (propName: string, allProps: any, intl: IntlShape): any =
   const propValue = allProps[propName] as string;
   return {
     ...allProps,
-    [propName]: intl.formatMessage({ id: propValue }),
+    [propName]: localize(propValue),
   };
 };
 
-const localizeStringArray = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeStringArray = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   if (!allProps || !allProps[propName]) {
     return { ...allProps };
   }
@@ -43,11 +43,11 @@ const localizeStringArray = (propName: string, allProps: any, intl: IntlShape): 
   const stringArray = allProps[propName] as string[];
   return {
     ...allProps,
-    [propName]: stringArray.map((stringArrayElement) => intl.formatMessage({ id: stringArrayElement })),
+    [propName]: stringArray.map((stringArrayElement) => localize(stringArrayElement)),
   };
 };
 
-const localizeAnyObject = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeAnyObject = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   const { objectName, propertyName } = getValuePath(propName);
   if (!allProps || !allProps[objectName]) {
     return { ...allProps };
@@ -56,11 +56,11 @@ const localizeAnyObject = (propName: string, allProps: any, intl: IntlShape): an
   const anyObject = allProps[objectName] as any;
   return {
     ...allProps,
-    [objectName]: localizeString(propertyName, anyObject, intl),
+    [objectName]: localizeString(propertyName, anyObject, localize),
   };
 };
 
-const localizeAnyArray = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeAnyArray = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   const { objectName: arrayName, propertyName } = getValuePath(propName);
   if (!allProps || !allProps[arrayName]) {
     return { ...allProps };
@@ -69,7 +69,7 @@ const localizeAnyArray = (propName: string, allProps: any, intl: IntlShape): any
   const anyArray = allProps[arrayName] as any[];
   return {
     ...allProps,
-    [arrayName]: anyArray.map((anyArrayElement: any) => localizeString(propertyName, anyArrayElement, intl)),
+    [arrayName]: anyArray.map((anyArrayElement: any) => localizeString(propertyName, anyArrayElement, localize)),
   };
 };
 
@@ -82,24 +82,25 @@ const localized =
       return <Component {...props} />;
     }
 
-    const intl = useIntl();
+    const { localize } = useContext(LocalizedContext);
+    // const intl = useIntl();
     let localizedProps = { ...props } as any;
     localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
 
     localizableProps.forEach(({ name, type }) => {
       switch (type) {
         case "any":
-          localizedProps = localizeAnyObject(name, localizedProps, intl);
+          localizedProps = localizeAnyObject(name, localizedProps, localize);
           break;
         case "any[]":
-          localizedProps = localizeAnyArray(name, localizedProps, intl);
+          localizedProps = localizeAnyArray(name, localizedProps, localize);
           break;
         case "string":
         default:
-          localizedProps = localizeString(name, localizedProps, intl);
+          localizedProps = localizeString(name, localizedProps, localize);
           break;
         case "string[]":
-          localizedProps = localizeStringArray(name, localizedProps, intl);
+          localizedProps = localizeStringArray(name, localizedProps, localize);
           break;
       }
     });

@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 
 import { InputSize, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
-import { MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import InputNumber, { DATA_CY_DEFAULT } from ".";

@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import { IAppBar } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
-import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedMessage, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import AppBar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -41,17 +41,16 @@ describe("AppBar test suite:", () => {
     const title = MessageMock.title;
     const { wrapper } = getAppBarTestable({
       dataCy: title,
-      // TODO: review for localized hoc
       props: { localized: true, title, userMenu: [{ label, onClick: jest.fn() }] },
     });
 
     const titleElementDataCy = getComposedDataCy(title, SUBPARTS_MAP.titleText);
     const titleElement = wrapper.find(`h2[data-cy='${titleElementDataCy}']`);
-    expect(titleElement.text()).toEqual(mockedMessages[LocaleMock.en][title]);
+    expect(titleElement.text()).toEqual(getLocalizedMessage(title, "en"));
 
     const userMenuEntryDataCy = getComposedDataCy(title, SUBPARTS_MAP.userMenuItem, 0);
     const userMenuEntry = wrapper.find(`li[data-cy='${userMenuEntryDataCy}']`);
-    expect(userMenuEntry.text()).toEqual(mockedMessages[LocaleMock.en][label]);
+    expect(userMenuEntry.text()).toEqual(getLocalizedMessage(label, "en"));
   });
 
   it("actions", () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { DecoratorFn } from "@storybook/react";
 
-import { LocalizedContextProvider } from "../../contexts/Localized";
+import { MosaicContextProvider } from "../../contexts/Mosaic";
 
 export type ILocaleMock = "en" | "it-IT";
 
@@ -51,12 +51,12 @@ export const MESSAGES_MOCK: IMessagesMock = {
   },
 };
 
-const getLocalizedMessage = (key: MessageMock, locale: ILocaleMock): string => MESSAGES_MOCK[locale][key];
+const getLocalizedMessageMock = (key: MessageMock, locale: ILocaleMock): string => MESSAGES_MOCK[locale][key] || key;
 
 const localeDecorator: DecoratorFn = (Story) => (
-  <LocalizedContextProvider localize={(key) => getLocalizedMessage(key as MessageMock, "it-IT")}>
+  <MosaicContextProvider localize={(key) => getLocalizedMessageMock(key as MessageMock, "it-IT")}>
     {Story()}
-  </LocalizedContextProvider>
+  </MosaicContextProvider>
 );
 
-export { getLocalizedMessage, localeDecorator };
+export { getLocalizedMessageMock, localeDecorator };

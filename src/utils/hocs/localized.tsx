@@ -1,6 +1,6 @@
 import React, { ComponentType, FC, useContext } from "react";
 
-import LocalizedContext, { ILocalizeMethod } from "../../contexts/Localized";
+import MosaicContext, { ILocalizeMethod } from "../../contexts/Mosaic";
 import { ILocalizable } from "../../types/Base";
 
 export interface ILocalizableProperty {
@@ -82,8 +82,7 @@ const localized =
       return <Component {...props} />;
     }
 
-    const { localize } = useContext(LocalizedContext);
-    // const intl = useIntl();
+    const { localize } = useContext(MosaicContext);
     let localizedProps = { ...props } as any;
     localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
 

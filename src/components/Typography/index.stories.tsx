@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
@@ -12,6 +13,7 @@ TypographyWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Display/Typography",
   component: TypographyWithProps,
+  decorators: [localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-// import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
@@ -16,6 +16,7 @@ ButtonWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Inputs/Button",
   component: ButtonWithProps,
+  decorators: [localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

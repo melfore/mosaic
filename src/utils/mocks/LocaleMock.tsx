@@ -6,16 +6,16 @@ import { MosaicContextProvider } from "../../contexts/Mosaic";
 export type ILocaleMock = "en" | "it-IT";
 
 export enum MessageMock {
-  button = "intl.message.button",
-  cancel = "intl.message.cancel",
-  checkbox = "intl.message.checkbox",
-  confirm = "intl.message.confirm",
-  inputNumber = "intl.message.inputNumber",
-  inputText = "intl.message.inputText",
-  subtitle = "intl.message.subtitle",
-  switch = "intl.message.switch",
-  title = "intl.message.title",
-  typography = "typography",
+  button = "locale.button",
+  cancel = "locale.cancel",
+  checkbox = "locale.checkbox",
+  confirm = "locale.confirm",
+  inputNumber = "locale.inputNumber",
+  inputText = "locale.inputText",
+  subtitle = "locale.subtitle",
+  switch = "locale.switch",
+  title = "locale.title",
+  typography = "locale.typography",
 }
 
 type IMessagesMock = {

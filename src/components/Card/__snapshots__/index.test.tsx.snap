@@ -495,7 +495,7 @@ exports[`Card test suite: loading 1`] = `
 exports[`Card test suite: localized 1`] = `
 <div
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
-  data-cy="intl.message.title"
+  data-cy="locale.title"
   style={
     Object {
       "margin": "16px",
@@ -511,19 +511,19 @@ exports[`Card test suite: localized 1`] = `
     >
       <h2
         className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
-        data-cy="intl.message.title-title"
+        data-cy="locale.title-title"
       >
         Title
       </h2>
       <span
         className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
-        data-cy="intl.message.title-subtitle"
+        data-cy="locale.title-subtitle"
       />
     </div>
   </div>
   <div
     className="MuiCardContent-root"
-    data-cy="intl.message.title-content"
+    data-cy="locale.title-content"
     style={
       Object {
         "padding": "8px 16px",

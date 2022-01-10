@@ -1,7 +1,8 @@
-import React, { ComponentType, FC, useContext } from "react";
+import React, { ComponentType, FC, useCallback, useContext, useMemo } from "react";
 
 import MosaicContext, { ILocalizeMethod } from "../../contexts/Mosaic";
 import { ILocalizable } from "../../types/Base";
+import { logWarn } from "../logger";
 
 export interface ILocalizableProperty {
   name: string;
@@ -76,35 +77,56 @@ const localizeAnyArray = (propName: string, allProps: any, localize: ILocalizeMe
 const localized =
   <T extends ILocalizable>(Component: ComponentType<T>, options: ILocalizedOptions): FC<T> =>
   (props) => {
-    const { dataCy, localized } = props;
+    const { dataCy: externalDataCy, localized } = props;
     const { dataCyShortcut, localizableProps } = options;
     if (!localized) {
       return <Component {...props} />;
     }
 
-    const { localize } = useContext(MosaicContext);
-    let localizedProps = { ...props } as any;
-    localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
+    const dataCy = useMemo(
+      (): string => (!externalDataCy ? (props as any)[dataCyShortcut] : dataCy),
+      [dataCyShortcut, externalDataCy, props]
+    );
 
-    localizableProps.forEach(({ name, type }) => {
-      switch (type) {
-        case "any":
-          localizedProps = localizeAnyObject(name, localizedProps, localize);
-          break;
-        case "any[]":
-          localizedProps = localizeAnyArray(name, localizedProps, localize);
-          break;
-        case "string":
-        default:
-          localizedProps = localizeString(name, localizedProps, localize);
-          break;
-        case "string[]":
-          localizedProps = localizeStringArray(name, localizedProps, localize);
-          break;
-      }
-    });
+    const mosaicContext = useContext(MosaicContext);
 
-    return <Component {...localizedProps} />;
+    const localize = useCallback(
+      (key: string) => {
+        if (!mosaicContext) {
+          logWarn("Localize", "Unable to localize outside MosaicContext");
+          return key;
+        }
+
+        const { localize } = mosaicContext;
+        return localize(key);
+      },
+      [mosaicContext]
+    );
+
+    const localizedProps = useMemo(() => {
+      let localizedProps = { ...props };
+      localizableProps.forEach(({ name, type }) => {
+        switch (type) {
+          case "any":
+            localizedProps = localizeAnyObject(name, localizedProps, localize);
+            break;
+          case "any[]":
+            localizedProps = localizeAnyArray(name, localizedProps, localize);
+            break;
+          case "string":
+          default:
+            localizedProps = localizeString(name, localizedProps, localize);
+            break;
+          case "string[]":
+            localizedProps = localizeStringArray(name, localizedProps, localize);
+            break;
+        }
+      });
+
+      return localizedProps;
+    }, [localizableProps, props, localize]);
+
+    return <Component {...localizedProps} dataCy={dataCy} />;
   };
 
 export default localized;

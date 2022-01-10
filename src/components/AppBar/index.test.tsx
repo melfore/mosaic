@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import { IAppBar } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
-import { getLocalizedMessage, MessageMock } from "../../utils/mocks/LocaleMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import AppBar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -46,11 +46,11 @@ describe("AppBar test suite:", () => {
 
     const titleElementDataCy = getComposedDataCy(title, SUBPARTS_MAP.titleText);
     const titleElement = wrapper.find(`h2[data-cy='${titleElementDataCy}']`);
-    expect(titleElement.text()).toEqual(getLocalizedMessage(title, "en"));
+    expect(titleElement.text()).toEqual(getLocalizedMessageMock(title, "en"));
 
     const userMenuEntryDataCy = getComposedDataCy(title, SUBPARTS_MAP.userMenuItem, 0);
     const userMenuEntry = wrapper.find(`li[data-cy='${userMenuEntryDataCy}']`);
-    expect(userMenuEntry.text()).toEqual(getLocalizedMessage(label, "en"));
+    expect(userMenuEntry.text()).toEqual(getLocalizedMessageMock(label, "en"));
   });
 
   it("actions", () => {

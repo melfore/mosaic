@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 
 import { ISwitch, SwitchSize } from "../../types/Switch";
 import { getComposedDataCy } from "../../utils";
-import { getLocalizedMessage, MessageMock } from "../../utils/mocks/LocaleMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Switch, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -46,7 +46,7 @@ describe("Switch test suite:", () => {
     const { element, wrapper } = getSwitchTestable({ dataCy: label, props: { label, localized: true } });
 
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
-    expect(labelElement.text()).toEqual(getLocalizedMessage(label, "en"));
+    expect(labelElement.text()).toEqual(getLocalizedMessageMock(label, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

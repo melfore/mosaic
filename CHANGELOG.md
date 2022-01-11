@@ -1,3 +1,27 @@
+# [6.0.0](https://github.com/melfore/mosaic/compare/v5.9.4...v6.0.0) (2022-01-11)
+
+
+### chore
+
+* 🤖 Removed react-intl dependency ([c5cf953](https://github.com/melfore/mosaic/commit/c5cf953cd0fdf5af29ad8141a6c6dc412682e511))
+
+
+### Features
+
+* 🎸 [Localized] Added Localized context ([deb8a14](https://github.com/melfore/mosaic/commit/deb8a14324185a732c5bf3855aa73f3755989d16))
+* 🎸 Added Mosaic context ([d68682b](https://github.com/melfore/mosaic/commit/d68682b8bd0c5293f544ed122b6111b1861adfc8))
+* 🎸 Export of Mosaic context ([4d326f8](https://github.com/melfore/mosaic/commit/4d326f8b1dad104d06e82c40ff7672929095dd4e))
+
+
+### BREAKING CHANGES
+
+* 🧨 Removed react-intl dependency
+
+✅ Closes: 193
+* 🧨 Localized context requires adding Mosaic context in your project
+
+✅ Closes: 193
+
 ## [5.9.4](https://github.com/melfore/mosaic/compare/v5.9.3...v5.9.4) (2021-11-25)
 
 ## [5.9.3](https://github.com/melfore/mosaic/compare/v5.9.2...v5.9.3) (2021-11-25)

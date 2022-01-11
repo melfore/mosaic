@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
 
@@ -14,7 +15,7 @@ ModalWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Feedback/Modal",
   component: ModalWithProps,
-  decorators: [modalDecorator],
+  decorators: [localeDecorator, modalDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

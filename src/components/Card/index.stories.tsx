@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 import Button from "../Button";
 
@@ -15,6 +16,7 @@ CardWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Surfaces/Card",
   component: CardWithProps,
+  decorators: [localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

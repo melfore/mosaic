@@ -1,8 +1,9 @@
 import React, { ComponentType, createElement, ReactElement } from "react";
 import { mount, ReactWrapper } from "enzyme";
 
+import { MosaicContextProvider } from "../../contexts/Mosaic";
 import { IBase } from "../../types/Base";
-import IntlProviderMock, { LocaleMock } from "../mocks/IntlProviderMock";
+import { getLocalizedMessageMock, MessageMock } from "../mocks/LocaleMock";
 
 interface ITestableComponent {
   element: ReactElement;
@@ -30,7 +31,11 @@ const getReactElement = <T extends IBase>(Component: ComponentType<T>, options: 
   const { localized, props } = options;
   let element = createElement(Component, props);
   if (localized) {
-    element = <IntlProviderMock locale={LocaleMock.en}>{createElement(Component, props)}</IntlProviderMock>;
+    element = (
+      <MosaicContextProvider localize={(key) => getLocalizedMessageMock(key as MessageMock, "en")}>
+        {createElement(Component, props)}
+      </MosaicContextProvider>
+    );
   }
 
   return element;

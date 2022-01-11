@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import AppBar, { AppBarWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
@@ -14,6 +15,7 @@ AppBarWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Surfaces/AppBar",
   component: AppBarWithProps,
+  decorators: [localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

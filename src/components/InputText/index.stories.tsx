@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { formDecorator } from "../../utils/mocks/FormMock";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import InputText, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputTextWithProps, LOCALIZABLE_PROPS } from ".";
@@ -14,7 +15,7 @@ InputTextWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Inputs/InputText",
   component: InputTextWithProps,
-  decorators: [formDecorator],
+  decorators: [formDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

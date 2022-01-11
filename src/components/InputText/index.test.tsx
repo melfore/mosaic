@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import { Icons } from "../../types/Icon";
 import { InputSize, InputType, InputVariant } from "../../types/Input";
 import { IInputText } from "../../types/InputText";
-import { MessageMock } from "../../utils/mocks/IntlProviderMock";
+import { MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import InputText, { DATA_CY_DEFAULT } from ".";

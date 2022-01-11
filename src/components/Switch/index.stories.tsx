@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
 import { formDecorator } from "../../utils/mocks/FormMock";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, SwitchWithProps } from ".";
@@ -14,7 +15,7 @@ SwitchWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Inputs/Switch",
   component: SwitchWithProps,
-  decorators: [formDecorator],
+  decorators: [formDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

@@ -1,7 +1,8 @@
-import React, { ComponentType, FC } from "react";
-import { IntlShape, useIntl } from "react-intl";
+import React, { ComponentType, FC, useCallback, useMemo } from "react";
 
+import { ILocalizeMethod, useMosaicContext } from "../../contexts/Mosaic";
 import { ILocalizable } from "../../types/Base";
+import { logWarn } from "../logger";
 
 export interface ILocalizableProperty {
   name: string;
@@ -23,7 +24,7 @@ const getValuePath = (name: string): ILocalizableValuePath => ({
   propertyName: name.split(".")[1],
 });
 
-const localizeString = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeString = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   if (!allProps || !allProps[propName]) {
     return { ...allProps };
   }
@@ -31,11 +32,11 @@ const localizeString = (propName: string, allProps: any, intl: IntlShape): any =
   const propValue = allProps[propName] as string;
   return {
     ...allProps,
-    [propName]: intl.formatMessage({ id: propValue }),
+    [propName]: localize(propValue),
   };
 };
 
-const localizeStringArray = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeStringArray = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   if (!allProps || !allProps[propName]) {
     return { ...allProps };
   }
@@ -43,11 +44,11 @@ const localizeStringArray = (propName: string, allProps: any, intl: IntlShape): 
   const stringArray = allProps[propName] as string[];
   return {
     ...allProps,
-    [propName]: stringArray.map((stringArrayElement) => intl.formatMessage({ id: stringArrayElement })),
+    [propName]: stringArray.map((stringArrayElement) => localize(stringArrayElement)),
   };
 };
 
-const localizeAnyObject = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeAnyObject = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   const { objectName, propertyName } = getValuePath(propName);
   if (!allProps || !allProps[objectName]) {
     return { ...allProps };
@@ -56,11 +57,11 @@ const localizeAnyObject = (propName: string, allProps: any, intl: IntlShape): an
   const anyObject = allProps[objectName] as any;
   return {
     ...allProps,
-    [objectName]: localizeString(propertyName, anyObject, intl),
+    [objectName]: localizeString(propertyName, anyObject, localize),
   };
 };
 
-const localizeAnyArray = (propName: string, allProps: any, intl: IntlShape): any => {
+const localizeAnyArray = (propName: string, allProps: any, localize: ILocalizeMethod): any => {
   const { objectName: arrayName, propertyName } = getValuePath(propName);
   if (!allProps || !allProps[arrayName]) {
     return { ...allProps };
@@ -69,42 +70,63 @@ const localizeAnyArray = (propName: string, allProps: any, intl: IntlShape): any
   const anyArray = allProps[arrayName] as any[];
   return {
     ...allProps,
-    [arrayName]: anyArray.map((anyArrayElement: any) => localizeString(propertyName, anyArrayElement, intl)),
+    [arrayName]: anyArray.map((anyArrayElement: any) => localizeString(propertyName, anyArrayElement, localize)),
   };
 };
 
 const localized =
   <T extends ILocalizable>(Component: ComponentType<T>, options: ILocalizedOptions): FC<T> =>
   (props) => {
-    const { dataCy, localized } = props;
+    const { dataCy: externalDataCy, localized } = props;
     const { dataCyShortcut, localizableProps } = options;
     if (!localized) {
       return <Component {...props} />;
     }
 
-    const intl = useIntl();
-    let localizedProps = { ...props } as any;
-    localizedProps.dataCy = !dataCy ? localizedProps[dataCyShortcut] : dataCy;
+    const dataCy = useMemo(
+      (): string => (!externalDataCy ? (props as any)[dataCyShortcut] : dataCy),
+      [dataCyShortcut, externalDataCy, props]
+    );
 
-    localizableProps.forEach(({ name, type }) => {
-      switch (type) {
-        case "any":
-          localizedProps = localizeAnyObject(name, localizedProps, intl);
-          break;
-        case "any[]":
-          localizedProps = localizeAnyArray(name, localizedProps, intl);
-          break;
-        case "string":
-        default:
-          localizedProps = localizeString(name, localizedProps, intl);
-          break;
-        case "string[]":
-          localizedProps = localizeStringArray(name, localizedProps, intl);
-          break;
-      }
-    });
+    const mosaicContext = useMosaicContext();
 
-    return <Component {...localizedProps} />;
+    const localize = useCallback(
+      (key: string) => {
+        if (!mosaicContext) {
+          logWarn("MosaicContext", "Cannot use 'localize' outside MosaicContextProvider");
+          return key;
+        }
+
+        const { localize } = mosaicContext;
+        return localize(key);
+      },
+      [mosaicContext]
+    );
+
+    const localizedProps = useMemo(() => {
+      let localizedProps = { ...props };
+      localizableProps.forEach(({ name, type }) => {
+        switch (type) {
+          case "any":
+            localizedProps = localizeAnyObject(name, localizedProps, localize);
+            break;
+          case "any[]":
+            localizedProps = localizeAnyArray(name, localizedProps, localize);
+            break;
+          case "string":
+          default:
+            localizedProps = localizeString(name, localizedProps, localize);
+            break;
+          case "string[]":
+            localizedProps = localizeStringArray(name, localizedProps, localize);
+            break;
+        }
+      });
+
+      return localizedProps;
+    }, [localizableProps, props, localize]);
+
+    return <Component {...localizedProps} dataCy={dataCy} />;
   };
 
 export default localized;

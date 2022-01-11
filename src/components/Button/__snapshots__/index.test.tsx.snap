@@ -358,7 +358,7 @@ exports[`Button test suite: icon 1`] = `
 exports[`Button test suite: localized 1`] = `
 <button
   className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
-  data-cy="intl.message.button"
+  data-cy="locale.button"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}

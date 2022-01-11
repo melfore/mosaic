@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import { ICard } from "../../types/Card";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
-import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 import IconButton from "../IconButton";
 import Typography from "../Typography";
@@ -49,7 +49,7 @@ describe("Card test suite:", () => {
 
     const titleDataCy = getComposedDataCy(title, SUBPARTS_MAP.title);
     const titleWrapper = wrapper.find(`h2[data-cy='${titleDataCy}']`);
-    expect(titleWrapper.text()).toEqual(mockedMessages[LocaleMock.en][title]);
+    expect(titleWrapper.text()).toEqual(getLocalizedMessageMock(title, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

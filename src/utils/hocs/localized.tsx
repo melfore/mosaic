@@ -1,6 +1,6 @@
-import React, { ComponentType, FC, useCallback, useContext, useMemo } from "react";
+import React, { ComponentType, FC, useCallback, useMemo } from "react";
 
-import MosaicContext, { ILocalizeMethod } from "../../contexts/Mosaic";
+import { ILocalizeMethod, useMosaicContext } from "../../contexts/Mosaic";
 import { ILocalizable } from "../../types/Base";
 import { logWarn } from "../logger";
 
@@ -88,12 +88,12 @@ const localized =
       [dataCyShortcut, externalDataCy, props]
     );
 
-    const mosaicContext = useContext(MosaicContext);
+    const mosaicContext = useMosaicContext();
 
     const localize = useCallback(
       (key: string) => {
         if (!mosaicContext) {
-          logWarn("Localize", "Unable to localize outside MosaicContext");
+          logWarn("MosaicContext", "Cannot use 'localize' outside MosaicContextProvider");
           return key;
         }
 

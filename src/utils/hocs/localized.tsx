@@ -1,6 +1,7 @@
 import React, { ComponentType, FC, useCallback, useMemo } from "react";
 
-import { ILocalizeMethod, useMosaicContext } from "../../contexts/Mosaic";
+import { ILocalizeMethod } from "../../contexts/Mosaic";
+import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { ILocalizable } from "../../types/Base";
 import { logWarn } from "../logger";
 

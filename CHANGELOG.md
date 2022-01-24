@@ -1,3 +1,11 @@
+# [6.1.0](https://github.com/melfore/mosaic/compare/v6.0.0...v6.1.0) (2022-01-24)
+
+
+### Features
+
+* 🎸 [Modal] Added responsive mode and property ([0ba6bad](https://github.com/melfore/mosaic/commit/0ba6badd8b85c065d05e9739d6c3713b1f06c3e8))
+* 🎸 Added useViewState hook ([7f6b07b](https://github.com/melfore/mosaic/commit/7f6b07b04305bf53f71c88605e74156eb185eaf1))
+
 # [6.0.0](https://github.com/melfore/mosaic/compare/v5.9.4...v6.0.0) (2022-01-11)
 
 

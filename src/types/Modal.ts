@@ -1,3 +1,5 @@
+import { DialogProps as MUIDialogProps } from "@material-ui/core";
+
 import { ILocalizable } from "./Base";
 import { IButton } from "./Button";
 
@@ -20,6 +22,8 @@ type IModalAction = Pick<IButton, "disabled" | "label" | "style" | "variant"> & 
   action: () => void;
 };
 
+export type IModalViewOptions = Pick<MUIDialogProps, "fullScreen" | "maxWidth">;
+
 export interface IModal extends ILocalizable {
   /**
    * Modal cancel button
@@ -41,6 +45,10 @@ export interface IModal extends ILocalizable {
    * Enables open state, making Modal appear
    */
   open?: boolean;
+  /**
+   * Enables responsive state, Modal fullScreen when sm
+   */
+  responsive?: boolean;
   /**
    * Size of Modal dialog
    */

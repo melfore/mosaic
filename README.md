@@ -4,7 +4,7 @@
 
 Melfore's UI kit library based on `@material-ui`.
 
- <a href="https://github.com/melfore/mosaic/blob/master/CHANGELOG.md" target="_blank">**Changelog**</a> | <a href="https://github.com/melfore/mosaic/blob/master/CONTRIBUTING.md" target="_blank">**Contributing**</a> | <a href="https://melfore.github.io/mosaic/" target="_blank">**Demo**</a>
+ <a href="https://github.com/melfore/mosaic/blob/master/CHANGELOG.md" target="_blank">**Changelog**</a> | <a href="https://github.com/melfore/mosaic/blob/master/CONTRIBUTING.md" target="_blank">**Contributing**</a> | <a href="https://github.com/melfore/mosaic/blob/master/MIGRATION.md" target="_blank">**Migration**</a> | <a href="https://melfore.github.io/mosaic/" target="_blank">**Demo**</a>
 
 ## Getting started
 

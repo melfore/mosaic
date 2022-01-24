@@ -1,31 +1,26 @@
-import React, { createContext, FC, useContext } from "react";
+import React, { createContext, FC } from "react";
 
-import { logError } from "../utils/logger";
+import useViewState, { IUseViewStateOptions, IViewState } from "../hooks/useViewState";
 
 export type ILocalizeMethod = (key: string) => string;
 
-export interface ILocalizedContext {
+interface IMosaicContextOptions {
+  breakpoints?: IUseViewStateOptions;
   localize: ILocalizeMethod;
 }
 
-interface IMosaicContext extends ILocalizedContext {}
+export interface IMosaicContext {
+  localize: ILocalizeMethod;
+  view: IViewState;
+}
 
-const MosaicContext = createContext<IMosaicContext | undefined>(undefined);
-MosaicContext.displayName = "MosaicContext";
+export const MOSAIC_CONTEXT_DISPLAY_NAME = "MosaicContext";
 
-export const useMosaicContext = (): IMosaicContext | null => {
-  const mosaicContext = useContext(MosaicContext);
-  if (mosaicContext === undefined) {
-    logError(
-      "MosaicContext",
-      "Some features require MosaicContext to be in place. Please add MosaicContextProvider in your component's tree"
-    );
-    return null;
-  }
+export const MosaicContext = createContext<IMosaicContext | undefined>(undefined);
 
-  return mosaicContext;
-};
+MosaicContext.displayName = MOSAIC_CONTEXT_DISPLAY_NAME;
 
-export const MosaicContextProvider: FC<IMosaicContext> = ({ children, localize }) => {
-  return <MosaicContext.Provider value={{ localize }}>{children}</MosaicContext.Provider>;
+export const MosaicContextProvider: FC<IMosaicContextOptions> = ({ children, localize, breakpoints }) => {
+  const view = useViewState(breakpoints);
+  return <MosaicContext.Provider value={{ localize, view }}>{children}</MosaicContext.Provider>;
 };

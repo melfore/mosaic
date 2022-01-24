@@ -6,8 +6,9 @@ import {
   DialogTitle as MUIDialogTitle,
 } from "@material-ui/core";
 
+import { useMosaicContext } from "../..";
 import { Icons } from "../../types/Icon";
-import { IModal } from "../../types/Modal";
+import { IModal, IModalViewOptions } from "../../types/Modal";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
@@ -46,9 +47,14 @@ const Modal: FC<IModal> = ({
   dataCy = DATA_CY_DEFAULT,
   onClose: externalOnClose,
   open = false,
+  responsive = false,
   size = "md",
   title = "",
 }) => {
+  const {
+    view: { mobile: mobileView },
+  } = useMosaicContext();
+
   const hasActions = useMemo(() => cancel || confirm, [cancel, confirm]);
 
   const onClose = useCallback(
@@ -62,16 +68,22 @@ const Modal: FC<IModal> = ({
     [externalOnClose]
   );
 
+  const viewOptions: IModalViewOptions = useMemo(() => {
+    if (responsive) {
+      return {
+        fullScreen: size === "xl",
+        maxWidth: size,
+      };
+    }
+
+    return {
+      fullScreen: mobileView || size === "xl",
+      maxWidth: !mobileView ? size : undefined,
+    };
+  }, [mobileView, responsive, size]);
+
   return (
-    <MUIDialog
-      aria-labelledby="modal-title"
-      data-cy={dataCy}
-      fullScreen={size === "xl"}
-      fullWidth
-      maxWidth={size}
-      onClose={onClose}
-      open={open}
-    >
+    <MUIDialog {...viewOptions} aria-labelledby="modal-title" data-cy={dataCy} fullWidth onClose={onClose} open={open}>
       <MUIDialogTitle
         id="modal-title"
         disableTypography

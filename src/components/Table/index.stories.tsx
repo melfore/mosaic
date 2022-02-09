@@ -99,7 +99,7 @@ Actions.args = {
     },
     {
       callback: () => {},
-      disabled: (data) => data.age > 40,
+      disabled: (data: any) => data.age > 40,
       icon: Icons.notifications,
       label: "Notify",
       position: "row",
@@ -110,6 +110,13 @@ Actions.args = {
       icon: Icons.delete,
       label: "Delete",
       position: "row",
+    },
+    {
+      callback: () => {},
+      disabled: (data: any[]) => data.length < 3,
+      icon: Icons.delete,
+      label: "Delete at least 3",
+      position: "selection",
     },
   ],
 };

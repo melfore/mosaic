@@ -24,7 +24,7 @@ export interface ITableAction extends IPartialIconUtilizer {
   /**
    * Enables disabled state
    */
-  disabled?: boolean | ((data: any) => boolean);
+  disabled?: boolean | ((data: any) => boolean) | ((data: any[]) => boolean);
   /**
    * Hides action
    */

@@ -439,6 +439,58 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("selection action - disabled", () => {
+    const callback = jest.fn();
+    const label = "Selection";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [{ callback, disabled: true, icon: Icons.account, label, position: TableActionPosition.selection }],
+        selectionFilter: (d) => d.name.startsWith("P"),
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(0);
+
+    const actionLabel = action.find("span.MuiButton-label");
+    expect(actionLabel.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("selection action - disabled by data", () => {
+    const callback = jest.fn();
+    const label = "Selection";
+    const { element, wrapper } = getTableTestable({
+      props: {
+        actions: [
+          {
+            callback,
+            disabled: (data: any[]) => data.length === 2,
+            icon: Icons.account,
+            label,
+            position: TableActionPosition.selection,
+          },
+        ],
+        selectionFilter: (d) => d.name.startsWith("P"),
+      },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(0);
+
+    const actionLabel = action.find("span.MuiButton-label");
+    expect(actionLabel.text()).toEqual(label);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("sticky", () => {
     const { element } = getTableTestable({ props: { sticky: true } });
 

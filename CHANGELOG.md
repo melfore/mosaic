@@ -1,3 +1,11 @@
+# [6.2.0](https://github.com/melfore/mosaic/compare/v6.1.1...v6.2.0) (2022-02-09)
+
+
+### Features
+
+* 🎸 [Table] Actions to be disabled based on data selection ([61f3dff](https://github.com/melfore/mosaic/commit/61f3dffcfe70385099ed1b7d454c2fb22f4d966d))
+* 🎸 [TableToolbarAction] Check disable condition on data[] ([fd5d649](https://github.com/melfore/mosaic/commit/fd5d6495594b13c529b4c2f4d249f37ef88bbad5))
+
 ## [6.1.1](https://github.com/melfore/mosaic/compare/v6.1.0...v6.1.1) (2022-01-25)
 
 # [6.1.0](https://github.com/melfore/mosaic/compare/v6.0.0...v6.1.0) (2022-01-24)

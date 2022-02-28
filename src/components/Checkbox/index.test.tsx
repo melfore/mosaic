@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 
 import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";
-import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Checkbox, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -47,7 +47,7 @@ describe("Checkbox test suite:", () => {
     const { element, wrapper } = getCheckboxTestable({ dataCy: label, props: { label, localized: true } });
 
     const labelElement = wrapper.find("span.MuiFormControlLabel-label");
-    expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
+    expect(labelElement.text()).toEqual(getLocalizedMessageMock(label, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

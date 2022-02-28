@@ -2,7 +2,7 @@ import React, { CSSProperties, FC, memo } from "react";
 import { Avatar as MUIAvatar, useTheme } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { AvatarVariant, IAvatar } from "../../types/Avatar";
+import { IAvatar } from "../../types/Avatar";
 import { getComposedDataCy } from "../../utils";
 import IconWrapper from "../IconWrapper";
 import Typography from "../Typography";
@@ -29,7 +29,7 @@ const Avatar: FC<IAvatar> = ({
   src,
   style,
   text,
-  variant = AvatarVariant.default,
+  variant = "circular",
 }) => {
   const theme = useTheme();
   const baseStyle: CSSProperties = {
@@ -39,7 +39,7 @@ const Avatar: FC<IAvatar> = ({
 
   if (loading) {
     return (
-      <MUISkeleton variant="circle">
+      <MUISkeleton variant={variant === "circular" ? "circle" : "rect"}>
         <MUIAvatar data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.loading)} />
       </MUISkeleton>
     );

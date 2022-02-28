@@ -38,3 +38,7 @@ export { TableActionPosition } from "./types/Table";
 
 export { default as Typography } from "./components/Typography";
 export { TypographyVariants, TypographyDisplay } from "./types/Typography";
+
+export { MosaicContextProvider } from "./contexts/Mosaic";
+
+export { useMosaicContext } from "./hooks/useMosaicContext";

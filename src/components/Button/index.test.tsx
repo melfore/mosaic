@@ -5,7 +5,7 @@ import MUIStyleIcon from "@material-ui/icons/Style";
 import { ButtonIconPosition, ButtonVariants, IButton } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
-import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Button, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
@@ -56,7 +56,7 @@ describe("Button test suite:", () => {
     const { element, wrapper } = getButtonTestable({ dataCy: label, props: { label, localized: true } });
 
     const labelElement = wrapper.find("span.MuiButton-label");
-    expect(labelElement.text()).toEqual(mockedMessages[LocaleMock.en][label]);
+    expect(labelElement.text()).toEqual(getLocalizedMessageMock(label, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

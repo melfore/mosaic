@@ -1,36 +1,11 @@
-import React, { CSSProperties, FC } from "react";
-import { InputAdornment as MUIInputAdornment, TextField as MUITextField } from "@material-ui/core";
+import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
+import { TextField as MUITextField } from "@material-ui/core";
 
-import { IconSize } from "../../types/Icon";
-import { InputSize, InputType, InputVariant } from "../../types/Input";
-import { IInputAdornment, IInputText, IMultilineInput } from "../../types/InputText";
+import { IInputText } from "../../types/InputText";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import IconButton from "../IconButton";
+import { getAdornment } from "../Input/utils";
 
-const getAdornment = (adornment?: IInputAdornment) => {
-  if (!adornment) {
-    return undefined;
-  }
-
-  const { icon, onClick } = adornment;
-  return (
-    <MUIInputAdornment position="end">
-      <IconButton disabled={!onClick} icon={icon} onClick={onClick!} size={IconSize.small} />
-    </MUIInputAdornment>
-  );
-};
-
-const getMultilineProps = (multiline?: IMultilineInput) => {
-  return {
-    multiline: !!multiline,
-    minRows: multiline?.rows,
-    maxRows: multiline?.rowsMax,
-  };
-};
-
-/**
- * InputText component made on top of `@material-ui/core/TextField`
- **/
+const BASE_STYLE: CSSProperties = { width: "100%" };
 
 export const DATA_CY_DEFAULT = "input-text";
 export const DATA_CY_SHORTCUT = "label";
@@ -40,7 +15,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 ];
 
 const InputText: FC<IInputText> = ({
-  adornment,
+  adornment: externalAdornment,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   label,
@@ -49,18 +24,18 @@ const InputText: FC<IInputText> = ({
   placeholder,
   required = false,
   shrink,
-  size = InputSize.default,
+  size = "medium",
   style,
-  type = InputType.default,
+  type = "text",
   value = "",
-  variant = InputVariant.default,
+  variant = "outlined",
 }) => {
-  const baseStyle: CSSProperties = { width: "100%" };
+  const adornment = useMemo(() => getAdornment(externalAdornment), [externalAdornment]);
 
-  const onChangeHandler = (event: any) => {
-    const value = event.target.value;
-    onChange && onChange(value);
-  };
+  const onChangeHandler = useCallback(
+    ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => onChange && onChange(value),
+    [onChange]
+  );
 
   return (
     <MUITextField
@@ -70,23 +45,25 @@ const InputText: FC<IInputText> = ({
       }}
       inputProps={{
         "data-cy": dataCy,
-        style: { ...baseStyle, ...style },
+        style: { ...BASE_STYLE, ...style },
       }}
       InputProps={{
-        endAdornment: getAdornment(adornment),
+        endAdornment: adornment,
         readOnly: disabled,
       }}
       label={label}
       margin="normal"
+      multiline={!!multiline}
+      minRows={multiline?.rows}
+      maxRows={multiline?.rowsMax}
       onChange={onChangeHandler}
       placeholder={placeholder}
       required={required}
       size={size}
-      style={{ ...baseStyle }}
+      style={{ ...BASE_STYLE }}
       type={type}
       variant={variant}
       value={value}
-      {...getMultilineProps(multiline)}
     />
   );
 };

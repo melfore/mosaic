@@ -1,17 +1,17 @@
-import { IPartialClickable } from "./Base";
-import { IIconUtilizer } from "./Icon";
-import { IInput, InputType } from "./Input";
+import { IInputField } from "./Input";
 
-export interface IMultilineInput {
+interface IMultilineInput {
   rows: number;
   rowsMax?: number;
 }
 
-export interface IInputAdornment extends IIconUtilizer, IPartialClickable {}
-
-export interface IInputText extends IInput {
-  adornment?: IInputAdornment;
+export interface IInputText extends IInputField {
+  /**
+   * Setup for multiline input: { rows: number, rowsMax?: number }
+   */
   multiline?: IMultilineInput;
-  type?: InputType;
+  // TODO: relaxing type def to IInput one -> onChange?: (value: any) => void;
+  // TODO: enforce type def in one of next releases
+  // onChange?: (value: string) => void;
   value?: string;
 }

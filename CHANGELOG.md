@@ -1,16 +1,67 @@
-## [5.8.1-beta.2](https://github.com/melfore/mosaic/compare/v5.8.1-beta.1...v5.8.1-beta.2) (2021-11-11)
+## [6.2.1](https://github.com/melfore/mosaic/compare/v6.2.0...v6.2.1) (2022-02-28)
 
-## [5.8.1-beta.1](https://github.com/melfore/mosaic/compare/v5.8.0...v5.8.1-beta.1) (2021-11-11)
+# [6.2.0](https://github.com/melfore/mosaic/compare/v6.1.1...v6.2.0) (2022-02-09)
+
+
+### Features
+
+* 🎸 [Table] Actions to be disabled based on data selection ([61f3dff](https://github.com/melfore/mosaic/commit/61f3dffcfe70385099ed1b7d454c2fb22f4d966d))
+* 🎸 [TableToolbarAction] Check disable condition on data[] ([fd5d649](https://github.com/melfore/mosaic/commit/fd5d6495594b13c529b4c2f4d249f37ef88bbad5))
+
+## [6.1.1](https://github.com/melfore/mosaic/compare/v6.1.0...v6.1.1) (2022-01-25)
+
+# [6.1.0](https://github.com/melfore/mosaic/compare/v6.0.0...v6.1.0) (2022-01-24)
+
+
+### Features
+
+* 🎸 [Modal] Added responsive mode and property ([0ba6bad](https://github.com/melfore/mosaic/commit/0ba6badd8b85c065d05e9739d6c3713b1f06c3e8))
+* 🎸 Added useViewState hook ([7f6b07b](https://github.com/melfore/mosaic/commit/7f6b07b04305bf53f71c88605e74156eb185eaf1))
+
+# [6.0.0](https://github.com/melfore/mosaic/compare/v5.9.4...v6.0.0) (2022-01-11)
 
 
 ### chore
 
-* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+* 🤖 Removed react-intl dependency ([c5cf953](https://github.com/melfore/mosaic/commit/c5cf953cd0fdf5af29ad8141a6c6dc412682e511))
+
+
+### Features
+
+* 🎸 [Localized] Added Localized context ([deb8a14](https://github.com/melfore/mosaic/commit/deb8a14324185a732c5bf3855aa73f3755989d16))
+* 🎸 Added Mosaic context ([d68682b](https://github.com/melfore/mosaic/commit/d68682b8bd0c5293f544ed122b6111b1861adfc8))
+* 🎸 Export of Mosaic context ([4d326f8](https://github.com/melfore/mosaic/commit/4d326f8b1dad104d06e82c40ff7672929095dd4e))
 
 
 ### BREAKING CHANGES
 
-* 🧨 Enabling beta releases
+* 🧨 Removed react-intl dependency
+
+✅ Closes: 193
+* 🧨 Localized context requires adding Mosaic context in your project
+
+✅ Closes: 193
+
+## [5.9.4](https://github.com/melfore/mosaic/compare/v5.9.3...v5.9.4) (2021-11-25)
+
+## [5.9.3](https://github.com/melfore/mosaic/compare/v5.9.2...v5.9.3) (2021-11-25)
+
+
+### Bug Fixes
+
+* 🐛 [InputText] Restore onChange type definition ([0778146](https://github.com/melfore/mosaic/commit/07781469fb61a7d8f7439775a21b51c954a84212))
+
+## [5.9.2](https://github.com/melfore/mosaic/compare/v5.9.1...v5.9.2) (2021-11-25)
+
+## [5.9.1](https://github.com/melfore/mosaic/compare/v5.9.0...v5.9.1) (2021-11-25)
+
+# [5.9.0](https://github.com/melfore/mosaic/compare/v5.8.0...v5.9.0) (2021-11-17)
+
+
+### Features
+
+* 🎸 [Table] Ignore disabled by data for other actions ([4a32fac](https://github.com/melfore/mosaic/commit/4a32facaef4c540659816d1cdd3fec6736e213b8))
+* 🎸 [Table] Row actions can be disabled based on data ([0e3b3be](https://github.com/melfore/mosaic/commit/0e3b3beaacf576660d174f3d3620678ed6e5b580))
 
 # [5.8.0](https://github.com/melfore/mosaic/compare/v5.7.0...v5.8.0) (2021-10-06)
 
@@ -293,204 +344,3 @@ updated to v4.11.3
 ### Features
 
 * 🎸 Added language icon ([da0e432](https://github.com/melfore/mosaic/commit/da0e43298c04b6ae1d9bd64fa7bc461a1a11a004))
-
-# Migrating from 0.x
-If you are approaching migration from 0.x please read the following notes.
-1.x introduces some breaking changes and new features, described below:
-
-- [Localization](###localization)
-  - [Migration examples](###migration-examples)
-- [Components](###components)
-  - [Typography](###typography)
-  - [Button](###button)
-  - [ListItem and ListItemCollapsible](###listitem-and-listitemcollapsible)
-  - [Others](###others)
-- [Documentation](###documentation)
-- [Contributing](###contributing)
-
-## Localization
-Export of `*Intl` components **has been removed** in favour of a new approach which simplifies for the final user to have localized components.
-
-Mosaic localizable components now use a dedicated boolean flag called `localized` to make all supported strings localized.
-
-For each component, the <a href="https://melfore.github.io/mosaic/" target="_blank">documentation</a> tells the user if the component can be localized and if so, it lists all the localizable properties under the `Intl` section.
-
-The benefits from previous approach are several:
-- same export / import for component: remove `Intl` import and just add `localize` property to standard component
-- ability to localize n properties of the same component
-- ability to localize nested components
-- removed misleading `labelId` property
-- less code to maintain
-- door open to future possibility of defining which props to localize and which not...
-
-Below three common use cases of migration for localized components.
-For other components, use the same pattern, applying the related <a href="https://melfore.github.io/mosaic/" target="_blank">documentation</a>.
-
-### Migration examples
-
-**Button**
-
-Old code:
-
-```
-import { ButtonIntl } from '@melfore/mosaic';
-
-...
-
-<ButtonIntl
-  disabled={disabled}
-  labelId={labelId}
-  icon={{ name: IconName }}
-  onClick={() => {}}
-/>
-```
-
-New code:
-
-```
-import { Button } from '@melfore/mosaic';
-
-...
-
-<Button
-  disabled={disabled}
-  label={labelId}
-  localized
-  icon={{ name: IconName }}
-  onClick={() => {}}
-/>
-```
-
-**InputNumber**
-
-Old code:
-
-```
-import { InputNumberIntl } from '@melfore/mosaic';
-
-<InputNumberIntl
-  required
-  labelId={labelId}
-  minValue={1}
-  onChange={() => {}}
-  value={value}
-/>
-```
-
-New code:
-
-```
-import { InputNumber } from '@melfore/mosaic';
-
-<InputNumber
-  required
-  label={labelId}
-  localized
-  minValue={1}
-  onChange={() => {}}
-  value={value}
-/>
-```
-
-**Typography**
-
-Old code:
-
-```
-import { TypographyIntl } from '@melfore/mosaic';
-
-...
-
-<TypographyIntl labelId={titleId} variant={TypographyVariants.pagetitle} />
-```
-
-New code:
-
-```
-import { Typography } from '@melfore/mosaic';
-
-...
-
-<Typography localized variant={TypographyVariants.pagetitle}>
-  {titleId}
-</Typography>
-```
-
-## Components
-Some components have had breaking changes:
-
-### Typography
-
-- Text can be passed in as `children` or using the `content` property:
-
-  Old code:
-
-  ```
-  <Typography label="Text to display" />
-  ```
-
-  New code:
-
-  ```
-  <Typography>
-    Text to display
-  </Typography>
-  ```
-
-- property `bottomSpacing` is now defaulted to false
-
-### Button
-
-- `label` property is now mandatory
-- `onClick` property of `Button` and `IconButton` now internally handles click event, so method signature becomes `() => void` (previously it was `(event: any) => void`)
-
-  Old code:
-
-  ```
-  <Button onClick={(event: any) => doSomething()} />
-  ```
-
-  New code:
-
-  ```
-  <Button onClick={() => doSomething()} />
-  ```
-
-### ListItem and ListItemCollapsible
-- dropped support for `title` and `titleVariant` properties but rather `header` and `content`
-
-  Old code:
-
-  ```
-  <ListItem title="List Item Text" />
-  ```
-
-  New code:
-
-  ```
-  <ListItem>
-    List Item Text
-  </ListItem>
-  ```
-
-- property `dense` is now defaulted to `false`
-
-### Others
-- `collapsible` property of `Card` is now a `ReactNode` (previously it was a `ReactElement`)
-- renamed `InputDataType` enum to `InputType`
-- added new `language` icon
-
-## Documentation
-While waiting for Storybook 6 to happen (see issue #), some changes were done to the current Documentation, most of which reflects most important code changes.
-
-Quickly:
-- Localizable and Testable icons on top of page near component name
-- List of all localizable props
-- Testing instructions targeting also component subparts (with examples)
-
-## Contributing
-We are commitizen friendly!
-Meaning that each commit must respect most common commit message guidelines.
-Using the script `npm run commit` a commit prompt is shown to guide the user in writing the commit message (thanks to `git-cz` package).
-
-This kicks-in the `semantic-release` package that from next-version-on will take care of versioning, writing release notes and changelogs automagically.

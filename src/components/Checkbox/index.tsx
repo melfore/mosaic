@@ -1,7 +1,7 @@
-import React, { FC, useCallback } from "react";
+import React, { ChangeEvent, FC, useCallback } from "react";
 import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@material-ui/core";
 
-import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
+import { ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
@@ -18,7 +18,6 @@ export const SUBPARTS_MAP = {
   },
 };
 
-// TODO: handle color
 const Checkbox: FC<ICheckbox> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
@@ -27,11 +26,14 @@ const Checkbox: FC<ICheckbox> = ({
   labelPlacement = "start",
   onChange,
   required = false,
-  size = CheckboxSize.default,
+  size = "medium",
   style,
   value = false,
 }) => {
-  const onChangeHandler = useCallback((event: any, checked: boolean) => onChange && onChange(checked), [onChange]);
+  const onChangeHandler = useCallback(
+    ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => onChange && onChange(checked),
+    [onChange]
+  );
 
   return (
     <MUIFormControlLabel

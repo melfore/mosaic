@@ -12,9 +12,8 @@ import {
   useTheme,
 } from "@material-ui/core";
 
-import { CheckboxSize } from "../../types/Checkbox";
-import { Icons, IconSize } from "../../types/Icon";
-import { ITable, ITableAction, ITableOnSortCallback, TableActionPosition } from "../../types/Table";
+import { Icons } from "../../types/Icon";
+import { ITable, ITableAction, ITableOnSortCallback } from "../../types/Table";
 import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -161,7 +160,7 @@ const Table: FC<ITable> = ({
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
               intermediate={!!selectedRowsIndexes.length && selectedRowsIndexes.length !== externalRows.length}
               onChange={(selected) => onBulkSelection(selected)}
-              size={CheckboxSize.small}
+              size="small"
               value={loading ? false : selectedRowsIndexes.length === externalRows.length}
             />
           ),
@@ -182,18 +181,18 @@ const Table: FC<ITable> = ({
       }
 
       switch (position) {
-        case TableActionPosition.default:
-        case TableActionPosition.icon:
+        case "toolbar":
+        case "icon":
           toolbarActions = [...toolbarActions, { ...action }];
           return;
-        case TableActionPosition.row:
+        case "row":
           rowActions = [...rowActions, { ...action }];
           return;
-        case TableActionPosition.selection:
+        case "selection":
           selectionActions = [...selectionActions, { ...action }];
           return;
         default:
-          toolbarActions = [...toolbarActions, { ...action, position: TableActionPosition.default }];
+          toolbarActions = [...toolbarActions, { ...action, position: "toolbar" }];
           return;
       }
     });
@@ -357,22 +356,31 @@ const Table: FC<ITable> = ({
                   >
                     {path === CHECKBOX_SELECTION_PATH ? (
                       <Checkbox
-                        size={CheckboxSize.small}
+                        size="small"
                         onChange={(selected) => onSelection(__mosaicTableId)}
                         value={isRowSelected(__mosaicTableId)}
                       />
                     ) : path === ROW_ACTION_PATH ? (
                       <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
-                        {rowActions.map(({ callback, disabled, icon, label }) => (
-                          <IconButton
-                            key={`action-${label}`}
-                            dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                            disabled={disabled}
-                            icon={icon || Icons.settings}
-                            onClick={() => callback(row)}
-                            size={IconSize.small}
-                          />
-                        ))}
+                        {rowActions.map(({ callback, disabled, icon, label }) => {
+                          let rowActionDisabled = false;
+                          if (typeof disabled === "boolean") {
+                            rowActionDisabled = disabled;
+                          } else {
+                            rowActionDisabled = disabled ? disabled(row) : false;
+                          }
+
+                          return (
+                            <IconButton
+                              key={`action-${label}`}
+                              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
+                              disabled={rowActionDisabled}
+                              icon={icon || Icons.settings}
+                              onClick={() => callback(row)}
+                              size="small"
+                            />
+                          );
+                        })}
                       </div>
                     ) : render ? (
                       render(row)

@@ -1,7 +1,7 @@
 import renderer from "react-test-renderer";
 
 import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
-import { LocaleMock, MessageMock, mockedMessages } from "../../utils/mocks/IntlProviderMock";
+import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Typography, { DATA_CY_DEFAULT } from ".";
@@ -44,7 +44,7 @@ describe("Typography test suite:", () => {
       },
     });
 
-    expect(wrapper.text()).toEqual(mockedMessages[LocaleMock.en][MessageMock.typography]);
+    expect(wrapper.text()).toEqual(getLocalizedMessageMock(MessageMock.typography, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

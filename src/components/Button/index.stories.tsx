@@ -1,93 +1,106 @@
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
-import { action } from "@storybook/addon-actions";
-import { boolean, object, select, text } from "@storybook/addon-knobs";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ButtonIconPosition, ButtonVariants } from "../../types/Button";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import IntlProviderMock, { LocaleMock, MessageMock } from "../../utils/mocks/IntlProviderMock";
-import { getDocumentationPage, StoriesWrapper } from "../../utils/stories";
+import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import getDocsPage from "../../utils/stories";
 
 import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
+const COMPONENT_NAME = "Button";
+Button.displayName = COMPONENT_NAME;
+ButtonWithProps.displayName = COMPONENT_NAME;
+
 export default {
-  title: "Button",
+  title: "Inputs/Button",
   component: ButtonWithProps,
+  decorators: [localeDecorator],
   parameters: {
-    ...getDocumentationPage({
-      basedOn: "@material-ui/core/Button",
-      component: "Button",
-      e2eTestInfo: {
-        dataCyDefault: DATA_CY_DEFAULT,
-        dataCyShortcut: DATA_CY_SHORTCUT,
-        subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
-      },
-      localizableProps: LOCALIZABLE_PROPS,
-    }),
+    docs: {
+      ...getDocsPage({
+        basedOn: {
+          label: "MUI Button Component",
+          url: "https://v4.mui.com/components/buttons/",
+        },
+        component: COMPONENT_NAME,
+        e2eTestInfo: {
+          dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
+        },
+        localizableProps: LOCALIZABLE_PROPS,
+      }),
+    },
+  },
+} as ComponentMeta<typeof ButtonWithProps>;
+
+const Template: ComponentStory<typeof ButtonWithProps> = (args) => <Button {...args} dataCy={DATA_CY_DEFAULT} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  label: "Button",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Primary.args,
+  disabled: true,
+};
+
+export const Elevated = Template.bind({});
+Elevated.args = {
+  ...Primary.args,
+  elevated: true,
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  ...Primary.args,
+  icon: {
+    name: Icons.send,
   },
 };
 
-export const Canvas = () => (
-  <Button
-    dataCy={text("data-cy", "button-identifier")}
-    disabled={boolean("disabled", false)}
-    elevated={boolean("elevated", false)}
-    icon={object("icon", { name: Icons.send, position: ButtonIconPosition.left })}
-    label={text("label", "Example")}
-    localized={boolean("localized", false)}
-    onClick={action("Click on Button")}
-    variant={select("variant", ButtonVariants, ButtonVariants.contained)}
-  />
-);
+export const IconCustom = Template.bind({});
+IconCustom.args = {
+  ...Primary.args,
+  icon: {
+    component: <MUIStyleIcon />,
+  },
+};
 
-export const CustomStyle = () => (
-  <Button label="Custom Style" onClick={action("Click on Button")} style={{ backgroundColor: "red", color: "white" }} />
-);
+export const IconRight = Template.bind({});
+IconRight.args = {
+  ...Primary.args,
+  icon: {
+    name: Icons.send,
+    position: "right",
+  },
+};
 
-export const Disabled = () => <Button disabled label="Disabled" onClick={action("Click on Button")} />;
+export const IconRotate = Template.bind({});
+IconRotate.args = {
+  ...Disabled.args,
+  icon: {
+    name: Icons.refresh,
+    rotate: true,
+  },
+  label: "Loading",
+};
 
-export const Elevated = () => <Button elevated label="Contained" onClick={action("Click on Button")} />;
+export const Styled = Template.bind({});
+Styled.args = {
+  ...Primary.args,
+  style: {
+    backgroundColor: "red",
+    color: "white",
+  },
+};
 
-export const Localized = () => (
-  // IntlProviderMock simulates external IntlProvider context
-  <IntlProviderMock locale={select("locale", LocaleMock, LocaleMock.en)}>
-    <Button label={MessageMock.button} localized onClick={action("Click on Button")} />
-  </IntlProviderMock>
-);
-
-export const Variants = () => (
-  <StoriesWrapper>
-    <Button label="Contained" onClick={action("Click on Button")} />
-    <Button label="Outlined" onClick={action("Click on Button")} variant={ButtonVariants.outlined} />
-  </StoriesWrapper>
-);
-
-export const Icon = () => (
-  <StoriesWrapper>
-    <Button icon={{ name: Icons.send }} label="Left Icon" onClick={action("Click on Button")} />
-    <Button
-      icon={{ name: Icons.send, position: ButtonIconPosition.right }}
-      label="Right Icon"
-      onClick={action("Click on Button")}
-    />
-  </StoriesWrapper>
-);
-
-export const CustomIcon = () => (
-  <StoriesWrapper>
-    <Button icon={{ component: <MUIStyleIcon /> }} label="Custom Left Icon" onClick={action("Click on Button")} />
-    <Button
-      icon={{ component: <MUIStyleIcon />, position: ButtonIconPosition.right }}
-      label="Custom Right Icon"
-      onClick={action("Click on Button")}
-    />
-  </StoriesWrapper>
-);
-
-export const RotateIcon = () => (
-  <StoriesWrapper>
-    <Button icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
-    <Button disabled icon={{ name: Icons.refresh, rotate: true }} label="Refresh" onClick={action("Click on Button")} />
-  </StoriesWrapper>
-);
+export const VariantOutlined = Template.bind({});
+VariantOutlined.args = {
+  ...Primary.args,
+  variant: "outlined",
+};

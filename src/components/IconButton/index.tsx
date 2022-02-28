@@ -1,7 +1,6 @@
 import React, { FC, useCallback } from "react";
 import MUIIconButton from "@material-ui/core/IconButton";
 
-import { IconSize } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import IconWrapper from "../IconWrapper";
@@ -20,7 +19,7 @@ const IconButton: FC<IIconButton> = ({
   onClick,
   disabled = false,
   rotate = false,
-  size = IconSize.default,
+  size = "medium",
   style,
 }) => {
   const onClickHandler = useCallback(

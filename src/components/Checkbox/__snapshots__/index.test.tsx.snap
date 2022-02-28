@@ -417,13 +417,13 @@ exports[`Checkbox test suite: label placement 1`] = `
 exports[`Checkbox test suite: localized 1`] = `
 <label
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
-  data-cy="intl.message.checkbox"
+  data-cy="locale.checkbox"
   style={Object {}}
 >
   <span
     aria-disabled={false}
     className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
-    data-cy="intl.message.checkbox-check"
+    data-cy="locale.checkbox-check"
     onBlur={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
@@ -443,7 +443,7 @@ exports[`Checkbox test suite: localized 1`] = `
       <input
         checked={false}
         className="PrivateSwitchBase-input-4"
-        data-cy="intl.message.checkbox-input"
+        data-cy="locale.checkbox-input"
         data-indeterminate={false}
         disabled={false}
         onChange={[Function]}

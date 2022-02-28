@@ -50,9 +50,9 @@ import MUIWarningIcon from "@material-ui/icons/Warning";
 import MUIWifiOffOutlinedIcon from "@material-ui/icons/WifiOffOutlined";
 import MUIWifiOutlinedIcon from "@material-ui/icons/WifiOutlined";
 
-import { Icons } from "../../types/Icon";
+import { Icons, IIconsCatalog } from "../../types/Icon";
 
-export const iconsCatalog = {
+export const iconsCatalog: IIconsCatalog = {
   [Icons.account]: <MUIAccountCircleIcon />,
   [Icons.add]: <MUIAddIcon />,
   [Icons.apps]: <MUIAppsIcon />,

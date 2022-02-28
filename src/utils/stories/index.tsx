@@ -1,102 +1,54 @@
-import React, { FC, Fragment, ReactElement } from "react";
+import React, { FC, ReactElement } from "react";
+import { ArgsTable, Primary, PRIMARY_STORY, Stories } from "@storybook/addon-docs";
 
-import { ILocalizableProperty } from "../hocs/localized";
-import { ISubpartSuffix } from "../index";
+import DocsE2E, { IDocsE2ETestInfo } from "./components/DocsE2E";
+import DocsIntro, { IDocsBasedOn } from "./components/DocsIntro";
+import DocsLocale, { IDocsLocale } from "./components/DocsLocale";
+import DocsTitle from "./components/DocsTitle";
+import { DOCS_BODY_CLASS, DOCS_PAGE_STYLE } from "./utils";
 
-import DocumentationPage from "./DocumentationPage";
-
-export const DOCUMENTATION_BODY_CLASS = "mosaic-documentation-body";
-export const DOCUMENTATION_CODE_LINE_CLASS = "mosaic-documentation-code-line";
-export const DOCUMENTATION_CODE_BLOCK_CLASS = "mosaic-documentation-code-block";
-export const DOCUMENTATION_TITLE_CLASS = "mosaic-documentation-title";
-
-export const DOCS_PAGE_STYLE: string = `
-  .${DOCUMENTATION_BODY_CLASS},
-  .${DOCUMENTATION_TITLE_CLASS} {
-    color: #333333 !important;
-    font-family: Arial !important;
-    cursor: text;
-  }
-  .${DOCUMENTATION_BODY_CLASS} {
-    font-size: 14px;
-    line-height: 24px;
-  }
-  .${DOCUMENTATION_TITLE_CLASS} {
-    margin: 20px 0 8px;
-    padding: 0;
-    position: relative;
-  }
-  h2.${DOCUMENTATION_TITLE_CLASS} {
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    font-size: 24px;
-    padding-bottom: 4px;
-  }
-  h3.${DOCUMENTATION_TITLE_CLASS} {
-    font-size: 20px;
-  }
-  .${DOCUMENTATION_BODY_CLASS} code.${DOCUMENTATION_CODE_LINE_CLASS},
-  .${DOCUMENTATION_BODY_CLASS} code.${DOCUMENTATION_CODE_BLOCK_CLASS} {
-    background-color: #F8F8F8;
-    font-family: "Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace;
-    font-size: 13px;
-    padding: 4px;
-  }
-  .${DOCUMENTATION_BODY_CLASS} code.${DOCUMENTATION_CODE_BLOCK_CLASS} {
-    background-color: #262626;
-    color: #EDEDED;
-    display: flex;
-    padding: 8px;
-    white-space: pre-line;
-  }
-  .icon-wrapper {
-    align-items: center;
-    display: flex;
-  }
-  .icon-wrapper > span {
-    color: #333333 !important;
-    font-family: Arial !important;
-    font-size: 12px;
-    margin-left: 4px;
-  }
-  .stories-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .stories-wrapper > * {
-    margin: 8px;
-  }
-  .typography-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-`;
-
-interface IDocumentationPage {
-  basedOn?: string;
+export interface IDocsPage extends IDocsBasedOn, IDocsE2ETestInfo, IDocsLocale {
   component: string;
-  e2eTestInfo: {
-    dataCyDefault: string;
-    dataCyShortcut?: string;
-    subpartsSuffixes?: ISubpartSuffix[];
-  };
-  localizableProps?: ILocalizableProperty[];
 }
 
-interface IDocumentationStructure {
-  docs: {
-    page: () => ReactElement;
+interface IDocsStructure {
+  page: () => ReactElement;
+  source: {
+    excludeDecorators: boolean;
+    type: "dynamic";
   };
 }
 
-export const getDocumentationPage = (options: IDocumentationPage): IDocumentationStructure => ({
-  docs: {
-    page: () => <DocumentationPage {...options} />,
+const DocsPage: FC<IDocsPage> = ({ basedOn, component, e2eTestInfo, localizableProps }) => {
+  return (
+    <div className={DOCS_BODY_CLASS}>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: DOCS_PAGE_STYLE,
+        }}
+      />
+      {/* Introduction: naming, import */}
+      <DocsIntro basedOn={basedOn} component={component} localizable={!!localizableProps} testable={!!e2eTestInfo} />
+      {/* Playground: rendering, props */}
+      <DocsTitle text="Playground" subtitle />
+      <Primary />
+      <ArgsTable story={PRIMARY_STORY} />
+      {/* Localization */}
+      <DocsLocale localizableProps={localizableProps} />
+      {/* E2E Tests */}
+      <DocsE2E e2eTestInfo={e2eTestInfo} localizable={!!localizableProps} />
+      {/* All other stories */}
+      <Stories />
+    </div>
+  );
+};
+
+const getDocsPage = (options: IDocsPage): IDocsStructure => ({
+  page: () => <DocsPage {...options} />,
+  source: {
+    excludeDecorators: true,
+    type: "dynamic",
   },
 });
 
-export const StoriesWrapper: FC = ({ children }) => (
-  <Fragment>
-    <div className="stories-wrapper">{children}</div>
-  </Fragment>
-);
+export default getDocsPage;

@@ -1,11 +1,11 @@
 {
-  "extends": ["react-app", "prettier"],
+  "extends": ["react-app", "prettier", "plugin:storybook/recommended"],
   "plugins": ["prettier", "simple-import-sort"],
   "overrides": [
     {
       "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
       "rules": {
-        "simple-import-sort/sort": [
+        "simple-import-sort/imports": [
           "error",
           {
             "groups": [
@@ -21,6 +21,6 @@
   ],
   "rules": {
     "prettier/prettier": ["error"],
-    "simple-import-sort/sort": "error"
+    "simple-import-sort/imports": "error"
   }
 }

@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import { Typography as MUITypography } from "@material-ui/core";
+import React, { FC, useMemo } from "react";
+import { Typography as MUITypography, TypographyVariant as MUITypographyVariant } from "@material-ui/core";
 import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
-import { ITypography, TypographyDisplay, TypographyVariants } from "../../types/Typography";
+import { ITypography, TypographyVariants } from "../../types/Typography";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
-const VARIANT_COMPONENT_MAP = {
+const VARIANT_COMPONENT_MAP: { [key in MUITypographyVariant]?: string } = {
   body1: "p",
   caption: "span",
   h5: "h1",
@@ -25,12 +25,37 @@ const Typography: FC<ITypography> = ({
   children,
   content,
   dataCy = DATA_CY_DEFAULT,
-  display = TypographyDisplay.default,
+  display = "initial",
   loading = false,
   style,
   truncated = false,
-  variant = TypographyVariants.body,
+  variant = "body",
 }) => {
+  const muiVariant = useMemo((): MUITypographyVariant => {
+    switch (variant) {
+      case "body":
+      case TypographyVariants.body:
+        return "body1";
+      case "caption":
+      case TypographyVariants.caption:
+        return "caption";
+      case "label":
+      case TypographyVariants.label:
+        return "subtitle1";
+      case "overline":
+      case TypographyVariants.overline:
+        return "overline";
+      case "pagetitle":
+      case TypographyVariants.pagetitle:
+        return "h5";
+      case "title":
+      case TypographyVariants.title:
+        return "h6";
+      default:
+        return "body1";
+    }
+  }, [variant]);
+
   return (
     <MUITypography
       data-cy={`${dataCy}${loading ? "-loading" : ""}`}
@@ -38,7 +63,7 @@ const Typography: FC<ITypography> = ({
       gutterBottom={bottomSpacing}
       noWrap={truncated}
       style={style}
-      variant={variant}
+      variant={muiVariant}
       variantMapping={VARIANT_COMPONENT_MAP}
     >
       {loading ? <MUISkeleton /> : content || children}

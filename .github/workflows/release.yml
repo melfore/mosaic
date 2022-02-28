@@ -19,7 +19,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@master
         with:
-          node-version: 12
+          node-version: lts/fermium
 
       - name: Cache Dependencies
         id: cache-dependencies
@@ -36,12 +36,12 @@ jobs:
 
       - name: Git Config
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "${{ secrets.GIT_USER_EMAIL }}"
+          git config --local user.name "${{ secrets.GIT_USER_NAME }}"
           git pull
 
       - name: Unit Tests
-        run: npm run test-coverage
+        run: npm run test:coverage
         env:
           CI: true
 
@@ -56,26 +56,26 @@ jobs:
         if: steps.code-format.outputs.formatted-files > 0
         run: |
           git add .
-          git commit -m "refactor: prettify" -a
+          git commit -m "refactor: 💡 ESLint / Prettify" -a
 
       - name: Generate Docs
         id: generate-docs
         run: |
-          npm run build-storybook
+          npm run build:storybook
           echo "::set-output name=generated-docs::$(git status -s -uno | wc -l)"
 
       - name: Commit Changes
         if: steps.generate-docs.outputs.generated-docs > 0
         run: |
           git add .
-          git commit -m "docs: updated StoryBook" -a
+          git commit -m "docs: ✏️ Updated StoryBook" -a
 
       - name: Build
         run: npm run build
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
@@ -83,6 +83,6 @@ jobs:
         uses: Co-qn/google-chat-notification@releases/v1
         with:
           name: Mosaic CI - Release
-          url: ${{ secrets.GOOGLE_CHAT_MOSAIC }}
+          url: ${{ secrets.GOOGLE_CHAT }}
           status: ${{ job.status }}
         if: always()

@@ -1,3 +1,5 @@
+## [6.2.1](https://github.com/melfore/mosaic/compare/v6.2.0...v6.2.1) (2022-02-28)
+
 # [6.2.0](https://github.com/melfore/mosaic/compare/v6.1.1...v6.2.0) (2022-02-09)
 
 

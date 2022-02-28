@@ -37,7 +37,7 @@ jobs:
       - name: Git Config
         run: |
           git config --local user.email "${{ secrets.GIT_USER_EMAIL }}"
-          git config --local user.name "luciob"
+          git config --local user.name "${{ secrets.GIT_USER_NAME }}"
           git pull
 
       - name: Unit Tests
@@ -75,7 +75,7 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 

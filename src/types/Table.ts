@@ -20,7 +20,7 @@ export interface ITableAction extends IPartialIconUtilizer {
   /**
    * Callback for click events on table action
    */
-  callback: (data: object | object[]) => void;
+  callback: (data: any | any[]) => void;
   /**
    * Enables disabled state
    */
@@ -43,7 +43,7 @@ export interface ITableToolbarAction extends ISubpartItem, ITableAction {
   /**
    * Data of table toolbar action
    */
-  data: object | object[];
+  data: any | any[];
   /**
    * Table toolbar action index
    */

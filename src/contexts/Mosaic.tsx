@@ -6,11 +6,11 @@ export type ILocalizeMethod = (key: string) => string;
 
 interface IMosaicContextOptions {
   breakpoints?: IUseViewStateOptions;
-  localize: ILocalizeMethod;
+  localize?: ILocalizeMethod;
 }
 
 export interface IMosaicContext {
-  localize: ILocalizeMethod;
+  localize?: ILocalizeMethod;
   view: IViewState;
 }
 

@@ -3,7 +3,7 @@ import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useThem
 
 import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
-import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "../../utils";
+import { COLUMN_CHECKBOX_PATH, TOOLBAR_HEIGHT } from "../../utils";
 
 const TableHeadCell: FC<ITableHeadCell> = ({
   column,
@@ -20,12 +20,12 @@ const TableHeadCell: FC<ITableHeadCell> = ({
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;
-    if (path === CHECKBOX_SELECTION_PATH) {
+    if (path === COLUMN_CHECKBOX_PATH) {
       style = { padding: `0 ${theme.spacing(1)}px` };
     }
 
     if (stickyHeader) {
-      style = { ...style, top: `${TOOLBAR_DIMENSION}px` };
+      style = { ...style, top: `${TOOLBAR_HEIGHT}px` };
     }
 
     if (width) {
@@ -71,7 +71,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
 
   const sortDirection = useMemo(() => (path === sorting.path ? sorting.ordering || undefined : "asc"), [path, sorting]);
 
-  if (path === CHECKBOX_SELECTION_PATH) {
+  if (path === COLUMN_CHECKBOX_PATH) {
     return (
       <MUITableCell padding={cellPadding} style={cellStyle} variant="head">
         {!render ? null : render({})}

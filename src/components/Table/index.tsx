@@ -1,34 +1,31 @@
 import React, { CSSProperties, FC, useCallback, useEffect, useMemo, useState } from "react";
 import {
-  CircularProgress as MUICircularProgress,
   Paper as MUIPaper,
   Table as MUITable,
   TableBody as MUITableBody,
-  TableCell as MUITableCell,
   TableContainer as MUITableContainer,
   TableHead as MUITableHead,
   TableRow as MUITableRow,
-  Toolbar as MUIToolbar,
   useTheme,
 } from "@material-ui/core";
 
-import { Icons } from "../../types/Icon";
 import { ITable, ITableAction, ITableOnSortCallback } from "../../types/Table";
-import { TypographyVariants } from "../../types/Typography";
-import { getComposedDataCy, getObjectProperty, suppressEvent } from "../../utils";
+import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
-import IconButton from "../IconButton";
-import Typography from "../Typography";
 
+import TableActionsCell from "./components/ActionsCell";
+import TableDataCell from "./components/DataCell";
+import TableEmptyState from "./components/EmptyState";
 import TableHeadCell from "./components/HeadCell";
+import TableLoader from "./components/Loader";
 import TablePagination from "./components/Pagination";
-import TableToolbarAction from "./components/ToolbarAction";
-import { CHECKBOX_SELECTION_PATH, TOOLBAR_DIMENSION } from "./utils";
+import TableSelectionCell from "./components/SelectionCell";
+import TableToolbar from "./components/Toolbar";
+import { COLUMN_CHECKBOX_PATH, COLUMN_ROW_ACTIONS_PATH } from "./utils";
 
 const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
-const ROW_ACTION_PATH = "row-actions";
 
 const DEFAULT_PAGESIZE = 10;
 const DEFAULT_PAGESIZE_OPTIONS = [5, 10, 25];
@@ -77,7 +74,7 @@ const Table: FC<ITable> = ({
   selectionFilter,
   sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
-  style,
+  style: externalStyle,
   title,
 }) => {
   const theme = useTheme();
@@ -154,7 +151,7 @@ const Table: FC<ITable> = ({
         {
           label: "",
           padding: "checkbox",
-          path: CHECKBOX_SELECTION_PATH,
+          path: COLUMN_CHECKBOX_PATH,
           render: () => (
             <Checkbox
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
@@ -200,7 +197,7 @@ const Table: FC<ITable> = ({
     if (!!rowActions.length) {
       columns = [
         ...columns,
-        { label: "", path: ROW_ACTION_PATH, width: `${ROW_ACTION_DIMENSION * rowActions.length}px` },
+        { label: "", path: COLUMN_ROW_ACTIONS_PATH, width: `${ROW_ACTION_DIMENSION * rowActions.length}px` },
       ];
     }
 
@@ -229,7 +226,7 @@ const Table: FC<ITable> = ({
     onSelectionChange,
   ]);
 
-  const onCallbackData = useMemo(
+  const selectedRowsData = useMemo(
     () =>
       rows
         .filter((_, index) => selectedRowsIndexes.includes(index))
@@ -260,51 +257,18 @@ const Table: FC<ITable> = ({
   }, [sticky, theme]);
 
   return (
-    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...style }}>
-      {loading && (
-        <div
-          style={{
-            alignItems: "center",
-            backgroundColor: theme.palette.action.hover,
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            width: "100%",
-            zIndex: 2,
-            ...(!hideHeader && sticky
-              ? { height: `calc(100% - ${TOOLBAR_DIMENSION}px)`, top: `${TOOLBAR_DIMENSION}px` }
-              : { height: "100%", top: 0 }),
-          }}
-        >
-          <MUICircularProgress />
-        </div>
-      )}
+    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...externalStyle }}>
+      {loading && <TableLoader hideHeader={hideHeader} sticky={sticky} />}
       {!hideHeader && (
-        <MUIToolbar
-          style={{
-            alignItems: "center",
-            backgroundColor: !selectedRowsIndexes.length ? "inherit" : theme.palette.action.selected,
-            display: "flex",
-            justifyContent: "space-between",
-            ...(!sticky ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
-          }}
-        >
-          <Typography variant={TypographyVariants.title}>
-            {!selectedRowsIndexes.length ? title : `${selectedRowsIndexes.length} row(s) selected`}
-          </Typography>
-          <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
-            {(!selectedRowsIndexes.length ? defaultActions : selectionActions).map((action, index) => (
-              <TableToolbarAction
-                {...action}
-                key={`action-${action.label}`}
-                data={onCallbackData}
-                dataCy={dataCy}
-                index={index}
-                subpart={SUBPARTS_MAP.action}
-              />
-            ))}
-          </div>
-        </MUIToolbar>
+        <TableToolbar
+          actions={defaultActions}
+          dataCy={dataCy}
+          selectedRows={selectedRowsIndexes.length}
+          selectedRowsData={selectedRowsData}
+          selectionActions={selectionActions}
+          sticky={sticky}
+          title={title}
+        />
       )}
       <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
         <MUITableHead>
@@ -324,73 +288,40 @@ const Table: FC<ITable> = ({
         </MUITableHead>
         <MUITableBody>
           {!loading && !externalRows.length ? (
-            <MUITableRow key={`row-no-data`}>
-              <MUITableCell
-                key={`column-no-data`}
-                colSpan={columns.length}
-                padding="normal"
-                style={{ textAlign: "center" }}
-              >
-                {emptyState || <Typography>No data to display</Typography>}
-              </MUITableCell>
-            </MUITableRow>
+            <TableEmptyState columns={columns.length} emptyState={emptyState} />
           ) : (
-            rows.map(({ __mosaicTableId, ...row }) => (
-              <MUITableRow key={`row-${__mosaicTableId}`} style={getRowStyle ? getRowStyle(row) : {}}>
-                {columns.map(({ padding, path, render, width }, columnIndex) => (
-                  <MUITableCell
-                    key={`column-${path || columnIndex}`}
-                    onClick={(event) => {
-                      if (path === CHECKBOX_SELECTION_PATH || path === ROW_ACTION_PATH) {
-                        return;
-                      }
+            rows.map(({ __mosaicTableId, ...row }) => {
+              const rowSelected = isRowSelected(__mosaicTableId);
+              const onRowSelection = () => onSelection(__mosaicTableId);
 
-                      suppressEvent(event);
-                      onRowClick && onRowClick(row);
-                    }}
-                    padding={padding || "normal"}
-                    style={{
-                      width,
-                      ...(path === CHECKBOX_SELECTION_PATH ? { padding: `0 ${theme.spacing(1)}px` } : {}),
-                    }}
-                  >
-                    {path === CHECKBOX_SELECTION_PATH ? (
-                      <Checkbox
-                        size="small"
-                        onChange={(selected) => onSelection(__mosaicTableId)}
-                        value={isRowSelected(__mosaicTableId)}
-                      />
-                    ) : path === ROW_ACTION_PATH ? (
-                      <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
-                        {rowActions.map(({ callback, disabled, icon, label }) => {
-                          let rowActionDisabled = false;
-                          if (typeof disabled === "boolean") {
-                            rowActionDisabled = disabled;
-                          } else {
-                            rowActionDisabled = disabled ? disabled(row) : false;
-                          }
+              return (
+                <MUITableRow key={`row-${__mosaicTableId}`} style={getRowStyle ? getRowStyle(row) : {}}>
+                  {columns.map((column, columnIndex) => {
+                    const { path } = column;
+                    const key = `column-${path || columnIndex}`;
 
-                          return (
-                            <IconButton
-                              key={`action-${label}`}
-                              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, label)}
-                              disabled={rowActionDisabled}
-                              icon={icon || Icons.settings}
-                              onClick={() => callback(row)}
-                              size="small"
-                            />
-                          );
-                        })}
-                      </div>
-                    ) : render ? (
-                      render(row)
-                    ) : (
-                      getObjectProperty(row, path)
-                    )}
-                  </MUITableCell>
-                ))}
-              </MUITableRow>
-            ))
+                    if (path === COLUMN_CHECKBOX_PATH) {
+                      return (
+                        <TableSelectionCell
+                          key={key}
+                          column={column}
+                          onSelection={onRowSelection}
+                          selected={rowSelected}
+                        />
+                      );
+                    }
+
+                    if (path === COLUMN_ROW_ACTIONS_PATH) {
+                      return (
+                        <TableActionsCell key={key} actions={rowActions} column={column} data={row} dataCy={dataCy} />
+                      );
+                    }
+
+                    return <TableDataCell key={key} column={column} data={row} dataCy={dataCy} onClick={onRowClick} />;
+                  })}
+                </MUITableRow>
+              );
+            })
           )}
         </MUITableBody>
       </MUITable>

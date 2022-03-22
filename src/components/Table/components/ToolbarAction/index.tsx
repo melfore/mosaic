@@ -49,7 +49,12 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
 
   const style = useMemo((): CSSProperties => ({ marginLeft: index > 0 ? "8px" : "none" }), [index]);
 
-  const onClick = useCallback(() => callback(data, dataCallbackOptions), [callback, data, dataCallbackOptions]);
+  const global = useMemo(() => position === "icon" || position === "toolbar", [position]);
+
+  const onClick = useCallback(
+    () => callback(!global ? data : undefined, dataCallbackOptions),
+    [callback, data, dataCallbackOptions, global]
+  );
 
   if (secondary) {
     return (

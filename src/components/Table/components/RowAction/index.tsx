@@ -2,13 +2,14 @@ import React, { FC, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";
 import { Icons } from "../../../../types/Icon";
-import { ITableAction } from "../../../../types/Table";
+import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import { getComposedDataCy } from "../../../../utils";
 import IconButton from "../../../IconButton";
 
 interface ITableRowAction extends IBase {
   action: ITableAction;
   data: any;
+  dataCallbackOptions: ITableDataCallbackOptions;
   dataCy: string;
 }
 
@@ -20,7 +21,7 @@ const SUBPARTS_MAP = {
   },
 };
 
-const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCy: externalDataCy }) => {
+const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions, dataCy: externalDataCy }) => {
   const { callback, disabled: actionDisabled, icon: actionIcon, label } = action;
 
   const dataCy = useMemo(() => getComposedDataCy(externalDataCy, SUBPARTS_MAP.action, label), [externalDataCy, label]);
@@ -34,12 +35,20 @@ const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCy: externalDat
       return true;
     }
 
-    return actionDisabled(data);
-  }, [actionDisabled, data]);
+    return actionDisabled(data, dataCallbackOptions);
+  }, [actionDisabled, data, dataCallbackOptions]);
 
   const icon = useMemo(() => actionIcon || Icons.settings, [actionIcon]);
 
-  return <IconButton dataCy={dataCy} disabled={disabled} icon={icon} onClick={() => callback(data)} size="small" />;
+  return (
+    <IconButton
+      dataCy={dataCy}
+      disabled={disabled}
+      icon={icon}
+      onClick={() => callback(data, dataCallbackOptions)}
+      size="small"
+    />
+  );
 };
 
 export default TableRowAction;

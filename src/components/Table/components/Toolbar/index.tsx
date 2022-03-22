@@ -1,42 +1,41 @@
 import React, { CSSProperties, FC, useMemo } from "react";
 import { Toolbar as MUIToolbar, useTheme } from "@material-ui/core";
 
-import { ITableAction } from "../../../../types/Table";
+import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import Typography from "../../../Typography";
 import TableToolbarAction from "../ToolbarAction";
 
 interface ITableToolbar {
   actions: ITableAction[];
   dataCy: string;
-  selectedRows?: number;
   selectedRowsData: any[];
+  selectedRowsIndexes: number[];
   selectionActions: ITableAction[];
   sticky?: boolean;
   title: string;
 }
 
-// TODO#lb: to be put at lowest level
-const SUBPARTS_MAP = {
-  action: {
-    label: "Action (with label)",
-    value: (label = "{label}") => `action-${label}`,
-  },
-};
-
 const TableToolbar: FC<ITableToolbar> = ({
   actions: defaultActions,
   dataCy,
-  selectedRows = 0,
   selectedRowsData,
+  selectedRowsIndexes,
   selectionActions,
   sticky = false,
   title,
 }) => {
   const theme = useTheme();
 
+  const selectedRows = useMemo(() => selectedRowsIndexes.length, [selectedRowsIndexes]);
+
   const actions = useMemo(
     () => (!selectedRows ? defaultActions : selectionActions),
     [defaultActions, selectedRows, selectionActions]
+  );
+
+  const dataCallbackOptions = useMemo(
+    (): ITableDataCallbackOptions => ({ indexes: selectedRowsIndexes, multiple: !!selectedRows }),
+    [selectedRows, selectedRowsIndexes]
   );
 
   const positioning = useMemo(
@@ -55,21 +54,25 @@ const TableToolbar: FC<ITableToolbar> = ({
     [positioning, selectedRows, theme]
   );
 
+  const toolbarActions = useMemo(
+    () =>
+      actions.map((action, index) => (
+        <TableToolbarAction
+          {...action}
+          key={`action-${action.label}`}
+          data={selectedRowsData}
+          dataCallbackOptions={dataCallbackOptions}
+          dataCy={dataCy}
+          index={index}
+        />
+      )),
+    [actions, dataCallbackOptions, dataCy, selectedRowsData]
+  );
+
   return (
     <MUIToolbar style={style}>
       <Typography variant="title">{!selectedRows ? title : `${selectedRows} row(s) selected`}</Typography>
-      <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>
-        {actions.map((action, index) => (
-          <TableToolbarAction
-            {...action}
-            key={`action-${action.label}`}
-            data={selectedRowsData}
-            dataCy={dataCy}
-            index={index}
-            subpart={SUBPARTS_MAP.action}
-          />
-        ))}
-      </div>
+      <div style={{ alignItems: "center", display: "flex", justifyContent: "center" }}>{toolbarActions}</div>
     </MUIToolbar>
   );
 };

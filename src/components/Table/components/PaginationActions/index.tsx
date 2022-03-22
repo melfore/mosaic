@@ -1,10 +1,15 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import { useTheme } from "@material-ui/core";
 
 import { Icons } from "../../../../types/Icon";
 import { ITablePaginationActions } from "../../../../types/Table";
-import { getComposedDataCy } from "../../../../utils";
+import { getComposedDataCy, ISubpart } from "../../../../utils";
 import IconButton from "../../../IconButton";
+
+export const PAGINATION_ACTION_SUBPART: ISubpart = {
+  label: "Pagination (with label)",
+  value: (label = "{label}") => `pagination-${label}`,
+};
 
 const TablePaginationActions: FC<ITablePaginationActions> = ({
   count: rowsTotal,
@@ -12,45 +17,56 @@ const TablePaginationActions: FC<ITablePaginationActions> = ({
   onPageChange,
   page,
   rowsPerPage: pageSize,
-  subpart,
 }) => {
   const theme = useTheme();
+
+  const getPaginationActionDataCy = useCallback(
+    (action: string) => getComposedDataCy(dataCy, PAGINATION_ACTION_SUBPART, action),
+    [dataCy]
+  );
 
   const lastPage = useMemo(
     () => (!rowsTotal || !pageSize ? 0 : Math.ceil(rowsTotal / pageSize) - 1),
     [pageSize, rowsTotal]
   );
 
+  const leftDisabled = useMemo(() => !page, [page]);
+
+  const rightDisabled = useMemo(() => page >= lastPage, [lastPage, page]);
+
+  const style = useMemo(
+    () => ({
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "space-between",
+      padding: `${theme.spacing(1)}px`,
+    }),
+    [theme]
+  );
+
   return (
-    <div
-      style={{
-        alignItems: "center",
-        display: "flex",
-        justifyContent: "space-between",
-        padding: `${theme.spacing(1)}px`,
-      }}
-    >
+    <div style={style}>
       <IconButton
-        dataCy={getComposedDataCy(dataCy, subpart, "first")}
-        disabled={!page}
+        dataCy={getPaginationActionDataCy("first")}
+        disabled={leftDisabled}
         icon={Icons.first}
         onClick={() => onPageChange(null, 0)}
       />
       <IconButton
-        dataCy={getComposedDataCy(dataCy, subpart, "prev")}
-        disabled={!page}
+        dataCy={getPaginationActionDataCy("prev")}
+        disabled={leftDisabled}
         icon={Icons.left}
         onClick={() => onPageChange(null, page - 1)}
       />
       <IconButton
-        dataCy={getComposedDataCy(dataCy, subpart, "next")}
-        disabled={page >= lastPage}
+        dataCy={getPaginationActionDataCy("next")}
+        disabled={rightDisabled}
         icon={Icons.right}
         onClick={() => onPageChange(null, page + 1)}
       />
       <IconButton
-        dataCy={getComposedDataCy(dataCy, subpart, "last")}
-        disabled={page >= lastPage}
+        dataCy={getPaginationActionDataCy("last")}
+        disabled={rightDisabled}
         icon={Icons.last}
         onClick={() => onPageChange(null, lastPage)}
       />

@@ -74,7 +74,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   if (path === COLUMN_CHECKBOX_PATH) {
     return (
       <MUITableCell padding={cellPadding} style={cellStyle} variant="head">
-        {!render ? null : render({})}
+        {!render ? null : render({}, { indexes: [], multiple: false })}
       </MUITableCell>
     );
   }

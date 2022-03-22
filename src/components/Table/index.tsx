@@ -82,9 +82,11 @@ const Table: FC<ITable> = ({
   const getRows = useCallback((rows: any) => [...rows].map((row, index) => ({ ...row, __mosaicTableId: index })), []);
 
   const getSelectedRowsIndexes = useCallback(
-    (rows: any): number[] =>
+    (rows: any[]): number[] =>
       rows
-        .filter((row: any) => (!selectionFilter ? false : selectionFilter(row)))
+        .filter((row, index) =>
+          !selectionFilter ? false : selectionFilter(row, { indexes: [index], multiple: false })
+        )
         .map(({ __mosaicTableId }: any) => __mosaicTableId),
     [selectionFilter]
   );
@@ -104,16 +106,22 @@ const Table: FC<ITable> = ({
 
   const onBulkSelection = useCallback(
     (selected: boolean) =>
-      setSelectedRowsIndexes((prevSelectedIndexes) => {
-        let selectedIndexes = prevSelectedIndexes;
-        if (!selected) {
-          selectedIndexes = [];
-        } else {
+      setSelectedRowsIndexes(() => {
+        let selectedIndexes: number[] = [];
+        if (selected) {
           selectedIndexes = new Array(rows.length).fill(0).map((_, index) => index);
         }
 
         if (onSelectionChange) {
-          onSelectionChange(!selected ? [] : rows.map(({ __mosaicTableId, ...internalRow }) => ({ ...internalRow })));
+          const selectedRows: any[] = selectedIndexes.map((index) => {
+            const { __mosaicTableId, ...internalRow } = rows[index];
+            return { ...internalRow };
+          });
+
+          onSelectionChange(selectedRows, {
+            indexes: selectedIndexes,
+            multiple: true,
+          });
         }
 
         return selectedIndexes;
@@ -135,7 +143,8 @@ const Table: FC<ITable> = ({
           onSelectionChange(
             rows
               .filter((_, index) => selectedIndexes.includes(index))
-              .map(({ __mosaicTableId, ...row }) => ({ ...row }))
+              .map(({ __mosaicTableId, ...row }) => ({ ...row })),
+            { indexes: selectedIndexes, multiple: true }
           );
         }
 
@@ -156,7 +165,7 @@ const Table: FC<ITable> = ({
             <Checkbox
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.selectAll)}
               intermediate={!!selectedRowsIndexes.length && selectedRowsIndexes.length !== externalRows.length}
-              onChange={(selected) => onBulkSelection(selected)}
+              onChange={onBulkSelection}
               size="small"
               value={loading ? false : selectedRowsIndexes.length === externalRows.length}
             />
@@ -263,8 +272,8 @@ const Table: FC<ITable> = ({
         <TableToolbar
           actions={defaultActions}
           dataCy={dataCy}
-          selectedRows={selectedRowsIndexes.length}
           selectedRowsData={selectedRowsData}
+          selectedRowsIndexes={selectedRowsIndexes}
           selectionActions={selectionActions}
           sticky={sticky}
           title={title}
@@ -290,12 +299,17 @@ const Table: FC<ITable> = ({
           {!loading && !externalRows.length ? (
             <TableEmptyState columns={columns.length} emptyState={emptyState} />
           ) : (
-            rows.map(({ __mosaicTableId, ...row }) => {
+            rows.map(({ __mosaicTableId, ...row }, rowIndex) => {
+              const key = `row-${__mosaicTableId}`;
+
               const rowSelected = isRowSelected(__mosaicTableId);
+              const rowCallbackOptions = { indexes: [rowIndex], multiple: false };
+              const style = getRowStyle ? getRowStyle(row, rowCallbackOptions) : {};
+
               const onRowSelection = () => onSelection(__mosaicTableId);
 
               return (
-                <MUITableRow key={`row-${__mosaicTableId}`} style={getRowStyle ? getRowStyle(row) : {}}>
+                <MUITableRow key={key} style={style}>
                   {columns.map((column, columnIndex) => {
                     const { path } = column;
                     const key = `column-${path || columnIndex}`;
@@ -313,11 +327,27 @@ const Table: FC<ITable> = ({
 
                     if (path === COLUMN_ROW_ACTIONS_PATH) {
                       return (
-                        <TableActionsCell key={key} actions={rowActions} column={column} data={row} dataCy={dataCy} />
+                        <TableActionsCell
+                          key={key}
+                          actions={rowActions}
+                          column={column}
+                          data={row}
+                          dataCallbackOptions={rowCallbackOptions}
+                          dataCy={dataCy}
+                        />
                       );
                     }
 
-                    return <TableDataCell key={key} column={column} data={row} dataCy={dataCy} onClick={onRowClick} />;
+                    return (
+                      <TableDataCell
+                        key={key}
+                        column={column}
+                        data={row}
+                        dataCallbackOptions={rowCallbackOptions}
+                        dataCy={dataCy}
+                        onClick={onRowClick}
+                      />
+                    );
                   })}
                 </MUITableRow>
               );
@@ -335,7 +365,6 @@ const Table: FC<ITable> = ({
           pageSizeOptions={pageSizeOptions}
           rowsTotal={rowsTotal}
           style={paginationStyle}
-          subpart={SUBPARTS_MAP.pagination}
         />
       )}
     </MUITableContainer>

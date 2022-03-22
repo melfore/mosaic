@@ -1,50 +1,72 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 
-import { Icons } from "../../../../types/Icon";
+import { IButtonIcon } from "../../../../types/Button";
+import { Icons, IIconElement } from "../../../../types/Icon";
 import { ITableToolbarAction } from "../../../../types/Table";
-import { getComposedDataCy } from "../../../../utils";
-// import { logWarn } from "../../../../utils/logger";
+import { getComposedDataCy, ISubpart } from "../../../../utils";
 import Button from "../../../Button";
 import IconButton from "../../../IconButton";
+
+const TOOLBAR_ACTION_SUBPART: ISubpart = {
+  label: "Action (with label)",
+  value: (label = "{label}") => `action-${label}`,
+};
 
 const TableToolbarAction: FC<ITableToolbarAction> = ({
   callback,
   data,
+  dataCallbackOptions,
   dataCy: externalDataCy,
   disabled: externalDisabled,
   icon: externalIcon,
   index,
   label,
   position,
-  subpart,
 }) => {
-  const dataCy = useMemo(() => getComposedDataCy(externalDataCy, subpart, label), [externalDataCy, subpart, label]);
-
-  const disabled = useMemo(
-    () => (typeof externalDisabled === "function" ? externalDisabled(data as any[]) : externalDisabled),
-    [data, externalDisabled]
+  const dataCy = useMemo(
+    () => getComposedDataCy(externalDataCy, TOOLBAR_ACTION_SUBPART, label),
+    [externalDataCy, label]
   );
 
-  const onClick = useCallback(() => callback(data), [callback, data]);
+  const disabled = useMemo(
+    () => (typeof externalDisabled === "function" ? externalDisabled(data, dataCallbackOptions) : externalDisabled),
+    [data, dataCallbackOptions, externalDisabled]
+  );
 
   const secondary = useMemo(() => position === "icon", [position]);
 
+  const icon = useMemo(() => {
+    if (secondary) {
+      return externalIcon || Icons.settings;
+    }
+
+    if (typeof externalIcon === "string") {
+      return { name: externalIcon };
+    }
+
+    return { component: externalIcon };
+  }, [externalIcon, secondary]);
+
   const style = useMemo((): CSSProperties => ({ marginLeft: index > 0 ? "8px" : "none" }), [index]);
+
+  const onClick = useCallback(() => callback(data, dataCallbackOptions), [callback, data, dataCallbackOptions]);
 
   if (secondary) {
     return (
-      <IconButton
-        dataCy={dataCy}
-        disabled={disabled}
-        icon={externalIcon || Icons.settings}
-        onClick={onClick}
-        style={style}
-      />
+      <IconButton dataCy={dataCy} disabled={disabled} icon={icon as IIconElement} onClick={onClick} style={style} />
     );
   }
 
-  const icon = typeof externalIcon === "string" ? { name: externalIcon } : { component: externalIcon };
-  return <Button dataCy={dataCy} disabled={disabled} icon={icon} label={label} onClick={onClick} style={style} />;
+  return (
+    <Button
+      dataCy={dataCy}
+      disabled={disabled}
+      icon={icon as IButtonIcon}
+      label={label}
+      onClick={onClick}
+      style={style}
+    />
+  );
 };
 
 export default TableToolbarAction;

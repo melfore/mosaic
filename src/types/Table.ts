@@ -21,7 +21,7 @@ export interface ITableDataCallbackOptions {
   multiple: boolean;
 }
 
-export type ITableDataCallback<T, K = any> = (data: K, options: ITableDataCallbackOptions) => T;
+export type ITableDataCallback<T, K = any> = (data: K, options?: ITableDataCallbackOptions) => T;
 
 export interface ITableAction extends IPartialIconUtilizer {
   /**

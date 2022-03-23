@@ -1,3 +1,10 @@
+## [6.3.1](https://github.com/melfore/mosaic/compare/v6.3.0...v6.3.1) (2022-03-23)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Callback options to be optional ([2e275ee](https://github.com/melfore/mosaic/commit/2e275ee5ca929b87cec2a2ba6590a360440f08a8))
+
 # [6.3.0](https://github.com/melfore/mosaic/compare/v6.2.2...v6.3.0) (2022-03-23)
 
 

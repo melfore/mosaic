@@ -1,3 +1,5 @@
+/* eslint-disable storybook/default-exports */
+
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";

@@ -1,3 +1,16 @@
+# [6.3.0](https://github.com/melfore/mosaic/compare/v6.2.2...v6.3.0) (2022-03-23)
+
+
+### Bug Fixes
+
+* 🐛 [Localize] Context method to be optional ([1bb472e](https://github.com/melfore/mosaic/commit/1bb472e0867743f6db9073c6a87cb86c521b004d))
+
+
+### Features
+
+* 🎸 [Table] Added options for each data callback ([e46417a](https://github.com/melfore/mosaic/commit/e46417a8a7587c79b69f9e70745fb207d0aba3ca))
+* 🎸 [Table] Global actions callback to use undefined data ([60b82ae](https://github.com/melfore/mosaic/commit/60b82ae165923b3ba9261f93e6bcf25750ffcc04))
+
 ## [6.2.2](https://github.com/melfore/mosaic/compare/v6.2.1...v6.2.2) (2022-03-07)
 
 ## [6.2.1](https://github.com/melfore/mosaic/compare/v6.2.0...v6.2.1) (2022-02-28)

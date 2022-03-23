@@ -1,0 +1,339 @@
+import { ArgsTable, Canvas, Meta, Preview, Story, Title } from "@storybook/addon-docs";
+
+import { Icons } from "../../types/Icon";
+
+import Table, { TableWithProps } from ".";
+
+<Meta title="Display/Table [new doc]" component={Table} />
+
+export const Template = (args) => (
+  <Table
+    columns={[
+      { label: "Name", path: "name" },
+      { label: "Age", path: "age" },
+    ]}
+    rows={[
+      { name: "Anne", age: 35 },
+      { name: "Bruce", age: 45 },
+      { name: "Carl", age: 32 },
+    ]}
+    title="Table"
+    {...args}
+  />
+);
+
+# Table
+
+Table component displays a list of items in table form.
+
+### Basic
+
+Table component has three mandatory props: `columns` (see [ITableColumn](#ITableColumn)), `rows` (any iterable, defaults to `any[]`) and `title`.
+
+<Preview>
+  <Story name="Primary">{Template.bind()}</Story>
+</Preview>
+
+### Actions
+
+`Table` provides straight-forward interaction with its data using `actions` array prop. Each action is described by an object of type [ITableAction](#ITableAction).
+
+Callbacks attached to each action receive two arguments: data and options. Find out more about [ITableDataCallback](#ITableDataCallback).
+
+Give a look and mix examples below to enrich your `Table` component.
+
+#### Global Actions
+
+Global actions have all table scope. By default they are displayed like a `Button`, but they can also be displayed as simple icons.
+
+<Preview>
+  <Story
+    name="GlobalActions"
+    args={{
+      actions: [
+        {
+          callback: () => {},
+          icon: Icons.add,
+          label: "Add",
+        },
+        {
+          callback: () => {},
+          icon: Icons.filter,
+          label: "Filter",
+          position: "icon",
+        },
+      ],
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+#### Row Actions
+
+Row actions have row scope.
+
+<Preview>
+  <Story
+    name="RowActions"
+    args={{
+      actions: [
+        {
+          callback: () => {},
+          icon: Icons.edit,
+          label: "Edit",
+          position: "row",
+        },
+      ],
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+#### Selection Actions
+
+Selection actions have scope related to current selection.
+They are displayed in place of Global Actions when there is at least one row selected.
+
+<Preview>
+  <Story
+    name="SelectionActions"
+    args={{
+      actions: [
+        {
+          callback: () => {},
+          icon: Icons.delete,
+          label: "Delete",
+          position: "selection",
+        },
+      ],
+      onSelectionChange: () => {},
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### Pagination
+
+`Table` offers built-in pagination, it can be configured using `onPageChange`, `onPageSizeChange`, `page`, `pageSize` and `pageSizeOptions` props.
+By default: `page` is set to `0`, `pageSize` to `10` and `pageSizeOptions` to `[5, 10, 25]`.
+
+<Preview>
+  <Story name="Pagination" args={{ onPageChange: () => {}, onPageSizeChange: () => {}, rowsTotal: 3 }}>
+    {Template.bind()}
+  </Story>
+</Preview>
+
+#### Pagination Customized
+
+Size and options of the page can be customized to adapt to any dataset.
+For instance: let's set a `pageSize` of `2` and give options to paginate by `1,2,3` items.
+
+<Preview>
+  <Story
+    name="PaginationCustomized"
+    args={{
+      onPageChange: () => {},
+      onPageSizeChange: () => {},
+      page: 0,
+      pageSize: 2,
+      pageSizeOptions: [1, 2, 3],
+      rows: [
+        { name: "Anne", age: 35 },
+        { name: "Bruce", age: 45 },
+      ],
+      rowsTotal: 2,
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### No Data
+
+By default `Table` component displays a no data message.
+
+<Preview>
+  <Story name="NoData" args={{ rows: [] }}>
+    {Template.bind()}
+  </Story>
+</Preview>
+
+#### Empty State
+
+Customize the rendering of empty state passing any valid `ReactNode`.
+
+<Preview>
+  <Story name="NoDataEmptyState" args={{ emptyState: <h1>Custom Empty State component</h1>, rows: [] }}>
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### Loading
+
+Loading state of the table
+
+<Preview>
+  <Story name="Loading" args={{ loading: true }}>
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### Styling
+
+`Table` component can be styled in many ways.
+Global `style` prop can be used to style the external table wrapper.
+
+<Preview>
+  <Story
+    name="Styling"
+    args={{
+      style: {
+        backgroundColor: "cyan",
+      },
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+#### Row Styling
+
+The method `getRowStyle` allows to change style of rows using as input the row data and the callback options (including the row index).
+
+<Preview>
+  <Story
+    name="RowStyling"
+    args={{
+      getRowStyle: (row, options) => {
+        const index = options.indexes[0];
+        return {
+          backgroundColor: index % 2 === 0 ? "lightyellow" : "lightgreen",
+        };
+      },
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### API
+
+#### Props
+
+Below you can find the whole list of props accepted by the `Table` component. Required props are marked with `*`.
+
+<ArgsTable of={TableWithProps} />
+
+#### Types
+
+##### ITableAction
+
+This type describes any action that occurs when user interacts with `Table` actions.
+
+```
+export interface ITableAction extends IPartialIconUtilizer {
+  /**
+   * Callback for click events on table action
+   */
+  callback: ITableDataCallback<void>;
+  /**
+   * Enables disabled state
+   */
+  disabled?: boolean | ITableDataCallback<boolean>;
+  /**
+   * Hides action
+   */
+  hidden?: boolean;
+  /**
+   * Label to display
+   */
+  label: string;
+  /**
+   * Position of table action
+   */
+  position?: ITableActionPosition | TableActionPosition;
+}
+```
+
+##### ITableDataCallback
+
+This type represents any callback or method invoked when rendering or triggered by user interaction with `Table`.
+
+```
+export type ITableDataCallback<T, K = any> = (data: K, options: ITableDataCallbackOptions) => T;
+```
+
+It has two arguments:
+
+- `data`: the row data, can be flat or array (in case the callback has to be executed on many rows)
+- `options`: the callback options of type ITableDataCallbackOptions, `indexes` is the positional index of rows, `multiple` tells if the action is of type multiple (e.g. selection) or not (e.g. row action)
+
+```
+export interface ITableDataCallbackOptions {
+  indexes: number[];
+  multiple: boolean;
+}
+```
+
+`T` is the return type specific of the callback, while `K` is data type (defaults to any).
+
+##### ITableColumn
+
+This type describes a `Table` column element of the `columns` required prop.
+
+```
+export interface ITableColumn {
+  /**
+   * Label to display
+   */
+  label?: string;
+  /**
+   * Padding size
+   */
+  padding?: "checkbox" | "normal" | "default" | "none";
+  /**
+   * Column reference to data property (can be nested, e.g. "item.property")
+   */
+  path: string;
+  /**
+   * Method to allow custom rendering
+   */
+  render?: ITableDataCallback<ReactNode>;
+  /**
+   * Enables sortable state
+   */
+  sortable?: boolean;
+  /**
+   * Column width
+   */
+  width?: number | string;
+}
+```
+
+##### ITableSorting
+
+This type describes initial `Table` sorting.
+
+```
+export interface ITableSorting {
+  /**
+   * Column reference to data property (can be nested, e.g. "item.property")
+   */
+  path: string | null;
+  /**
+   * Ordering state
+   */
+  ordering: ITableSortingCriteria;
+}
+```
+
+##### ITableSortingCallback
+
+This type represents the callback of sort events.
+
+```
+export type ITableOnSortCallback = (path: string | null, criteria: ITableSortingCriteria) => void;
+```

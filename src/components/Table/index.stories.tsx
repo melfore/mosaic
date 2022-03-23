@@ -1,3 +1,5 @@
+/* eslint-disable storybook/default-exports */
+
 import React from "react";
 import MUIStyleIcon from "@material-ui/icons/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
@@ -46,8 +48,8 @@ Primary.args = {
   ],
   onPageChange: () => {},
   onPageSizeChange: () => {},
-  onRowClick: () => {},
-  onSelectionChange: () => {},
+  onRowClick: (data, options) => console.log("=> onRowClick", { options }),
+  onSelectionChange: (data, options) => console.log("=> onSelectionChange", { options }),
   onSortChange: () => {},
   rows: [
     { name: "John", age: 35 },
@@ -64,55 +66,55 @@ Actions.args = {
   ...Primary.args,
   actions: [
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Add", { options }),
       icon: Icons.add,
       label: "Add",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Custom", { options }),
       icon: <MUIStyleIcon />,
       label: "Custom",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Send", { options }),
       disabled: true,
       icon: Icons.block,
       label: "Send",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Filter", { options }),
       icon: Icons.filter,
       label: "Filter",
       position: "icon",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Custom", { options }),
       icon: <MUIStyleIcon />,
       label: "Custom",
       position: "row",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Edit", { options }),
       icon: Icons.edit,
       label: "Edit",
       position: "row",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Notify", { options }),
       disabled: (data: any) => data.age > 40,
       icon: Icons.notifications,
       label: "Notify",
       position: "row",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Delete", { options }),
       disabled: true,
       icon: Icons.delete,
       label: "Delete",
       position: "row",
     },
     {
-      callback: () => {},
+      callback: (data, options) => console.log("=> Delete at least 3", { options }),
       disabled: (data: any[]) => data.length < 3,
       icon: Icons.delete,
       label: "Delete at least 3",
@@ -166,7 +168,10 @@ Styled.args = {
 export const StyledRow = Template.bind({});
 StyledRow.args = {
   ...Primary.args,
-  getRowStyle: (row) => ({
-    backgroundColor: row.age > 40 ? "lightyellow" : "lightgreen",
-  }),
+  getRowStyle: (row, options) => {
+    const index = options.indexes[0];
+    return {
+      backgroundColor: index % 2 === 0 ? "lightyellow" : "lightgreen",
+    };
+  },
 };

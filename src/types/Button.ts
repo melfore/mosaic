@@ -24,7 +24,7 @@ export enum ButtonVariants {
 
 type IButtonVariants = "contained" | "outlined";
 
-type IButtonIcon = Pick<IIcon, "rotate"> & {
+export type IButtonIcon = Pick<IIcon, "rotate"> & {
   component?: ReactElement;
   name?: Icons;
   position?: IButtonIconPosition | ButtonIconPosition;

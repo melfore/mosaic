@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useMemo } from "react";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@mui/material";
 
 import { Icons } from "../../../../types/Icon";
 import { ITablePaginationActions } from "../../../../types/Table";
@@ -39,7 +39,7 @@ const TablePaginationActions: FC<ITablePaginationActions> = ({
       alignItems: "center",
       display: "flex",
       justifyContent: "space-between",
-      padding: `${theme.spacing(1)}px`,
+      padding: theme.spacing(1),
     }),
     [theme]
   );

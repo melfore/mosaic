@@ -143,15 +143,13 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith(undefined, {
       indexes: [],
       multiple: false,
     });
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -440,6 +438,7 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith(
@@ -452,9 +451,6 @@ describe("Table test suite:", () => {
         multiple: true,
       }
     );
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -472,11 +468,9 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(0);
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -502,11 +496,9 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(0);
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

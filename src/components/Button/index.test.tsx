@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { ButtonIconPosition, ButtonVariants, IButton } from "../../types/Button";
 import { Icons } from "../../types/Icon";
@@ -29,14 +29,12 @@ describe("Button test suite:", () => {
     const { element, wrapper } = getButtonTestable({ props: { onClick } });
     expect(wrapper).toHaveLength(1);
 
+    expect(wrapper.text()).toEqual(DEFAULT_TEST_OPTIONS.props.label);
     expect(wrapper.hasClass("MuiButton-contained"));
     expect(wrapper.prop("disabled")).toBeFalsy();
     expect(wrapper.prop("elevated")).toBeFalsy();
     wrapper.simulate("click");
     expect(onClick).toHaveBeenCalledTimes(1);
-
-    const label = wrapper.find("span.MuiButton-label");
-    expect(label.text()).toEqual(DEFAULT_TEST_OPTIONS.props.label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -55,8 +53,7 @@ describe("Button test suite:", () => {
     const label = MessageMock.button;
     const { element, wrapper } = getButtonTestable({ dataCy: label, props: { label, localized: true } });
 
-    const labelElement = wrapper.find("span.MuiButton-label");
-    expect(labelElement.text()).toEqual(getLocalizedMessageMock(label, "en"));
+    expect(wrapper.text()).toEqual(getLocalizedMessageMock(label, "en"));
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

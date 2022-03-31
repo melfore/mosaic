@@ -2,7 +2,7 @@
 
 exports[`Typography test suite: bottomSpacing 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-397282-MuiTypography-root"
   data-cy="typography"
 >
   Text
@@ -11,7 +11,7 @@ exports[`Typography test suite: bottomSpacing 1`] = `
 
 exports[`Typography test suite: dataCy 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1"
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
   data-cy="custom"
 >
   Text
@@ -20,7 +20,7 @@ exports[`Typography test suite: dataCy 1`] = `
 
 exports[`Typography test suite: default 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1"
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
   data-cy="typography"
 >
   Text
@@ -29,7 +29,7 @@ exports[`Typography test suite: default 1`] = `
 
 exports[`Typography test suite: display 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1 MuiTypography-displayInline"
+  className="MuiTypography-root MuiTypography-body1 css-1sx1eu0-MuiTypography-root"
   data-cy="typography"
 >
   Text
@@ -38,11 +38,11 @@ exports[`Typography test suite: display 1`] = `
 
 exports[`Typography test suite: loading 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1"
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
   data-cy="typography-loading"
 >
   <span
-    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
     style={
       Object {
         "height": undefined,
@@ -55,7 +55,7 @@ exports[`Typography test suite: loading 1`] = `
 
 exports[`Typography test suite: localized 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1"
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
   data-cy="typography"
 >
   Typography
@@ -64,7 +64,7 @@ exports[`Typography test suite: localized 1`] = `
 
 exports[`Typography test suite: truncated 1`] = `
 <p
-  className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap"
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap css-1m2dqj2-MuiTypography-root"
   data-cy="typography"
 >
   Text
@@ -73,7 +73,7 @@ exports[`Typography test suite: truncated 1`] = `
 
 exports[`Typography test suite: variant 1`] = `
 <h2
-  className="MuiTypography-root MuiTypography-h6"
+  className="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
   data-cy="typography"
 >
   Text

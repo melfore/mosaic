@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from "react";
-import { Collapse as MUICollapse } from "@material-ui/core";
+import { Collapse as MUICollapse } from "@mui/material";
 
 import { Icons } from "../../types/Icon";
 import { IListItemCollapsible } from "../../types/ListItem";

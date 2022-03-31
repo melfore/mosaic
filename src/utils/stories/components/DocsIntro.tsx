@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Tooltip } from "@material-ui/core";
+import { Tooltip } from "@mui/material";
 import { Title } from "@storybook/addon-docs";
 
 import { Icon, Icons, IconSize, Spacer } from "../../..";

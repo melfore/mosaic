@@ -3,8 +3,8 @@ import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
   ListItemText as MUIListItemText,
-} from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+  Skeleton as MUISkeleton,
+} from "@mui/material";
 
 import { IListItem } from "../../types/ListItem";
 import { getComposedDataCy, suppressEvent } from "../../utils";

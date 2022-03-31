@@ -1,6 +1,9 @@
 import React, { FC, useMemo } from "react";
-import { Typography as MUITypography, TypographyVariant as MUITypographyVariant } from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+import {
+  Skeleton as MUISkeleton,
+  Typography as MUITypography,
+  TypographyVariant as MUITypographyVariant,
+} from "@mui/material";
 
 import { ITypography, TypographyVariants } from "../../types/Typography";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";

@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { Toolbar as MUIToolbar, useTheme } from "@material-ui/core";
+import { Toolbar as MUIToolbar, useTheme } from "@mui/material";
 
 import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import Typography from "../../../Typography";

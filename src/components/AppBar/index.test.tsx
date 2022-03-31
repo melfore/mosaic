@@ -176,7 +176,7 @@ describe("AppBar test suite:", () => {
 
     const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
     const userMenuButton = wrapper.find(`button[data-cy='${userMenuButtonDataCy}']`);
-    const userMenuButtonLabel = userMenuButton.find(".MuiButton-label");
+    const userMenuButtonLabel = userMenuButton.find(".MuiButton-root");
     expect(userMenuButtonLabel.text()).toEqual(username);
   });
 });

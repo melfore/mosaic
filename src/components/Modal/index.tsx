@@ -4,7 +4,7 @@ import {
   DialogActions as MUIDialogActions,
   DialogContent as MUIDialogContent,
   DialogTitle as MUIDialogTitle,
-} from "@material-ui/core";
+} from "@mui/material";
 
 import { useMosaicContext } from "../..";
 import { Icons } from "../../types/Icon";
@@ -86,10 +86,9 @@ const Modal: FC<IModal> = ({
     <MUIDialog {...viewOptions} aria-labelledby="modal-title" data-cy={dataCy} fullWidth onClose={onClose} open={open}>
       <MUIDialogTitle
         id="modal-title"
-        disableTypography
         style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}
       >
-        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant="title">
+        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant="caption">
           {title}
         </Typography>
         {closable && <IconButton icon={Icons.close} size="small" onClick={onClose} />}

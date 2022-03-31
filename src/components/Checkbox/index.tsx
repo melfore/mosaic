@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useCallback } from "react";
-import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@material-ui/core";
+import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@mui/material";
 
 import { ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";

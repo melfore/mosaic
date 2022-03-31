@@ -3,7 +3,7 @@
 exports[`ListItemCollapsible test suite: dataCy 1`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="custom-header"
     disabled={false}
     onClick={[Function]}
@@ -14,22 +14,23 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         data-cy="custom-header-icon"
+        data-testid="KeyboardArrowDownIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
         />
       </svg>
     </div>
     <div
-      className="MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="custom-header-content"
     >
       <span>
@@ -38,7 +39,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="custom-collapse"
     style={
       Object {
@@ -47,10 +48,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,
@@ -60,7 +61,7 @@ Array [
 exports[`ListItemCollapsible test suite: default 1`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -71,22 +72,23 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
+        data-testid="KeyboardArrowDownIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
         />
       </svg>
     </div>
     <div
-      className="MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
       <span>
@@ -95,7 +97,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -104,10 +106,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,
@@ -117,7 +119,7 @@ Array [
 exports[`ListItemCollapsible test suite: listItem variants 1`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-dense MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -128,10 +130,10 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <span
-        className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+        className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
         style={
           Object {
             "height": 24,
@@ -141,11 +143,11 @@ Array [
       />
     </div>
     <div
-      className="MuiListItemText-root MuiListItemText-dense"
+      className="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content-loading"
     >
       <span
-        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
         style={
           Object {
             "height": undefined,
@@ -156,7 +158,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-hidden"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -165,10 +167,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,
@@ -178,7 +180,7 @@ Array [
 exports[`ListItemCollapsible test suite: open 1`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -189,22 +191,23 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
+        data-testid="KeyboardArrowUpIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
         />
       </svg>
     </div>
     <div
-      className="MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
       <span>
@@ -213,7 +216,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -222,10 +225,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,
@@ -235,7 +238,7 @@ Array [
 exports[`ListItemCollapsible test suite: open 2`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -246,22 +249,23 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
+        data-testid="KeyboardArrowUpIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
         />
       </svg>
     </div>
     <div
-      className="MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
       <span>
@@ -270,7 +274,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -279,10 +283,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,
@@ -292,7 +296,7 @@ Array [
 exports[`ListItemCollapsible test suite: open variants 1`] = `
 Array [
   <li
-    className="MuiListItem-root MuiListItem-gutters"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -303,22 +307,23 @@ Array [
     }
   >
     <div
-      className="MuiListItemIcon-root"
+      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
+        data-testid="KeyboardArrowUpIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
         />
       </svg>
     </div>
     <div
-      className="MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
       <span>
@@ -327,7 +332,7 @@ Array [
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-entered"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       Object {
@@ -336,10 +341,10 @@ Array [
     }
   >
     <div
-      className="MuiCollapse-wrapper"
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
     >
       <div
-        className="MuiCollapse-wrapperInner"
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
       />
     </div>
   </div>,

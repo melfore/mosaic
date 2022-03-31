@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from "react";
-import MUIIconButton from "@material-ui/core/IconButton";
+import MUIIconButton from "@mui/material/IconButton";
 
 import { IIconButton } from "../../types/IconButton";
 import { getComposedDataCy, suppressEvent } from "../../utils";

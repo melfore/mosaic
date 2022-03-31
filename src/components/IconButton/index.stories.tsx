@@ -1,5 +1,5 @@
 import React from "react";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
@@ -15,7 +15,7 @@ export default {
     docs: {
       ...getDocsPage({
         basedOn: {
-          label: "@material-ui/core/IconButton",
+          label: "@mui/material/IconButton",
           url: "",
         },
         component: "IconButton",
@@ -28,7 +28,9 @@ export default {
   },
 } as ComponentMeta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} dataCy={DATA_CY_DEFAULT} />;
+const Template: ComponentStory<typeof IconButton> = (args) => (
+  <IconButton {...args} dataCy={DATA_CY_DEFAULT} size="large" />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

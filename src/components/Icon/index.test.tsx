@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { Icons, IconSize, IIcon } from "../../types/Icon";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";

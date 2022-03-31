@@ -18,8 +18,8 @@ It requires these `peerDependencies` to be installed in host project:
   "@material-ui/core": ">= 4.12.3 < 5",
   "@material-ui/icons": ">= 4.11.2 < 5",
   "@material-ui/lab": ">= 4.0.0-alpha.57 < 5",
-  "react": ">= 16.13.0 < 17",
-  "react-dom": ">= 16.13.0 < 17",
+  "react": ">= 17 < 18",
+  "react-dom": ">= 17 < 18"
 ```
 
 ## Usage

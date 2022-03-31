@@ -10,37 +10,46 @@ import TablePaginationActions from "../PaginationActions";
 
 const TablePagination: FC<ITablePagination> = ({
   dataCy,
-  onPageChange,
-  onPageSizeChange,
+  onPageChange: externalOnPageChange,
+  onPageSizeChange: externalOnPageSizeChange,
   page,
   pageSize,
   pageSizeOptions,
   rowsTotal,
   style,
-  subpart,
 }) => {
   const paginationActions = useCallback(
-    (props: MUITablePaginationProps) => <TablePaginationActions {...props} dataCy={dataCy} subpart={subpart} />,
-    [dataCy, subpart]
+    (props: MUITablePaginationProps) => <TablePaginationActions {...props} dataCy={dataCy} />,
+    [dataCy]
   );
 
   const safeCount = useMemo(() => rowsTotal || 0, [rowsTotal]);
 
   const safePage = useMemo(() => (!safeCount ? 0 : page), [page, safeCount]);
 
+  const onPageChange = useCallback(
+    (event, page) => {
+      suppressEvent(event);
+      externalOnPageChange && externalOnPageChange(page);
+    },
+    [externalOnPageChange]
+  );
+
+  const onPageSizeChange = useCallback(
+    (event) => {
+      const pageSize = parseInt(event.target.value, 10);
+      externalOnPageSizeChange && externalOnPageSizeChange(0, pageSize);
+    },
+    [externalOnPageSizeChange]
+  );
+
   return (
     <MUITablePagination
       ActionsComponent={paginationActions}
       component="div"
       count={safeCount}
-      onPageChange={(event, page) => {
-        suppressEvent(event);
-        onPageChange && onPageChange(page);
-      }}
-      onRowsPerPageChange={(event) => {
-        const pageSize = parseInt(event.target.value, 10);
-        onPageSizeChange && onPageSizeChange(0, pageSize);
-      }}
+      onPageChange={onPageChange}
+      onRowsPerPageChange={onPageSizeChange}
       page={safePage}
       rowsPerPage={pageSize}
       rowsPerPageOptions={pageSizeOptions}

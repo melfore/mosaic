@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import { Icons } from "../../types/Icon";
-import { ITable, TableActionPosition } from "../../types/Table";
+import { ITable } from "../../types/Table";
 import { getComposedDataCy } from "../../utils";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
@@ -79,7 +79,10 @@ describe("Table test suite:", () => {
     const bulkSelectionInput = bulkSelection.find("input");
     bulkSelectionInput.simulate("change", { target: { checked: true } });
     expect(onSelectionChange).toHaveBeenCalledTimes(1);
-    expect(onSelectionChange).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows);
+    expect(onSelectionChange).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows, {
+      indexes: [0, 1, 2, 3, 4],
+      multiple: true,
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -95,7 +98,10 @@ describe("Table test suite:", () => {
     const bulkSelectionInput = bulkSelection.find("input");
     bulkSelectionInput.simulate("change", { target: { checked: false } });
     expect(onSelectionChange).toHaveBeenCalledTimes(1);
-    expect(onSelectionChange).toHaveBeenCalledWith([]);
+    expect(onSelectionChange).toHaveBeenCalledWith([], {
+      indexes: [],
+      multiple: true,
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -139,7 +145,10 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith([]);
+    expect(callback).toHaveBeenCalledWith(undefined, {
+      indexes: [],
+      multiple: false,
+    });
 
     const actionLabel = action.find("span.MuiButton-label");
     expect(actionLabel.text()).toEqual(label);
@@ -196,9 +205,9 @@ describe("Table test suite:", () => {
     const { element, wrapper } = getTableTestable({
       props: {
         actions: [
-          { callback, icon: Icons.account, label, position: TableActionPosition.icon },
-          { callback, label: "No Icon", position: TableActionPosition.icon },
-          { callback, icon: <div />, label: "Custom Icon", position: TableActionPosition.icon },
+          { callback, icon: Icons.account, label, position: "icon" },
+          { callback, label: "No Icon", position: "icon" },
+          { callback, icon: <div />, label: "Custom Icon", position: "icon" },
         ],
       },
     });
@@ -207,7 +216,10 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith([]);
+    expect(callback).toHaveBeenCalledWith(undefined, {
+      indexes: [],
+      multiple: false,
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -330,14 +342,17 @@ describe("Table test suite:", () => {
     const callback = jest.fn();
     const label = "Account";
     const { element, wrapper } = getTableTestable({
-      props: { actions: [{ callback, icon: Icons.account, label, position: TableActionPosition.row }] },
+      props: { actions: [{ callback, icon: Icons.account, label, position: "row" }] },
     });
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0]);
+    expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0], {
+      indexes: [0],
+      multiple: false,
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -348,7 +363,7 @@ describe("Table test suite:", () => {
     const label = "Account";
     const { element, wrapper } = getTableTestable({
       props: {
-        actions: [{ callback, disabled: true, icon: Icons.account, label, position: TableActionPosition.row }],
+        actions: [{ callback, disabled: true, icon: Icons.account, label, position: "row" }],
       },
     });
 
@@ -372,7 +387,7 @@ describe("Table test suite:", () => {
             disabled: (data: ITableMockedData) => data.id === "3",
             icon: Icons.account,
             label,
-            position: TableActionPosition.row,
+            position: "row",
           },
         ],
       },
@@ -392,7 +407,7 @@ describe("Table test suite:", () => {
     const label = "Account";
     const { element, wrapper } = getTableTestable({
       props: {
-        actions: [{ callback, hidden: true, icon: Icons.account, label, position: TableActionPosition.row }],
+        actions: [{ callback, hidden: true, icon: Icons.account, label, position: "row" }],
       },
     });
 
@@ -418,7 +433,7 @@ describe("Table test suite:", () => {
     const label = "Selection";
     const { element, wrapper } = getTableTestable({
       props: {
-        actions: [{ callback, icon: Icons.account, label, position: TableActionPosition.selection }],
+        actions: [{ callback, icon: Icons.account, label, position: "selection" }],
         selectionFilter: (d) => d.name.startsWith("P"),
       },
     });
@@ -427,10 +442,16 @@ describe("Table test suite:", () => {
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith([
-      { id: "3", name: "Paintings", rating: 2.5 },
-      { id: "4", name: "Photography", rating: 5 },
-    ]);
+    expect(callback).toHaveBeenCalledWith(
+      [
+        { id: "3", name: "Paintings", rating: 2.5 },
+        { id: "4", name: "Photography", rating: 5 },
+      ],
+      {
+        indexes: [2, 3],
+        multiple: true,
+      }
+    );
 
     const actionLabel = action.find("span.MuiButton-label");
     expect(actionLabel.text()).toEqual(label);
@@ -444,7 +465,7 @@ describe("Table test suite:", () => {
     const label = "Selection";
     const { element, wrapper } = getTableTestable({
       props: {
-        actions: [{ callback, disabled: true, icon: Icons.account, label, position: TableActionPosition.selection }],
+        actions: [{ callback, disabled: true, icon: Icons.account, label, position: "selection" }],
         selectionFilter: (d) => d.name.startsWith("P"),
       },
     });
@@ -472,7 +493,7 @@ describe("Table test suite:", () => {
             disabled: (data: any[]) => data.length === 2,
             icon: Icons.account,
             label,
-            position: TableActionPosition.selection,
+            position: "selection",
           },
         ],
         selectionFilter: (d) => d.name.startsWith("P"),

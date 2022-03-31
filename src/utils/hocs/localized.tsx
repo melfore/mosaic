@@ -99,6 +99,11 @@ const localized =
         }
 
         const { localize } = mosaicContext;
+        if (!localize) {
+          logWarn("MosaicContext", "Method 'localize' was not provided to MosaicContextProvider");
+          return key;
+        }
+
         return localize(key);
       },
       [mosaicContext]

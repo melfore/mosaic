@@ -284,13 +284,15 @@ const Select = <T extends any>({
         }
 
         return (
-          <li key={`option-${optionLabel}`} {...props}>
-            <Checkbox
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
-              disabled
-              labelPlacement="end"
-              value={selected}
-            />
+          <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
+            {multiple && (
+              <Checkbox
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
+                disabled
+                labelPlacement="end"
+                value={selected}
+              />
+            )}
             <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>
               {optionLabel}
             </Typography>

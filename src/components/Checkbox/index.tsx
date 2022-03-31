@@ -40,7 +40,6 @@ const Checkbox: FC<ICheckbox> = ({
       control={
         <MUICheckbox
           checked={value}
-          color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.check)}
           disabled={disabled}
           indeterminate={intermediate}

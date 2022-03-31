@@ -39,7 +39,6 @@ const Switch: FC<ISwitch> = ({
       control={
         <MUISwitch
           checked={value}
-          color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.toggle)}
           disabled={disabled}
           inputProps={

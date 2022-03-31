@@ -56,7 +56,6 @@ const Button: FC<IButton> = ({
 
   return (
     <MUIButton
-      color="primary"
       data-cy={dataCy}
       disabled={disabled}
       disableElevation={!elevated}

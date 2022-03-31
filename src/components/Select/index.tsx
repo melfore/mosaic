@@ -26,6 +26,10 @@ export const SUBPARTS_MAP = {
   loading: {
     label: "Loading",
   },
+  option: {
+    label: "Option <li> (with label)",
+    value: (label = "{label}") => `option-${label}`,
+  },
   optionCheckbox: {
     label: "Option Checkbox (with label)",
     value: (label = "{label}") => `option-${label}-checkbox`,
@@ -269,11 +273,15 @@ const Select = <T extends any>({
         );
       }}
       renderOption={(props, option, { selected }) => {
-        if (customOptionRendering) {
-          return customOptionRendering(option, selected);
-        }
-
         const optionLabel = getOptionLabel(option);
+        const optionDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.option, optionLabel);
+        if (customOptionRendering) {
+          return (
+            <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
+              {customOptionRendering(option, selected)}
+            </li>
+          );
+        }
 
         return (
           <li key={`option-${optionLabel}`} {...props}>

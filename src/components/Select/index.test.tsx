@@ -226,6 +226,27 @@ describe("Select Single test suite:", () => {
     expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options.reverse());
   });
 
+  it("options - custom rendering", () => {
+    const customOptionRendering = (option: string) => option.slice(0, 3);
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: {
+        customOptionRendering,
+      },
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`li[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options.map(customOptionRendering));
+  });
+
   it("placeholder", () => {
     const placeholder = "Placeholder";
     const { wrapper } = getSelectTestable({ props: { placeholder } });

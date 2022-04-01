@@ -50,24 +50,24 @@ jobs:
         run: |
           npm run lintify
           npm run prettify
+          git add .
           echo "::set-output name=formatted-files::$(git status -s -uno | wc -l)"
 
       - name: Commit Changes
         if: steps.code-format.outputs.formatted-files > 0
         run: |
-          git add .
           git commit -m "refactor: 💡 ESLint / Prettify" -a
 
       - name: Generate Docs
         id: generate-docs
         run: |
           npm run build:storybook
+          git add .
           echo "::set-output name=generated-docs::$(git status -s -uno | wc -l)"
 
       - name: Commit Changes
         if: steps.generate-docs.outputs.generated-docs > 0
         run: |
-          git add .
           git commit -m "docs: ✏️ Updated StoryBook" -a
 
       - name: Build

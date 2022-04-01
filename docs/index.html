@@ -1,51 +1,75 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"/><style>html, body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mosaic Storybook</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+    <style>
+      body {
+        background-color: rgb(246, 249, 252);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- example content -->
+    <div class="mui-container-fluid">
+      <div class="mui-row">
+        <div class="mui-col-xs-0 mui-col-md-2 mui-col-lg-3"></div>
+        <div class="mui-col-xs-12 mui-col-md-8 mui-col-lg-6">
+          <div class="mui-panel mui--text-center" style="margin: 24px;">
+            <div class="mui--text-display1">
+              <a href="https://github.com/melfore/mosaic" style="color: black; text-decoration: underline;" target="_blank">@melfore/mosaic</a>
+            </div>
+            <br />
+            <br />
+            <div class="mui--text-headline">Storybook Documentation</div>
+            <br />
+            <div class="mui--text-body1">Pick desired version:</div>
+            <button class="mui-btn mui-btn--primary mui-btn--raised" onclick="window.location.href = 'latest/index.html';">Latest</button>
+            <button class="mui-btn mui-btn--danger mui-btn--raised" onclick="window.location.href = 'beta/index.html';">Beta</button>
+          </div>
+        </div>
+        <div class="mui-col-xs-0 mui-col-md-2 mui-col-lg-3"></div>
+      </div>
+    </div>
+  </body>
+</html>
 
-  * {
-    box-sizing: border-box;
-  }</style><script>/* globals window */
-  /* eslint-disable no-underscore-dangle */
-  try {
-    if (window.top !== window) {
-      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+<!-- <html>
+  <style>
+    body {
+      align-items: flex-start;
+      display: flex;
+      justify-content: center;
     }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.warn('unable to connect to top frame for connecting dev tools');
-  }
 
-  window.onerror = function onerror(message, source, line, column, err) {
-    if (window.CONFIG_TYPE !== 'DEVELOPMENT') return;
-    // eslint-disable-next-line no-var, vars-on-top
-    var xhr = new window.XMLHttpRequest();
-    xhr.open('POST', '/runtime-error');
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhr.send(
-      JSON.stringify({
-        /* eslint-disable object-shorthand */
-        message: message,
-        source: source,
-        line: line,
-        column: column,
-        error: err && { message: err.message, name: err.name, stack: err.stack },
-        origin: 'manager',
-        /* eslint-enable object-shorthand */
-      })
-    );
-  };</script><style>#root[hidden],
-      #docs-root[hidden] {
-        display: none !important;
-      }</style></head><body><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
-          
-      
-          
-            window['LOGLEVEL'] = "info";
-          
-      
-          
-            window['FEATURES'] = {"postcss":true,"emotionAlias":true,"warnOnLegacyHierarchySeparator":true};</script><script src="runtime~main.91a0c7330ab317d35c4a.manager.bundle.js"></script><script src="vendors~main.f7f16cebbf3aa96a4f89.manager.bundle.js"></script><script src="main.e2663b1cf842947d1a59.manager.bundle.js"></script></body></html>
+    #main {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 400px;
+      width: 40%;
+    }
+
+    #version-picker {
+      align-items: center;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <h1>@melfore/mosaic</h1>
+      <h2>Storybook Documentation</h2>
+      <div id="version-picker">
+        <button class=".mui-button" >Latest</a>
+        <button class=".mui-button" onclick="window.location.href = 'beta/index.html';">Beta</a>
+      </div>
+    </div>
+  </body>
+</html> -->

@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode } from "react";
 import { TablePaginationProps as MUITablePaginationProps } from "@material-ui/core";
 
-import { IBase, ILoadable, ILocalizable, ISubpartItem } from "./Base";
+import { IBase, ILoadable, ILocalizable } from "./Base";
 import { IPartialIconUtilizer } from "./Icon";
 
 /**
@@ -16,15 +16,22 @@ export enum TableActionPosition {
 
 export type ITableActionPosition = "icon" | "row" | "selection" | "toolbar";
 
+export interface ITableDataCallbackOptions {
+  indexes: number[];
+  multiple: boolean;
+}
+
+export type ITableDataCallback<T, K = any> = (data: K, options?: ITableDataCallbackOptions) => T;
+
 export interface ITableAction extends IPartialIconUtilizer {
   /**
    * Callback for click events on table action
    */
-  callback: (data: object | object[]) => void;
+  callback: ITableDataCallback<void>;
   /**
    * Enables disabled state
    */
-  disabled?: boolean | ((data: any) => boolean) | ((data: any[]) => boolean);
+  disabled?: boolean | ITableDataCallback<boolean>;
   /**
    * Hides action
    */
@@ -39,11 +46,14 @@ export interface ITableAction extends IPartialIconUtilizer {
   position?: ITableActionPosition | TableActionPosition;
 }
 
-export interface ITableToolbarAction extends ISubpartItem, ITableAction {
+export interface ITableToolbarAction extends IBase, ITableAction {
   /**
    * Data of table toolbar action
    */
-  data: object | object[];
+  data: any;
+  dataCy: string;
+  // TODO#lb: add docs
+  dataCallbackOptions: ITableDataCallbackOptions;
   /**
    * Table toolbar action index
    */
@@ -66,7 +76,7 @@ export interface ITableColumn {
   /**
    * Method to allow custom rendering
    */
-  render?: (row: any) => ReactNode;
+  render?: ITableDataCallback<ReactNode>;
   /**
    * Enables sortable state
    */
@@ -116,7 +126,8 @@ export interface ITableHeadCell extends IBase {
   stickyHeader: boolean;
 }
 
-export interface ITablePagination extends ISubpartItem {
+export interface ITablePagination extends IBase {
+  dataCy: string;
   /**
    * Callback for page change events
    */
@@ -143,7 +154,9 @@ export interface ITablePagination extends ISubpartItem {
   rowsTotal: number;
 }
 
-export type ITablePaginationActions = MUITablePaginationProps & ISubpartItem;
+export type ITablePaginationActions = MUITablePaginationProps & {
+  dataCy: string;
+};
 
 export type ITable = ILoadable &
   ILocalizable &
@@ -167,7 +180,7 @@ export type ITable = ILoadable &
     /**
      * Method to customize table row style
      */
-    getRowStyle?: (data: any) => CSSProperties;
+    getRowStyle?: ITableDataCallback<CSSProperties>;
     /**
      * Height of table component (useful when sticky)
      */
@@ -179,11 +192,11 @@ export type ITable = ILoadable &
     /**
      * Callback for click events on table row
      */
-    onRowClick?: (row: any) => void;
+    onRowClick?: ITableDataCallback<any>;
     /**
      * Callback for click events on table row checkbox
      */
-    onSelectionChange?: (data: any[]) => void;
+    onSelectionChange?: ITableDataCallback<void, any[]>;
     /**
      * Callback for sort events on table column headers
      */
@@ -195,7 +208,7 @@ export type ITable = ILoadable &
     /**
      * Method to allow pre-selection of rows
      */
-    selectionFilter?: (datum: any) => boolean;
+    selectionFilter?: ITableDataCallback<boolean>;
     /**
      * Default table sorting
      */

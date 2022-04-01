@@ -1,2 +1,4 @@
-export const CHECKBOX_SELECTION_PATH = "checkbox-selection";
-export const TOOLBAR_DIMENSION = 64;
+export const COLUMN_CHECKBOX_PATH = "checkbox-selection";
+export const COLUMN_ROW_ACTIONS_PATH = "row-actions";
+
+export const TOOLBAR_HEIGHT = 64;

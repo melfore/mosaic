@@ -108,7 +108,7 @@ export type IIconDimensions = {
   [key in IIconSize]: number;
 };
 
-type IIconElement = Icons | ReactElement;
+export type IIconElement = Icons | ReactElement;
 
 export interface IIconUtilizer {
   /**

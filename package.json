@@ -85,6 +85,7 @@
   "scripts": {
     "build": "npm run pre:build && tsc",
     "build:storybook": "build-storybook -o docs/latest --docs",
+    "build:storybook:beta": "build-storybook -o docs/beta --docs",
     "build:yalc": "npm run build && yalc publish --push --private",
     "clean:workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",

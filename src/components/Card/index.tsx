@@ -71,6 +71,7 @@ const Card: FC<ICard> = ({
           <Typography
             bottomSpacing={false}
             dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)}
+            display="block"
             loading={loading}
             truncated
             variant="title"

@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-import { Icons, IconSize } from "../../types/Icon";
+import { Icons } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
 import { getComposedDataCy } from "../../utils";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -63,11 +63,11 @@ describe("IconButton test suite:", () => {
   });
 
   it("size", () => {
-    const { element, wrapper } = getIconButtonTestable({ props: { size: IconSize.small } });
+    const { element, wrapper } = getIconButtonTestable({ props: { size: "small" } });
 
     const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
     const icon = wrapper.find(`Icon[dataCy='${iconDataCy}']`);
-    expect(icon.prop("size")).toEqual(IconSize.small);
+    expect(icon.prop("size")).toEqual("small");
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

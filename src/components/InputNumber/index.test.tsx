@@ -1,6 +1,5 @@
 import renderer from "react-test-renderer";
 
-import { InputSize, InputVariant } from "../../types/Input";
 import { IInputNumber } from "../../types/InputNumber";
 import { MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -134,7 +133,7 @@ describe("InputNumber test suite:", () => {
   });
 
   it("size", () => {
-    const { element, wrapper } = getInputNumberTestable({ props: { size: InputSize.small } });
+    const { element, wrapper } = getInputNumberTestable({ props: { size: "small" } });
     expect(wrapper.hasClass("MuiInputBase-inputMarginDense"));
     expect(wrapper.hasClass("MuiOutlinedInput-inputMarginDense"));
 
@@ -152,7 +151,7 @@ describe("InputNumber test suite:", () => {
   });
 
   it("variant", () => {
-    const { element, wrapper } = getInputNumberTestable({ props: { variant: InputVariant.filled } });
+    const { element, wrapper } = getInputNumberTestable({ props: { variant: "filled" } });
     expect(wrapper.hasClass("MuiFilledInput-input"));
 
     const snapshotWrapper = renderer.create(element).toJSON();

@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-import { ISpacer, SpacerDirection } from "../../types/Spacer";
+import { ISpacer } from "../../types/Spacer";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Spacer, { DATA_CY_DEFAULT } from ".";
@@ -35,7 +35,7 @@ describe("Spacer test suite:", () => {
   });
 
   it("direction", () => {
-    const { element } = getSpacerTestable({ props: { direction: SpacerDirection.vertical } });
+    const { element } = getSpacerTestable({ props: { direction: "vertical" } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

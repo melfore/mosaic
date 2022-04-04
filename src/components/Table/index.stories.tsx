@@ -1,7 +1,7 @@
 /* eslint-disable storybook/default-exports */
 
 import React from "react";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
@@ -169,7 +169,7 @@ export const StyledRow = Template.bind({});
 StyledRow.args = {
   ...Primary.args,
   getRowStyle: (row, options) => {
-    const index = options.indexes[0];
+    const index = options?.indexes[0] || 0;
     return {
       backgroundColor: index % 2 === 0 ? "lightyellow" : "lightgreen",
     };

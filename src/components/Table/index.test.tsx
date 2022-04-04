@@ -1,5 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { Icons } from "../../types/Icon";
 import { ITable } from "../../types/Table";
@@ -136,22 +137,20 @@ describe("Table test suite:", () => {
       props: {
         actions: [
           { callback, icon: Icons.account, label },
-          { callback, icon: <div />, label: "Custom Icon" },
+          { callback, icon: <MUIStyleIcon />, label: "Custom Icon" },
         ],
       },
     });
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith(undefined, {
       indexes: [],
       multiple: false,
     });
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -207,7 +206,7 @@ describe("Table test suite:", () => {
         actions: [
           { callback, icon: Icons.account, label, position: "icon" },
           { callback, label: "No Icon", position: "icon" },
-          { callback, icon: <div />, label: "Custom Icon", position: "icon" },
+          { callback, icon: <MUIStyleIcon />, label: "Custom Icon", position: "icon" },
         ],
       },
     });
@@ -440,6 +439,7 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(1);
     expect(callback).toHaveBeenCalledWith(
@@ -452,9 +452,6 @@ describe("Table test suite:", () => {
         multiple: true,
       }
     );
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -472,11 +469,9 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(0);
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -502,11 +497,9 @@ describe("Table test suite:", () => {
 
     const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
     const action = wrapper.find(`button[data-cy='${actionDataCy}']`);
+    expect(action.text()).toEqual(label);
     action.simulate("click");
     expect(callback).toHaveBeenCalledTimes(0);
-
-    const actionLabel = action.find("span.MuiButton-label");
-    expect(actionLabel.text()).toEqual(label);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

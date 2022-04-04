@@ -2,7 +2,7 @@
 
 exports[`InputNumber test suite: dataCy 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -11,15 +11,16 @@ exports[`InputNumber test suite: dataCy 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="custom"
       disabled={false}
+      id="mui-4"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -37,28 +38,16 @@ exports[`InputNumber test suite: dataCy 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -67,7 +56,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
 
 exports[`InputNumber test suite: default 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -76,13 +65,13 @@ exports[`InputNumber test suite: default 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -102,28 +91,16 @@ exports[`InputNumber test suite: default 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -132,7 +109,7 @@ exports[`InputNumber test suite: default 1`] = `
 
 exports[`InputNumber test suite: disabled 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -141,15 +118,16 @@ exports[`InputNumber test suite: disabled 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root Mui-disabled Mui-disabled MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled Mui-disabled"
+      className="MuiOutlinedInput-input MuiInputBase-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={true}
+      id="mui-8"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -167,28 +145,16 @@ exports[`InputNumber test suite: disabled 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -197,7 +163,7 @@ exports[`InputNumber test suite: disabled 1`] = `
 
 exports[`InputNumber test suite: float 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -206,13 +172,13 @@ exports[`InputNumber test suite: float 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -232,28 +198,16 @@ exports[`InputNumber test suite: float 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -262,7 +216,7 @@ exports[`InputNumber test suite: float 1`] = `
 
 exports[`InputNumber test suite: localized 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -271,19 +225,19 @@ exports[`InputNumber test suite: localized 1`] = `
   }
 >
   <label
-    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
     data-shrink={true}
   >
     Title
   </label>
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="locale.title"
       disabled={false}
       onAnimationStart={[Function]}
@@ -303,10 +257,10 @@ exports[`InputNumber test suite: localized 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legendLabelled-3 PrivateNotchedOutline-legendNotched-4"
+        className="css-1in441m"
       >
         <span>
           Title
@@ -319,7 +273,7 @@ exports[`InputNumber test suite: localized 1`] = `
 
 exports[`InputNumber test suite: min/max 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -328,15 +282,16 @@ exports[`InputNumber test suite: min/max 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
+      id="mui-12"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -354,28 +309,16 @@ exports[`InputNumber test suite: min/max 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -384,7 +327,7 @@ exports[`InputNumber test suite: min/max 1`] = `
 
 exports[`InputNumber test suite: numeric values only 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -393,13 +336,13 @@ exports[`InputNumber test suite: numeric values only 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -419,28 +362,16 @@ exports[`InputNumber test suite: numeric values only 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -449,7 +380,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
 
 exports[`InputNumber test suite: onChange 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -458,15 +389,16 @@ exports[`InputNumber test suite: onChange 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
+      id="mui-16"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -484,28 +416,16 @@ exports[`InputNumber test suite: onChange 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -514,7 +434,7 @@ exports[`InputNumber test suite: onChange 1`] = `
 
 exports[`InputNumber test suite: placeholder 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -523,13 +443,13 @@ exports[`InputNumber test suite: placeholder 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -550,28 +470,16 @@ exports[`InputNumber test suite: placeholder 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -580,7 +488,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
 
 exports[`InputNumber test suite: required 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -589,15 +497,16 @@ exports[`InputNumber test suite: required 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
+      id="mui-20"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -615,28 +524,16 @@ exports[`InputNumber test suite: required 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -645,7 +542,7 @@ exports[`InputNumber test suite: required 1`] = `
 
 exports[`InputNumber test suite: shrink 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -654,13 +551,13 @@ exports[`InputNumber test suite: shrink 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -680,28 +577,16 @@ exports[`InputNumber test suite: shrink 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -710,7 +595,7 @@ exports[`InputNumber test suite: shrink 1`] = `
 
 exports[`InputNumber test suite: size 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -719,15 +604,16 @@ exports[`InputNumber test suite: size 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+      className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
+      id="mui-24"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -745,28 +631,16 @@ exports[`InputNumber test suite: size 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -775,7 +649,7 @@ exports[`InputNumber test suite: size 1`] = `
 
 exports[`InputNumber test suite: value 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -784,13 +658,13 @@ exports[`InputNumber test suite: value 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input"
+      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
       onAnimationStart={[Function]}
@@ -810,28 +684,16 @@ exports[`InputNumber test suite: value 1`] = `
     />
     <fieldset
       aria-hidden={true}
-      className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
-      style={
-        Object {
-          "paddingLeft": 8,
-        }
-      }
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="PrivateNotchedOutline-legend-2"
-        style={
-          Object {
-            "width": 0.01,
-          }
-        }
+        className="css-hdw1oc"
       >
         <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "&#8203;",
-            }
-          }
-        />
+          className="notranslate"
+        >
+          ​
+        </span>
       </legend>
     </fieldset>
   </div>
@@ -840,7 +702,7 @@ exports[`InputNumber test suite: value 1`] = `
 
 exports[`InputNumber test suite: variant 1`] = `
 <div
-  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
     Object {
       "textAlign": "right",
@@ -849,15 +711,16 @@ exports[`InputNumber test suite: variant 1`] = `
   }
 >
   <div
-    className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+    className="MuiFilledInput-root MuiFilledInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-cio0x1-MuiInputBase-root-MuiFilledInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiFilledInput-input"
+      className="MuiFilledInput-input MuiInputBase-input css-10botns-MuiInputBase-input-MuiFilledInput-input"
       data-cy="input-number"
       disabled={false}
+      id="mui-28"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}

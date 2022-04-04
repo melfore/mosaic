@@ -5,13 +5,12 @@ import {
   CardContent as MUICardContent,
   CardHeader as MUICardHeader,
   Collapse as MUICollapse,
+  Skeleton as MUISkeleton,
   useTheme,
-} from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+} from "@mui/material";
 
 import { ICard } from "../../types/Card";
 import { Icons } from "../../types/Icon";
-import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Avatar from "../Avatar";
@@ -72,9 +71,10 @@ const Card: FC<ICard> = ({
           <Typography
             bottomSpacing={false}
             dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)}
+            display="block"
             loading={loading}
             truncated
-            variant={TypographyVariants.title}
+            variant="title"
           >
             {title}
           </Typography>
@@ -85,7 +85,7 @@ const Card: FC<ICard> = ({
             dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.subtitle)}
             loading={loading}
             truncated
-            variant={TypographyVariants.caption}
+            variant="caption"
           >
             {subtitle}
           </Typography>
@@ -96,16 +96,13 @@ const Card: FC<ICard> = ({
   );
 
   return (
-    <MUICard
-      data-cy={dataCy}
-      style={{ margin: `${theme.spacing(2)}px`, width: `calc(100% - ${theme.spacing(4)}px)`, ...style }}
-    >
+    <MUICard data-cy={dataCy} style={{ margin: theme.spacing(2), width: `calc(100% - ${theme.spacing(4)})`, ...style }}>
       {cardHeader}
       <MUICardContent
         data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)}
-        style={{ padding: `${theme.spacing(1)}px ${theme.spacing(2)}px` }}
+        style={{ padding: `${theme.spacing(1)} ${theme.spacing(2)}` }}
       >
-        {loading ? <MUISkeleton height={`${theme.spacing(16)}px`} /> : children}
+        {loading ? <MUISkeleton height={theme.spacing(16)} /> : children}
       </MUICardContent>
       {!loading && (
         <Fragment>
@@ -115,13 +112,13 @@ const Card: FC<ICard> = ({
               alignItems: "center",
               display: "flex",
               justifyContent: "space-between",
-              padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
+              padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
             }}
           >
             {actions.length > 0 && (
               <div style={{ alignItems: "center", display: "flex" }}>
                 {actions.map((action, index) => (
-                  <div key={`card-action-${index}`} style={{ marginRight: `${theme.spacing(2)}px` }}>
+                  <div key={`card-action-${index}`} style={{ marginRight: theme.spacing(2) }}>
                     {cloneElement(action)}{" "}
                   </div>
                 ))}
@@ -139,7 +136,7 @@ const Card: FC<ICard> = ({
             <MUICollapse in={expanded} timeout="auto" unmountOnExit={unmountCollapsible}>
               <MUICardContent
                 data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.collapsibleContent)}
-                style={{ padding: `${theme.spacing(1)}px ${theme.spacing(2)}px` }}
+                style={{ padding: `${theme.spacing(1)} ${theme.spacing(2)}` }}
               >
                 {collapsible}
               </MUICardContent>

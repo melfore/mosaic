@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TableCell as MUITableCell } from "@material-ui/core";
+import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import { ITableAction, ITableColumn, ITableDataCallbackOptions } from "../../../../types/Table";
@@ -16,7 +16,10 @@ interface ITableActionsCell extends IBase {
 const TableActionsCell: FC<ITableActionsCell> = ({ actions, column, data, dataCallbackOptions, dataCy }) => {
   const { padding: columnPadding, width } = column;
 
-  const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
+  const padding = useMemo(
+    () => (!columnPadding || columnPadding === "default" ? "normal" : columnPadding),
+    [columnPadding]
+  );
 
   const style = useMemo(
     (): CSSProperties => ({

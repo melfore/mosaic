@@ -1,4 +1,4 @@
-import { DialogProps as MUIDialogProps } from "@material-ui/core";
+import { DialogProps as MUIDialogProps } from "@mui/material";
 
 import { ILocalizable } from "./Base";
 import { IButton } from "./Button";

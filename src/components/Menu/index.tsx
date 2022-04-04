@@ -1,5 +1,5 @@
 import React, { FC, Fragment, useCallback, useMemo, useState } from "react";
-import { Menu as MUIMenu, MenuItem as MUIMenuItem, PopoverOrigin as MUIPopoverOrigin } from "@material-ui/core";
+import { Menu as MUIMenu, MenuItem as MUIMenuItem, PopoverOrigin as MUIPopoverOrigin } from "@mui/material";
 
 import { Icons } from "../../types/Icon";
 import { IMenu, IMenuItemCallback } from "../../types/Menu";

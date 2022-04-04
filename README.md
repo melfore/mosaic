@@ -15,11 +15,14 @@ Add the package to your project with:
 It requires these `peerDependencies` to be installed in host project:
 
 ```
-  "@material-ui/core": ">= 4.12.3 < 5",
-  "@material-ui/icons": ">= 4.11.2 < 5",
-  "@material-ui/lab": ">= 4.0.0-alpha.57 < 5",
-  "react": ">= 16.13.0 < 17",
-  "react-dom": ">= 16.13.0 < 17",
+  "@emotion/react": ">= 11.8.2 < 12",
+  "@emotion/styled": ">= 11.8.1 < 12",
+  "@mui/icons-material": ">= 5.5.1 < 6",
+  "@mui/lab": ">= 5.0.0-alpha.75 < 6",
+  "@mui/material": ">= 5.5.3 < 6",
+  "@mui/styles": ">= 5.5.3 < 6",
+  "react": ">= 17 < 18",
+  "react-dom": ">= 17 < 18"
 ```
 
 ## Usage

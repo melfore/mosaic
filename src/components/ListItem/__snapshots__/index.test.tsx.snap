@@ -2,7 +2,7 @@
 
 exports[`ListItem test suite: dataCy 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
   data-cy="custom"
   disabled={false}
   onClick={[Function]}
@@ -13,7 +13,7 @@ exports[`ListItem test suite: dataCy 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="custom-content"
   />
 </li>
@@ -21,7 +21,7 @@ exports[`ListItem test suite: dataCy 1`] = `
 
 exports[`ListItem test suite: default 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -32,7 +32,7 @@ exports[`ListItem test suite: default 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="list-item-content"
   >
     <span>
@@ -44,7 +44,7 @@ exports[`ListItem test suite: default 1`] = `
 
 exports[`ListItem test suite: dense 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-dense MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -55,7 +55,7 @@ exports[`ListItem test suite: dense 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root MuiListItemText-dense"
+    className="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
     data-cy="list-item-content"
   />
 </li>
@@ -63,7 +63,7 @@ exports[`ListItem test suite: dense 1`] = `
 
 exports[`ListItem test suite: icon 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -74,12 +74,13 @@ exports[`ListItem test suite: icon 1`] = `
   }
 >
   <div
-    className="MuiListItemIcon-root"
+    className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
   >
     <svg
       aria-hidden={true}
-      className="MuiSvgIcon-root"
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
       data-cy="list-item-icon"
+      data-testid="AccountCircleIcon"
       focusable="false"
       viewBox="0 0 24 24"
     >
@@ -89,7 +90,7 @@ exports[`ListItem test suite: icon 1`] = `
     </svg>
   </div>
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="list-item-content"
   />
 </li>
@@ -97,7 +98,7 @@ exports[`ListItem test suite: icon 1`] = `
 
 exports[`ListItem test suite: loading 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -108,11 +109,11 @@ exports[`ListItem test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="list-item-content-loading"
   >
     <span
-      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
       style={
         Object {
           "height": undefined,
@@ -126,7 +127,7 @@ exports[`ListItem test suite: loading 1`] = `
 
 exports[`ListItem test suite: onClick 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -137,7 +138,7 @@ exports[`ListItem test suite: onClick 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="list-item-content"
   />
 </li>
@@ -145,7 +146,7 @@ exports[`ListItem test suite: onClick 1`] = `
 
 exports[`ListItem test suite: selected 1`] = `
 <li
-  className="MuiListItem-root MuiListItem-gutters Mui-selected"
+  className="MuiListItem-root MuiListItem-gutters MuiListItem-padding Mui-selected css-1p823my-MuiListItem-root"
   data-cy="list-item"
   disabled={false}
   onClick={[Function]}
@@ -156,7 +157,7 @@ exports[`ListItem test suite: selected 1`] = `
   }
 >
   <div
-    className="MuiListItemText-root"
+    className="MuiListItemText-root css-tlelie-MuiListItemText-root"
     data-cy="list-item-content"
   />
 </li>

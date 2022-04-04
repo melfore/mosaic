@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { Icons } from "../../types/Icon";
 import { IIconWrapper } from "../../types/IconWrapper";
@@ -37,10 +37,7 @@ describe("IconWrapper test suite:", () => {
   });
 
   it("icon - custom element", () => {
-    const { element, wrapper } = getIconWrapperTestable({
-      domNode: "div",
-      props: { icon: <MUIStyleIcon /> },
-    });
+    const { element, wrapper } = getIconWrapperTestable({ props: { icon: <MUIStyleIcon /> } });
 
     const svgPath = wrapper.find("path");
     expect(

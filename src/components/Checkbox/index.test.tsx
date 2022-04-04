@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-import { CheckboxSize, ICheckbox } from "../../types/Checkbox";
+import { ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";
 import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -145,7 +145,7 @@ describe("Checkbox test suite:", () => {
   });
 
   it("size", () => {
-    const { element } = getCheckboxTestable({ props: { size: CheckboxSize.small } });
+    const { element } = getCheckboxTestable({ props: { size: "small" } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

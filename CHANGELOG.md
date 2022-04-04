@@ -1,14 +1,11 @@
+## [6.3.5](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5) (2022-04-04)
+
+
+### Bug Fixes
+
+* 🐛 [Icon] Removed div wrapper for CustomIcons ([48562c2](https://github.com/melfore/mosaic/commit/48562c2f4bc9d3dbc9a6b079cb283c4253b8cc84))
+
 ## [6.3.5-beta.1](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5-beta.1) (2022-04-01)
-
-
-### chore
-
-* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
-
-
-### BREAKING CHANGES
-
-* 🧨 Enabling beta releases
 
 ## [6.3.4](https://github.com/melfore/mosaic/compare/v6.3.3...v6.3.4) (2022-04-01)
 

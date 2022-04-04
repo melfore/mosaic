@@ -1,6 +1,6 @@
 import React, { cloneElement, FC, ReactElement, useMemo } from "react";
-import { makeStyles } from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+import { Skeleton as MUISkeleton } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 
 import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
@@ -69,11 +69,11 @@ const Icon: FC<IIcon> = ({
   }, [children, dataCy, dimensions, externalStyle, forwarded, rotate, rotateAnimation, size]);
 
   if (loading) {
-    return <MUISkeleton variant="rect" style={{ ...dimensions }} />;
+    return <MUISkeleton variant="rectangular" style={{ ...dimensions }} />;
   }
 
   if (children) {
-    return <div {...props}>{cloneElement(children as ReactElement<any>, { style: { ...dimensions } })}</div>;
+    return cloneElement(children as ReactElement<any>, { ...props });
   }
 
   if (!name) {

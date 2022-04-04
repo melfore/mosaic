@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import { useMemo } from "react";
-import { AppBar as MUIAppBar, Toolbar as MUIToolbar, useTheme } from "@material-ui/core";
+import { AppBar as MUIAppBar, Toolbar as MUIToolbar, useTheme } from "@mui/material";
 
 import { IAppBar } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
 import { IMenu } from "../../types/Menu";
-import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { logWarn } from "../../utils/logger";
@@ -103,11 +102,11 @@ const AppBar: FC<IAppBar> = ({
               style={{
                 borderRadius: `${theme.shape.borderRadius}px`,
                 cursor: onTitleClick ? "pointer" : "default",
-                padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
+                padding: `${theme.spacing(0.5)} ${theme.spacing(1)}`,
                 userSelect: "none",
               }}
             >
-              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant={TypographyVariants.title}>
+              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant="title">
                 {title}
               </Typography>
             </div>
@@ -120,7 +119,7 @@ const AppBar: FC<IAppBar> = ({
               dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, index)}
               icon={icon}
               onClick={onClick}
-              style={{ marginRight: `${theme.spacing(0.5)}px`, ...style }}
+              style={{ marginRight: theme.spacing(0.5), ...style }}
             />
           ))}
           {locale && (

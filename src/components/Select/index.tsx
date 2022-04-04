@@ -1,12 +1,13 @@
 import React, { CSSProperties, Fragment, SyntheticEvent, useCallback, useMemo } from "react";
 import {
+  Autocomplete as MUIAutocomplete,
   ListSubheader as MUIListSubheader,
   Popper as MUIPopper,
   PopperProps as MUIPopperProps,
+  Skeleton as MUISkeleton,
   TextField as MUITextField,
   useTheme,
-} from "@material-ui/core";
-import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
+} from "@mui/material";
 
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
@@ -24,6 +25,10 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 export const SUBPARTS_MAP = {
   loading: {
     label: "Loading",
+  },
+  option: {
+    label: "Option <li> (with label)",
+    value: (label = "{label}") => `option-${label}`,
   },
   optionCheckbox: {
     label: "Option Checkbox (with label)",
@@ -184,8 +189,8 @@ const Select = <T extends any>({
       disableCloseOnSelect={multiple}
       disabled={disabled}
       getOptionLabel={getOptionLabel}
-      getOptionSelected={isOptionSelected}
       groupBy={groupBy}
+      isOptionEqualToValue={isOptionSelected}
       ListboxProps={{
         onScroll,
         style: {
@@ -267,25 +272,31 @@ const Select = <T extends any>({
           />
         );
       }}
-      renderOption={(option, { selected }) => {
+      renderOption={(props, option, { selected }) => {
+        const optionLabel = getOptionLabel(option);
+        const optionDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.option, optionLabel);
         if (customOptionRendering) {
-          return customOptionRendering(option, selected);
+          return (
+            <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
+              {customOptionRendering(option, selected)}
+            </li>
+          );
         }
 
-        const optionLabel = getOptionLabel(option);
-
         return (
-          <Fragment key={`option-${optionLabel}`}>
-            <Checkbox
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
-              disabled
-              labelPlacement="end"
-              value={selected}
-            />
+          <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
+            {multiple && (
+              <Checkbox
+                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
+                disabled
+                labelPlacement="end"
+                value={selected}
+              />
+            )}
             <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>
               {optionLabel}
             </Typography>
-          </Fragment>
+          </li>
         );
       }}
       value={validateValue(value)}

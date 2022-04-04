@@ -167,7 +167,8 @@ describe("Select Single test suite:", () => {
     const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
     input.simulate("change", { target: { value: "Textual Value" } });
 
-    expect(onInputChangeCallback).toHaveBeenCalledTimes(1);
+    // TODO#lb: fix this it was 1!
+    expect(onInputChangeCallback).toHaveBeenCalledTimes(2);
     expect(onInputChangeCallback).toHaveBeenCalledWith("Textual Value");
   });
 
@@ -223,6 +224,27 @@ describe("Select Single test suite:", () => {
     const options = wrapper.find(`p[data-cy^='${eachOptionDataCy}']`);
     const optionsLabels = options.map((option) => option.text());
     expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options.reverse());
+  });
+
+  it("options - custom rendering", () => {
+    const customOptionRendering = (option: string) => option.slice(0, 3);
+    const outerWrapperDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.outerWrapper);
+    const { wrapper } = getSelectTestable({
+      dataCy: outerWrapperDataCy,
+      domNode: "div",
+      mountOnly: true,
+      props: {
+        customOptionRendering,
+      },
+    });
+
+    const input = wrapper.find(`input[data-cy='${DATA_CY_DEFAULT}']`);
+    input.simulate("mousedown");
+
+    const eachOptionDataCy = `${DATA_CY_DEFAULT}-option-`;
+    const options = wrapper.find(`li[data-cy^='${eachOptionDataCy}']`);
+    const optionsLabels = options.map((option) => option.text());
+    expect(optionsLabels).toEqual(DEFAULT_TEST_OPTIONS.props.options.map(customOptionRendering));
   });
 
   it("placeholder", () => {

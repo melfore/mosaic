@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-import { ISwitch, SwitchSize } from "../../types/Switch";
+import { ISwitch } from "../../types/Switch";
 import { getComposedDataCy } from "../../utils";
 import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -133,7 +133,7 @@ describe("Switch test suite:", () => {
   });
 
   it("size", () => {
-    const { element } = getSwitchTestable({ props: { size: SwitchSize.small } });
+    const { element } = getSwitchTestable({ props: { size: "small" } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

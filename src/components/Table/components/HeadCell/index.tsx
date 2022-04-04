@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
-import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@material-ui/core";
+import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@mui/material";
 
 import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
@@ -16,12 +16,12 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   const { label, path, padding, render, sortable: columnSortable, width } = column;
   const theme = useTheme();
 
-  const cellPadding = useMemo(() => padding || "normal", [padding]);
+  const cellPadding = useMemo(() => (!padding || padding === "default" ? "normal" : padding), [padding]);
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;
     if (path === COLUMN_CHECKBOX_PATH) {
-      style = { padding: `0 ${theme.spacing(1)}px` };
+      style = { padding: `0 ${theme.spacing(1)}` };
     }
 
     if (stickyHeader) {

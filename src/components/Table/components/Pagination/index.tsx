@@ -1,8 +1,5 @@
 import React, { FC, useCallback, useMemo } from "react";
-import {
-  TablePagination as MUITablePagination,
-  TablePaginationProps as MUITablePaginationProps,
-} from "@material-ui/core";
+import { TablePagination as MUITablePagination, TablePaginationProps as MUITablePaginationProps } from "@mui/material";
 
 import { ITablePagination } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";

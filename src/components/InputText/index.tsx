@@ -1,5 +1,5 @@
 import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
-import { TextField as MUITextField } from "@material-ui/core";
+import { TextField as MUITextField } from "@mui/material";
 
 import { IInputText } from "../../types/InputText";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";

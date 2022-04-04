@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, memo } from "react";
-import { Avatar as MUIAvatar, useTheme } from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+import { Avatar as MUIAvatar, Skeleton as MUISkeleton, useTheme } from "@mui/material";
 
 import { IAvatar } from "../../types/Avatar";
 import { getComposedDataCy } from "../../utils";
@@ -39,7 +38,7 @@ const Avatar: FC<IAvatar> = ({
 
   if (loading) {
     return (
-      <MUISkeleton variant={variant === "circular" ? "circle" : "rect"}>
+      <MUISkeleton variant={variant === "circular" ? "circular" : "rectangular"}>
         <MUIAvatar data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.loading)} />
       </MUISkeleton>
     );

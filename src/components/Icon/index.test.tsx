@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
-import { Icons, IconSize, IIcon } from "../../types/Icon";
+import { Icons, IIcon } from "../../types/Icon";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import Icon, { DATA_CY_DEFAULT } from ".";
@@ -36,7 +36,7 @@ describe("Icon test suite:", () => {
   });
 
   it("custom icon", () => {
-    const { element, wrapper } = getIconTestable({ domNode: "div", props: { children: <MUIStyleIcon /> } } as any);
+    const { element, wrapper } = getIconTestable({ props: { children: <MUIStyleIcon /> } } as any);
     const svgPath = wrapper.find("path");
     expect(
       svgPath.matchesElement(
@@ -65,14 +65,14 @@ describe("Icon test suite:", () => {
   });
 
   it("loading - size large", () => {
-    const { element } = getIconTestable({ props: { loading: true, size: IconSize.large } });
+    const { element } = getIconTestable({ props: { loading: true, size: "large" } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
   it("loading - size small", () => {
-    const { element } = getIconTestable({ props: { loading: true, size: IconSize.small } });
+    const { element } = getIconTestable({ props: { loading: true, size: "small" } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -95,7 +95,7 @@ describe("Icon test suite:", () => {
   });
 
   it("size", () => {
-    const { element, wrapper } = getIconTestable({ props: { size: IconSize.large } });
+    const { element, wrapper } = getIconTestable({ props: { size: "large" } });
     expect(wrapper.hasClass("MuiSvgIcon-fontSizeLarge"));
 
     const snapshotWrapper = renderer.create(element).toJSON();

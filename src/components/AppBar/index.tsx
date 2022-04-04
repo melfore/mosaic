@@ -5,7 +5,6 @@ import { AppBar as MUIAppBar, Toolbar as MUIToolbar, useTheme } from "@mui/mater
 import { IAppBar } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
 import { IMenu } from "../../types/Menu";
-import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { logWarn } from "../../utils/logger";
@@ -107,7 +106,7 @@ const AppBar: FC<IAppBar> = ({
                 userSelect: "none",
               }}
             >
-              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant={TypographyVariants.title}>
+              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant="title">
                 {title}
               </Typography>
             </div>

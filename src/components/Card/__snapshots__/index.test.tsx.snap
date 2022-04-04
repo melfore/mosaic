@@ -18,7 +18,7 @@ exports[`Card test suite: actions 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
@@ -164,7 +164,7 @@ exports[`Card test suite: collapsible 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
@@ -253,7 +253,7 @@ exports[`Card test suite: dataCy 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="custom-title"
       >
         Card
@@ -305,7 +305,7 @@ exports[`Card test suite: default 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
@@ -384,7 +384,7 @@ exports[`Card test suite: icon 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
@@ -436,7 +436,7 @@ exports[`Card test suite: loading 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title-loading"
       >
         <span
@@ -505,7 +505,7 @@ exports[`Card test suite: localized 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="locale.title-title"
       >
         Title
@@ -557,7 +557,7 @@ exports[`Card test suite: subtitle 1`] = `
       className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1jz4o05-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card

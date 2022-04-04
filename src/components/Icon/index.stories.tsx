@@ -2,6 +2,7 @@ import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Icons } from "../../types/Icon";
 import getDocsPage from "../../utils/stories";
 
 import Icon, { DATA_CY_DEFAULT } from ".";
@@ -29,7 +30,7 @@ const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} dataCy={
 
 export const Primary = Template.bind({});
 Primary.args = {
-  name: "account",
+  name: Icons.account,
 };
 
 export const IconCustom = Template.bind({});

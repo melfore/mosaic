@@ -73,7 +73,7 @@ const Icon: FC<IIcon> = ({
   }
 
   if (children) {
-    return <div {...props}>{cloneElement(children as ReactElement<any>, { style: { ...dimensions } })}</div>;
+    return cloneElement(children as ReactElement<any>, { ...props });
   }
 
   if (!name) {

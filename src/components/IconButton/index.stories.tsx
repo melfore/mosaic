@@ -28,9 +28,7 @@ export default {
   },
 } as ComponentMeta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton {...args} dataCy={DATA_CY_DEFAULT} size="large" />
-);
+const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

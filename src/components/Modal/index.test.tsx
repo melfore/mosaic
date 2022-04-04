@@ -1,7 +1,7 @@
 // TODO: temp commenting out snapshots due to scrollTo missing
 // import renderer from "react-test-renderer";
 
-import { IModal, ModalSize } from "../../types/Modal";
+import { IModal } from "../../types/Modal";
 import { getComposedDataCy } from "../../utils";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
@@ -69,12 +69,12 @@ describe("Modal test suite:", () => {
 
   // TODO: improve this
   it("size - fullscreen", () => {
-    getModalTestable({ props: { size: ModalSize.fullScreen } });
+    getModalTestable({ props: { size: "xl" } });
   });
 
   // TODO: improve this
   it("size - large", () => {
-    getModalTestable({ props: { size: ModalSize.large } });
+    getModalTestable({ props: { size: "lg" } });
   });
 
   it("title", () => {

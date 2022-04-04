@@ -37,10 +37,7 @@ describe("IconWrapper test suite:", () => {
   });
 
   it("icon - custom element", () => {
-    const { element, wrapper } = getIconWrapperTestable({
-      domNode: "div",
-      props: { icon: <MUIStyleIcon /> },
-    });
+    const { element, wrapper } = getIconWrapperTestable({ props: { icon: <MUIStyleIcon /> } });
 
     const svgPath = wrapper.find("path");
     expect(

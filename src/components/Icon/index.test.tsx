@@ -36,7 +36,7 @@ describe("Icon test suite:", () => {
   });
 
   it("custom icon", () => {
-    const { element, wrapper } = getIconTestable({ domNode: "div", props: { children: <MUIStyleIcon /> } } as any);
+    const { element, wrapper } = getIconTestable({ props: { children: <MUIStyleIcon /> } } as any);
     const svgPath = wrapper.find("path");
     expect(
       svgPath.matchesElement(

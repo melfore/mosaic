@@ -1,5 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import MUIStyleIcon from "@material-ui/icons/Style";
 
 import { Icons } from "../../types/Icon";
 import { ITable } from "../../types/Table";
@@ -136,7 +137,7 @@ describe("Table test suite:", () => {
       props: {
         actions: [
           { callback, icon: Icons.account, label },
-          { callback, icon: <div />, label: "Custom Icon" },
+          { callback, icon: <MUIStyleIcon />, label: "Custom Icon" },
         ],
       },
     });
@@ -207,7 +208,7 @@ describe("Table test suite:", () => {
         actions: [
           { callback, icon: Icons.account, label, position: "icon" },
           { callback, label: "No Icon", position: "icon" },
-          { callback, icon: <div />, label: "Custom Icon", position: "icon" },
+          { callback, icon: <MUIStyleIcon />, label: "Custom Icon", position: "icon" },
         ],
       },
     });

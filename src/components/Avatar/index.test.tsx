@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-import { AvatarVariant, IAvatar } from "../../types/Avatar";
+import { IAvatar } from "../../types/Avatar";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -93,7 +93,7 @@ describe("Avatar test suite:", () => {
   });
 
   it("squared", () => {
-    const { element, wrapper } = getAvatarTestable({ props: { variant: AvatarVariant.squared } });
+    const { element, wrapper } = getAvatarTestable({ props: { variant: "square" } });
     expect(wrapper.prop("className")).toContain("MuiAvatar-square");
 
     const snapshotWrapper = renderer.create(element).toJSON();

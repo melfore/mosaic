@@ -3,3 +3,4 @@
 
 npm run lintify
 npm run prettify
+npm run build:test

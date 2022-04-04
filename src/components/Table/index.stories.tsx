@@ -169,7 +169,7 @@ export const StyledRow = Template.bind({});
 StyledRow.args = {
   ...Primary.args,
   getRowStyle: (row, options) => {
-    const index = options.indexes[0];
+    const index = options?.indexes[0] || 0;
     return {
       backgroundColor: index % 2 === 0 ? "lightyellow" : "lightgreen",
     };

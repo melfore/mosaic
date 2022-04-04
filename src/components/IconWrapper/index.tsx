@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from "react";
 
-import { IconSize, IIcon } from "../../types/Icon";
+import { IIcon } from "../../types/Icon";
 import { IIconWrapper } from "../../types/IconWrapper";
 import { logWarn } from "../../utils/logger";
 import Icon from "../Icon";
@@ -13,7 +13,7 @@ const IconWrapper: FC<IIconWrapper> = ({
   icon,
   loading = false,
   rotate = false,
-  size = IconSize.default,
+  size = "medium",
   style,
 }) => {
   const props = useMemo(

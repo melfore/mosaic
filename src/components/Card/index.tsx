@@ -11,7 +11,6 @@ import { Skeleton as MUISkeleton } from "@material-ui/lab";
 
 import { ICard } from "../../types/Card";
 import { Icons } from "../../types/Icon";
-import { TypographyVariants } from "../../types/Typography";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Avatar from "../Avatar";
@@ -72,9 +71,10 @@ const Card: FC<ICard> = ({
           <Typography
             bottomSpacing={false}
             dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)}
+            display="block"
             loading={loading}
             truncated
-            variant={TypographyVariants.title}
+            variant="title"
           >
             {title}
           </Typography>
@@ -85,7 +85,7 @@ const Card: FC<ICard> = ({
             dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.subtitle)}
             loading={loading}
             truncated
-            variant={TypographyVariants.caption}
+            variant="caption"
           >
             {subtitle}
           </Typography>

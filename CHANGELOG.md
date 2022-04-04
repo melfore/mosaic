@@ -1,3 +1,22 @@
+# [6.4.0-beta.1](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0-beta.1) (2022-04-04)
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### Features
+
+* 🎸 [Select] Align customOptionRendering to new standard ([aafca6f](https://github.com/melfore/mosaic/commit/aafca6f73935e15db0e43718270799744fae1cda))
+* 🎸 [Select] Display checkbox only when multiple=true ([eb53f1b](https://github.com/melfore/mosaic/commit/eb53f1b0ca56a54b86fa13d71517b8ae2397c29b))
+* 🎸 Run [@mui](https://github.com/mui) v5 codemod:base-preset on entire codebase ([fd45412](https://github.com/melfore/mosaic/commit/fd45412192f9aabdf611b40523d05673a82da4f6))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
+
 ## [6.3.5](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5) (2022-04-04)
 
 

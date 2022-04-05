@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { IBase, ILocalizable } from "./Base";
 import { IBaseButton } from "./Button";
 import { IBaseIconButton } from "./IconButton";
@@ -36,6 +38,10 @@ export interface IAppBarContent extends IBase {
 export type IAppBar = IAppBarActions &
   IAppBarContent &
   ILocalizable & {
+    /**
+     * When specified it gets rendered as main content, has precedence over title
+     */
+    children?: ReactNode;
     /**
      * User dedicated menu
      * [@deprecated Use user.items]

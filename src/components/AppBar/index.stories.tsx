@@ -85,6 +85,8 @@ CustomContent.args = {
       <Typography>Detail</Typography>
     </div>
   ),
+  onTitleClick: undefined,
+  title: undefined,
 };
 
 export const Locale = Template.bind({});

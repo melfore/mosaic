@@ -20,6 +20,7 @@ exports[`AppBar test suite: actions 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -96,6 +97,7 @@ exports[`AppBar test suite: custom content 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     >
@@ -137,6 +139,7 @@ exports[`AppBar test suite: dataCy 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -172,6 +175,7 @@ exports[`AppBar test suite: default 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -207,6 +211,7 @@ exports[`AppBar test suite: menu 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     >
@@ -278,6 +283,7 @@ exports[`AppBar test suite: title 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     >

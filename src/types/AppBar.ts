@@ -1,9 +1,9 @@
-import { ILocalizable } from "./Base";
+import { IBase, ILocalizable } from "./Base";
 import { IBaseButton } from "./Button";
 import { IBaseIconButton } from "./IconButton";
 import { IMenu } from "./Menu";
 
-export interface IAppBar extends ILocalizable {
+export interface IAppBarActions extends IBase {
   /**
    * Actions available for AppBar
    */
@@ -12,6 +12,13 @@ export interface IAppBar extends ILocalizable {
    * Locale dedicated menu
    */
   locale?: IMenu;
+  /**
+   * User dedicated menu
+   */
+  user?: IMenu;
+}
+
+export interface IAppBarContent extends IBase {
   /**
    * Main AppBar menu
    */
@@ -24,18 +31,19 @@ export interface IAppBar extends ILocalizable {
    * AppBar title
    */
   title?: string;
-  /**
-   * User dedicated menu
-   */
-  user?: IMenu;
-  /**
-   * User dedicated menu
-   * [@deprecated Use user.items]
-   */
-  userMenu?: IBaseButton[];
-  /**
-   * Username to display
-   * [@deprecated Use user.label]
-   */
-  username?: string;
 }
+
+export type IAppBar = IAppBarActions &
+  IAppBarContent &
+  ILocalizable & {
+    /**
+     * User dedicated menu
+     * [@deprecated Use user.items]
+     */
+    userMenu?: IBaseButton[];
+    /**
+     * Username to display
+     * [@deprecated Use user.label]
+     */
+    username?: string;
+  };

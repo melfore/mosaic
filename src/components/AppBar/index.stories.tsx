@@ -5,6 +5,8 @@ import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import Icon from "../Icon";
+import Typography from "../Typography";
 
 import AppBar, { AppBarWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
@@ -69,6 +71,20 @@ Actions.args = {
       onClick: () => {},
     },
   ],
+};
+
+export const CustomContent = Template.bind({});
+CustomContent.args = {
+  ...Primary.args,
+  children: (
+    <div style={{ alignItems: "center", display: "flex" }}>
+      <Typography>Home</Typography>
+      <Icon name={Icons.right} />
+      <Typography>Section</Typography>
+      <Icon name={Icons.right} />
+      <Typography>Detail</Typography>
+    </div>
+  ),
 };
 
 export const Locale = Template.bind({});

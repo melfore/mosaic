@@ -20,6 +20,7 @@ exports[`AppBar test suite: actions 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -76,6 +77,48 @@ exports[`AppBar test suite: actions 1`] = `
 </header>
 `;
 
+exports[`AppBar test suite: custom content 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
+  data-cy="appbar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flex": 1,
+        }
+      }
+    >
+      <div
+        id="content"
+      >
+        Custom Content
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    />
+  </div>
+</header>
+`;
+
 exports[`AppBar test suite: dataCy 1`] = `
 <header
   className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorPrimary MuiPaper-elevation4"
@@ -96,6 +139,7 @@ exports[`AppBar test suite: dataCy 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -131,6 +175,7 @@ exports[`AppBar test suite: default 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     />
@@ -166,6 +211,7 @@ exports[`AppBar test suite: menu 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     >
@@ -203,9 +249,6 @@ exports[`AppBar test suite: menu 1`] = `
             />
           </svg>
         </span>
-        <span
-          className="MuiTouchRipple-root"
-        />
       </button>
     </div>
     <div
@@ -240,6 +283,7 @@ exports[`AppBar test suite: title 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
+          "flex": 1,
         }
       }
     >

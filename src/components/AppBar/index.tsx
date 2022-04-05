@@ -52,6 +52,7 @@ export const SUBPARTS_MAP = {
 
 const AppBar: FC<IAppBar> = ({
   actions = [],
+  children,
   dataCy = DATA_CY_DEFAULT,
   locale,
   menu,
@@ -63,6 +64,50 @@ const AppBar: FC<IAppBar> = ({
   username,
 }) => {
   const theme = useTheme();
+
+  const appBarTitle = useMemo(() => {
+    if (!title) {
+      return null;
+    }
+
+    return (
+      <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant="title">
+        {title}
+      </Typography>
+    );
+  }, [dataCy, title]);
+
+  const content = useMemo(() => {
+    if (children) {
+      return children;
+    }
+
+    if (!appBarTitle) {
+      return null;
+    }
+
+    if (!onTitleClick) {
+      return appBarTitle;
+    }
+
+    return (
+      <div
+        data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
+        onClick={(event) => {
+          suppressEvent(event);
+          onTitleClick && onTitleClick();
+        }}
+        style={{
+          borderRadius: `${theme.shape.borderRadius}px`,
+          cursor: "pointer",
+          padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
+          userSelect: "none",
+        }}
+      >
+        {appBarTitle}
+      </div>
+    );
+  }, [appBarTitle, children, dataCy, onTitleClick, theme]);
 
   const userProps = useMemo((): IMenu | undefined => {
     if (user) {
@@ -92,25 +137,7 @@ const AppBar: FC<IAppBar> = ({
           {menu && (
             <IconButton dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menu)} icon={menu.icon} onClick={menu.onClick} />
           )}
-          {title && (
-            <div
-              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
-              onClick={(event) => {
-                suppressEvent(event);
-                onTitleClick && onTitleClick();
-              }}
-              style={{
-                borderRadius: `${theme.shape.borderRadius}px`,
-                cursor: onTitleClick ? "pointer" : "default",
-                padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
-                userSelect: "none",
-              }}
-            >
-              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant="title">
-                {title}
-              </Typography>
-            </div>
-          )}
+          {content}
         </div>
         <div style={{ alignItems: "center", display: "flex" }}>
           {actions.map(({ icon, onClick, style }, index) => (

@@ -1,3 +1,4 @@
+import React from "react";
 import renderer from "react-test-renderer";
 
 import { IAppBar } from "../../types/AppBar";
@@ -65,6 +66,19 @@ describe("AppBar test suite:", () => {
     const actionButtonIconDataCy = `${actionButtonDataCy}-icon`;
     const actionButtonIcon = actionButton.find(`Icon[dataCy='${actionButtonIconDataCy}']`);
     expect(actionButtonIcon.prop("name")).toEqual(Icons.account);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("custom content", () => {
+    const customText = "Custom Content";
+    const { element, wrapper } = getAppBarTestable({
+      props: { children: <div id="content">{customText}</div> } as any,
+    });
+
+    const customContent = wrapper.find("#content");
+    expect(customContent.text()).toEqual(customText);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -1,57 +1,32 @@
-import React, { FC } from "react";
-import { useMemo } from "react";
-import { AppBar as MUIAppBar, Toolbar as MUIToolbar, useTheme } from "@mui/material";
+import React, { CSSProperties, FC, useMemo } from "react";
+import { AppBar as MUIAppBar, Toolbar as MUIToolbar } from "@mui/material";
 
 import { IAppBar } from "../../types/AppBar";
-import { Icons } from "../../types/Icon";
 import { IMenu } from "../../types/Menu";
-import { getComposedDataCy, suppressEvent } from "../../utils";
+import { ISubpartMap } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { logWarn } from "../../utils/logger";
-import IconButton from "../IconButton";
-import Menu from "../Menu";
-import Typography from "../Typography";
+
+import AppBarActions, { APPBAR_ACTIONS_SUBPARTS } from "./components/Actions";
+import AppBarContent, { APPBAR_CONTENT_SUBPARTS } from "./components/Content";
 
 export const DATA_CY_DEFAULT = "appbar";
 export const DATA_CY_SHORTCUT = "title";
+
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: DATA_CY_SHORTCUT, type: "string" },
   { name: "userMenu.label", type: "any[]" },
   // TODO: review for localized hoc, adding "user.items.label"
 ];
 
-export const SUBPARTS_MAP = {
-  action: {
-    label: "Action (at index n)",
-    value: (n = `{n}`) => `action-${n}`,
-  },
-  localesMenu: {
-    label: "Locales Menu",
-  },
-  localesMenuItem: {
-    label: "Locales Menu Item (at index n)",
-    value: (n = `{n}`) => `locales-menu-item-${n}`,
-  },
-  menu: {
-    label: "Menu",
-  },
-  userMenu: {
-    label: "User Menu",
-  },
-  userMenuItem: {
-    label: "User Menu Item (at index n)",
-    value: (n = `{n}`) => `user-menu-item-${n}`,
-  },
-  titleClickable: {
-    label: "Title Clickable",
-  },
-  titleText: {
-    label: "Title Text",
-  },
+export const SUBPARTS_MAP: ISubpartMap = {
+  ...APPBAR_CONTENT_SUBPARTS,
+  ...APPBAR_ACTIONS_SUBPARTS,
 };
 
 const AppBar: FC<IAppBar> = ({
   actions = [],
+  children,
   dataCy = DATA_CY_DEFAULT,
   locale,
   menu,
@@ -62,8 +37,16 @@ const AppBar: FC<IAppBar> = ({
   userMenu = [],
   username,
 }) => {
-  const theme = useTheme();
+  const toolbarStyle = useMemo(
+    (): CSSProperties => ({
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "space-between",
+    }),
+    []
+  );
 
+  // TODO: remove this when userMenu and username will be deprecated
   const userProps = useMemo((): IMenu | undefined => {
     if (user) {
       return { ...user };
@@ -87,53 +70,11 @@ const AppBar: FC<IAppBar> = ({
 
   return (
     <MUIAppBar data-cy={dataCy} position="sticky" style={style}>
-      <MUIToolbar style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
-        <div style={{ alignItems: "center", display: "flex" }}>
-          {menu && (
-            <IconButton dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.menu)} icon={menu.icon} onClick={menu.onClick} />
-          )}
-          {title && (
-            <div
-              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleClickable)}
-              onClick={(event) => {
-                suppressEvent(event);
-                onTitleClick && onTitleClick();
-              }}
-              style={{
-                borderRadius: `${theme.shape.borderRadius}px`,
-                cursor: onTitleClick ? "pointer" : "default",
-                padding: `${theme.spacing(0.5)} ${theme.spacing(1)}`,
-                userSelect: "none",
-              }}
-            >
-              <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.titleText)} variant="title">
-                {title}
-              </Typography>
-            </div>
-          )}
-        </div>
-        <div style={{ alignItems: "center", display: "flex" }}>
-          {actions.map(({ icon, onClick, style }, index) => (
-            <IconButton
-              key={`action-${index}`}
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.action, index)}
-              icon={icon}
-              onClick={onClick}
-              style={{ marginRight: theme.spacing(0.5), ...style }}
-            />
-          ))}
-          {locale && (
-            <Menu dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.localesMenu)} icon={Icons.language} {...locale} />
-          )}
-          {userProps && (
-            <Menu
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.userMenu)}
-              icon={Icons.account}
-              style={{ textTransform: "lowercase" }}
-              {...userProps}
-            />
-          )}
-        </div>
+      <MUIToolbar style={toolbarStyle}>
+        <AppBarContent dataCy={dataCy} menu={menu} onTitleClick={onTitleClick} title={title}>
+          {children}
+        </AppBarContent>
+        <AppBarActions actions={actions} dataCy={dataCy} locale={locale} user={userProps} />
       </MUIToolbar>
     </MUIAppBar>
   );

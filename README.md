@@ -1,6 +1,6 @@
 # @melfore/mosaic
 
-![Mosaic CI - Test](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Test/badge.svg) ![Mosaic CI - Release](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Release/badge.svg) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+ ![Mosaic CI - Release](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Release/badge.svg) [![Mosaic CI - Release Beta](https://github.com/melfore/mosaic/actions/workflows/release-beta.yml/badge.svg)](https://github.com/melfore/mosaic/actions/workflows/release-beta.yml) ![Mosaic CI - Test](https://github.com/melfore/mosaic/workflows/Mosaic%20CI%20-%20Test/badge.svg) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 Melfore's UI kit library based on `@material-ui`.
 
@@ -30,4 +30,14 @@ Simply import a `MosaicComponent` as follows:
   import { MosaicComponent } from '@melfore/mosaic';
 ```
 
-Browse <a href="https://melfore.github.io/mosaic/latest/" target="_blank">our StoryBook</a> to discover all available components.
+Browse <a href="https://melfore.github.io/mosaic/latest/" target="_blank">StoryBook</a> to discover all available components.
+
+## Beta channel
+
+Beta channel adds pre-release support for `react v17.x` and `@mui-* v5.x`.
+
+Add the beta version with the following command:
+
+`npm install @melfore/mosaic@beta`
+
+For more details see the `beta` <a href="https://github.com/melfore/mosaic/blob/beta/README.md" target="_blank">**README**</a> or browse <a href="https://melfore.github.io/mosaic/beta/" target="_blank">StoryBook</a>

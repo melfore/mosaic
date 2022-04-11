@@ -1,6 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run lintify
-npm run prettify
+npm run clean:code
 npm run build:test

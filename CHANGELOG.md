@@ -5,12 +5,33 @@
 
 * 🎸 [AppBar] Custom children has precedence over title ([0b2fa04](https://github.com/melfore/mosaic/commit/0b2fa04bba84aed686b657c59d3a8748c4d2db97))
 
+# [6.4.0-beta.1](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0-beta.1) (2022-04-04)
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### Features
+
+* 🎸 [Select] Align customOptionRendering to new standard ([aafca6f](https://github.com/melfore/mosaic/commit/aafca6f73935e15db0e43718270799744fae1cda))
+* 🎸 [Select] Display checkbox only when multiple=true ([eb53f1b](https://github.com/melfore/mosaic/commit/eb53f1b0ca56a54b86fa13d71517b8ae2397c29b))
+* 🎸 Run [@mui](https://github.com/mui) v5 codemod:base-preset on entire codebase ([fd45412](https://github.com/melfore/mosaic/commit/fd45412192f9aabdf611b40523d05673a82da4f6))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
+
 ## [6.3.5](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5) (2022-04-04)
 
 
 ### Bug Fixes
 
 * 🐛 [Icon] Removed div wrapper for CustomIcons ([48562c2](https://github.com/melfore/mosaic/commit/48562c2f4bc9d3dbc9a6b079cb283c4253b8cc84))
+
+## [6.3.5-beta.1](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5-beta.1) (2022-04-01)
 
 ## [6.3.4](https://github.com/melfore/mosaic/compare/v6.3.3...v6.3.4) (2022-04-01)
 
@@ -37,6 +58,20 @@
 
 * 🎸 [Table] Added options for each data callback ([e46417a](https://github.com/melfore/mosaic/commit/e46417a8a7587c79b69f9e70745fb207d0aba3ca))
 * 🎸 [Table] Global actions callback to use undefined data ([60b82ae](https://github.com/melfore/mosaic/commit/60b82ae165923b3ba9261f93e6bcf25750ffcc04))
+
+## [6.2.3-beta.1](https://github.com/melfore/mosaic/compare/v6.2.2...v6.2.3-beta.1) (2022-03-07)
+
+## [6.2.2-beta.1](https://github.com/melfore/mosaic/compare/v6.2.1...v6.2.2-beta.1) (2022-02-28)
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
 
 ## [6.2.2](https://github.com/melfore/mosaic/compare/v6.2.1...v6.2.2) (2022-03-07)
 

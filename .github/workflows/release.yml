@@ -48,15 +48,14 @@ jobs:
       - name: Run ESLint and Prettier
         id: code-format
         run: |
-          npm run lintify
-          npm run prettify
+          npm run clean:code
           git add .
           echo "::set-output name=formatted-files::$(git status -s -uno | wc -l)"
 
       - name: Commit Changes
         if: steps.code-format.outputs.formatted-files > 0
         run: |
-          git commit -m "refactor: 💡 ESLint / Prettify" -a
+          git commit -m "refactor: 💡 Clean code" -a
 
       - name: Generate Docs
         id: generate-docs

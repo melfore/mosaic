@@ -1,3 +1,12 @@
+## [6.4.1](https://github.com/melfore/mosaic/compare/v6.4.0...v6.4.1) (2022-04-11)
+
+# [6.4.0](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0) (2022-04-05)
+
+
+### Features
+
+* 🎸 [AppBar] Custom children has precedence over title ([0b2fa04](https://github.com/melfore/mosaic/commit/0b2fa04bba84aed686b657c59d3a8748c4d2db97))
+
 # [6.4.0-beta.1](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0-beta.1) (2022-04-04)
 
 

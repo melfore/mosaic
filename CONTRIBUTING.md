@@ -109,7 +109,7 @@ Husky v4.x rules:
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "npm run lintify && npm run prettify",
+    "pre-commit": "npm run clean:code",
     "pre-push": "npm run build && CI=true npm run test:coverage"
   }
 }
@@ -123,7 +123,7 @@ Commits are generated using `commitlint`, this allows to properly manage version
 
 *pre-commit*
 
-Before adding a commit code is always linted with ESLint (lintify command) and prettied with Prettier (prettify command).
+Before adding a commit code is always linted with ESLint and prettied with Prettier.
 
 If a file required transformation, it will be added to current changes of the workspace.
 

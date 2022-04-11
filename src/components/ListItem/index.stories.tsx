@@ -16,7 +16,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI ListItem Component",
-          url: "https://v4.mui.com/components/lists/",
+          url: "https://mui.com/components/lists/",
         },
         component: "ListItem",
         e2eTestInfo: {

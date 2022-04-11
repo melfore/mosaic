@@ -15,7 +15,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Icon Component",
-          url: "https://v4.mui.com/components/icons/",
+          url: "https://mui.com/components/icons/",
         },
         component: "Icon",
         e2eTestInfo: {

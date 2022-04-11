@@ -21,7 +21,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Checkbox Component",
-          url: "https://v4.mui.com/components/checkboxes/",
+          url: "https://mui.com/components/checkboxes/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

@@ -16,7 +16,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Avatar Component",
-          url: "https://v4.mui.com/components/avatars/",
+          url: "https://mui.com/components/avatars/",
         },
         component: "Avatar",
         e2eTestInfo: {

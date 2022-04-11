@@ -19,7 +19,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Typography Component",
-          url: "https://v4.mui.com/components/typography/",
+          url: "https://mui.com/components/typography/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

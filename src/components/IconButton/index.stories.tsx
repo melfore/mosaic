@@ -15,8 +15,8 @@ export default {
     docs: {
       ...getDocsPage({
         basedOn: {
-          label: "@mui/material/IconButton",
-          url: "",
+          label: "MUI Button Component",
+          url: "https://mui.com/material-ui/react-button/#icon-button",
         },
         component: "IconButton",
         e2eTestInfo: {

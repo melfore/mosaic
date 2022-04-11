@@ -24,7 +24,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Table Component",
-          url: "https://v4.mui.com/components/tables/",
+          url: "https://mui.com/components/tables/",
         },
         component: "Table",
         e2eTestInfo: {

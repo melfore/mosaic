@@ -14,7 +14,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Collapse Component",
-          url: "https://v4.mui.com/components/transitions/#collapse",
+          url: "https://mui.com/components/transitions/#collapse",
         },
         component: "ListItemCollapsible",
         e2eTestInfo: {

@@ -9,9 +9,10 @@ import { ILoadable } from "../../../../types/Base";
 import { IInputField } from "../../../../types/Input";
 import { getComposedDataCy, ISubpart } from "../../../../utils";
 
-interface ISelectInput
-  extends Pick<IInputField, "dataCy" | "label" | "placeholder" | "required" | "size" | "type" | "variant">,
-    ILoadable {
+type ISelectInputField = Pick<IInputField, "dataCy" | "label" | "placeholder"> &
+  Required<Pick<IInputField, "required" | "size" | "type" | "variant">>;
+
+interface ISelectInput extends ISelectInputField, ILoadable {
   forwarded: MUIAutocompleteRenderInputParams;
 }
 

@@ -1,12 +1,13 @@
 import React, { FC, useMemo } from "react";
 import { Popper as MUIPopper, PopperProps as MUIPopperProps } from "@material-ui/core";
 
-interface ISelectPopper extends MUIPopperProps {
+interface ISelectPopper {
+  forwarded: MUIPopperProps;
   popperWidth: any;
 }
 
-const SelectPopper: FC<ISelectPopper> = ({ popperWidth, ...props }) => {
-  const { anchorEl } = props;
+const SelectPopper: FC<ISelectPopper> = ({ forwarded, popperWidth }) => {
+  const { anchorEl } = forwarded;
 
   const width = useMemo(() => {
     const anchorElRef = anchorEl as any;
@@ -14,7 +15,7 @@ const SelectPopper: FC<ISelectPopper> = ({ popperWidth, ...props }) => {
     return !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
   }, [popperWidth, anchorEl]);
 
-  return <MUIPopper {...props} placement="bottom-start" style={{ width }} />;
+  return <MUIPopper {...forwarded} placement="bottom-start" style={{ width }} />;
 };
 
 export default SelectPopper;

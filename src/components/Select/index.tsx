@@ -167,9 +167,10 @@ const Select = <T extends any>({
   );
 
   const renderGroup = useCallback(
-    (props: MUIAutocompleteRenderGroupParams) => (
-      <SelectGroup {...props} dataCy={dataCy} getGroupLabel={getGroupLabel} />
-    ),
+    (props: MUIAutocompleteRenderGroupParams) => {
+      const { key } = props;
+      return <SelectGroup key={key} dataCy={dataCy} forwarded={props} getGroupLabel={getGroupLabel} />;
+    },
     [dataCy, getGroupLabel]
   );
 
@@ -203,7 +204,7 @@ const Select = <T extends any>({
   );
 
   const renderPopper = useCallback(
-    (props: MUIPopperProps) => <SelectPopper {...props} popperWidth={popperWidth} />,
+    (props: MUIPopperProps) => <SelectPopper forwarded={props} popperWidth={popperWidth} />,
     [popperWidth]
   );
 

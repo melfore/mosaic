@@ -1,19 +1,19 @@
-import React, { Fragment, SyntheticEvent, useCallback, useMemo } from "react";
+import React, { SyntheticEvent, useCallback, useMemo } from "react";
 import { PopperProps as MUIPopperProps } from "@material-ui/core";
 import {
   Autocomplete as MUIAutocomplete,
   AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams,
   AutocompleteRenderInputParams as MUIAutocompleteRenderInputParams,
+  AutocompleteRenderOptionState as MUIAutocompleteRenderOptionState,
 } from "@material-ui/lab";
 
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Checkbox from "../Checkbox";
-import Typography from "../Typography";
 
 import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
 import SelectInput, { SELECT_LOADING_SUBPART } from "./components/Input";
+import SelectOption, { SELECT_OPTION_CHECKBOX_SUBPART, SELECT_OPTION_LABEL_SUBPART } from "./components/Option";
 import SelectPopper from "./components/Popper";
 
 export const DATA_CY_DEFAULT = "select";
@@ -25,14 +25,8 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 
 export const SUBPARTS_MAP = {
   loading: SELECT_LOADING_SUBPART,
-  optionCheckbox: {
-    label: "Option Checkbox (with label)",
-    value: (label = "{label}") => `option-${label}-checkbox`,
-  },
-  optionLabel: {
-    label: "Option Label (with label)",
-    value: (label = "{label}") => `option-${label}-label`,
-  },
+  optionCheckbox: SELECT_OPTION_CHECKBOX_SUBPART,
+  optionLabel: SELECT_OPTION_LABEL_SUBPART,
   optionGroupLabel: SELECT_GROUP_SUBPART,
   outerWrapper: {
     label: "Outer Wrapper",
@@ -197,6 +191,17 @@ const Select = <T extends any>({
     [dataCy, label, loading, placeholder, required, size, style, type, variant]
   );
 
+  const renderOption = useCallback(
+    (option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+      if (customOptionRendering) {
+        return customOptionRendering(option, selected);
+      }
+
+      return <SelectOption dataCy={dataCy} getOptionLabel={getOptionLabel} option={option} selected={selected} />;
+    },
+    [dataCy, customOptionRendering, getOptionLabel]
+  );
+
   const renderPopper = useCallback(
     (props: MUIPopperProps) => <SelectPopper {...props} popperWidth={popperWidth} />,
     [popperWidth]
@@ -236,27 +241,7 @@ const Select = <T extends any>({
       PopperComponent={renderPopper}
       renderGroup={renderGroup}
       renderInput={renderInput}
-      renderOption={(option, { selected }) => {
-        if (customOptionRendering) {
-          return customOptionRendering(option, selected);
-        }
-
-        const optionLabel = getOptionLabel(option);
-
-        return (
-          <Fragment key={`option-${optionLabel}`}>
-            <Checkbox
-              dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
-              disabled
-              labelPlacement="end"
-              value={selected}
-            />
-            <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>
-              {optionLabel}
-            </Typography>
-          </Fragment>
-        );
-      }}
+      renderOption={renderOption}
       value={validatedValue}
     />
   );

@@ -1,18 +1,19 @@
 import React, { CSSProperties, Fragment, SyntheticEvent, useCallback, useMemo } from "react";
+import { PopperProps as MUIPopperProps, TextField as MUITextField } from "@material-ui/core";
 import {
-  ListSubheader as MUIListSubheader,
-  Popper as MUIPopper,
-  PopperProps as MUIPopperProps,
-  TextField as MUITextField,
-  useTheme,
-} from "@material-ui/core";
-import { Autocomplete as MUIAutocomplete, Skeleton as MUISkeleton } from "@material-ui/lab";
+  Autocomplete as MUIAutocomplete,
+  AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams,
+  Skeleton as MUISkeleton,
+} from "@material-ui/lab";
 
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
 import Typography from "../Typography";
+
+import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
+import SelectPopper from "./components/Popper";
 
 export const DATA_CY_DEFAULT = "select";
 export const DATA_CY_SHORTCUT = "label";
@@ -33,10 +34,7 @@ export const SUBPARTS_MAP = {
     label: "Option Label (with label)",
     value: (label = "{label}") => `option-${label}-label`,
   },
-  optionGroupLabel: {
-    label: "Option Group (with label)",
-    value: (label = "{label}") => `option-group-${label}`,
-  },
+  optionGroupLabel: SELECT_GROUP_SUBPART,
   outerWrapper: {
     label: "Outer Wrapper",
   },
@@ -69,8 +67,6 @@ const Select = <T extends any>({
   value = null,
   variant = "outlined",
 }: ISelect<T>) => {
-  const theme = useTheme();
-
   const getOptionLabel = useCallback(
     (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
     [externalGetOptionLabel]
@@ -164,6 +160,18 @@ const Select = <T extends any>({
     [options, isOptionSelected]
   );
 
+  const renderGroup = useCallback(
+    (props: MUIAutocompleteRenderGroupParams) => (
+      <SelectGroup {...props} dataCy={dataCy} getGroupLabel={getGroupLabel} />
+    ),
+    [dataCy, getGroupLabel]
+  );
+
+  const renderPopper = useCallback(
+    (props: MUIPopperProps) => <SelectPopper {...props} popperWidth={popperWidth} />,
+    [popperWidth]
+  );
+
   const validateValue = useCallback(
     (value: T | T[] | null): T | T[] | null => {
       if (multiple) {
@@ -199,29 +207,8 @@ const Select = <T extends any>({
       onClose={onClose}
       onInputChange={onInputChange}
       options={options}
-      PopperComponent={(props: MUIPopperProps) => {
-        const { anchorEl } = props;
-        const anchorElRef = anchorEl as any;
-        const anchorElWidth = anchorElRef ? anchorElRef.clientWidth : null;
-        const width = !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
-        return <MUIPopper {...props} placement="bottom-start" style={{ width }} />;
-      }}
-      renderGroup={(groupProps) => {
-        const { children, group, key } = groupProps;
-        const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
-
-        return (
-          <Fragment key={`group-${key}`}>
-            <MUIListSubheader
-              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionGroupLabel, groupLabel)}
-              style={{ backgroundColor: theme.palette.background.default }}
-            >
-              {groupLabel}
-            </MUIListSubheader>
-            {children}
-          </Fragment>
-        );
-      }}
+      PopperComponent={renderPopper}
+      renderGroup={renderGroup}
       renderInput={(inputProps) => {
         const { inputProps: extInputProps } = inputProps;
         const baseStyle: CSSProperties = { width: "100%" };

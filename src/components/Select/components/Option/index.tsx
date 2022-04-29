@@ -7,6 +7,7 @@ import Typography from "../../../Typography";
 
 interface ISelectOption<T> extends IBase {
   getOptionLabel: (option: T) => string;
+  multiple: boolean;
   option: T;
   selected: boolean;
 }
@@ -24,6 +25,7 @@ export const SELECT_OPTION_LABEL_SUBPART: ISubpart = {
 const SelectOption = <T extends any>({
   dataCy = "select-option",
   getOptionLabel,
+  multiple,
   option,
   selected,
 }: ISelectOption<T>) => {
@@ -41,7 +43,7 @@ const SelectOption = <T extends any>({
 
   return (
     <Fragment key={`option-${optionLabel}`}>
-      <Checkbox dataCy={checkboxDataCy} disabled labelPlacement="end" value={selected} />
+      {multiple && <Checkbox dataCy={checkboxDataCy} disabled labelPlacement="end" value={selected} />}
       <Typography dataCy={labelDataCy}>{optionLabel}</Typography>
     </Fragment>
   );

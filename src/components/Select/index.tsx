@@ -198,9 +198,17 @@ const Select = <T extends any>({
         return customOptionRendering(option, selected);
       }
 
-      return <SelectOption dataCy={dataCy} getOptionLabel={getOptionLabel} option={option} selected={selected} />;
+      return (
+        <SelectOption
+          dataCy={dataCy}
+          getOptionLabel={getOptionLabel}
+          multiple={multiple}
+          option={option}
+          selected={selected}
+        />
+      );
     },
-    [dataCy, customOptionRendering, getOptionLabel]
+    [dataCy, customOptionRendering, getOptionLabel, multiple]
   );
 
   const renderPopper = useCallback(

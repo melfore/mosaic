@@ -13,7 +13,11 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
 import SelectInput, { SELECT_LOADING_SUBPART } from "./components/Input";
-import SelectOption, { SELECT_OPTION_CHECKBOX_SUBPART, SELECT_OPTION_LABEL_SUBPART } from "./components/Option";
+import SelectOption, {
+  SELECT_OPTION_CHECKBOX_SUBPART,
+  SELECT_OPTION_LABEL_SUBPART,
+  SELECT_OPTION_SUBPART,
+} from "./components/Option";
 import SelectPopper from "./components/Popper";
 
 export const DATA_CY_DEFAULT = "select";
@@ -25,6 +29,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 
 export const SUBPARTS_MAP = {
   loading: SELECT_LOADING_SUBPART,
+  option: SELECT_OPTION_SUBPART,
   optionCheckbox: SELECT_OPTION_CHECKBOX_SUBPART,
   optionLabel: SELECT_OPTION_LABEL_SUBPART,
   optionGroupLabel: SELECT_GROUP_SUBPART,
@@ -192,14 +197,16 @@ const Select = <T extends any>({
     [dataCy, label, loading, placeholder, required, size, style, type, variant]
   );
 
+  const renderCustomOption = useCallback(
+    (option: T, selected: boolean) => (customOptionRendering ? customOptionRendering(option, selected) : undefined),
+    [customOptionRendering]
+  );
+
   const renderOption = useCallback(
     (option: T, { selected }: MUIAutocompleteRenderOptionState) => {
-      if (customOptionRendering) {
-        return customOptionRendering(option, selected);
-      }
-
       return (
         <SelectOption
+          customRenderer={renderCustomOption}
           dataCy={dataCy}
           getOptionLabel={getOptionLabel}
           multiple={multiple}
@@ -208,7 +215,7 @@ const Select = <T extends any>({
         />
       );
     },
-    [dataCy, customOptionRendering, getOptionLabel, multiple]
+    [dataCy, getOptionLabel, multiple, renderCustomOption]
   );
 
   const renderPopper = useCallback(

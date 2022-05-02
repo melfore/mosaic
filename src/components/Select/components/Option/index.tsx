@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from "react";
+import React, { Fragment, ReactNode, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";
 import { getComposedDataCy, ISubpart } from "../../../../utils";
@@ -6,11 +6,17 @@ import Checkbox from "../../../Checkbox";
 import Typography from "../../../Typography";
 
 interface ISelectOption<T> extends IBase {
+  customRenderer?: (option: T, selected: boolean) => ReactNode;
   getOptionLabel: (option: T) => string;
   multiple: boolean;
   option: T;
   selected: boolean;
 }
+
+export const SELECT_OPTION_SUBPART: ISubpart = {
+  label: "Option (with label)",
+  value: (label = "{label}") => `option-${label}`,
+};
 
 export const SELECT_OPTION_CHECKBOX_SUBPART: ISubpart = {
   label: "Option Checkbox (with label)",
@@ -23,6 +29,7 @@ export const SELECT_OPTION_LABEL_SUBPART: ISubpart = {
 };
 
 const SelectOption = <T extends any>({
+  customRenderer,
   dataCy = "select-option",
   getOptionLabel,
   multiple,
@@ -41,11 +48,33 @@ const SelectOption = <T extends any>({
     [dataCy, optionLabel]
   );
 
+  const optionDataCy = useMemo(
+    () => getComposedDataCy(dataCy, SELECT_OPTION_SUBPART, optionLabel),
+    [dataCy, optionLabel]
+  );
+
+  const customContent = useMemo(
+    () => (customRenderer ? customRenderer(option, selected) : undefined),
+    [customRenderer, option, selected]
+  );
+
+  const content = useMemo(() => {
+    if (customContent) {
+      return customContent;
+    }
+
+    return (
+      <Fragment>
+        {multiple && <Checkbox dataCy={checkboxDataCy} disabled labelPlacement="end" value={selected} />}
+        <Typography dataCy={labelDataCy}>{optionLabel}</Typography>
+      </Fragment>
+    );
+  }, [checkboxDataCy, customContent, labelDataCy, optionLabel, multiple, selected]);
+
   return (
-    <Fragment key={`option-${optionLabel}`}>
-      {multiple && <Checkbox dataCy={checkboxDataCy} disabled labelPlacement="end" value={selected} />}
-      <Typography dataCy={labelDataCy}>{optionLabel}</Typography>
-    </Fragment>
+    <div key={optionDataCy} data-cy={optionDataCy} style={{ display: "contents" }}>
+      {content}
+    </div>
   );
 };
 

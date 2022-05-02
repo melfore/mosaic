@@ -1,3 +1,18 @@
+# [7.0.0](https://github.com/melfore/mosaic/compare/v6.4.1...v7.0.0) (2022-05-02)
+
+
+### Features
+
+* 🎸 [Select] Display checkbox only when multiple=true ([7d3d961](https://github.com/melfore/mosaic/commit/7d3d9616700bc3e72d0052eee699e65a024113df))
+* 🎸 [Select] Wrapped each option in a div with dataCy ([13172e5](https://github.com/melfore/mosaic/commit/13172e547b2f0d6622339142ec610b51c9657468))
+
+
+### BREAKING CHANGES
+
+* 🧨 Potential breaking: style should be preserved via display: 'contents'
+
+✅ Closes: 249
+
 ## [6.4.1](https://github.com/melfore/mosaic/compare/v6.4.0...v6.4.1) (2022-04-11)
 
 # [6.4.0](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0) (2022-04-05)

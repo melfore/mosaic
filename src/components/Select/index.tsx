@@ -102,13 +102,13 @@ const Select = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    (event, value: any) => {
+    (event, value: string) => {
       if (!externalOnInputChange) {
         return;
       }
 
       suppressEvent(event);
-      externalOnInputChange!(value);
+      externalOnInputChange(value);
     },
     [externalOnInputChange]
   );

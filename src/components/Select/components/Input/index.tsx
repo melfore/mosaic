@@ -32,10 +32,7 @@ const SelectInput: FC<ISelectInput> = ({
   type,
   variant,
 }) => {
-  const {
-    inputProps: forwardedInputProps,
-    InputProps: { ref: forwardedRef },
-  } = forwarded;
+  const { inputProps: forwardedInputProps, ...forwardedRefs } = forwarded;
 
   const style = useMemo((): CSSProperties => ({ ...externalStyle, width: "100%" }), [externalStyle]);
 
@@ -55,19 +52,26 @@ const SelectInput: FC<ISelectInput> = ({
 
   if (loading) {
     return (
-      <MUISkeleton ref={forwardedRef} width="100%">
-        <MUITextField inputProps={inputProps} margin="normal" size={size} variant={variant} style={style} />
+      <MUISkeleton width="100%">
+        <MUITextField
+          {...forwardedRefs}
+          inputProps={inputProps}
+          margin="normal"
+          size={size}
+          variant={variant}
+          style={style}
+        />
       </MUISkeleton>
     );
   }
 
   return (
     <MUITextField
+      {...forwardedRefs}
       inputProps={inputProps}
       label={label}
       margin="normal"
       placeholder={placeholder}
-      ref={forwardedRef}
       required={required}
       size={size}
       style={style}

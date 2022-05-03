@@ -1,19 +1,24 @@
-import React, { CSSProperties, Fragment, SyntheticEvent, useCallback, useMemo } from "react";
+import React, { HTMLAttributes, SyntheticEvent, useCallback, useMemo } from "react";
 import {
   Autocomplete as MUIAutocomplete,
-  ListSubheader as MUIListSubheader,
-  Popper as MUIPopper,
+  AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams,
+  AutocompleteRenderInputParams as MUIAutocompleteRenderInputParams,
+  AutocompleteRenderOptionState as MUIAutocompleteRenderOptionState,
   PopperProps as MUIPopperProps,
-  Skeleton as MUISkeleton,
-  TextField as MUITextField,
-  useTheme,
 } from "@mui/material";
 
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
-import Checkbox from "../Checkbox";
-import Typography from "../Typography";
+
+import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
+import SelectInput, { SELECT_LOADING_SUBPART } from "./components/Input";
+import SelectOption, {
+  SELECT_OPTION_CHECKBOX_SUBPART,
+  SELECT_OPTION_LABEL_SUBPART,
+  SELECT_OPTION_SUBPART,
+} from "./components/Option";
+import SelectPopper from "./components/Popper";
 
 export const DATA_CY_DEFAULT = "select";
 export const DATA_CY_SHORTCUT = "label";
@@ -23,25 +28,11 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 ];
 
 export const SUBPARTS_MAP = {
-  loading: {
-    label: "Loading",
-  },
-  option: {
-    label: "Option <li> (with label)",
-    value: (label = "{label}") => `option-${label}`,
-  },
-  optionCheckbox: {
-    label: "Option Checkbox (with label)",
-    value: (label = "{label}") => `option-${label}-checkbox`,
-  },
-  optionLabel: {
-    label: "Option Label (with label)",
-    value: (label = "{label}") => `option-${label}-label`,
-  },
-  optionGroupLabel: {
-    label: "Option Group (with label)",
-    value: (label = "{label}") => `option-group-${label}`,
-  },
+  loading: SELECT_LOADING_SUBPART,
+  option: SELECT_OPTION_SUBPART,
+  optionCheckbox: SELECT_OPTION_CHECKBOX_SUBPART,
+  optionLabel: SELECT_OPTION_LABEL_SUBPART,
+  optionGroupLabel: SELECT_GROUP_SUBPART,
   outerWrapper: {
     label: "Outer Wrapper",
   },
@@ -74,8 +65,6 @@ const Select = <T extends any>({
   value = null,
   variant = "outlined",
 }: ISelect<T>) => {
-  const theme = useTheme();
-
   const getOptionLabel = useCallback(
     (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
     [externalGetOptionLabel]
@@ -113,13 +102,13 @@ const Select = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    (event, value: any) => {
+    (event, value: string) => {
       if (!externalOnInputChange) {
         return;
       }
 
       suppressEvent(event);
-      externalOnInputChange!(value);
+      externalOnInputChange(value);
     },
     [externalOnInputChange]
   );
@@ -137,6 +126,17 @@ const Select = <T extends any>({
       }
     },
     [onScrollEnd]
+  );
+
+  const listboxProps = useMemo(
+    () => ({
+      onScroll,
+      style: {
+        padding: 0,
+        width: "100%",
+      },
+    }),
+    [onScroll]
   );
 
   const options = useMemo(() => {
@@ -164,9 +164,66 @@ const Select = <T extends any>({
     return options;
   }, [autoSort, externalOptions, getOptionLabel, groupBy]);
 
+  const outerWrapperDataCy = useMemo(() => getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper), [dataCy]);
+
   const isOptionSelectable = useCallback(
     (value: T | null): boolean => !!value && options.some((option) => isOptionSelected(option, value)),
     [options, isOptionSelected]
+  );
+
+  const renderGroup = useCallback(
+    (props: MUIAutocompleteRenderGroupParams) => {
+      const { key } = props;
+      return <SelectGroup key={key} dataCy={dataCy} forwarded={props} getGroupLabel={getGroupLabel} />;
+    },
+    [dataCy, getGroupLabel]
+  );
+
+  const renderInput = useCallback(
+    (props: MUIAutocompleteRenderInputParams) => (
+      <SelectInput
+        dataCy={dataCy}
+        forwarded={props}
+        label={label}
+        loading={loading}
+        placeholder={placeholder}
+        required={required}
+        size={size}
+        style={style}
+        type={type}
+        variant={variant}
+      />
+    ),
+    [dataCy, label, loading, placeholder, required, size, style, type, variant]
+  );
+
+  const renderCustomOption = useCallback(
+    (option: T, selected: boolean) => (customOptionRendering ? customOptionRendering(option, selected) : undefined),
+    [customOptionRendering]
+  );
+
+  const renderOption = useCallback(
+    (props: HTMLAttributes<HTMLLIElement>, option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+      const { id: key } = props;
+      return (
+        <SelectOption
+          key={key}
+          customRenderer={renderCustomOption}
+          dataCy={dataCy}
+          forwarded={props}
+          getOptionLabel={getOptionLabel}
+          multiple={multiple}
+          option={option}
+          selected={selected}
+        />
+      );
+    },
+    [dataCy, getOptionLabel, multiple, renderCustomOption]
+  );
+
+  const renderPopper = useCallback(
+    (props: MUIPopperProps) => <SelectPopper forwarded={props} popperWidth={popperWidth} />,
+    [popperWidth]
   );
 
   const validateValue = useCallback(
@@ -182,124 +239,29 @@ const Select = <T extends any>({
     [isOptionSelectable, multiple]
   );
 
+  const validatedValue = useMemo(() => validateValue(value), [validateValue, value]);
+
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
-      data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper)}
+      data-cy={outerWrapperDataCy}
       disableCloseOnSelect={multiple}
       disabled={disabled}
       getOptionLabel={getOptionLabel}
       groupBy={groupBy}
       isOptionEqualToValue={isOptionSelected}
-      ListboxProps={{
-        onScroll,
-        style: {
-          padding: 0,
-          width: "100%",
-        },
-      }}
+      ListboxProps={listboxProps}
       loading={loading}
       multiple={multiple}
       onChange={onChange}
       onClose={onClose}
       onInputChange={onInputChange}
       options={options}
-      PopperComponent={(props: MUIPopperProps) => {
-        const { anchorEl } = props;
-        const anchorElRef = anchorEl as any;
-        const anchorElWidth = anchorElRef ? anchorElRef.clientWidth : null;
-        const width = !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
-        return <MUIPopper {...props} placement="bottom-start" style={{ width }} />;
-      }}
-      renderGroup={(groupProps) => {
-        const { children, group, key } = groupProps;
-        const groupLabel = getGroupLabel ? getGroupLabel(group) : group;
-
-        return (
-          <Fragment key={`group-${key}`}>
-            <MUIListSubheader
-              data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionGroupLabel, groupLabel)}
-              style={{ backgroundColor: theme.palette.background.default }}
-            >
-              {groupLabel}
-            </MUIListSubheader>
-            {children}
-          </Fragment>
-        );
-      }}
-      renderInput={(inputProps) => {
-        const { inputProps: extInputProps } = inputProps;
-        const baseStyle: CSSProperties = { width: "100%" };
-
-        if (loading) {
-          const forwardedInputProps = {
-            ...inputProps,
-            inputProps: {
-              "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.loading),
-              style: { ...baseStyle, ...style },
-            },
-          };
-
-          return (
-            <MUISkeleton width="100%">
-              <MUITextField
-                {...forwardedInputProps}
-                margin="normal"
-                size={size}
-                variant={variant}
-                style={{ ...baseStyle }}
-              />
-            </MUISkeleton>
-          );
-        }
-
-        const forwardedInputProps = {
-          ...inputProps,
-          inputProps: { ...extInputProps, "data-cy": dataCy, style: { ...baseStyle, ...style } },
-        };
-
-        return (
-          <MUITextField
-            {...forwardedInputProps}
-            label={label}
-            margin="normal"
-            placeholder={placeholder}
-            required={required}
-            size={size}
-            style={{ width: "100%", ...style }}
-            type={type}
-            variant={variant}
-          />
-        );
-      }}
-      renderOption={(props, option, { selected }) => {
-        const optionLabel = getOptionLabel(option);
-        const optionDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.option, optionLabel);
-        if (customOptionRendering) {
-          return (
-            <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
-              {customOptionRendering(option, selected)}
-            </li>
-          );
-        }
-
-        return (
-          <li key={`option-${optionLabel}`} data-cy={optionDataCy} {...props}>
-            {multiple && (
-              <Checkbox
-                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionCheckbox, optionLabel)}
-                disabled
-                labelPlacement="end"
-                value={selected}
-              />
-            )}
-            <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.optionLabel, optionLabel)}>
-              {optionLabel}
-            </Typography>
-          </li>
-        );
-      }}
-      value={validateValue(value)}
+      PopperComponent={renderPopper}
+      renderGroup={renderGroup}
+      renderInput={renderInput}
+      renderOption={renderOption}
+      value={validatedValue}
     />
   );
 };

@@ -74,7 +74,7 @@ const SelectOption = <T extends any>({
   }, [checkboxDataCy, customContent, labelDataCy, optionLabel, multiple, selected]);
 
   return (
-    <li key={optionDataCy} data-cy={optionDataCy} {...forwarded}>
+    <li data-cy={optionDataCy} {...forwarded}>
       {content}
     </li>
   );

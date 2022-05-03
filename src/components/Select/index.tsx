@@ -204,8 +204,10 @@ const Select = <T extends any>({
 
   const renderOption = useCallback(
     (props: HTMLAttributes<HTMLLIElement>, option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+      const { id: key } = props;
       return (
         <SelectOption
+          key={key}
           customRenderer={renderCustomOption}
           dataCy={dataCy}
           forwarded={props}

@@ -73,10 +73,8 @@ Styled.args = {
   },
 };
 
-// export const Size = () => (
-//   <StoriesWrapper>
-//     <IconButton icon={Icons.add} size={IconSize.small} onClick={() => {}} />
-//     <IconButton icon={Icons.add} onClick={() => {}} />
-//     <IconButton icon={Icons.add} size={IconSize.large} onClick={() => {}} />
-//   </StoriesWrapper>
-// );
+export const Tooltip = Template.bind({});
+Tooltip.args = {
+  ...Primary.args,
+  tooltip: "Add",
+};

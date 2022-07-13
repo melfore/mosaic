@@ -11,6 +11,9 @@ export const SUBPARTS_MAP = {
   icon: {
     label: "Icon",
   },
+  tooltip: {
+    label: "Tooltip",
+  },
 };
 
 const IconButton: FC<IIconButton> = ({
@@ -45,7 +48,7 @@ const IconButton: FC<IIconButton> = ({
   }
 
   return (
-    <MUITooltip aria-label={slugify(tooltip)} title={tooltip}>
+    <MUITooltip aria-label={slugify(tooltip)} data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.tooltip)} title={tooltip}>
       <span>{iconButton}</span>
     </MUITooltip>
   );

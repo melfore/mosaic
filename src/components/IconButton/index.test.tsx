@@ -87,4 +87,18 @@ describe("IconButton test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("tooltip", () => {
+    const tooltip = "Account";
+    const { element, wrapper } = getIconButtonTestable({
+      dataCy: getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.tooltip),
+      domNode: "span",
+      props: { tooltip },
+    });
+
+    expect(wrapper.prop("title")).toEqual(tooltip);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

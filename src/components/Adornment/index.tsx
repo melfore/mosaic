@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 
 import { IAdornment, IAdornmentSubpart } from "../../types/Adornment";
 import { ISubpartMap } from "../../utils";
@@ -17,6 +17,10 @@ export const ADORNMENT_SUBPARTS: ISubpartMap<IAdornmentSubpart> = {
 const DEFAULT_DATA_CY = "adornment";
 
 const Adornment: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA_CY, tooltip }) => {
+  if (!badge && !tooltip) {
+    return <Fragment>{children}</Fragment>;
+  }
+
   return (
     <span data-cy={dataCy}>
       <AdornmentTooltip dataCy={dataCy} tooltip={tooltip}>

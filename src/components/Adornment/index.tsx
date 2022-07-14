@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 
-import { IAdornment } from "../../types/Adornment";
+import { IAdornment, IAdornmentSubpart } from "../../types/Adornment";
 import { ISubpartMap } from "../../utils";
 
-import Badge, { ADORNMENT_BADGE_SUBPARTS } from "./components/Badge";
-import Tooltip, { ADORNMENT_TOOLTIP_SUBPARTS } from "./components/Tooltip";
+import AdornmentBadge, { ADORNMENT_BADGE_SUBPARTS } from "./components/Badge";
+import AdornmentTooltip, { ADORNMENT_TOOLTIP_SUBPARTS } from "./components/Tooltip";
 
-export const ADORNMENT_SUBPARTS: ISubpartMap = {
+export const ADORNMENT_SUBPARTS: ISubpartMap<IAdornmentSubpart> = {
   ...ADORNMENT_BADGE_SUBPARTS,
   ...ADORNMENT_TOOLTIP_SUBPARTS,
   adornment: {
@@ -19,11 +19,11 @@ const DEFAULT_DATA_CY = "adornment";
 const Adornment: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA_CY, tooltip }) => {
   return (
     <span data-cy={dataCy}>
-      <Tooltip dataCy={dataCy} tooltip={tooltip}>
-        <Badge badge={badge} dataCy={dataCy}>
+      <AdornmentTooltip dataCy={dataCy} tooltip={tooltip}>
+        <AdornmentBadge badge={badge} dataCy={dataCy}>
           {children}
-        </Badge>
-      </Tooltip>
+        </AdornmentBadge>
+      </AdornmentTooltip>
     </span>
   );
 };

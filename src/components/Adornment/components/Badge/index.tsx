@@ -1,10 +1,10 @@
 import React, { FC, Fragment, useMemo } from "react";
 import { Badge as MUIBadge } from "@material-ui/core";
 
-import { IAdornment } from "../../../../types/Adornment";
+import { IAdornment, IAdornmentBadgeSubpart } from "../../../../types/Adornment";
 import { getComposedDataCy, ISubpartMap } from "../../../../utils";
 
-export const ADORNMENT_BADGE_SUBPARTS: ISubpartMap = {
+export const ADORNMENT_BADGE_SUBPARTS: ISubpartMap<IAdornmentBadgeSubpart> = {
   badge: {
     label: "Badge",
   },
@@ -12,7 +12,7 @@ export const ADORNMENT_BADGE_SUBPARTS: ISubpartMap = {
 
 const DEFAULT_DATA_CY = "adornment-badge";
 
-const Badge: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA_CY }) => {
+const AdornmentBadge: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA_CY }) => {
   const badgeDataCy = useMemo(() => getComposedDataCy(dataCy, ADORNMENT_BADGE_SUBPARTS.badge), [dataCy]);
 
   if (!badge) {
@@ -28,4 +28,4 @@ const Badge: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA_CY }) =>
   );
 };
 
-export default Badge;
+export default AdornmentBadge;

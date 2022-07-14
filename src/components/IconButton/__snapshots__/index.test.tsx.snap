@@ -60,7 +60,7 @@ exports[`IconButton test suite: adornment - badge & tooltip 1`] = `
         />
       </button>
       <span
-        className="MuiBadge-badge MuiBadge-anchorOriginTopRightRectangle"
+        className="MuiBadge-badge MuiBadge-anchorOriginTopRightCircular"
       >
         3
       </span>
@@ -113,7 +113,7 @@ exports[`IconButton test suite: adornment - badge 1`] = `
       </span>
     </button>
     <span
-      className="MuiBadge-badge MuiBadge-anchorOriginTopRightRectangle"
+      className="MuiBadge-badge MuiBadge-anchorOriginTopRightCircular"
     >
       3
     </span>

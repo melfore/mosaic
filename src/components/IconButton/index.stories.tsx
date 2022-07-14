@@ -35,6 +35,15 @@ Primary.args = {
   icon: Icons.add,
 };
 
+export const Badge = Template.bind({});
+Badge.args = {
+  ...Primary.args,
+  badge: {
+    color: "secondary",
+    value: "8",
+  },
+};
+
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
   icon: <MUIStyleIcon />,

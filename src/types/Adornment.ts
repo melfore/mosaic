@@ -18,7 +18,7 @@ export interface IAdornmentBadge {
 
 export interface IAdornment extends IBase {
   /**
-   * Badge properties
+   * Badge properties: color, value, string
    */
   badge?: IAdornmentBadge;
   /**

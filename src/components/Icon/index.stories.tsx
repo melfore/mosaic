@@ -33,6 +33,16 @@ Primary.args = {
   name: Icons.account,
 };
 
+export const Badge = Template.bind({});
+Badge.args = {
+  ...Primary.args,
+  badge: {
+    color: "secondary",
+    overlap: "rectangular",
+    value: "5",
+  },
+};
+
 export const IconCustom = Template.bind({});
 IconCustom.args = {
   children: <MUIStyleIcon />,
@@ -71,6 +81,12 @@ Styled.args = {
     color: "white",
     padding: "4px",
   },
+};
+
+export const Tooltip = Template.bind({});
+Tooltip.args = {
+  ...Primary.args,
+  tooltip: "Account",
 };
 
 // TODO: add this story using union type

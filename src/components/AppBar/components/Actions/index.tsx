@@ -49,13 +49,15 @@ const AppBarActions: FC<IAppBarActions> = ({ actions, dataCy = DATA_CY_DEFAULT, 
       return null;
     }
 
-    return actions.map(({ icon, onClick, style }, index) => (
+    return actions.map(({ badge, icon, onClick, style, tooltip }, index) => (
       <IconButton
         key={`action-${index}`}
+        badge={badge}
         dataCy={getComposedDataCy(dataCy, APPBAR_ACTIONS_SUBPARTS.action, index)}
         icon={icon}
         onClick={onClick}
         style={{ marginRight: `${theme.spacing(0.5)}px`, ...style }}
+        tooltip={tooltip}
       />
     ));
   }, [actions, dataCy, theme]);

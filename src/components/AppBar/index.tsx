@@ -65,7 +65,7 @@ const AppBar: FC<IAppBar> = ({
     const userMenuItems = userMenu.map((menuItem) => ({ ...menuItem, value: menuItem.label }));
     return {
       items: userMenuItems,
-      label: username,
+      label: username || "User",
     };
   }, [user, userMenu, username]);
 

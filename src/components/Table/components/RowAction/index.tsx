@@ -47,6 +47,7 @@ const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions
       icon={icon}
       onClick={() => callback(data, dataCallbackOptions)}
       size="small"
+      tooltip={label}
     />
   );
 };

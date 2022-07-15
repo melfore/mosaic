@@ -51,24 +51,28 @@ const TablePaginationActions: FC<ITablePaginationActions> = ({
         disabled={leftDisabled}
         icon={Icons.first}
         onClick={() => onPageChange(null, 0)}
+        tooltip="First"
       />
       <IconButton
         dataCy={getPaginationActionDataCy("prev")}
         disabled={leftDisabled}
         icon={Icons.left}
         onClick={() => onPageChange(null, page - 1)}
+        tooltip="Prev"
       />
       <IconButton
         dataCy={getPaginationActionDataCy("next")}
         disabled={rightDisabled}
         icon={Icons.right}
         onClick={() => onPageChange(null, page + 1)}
+        tooltip="Next"
       />
       <IconButton
         dataCy={getPaginationActionDataCy("last")}
         disabled={rightDisabled}
         icon={Icons.last}
         onClick={() => onPageChange(null, lastPage)}
+        tooltip="Last"
       />
     </div>
   );

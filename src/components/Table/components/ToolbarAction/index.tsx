@@ -19,7 +19,6 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
   dataCy: externalDataCy,
   disabled: externalDisabled,
   icon: externalIcon,
-  index,
   label,
   position,
 }) => {
@@ -47,9 +46,9 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
     return { component: externalIcon };
   }, [externalIcon, secondary]);
 
-  const style = useMemo((): CSSProperties => ({ marginLeft: index > 0 ? "8px" : "none" }), [index]);
-
   const global = useMemo(() => position === "icon" || position === "toolbar", [position]);
+
+  const style = useMemo((): CSSProperties => ({ margin: "0 4px" }), []);
 
   const onClick = useCallback(
     () => callback(!global ? data : undefined, dataCallbackOptions),
@@ -58,7 +57,14 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
 
   if (secondary) {
     return (
-      <IconButton dataCy={dataCy} disabled={disabled} icon={icon as IIconElement} onClick={onClick} style={style} />
+      <IconButton
+        dataCy={dataCy}
+        disabled={disabled}
+        icon={icon as IIconElement}
+        onClick={onClick}
+        style={style}
+        tooltip={label}
+      />
     );
   }
 

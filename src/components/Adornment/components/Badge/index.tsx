@@ -19,10 +19,10 @@ const AdornmentBadge: FC<IAdornment> = ({ badge, children, dataCy = DEFAULT_DATA
     return <Fragment>{children}</Fragment>;
   }
 
-  const { color = "default", value, variant = "standard" } = badge;
+  const { color = "default", overlap = "circular", value, variant = "standard" } = badge;
 
   return (
-    <MUIBadge badgeContent={value} color={color} data-cy={badgeDataCy} overlap="circular" variant={variant}>
+    <MUIBadge badgeContent={value} color={color} data-cy={badgeDataCy} overlap={overlap} variant={variant}>
       {children}
     </MUIBadge>
   );

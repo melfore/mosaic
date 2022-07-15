@@ -8,11 +8,26 @@ export type IAdornmentSubpart = "adornment" | IAdornmentBadgeSubpart | IAdornmen
 
 type IBadgeColor = "default" | "error" | "primary" | "secondary";
 
+type IBadgeOverlap = "circular" | "rectangular";
+
 type IBadgeVariant = "dot" | "standard";
 
 export interface IAdornmentBadge {
+  /**
+   * Badge color
+   */
   color?: IBadgeColor;
+  /**
+   * Badge overlap
+   */
+  overlap?: IBadgeOverlap;
+  /**
+   * Badge content
+   */
   value: string;
+  /**
+   * Badge variant
+   */
   variant?: IBadgeVariant;
 }
 

@@ -92,7 +92,7 @@ const Modal: FC<IModal> = ({
         <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant="title">
           {title}
         </Typography>
-        {closable && <IconButton icon={Icons.close} size="small" onClick={onClose} />}
+        {closable && <IconButton icon={Icons.close} size="small" onClick={onClose} tooltip="Close" />}
       </MUIDialogTitle>
       <MUIDialogContent data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.content)} dividers>
         {children}

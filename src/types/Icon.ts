@@ -1,5 +1,6 @@
 import { CSSProperties, ReactElement } from "react";
 
+import { IAdornment } from "./Adornment";
 import { ILoadable } from "./Base";
 
 export enum Icons {
@@ -85,7 +86,7 @@ interface IForwardedIcon {
   ref?: any;
 }
 
-export interface IIcon extends ILoadable {
+export interface IIcon extends IAdornment, ILoadable {
   /**
    * Props forwarded to svg icon
    */

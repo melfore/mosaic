@@ -10,9 +10,9 @@ export interface ISubpartSuffix {
   suffix: string;
 }
 
-export interface ISubpartMap {
-  [key: string]: ISubpart;
-}
+export type ISubpartMap<T extends string = string> = {
+  [key in T]: ISubpart;
+};
 
 export const DATA_CY_SUFFIX_SEPARATOR = "-";
 

@@ -18,6 +18,8 @@ export interface IMenuItem {
   value: string;
 }
 
+export type IMenuType = "button" | "icon";
+
 export interface IMenu extends IBase, IPartialIconUtilizer {
   /**
    * List of menu items
@@ -26,9 +28,13 @@ export interface IMenu extends IBase, IPartialIconUtilizer {
   /**
    * Menu label
    */
-  label?: string;
+  label: string;
   /**
    * Callback for click events, applied to all menu items
    */
   onItemClick?: IMenuItemCallback;
+  /**
+   * Menu button type 'button' or 'icon'
+   */
+  type?: IMenuType;
 }

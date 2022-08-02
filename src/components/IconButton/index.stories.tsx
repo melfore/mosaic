@@ -35,6 +35,15 @@ Primary.args = {
   icon: Icons.add,
 };
 
+export const Badge = Template.bind({});
+Badge.args = {
+  ...Primary.args,
+  badge: {
+    color: "secondary",
+    value: "8",
+  },
+};
+
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
   icon: <MUIStyleIcon />,
@@ -73,10 +82,8 @@ Styled.args = {
   },
 };
 
-// export const Size = () => (
-//   <StoriesWrapper>
-//     <IconButton icon={Icons.add} size={IconSize.small} onClick={() => {}} />
-//     <IconButton icon={Icons.add} onClick={() => {}} />
-//     <IconButton icon={Icons.add} size={IconSize.large} onClick={() => {}} />
-//   </StoriesWrapper>
-// );
+export const Tooltip = Template.bind({});
+Tooltip.args = {
+  ...Primary.args,
+  tooltip: "Add",
+};

@@ -45,11 +45,13 @@ Primary.args = {
     {
       icon: Icons.settings,
       onClick: () => {},
+      tooltip: "Settings",
     },
   ],
   menu: {
     icon: Icons.home,
     onClick: () => {},
+    tooltip: "Home",
   },
   title: "AppBar",
 };
@@ -59,16 +61,23 @@ Actions.args = {
   ...Primary.args,
   actions: [
     {
+      badge: {
+        color: "error",
+        value: "5",
+      },
       icon: Icons.notifications,
       onClick: () => {},
+      tooltip: "Notifications",
     },
     {
       icon: Icons.mail,
       onClick: () => {},
+      tooltip: "Mail",
     },
     {
       icon: Icons.settings,
       onClick: () => {},
+      tooltip: "Settings",
     },
   ],
 };

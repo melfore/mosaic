@@ -20,7 +20,6 @@ It requires these `peerDependencies` to be installed in host project:
   "@emotion/react": ">= 11.8.2 < 12",
   "@emotion/styled": ">= 11.8.1 < 12",
   "@mui/icons-material": ">= 5.5.1 < 6",
-  "@mui/lab": ">= 5.0.0-alpha.75 < 6",
   "@mui/material": ">= 5.5.3 < 6",
   "@mui/styles": ">= 5.5.3 < 6",
   "react": ">= 17 < 18",

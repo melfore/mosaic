@@ -1,3 +1,5 @@
+# [7.1.0-beta.4](https://github.com/melfore/mosaic/compare/v7.1.0-beta.3...v7.1.0-beta.4) (2022-08-19)
+
 ## [7.1.2](https://github.com/melfore/mosaic/compare/v7.1.1...v7.1.2) (2022-08-19)
 
 

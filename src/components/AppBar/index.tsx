@@ -2,6 +2,7 @@ import React, { CSSProperties, FC } from "react";
 import { useMemo } from "react";
 import { AppBar as MUIAppBar, Toolbar as MUIToolbar } from "@material-ui/core";
 
+import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { IAppBar } from "../../types/AppBar";
 import { IMenu } from "../../types/Menu";
 import { ISubpartMap } from "../../utils";
@@ -38,6 +39,10 @@ const AppBar: FC<IAppBar> = ({
   userMenu = [],
   username,
 }) => {
+  const {
+    view: { mobile },
+  } = useMosaicContext();
+
   const toolbarStyle = useMemo(
     (): CSSProperties => ({
       alignItems: "center",
@@ -66,8 +71,9 @@ const AppBar: FC<IAppBar> = ({
     return {
       items: userMenuItems,
       label: username || "User",
+      type: mobile ? "icon" : "button",
     };
-  }, [user, userMenu, username]);
+  }, [mobile, user, userMenu, username]);
 
   return (
     <MUIAppBar data-cy={dataCy} position="sticky" style={style}>

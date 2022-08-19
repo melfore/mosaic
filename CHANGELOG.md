@@ -1,3 +1,28 @@
+## [7.1.2](https://github.com/melfore/mosaic/compare/v7.1.1...v7.1.2) (2022-08-19)
+
+
+### Bug Fixes
+
+* 🐛 [AppBar] User menu to be of type 'icon' on xs screens ([3de0a42](https://github.com/melfore/mosaic/commit/3de0a428f096c1bbfcb154e8bff2d1e7b68f9572))
+
+## [7.1.1](https://github.com/melfore/mosaic/compare/v7.1.0...v7.1.1) (2022-08-03)
+
+# [7.1.0](https://github.com/melfore/mosaic/compare/v7.0.1...v7.1.0) (2022-08-02)
+
+
+### Features
+
+* 🎸 [Adornment] Added adornment component (not exposed) ([9214f5e](https://github.com/melfore/mosaic/commit/9214f5e4f194ffa424a7ac4b613a61773cdc4da0))
+* 🎸 [Adornment] Added badge overlap, defaults to circular ([9895bba](https://github.com/melfore/mosaic/commit/9895bbacaf92b257cb843a7feba1b3502842245d))
+* 🎸 [Adornment] Badge overlap circular ([c9d2910](https://github.com/melfore/mosaic/commit/c9d29104afa70438619ceae32c704987fe096c1c))
+* 🎸 [AppBar] Added badge and tooltip on actions and menu ([2f560a0](https://github.com/melfore/mosaic/commit/2f560a08146b0160bfe42313b7c7db006696af3d))
+* 🎸 [Icon] Added badge and tooltip ([eb664be](https://github.com/melfore/mosaic/commit/eb664be6925787281ce7339ee4430c10d2aa493d))
+* 🎸 [IconButton] Added dataCy subpart for tooltip ([db6e857](https://github.com/melfore/mosaic/commit/db6e85721ebe24631e93dedd945a106627da95be))
+* 🎸 [IconButton] Added optional tooltip ([14f1a1c](https://github.com/melfore/mosaic/commit/14f1a1c10f120f3174ffe518dda5360d6491a206))
+* 🎸 [IconButton] Using Adornment to add badge and tooltip ([a9875aa](https://github.com/melfore/mosaic/commit/a9875aabe1a747c31c00ef6823bd0d7de7adcda7))
+* 🎸 [Modal] Added tooltip on close iconbutton ([897e93a](https://github.com/melfore/mosaic/commit/897e93a648a7b4188e16acc62b03157319d09b4c))
+* 🎸 [Table] All IconButton with tooltip and optional badge ([3c152b1](https://github.com/melfore/mosaic/commit/3c152b16e8c0dfe5078d31d6b3f62e3ba3d99386))
+
 # [7.1.0-beta.3](https://github.com/melfore/mosaic/compare/v7.1.0-beta.2...v7.1.0-beta.3) (2022-08-03)
 
 # [7.1.0-beta.2](https://github.com/melfore/mosaic/compare/v7.1.0-beta.1...v7.1.0-beta.2) (2022-05-03)
@@ -9,6 +34,8 @@
 
 * 🐛 [Select] Fixed HTMLInputElement customization ([66775db](https://github.com/melfore/mosaic/commit/66775db997e7e7683fbfeb07ee8e629155d51cf3))
 * 🐛 [Select] Keys for options on top level component ([b6e7da7](https://github.com/melfore/mosaic/commit/b6e7da7ebb512c609a2ba33e7f5d687cd7ae2db2))
+
+## [7.0.1](https://github.com/melfore/mosaic/compare/v7.0.0...v7.0.1) (2022-07-12)
 
 # [7.0.0](https://github.com/melfore/mosaic/compare/v6.4.1...v7.0.0) (2022-05-02)
 

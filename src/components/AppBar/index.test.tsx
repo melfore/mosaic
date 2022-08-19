@@ -152,7 +152,7 @@ describe("AppBar test suite:", () => {
   it("userMenu", () => {
     const onClick = jest.fn();
     const { wrapper } = getAppBarTestable({
-      props: { user: { items: [{ label: "Logout", onClick, value: "logout" }] } },
+      props: { user: { items: [{ label: "Logout", onClick, value: "logout" }], label: "User" } },
     });
 
     const userMenuButtonDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.userMenu);
@@ -183,7 +183,7 @@ describe("AppBar test suite:", () => {
 
   it("username", () => {
     const onClick = jest.fn();
-    const username = "mos@ic";
+    const username: string = "mos@ic";
     const { wrapper } = getAppBarTestable({
       props: { user: { items: [{ label: "Logout", onClick, value: "logout" }], label: username } },
     });

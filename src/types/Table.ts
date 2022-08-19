@@ -1,6 +1,7 @@
 import { CSSProperties, ReactNode } from "react";
 import { TablePaginationProps as MUITablePaginationProps } from "@mui/material";
 
+import { IAdornment } from "./Adornment";
 import { IBase, ILoadable, ILocalizable } from "./Base";
 import { IPartialIconUtilizer } from "./Icon";
 
@@ -23,7 +24,7 @@ export interface ITableDataCallbackOptions {
 
 export type ITableDataCallback<T, K = any> = (data: K, options?: ITableDataCallbackOptions) => T;
 
-export interface ITableAction extends IPartialIconUtilizer {
+export interface ITableAction extends IAdornment, IPartialIconUtilizer {
   /**
    * Callback for click events on table action
    */
@@ -52,12 +53,10 @@ export interface ITableToolbarAction extends IBase, ITableAction {
    */
   data: any;
   dataCy: string;
-  // TODO#lb: add docs
-  dataCallbackOptions: ITableDataCallbackOptions;
   /**
-   * Table toolbar action index
+   * Callback options for the action triggered
    */
-  index: number;
+  dataCallbackOptions: ITableDataCallbackOptions;
 }
 
 export interface ITableColumn {

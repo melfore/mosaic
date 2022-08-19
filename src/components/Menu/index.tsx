@@ -13,7 +13,7 @@ const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   horizontal: "right",
 };
 
-const Menu: FC<IMenu> = ({ dataCy, icon: externalIcon, label, items, onItemClick, style }) => {
+const Menu: FC<IMenu> = ({ dataCy, icon: externalIcon, label, items, onItemClick, style, type = "button" }) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
 
   const onClose = useCallback(() => setAnchor(null), []);
@@ -44,8 +44,8 @@ const Menu: FC<IMenu> = ({ dataCy, icon: externalIcon, label, items, onItemClick
       icon = Icons.menu;
     }
 
-    if (!label) {
-      return <IconButton dataCy={dataCy} icon={icon} onClick={onMenu} style={style} />;
+    if (type === "icon") {
+      return <IconButton dataCy={dataCy} icon={icon} onClick={onMenu} style={style} tooltip={label} />;
     }
 
     return (
@@ -57,7 +57,7 @@ const Menu: FC<IMenu> = ({ dataCy, icon: externalIcon, label, items, onItemClick
         style={style}
       />
     );
-  }, [dataCy, externalIcon, label, onMenu, style]);
+  }, [dataCy, externalIcon, label, onMenu, style, type]);
 
   return (
     <Fragment>

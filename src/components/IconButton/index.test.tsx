@@ -87,4 +87,70 @@ describe("IconButton test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("adornment - badge", () => {
+    const badgeValue = "3";
+
+    const adornmentDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.adornment);
+    const { element, wrapper } = getIconButtonTestable({
+      dataCy: adornmentDataCy,
+      domNode: "span",
+      props: { badge: { value: badgeValue } },
+    });
+
+    const badgeSubpartDataCy = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.badge);
+    const badgeSubpartWrapper = wrapper.find(`span[data-cy='${badgeSubpartDataCy}']`);
+    const badgeWrapper = badgeSubpartWrapper.find(`span.MuiBadge-badge`);
+    expect(badgeWrapper.text()).toEqual(badgeValue);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("adornment - tooltip", () => {
+    const tooltip = "Account";
+
+    const adornmentDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.adornment);
+    const { element, wrapper } = getIconButtonTestable({
+      dataCy: adornmentDataCy,
+      domNode: "span",
+      props: { tooltip },
+    });
+
+    const tooltipSubpart = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.tooltip);
+    const tooltipWrapper = wrapper.find(`span[data-cy='${tooltipSubpart}']`);
+    expect(tooltipWrapper.prop("aria-label")).toEqual(tooltip.toLowerCase());
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("adornment - badge & tooltip", () => {
+    const badgeValue = "3";
+    const tooltip = "Account";
+
+    const adornmentDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.adornment);
+    const { element, wrapper } = getIconButtonTestable({
+      dataCy: adornmentDataCy,
+      domNode: "span",
+      props: {
+        badge: {
+          value: badgeValue,
+        },
+        tooltip,
+      },
+    });
+
+    const badgeSubpartDataCy = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.badge);
+    const badgeSubpartWrapper = wrapper.find(`span[data-cy='${badgeSubpartDataCy}']`);
+    const badgeWrapper = badgeSubpartWrapper.find(`span.MuiBadge-badge`);
+    expect(badgeWrapper.text()).toEqual(badgeValue);
+
+    const tooltipSubpart = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.tooltip);
+    const tooltipWrapper = wrapper.find(`span[data-cy='${tooltipSubpart}']`);
+    expect(tooltipWrapper.prop("aria-label")).toEqual(tooltip.toLowerCase());
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

@@ -22,8 +22,8 @@ const AppBarContent: FC<IAppBarContent> = ({ children, dataCy = DATA_CY_DEFAULT,
       return null;
     }
 
-    const { icon, onClick } = menu;
-    return <IconButton dataCy={mainMenuDataCy} icon={icon} onClick={onClick} />;
+    const { badge, icon, onClick, tooltip } = menu;
+    return <IconButton badge={badge} dataCy={mainMenuDataCy} icon={icon} onClick={onClick} tooltip={tooltip} />;
   }, [mainMenuDataCy, menu]);
 
   const style = useMemo(

@@ -4,6 +4,7 @@ import makeStyles from "@mui/styles/makeStyles";
 
 import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
+import Adornment from "../Adornment";
 
 import { iconsCatalog } from "./utils";
 
@@ -30,6 +31,7 @@ const useAnimations = makeStyles({
 });
 
 const Icon: FC<IIcon> = ({
+  badge,
   children,
   dataCy = DATA_CY_DEFAULT,
   forwarded = {},
@@ -38,6 +40,7 @@ const Icon: FC<IIcon> = ({
   rotate = false,
   size = "medium",
   style: externalStyle,
+  tooltip,
 }) => {
   const { rotate: rotateAnimation } = useAnimations();
 
@@ -73,7 +76,11 @@ const Icon: FC<IIcon> = ({
   }
 
   if (children) {
-    return cloneElement(children as ReactElement<any>, { ...props });
+    return (
+      <Adornment badge={badge} tooltip={tooltip}>
+        {cloneElement(children as ReactElement<any>, { ...props })}
+      </Adornment>
+    );
   }
 
   if (!name) {
@@ -82,7 +89,12 @@ const Icon: FC<IIcon> = ({
   }
 
   const icon = iconsCatalog[name];
-  return cloneElement(icon, { ...props });
+
+  return (
+    <Adornment badge={badge} tooltip={tooltip}>
+      {cloneElement(icon, { ...props })}
+    </Adornment>
+  );
 };
 
 export default Icon;

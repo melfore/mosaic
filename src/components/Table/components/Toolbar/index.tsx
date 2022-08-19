@@ -63,7 +63,6 @@ const TableToolbar: FC<ITableToolbar> = ({
           data={selectedRowsData}
           dataCallbackOptions={dataCallbackOptions}
           dataCy={dataCy}
-          index={index}
         />
       )),
     [actions, dataCallbackOptions, dataCy, selectedRowsData]

@@ -1,3 +1,10 @@
+## [7.1.2](https://github.com/melfore/mosaic/compare/v7.1.1...v7.1.2) (2022-08-19)
+
+
+### Bug Fixes
+
+* 🐛 [AppBar] User menu to be of type 'icon' on xs screens ([3de0a42](https://github.com/melfore/mosaic/commit/3de0a428f096c1bbfcb154e8bff2d1e7b68f9572))
+
 ## [7.1.1](https://github.com/melfore/mosaic/compare/v7.1.0...v7.1.1) (2022-08-03)
 
 # [7.1.0](https://github.com/melfore/mosaic/compare/v7.0.1...v7.1.0) (2022-08-02)

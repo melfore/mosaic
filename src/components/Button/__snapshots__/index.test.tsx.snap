@@ -147,7 +147,7 @@ exports[`Button test suite: icon - custom 1`] = `
         data-cy="button-icon"
         focusable="false"
         style={
-          Object {
+          {
             "height": 24,
             "width": 24,
           }

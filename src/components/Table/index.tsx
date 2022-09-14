@@ -265,9 +265,19 @@ const Table: FC<ITable> = ({
     };
   }, [sticky, theme]);
 
+  const wrapperStyle = useMemo(
+    (): CSSProperties => ({
+      height,
+      overflowY: loading && sticky ? "hidden" : "inherit",
+      position: "relative",
+      ...externalStyle,
+    }),
+    [externalStyle, height, loading, sticky]
+  );
+
   return (
-    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={{ height, position: "relative", ...externalStyle }}>
-      {loading && <TableLoader hideHeader={hideHeader} sticky={sticky} />}
+    <MUITableContainer component={MUIPaper} data-cy={dataCy} style={wrapperStyle}>
+      {loading && <TableLoader />}
       {!hideHeader && (
         <TableToolbar
           actions={defaultActions}

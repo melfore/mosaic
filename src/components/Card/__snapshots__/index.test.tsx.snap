@@ -5,7 +5,7 @@ exports[`Card test suite: actions 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -33,7 +33,7 @@ exports[`Card test suite: actions 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -41,7 +41,7 @@ exports[`Card test suite: actions 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -51,7 +51,7 @@ exports[`Card test suite: actions 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -59,7 +59,7 @@ exports[`Card test suite: actions 1`] = `
     >
       <div
         style={
-          Object {
+          {
             "marginRight": "16px",
           }
         }
@@ -103,7 +103,7 @@ exports[`Card test suite: actions 1`] = `
       </div>
       <div
         style={
-          Object {
+          {
             "marginRight": "16px",
           }
         }
@@ -155,7 +155,7 @@ exports[`Card test suite: collapsible 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -183,7 +183,7 @@ exports[`Card test suite: collapsible 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -191,7 +191,7 @@ exports[`Card test suite: collapsible 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -246,7 +246,7 @@ exports[`Card test suite: dataCy 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="custom"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -274,7 +274,7 @@ exports[`Card test suite: dataCy 1`] = `
     className="MuiCardContent-root"
     data-cy="custom-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -282,7 +282,7 @@ exports[`Card test suite: dataCy 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -298,7 +298,7 @@ exports[`Card test suite: default 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -326,7 +326,7 @@ exports[`Card test suite: default 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -334,7 +334,7 @@ exports[`Card test suite: default 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -350,7 +350,7 @@ exports[`Card test suite: icon 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -366,7 +366,7 @@ exports[`Card test suite: icon 1`] = `
         className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
         data-cy="card-avatar"
         style={
-          Object {
+          {
             "backgroundColor": "#3f51b5",
             "color": "#fff",
           }
@@ -404,7 +404,7 @@ exports[`Card test suite: icon 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -412,7 +412,7 @@ exports[`Card test suite: icon 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -428,7 +428,7 @@ exports[`Card test suite: loading 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -447,7 +447,7 @@ exports[`Card test suite: loading 1`] = `
         <span
           className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
           style={
-            Object {
+            {
               "height": undefined,
               "width": undefined,
             }
@@ -461,7 +461,7 @@ exports[`Card test suite: loading 1`] = `
         <span
           className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
           style={
-            Object {
+            {
               "height": undefined,
               "width": undefined,
             }
@@ -474,7 +474,7 @@ exports[`Card test suite: loading 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -482,7 +482,7 @@ exports[`Card test suite: loading 1`] = `
     <span
       className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
       style={
-        Object {
+        {
           "height": "128px",
           "width": undefined,
         }
@@ -497,7 +497,7 @@ exports[`Card test suite: localized 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="locale.title"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -525,7 +525,7 @@ exports[`Card test suite: localized 1`] = `
     className="MuiCardContent-root"
     data-cy="locale.title-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -533,7 +533,7 @@ exports[`Card test suite: localized 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -549,7 +549,7 @@ exports[`Card test suite: subtitle 1`] = `
   className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
   data-cy="card"
   style={
-    Object {
+    {
       "margin": "16px",
       "width": "calc(100% - 32px)",
     }
@@ -579,7 +579,7 @@ exports[`Card test suite: subtitle 1`] = `
     className="MuiCardContent-root"
     data-cy="card-content"
     style={
-      Object {
+      {
         "padding": "8px 16px",
       }
     }
@@ -587,7 +587,7 @@ exports[`Card test suite: subtitle 1`] = `
   <div
     className="MuiCardActions-root"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",

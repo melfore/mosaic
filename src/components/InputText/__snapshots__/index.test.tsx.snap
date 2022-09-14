@@ -4,7 +4,7 @@ exports[`InputText test suite: adornment 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -26,7 +26,7 @@ exports[`InputText test suite: adornment 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -76,7 +76,7 @@ exports[`InputText test suite: adornment 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -84,14 +84,14 @@ exports[`InputText test suite: adornment 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -106,7 +106,7 @@ exports[`InputText test suite: dataCy 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -128,7 +128,7 @@ exports[`InputText test suite: dataCy 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -139,7 +139,7 @@ exports[`InputText test suite: dataCy 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -147,14 +147,14 @@ exports[`InputText test suite: dataCy 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -169,7 +169,7 @@ exports[`InputText test suite: default 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -191,7 +191,7 @@ exports[`InputText test suite: default 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -202,7 +202,7 @@ exports[`InputText test suite: default 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -210,14 +210,14 @@ exports[`InputText test suite: default 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -232,7 +232,7 @@ exports[`InputText test suite: disabled 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -254,7 +254,7 @@ exports[`InputText test suite: disabled 1`] = `
       readOnly={true}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -265,7 +265,7 @@ exports[`InputText test suite: disabled 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -273,14 +273,14 @@ exports[`InputText test suite: disabled 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -295,7 +295,7 @@ exports[`InputText test suite: localized 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -323,7 +323,7 @@ exports[`InputText test suite: localized 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -350,7 +350,7 @@ exports[`InputText test suite: onChange 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -372,7 +372,7 @@ exports[`InputText test suite: onChange 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -383,7 +383,7 @@ exports[`InputText test suite: onChange 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -391,14 +391,14 @@ exports[`InputText test suite: onChange 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -413,7 +413,7 @@ exports[`InputText test suite: password 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -435,7 +435,7 @@ exports[`InputText test suite: password 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -446,7 +446,7 @@ exports[`InputText test suite: password 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -454,14 +454,14 @@ exports[`InputText test suite: password 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -476,7 +476,7 @@ exports[`InputText test suite: placeholder 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -499,7 +499,7 @@ exports[`InputText test suite: placeholder 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -510,7 +510,7 @@ exports[`InputText test suite: placeholder 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -518,14 +518,14 @@ exports[`InputText test suite: placeholder 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -540,7 +540,7 @@ exports[`InputText test suite: required 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -562,7 +562,7 @@ exports[`InputText test suite: required 1`] = `
       readOnly={false}
       required={true}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -573,7 +573,7 @@ exports[`InputText test suite: required 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -581,14 +581,14 @@ exports[`InputText test suite: required 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -603,7 +603,7 @@ exports[`InputText test suite: size 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -625,7 +625,7 @@ exports[`InputText test suite: size 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -636,7 +636,7 @@ exports[`InputText test suite: size 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -644,14 +644,14 @@ exports[`InputText test suite: size 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -666,7 +666,7 @@ exports[`InputText test suite: value 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -688,7 +688,7 @@ exports[`InputText test suite: value 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -699,7 +699,7 @@ exports[`InputText test suite: value 1`] = `
       aria-hidden={true}
       className="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
       style={
-        Object {
+        {
           "paddingLeft": 8,
         }
       }
@@ -707,14 +707,14 @@ exports[`InputText test suite: value 1`] = `
       <legend
         className="PrivateNotchedOutline-legend-2"
         style={
-          Object {
+          {
             "width": 0.01,
           }
         }
       >
         <span
           dangerouslySetInnerHTML={
-            Object {
+            {
               "__html": "&#8203;",
             }
           }
@@ -729,7 +729,7 @@ exports[`InputText test suite: variant 1`] = `
 <div
   className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
   style={
-    Object {
+    {
       "width": "100%",
     }
   }
@@ -751,7 +751,7 @@ exports[`InputText test suite: variant 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "width": "100%",
         }
       }

@@ -5,7 +5,7 @@ exports[`Avatar test suite: dataCy 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="custom"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }
@@ -18,7 +18,7 @@ exports[`Avatar test suite: default 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }
@@ -31,7 +31,7 @@ exports[`Avatar test suite: icon 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }
@@ -56,7 +56,7 @@ exports[`Avatar test suite: image 1`] = `
   className="MuiAvatar-root MuiAvatar-circular"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }
@@ -74,7 +74,7 @@ exports[`Avatar test suite: loading - squared 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
   style={
-    Object {
+    {
       "height": undefined,
       "width": undefined,
     }
@@ -102,7 +102,7 @@ exports[`Avatar test suite: loading 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
   style={
-    Object {
+    {
       "height": undefined,
       "width": undefined,
     }
@@ -131,7 +131,7 @@ exports[`Avatar test suite: squared 1`] = `
   className="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }
@@ -144,7 +144,7 @@ exports[`Avatar test suite: text 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#3f51b5",
       "color": "#fff",
     }

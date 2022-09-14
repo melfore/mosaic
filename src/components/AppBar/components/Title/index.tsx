@@ -43,7 +43,7 @@ const AppBarTitle: FC<any> = ({
     (): CSSProperties => ({
       borderRadius: `${theme.shape.borderRadius}px`,
       cursor: "pointer",
-      padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
+      padding: `${theme.spacing(0.5)} ${theme.spacing(1)}`,
       userSelect: "none",
     }),
     [theme]

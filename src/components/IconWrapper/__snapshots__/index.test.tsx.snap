@@ -38,7 +38,7 @@ exports[`IconWrapper test suite: icon - custom element 1`] = `
   data-testid="StyleIcon"
   focusable="false"
   style={
-    Object {
+    {
       "height": 24,
       "width": 24,
     }

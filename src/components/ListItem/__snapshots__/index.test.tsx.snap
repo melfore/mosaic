@@ -7,7 +7,7 @@ exports[`ListItem test suite: dataCy 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }
@@ -26,7 +26,7 @@ exports[`ListItem test suite: default 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }
@@ -49,7 +49,7 @@ exports[`ListItem test suite: dense 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }
@@ -68,7 +68,7 @@ exports[`ListItem test suite: icon 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }
@@ -103,7 +103,7 @@ exports[`ListItem test suite: loading 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }
@@ -115,7 +115,7 @@ exports[`ListItem test suite: loading 1`] = `
     <span
       className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
       style={
-        Object {
+        {
           "height": undefined,
           "width": undefined,
         }
@@ -132,7 +132,7 @@ exports[`ListItem test suite: onClick 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "pointer",
     }
   }
@@ -151,7 +151,7 @@ exports[`ListItem test suite: selected 1`] = `
   disabled={false}
   onClick={[Function]}
   style={
-    Object {
+    {
       "cursor": "default",
     }
   }

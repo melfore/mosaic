@@ -9,7 +9,14 @@ interface ITableEmptyState {
 }
 
 const TableEmptyState: FC<ITableEmptyState> = ({ columns, emptyState }) => {
-  const style = useMemo((): CSSProperties => ({ textAlign: "center" }), []);
+  const emptyStateComponent = useMemo(() => !!emptyState && typeof emptyState !== "string", [emptyState]);
+
+  const style = useMemo(
+    (): CSSProperties => ({
+      textAlign: !emptyStateComponent ? "center" : "inherit",
+    }),
+    [emptyStateComponent]
+  );
 
   const content = useMemo(() => {
     if (!emptyState) {

@@ -5,7 +5,7 @@ exports[`Checkbox test suite: checked 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -60,7 +60,7 @@ exports[`Checkbox test suite: dataCy 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="custom"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -115,7 +115,7 @@ exports[`Checkbox test suite: default 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -167,7 +167,7 @@ exports[`Checkbox test suite: disabled 1`] = `
   className="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -220,7 +220,7 @@ exports[`Checkbox test suite: intermediate 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -274,7 +274,7 @@ exports[`Checkbox test suite: label 1`] = `
 <label
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
-  style={Object {}}
+  style={{}}
 >
   <span
     className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
@@ -327,7 +327,7 @@ exports[`Checkbox test suite: label placement 1`] = `
 <label
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
   data-cy="checkbox"
-  style={Object {}}
+  style={{}}
 >
   <span
     className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
@@ -383,7 +383,7 @@ exports[`Checkbox test suite: localized 1`] = `
 <label
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="locale.checkbox"
-  style={Object {}}
+  style={{}}
 >
   <span
     className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
@@ -437,7 +437,7 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -492,7 +492,7 @@ exports[`Checkbox test suite: onChange 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -544,7 +544,7 @@ exports[`Checkbox test suite: required 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -596,7 +596,7 @@ exports[`Checkbox test suite: size 1`] = `
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
-    Object {
+    {
       "margin": 0,
     }
   }

@@ -4,7 +4,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -28,7 +28,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -58,7 +58,7 @@ exports[`InputNumber test suite: default 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -81,7 +81,7 @@ exports[`InputNumber test suite: default 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -111,7 +111,7 @@ exports[`InputNumber test suite: disabled 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -135,7 +135,7 @@ exports[`InputNumber test suite: disabled 1`] = `
       readOnly={true}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -165,7 +165,7 @@ exports[`InputNumber test suite: float 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -188,7 +188,7 @@ exports[`InputNumber test suite: float 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -218,7 +218,7 @@ exports[`InputNumber test suite: localized 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -247,7 +247,7 @@ exports[`InputNumber test suite: localized 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -275,7 +275,7 @@ exports[`InputNumber test suite: min/max 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -299,7 +299,7 @@ exports[`InputNumber test suite: min/max 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -329,7 +329,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -352,7 +352,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -382,7 +382,7 @@ exports[`InputNumber test suite: onChange 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -406,7 +406,7 @@ exports[`InputNumber test suite: onChange 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -436,7 +436,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -460,7 +460,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -490,7 +490,7 @@ exports[`InputNumber test suite: required 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -514,7 +514,7 @@ exports[`InputNumber test suite: required 1`] = `
       readOnly={false}
       required={true}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -544,7 +544,7 @@ exports[`InputNumber test suite: shrink 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -567,7 +567,7 @@ exports[`InputNumber test suite: shrink 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -597,7 +597,7 @@ exports[`InputNumber test suite: size 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -621,7 +621,7 @@ exports[`InputNumber test suite: size 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -651,7 +651,7 @@ exports[`InputNumber test suite: value 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -674,7 +674,7 @@ exports[`InputNumber test suite: value 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }
@@ -704,7 +704,7 @@ exports[`InputNumber test suite: variant 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   style={
-    Object {
+    {
       "textAlign": "right",
       "width": "100%",
     }
@@ -728,7 +728,7 @@ exports[`InputNumber test suite: variant 1`] = `
       readOnly={false}
       required={false}
       style={
-        Object {
+        {
           "textAlign": "right",
           "width": "100%",
         }

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListItemCollapsible test suite: dataCy 1`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="custom-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -42,7 +42,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="custom-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }
@@ -59,14 +59,14 @@ Array [
 `;
 
 exports[`ListItemCollapsible test suite: default 1`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -100,7 +100,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }
@@ -117,14 +117,14 @@ Array [
 `;
 
 exports[`ListItemCollapsible test suite: listItem variants 1`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -135,7 +135,7 @@ Array [
       <span
         className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
         style={
-          Object {
+          {
             "height": 24,
             "width": 24,
           }
@@ -149,7 +149,7 @@ Array [
       <span
         className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
         style={
-          Object {
+          {
             "height": undefined,
             "width": undefined,
           }
@@ -161,7 +161,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }
@@ -178,14 +178,14 @@ Array [
 `;
 
 exports[`ListItemCollapsible test suite: open 1`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -219,7 +219,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }
@@ -236,14 +236,14 @@ Array [
 `;
 
 exports[`ListItemCollapsible test suite: open 2`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -277,7 +277,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }
@@ -294,14 +294,14 @@ Array [
 `;
 
 exports[`ListItemCollapsible test suite: open variants 1`] = `
-Array [
+[
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
     style={
-      Object {
+      {
         "cursor": "default",
       }
     }
@@ -335,7 +335,7 @@ Array [
     className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
-      Object {
+      {
         "minHeight": "0px",
       }
     }

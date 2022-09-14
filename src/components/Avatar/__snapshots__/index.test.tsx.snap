@@ -5,7 +5,7 @@ exports[`Avatar test suite: dataCy 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="custom"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }
@@ -18,7 +18,7 @@ exports[`Avatar test suite: default 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }
@@ -31,7 +31,7 @@ exports[`Avatar test suite: icon 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }
@@ -57,7 +57,7 @@ exports[`Avatar test suite: image 1`] = `
   className="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }
@@ -75,7 +75,7 @@ exports[`Avatar test suite: loading - squared 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-qzz38t-MuiSkeleton-root"
   style={
-    Object {
+    {
       "height": undefined,
       "width": undefined,
     }
@@ -104,7 +104,7 @@ exports[`Avatar test suite: loading 1`] = `
 <span
   className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-1nk968r-MuiSkeleton-root"
   style={
-    Object {
+    {
       "height": undefined,
       "width": undefined,
     }
@@ -134,7 +134,7 @@ exports[`Avatar test suite: squared 1`] = `
   className="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-18gxrea-MuiAvatar-root"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }
@@ -147,7 +147,7 @@ exports[`Avatar test suite: text 1`] = `
   className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
-    Object {
+    {
       "backgroundColor": "#1976d2",
       "color": "#fff",
     }

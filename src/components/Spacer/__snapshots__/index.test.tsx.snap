@@ -4,7 +4,7 @@ exports[`Spacer test suite: dataCy 1`] = `
 <div
   data-cy="custom"
   style={
-    Object {
+    {
       "display": "block",
       "height": 0,
       "width": "8px",
@@ -17,7 +17,7 @@ exports[`Spacer test suite: default 1`] = `
 <div
   data-cy="spacer"
   style={
-    Object {
+    {
       "display": "block",
       "height": 0,
       "width": "8px",
@@ -30,7 +30,7 @@ exports[`Spacer test suite: direction 1`] = `
 <div
   data-cy="spacer"
   style={
-    Object {
+    {
       "display": "block",
       "height": "8px",
       "width": 0,
@@ -43,7 +43,7 @@ exports[`Spacer test suite: level 1`] = `
 <div
   data-cy="spacer"
   style={
-    Object {
+    {
       "display": "block",
       "height": 0,
       "width": "16px",

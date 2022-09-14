@@ -7,6 +7,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -62,7 +63,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           scope="col"
           style={
             Object {
-              "padding": "0 8px",
+              "padding": "0 8pxpx",
               "width": "36px",
             }
           }
@@ -601,6 +602,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -656,7 +658,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           scope="col"
           style={
             Object {
-              "padding": "0 8px",
+              "padding": "0 8pxpx",
               "width": "36px",
             }
           }
@@ -1213,6 +1215,7 @@ exports[`Table test suite: complex column path 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -1410,6 +1413,7 @@ exports[`Table test suite: dataCy 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -1643,6 +1647,7 @@ exports[`Table test suite: default 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -1876,6 +1881,7 @@ exports[`Table test suite: global action - disabled 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -2153,6 +2159,7 @@ exports[`Table test suite: global action - hidden 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -2386,6 +2393,7 @@ exports[`Table test suite: global action 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -2718,6 +2726,7 @@ exports[`Table test suite: hide header 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -2923,6 +2932,7 @@ exports[`Table test suite: icon action 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -3340,6 +3350,7 @@ exports[`Table test suite: immutable options 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -3563,6 +3574,7 @@ exports[`Table test suite: loading 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -3572,13 +3584,17 @@ exports[`Table test suite: loading 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(0, 0, 0, 0.04)",
+        "cursor": "wait",
         "display": "flex",
         "height": "100%",
         "justifyContent": "center",
+        "left": 0,
+        "pointerEvents": "unset",
         "position": "absolute",
         "top": 0,
+        "userSelect": "none",
         "width": "100%",
-        "zIndex": 2,
+        "zIndex": 10,
       }
     }
   >
@@ -3837,6 +3853,7 @@ exports[`Table test suite: pre-selection 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -3846,7 +3863,7 @@ exports[`Table test suite: pre-selection 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "rgba(0, 0, 0, 0.08)",
+        "backgroundColor": "#fff",
         "display": "flex",
         "justifyContent": "space-between",
         "position": "inherit",
@@ -4070,6 +4087,7 @@ exports[`Table test suite: pre-sorting 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -4303,6 +4321,7 @@ exports[`Table test suite: row action - disabled 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -4904,6 +4923,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -5517,6 +5537,7 @@ exports[`Table test suite: row action - hidden 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -5750,6 +5771,7 @@ exports[`Table test suite: row action 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -6366,6 +6388,7 @@ exports[`Table test suite: row style 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -6594,6 +6617,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -6603,7 +6627,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "rgba(0, 0, 0, 0.08)",
+        "backgroundColor": "#fff",
         "display": "flex",
         "justifyContent": "space-between",
         "position": "inherit",
@@ -6871,6 +6895,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -6880,7 +6905,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "rgba(0, 0, 0, 0.08)",
+        "backgroundColor": "#fff",
         "display": "flex",
         "justifyContent": "space-between",
         "position": "inherit",
@@ -7148,6 +7173,7 @@ exports[`Table test suite: selection action 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -7157,7 +7183,7 @@ exports[`Table test suite: selection action 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "rgba(0, 0, 0, 0.08)",
+        "backgroundColor": "#fff",
         "display": "flex",
         "justifyContent": "space-between",
         "position": "inherit",
@@ -7425,6 +7451,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -7688,6 +7715,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }
@@ -7981,6 +8009,7 @@ exports[`Table test suite: sticky 1`] = `
   style={
     Object {
       "height": "100%",
+      "overflowY": "inherit",
       "position": "relative",
     }
   }

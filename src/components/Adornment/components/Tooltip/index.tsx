@@ -20,7 +20,7 @@ const AdornmentTooltip: FC<IAdornment> = ({ children, dataCy = DEFAULT_DATA_CY, 
   }
 
   return (
-    <MUITooltip aria-label={slugify(tooltip)} data-cy={tooltipDataCy} open title={tooltip}>
+    <MUITooltip aria-label={slugify(tooltip)} data-cy={tooltipDataCy} title={tooltip}>
       <span>{children}</span>
     </MUITooltip>
   );

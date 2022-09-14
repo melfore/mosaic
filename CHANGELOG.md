@@ -1,3 +1,31 @@
+# [7.2.0-beta.1](https://github.com/melfore/mosaic/compare/v7.1.3...v7.2.0-beta.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* 🐛 [Adornment] Tooltip to be closed by default ([93d8c3e](https://github.com/melfore/mosaic/commit/93d8c3eedc12e4654093bf8edc7513b2b5172fd9))
+* 🐛 [AppBar] Fixed spacing of items ([0a0904a](https://github.com/melfore/mosaic/commit/0a0904a5b77ee8ea4d03b2c1002b82d83bcf224b))
+* 🐛 [Select] Fixed HTMLInputElement customization ([66775db](https://github.com/melfore/mosaic/commit/66775db997e7e7683fbfeb07ee8e629155d51cf3))
+* 🐛 [Select] Keys for options on top level component ([b6e7da7](https://github.com/melfore/mosaic/commit/b6e7da7ebb512c609a2ba33e7f5d687cd7ae2db2))
+* 🐛 [Table] Fixed heading checkbox size ([40d8639](https://github.com/melfore/mosaic/commit/40d8639026249f32c3bef4af61501f62e1d5ba48))
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### Features
+
+* 🎸 [Select] Align customOptionRendering to new standard ([aafca6f](https://github.com/melfore/mosaic/commit/aafca6f73935e15db0e43718270799744fae1cda))
+* 🎸 [Select] Display checkbox only when multiple=true ([eb53f1b](https://github.com/melfore/mosaic/commit/eb53f1b0ca56a54b86fa13d71517b8ae2397c29b))
+* 🎸 Run [@mui](https://github.com/mui) v5 codemod:base-preset on entire codebase ([fd45412](https://github.com/melfore/mosaic/commit/fd45412192f9aabdf611b40523d05673a82da4f6))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
+
 ## [7.1.3](https://github.com/melfore/mosaic/compare/v7.1.2...v7.1.3) (2022-09-14)
 
 
@@ -7,6 +35,8 @@
 * 🐛 [Table] Fixed sticky header overlap with selection ([fb57636](https://github.com/melfore/mosaic/commit/fb5763681d3b92fff080f722e23f4ff868836df1))
 * 🐛 [Table] Fixed sticky loading animation ([15ee3b3](https://github.com/melfore/mosaic/commit/15ee3b32218466ee2a3385da82195778b2bbcc22))
 * 🐛 [Table] Header is now responsive on mobile ([aabe1c9](https://github.com/melfore/mosaic/commit/aabe1c9ab4e9c5ad684ddeedfae52bea2b002c4a))
+
+# [7.1.0-beta.4](https://github.com/melfore/mosaic/compare/v7.1.0-beta.3...v7.1.0-beta.4) (2022-08-19)
 
 ## [7.1.2](https://github.com/melfore/mosaic/compare/v7.1.1...v7.1.2) (2022-08-19)
 
@@ -33,6 +63,18 @@
 * 🎸 [Modal] Added tooltip on close iconbutton ([897e93a](https://github.com/melfore/mosaic/commit/897e93a648a7b4188e16acc62b03157319d09b4c))
 * 🎸 [Table] All IconButton with tooltip and optional badge ([3c152b1](https://github.com/melfore/mosaic/commit/3c152b16e8c0dfe5078d31d6b3f62e3ba3d99386))
 
+# [7.1.0-beta.3](https://github.com/melfore/mosaic/compare/v7.1.0-beta.2...v7.1.0-beta.3) (2022-08-03)
+
+# [7.1.0-beta.2](https://github.com/melfore/mosaic/compare/v7.1.0-beta.1...v7.1.0-beta.2) (2022-05-03)
+
+# [7.1.0-beta.1](https://github.com/melfore/mosaic/compare/v7.0.0...v7.1.0-beta.1) (2022-05-03)
+
+
+### Bug Fixes
+
+* 🐛 [Select] Fixed HTMLInputElement customization ([66775db](https://github.com/melfore/mosaic/commit/66775db997e7e7683fbfeb07ee8e629155d51cf3))
+* 🐛 [Select] Keys for options on top level component ([b6e7da7](https://github.com/melfore/mosaic/commit/b6e7da7ebb512c609a2ba33e7f5d687cd7ae2db2))
+
 ## [7.0.1](https://github.com/melfore/mosaic/compare/v7.0.0...v7.0.1) (2022-07-12)
 
 # [7.0.0](https://github.com/melfore/mosaic/compare/v6.4.1...v7.0.0) (2022-05-02)
@@ -50,21 +92,7 @@
 
 ✅ Closes: 249
 
-## [6.4.1](https://github.com/melfore/mosaic/compare/v6.4.0...v6.4.1) (2022-04-11)
-
-# [6.4.0](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0) (2022-04-05)
-
-
-### Features
-
-* 🎸 [AppBar] Custom children has precedence over title ([0b2fa04](https://github.com/melfore/mosaic/commit/0b2fa04bba84aed686b657c59d3a8748c4d2db97))
-
-# [6.4.0-beta.1](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0-beta.1) (2022-04-04)
-
-
-### chore
-
-* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+# [6.5.0-beta.1](https://github.com/melfore/mosaic/compare/v6.4.1...v6.5.0-beta.1) (2022-04-11)
 
 
 ### Features
@@ -76,7 +104,18 @@
 
 ### BREAKING CHANGES
 
-* 🧨 Enabling beta releases
+* 🧨 Migration from @material-ui to @mui v5.x
+
+## [6.4.1](https://github.com/melfore/mosaic/compare/v6.4.0...v6.4.1) (2022-04-11)
+
+# [6.4.0](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0) (2022-04-05)
+
+
+### Features
+
+* 🎸 [AppBar] Custom children has precedence over title ([0b2fa04](https://github.com/melfore/mosaic/commit/0b2fa04bba84aed686b657c59d3a8748c4d2db97))
+
+## [6.4.0-beta.1](https://github.com/melfore/mosaic/compare/v6.3.5...v6.4.0-beta.1) (2022-04-04)
 
 ## [6.3.5](https://github.com/melfore/mosaic/compare/v6.3.4...v6.3.5) (2022-04-04)
 

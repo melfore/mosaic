@@ -8,7 +8,7 @@ exports[`AppBar test suite: actions 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -17,7 +17,7 @@ exports[`AppBar test suite: actions 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -26,7 +26,7 @@ exports[`AppBar test suite: actions 1`] = `
     />
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -49,7 +49,7 @@ exports[`AppBar test suite: actions 1`] = `
         onTouchMove={[Function]}
         onTouchStart={[Function]}
         style={
-          Object {
+          {
             "marginRight": "4px",
           }
         }
@@ -85,7 +85,7 @@ exports[`AppBar test suite: custom content 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -94,7 +94,7 @@ exports[`AppBar test suite: custom content 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -109,7 +109,7 @@ exports[`AppBar test suite: custom content 1`] = `
     </div>
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -127,7 +127,7 @@ exports[`AppBar test suite: dataCy 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -136,7 +136,7 @@ exports[`AppBar test suite: dataCy 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -145,7 +145,7 @@ exports[`AppBar test suite: dataCy 1`] = `
     />
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -163,7 +163,7 @@ exports[`AppBar test suite: default 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -172,7 +172,7 @@ exports[`AppBar test suite: default 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -181,7 +181,7 @@ exports[`AppBar test suite: default 1`] = `
     />
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -199,7 +199,7 @@ exports[`AppBar test suite: menu 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -208,7 +208,7 @@ exports[`AppBar test suite: menu 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -253,7 +253,7 @@ exports[`AppBar test suite: menu 1`] = `
     </div>
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }
@@ -271,7 +271,7 @@ exports[`AppBar test suite: title 1`] = `
   <div
     className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     style={
-      Object {
+      {
         "alignItems": "center",
         "display": "flex",
         "justifyContent": "space-between",
@@ -280,7 +280,7 @@ exports[`AppBar test suite: title 1`] = `
   >
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
           "flex": 1,
@@ -291,7 +291,7 @@ exports[`AppBar test suite: title 1`] = `
         data-cy="appbar-title-clickable"
         onClick={[Function]}
         style={
-          Object {
+          {
             "borderRadius": "4px",
             "cursor": "pointer",
             "padding": "4px 8px",
@@ -309,7 +309,7 @@ exports[`AppBar test suite: title 1`] = `
     </div>
     <div
       style={
-        Object {
+        {
           "alignItems": "center",
           "display": "flex",
         }

@@ -29,7 +29,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
     let style: CSSProperties | undefined;
     if (path === COLUMN_CHECKBOX_PATH) {
       style = {
-        padding: `0 ${theme.spacing(1)}px`,
+        padding: `0 ${theme.spacing(1)}`,
       };
     }
 

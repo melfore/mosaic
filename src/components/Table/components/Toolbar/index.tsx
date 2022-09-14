@@ -47,7 +47,7 @@ const TableToolbar: FC<ITableToolbar> = ({
     (): CSSProperties => ({
       ...positioning,
       alignItems: "center",
-      backgroundColor: !selectedRows ? "inherit" : theme.palette.action.selected,
+      backgroundColor: !selectedRows ? "inherit" : theme.palette.background.default,
       display: "flex",
       justifyContent: "space-between",
     }),

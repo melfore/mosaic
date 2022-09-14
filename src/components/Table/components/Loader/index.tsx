@@ -1,36 +1,28 @@
 import React, { CSSProperties, FC, useMemo } from "react";
 import { CircularProgress as MUICircularProgress, useTheme } from "@material-ui/core";
 
-import { TOOLBAR_HEIGHT } from "../../utils";
+interface ITableLoader {}
 
-interface ITableLoader {
-  hideHeader?: boolean;
-  sticky?: boolean;
-}
-
-const TableLoader: FC<ITableLoader> = ({ hideHeader = false, sticky = false }) => {
+const TableLoader: FC<ITableLoader> = () => {
   const theme = useTheme();
-
-  const heightPositioning = useMemo(() => {
-    if (!hideHeader && sticky) {
-      return { height: `calc(100% - ${TOOLBAR_HEIGHT}px)`, top: `${TOOLBAR_HEIGHT}px` };
-    }
-
-    return { height: "100%", top: 0 };
-  }, [hideHeader, sticky]);
 
   const style = useMemo((): CSSProperties => {
     return {
-      ...heightPositioning,
       alignItems: "center",
       backgroundColor: theme.palette.action.hover,
+      cursor: "wait",
       display: "flex",
+      height: "100%",
       justifyContent: "center",
+      left: 0,
+      pointerEvents: "unset",
       position: "absolute",
+      top: 0,
+      userSelect: "none",
       width: "100%",
-      zIndex: 2,
+      zIndex: 10,
     };
-  }, [heightPositioning, theme]);
+  }, [theme]);
 
   return (
     <div style={style}>

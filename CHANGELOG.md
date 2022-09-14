@@ -1,3 +1,13 @@
+## [7.1.3](https://github.com/melfore/mosaic/compare/v7.1.2...v7.1.3) (2022-09-14)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Avoid styling empty state component ([863ca53](https://github.com/melfore/mosaic/commit/863ca53c4a04129e82b0ab21982d2620464d910d))
+* 🐛 [Table] Fixed sticky header overlap with selection ([fb57636](https://github.com/melfore/mosaic/commit/fb5763681d3b92fff080f722e23f4ff868836df1))
+* 🐛 [Table] Fixed sticky loading animation ([15ee3b3](https://github.com/melfore/mosaic/commit/15ee3b32218466ee2a3385da82195778b2bbcc22))
+* 🐛 [Table] Header is now responsive on mobile ([aabe1c9](https://github.com/melfore/mosaic/commit/aabe1c9ab4e9c5ad684ddeedfae52bea2b002c4a))
+
 ## [7.1.2](https://github.com/melfore/mosaic/compare/v7.1.1...v7.1.2) (2022-08-19)
 
 

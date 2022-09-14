@@ -51,7 +51,7 @@ exports[`AppBar test suite: actions 1`] = `
         onTouchStart={[Function]}
         style={
           {
-            "marginRight": "4pxpx",
+            "marginRight": "4px",
           }
         }
         tabIndex={0}
@@ -290,7 +290,7 @@ exports[`AppBar test suite: title 1`] = `
           {
             "borderRadius": "4px",
             "cursor": "pointer",
-            "padding": "4pxpx 8pxpx",
+            "padding": "4px 8px",
             "userSelect": "none",
           }
         }

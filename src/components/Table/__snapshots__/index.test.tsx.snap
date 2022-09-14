@@ -63,7 +63,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
           scope="col"
           style={
             {
-              "padding": "0 8pxpx",
+              "padding": "0 8px",
               "width": "36px",
             }
           }
@@ -658,7 +658,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
           scope="col"
           style={
             {
-              "padding": "0 8pxpx",
+              "padding": "0 8px",
               "width": "36px",
             }
           }

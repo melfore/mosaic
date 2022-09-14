@@ -78,7 +78,6 @@
     "react-dom": ">= 16.13.0 < 17"
   },
   "scripts": {
-    "align:master": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta",
     "build": "npm run pre:build && tsc",
     "build:storybook": "build-storybook -o docs/latest --docs",
     "build:test": "npm run pre:test && tsc",
@@ -93,7 +92,8 @@
     "start": "npm run pre:test && start-storybook -p 9009",
     "test": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.js --watch",
     "test:coverage": "npm run pre:test && jest --clearCache && jest --c './.jest/config.js' --coverage",
-    "upload": "npm run build && npm publish --access public"
+    "upload": "npm run build && npm publish --access public",
+    "update:with:beta": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta"
   },
   "browserslist": {
     "production": [

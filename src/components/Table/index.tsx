@@ -49,6 +49,9 @@ export const SUBPARTS_MAP = {
   selectAll: {
     label: "Select All",
   },
+  scrollContainer: {
+    label: "Table scroll container",
+  },
 };
 
 const Table: FC<ITable> = ({
@@ -75,6 +78,7 @@ const Table: FC<ITable> = ({
   sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
   style: externalStyle,
+  tableLayout = "fixed",
   title,
 }) => {
   const theme = useTheme();
@@ -275,6 +279,13 @@ const Table: FC<ITable> = ({
     [externalStyle, height, loading, sticky]
   );
 
+  const scrollContainerStyle = useMemo((): CSSProperties | undefined => {
+    if (tableLayout === "fixed") {
+      return undefined;
+    }
+    return { overflowX: "auto" };
+  }, [tableLayout]);
+
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={wrapperStyle}>
       {loading && <TableLoader />}
@@ -289,82 +300,84 @@ const Table: FC<ITable> = ({
           title={title}
         />
       )}
-      <MUITable size="small" stickyHeader={sticky} style={{ tableLayout: "fixed" }}>
-        <MUITableHead>
-          <MUITableRow>
-            {columns.map((column, index) => (
-              <TableHeadCell
-                key={`column-${column.path || index}`}
-                column={column}
-                dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.headerCell, column.label || `${index}`)}
-                onSort={onSortWrapper}
-                sortable={!!onSortChange}
-                sorting={sorting}
-                stickyHeader={!hideHeader && sticky}
-              />
-            ))}
-          </MUITableRow>
-        </MUITableHead>
-        <MUITableBody>
-          {!loading && !externalRows.length ? (
-            <TableEmptyState columns={columns.length} emptyState={emptyState} />
-          ) : (
-            rows.map(({ __mosaicTableId, ...row }, rowIndex) => {
-              const key = `row-${__mosaicTableId}`;
+      <div style={scrollContainerStyle} data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.scrollContainer)}>
+        <MUITable size="small" stickyHeader={sticky} style={{ tableLayout }}>
+          <MUITableHead>
+            <MUITableRow>
+              {columns.map((column, index) => (
+                <TableHeadCell
+                  key={`column-${column.path || index}`}
+                  column={column}
+                  dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.headerCell, column.label || `${index}`)}
+                  onSort={onSortWrapper}
+                  sortable={!!onSortChange}
+                  sorting={sorting}
+                  stickyHeader={!hideHeader && sticky}
+                />
+              ))}
+            </MUITableRow>
+          </MUITableHead>
+          <MUITableBody>
+            {!loading && !externalRows.length ? (
+              <TableEmptyState columns={columns.length} emptyState={emptyState} />
+            ) : (
+              rows.map(({ __mosaicTableId, ...row }, rowIndex) => {
+                const key = `row-${__mosaicTableId}`;
 
-              const rowSelected = isRowSelected(__mosaicTableId);
-              const rowCallbackOptions = { indexes: [rowIndex], multiple: false };
-              const style = getRowStyle ? getRowStyle(row, rowCallbackOptions) : {};
+                const rowSelected = isRowSelected(__mosaicTableId);
+                const rowCallbackOptions = { indexes: [rowIndex], multiple: false };
+                const style = getRowStyle ? getRowStyle(row, rowCallbackOptions) : {};
 
-              const onRowSelection = () => onSelection(__mosaicTableId);
+                const onRowSelection = () => onSelection(__mosaicTableId);
 
-              return (
-                <MUITableRow key={key} style={style}>
-                  {columns.map((column, columnIndex) => {
-                    const { path } = column;
-                    const key = `column-${path || columnIndex}`;
+                return (
+                  <MUITableRow key={key} style={style}>
+                    {columns.map((column, columnIndex) => {
+                      const { path } = column;
+                      const key = `column-${path || columnIndex}`;
 
-                    if (path === COLUMN_CHECKBOX_PATH) {
+                      if (path === COLUMN_CHECKBOX_PATH) {
+                        return (
+                          <TableSelectionCell
+                            key={key}
+                            column={column}
+                            onSelection={onRowSelection}
+                            selected={rowSelected}
+                          />
+                        );
+                      }
+
+                      if (path === COLUMN_ROW_ACTIONS_PATH) {
+                        return (
+                          <TableActionsCell
+                            key={key}
+                            actions={rowActions}
+                            column={column}
+                            data={row}
+                            dataCallbackOptions={rowCallbackOptions}
+                            dataCy={dataCy}
+                          />
+                        );
+                      }
+
                       return (
-                        <TableSelectionCell
+                        <TableDataCell
                           key={key}
-                          column={column}
-                          onSelection={onRowSelection}
-                          selected={rowSelected}
-                        />
-                      );
-                    }
-
-                    if (path === COLUMN_ROW_ACTIONS_PATH) {
-                      return (
-                        <TableActionsCell
-                          key={key}
-                          actions={rowActions}
                           column={column}
                           data={row}
                           dataCallbackOptions={rowCallbackOptions}
                           dataCy={dataCy}
+                          onClick={onRowClick}
                         />
                       );
-                    }
-
-                    return (
-                      <TableDataCell
-                        key={key}
-                        column={column}
-                        data={row}
-                        dataCallbackOptions={rowCallbackOptions}
-                        dataCy={dataCy}
-                        onClick={onRowClick}
-                      />
-                    );
-                  })}
-                </MUITableRow>
-              );
-            })
-          )}
-        </MUITableBody>
-      </MUITable>
+                    })}
+                  </MUITableRow>
+                );
+              })
+            )}
+          </MUITableBody>
+        </MUITable>
+      </div>
       {(onPageChange || onPageSizeChange) && (
         <TablePagination
           dataCy={dataCy}

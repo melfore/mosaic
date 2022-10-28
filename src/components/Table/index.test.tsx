@@ -622,4 +622,54 @@ describe("Table test suite:", () => {
     expect(style).toBeDefined();
     expect(style?.overflowX).toBe("auto");
   });
+
+  it("column filters - hidden", () => {
+    const columns = [
+      { label: "Name", path: "name", renderFilter: <span>name filter</span> },
+      { label: "City", path: "city", renderFilter: <span>city filter</span> },
+      { label: "Age", path: "age" },
+    ];
+
+    const rows = [
+      { name: "Anne", age: 35, city: "Anne's city" },
+      { name: "Bruce", age: 45, city: "Bruce's city" },
+      { name: "Carl", age: 32, city: "Carl's city" },
+      { name: "Dan", age: 26, city: "Dan's city" },
+      { name: "Emily", age: 36, city: "Emily's city" },
+    ];
+
+    const { wrapper } = getTableTestable({ props: { rows, columns } });
+
+    const headRows = wrapper.find("thead tr");
+    expect(headRows.length).toBe(1);
+
+    const filterCells = wrapper.find("th[data-cy^='column-filter-']");
+    expect(filterCells.length).toBe(0);
+  });
+
+  it("column filters - visible", () => {
+    const columns = [
+      { label: "Name", path: "name", renderFilter: <span>name filter</span> },
+      { label: "City", path: "city", renderFilter: <span>city filter</span> },
+      { label: "Age", path: "age" },
+    ];
+
+    const rows = [
+      { name: "Anne", age: 35, city: "Anne's city" },
+      { name: "Bruce", age: 45, city: "Bruce's city" },
+      { name: "Carl", age: 32, city: "Carl's city" },
+      { name: "Dan", age: 26, city: "Dan's city" },
+      { name: "Emily", age: 36, city: "Emily's city" },
+    ];
+
+    const { wrapper } = getTableTestable({ props: { showFilters: true, rows, columns } });
+    const headRows = wrapper.find("thead tr");
+    expect(headRows.length).toBe(2);
+
+    const filterCells = wrapper.find("th[data-cy^='column-filter-']");
+    expect(filterCells.length).toBe(columns.length);
+
+    const spans = filterCells.find("span");
+    expect(spans.length).toBe(2);
+  });
 });

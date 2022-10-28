@@ -1,6 +1,7 @@
 /* eslint-disable storybook/default-exports */
 
 import React from "react";
+import MUITextField from "@material-ui/core/TextField";
 import MUIStyleIcon from "@material-ui/icons/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
@@ -274,4 +275,18 @@ TableLayout.args = {
   rowsTotal: 6,
   tableLayout: "auto",
   title: "Try to scroll horizontally",
+};
+
+export const ColumnFilter = Template.bind({});
+ColumnFilter.args = {
+  ...Primary.args,
+  columns: [
+    { label: "Name", path: "name", renderFilter: <MUITextField type="text" label="type to filter" /> },
+    { label: "Age", path: "age" },
+  ],
+  height: 400,
+  rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
+  showFilters: true,
+  sticky: true,
+  title: "Column Filters (sticky)",
 };

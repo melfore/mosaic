@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/melfore/mosaic/compare/v7.1.4...v7.2.0) (2022-11-03)
+
+
+### Features
+
+* 🎸 [Table] expose tableLayout prop and add h-scroll ([1794330](https://github.com/melfore/mosaic/commit/179433060325ea1c7980c40aa05b12a6d8a17273))
+
 ## [7.1.4](https://github.com/melfore/mosaic/compare/v7.1.3...v7.1.4) (2022-09-14)
 
 # [7.2.0-beta.1](https://github.com/melfore/mosaic/compare/v7.1.3...v7.2.0-beta.1) (2022-09-14)

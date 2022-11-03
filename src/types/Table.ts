@@ -217,6 +217,10 @@ export type ITable = ILoadable &
      */
     sticky?: boolean;
     /**
+     * Table layout (table.style.tableLayout)
+     */
+    tableLayout?: "fixed" | "auto";
+    /**
      * Table title
      */
     title: string;

@@ -587,4 +587,39 @@ describe("Table test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("tableLayout - default", () => {
+    const { wrapper } = getTableTestable();
+    expect(wrapper).toHaveLength(1);
+
+    const table = wrapper.find(`.MuiTable-root`);
+    const tableStyle = table.prop("style");
+
+    expect(tableStyle).toBeDefined();
+    expect(tableStyle?.tableLayout).toBe("fixed");
+
+    const containerDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.scrollContainer);
+    const container = wrapper.find(`div[data-cy='${containerDataCy}']`);
+    const style = container.prop("style");
+
+    expect(style).not.toBeDefined();
+  });
+
+  it("tableLayout - auto", () => {
+    const { wrapper } = getTableTestable({ props: { tableLayout: "auto" } });
+    expect(wrapper).toHaveLength(1);
+
+    const table = wrapper.find(`.MuiTable-root`);
+    const tableStyle = table.prop("style");
+
+    expect(tableStyle).toBeDefined();
+    expect(tableStyle?.tableLayout).toBe("auto");
+
+    const containerDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.scrollContainer);
+    const container = wrapper.find(`div[data-cy='${containerDataCy}']`);
+
+    const style = container.prop("style");
+    expect(style).toBeDefined();
+    expect(style?.overflowX).toBe("auto");
+  });
 });

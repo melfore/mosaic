@@ -9,6 +9,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 
+import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { ITable, ITableAction, ITableOnSortCallback } from "../../types/Table";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
@@ -22,7 +23,13 @@ import TableLoader from "./components/Loader";
 import TablePagination from "./components/Pagination";
 import TableSelectionCell from "./components/SelectionCell";
 import TableToolbar from "./components/Toolbar";
-import { COLUMN_CHECKBOX_PATH, COLUMN_ROW_ACTIONS_PATH } from "./utils";
+import {
+  COLUMN_CHECKBOX_PATH,
+  COLUMN_ROW_ACTIONS_PATH,
+  PAGINATION_TOOLBAR_HEIGHT,
+  TOOLBAR_HEIGHT,
+  TOOLBAR_HEIGHT_MOBILE,
+} from "./utils";
 
 const CHECKBOX_SELECTION_WIDTH = 36;
 const ROW_ACTION_DIMENSION = 48;
@@ -272,19 +279,38 @@ const Table: FC<ITable> = ({
   const wrapperStyle = useMemo(
     (): CSSProperties => ({
       height,
-      overflowY: loading && sticky ? "hidden" : "inherit",
+      overflowY: sticky ? "hidden" : "inherit",
       position: "relative",
       ...externalStyle,
     }),
-    [externalStyle, height, loading, sticky]
+    [externalStyle, height, sticky]
   );
 
+  const {
+    view: { mobile },
+  } = useMosaicContext();
+
   const scrollContainerStyle = useMemo((): CSSProperties | undefined => {
-    if (tableLayout === "fixed") {
-      return undefined;
+    const toolbarHeight = mobile ? TOOLBAR_HEIGHT_MOBILE : TOOLBAR_HEIGHT;
+    const extraOffset = mobile ? 9 : 2;
+
+    let style: CSSProperties | undefined = undefined;
+
+    if (sticky) {
+      const offset = toolbarHeight + PAGINATION_TOOLBAR_HEIGHT + extraOffset;
+
+      style = {
+        height: `calc(100% - ${offset}px)`,
+        overflowY: "auto",
+      };
     }
-    return { overflowX: "auto" };
-  }, [tableLayout]);
+
+    if (tableLayout === "auto") {
+      return { ...style, overflowX: "auto" };
+    }
+
+    return style;
+  }, [mobile, sticky, tableLayout]);
 
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={wrapperStyle}>
@@ -312,7 +338,7 @@ const Table: FC<ITable> = ({
                   onSort={onSortWrapper}
                   sortable={!!onSortChange}
                   sorting={sorting}
-                  stickyHeader={!hideHeader && sticky}
+                  stickyHeader={false}
                 />
               ))}
             </MUITableRow>

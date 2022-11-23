@@ -1,3 +1,10 @@
+# [7.3.0](https://github.com/melfore/mosaic/compare/v7.2.0...v7.3.0) (2022-11-23)
+
+
+### Features
+
+* 🎸 [Table] add support for render column filters in header ([9607c31](https://github.com/melfore/mosaic/commit/9607c31bc3071f6002873a37f73f2618ab78bb23))
+
 # [7.2.0](https://github.com/melfore/mosaic/compare/v7.1.4...v7.2.0) (2022-11-03)
 
 

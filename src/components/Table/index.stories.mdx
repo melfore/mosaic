@@ -1,5 +1,7 @@
 import { ArgsTable, Canvas, Meta, Preview, Story, Title } from "@storybook/addon-docs";
 
+import MUITextField from "@material-ui/core/TextField";
+
 import { Icons } from "../../types/Icon";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 
@@ -178,6 +180,41 @@ Loading state of the table
 
 <Preview>
   <Story name="Loading" args={{ loading: true }}>
+    {Template.bind()}
+  </Story>
+</Preview>
+
+### Column Filter
+
+You can display column filters by setting `renderFilter` in columns definition. Note that `Table` does not provide any filter logic and is your responsibility to toggle `showFilters` value.
+
+<Preview>
+  <Story
+    name="ColumnFilter"
+    args={{
+      columns: [
+        { label: "Name", path: "name", renderFilter: <MUITextField type="text" label="type to filter" /> },
+        { label: "Age", path: "age" },
+      ],
+      height: 400,
+      rows: [
+        { name: "Anne", age: 35 },
+        { name: "Bruce", age: 45 },
+        { name: "Carl", age: 32 },
+        { name: "Dan", age: 26 },
+        { name: "Emily", age: 36 },
+        { name: "Fabian", age: 34 },
+        { name: "George", age: 30 },
+        { name: "Harry", age: 27 },
+        { name: "Ian", age: 39 },
+        { name: "Jack", age: 40 },
+        { name: "Ken", age: 29 },
+      ],
+      showFilters: true,
+      sticky: true,
+      title: "Column Filters (sticky)",
+    }}
+  >
     {Template.bind()}
   </Story>
 </Preview>
@@ -415,6 +452,10 @@ export interface ITableColumn {
    * Method to allow custom rendering
    */
   render?: ITableDataCallback<ReactNode>;
+  /**
+   * Method to render a filter component
+   */
+  renderFilter?: ReactNode;
   /**
    * Enables sortable state
    */

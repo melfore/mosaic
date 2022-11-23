@@ -4,7 +4,6 @@ import {
   Table as MUITable,
   TableBody as MUITableBody,
   TableContainer as MUITableContainer,
-  TableHead as MUITableHead,
   TableRow as MUITableRow,
   useTheme,
 } from "@material-ui/core";
@@ -18,6 +17,7 @@ import Checkbox from "../Checkbox";
 import TableActionsCell from "./components/ActionsCell";
 import TableDataCell from "./components/DataCell";
 import TableEmptyState from "./components/EmptyState";
+import TableHead from "./components/Head";
 import TableHeadCell from "./components/HeadCell";
 import TableLoader from "./components/Loader";
 import TablePagination from "./components/Pagination";
@@ -82,6 +82,7 @@ const Table: FC<ITable> = ({
   rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
+  showFilters,
   sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
   style: externalStyle,
@@ -312,6 +313,11 @@ const Table: FC<ITable> = ({
     return style;
   }, [mobile, sticky, tableLayout]);
 
+  const showHeaderFilters = useMemo(
+    () => showFilters && columns.some((column) => !!column.renderFilter),
+    [columns, showFilters]
+  );
+
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={wrapperStyle}>
       {loading && <TableLoader />}
@@ -328,7 +334,7 @@ const Table: FC<ITable> = ({
       )}
       <div style={scrollContainerStyle} data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.scrollContainer)}>
         <MUITable size="small" stickyHeader={sticky} style={{ tableLayout }}>
-          <MUITableHead>
+          <TableHead columns={columns} showFilters={showHeaderFilters} sticky={!hideHeader && sticky}>
             <MUITableRow>
               {columns.map((column, index) => (
                 <TableHeadCell
@@ -342,7 +348,7 @@ const Table: FC<ITable> = ({
                 />
               ))}
             </MUITableRow>
-          </MUITableHead>
+          </TableHead>
           <MUITableBody>
             {!loading && !externalRows.length ? (
               <TableEmptyState columns={columns.length} emptyState={emptyState} />

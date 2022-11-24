@@ -8261,7 +8261,7 @@ exports[`Table test suite: sticky 1`] = `
     data-cy="table-table-scroll-container"
     style={
       {
-        "height": "calc(100% - 130px)",
+        "height": "calc(100% - 64px)",
         "overflowY": "auto",
       }
     }

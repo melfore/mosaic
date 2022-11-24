@@ -296,7 +296,7 @@ const Table: FC<ITable> = ({
     [externalStyle, height, sticky]
   );
 
-  const scrollContainerStyle = useMemo((): CSSProperties => {
+  const scrollContainerStyle = useMemo((): CSSProperties | undefined => {
     let toolbarHeight = TOOLBAR_HEIGHT;
     if (mobile) {
       toolbarHeight = TOOLBAR_HEIGHT_MOBILE;
@@ -307,7 +307,7 @@ const Table: FC<ITable> = ({
       offset += PAGINATION_TOOLBAR_BORDER + PAGINATION_TOOLBAR_HEIGHT;
     }
 
-    let style: CSSProperties = {};
+    let style: CSSProperties | undefined = undefined;
     if (sticky) {
       style = {
         height: `calc(100% - ${offset}px)`,

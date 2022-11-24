@@ -8222,7 +8222,7 @@ exports[`Table test suite: sticky 1`] = `
   style={
     {
       "height": "100%",
-      "overflowY": "inherit",
+      "overflowY": "hidden",
       "position": "relative",
     }
   }
@@ -8259,6 +8259,12 @@ exports[`Table test suite: sticky 1`] = `
   </div>
   <div
     data-cy="table-table-scroll-container"
+    style={
+      {
+        "height": "calc(100% - 64px)",
+        "overflowY": "auto",
+      }
+    }
   >
     <table
       className="MuiTable-root MuiTable-stickyHeader"
@@ -8282,11 +8288,6 @@ exports[`Table test suite: sticky 1`] = `
             className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall MuiTableCell-stickyHeader"
             data-cy="table-header-cell-Name"
             scope="col"
-            style={
-              {
-                "top": "64px",
-              }
-            }
           >
             Name
           </th>
@@ -8295,11 +8296,6 @@ exports[`Table test suite: sticky 1`] = `
             className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall MuiTableCell-stickyHeader"
             data-cy="table-header-cell-Rating"
             scope="col"
-            style={
-              {
-                "top": "64px",
-              }
-            }
           >
             Rating
           </th>

@@ -405,7 +405,11 @@ export const ColumnFilters = Template.bind({});
 ColumnFilters.args = {
   ...Primary.args,
   columns: [
-    { label: "Name", path: "name", renderFilter: <MUITextField type="text" label="type to filter" /> },
+    {
+      label: "Name",
+      path: "name",
+      renderFilter: <MUITextField label="type to filter" type="text" variant="standard" />,
+    },
     { label: "Age", path: "age" },
   ],
   height: 400,

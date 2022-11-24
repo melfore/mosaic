@@ -1,3 +1,10 @@
+# [7.4.0](https://github.com/melfore/mosaic/compare/v7.3.1...v7.4.0) (2022-11-24)
+
+
+### Features
+
+* 🎸 [Table] Implemented all props for icon button actions ([a84acc3](https://github.com/melfore/mosaic/commit/a84acc35068af0e6c30d52abc39a4bb8aa8a649b))
+
 ## [7.3.1](https://github.com/melfore/mosaic/compare/v7.3.0...v7.3.1) (2022-11-24)
 
 

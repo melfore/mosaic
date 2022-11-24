@@ -206,8 +206,8 @@ describe("Table test suite:", () => {
     const { element, wrapper } = getTableTestable({
       props: {
         actions: [
-          { callback, icon: Icons.account, label, position: "icon" },
-          { callback, label: "No Icon", position: "icon" },
+          { badge: { value: "!" }, callback, icon: Icons.account, label, position: "icon" },
+          { callback, label: "No Icon", position: "icon", tooltip: "Default Mosaic icon" },
           { callback, icon: <MUIStyleIcon />, label: "Custom Icon", position: "icon" },
         ],
       },

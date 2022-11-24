@@ -83,9 +83,22 @@ Actions.args = {
       label: "Send",
     },
     {
+      badge: {
+        color: "secondary",
+        overlap: "circular",
+        value: "1",
+        variant: "standard",
+      },
       callback: (data, options) => console.log("=> Filter", { options }),
       icon: Icons.filter,
       label: "Filter",
+      position: "icon",
+      tooltip: "1 filter applied",
+    },
+    {
+      callback: (data, options) => console.log("=> Close", { options }),
+      icon: Icons.close,
+      label: "Close",
       position: "icon",
     },
     {

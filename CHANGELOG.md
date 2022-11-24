@@ -1,3 +1,26 @@
+## [7.3.1](https://github.com/melfore/mosaic/compare/v7.3.0...v7.3.1) (2022-11-24)
+
+
+### Bug Fixes
+
+* 🐛 [Table] fix sticky header when tableLayout is auto ([eeb62d8](https://github.com/melfore/mosaic/commit/eeb62d82f7e6bf8eb1cf142f5a00200f24e3c969))
+* 🐛 [Table] Offset calculation logic with MUI breakpoints ([f668f37](https://github.com/melfore/mosaic/commit/f668f3729c9386c6bddc35e35f03824b1bf26f6f))
+* 🐛 [Table] Revert return undefined for no-style on scroll ([28ff502](https://github.com/melfore/mosaic/commit/28ff50279eaa2369aaf9f4194555acff23c92b2f))
+
+# [7.3.0](https://github.com/melfore/mosaic/compare/v7.2.0...v7.3.0) (2022-11-23)
+
+
+### Features
+
+* 🎸 [Table] add support for render column filters in header ([9607c31](https://github.com/melfore/mosaic/commit/9607c31bc3071f6002873a37f73f2618ab78bb23))
+
+# [7.2.0](https://github.com/melfore/mosaic/compare/v7.1.4...v7.2.0) (2022-11-03)
+
+
+### Features
+
+* 🎸 [Table] expose tableLayout prop and add h-scroll ([1794330](https://github.com/melfore/mosaic/commit/179433060325ea1c7980c40aa05b12a6d8a17273))
+
 ## [7.1.4](https://github.com/melfore/mosaic/compare/v7.1.3...v7.1.4) (2022-09-14)
 
 # [7.2.0-beta.1](https://github.com/melfore/mosaic/compare/v7.1.3...v7.2.0-beta.1) (2022-09-14)

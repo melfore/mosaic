@@ -22,7 +22,7 @@ const SUBPARTS_MAP = {
 };
 
 const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions, dataCy: externalDataCy }) => {
-  const { callback, disabled: actionDisabled, icon: actionIcon, label } = action;
+  const { badge, callback, disabled: actionDisabled, hidden, icon: actionIcon, label, tooltip, style } = action;
 
   const dataCy = useMemo(() => getComposedDataCy(externalDataCy, SUBPARTS_MAP.action, label), [externalDataCy, label]);
 
@@ -40,14 +40,20 @@ const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions
 
   const icon = useMemo(() => actionIcon || Icons.settings, [actionIcon]);
 
+  if (hidden) {
+    return null;
+  }
+
   return (
     <IconButton
+      badge={badge}
       dataCy={dataCy}
       disabled={disabled}
       icon={icon}
       onClick={() => callback(data, dataCallbackOptions)}
       size="small"
-      tooltip={label}
+      tooltip={tooltip || label}
+      style={style}
     />
   );
 };

@@ -13,14 +13,18 @@ const TOOLBAR_ACTION_SUBPART: ISubpart = {
 };
 
 const TableToolbarAction: FC<ITableToolbarAction> = ({
+  badge,
   callback,
   data,
   dataCallbackOptions,
   dataCy: externalDataCy,
   disabled: externalDisabled,
+  hidden,
   icon: externalIcon,
   label,
   position,
+  tooltip,
+  style: externalStyle,
 }) => {
   const dataCy = useMemo(
     () => getComposedDataCy(externalDataCy, TOOLBAR_ACTION_SUBPART, label),
@@ -48,22 +52,27 @@ const TableToolbarAction: FC<ITableToolbarAction> = ({
 
   const global = useMemo(() => position === "icon" || position === "toolbar", [position]);
 
-  const style = useMemo((): CSSProperties => ({ margin: "0 4px" }), []);
+  const style = useMemo((): CSSProperties => ({ ...externalStyle, margin: "0 4px" }), [externalStyle]);
 
   const onClick = useCallback(
     () => callback(!global ? data : undefined, dataCallbackOptions),
     [callback, data, dataCallbackOptions, global]
   );
 
+  if (hidden) {
+    return null;
+  }
+
   if (secondary) {
     return (
       <IconButton
+        badge={badge}
         dataCy={dataCy}
         disabled={disabled}
         icon={icon as IIconElement}
         onClick={onClick}
         style={style}
-        tooltip={label}
+        tooltip={tooltip || label}
       />
     );
   }

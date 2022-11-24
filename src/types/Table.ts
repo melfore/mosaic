@@ -77,6 +77,10 @@ export interface ITableColumn {
    */
   render?: ITableDataCallback<ReactNode>;
   /**
+   * Method to render a filter component
+   */
+  renderFilter?: ReactNode;
+  /**
    * Enables sortable state
    */
   sortable?: boolean;
@@ -101,6 +105,8 @@ export interface ITableSorting {
 
 export type ITableOnSortCallback = (path: string | null, criteria: ITableSortingCriteria) => void;
 
+export type ITableHead = IBase & Pick<ITable, "columns" | "showFilters" | "sticky">;
+
 export interface ITableHeadCell extends IBase {
   /**
    * Table column definition
@@ -124,6 +130,8 @@ export interface ITableHeadCell extends IBase {
    */
   stickyHeader: boolean;
 }
+
+export type ITableHeadFilterCell = IBase & Pick<ITableHeadCell, "column" | "dataCy">;
 
 export interface ITablePagination extends IBase {
   dataCy: string;
@@ -209,6 +217,10 @@ export type ITable = ILoadable &
      */
     selectionFilter?: ITableDataCallback<boolean>;
     /**
+     * Show filters row (does nothing if there's no column with `renderFilter` defined)
+     */
+    showFilters?: boolean;
+    /**
      * Default table sorting
      */
     sorting?: ITableSorting;
@@ -216,6 +228,10 @@ export type ITable = ILoadable &
      * Enables sticky mode
      */
     sticky?: boolean;
+    /**
+     * Table layout (table.style.tableLayout)
+     */
+    tableLayout?: "fixed" | "auto";
     /**
      * Table title
      */

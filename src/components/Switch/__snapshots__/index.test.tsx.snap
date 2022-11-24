@@ -9,7 +9,7 @@ exports[`Switch test suite: checked 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -27,7 +27,7 @@ exports[`Switch test suite: checked 1`] = `
     >
       <input
         checked={true}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -57,7 +57,7 @@ exports[`Switch test suite: dataCy 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="custom-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -75,7 +75,7 @@ exports[`Switch test suite: dataCy 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="custom-input"
         disabled={false}
         onChange={[Function]}
@@ -105,7 +105,7 @@ exports[`Switch test suite: default 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -123,7 +123,7 @@ exports[`Switch test suite: default 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -151,7 +151,7 @@ exports[`Switch test suite: disabled 1`] = `
   >
     <span
       aria-disabled={true}
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-disabled MuiButtonBase-root Mui-disabled MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-disabled PrivateSwitchBase-root Mui-disabled css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-disabled Mui-disabled css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -169,7 +169,7 @@ exports[`Switch test suite: disabled 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={true}
         onChange={[Function]}
@@ -196,7 +196,7 @@ exports[`Switch test suite: label 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -214,7 +214,7 @@ exports[`Switch test suite: label 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -249,7 +249,7 @@ exports[`Switch test suite: label placement 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -267,7 +267,7 @@ exports[`Switch test suite: label placement 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -299,7 +299,7 @@ exports[`Switch test suite: localized 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="locale.switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -317,7 +317,7 @@ exports[`Switch test suite: localized 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="locale.switch-input"
         disabled={false}
         onChange={[Function]}
@@ -349,7 +349,7 @@ exports[`Switch test suite: onChange - not handled 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -367,7 +367,7 @@ exports[`Switch test suite: onChange - not handled 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -394,7 +394,7 @@ exports[`Switch test suite: onChange 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -412,7 +412,7 @@ exports[`Switch test suite: onChange 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -442,7 +442,7 @@ exports[`Switch test suite: required 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -460,7 +460,7 @@ exports[`Switch test suite: required 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}
@@ -490,7 +490,7 @@ exports[`Switch test suite: size 1`] = `
     className="MuiSwitch-root MuiSwitch-sizeSmall css-1ycxvqq-MuiSwitch-root"
   >
     <span
-      className="MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
       data-cy="switch-toggle"
       onBlur={[Function]}
       onContextMenu={[Function]}
@@ -508,7 +508,7 @@ exports[`Switch test suite: size 1`] = `
     >
       <input
         checked={false}
-        className="MuiSwitch-input PrivateSwitchBase-input css-1m9pwf3"
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
         data-cy="switch-input"
         disabled={false}
         onChange={[Function]}

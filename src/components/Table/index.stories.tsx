@@ -154,6 +154,16 @@ export const Sticky = Template.bind({});
 Sticky.args = {
   ...Primary.args,
   height: 400,
+  onPageChange: undefined,
+  onPageSizeChange: undefined,
+  rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
+  sticky: true,
+};
+
+export const StickyPagination = Template.bind({});
+StickyPagination.args = {
+  ...Primary.args,
+  height: 400,
   rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
   sticky: true,
 };
@@ -379,8 +389,8 @@ TableLayoutSticky.args = {
   title: "Try to scroll both ways",
 };
 
-export const ColumnFilter = Template.bind({});
-ColumnFilter.args = {
+export const ColumnFilters = Template.bind({});
+ColumnFilters.args = {
   ...Primary.args,
   columns: [
     { label: "Name", path: "name", renderFilter: <MUITextField type="text" label="type to filter" /> },
@@ -389,6 +399,12 @@ ColumnFilter.args = {
   height: 400,
   rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
   showFilters: true,
+  title: "Column Filters",
+};
+
+export const ColumnFiltersSticky = Template.bind({});
+ColumnFiltersSticky.args = {
+  ...ColumnFilters.args,
   sticky: true,
   title: "Column Filters (sticky)",
 };

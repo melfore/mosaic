@@ -162,6 +162,58 @@ exports[`Switch test suite: default 1`] = `
 </label>
 `;
 
+exports[`Switch test suite: disableRipple 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase MuiSwitch-colorPrimary"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input-4 MuiSwitch-input"
+          data-cy="switch-input"
+          disabled={false}
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <span
+          className="MuiSwitch-thumb"
+        />
+      </span>
+    </span>
+    <span
+      className="MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+  />
+</label>
+`;
+
 exports[`Switch test suite: disabled 1`] = `
 <label
   className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-disabled"
@@ -255,9 +307,6 @@ exports[`Switch test suite: label 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
     </span>
     <span
       className="MuiSwitch-track"
@@ -312,6 +361,9 @@ exports[`Switch test suite: label placement 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
     </span>
     <span
       className="MuiSwitch-track"
@@ -420,6 +472,9 @@ exports[`Switch test suite: onChange - not handled 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
     </span>
     <span
       className="MuiSwitch-track"
@@ -472,9 +527,6 @@ exports[`Switch test suite: onChange 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
     </span>
     <span
       className="MuiSwitch-track"
@@ -527,9 +579,6 @@ exports[`Switch test suite: required 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
     </span>
     <span
       className="MuiSwitch-track"
@@ -582,6 +631,9 @@ exports[`Switch test suite: size 1`] = `
           className="MuiSwitch-thumb"
         />
       </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
     </span>
     <span
       className="MuiSwitch-track"

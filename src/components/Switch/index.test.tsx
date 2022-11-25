@@ -74,6 +74,13 @@ describe("Switch test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("disableRipple", () => {
+    const { element } = getSwitchTestable({ props: { disableRipple: true } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("label", () => {
     const label = "Switch";
     const { element, wrapper } = getSwitchTestable({ props: { label } });

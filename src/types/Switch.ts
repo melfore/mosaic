@@ -8,4 +8,9 @@ export enum SwitchSize {
   default = "medium",
 }
 
-export interface ISwitch extends IInputBoolean {}
+export interface ISwitch extends IInputBoolean {
+  /**
+   * Disable ripple effect
+   */
+  disableRipple?: boolean;
+}

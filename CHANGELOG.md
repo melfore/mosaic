@@ -1,3 +1,11 @@
+# [7.5.0](https://github.com/melfore/mosaic/compare/v7.4.1...v7.5.0) (2022-12-05)
+
+
+### Features
+
+* 🎸 [Switch] Added disableRipple property ([d8df184](https://github.com/melfore/mosaic/commit/d8df184881b05d1055eac39c1e4383f14df8177e))
+* 🎸 [Table] Added primary option for table action position ([9bfc7a8](https://github.com/melfore/mosaic/commit/9bfc7a873200bf28e7e206d4e5d83c6720e42808))
+
 ## [7.4.1](https://github.com/melfore/mosaic/compare/v7.4.0...v7.4.1) (2022-11-24)
 
 # [7.5.0-beta.1](https://github.com/melfore/mosaic/compare/v7.4.0...v7.5.0-beta.1) (2022-11-24)

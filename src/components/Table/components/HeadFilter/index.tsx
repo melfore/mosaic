@@ -2,7 +2,7 @@ import React, { CSSProperties, FC, useMemo } from "react";
 import { TableCell as MUITableCell, useTheme } from "@material-ui/core";
 
 import { ITableHeadFilterCell } from "../../../../types/Table";
-import { COLUMN_CHECKBOX_PATH } from "../../utils";
+import { COLUMN_CHECKBOX_PATH, COLUMN_PRIMARY_ACTIONS_PATH } from "../../utils";
 
 const TableHeadFilterCell: FC<ITableHeadFilterCell> = ({ column, dataCy }) => {
   const { path, padding, width } = column;
@@ -13,7 +13,7 @@ const TableHeadFilterCell: FC<ITableHeadFilterCell> = ({ column, dataCy }) => {
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;
-    if (path === COLUMN_CHECKBOX_PATH) {
+    if (path === COLUMN_CHECKBOX_PATH || path === COLUMN_PRIMARY_ACTIONS_PATH) {
       style = {
         padding: `0 ${theme.spacing(1)}px`,
       };

@@ -1,3 +1,41 @@
+# [7.5.0](https://github.com/melfore/mosaic/compare/v7.4.1...v7.5.0) (2022-12-05)
+
+
+### Features
+
+* 🎸 [Switch] Added disableRipple property ([d8df184](https://github.com/melfore/mosaic/commit/d8df184881b05d1055eac39c1e4383f14df8177e))
+* 🎸 [Table] Added primary option for table action position ([9bfc7a8](https://github.com/melfore/mosaic/commit/9bfc7a873200bf28e7e206d4e5d83c6720e42808))
+
+## [7.4.1](https://github.com/melfore/mosaic/compare/v7.4.0...v7.4.1) (2022-11-24)
+
+# [7.5.0-beta.1](https://github.com/melfore/mosaic/compare/v7.4.0...v7.5.0-beta.1) (2022-11-24)
+
+
+### Bug Fixes
+
+* 🐛 [Adornment] Tooltip to be closed by default ([93d8c3e](https://github.com/melfore/mosaic/commit/93d8c3eedc12e4654093bf8edc7513b2b5172fd9))
+* 🐛 [AppBar] Fixed spacing of items ([0a0904a](https://github.com/melfore/mosaic/commit/0a0904a5b77ee8ea4d03b2c1002b82d83bcf224b))
+* 🐛 [Select] Fixed HTMLInputElement customization ([66775db](https://github.com/melfore/mosaic/commit/66775db997e7e7683fbfeb07ee8e629155d51cf3))
+* 🐛 [Select] Keys for options on top level component ([b6e7da7](https://github.com/melfore/mosaic/commit/b6e7da7ebb512c609a2ba33e7f5d687cd7ae2db2))
+* 🐛 [Table] Fixed heading checkbox size ([40d8639](https://github.com/melfore/mosaic/commit/40d8639026249f32c3bef4af61501f62e1d5ba48))
+
+
+### chore
+
+* 🤖 Added workflow for beta branch ([a9261c3](https://github.com/melfore/mosaic/commit/a9261c365846bfb3c9eac59398b3a67ecd5aa231))
+
+
+### Features
+
+* 🎸 [Select] Align customOptionRendering to new standard ([aafca6f](https://github.com/melfore/mosaic/commit/aafca6f73935e15db0e43718270799744fae1cda))
+* 🎸 [Select] Display checkbox only when multiple=true ([eb53f1b](https://github.com/melfore/mosaic/commit/eb53f1b0ca56a54b86fa13d71517b8ae2397c29b))
+* 🎸 Run [@mui](https://github.com/mui) v5 codemod:base-preset on entire codebase ([fd45412](https://github.com/melfore/mosaic/commit/fd45412192f9aabdf611b40523d05673a82da4f6))
+
+
+### BREAKING CHANGES
+
+* 🧨 Enabling beta releases
+
 # [7.4.0](https://github.com/melfore/mosaic/compare/v7.3.1...v7.4.0) (2022-11-24)
 
 

@@ -15,7 +15,9 @@ export enum TableActionPosition {
   selection = "selection",
 }
 
-export type ITableActionPosition = "icon" | "row" | "selection" | "toolbar";
+export type ITableRowActionPosition = "primary" | "row";
+
+export type ITableActionPosition = "icon" | "selection" | "toolbar" | ITableRowActionPosition;
 
 export interface ITableDataCallbackOptions {
   indexes: number[];

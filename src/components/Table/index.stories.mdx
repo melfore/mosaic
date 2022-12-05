@@ -75,6 +75,8 @@ Global actions have all table scope. By default they are displayed like a `Butto
 #### Row Actions
 
 Row actions have row scope.
+One row action can be placed on the left, setting the position attribute to `primary`.
+In case more than one `primary` is specified, the others will be treathed as normal row actions.
 
 <Preview>
   <Story
@@ -85,6 +87,12 @@ Row actions have row scope.
           callback: () => {},
           icon: Icons.edit,
           label: "Edit",
+          position: "primary",
+        },
+        {
+          callback: () => {},
+          icon: Icons.delete,
+          label: "Delete",
           position: "row",
         },
       ],

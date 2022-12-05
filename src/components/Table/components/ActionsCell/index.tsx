@@ -1,8 +1,13 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TableCell as MUITableCell } from "@material-ui/core";
+import { TableCell as MUITableCell, useTheme } from "@material-ui/core";
 
 import { IBase } from "../../../../types/Base";
-import { ITableAction, ITableColumn, ITableDataCallbackOptions } from "../../../../types/Table";
+import {
+  ITableAction,
+  ITableColumn,
+  ITableDataCallbackOptions,
+  ITableRowActionPosition,
+} from "../../../../types/Table";
 import TableRowAction from "../RowAction";
 
 interface ITableActionsCell extends IBase {
@@ -11,26 +16,61 @@ interface ITableActionsCell extends IBase {
   data: any;
   dataCallbackOptions: ITableDataCallbackOptions;
   dataCy: string;
+  position: ITableRowActionPosition;
 }
 
-const TableActionsCell: FC<ITableActionsCell> = ({ actions, column, data, dataCallbackOptions, dataCy }) => {
+const TableActionsCell: FC<ITableActionsCell> = ({
+  actions,
+  column,
+  data,
+  dataCallbackOptions,
+  dataCy,
+  position,
+  style: rowStyle,
+}) => {
+  const theme = useTheme();
+
   const { padding: columnPadding, width } = column;
 
   const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
 
-  const style = useMemo(
-    (): CSSProperties => ({
+  const style = useMemo((): CSSProperties => {
+    if (position === "row") {
+      return {
+        ...rowStyle,
+        width,
+      };
+    }
+
+    const backgroundColor = rowStyle?.backgroundColor || theme.palette.background.paper;
+
+    return {
+      ...rowStyle,
+      backgroundColor,
+      left: 0,
+      padding: `0 ${theme.spacing(1)}px`,
+      position: "sticky",
       width,
+      zIndex: 1,
+    };
+  }, [position, rowStyle, theme, width]);
+
+  const wrapperStyle = useMemo(
+    (): CSSProperties => ({
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "flex-end",
     }),
-    [width]
+    []
   );
 
   return (
     <MUITableCell padding={padding} style={style}>
-      <div style={{ alignItems: "center", display: "flex", justifyContent: "flex-end" }}>
+      <div style={wrapperStyle}>
         {actions.map((action) => {
           const { label } = action;
           const key = `action-${label}`;
+
           return (
             <TableRowAction
               key={key}

@@ -48,6 +48,12 @@ Disabled.args = {
   disabled: true,
 };
 
+export const DisableRipple = Template.bind({});
+DisableRipple.args = {
+  ...Primary.args,
+  disableRipple: true,
+};
+
 export const Label = Template.bind({});
 Label.args = {
   ...Primary.args,

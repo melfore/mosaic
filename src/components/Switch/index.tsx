@@ -21,6 +21,7 @@ export const SUBPARTS_MAP = {
 const Switch: FC<ISwitch> = ({
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
+  disableRipple = false,
   label,
   labelPlacement = "start",
   onChange,
@@ -42,6 +43,7 @@ const Switch: FC<ISwitch> = ({
           color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.toggle)}
           disabled={disabled}
+          disableRipple={disableRipple}
           inputProps={
             {
               "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.input),

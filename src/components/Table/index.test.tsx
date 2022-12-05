@@ -418,6 +418,26 @@ describe("Table test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
+  it("row action - primary", () => {
+    const callback = jest.fn();
+    const label = "Account";
+    const { element, wrapper } = getTableTestable({
+      props: { actions: [{ callback, icon: Icons.account, label, position: "primary" }] },
+    });
+
+    const actionDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.action, label);
+    const action = wrapper.find(`button[data-cy='${actionDataCy}']`).first();
+    action.simulate("click");
+    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledWith(DEFAULT_TEST_OPTIONS.props.rows[0], {
+      indexes: [0],
+      multiple: false,
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
   it("row style", () => {
     const getRowStyle = jest.fn();
     const { element } = getTableTestable({ props: { getRowStyle } });

@@ -25,18 +25,18 @@ import TableSelectionCell from "./components/SelectionCell";
 import TableToolbar from "./components/Toolbar";
 import {
   COLUMN_CHECKBOX_PATH,
+  COLUMN_CHECKBOX_WIDTH,
+  COLUMN_PRIMARY_ACTIONS_PATH,
+  COLUMN_PRIMARY_ACTIONS_WIDTH,
   COLUMN_ROW_ACTIONS_PATH,
+  COLUMN_ROW_ACTIONS_WIDTH,
+  PAGINATION_DEFAULT_PAGESIZE,
+  PAGINATION_DEFAULT_PAGESIZE_OPTIONS,
   PAGINATION_TOOLBAR_BORDER,
   PAGINATION_TOOLBAR_HEIGHT,
   TOOLBAR_HEIGHT,
   TOOLBAR_HEIGHT_MOBILE,
 } from "./utils";
-
-const CHECKBOX_SELECTION_WIDTH = 36;
-const ROW_ACTION_DIMENSION = 48;
-
-const DEFAULT_PAGESIZE = 10;
-const DEFAULT_PAGESIZE_OPTIONS = [5, 10, 25];
 
 export const DATA_CY_DEFAULT = "table";
 export const DATA_CY_SHORTCUT = "title";
@@ -78,8 +78,8 @@ const Table: FC<ITable> = ({
   onSelectionChange,
   onSortChange,
   page = 0,
-  pageSize = DEFAULT_PAGESIZE,
-  pageSizeOptions = DEFAULT_PAGESIZE_OPTIONS,
+  pageSize = PAGINATION_DEFAULT_PAGESIZE,
+  pageSizeOptions = PAGINATION_DEFAULT_PAGESIZE_OPTIONS,
   rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
@@ -168,7 +168,7 @@ const Table: FC<ITable> = ({
     [rows, isRowSelected, onSelectionChange]
   );
 
-  const { defaultActions, columns, rowActions, selectionActions } = useMemo(() => {
+  const { defaultActions, columns, primaryActions, rowActions, selectionActions } = useMemo(() => {
     let columns = [...externalColumns];
     if (onSelectionChange) {
       columns = [
@@ -185,12 +185,13 @@ const Table: FC<ITable> = ({
               value={loading ? false : selectedRowsIndexes.length === externalRows.length}
             />
           ),
-          width: `${CHECKBOX_SELECTION_WIDTH}px`,
+          width: `${COLUMN_CHECKBOX_WIDTH}px`,
         },
         ...columns,
       ];
     }
 
+    let primaryActions: ITableAction[] = [];
     let rowActions: ITableAction[] = [];
     let selectionActions: ITableAction[] = [];
     let toolbarActions: ITableAction[] = [];
@@ -206,6 +207,14 @@ const Table: FC<ITable> = ({
         case "icon":
           toolbarActions = [...toolbarActions, { ...action }];
           return;
+        case "primary":
+          if (primaryActions.length >= 1) {
+            rowActions = [...rowActions, { ...action }];
+            return;
+          }
+
+          primaryActions = [...primaryActions, { ...action }];
+          return;
         case "row":
           rowActions = [...rowActions, { ...action }];
           return;
@@ -218,13 +227,26 @@ const Table: FC<ITable> = ({
       }
     });
 
+    if (!!primaryActions.length) {
+      columns = [
+        {
+          label: "",
+          padding: "checkbox",
+          path: COLUMN_PRIMARY_ACTIONS_PATH,
+          sortable: false,
+          width: `${COLUMN_PRIMARY_ACTIONS_WIDTH}px`,
+        },
+        ...columns,
+      ];
+    }
+
     if (!!rowActions.length) {
       columns = [
         ...columns,
         {
           label: "",
           path: COLUMN_ROW_ACTIONS_PATH,
-          width: `${ROW_ACTION_DIMENSION * rowActions.length}px`,
+          width: `${COLUMN_ROW_ACTIONS_WIDTH * rowActions.length}px`,
         },
       ];
     }
@@ -241,7 +263,7 @@ const Table: FC<ITable> = ({
         break;
     }
 
-    return { defaultActions, columns, rowActions, selectionActions };
+    return { defaultActions, columns, primaryActions, rowActions, selectionActions };
   }, [
     actions,
     actionsOrder,
@@ -378,6 +400,21 @@ const Table: FC<ITable> = ({
                       const { path } = column;
                       const key = `column-${path || columnIndex}`;
 
+                      if (path === COLUMN_PRIMARY_ACTIONS_PATH) {
+                        return (
+                          <TableActionsCell
+                            key={key}
+                            actions={primaryActions}
+                            column={column}
+                            data={row}
+                            dataCallbackOptions={rowCallbackOptions}
+                            dataCy={dataCy}
+                            position="primary"
+                            style={style}
+                          />
+                        );
+                      }
+
                       if (path === COLUMN_CHECKBOX_PATH) {
                         return (
                           <TableSelectionCell
@@ -398,6 +435,8 @@ const Table: FC<ITable> = ({
                             data={row}
                             dataCallbackOptions={rowCallbackOptions}
                             dataCy={dataCy}
+                            position="row"
+                            style={style}
                           />
                         );
                       }

@@ -110,7 +110,7 @@ Actions.args = {
       callback: (data, options) => console.log("=> Edit", { options }),
       icon: Icons.edit,
       label: "Edit",
-      position: "row",
+      position: "primary",
     },
     {
       callback: (data, options) => console.log("=> Notify", { options }),
@@ -191,6 +191,14 @@ Styled.args = {
 export const StyledRow = Template.bind({});
 StyledRow.args = {
   ...Primary.args,
+  actions: [
+    {
+      callback: (data, options) => console.log("=> Edit", { options }),
+      icon: Icons.edit,
+      label: "Edit",
+      position: "primary",
+    },
+  ],
   getRowStyle: (row, options) => {
     const index = options?.indexes[0] || 0;
     return {
@@ -207,6 +215,18 @@ TableLayout.args = {
       callback: (data, options) => console.log("=> Add", { options }),
       icon: Icons.add,
       label: "Add",
+    },
+    {
+      callback: (data, options) => console.log("=> Edit", { options }),
+      icon: Icons.edit,
+      label: "Edit",
+      position: "primary",
+    },
+    {
+      callback: (data, options) => console.log("=> Edit", { options }),
+      icon: Icons.close,
+      label: "Delete",
+      position: "primary",
     },
   ],
   columns: [

@@ -4,7 +4,7 @@ import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useThem
 import { useMosaicContext } from "../../../../hooks/useMosaicContext";
 import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
-import { COLUMN_CHECKBOX_PATH, TOOLBAR_HEIGHT, TOOLBAR_HEIGHT_MOBILE } from "../../utils";
+import { COLUMN_CHECKBOX_PATH, COLUMN_PRIMARY_ACTIONS_PATH, TOOLBAR_HEIGHT, TOOLBAR_HEIGHT_MOBILE } from "../../utils";
 
 const TableHeadCell: FC<ITableHeadCell> = ({
   column,
@@ -27,7 +27,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;
-    if (path === COLUMN_CHECKBOX_PATH) {
+    if (path === COLUMN_CHECKBOX_PATH || path === COLUMN_PRIMARY_ACTIONS_PATH) {
       style = {
         padding: `0 ${theme.spacing(1)}`,
       };

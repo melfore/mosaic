@@ -9,7 +9,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 
-import { ITable, ITableAction, ITableOnSortCallback } from "../../types/Table";
+import { ITable, ITableAction, ITableColumn, ITableOnSortCallback } from "../../types/Table";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Checkbox from "../Checkbox";
@@ -169,7 +169,7 @@ const Table: FC<ITable> = ({
   );
 
   const { defaultActions, columns, primaryActions, rowActions, selectionActions } = useMemo(() => {
-    let columns = [...externalColumns];
+    let columns: ITableColumn[] = [];
     if (onSelectionChange) {
       columns = [
         {
@@ -229,6 +229,7 @@ const Table: FC<ITable> = ({
 
     if (!!primaryActions.length) {
       columns = [
+        ...columns,
         {
           label: "",
           padding: "checkbox",
@@ -236,9 +237,10 @@ const Table: FC<ITable> = ({
           sortable: false,
           width: `${COLUMN_PRIMARY_ACTIONS_WIDTH}px`,
         },
-        ...columns,
       ];
     }
+
+    columns = [...columns, ...externalColumns];
 
     if (!!rowActions.length) {
       columns = [

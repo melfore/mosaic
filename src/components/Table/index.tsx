@@ -83,6 +83,7 @@ const Table: FC<ITable> = ({
   rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
+  selectionSticky = true,
   showFilters,
   sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
@@ -424,6 +425,8 @@ const Table: FC<ITable> = ({
                             column={column}
                             onSelection={onRowSelection}
                             selected={rowSelected}
+                            sticky={selectionSticky}
+                            style={style}
                           />
                         );
                       }

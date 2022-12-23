@@ -4,14 +4,17 @@ import { TableCell as MUITableCell, useTheme } from "@material-ui/core";
 import { IBase } from "../../../../types/Base";
 import { ITableColumn } from "../../../../types/Table";
 import Checkbox from "../../../Checkbox";
+import { SELECTION_Z_INDEX } from "../../utils";
 
 interface ITableSelectionCell extends IBase {
   column: ITableColumn;
   onSelection: () => void;
   selected: boolean;
+  sticky: boolean;
+  style?: CSSProperties;
 }
 
-const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, selected }) => {
+const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, selected, sticky, style: rowStyle }) => {
   const theme = useTheme();
 
   const { padding: columnPadding, width } = column;
@@ -20,13 +23,27 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
 
   const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
 
-  const style = useMemo(
-    (): CSSProperties => ({
+  const style = useMemo((): CSSProperties => {
+    if (!sticky) {
+      return {
+        ...rowStyle,
+        padding: `0 ${theme.spacing(1)}px`,
+        width,
+      };
+    }
+
+    const backgroundColor = rowStyle?.backgroundColor || theme.palette.background.paper;
+
+    return {
+      ...rowStyle,
+      backgroundColor,
+      left: 0,
       padding: `0 ${theme.spacing(1)}px`,
+      position: "sticky",
       width,
-    }),
-    [theme, width]
-  );
+      zIndex: SELECTION_Z_INDEX,
+    };
+  }, [rowStyle, sticky, theme, width]);
 
   return (
     <MUITableCell padding={padding} style={style}>

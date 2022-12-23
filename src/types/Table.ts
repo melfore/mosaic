@@ -219,6 +219,10 @@ export type ITable = ILoadable &
      */
     selectionFilter?: ITableDataCallback<boolean>;
     /**
+     * Flag to enable sticky mode on selection checkbox
+     */
+    selectionSticky?: boolean;
+    /**
      * Show filters row (does nothing if there's no column with `renderFilter` defined)
      */
     showFilters?: boolean;

@@ -4,7 +4,13 @@ import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useThem
 import { useMosaicContext } from "../../../../hooks/useMosaicContext";
 import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
-import { COLUMN_CHECKBOX_PATH, COLUMN_PRIMARY_ACTIONS_PATH, TOOLBAR_HEIGHT, TOOLBAR_HEIGHT_MOBILE } from "../../utils";
+import {
+  COLUMN_CHECKBOX_PATH,
+  COLUMN_PRIMARY_ACTIONS_PATH,
+  // HEADER_Z_INDEX,
+  TOOLBAR_HEIGHT,
+  TOOLBAR_HEIGHT_MOBILE,
+} from "../../utils";
 
 const TableHeadCell: FC<ITableHeadCell> = ({
   column,
@@ -87,8 +93,20 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   const sortDirection = useMemo(() => (path === sorting.path ? sorting.ordering || undefined : "asc"), [path, sorting]);
 
   if (path === COLUMN_CHECKBOX_PATH) {
+    let checkboxStyle = { ...cellStyle };
+    // if (selectionSticky) {
+    //   checkboxStyle = {
+    //     ...checkboxStyle,
+    //     left: 0,
+    //     padding: `0 ${theme.spacing(1)}px`,
+    //     position: "sticky",
+    //     width,
+    //     zIndex: HEADER_Z_INDEX,
+    //   };
+    // }
+
     return (
-      <MUITableCell padding={cellPadding} style={cellStyle} variant="head">
+      <MUITableCell padding={cellPadding} style={checkboxStyle} variant="head">
         {!render ? null : render({}, { indexes: [], multiple: false })}
       </MUITableCell>
     );

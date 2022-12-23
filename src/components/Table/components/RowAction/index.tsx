@@ -5,6 +5,7 @@ import { Icons } from "../../../../types/Icon";
 import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import { getComposedDataCy } from "../../../../utils";
 import IconButton from "../../../IconButton";
+import { DEFAULT_Z_INDEX } from "../../utils";
 
 interface ITableRowAction extends IBase {
   action: ITableAction;
@@ -52,7 +53,7 @@ const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions
   const style = useMemo(
     (): CSSProperties => ({
       ...actionStyle,
-      zIndex: 0,
+      zIndex: DEFAULT_Z_INDEX,
     }),
     [actionStyle]
   );

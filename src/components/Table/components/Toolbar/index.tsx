@@ -3,6 +3,7 @@ import { Toolbar as MUIToolbar, useTheme } from "@material-ui/core";
 
 import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import Typography from "../../../Typography";
+import { HEADER_Z_INDEX } from "../../utils";
 import TableToolbarAction from "../ToolbarAction";
 
 interface ITableToolbar {
@@ -48,7 +49,7 @@ const TableToolbar: FC<ITableToolbar> = ({
     return {
       position: "sticky",
       top: 0,
-      zIndex: 10,
+      zIndex: HEADER_Z_INDEX,
     };
   }, [sticky]);
 

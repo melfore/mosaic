@@ -14,3 +14,8 @@ export const PAGINATION_DEFAULT_PAGESIZE = 10;
 export const PAGINATION_DEFAULT_PAGESIZE_OPTIONS = [5, 10, 25];
 export const PAGINATION_TOOLBAR_BORDER = 1;
 export const PAGINATION_TOOLBAR_HEIGHT = 64;
+
+export const DEFAULT_Z_INDEX = 0;
+export const HEADER_Z_INDEX = 10;
+export const LOADER_Z_INDEX = 100;
+export const SELECTION_Z_INDEX = 1;

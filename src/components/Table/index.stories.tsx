@@ -441,3 +441,48 @@ ColumnFiltersSticky.args = {
   sticky: true,
   title: "Column Filters (sticky)",
 };
+
+export const ColumnFiltersStickyWithActions = Template.bind({});
+ColumnFiltersStickyWithActions.args = {
+  ...ColumnFiltersSticky.args,
+  actions: [
+    {
+      callback: (data, options) => console.log("=> Add", { options }),
+      icon: Icons.add,
+      label: "Add",
+    },
+    {
+      callback: (data, options) => console.log("=> Close", { options }),
+      icon: Icons.close,
+      label: "Close",
+      position: "icon",
+    },
+    {
+      callback: (data, options) => console.log("=> Custom", { options }),
+      icon: <MUIStyleIcon />,
+      label: "Custom",
+      position: "row",
+    },
+    {
+      callback: (data, options) => console.log("=> Edit", { options }),
+      icon: Icons.edit,
+      label: "Edit",
+      position: "primary",
+    },
+    {
+      callback: (data, options) => console.log("=> Delete at least 3", { options }),
+      disabled: (data: any[]) => data.length < 3,
+      icon: Icons.delete,
+      label: "Delete at least 3",
+      position: "selection",
+    },
+  ],
+  columns: TableLayoutSticky.args.columns,
+  rows: TableLayoutSticky.args.rows,
+  tableLayout: "auto",
+};
+
+export const ColumnFiltersStickyWithActionsStickySelection = Template.bind({});
+ColumnFiltersStickyWithActionsStickySelection.args = {
+  ...ColumnFiltersStickyWithActions.args,
+};

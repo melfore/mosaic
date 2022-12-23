@@ -17,7 +17,7 @@ const TableHead: FC<ITableHead> = ({ children, columns, dataCy, showFilters, sti
     return {
       position: "sticky",
       top: 0,
-      zIndex: 1,
+      zIndex: 10,
     };
   }, [showFilters, sticky]);
 

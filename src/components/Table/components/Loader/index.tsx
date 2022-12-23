@@ -20,7 +20,7 @@ const TableLoader: FC<ITableLoader> = () => {
       top: 0,
       userSelect: "none",
       width: "100%",
-      zIndex: 10,
+      zIndex: 100,
     };
   }, [theme]);
 

@@ -28,6 +28,7 @@ const TableDataCell: FC<ITableDataCell> = ({ column, data, dataCallbackOptions, 
   const style = useMemo(
     (): CSSProperties => ({
       width,
+      zIndex: 0,
     }),
     [width]
   );

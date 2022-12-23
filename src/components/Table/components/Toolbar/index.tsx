@@ -38,10 +38,19 @@ const TableToolbar: FC<ITableToolbar> = ({
     [selectedRows, selectedRowsIndexes]
   );
 
-  const positioning = useMemo(
-    (): CSSProperties => (!sticky ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
-    [sticky]
-  );
+  const positioning = useMemo((): CSSProperties => {
+    if (!sticky) {
+      return {
+        position: "inherit",
+      };
+    }
+
+    return {
+      position: "sticky",
+      top: 0,
+      zIndex: 10,
+    };
+  }, [sticky]);
 
   const style = useMemo(
     (): CSSProperties => ({

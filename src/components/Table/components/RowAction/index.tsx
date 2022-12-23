@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { CSSProperties, FC, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";
 import { Icons } from "../../../../types/Icon";
@@ -22,7 +22,16 @@ const SUBPARTS_MAP = {
 };
 
 const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions, dataCy: externalDataCy }) => {
-  const { badge, callback, disabled: actionDisabled, hidden, icon: actionIcon, label, tooltip, style } = action;
+  const {
+    badge,
+    callback,
+    disabled: actionDisabled,
+    hidden,
+    icon: actionIcon,
+    label,
+    tooltip,
+    style: actionStyle,
+  } = action;
 
   const dataCy = useMemo(() => getComposedDataCy(externalDataCy, SUBPARTS_MAP.action, label), [externalDataCy, label]);
 
@@ -39,6 +48,14 @@ const TableRowAction: FC<ITableRowAction> = ({ action, data, dataCallbackOptions
   }, [actionDisabled, data, dataCallbackOptions]);
 
   const icon = useMemo(() => actionIcon || Icons.settings, [actionIcon]);
+
+  const style = useMemo(
+    (): CSSProperties => ({
+      ...actionStyle,
+      zIndex: 0,
+    }),
+    [actionStyle]
+  );
 
   if (hidden) {
     return null;

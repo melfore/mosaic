@@ -2,6 +2,7 @@ import React, { CSSProperties, FC, useMemo } from "react";
 import { TableHead as MUITableHead, TableRow as MUITableRow } from "@material-ui/core";
 
 import { ITableHead } from "../../../../types/Table";
+import { HEADER_Z_INDEX } from "../../utils";
 import TableHeadFilterCell from "../HeadFilter";
 
 const TableHead: FC<ITableHead> = ({ children, columns, dataCy, showFilters, sticky }) => {
@@ -17,7 +18,7 @@ const TableHead: FC<ITableHead> = ({ children, columns, dataCy, showFilters, sti
     return {
       position: "sticky",
       top: 0,
-      zIndex: 1,
+      zIndex: HEADER_Z_INDEX,
     };
   }, [showFilters, sticky]);
 

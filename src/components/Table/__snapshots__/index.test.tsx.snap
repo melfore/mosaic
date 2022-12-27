@@ -227,6 +227,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -239,6 +240,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -323,6 +325,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -335,6 +338,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -419,6 +423,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -431,6 +436,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -515,6 +521,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -527,6 +534,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -611,6 +619,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -623,6 +632,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -868,6 +878,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -880,6 +891,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -967,6 +979,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -979,6 +992,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1066,6 +1080,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1078,6 +1093,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1165,6 +1181,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1177,6 +1194,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1264,6 +1282,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1276,6 +1295,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1374,6 +1394,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1392,6 +1413,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -1408,6 +1430,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1426,6 +1449,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1444,6 +1468,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1462,6 +1487,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -1478,6 +1504,7 @@ exports[`Table test suite: complex column path 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1584,6 +1611,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1596,6 +1624,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1614,6 +1643,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1626,6 +1656,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1644,6 +1675,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1656,6 +1688,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1674,6 +1707,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1686,6 +1720,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1704,6 +1739,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1716,6 +1752,7 @@ exports[`Table test suite: dataCy 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1822,6 +1859,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1834,6 +1872,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1852,6 +1891,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1864,6 +1904,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1882,6 +1923,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1894,6 +1936,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1912,6 +1955,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1924,6 +1968,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1942,6 +1987,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -1954,6 +2000,7 @@ exports[`Table test suite: default 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2106,6 +2153,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2118,6 +2166,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2136,6 +2185,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2148,6 +2198,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2166,6 +2217,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2178,6 +2230,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2196,6 +2249,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2208,6 +2262,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2226,6 +2281,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2238,6 +2294,7 @@ exports[`Table test suite: global action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2344,6 +2401,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2356,6 +2414,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2374,6 +2433,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2386,6 +2446,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2404,6 +2465,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2416,6 +2478,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2434,6 +2497,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2446,6 +2510,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2464,6 +2529,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2476,6 +2542,7 @@ exports[`Table test suite: global action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2685,6 +2752,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2697,6 +2765,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2715,6 +2784,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2727,6 +2797,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2745,6 +2816,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2757,6 +2829,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2775,6 +2848,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2787,6 +2861,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2805,6 +2880,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2817,6 +2893,7 @@ exports[`Table test suite: global action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2895,6 +2972,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2907,6 +2985,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2925,6 +3004,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2937,6 +3017,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2955,6 +3036,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2967,6 +3049,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2985,6 +3068,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -2997,6 +3081,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3015,6 +3100,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3027,6 +3113,7 @@ exports[`Table test suite: hide header 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3333,6 +3420,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3345,6 +3433,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3363,6 +3452,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3375,6 +3465,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3393,6 +3484,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3405,6 +3497,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3423,6 +3516,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3435,6 +3529,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3453,6 +3548,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3465,6 +3561,7 @@ exports[`Table test suite: icon action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3571,6 +3668,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3583,6 +3681,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -3599,6 +3698,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3611,6 +3711,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -3627,6 +3728,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3639,6 +3741,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -3655,6 +3758,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3667,6 +3771,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -3683,6 +3788,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3695,6 +3801,7 @@ exports[`Table test suite: immutable options 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           />
@@ -3732,7 +3839,7 @@ exports[`Table test suite: loading 1`] = `
         "top": 0,
         "userSelect": "none",
         "width": "100%",
-        "zIndex": 10,
+        "zIndex": 100,
       }
     }
   >
@@ -3844,6 +3951,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3856,6 +3964,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3874,6 +3983,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3886,6 +3996,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3904,6 +4015,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3916,6 +4028,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3934,6 +4047,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3946,6 +4060,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3964,6 +4079,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -3976,6 +4092,7 @@ exports[`Table test suite: loading 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4082,6 +4199,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4094,6 +4212,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4112,6 +4231,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4124,6 +4244,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4142,6 +4263,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4154,6 +4276,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4172,6 +4295,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4184,6 +4308,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4202,6 +4327,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4214,6 +4340,7 @@ exports[`Table test suite: pre-selection 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4320,6 +4447,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4332,6 +4460,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4350,6 +4479,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4362,6 +4492,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4380,6 +4511,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4392,6 +4524,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4410,6 +4543,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4422,6 +4556,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4440,6 +4575,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4452,6 +4588,7 @@ exports[`Table test suite: pre-sorting 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4571,6 +4708,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4583,6 +4721,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4638,6 +4777,11 @@ exports[`Table test suite: row action - disabled 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -4674,6 +4818,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4686,6 +4831,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4741,6 +4887,11 @@ exports[`Table test suite: row action - disabled 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -4777,6 +4928,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4789,6 +4941,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4844,6 +4997,11 @@ exports[`Table test suite: row action - disabled 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -4880,6 +5038,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4892,6 +5051,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4947,6 +5107,11 @@ exports[`Table test suite: row action - disabled 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -4983,6 +5148,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -4995,6 +5161,7 @@ exports[`Table test suite: row action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5050,6 +5217,11 @@ exports[`Table test suite: row action - disabled 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -5187,6 +5359,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5199,6 +5372,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5254,6 +5428,11 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -5293,6 +5472,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5305,6 +5485,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5360,6 +5541,11 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -5399,6 +5585,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5411,6 +5598,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5466,6 +5654,11 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={-1}
                     type="button"
                   >
@@ -5502,6 +5695,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5514,6 +5708,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5569,6 +5764,11 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -5608,6 +5808,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5620,6 +5821,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5675,6 +5877,11 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -5802,6 +6009,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5814,6 +6022,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5832,6 +6041,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5844,6 +6054,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5862,6 +6073,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5874,6 +6086,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5892,6 +6105,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5904,6 +6118,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5922,6 +6137,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -5934,6 +6150,7 @@ exports[`Table test suite: row action - hidden 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6052,12 +6269,7 @@ exports[`Table test suite: row action - primary 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
-                "padding": "0 8px",
-                "position": "sticky",
                 "width": "44px",
-                "zIndex": 1,
               }
             }
           >
@@ -6102,6 +6314,11 @@ exports[`Table test suite: row action - primary 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6135,6 +6352,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6147,6 +6365,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6163,12 +6382,7 @@ exports[`Table test suite: row action - primary 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
-                "padding": "0 8px",
-                "position": "sticky",
                 "width": "44px",
-                "zIndex": 1,
               }
             }
           >
@@ -6213,6 +6427,11 @@ exports[`Table test suite: row action - primary 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6246,6 +6465,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6258,6 +6478,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6274,12 +6495,7 @@ exports[`Table test suite: row action - primary 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
-                "padding": "0 8px",
-                "position": "sticky",
                 "width": "44px",
-                "zIndex": 1,
               }
             }
           >
@@ -6324,6 +6540,11 @@ exports[`Table test suite: row action - primary 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6357,6 +6578,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6369,6 +6591,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6385,12 +6608,7 @@ exports[`Table test suite: row action - primary 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
-                "padding": "0 8px",
-                "position": "sticky",
                 "width": "44px",
-                "zIndex": 1,
               }
             }
           >
@@ -6435,6 +6653,11 @@ exports[`Table test suite: row action - primary 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6468,6 +6691,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6480,6 +6704,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6496,12 +6721,7 @@ exports[`Table test suite: row action - primary 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
-                "padding": "0 8px",
-                "position": "sticky",
                 "width": "44px",
-                "zIndex": 1,
               }
             }
           >
@@ -6546,6 +6766,11 @@ exports[`Table test suite: row action - primary 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6579,6 +6804,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6591,6 +6817,7 @@ exports[`Table test suite: row action - primary 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6710,6 +6937,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6722,6 +6950,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6777,6 +7006,11 @@ exports[`Table test suite: row action 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6816,6 +7050,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6828,6 +7063,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6883,6 +7119,11 @@ exports[`Table test suite: row action 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -6922,6 +7163,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6934,6 +7176,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -6989,6 +7232,11 @@ exports[`Table test suite: row action 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -7028,6 +7276,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7040,6 +7289,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7095,6 +7345,11 @@ exports[`Table test suite: row action 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -7134,6 +7389,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7146,6 +7402,7 @@ exports[`Table test suite: row action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7201,6 +7458,11 @@ exports[`Table test suite: row action 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
+                    style={
+                      {
+                        "zIndex": 0,
+                      }
+                    }
                     tabIndex={0}
                     type="button"
                   >
@@ -7327,6 +7589,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7339,6 +7602,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7356,6 +7620,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7368,6 +7633,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7385,6 +7651,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7397,6 +7664,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7414,6 +7682,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7426,6 +7695,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7443,6 +7713,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7455,6 +7726,7 @@ exports[`Table test suite: row style 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7607,6 +7879,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7619,6 +7892,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7637,6 +7911,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7649,6 +7924,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7667,6 +7943,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7679,6 +7956,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7697,6 +7975,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7709,6 +7988,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7727,6 +8007,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7739,6 +8020,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7891,6 +8173,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7903,6 +8186,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7921,6 +8205,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7933,6 +8218,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7951,6 +8237,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7963,6 +8250,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7981,6 +8269,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -7993,6 +8282,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8011,6 +8301,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8023,6 +8314,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8178,6 +8470,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8190,6 +8483,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8208,6 +8502,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8220,6 +8515,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8238,6 +8534,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8250,6 +8547,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8268,6 +8566,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8280,6 +8579,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8298,6 +8598,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8310,6 +8611,7 @@ exports[`Table test suite: selection action 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8445,6 +8747,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8457,6 +8760,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8475,6 +8779,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8487,6 +8792,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8505,6 +8811,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8517,6 +8824,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8535,6 +8843,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8547,6 +8856,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8565,6 +8875,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8577,6 +8888,7 @@ exports[`Table test suite: sortable - column defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8741,6 +9053,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8753,6 +9066,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8771,6 +9085,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8783,6 +9098,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8801,6 +9117,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8813,6 +9130,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8831,6 +9149,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8843,6 +9162,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8861,6 +9181,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8873,6 +9194,7 @@ exports[`Table test suite: sortable - table defined 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8907,7 +9229,7 @@ exports[`Table test suite: sticky 1`] = `
         "justifyContent": "space-between",
         "position": "sticky",
         "top": 0,
-        "zIndex": 1,
+        "zIndex": 10,
       }
     }
   >
@@ -8987,6 +9309,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -8999,6 +9322,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9017,6 +9341,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9029,6 +9354,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9047,6 +9373,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9059,6 +9386,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9077,6 +9405,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9089,6 +9418,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9107,6 +9437,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >
@@ -9119,6 +9450,7 @@ exports[`Table test suite: sticky 1`] = `
             style={
               {
                 "width": undefined,
+                "zIndex": 0,
               }
             }
           >

@@ -1,6 +1,8 @@
 import React, { CSSProperties, FC, useMemo } from "react";
 import { CircularProgress as MUICircularProgress, useTheme } from "@material-ui/core";
 
+import { LOADER_Z_INDEX } from "../../utils";
+
 interface ITableLoader {}
 
 const TableLoader: FC<ITableLoader> = () => {
@@ -20,7 +22,7 @@ const TableLoader: FC<ITableLoader> = () => {
       top: 0,
       userSelect: "none",
       width: "100%",
-      zIndex: 10,
+      zIndex: LOADER_Z_INDEX,
     };
   }, [theme]);
 

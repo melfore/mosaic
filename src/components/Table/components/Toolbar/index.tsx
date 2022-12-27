@@ -3,6 +3,7 @@ import { Toolbar as MUIToolbar, useTheme } from "@material-ui/core";
 
 import { ITableAction, ITableDataCallbackOptions } from "../../../../types/Table";
 import Typography from "../../../Typography";
+import { HEADER_Z_INDEX } from "../../utils";
 import TableToolbarAction from "../ToolbarAction";
 
 interface ITableToolbar {
@@ -38,10 +39,19 @@ const TableToolbar: FC<ITableToolbar> = ({
     [selectedRows, selectedRowsIndexes]
   );
 
-  const positioning = useMemo(
-    (): CSSProperties => (!sticky ? { position: "inherit" } : { position: "sticky", top: 0, zIndex: 1 }),
-    [sticky]
-  );
+  const positioning = useMemo((): CSSProperties => {
+    if (!sticky) {
+      return {
+        position: "inherit",
+      };
+    }
+
+    return {
+      position: "sticky",
+      top: 0,
+      zIndex: HEADER_Z_INDEX,
+    };
+  }, [sticky]);
 
   const style = useMemo(
     (): CSSProperties => ({

@@ -128,9 +128,13 @@ export interface ITableHeadCell extends IBase {
    */
   sorting: ITableSorting;
   /**
-   * Enables sticky mode
+   * Sticky header enabled
    */
   stickyHeader: boolean;
+  /**
+   * Sticky mode enabled on selection checkbox
+   */
+  stickySelection: boolean;
 }
 
 export type ITableHeadFilterCell = IBase & Pick<ITableHeadCell, "column" | "dataCy">;
@@ -230,6 +234,10 @@ export type ITable = ILoadable &
      * Enables sticky mode
      */
     sticky?: boolean;
+    /**
+     * Flag to enable sticky mode on selection checkbox
+     */
+    stickySelection?: boolean;
     /**
      * Table layout (table.style.tableLayout)
      */

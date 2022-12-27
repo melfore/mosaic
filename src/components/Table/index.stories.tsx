@@ -10,6 +10,7 @@ import { getAllComposedDataCy } from "../../utils";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
+import { TABLE_MOCKED_COLUMNS, TABLE_MOCKED_COLUMNS_FULL, TABLE_MOCKED_DATA } from "./utils";
 import Table, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, TableWithProps } from ".";
 
 const COMPONENT_NAME = "Table";
@@ -43,22 +44,13 @@ const Template: ComponentStory<typeof TableWithProps> = (args) => <Table {...arg
 
 export const Primary = Template.bind({});
 Primary.args = {
-  columns: [
-    { label: "Name", path: "name" },
-    { label: "Age", path: "age" },
-  ],
+  columns: TABLE_MOCKED_COLUMNS,
   onPageChange: () => {},
   onPageSizeChange: () => {},
   onRowClick: (data, options) => console.log("=> onRowClick", { options }),
   onSelectionChange: (data, options) => console.log("=> onSelectionChange", { options }),
   onSortChange: () => {},
-  rows: [
-    { name: "John", age: 35 },
-    { name: "Nick", age: 45 },
-    { name: "Emma", age: 32 },
-    { name: "Joey", age: 29 },
-    { name: "Luis", age: 78 },
-  ],
+  rows: TABLE_MOCKED_DATA,
   title: "Table",
 };
 
@@ -208,8 +200,8 @@ StyledRow.args = {
   },
 };
 
-export const TableLayout = Template.bind({});
-TableLayout.args = {
+export const TableLayoutAuto = Template.bind({});
+TableLayoutAuto.args = {
   ...Primary.args,
   actions: [
     {
@@ -230,94 +222,17 @@ TableLayout.args = {
       position: "primary",
     },
   ],
-  columns: [
-    { label: "Name", path: "name" },
-    { label: "Last Name", path: "lastName" },
-    { label: "Age", path: "age" },
-    { label: "Email", path: "email" },
-    { label: "City", path: "city" },
-    { label: "Address", path: "address" },
-    { label: "Department", path: "department" },
-    { label: "School", path: "school" },
-    { label: "Avatar", path: "avatar" },
-  ],
-  rows: [
-    {
-      id: 1,
-      name: "Devin",
-      lastName: "Yukhnin",
-      email: "dyukhnin0@t.co",
-      age: 29,
-      city: "Tutem",
-      address: "1424 Ridge Oak Drive",
-      department: "Research and Development",
-      school: "Aichi Gakusen University",
-      avatar: "http://dummyimage.com/199x100.png/ff4444/ffffff",
-    },
-    {
-      id: 2,
-      name: "Kale",
-      lastName: "Domican",
-      email: "kdomican1@archive.org",
-      age: 44,
-      city: "Culacling",
-      address: "378 Loftsgordon Drive",
-      department: "Services",
-      school: "Medical Academy in Lodz",
-      avatar: "http://dummyimage.com/212x100.png/dddddd/000000",
-    },
-    {
-      id: 3,
-      name: "Harcourt",
-      lastName: "Hackleton",
-      email: "hhackleton2@mozilla.com",
-      age: 19,
-      city: "Klirou",
-      address: "385 Prairie Rose Junction",
-      department: "Support",
-      school: "Universidad Autónoma de Fresnillo",
-      avatar: "http://dummyimage.com/235x100.png/ff4444/ffffff",
-    },
-    {
-      id: 4,
-      name: "Keri",
-      lastName: "Robard",
-      email: "krobard3@unblog.fr",
-      age: 21,
-      city: "Van Nuys",
-      address: "883 Straubel Way",
-      department: "Business Development",
-      school: "Fachhochschule Hamburg",
-      avatar: "http://dummyimage.com/229x100.png/cc0000/ffffff",
-    },
-    {
-      id: 5,
-      name: "Trueman",
-      lastName: "Jedrys",
-      email: "tjedrys4@eventbrite.com",
-      age: 36,
-      city: "Sumberagung",
-      address: "72 Independence Street",
-      department: "Business Development",
-      school: "Illinois School of Professional Psychology - Meadows Campus",
-      avatar: "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
-    },
-    {
-      id: 6,
-      name: "Nevsa",
-      lastName: "Gelderd",
-      email: "ngelderd5@wisc.edu",
-      age: 22,
-      city: "Qandala",
-      address: "2 Lakewood Gardens Trail",
-      department: "Accounting",
-      school: "Universiti Malaysia Sabah",
-      avatar: "http://dummyimage.com/136x100.png/5fa2dd/ffffff",
-    },
-  ],
+  columns: TABLE_MOCKED_COLUMNS_FULL,
+  rows: TABLE_MOCKED_DATA,
   rowsTotal: 6,
   tableLayout: "auto",
   title: "Try to scroll horizontally",
+};
+
+export const TableLayoutAutoSelectionSticky = Template.bind({});
+TableLayoutAutoSelectionSticky.args = {
+  ...TableLayoutAuto.args,
+  stickySelection: true,
 };
 
 export const TableLayoutSticky = Template.bind({});
@@ -332,91 +247,8 @@ TableLayoutSticky.args = {
       label: "Add",
     },
   ],
-  columns: [
-    { label: "Name", path: "name" },
-    { label: "Last Name", path: "lastName" },
-    { label: "Age", path: "age" },
-    { label: "Email", path: "email" },
-    { label: "City", path: "city" },
-    { label: "Address", path: "address" },
-    { label: "Department", path: "department" },
-    { label: "School", path: "school" },
-    { label: "Avatar", path: "avatar" },
-  ],
-  rows: [
-    {
-      id: 1,
-      name: "Devin",
-      lastName: "Yukhnin",
-      email: "dyukhnin0@t.co",
-      age: 29,
-      city: "Tutem",
-      address: "1424 Ridge Oak Drive",
-      department: "Research and Development",
-      school: "Aichi Gakusen University",
-      avatar: "http://dummyimage.com/199x100.png/ff4444/ffffff",
-    },
-    {
-      id: 2,
-      name: "Kale",
-      lastName: "Domican",
-      email: "kdomican1@archive.org",
-      age: 44,
-      city: "Culacling",
-      address: "378 Loftsgordon Drive",
-      department: "Services",
-      school: "Medical Academy in Lodz",
-      avatar: "http://dummyimage.com/212x100.png/dddddd/000000",
-    },
-    {
-      id: 3,
-      name: "Harcourt",
-      lastName: "Hackleton",
-      email: "hhackleton2@mozilla.com",
-      age: 19,
-      city: "Klirou",
-      address: "385 Prairie Rose Junction",
-      department: "Support",
-      school: "Universidad Autónoma de Fresnillo",
-      avatar: "http://dummyimage.com/235x100.png/ff4444/ffffff",
-    },
-    {
-      id: 4,
-      name: "Keri",
-      lastName: "Robard",
-      email: "krobard3@unblog.fr",
-      age: 21,
-      city: "Van Nuys",
-      address: "883 Straubel Way",
-      department: "Business Development",
-      school: "Fachhochschule Hamburg",
-      avatar: "http://dummyimage.com/229x100.png/cc0000/ffffff",
-    },
-    {
-      id: 5,
-      name: "Trueman",
-      lastName: "Jedrys",
-      email: "tjedrys4@eventbrite.com",
-      age: 36,
-      city: "Sumberagung",
-      address: "72 Independence Street",
-      department: "Business Development",
-      school: "Illinois School of Professional Psychology - Meadows Campus",
-      avatar: "http://dummyimage.com/249x100.png/5fa2dd/ffffff",
-    },
-    {
-      id: 6,
-      name: "Nevsa",
-      lastName: "Gelderd",
-      email: "ngelderd5@wisc.edu",
-      age: 22,
-      city: "Qandala",
-      address: "2 Lakewood Gardens Trail",
-      department: "Accounting",
-      school: "Universiti Malaysia Sabah",
-      avatar: "http://dummyimage.com/136x100.png/5fa2dd/ffffff",
-    },
-  ],
+  columns: TABLE_MOCKED_COLUMNS_FULL,
+  rows: TABLE_MOCKED_DATA,
   rowsTotal: 6,
   tableLayout: "auto",
   title: "Try to scroll both ways",
@@ -440,4 +272,50 @@ ColumnFiltersSticky.args = {
   ...ColumnFilters.args,
   sticky: true,
   title: "Column Filters (sticky)",
+};
+
+export const ColumnFiltersStickyWithActions = Template.bind({});
+ColumnFiltersStickyWithActions.args = {
+  ...ColumnFiltersSticky.args,
+  actions: [
+    {
+      callback: (data, options) => console.log("=> Add", { options }),
+      icon: Icons.add,
+      label: "Add",
+    },
+    {
+      callback: (data, options) => console.log("=> Close", { options }),
+      icon: Icons.close,
+      label: "Close",
+      position: "icon",
+    },
+    {
+      callback: (data, options) => console.log("=> Custom", { options }),
+      icon: <MUIStyleIcon />,
+      label: "Custom",
+      position: "row",
+    },
+    {
+      callback: (data, options) => console.log("=> Edit", { options }),
+      icon: Icons.edit,
+      label: "Edit",
+      position: "primary",
+    },
+    {
+      callback: (data, options) => console.log("=> Delete at least 3", { options }),
+      disabled: (data: any[]) => data.length < 3,
+      icon: Icons.delete,
+      label: "Delete at least 3",
+      position: "selection",
+    },
+  ],
+  columns: TableLayoutSticky.args.columns,
+  rows: TableLayoutSticky.args.rows,
+  tableLayout: "auto",
+};
+
+export const ColumnFiltersStickyWithActionsStickySelection = Template.bind({});
+ColumnFiltersStickyWithActionsStickySelection.args = {
+  ...ColumnFiltersStickyWithActions.args,
+  stickySelection: true,
 };

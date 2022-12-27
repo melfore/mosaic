@@ -25,6 +25,7 @@ const TableActionsCell: FC<ITableActionsCell> = ({
   data,
   dataCallbackOptions,
   dataCy,
+  position,
   style: rowStyle,
 }) => {
   const { padding: columnPadding, width } = column;
@@ -42,14 +43,15 @@ const TableActionsCell: FC<ITableActionsCell> = ({
     [rowStyle, width]
   );
 
-  const wrapperStyle = useMemo(
-    (): CSSProperties => ({
+  const wrapperStyle = useMemo((): CSSProperties => {
+    const justifyContent = position === "primary" ? "center" : "flex-end";
+
+    return {
       alignItems: "center",
       display: "flex",
-      justifyContent: "flex-end",
-    }),
-    []
-  );
+      justifyContent,
+    };
+  }, [position]);
 
   return (
     <MUITableCell padding={padding} style={style}>

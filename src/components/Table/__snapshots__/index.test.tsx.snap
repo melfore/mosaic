@@ -153,7 +153,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -245,7 +245,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -337,7 +337,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -429,7 +429,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -521,7 +521,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -765,7 +765,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -860,7 +860,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -955,7 +955,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -1050,7 +1050,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -1145,7 +1145,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-2u8re1-MuiTableCell-root"
             style={
               {
-                "padding": "0 8pxpx",
+                "padding": "0 8px",
                 "width": "36px",
               }
             }
@@ -6174,7 +6174,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 {
                   "alignItems": "center",
                   "display": "flex",
-                  "justifyContent": "flex-end",
+                  "justifyContent": "center",
                 }
               }
             >
@@ -6285,7 +6285,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 {
                   "alignItems": "center",
                   "display": "flex",
-                  "justifyContent": "flex-end",
+                  "justifyContent": "center",
                 }
               }
             >
@@ -6396,7 +6396,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 {
                   "alignItems": "center",
                   "display": "flex",
-                  "justifyContent": "flex-end",
+                  "justifyContent": "center",
                 }
               }
             >
@@ -6507,7 +6507,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 {
                   "alignItems": "center",
                   "display": "flex",
-                  "justifyContent": "flex-end",
+                  "justifyContent": "center",
                 }
               }
             >
@@ -6618,7 +6618,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 {
                   "alignItems": "center",
                   "display": "flex",
-                  "justifyContent": "flex-end",
+                  "justifyContent": "center",
                 }
               }
             >

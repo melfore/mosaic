@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TableCell as MUITableCell, useTheme } from "@mui/material";
+import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import {
@@ -25,11 +25,8 @@ const TableActionsCell: FC<ITableActionsCell> = ({
   data,
   dataCallbackOptions,
   dataCy,
-  position,
   style: rowStyle,
 }) => {
-  const theme = useTheme();
-
   const { padding: columnPadding, width } = column;
 
   const padding = useMemo(
@@ -37,26 +34,13 @@ const TableActionsCell: FC<ITableActionsCell> = ({
     [columnPadding]
   );
 
-  const style = useMemo((): CSSProperties => {
-    if (position === "row") {
-      return {
-        ...rowStyle,
-        width,
-      };
-    }
-
-    const backgroundColor = rowStyle?.backgroundColor || theme.palette.background.paper;
-
-    return {
+  const style = useMemo(
+    (): CSSProperties => ({
       ...rowStyle,
-      backgroundColor,
-      left: 0,
-      padding: `0 ${theme.spacing(1)}px`,
-      position: "sticky",
       width,
-      zIndex: 1,
-    };
-  }, [position, rowStyle, theme, width]);
+    }),
+    [rowStyle, width]
+  );
 
   const wrapperStyle = useMemo(
     (): CSSProperties => ({

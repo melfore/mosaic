@@ -30,7 +30,7 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
     if (!sticky) {
       return {
         ...rowStyle,
-        padding: `0 ${theme.spacing(1)}px`,
+        padding: `0 ${theme.spacing(1)}`,
         width,
       };
     }
@@ -41,7 +41,7 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
       ...rowStyle,
       backgroundColor,
       left: 0,
-      padding: `0 ${theme.spacing(1)}px`,
+      padding: `0 ${theme.spacing(1)}`,
       position: "sticky",
       width,
       zIndex: SELECTION_Z_INDEX,

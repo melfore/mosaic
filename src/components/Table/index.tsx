@@ -83,7 +83,7 @@ const Table: FC<ITable> = ({
   rows: externalRows = [],
   rowsTotal = 0,
   selectionFilter,
-  selectionSticky = false,
+  stickySelection = false,
   showFilters,
   sorting: externalSorting = { path: null, ordering: null },
   sticky = false,
@@ -355,6 +355,8 @@ const Table: FC<ITable> = ({
     [columns, showFilters]
   );
 
+  const stickyHeader = useMemo(() => !hideHeader && sticky, [hideHeader, sticky]);
+
   return (
     <MUITableContainer component={MUIPaper} data-cy={dataCy} style={wrapperStyle}>
       {loading && <TableLoader />}
@@ -371,7 +373,7 @@ const Table: FC<ITable> = ({
       )}
       <div style={scrollContainerStyle} data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.scrollContainer)}>
         <MUITable size="small" stickyHeader={sticky} style={{ tableLayout }}>
-          <TableHead columns={columns} showFilters={showHeaderFilters} sticky={!hideHeader && sticky}>
+          <TableHead columns={columns} showFilters={showHeaderFilters} sticky={stickyHeader}>
             <MUITableRow>
               {columns.map((column, index) => (
                 <TableHeadCell
@@ -381,7 +383,8 @@ const Table: FC<ITable> = ({
                   onSort={onSortWrapper}
                   sortable={!!onSortChange}
                   sorting={sorting}
-                  stickyHeader={false}
+                  stickyHeader={stickyHeader}
+                  stickySelection={stickySelection}
                 />
               ))}
             </MUITableRow>
@@ -403,6 +406,19 @@ const Table: FC<ITable> = ({
                       const { path } = column;
                       const key = `column-${path || columnIndex}`;
 
+                      if (path === COLUMN_CHECKBOX_PATH) {
+                        return (
+                          <TableSelectionCell
+                            key={key}
+                            column={column}
+                            onSelection={onRowSelection}
+                            selected={rowSelected}
+                            sticky={stickySelection}
+                            style={style}
+                          />
+                        );
+                      }
+
                       if (path === COLUMN_PRIMARY_ACTIONS_PATH) {
                         return (
                           <TableActionsCell
@@ -413,19 +429,6 @@ const Table: FC<ITable> = ({
                             dataCallbackOptions={rowCallbackOptions}
                             dataCy={dataCy}
                             position="primary"
-                            style={style}
-                          />
-                        );
-                      }
-
-                      if (path === COLUMN_CHECKBOX_PATH) {
-                        return (
-                          <TableSelectionCell
-                            key={key}
-                            column={column}
-                            onSelection={onRowSelection}
-                            selected={rowSelected}
-                            sticky={selectionSticky}
                             style={style}
                           />
                         );

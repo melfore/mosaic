@@ -1,16 +1,9 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
 import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@material-ui/core";
 
-import { useMosaicContext } from "../../../../hooks/useMosaicContext";
 import { ITableHeadCell } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
-import {
-  COLUMN_CHECKBOX_PATH,
-  COLUMN_PRIMARY_ACTIONS_PATH,
-  // HEADER_Z_INDEX,
-  TOOLBAR_HEIGHT,
-  TOOLBAR_HEIGHT_MOBILE,
-} from "../../utils";
+import { COLUMN_CHECKBOX_PATH, COLUMN_PRIMARY_ACTIONS_PATH, HEADER_Z_INDEX } from "../../utils";
 
 const TableHeadCell: FC<ITableHeadCell> = ({
   column,
@@ -19,30 +12,19 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   sortable: tableSortable,
   sorting,
   stickyHeader,
+  stickySelection,
 }) => {
   const { label, path, padding, render, sortable: columnSortable, width } = column;
 
-  const {
-    view: { mobile },
-  } = useMosaicContext();
   const theme = useTheme();
 
   const cellPadding = useMemo(() => padding || "normal", [padding]);
-
-  const toolbarHeight = useMemo(() => (mobile ? TOOLBAR_HEIGHT_MOBILE : TOOLBAR_HEIGHT), [mobile]);
 
   const cellStyle = useMemo(() => {
     let style: CSSProperties | undefined;
     if (path === COLUMN_CHECKBOX_PATH || path === COLUMN_PRIMARY_ACTIONS_PATH) {
       style = {
         padding: `0 ${theme.spacing(1)}px`,
-      };
-    }
-
-    if (stickyHeader) {
-      style = {
-        ...style,
-        top: `${toolbarHeight}px`,
       };
     }
 
@@ -54,7 +36,24 @@ const TableHeadCell: FC<ITableHeadCell> = ({
     }
 
     return style;
-  }, [path, stickyHeader, theme, toolbarHeight, width]);
+  }, [path, theme, width]);
+
+  const cellCheckboxStyle = useMemo((): CSSProperties => {
+    if (!stickySelection) {
+      return { ...cellStyle };
+    }
+
+    const backgroundColor = theme.palette.background[stickyHeader ? "default" : "paper"];
+
+    return {
+      ...cellStyle,
+      backgroundColor,
+      left: 0,
+      position: "sticky",
+      top: 0,
+      zIndex: HEADER_Z_INDEX + 1,
+    };
+  }, [cellStyle, stickyHeader, stickySelection, theme]);
 
   const onSortWrapper = useCallback(
     (event: any) => {
@@ -93,20 +92,8 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   const sortDirection = useMemo(() => (path === sorting.path ? sorting.ordering || undefined : "asc"), [path, sorting]);
 
   if (path === COLUMN_CHECKBOX_PATH) {
-    let checkboxStyle = { ...cellStyle };
-    // if (selectionSticky) {
-    //   checkboxStyle = {
-    //     ...checkboxStyle,
-    //     left: 0,
-    //     padding: `0 ${theme.spacing(1)}px`,
-    //     position: "sticky",
-    //     width,
-    //     zIndex: HEADER_Z_INDEX,
-    //   };
-    // }
-
     return (
-      <MUITableCell padding={cellPadding} style={checkboxStyle} variant="head">
+      <MUITableCell padding={cellPadding} style={cellCheckboxStyle} variant="head">
         {!render ? null : render({}, { indexes: [], multiple: false })}
       </MUITableCell>
     );

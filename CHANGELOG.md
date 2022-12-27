@@ -1,3 +1,19 @@
+# [7.6.0](https://github.com/melfore/mosaic/compare/v7.5.1...v7.6.0) (2022-12-27)
+
+
+### Bug Fixes
+
+* 🐛 [Table] Adjusted z-index for all table sub components ([ed030b0](https://github.com/melfore/mosaic/commit/ed030b0148d344dda979d4a07096892678bbae95))
+* 🐛 [Table] Fixed order of checkbox and primary columns ([68f9d20](https://github.com/melfore/mosaic/commit/68f9d20498e520ca661436dde83b1075093f01de))
+* 🐛 [Table] Primary actions shown as row actions, no sticky ([254213d](https://github.com/melfore/mosaic/commit/254213dec50de73f4dfa9f48a85edcf77fea2f2c))
+
+
+### Features
+
+* 🎸 [Table] Added selectionSticky property ([661afb8](https://github.com/melfore/mosaic/commit/661afb8c4ddf9855eb73ad2dd05874476ec4b1eb))
+
+## [7.5.1](https://github.com/melfore/mosaic/compare/v7.5.0...v7.5.1) (2022-12-05)
+
 # [7.6.0-beta.1](https://github.com/melfore/mosaic/compare/v7.5.0...v7.6.0-beta.1) (2022-12-05)
 
 

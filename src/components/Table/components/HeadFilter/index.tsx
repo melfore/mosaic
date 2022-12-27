@@ -18,7 +18,7 @@ const TableHeadFilterCell: FC<ITableHeadFilterCell> = ({ column, dataCy }) => {
     let style: CSSProperties | undefined;
     if (path === COLUMN_CHECKBOX_PATH || path === COLUMN_PRIMARY_ACTIONS_PATH) {
       style = {
-        padding: `0 ${theme.spacing(1)}px`,
+        padding: `0 ${theme.spacing(1)}`,
       };
     }
 

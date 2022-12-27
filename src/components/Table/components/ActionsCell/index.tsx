@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TableCell as MUITableCell, useTheme } from "@mui/material";
+import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import {
@@ -28,8 +28,6 @@ const TableActionsCell: FC<ITableActionsCell> = ({
   position,
   style: rowStyle,
 }) => {
-  const theme = useTheme();
-
   const { padding: columnPadding, width } = column;
 
   const padding = useMemo(
@@ -37,35 +35,23 @@ const TableActionsCell: FC<ITableActionsCell> = ({
     [columnPadding]
   );
 
-  const style = useMemo((): CSSProperties => {
-    if (position === "row") {
-      return {
-        ...rowStyle,
-        width,
-      };
-    }
+  const style = useMemo(
+    (): CSSProperties => ({
+      ...rowStyle,
+      width,
+    }),
+    [rowStyle, width]
+  );
 
-    const backgroundColor = rowStyle?.backgroundColor || theme.palette.background.paper;
+  const wrapperStyle = useMemo((): CSSProperties => {
+    const justifyContent = position === "primary" ? "center" : "flex-end";
 
     return {
-      ...rowStyle,
-      backgroundColor,
-      left: 0,
-      padding: `0 ${theme.spacing(1)}px`,
-      position: "sticky",
-      width,
-      zIndex: 1,
-    };
-  }, [position, rowStyle, theme, width]);
-
-  const wrapperStyle = useMemo(
-    (): CSSProperties => ({
       alignItems: "center",
       display: "flex",
-      justifyContent: "flex-end",
-    }),
-    []
-  );
+      justifyContent,
+    };
+  }, [position]);
 
   return (
     <MUITableCell padding={padding} style={style}>

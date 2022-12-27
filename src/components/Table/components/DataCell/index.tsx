@@ -4,6 +4,7 @@ import { TableCell as MUITableCell } from "@mui/material";
 import { IBase } from "../../../../types/Base";
 import { ITableColumn, ITableDataCallback, ITableDataCallbackOptions } from "../../../../types/Table";
 import { getObjectProperty, suppressEvent } from "../../../../utils";
+import { DEFAULT_Z_INDEX } from "../../utils";
 
 interface ITableDataCell extends IBase {
   column: ITableColumn;
@@ -31,6 +32,7 @@ const TableDataCell: FC<ITableDataCell> = ({ column, data, dataCallbackOptions, 
   const style = useMemo(
     (): CSSProperties => ({
       width,
+      zIndex: DEFAULT_Z_INDEX,
     }),
     [width]
   );

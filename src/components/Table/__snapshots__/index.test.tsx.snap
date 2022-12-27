@@ -159,12 +159,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -261,12 +257,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -363,12 +355,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -465,12 +453,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -567,12 +551,8 @@ exports[`Table test suite: bulk selection - select all 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -827,12 +807,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -932,12 +908,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -1037,12 +1009,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -1142,12 +1110,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >
@@ -1247,12 +1211,8 @@ exports[`Table test suite: bulk selection - select none 1`] = `
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall"
             style={
               {
-                "backgroundColor": "#fff",
-                "left": 0,
                 "padding": "0 8px",
-                "position": "sticky",
                 "width": "36px",
-                "zIndex": 1,
               }
             }
           >

@@ -10,20 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           persist-credentials: false
-          ref: master
+          token: ${{ secrets.PA_TOKEN }}
 
       - name: Install NodeJS
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v3
         with:
           node-version: lts/gallium
 
       - name: Cache Dependencies
         id: cache-dependencies
-        uses: actions/cache@main
+        uses: actions/cache@v3
         env:
           cache-name: mosaic-dependencies
         with:

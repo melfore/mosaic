@@ -5,7 +5,7 @@
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melfore/mosaic.git"
+    "url": "https://github.com/melfore/mosaic.git"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

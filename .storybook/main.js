@@ -3,9 +3,9 @@ module.exports = {
   addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-mdx-gfm"],
   framework: {
     name: "@storybook/react-webpack5",
-    options: {}
+    options: {},
   },
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
 };

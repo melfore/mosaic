@@ -93,6 +93,8 @@
     "clean:workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",
     "pre:build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
+    "pre:commit": "npm run clean:code && npm run build:test",
+    "pre:push": "npm run build && CI=true npm run test:coverage",
     "pre:test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prepare": "husky install",
     "start": "npm run pre:test && storybook dev -p 9009",

@@ -94,10 +94,9 @@
     "build:test": "npm run pre:test && tsc",
     "build:yalc": "npm run build && yalc publish --push --private",
     "clean:code": "eslint '**/*.ts*' --fix && prettier --write .",
+    "clean:packages": "rm -rf package-lock.json",
     "clean:workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",
-    "packages:clean": "rm -rf package-lock.json",
-    "packages:update": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",
     "pre:build": "rm -rf ./dist && cp -f ./.typescript/tsconfig.build.json ./tsconfig.json",
     "pre:commit": "npm run clean:code && npm run build:test",
     "pre:push": "npm run build && CI=true npm run test:coverage",
@@ -107,7 +106,8 @@
     "test": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.js --watch",
     "test:coverage": "npm run pre:test && jest --clearCache && jest --c './.jest/config.js' --coverage",
     "upload": "npm run build && npm publish --access public",
-    "update:with:beta": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta"
+    "update:packages": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",
+    "update:repo:from:beta": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta"
   },
   "browserslist": {
     "production": [

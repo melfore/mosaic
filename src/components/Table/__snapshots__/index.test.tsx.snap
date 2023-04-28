@@ -3104,7 +3104,7 @@ exports[`Table test suite: icon action 1`] = `
           onTouchStart={[Function]}
         >
           <span
-            className="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            className="MuiBadge-root css-1c32n2y-MuiBadge-root"
             data-cy="table-action-Account-adornment-badge"
           >
             <button
@@ -3149,7 +3149,7 @@ exports[`Table test suite: icon action 1`] = `
               />
             </button>
             <span
-              className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular MuiBadge-badge css-144dnr3-MuiBadge-badge"
+              className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular css-144dnr3-MuiBadge-badge"
             >
               !
             </span>

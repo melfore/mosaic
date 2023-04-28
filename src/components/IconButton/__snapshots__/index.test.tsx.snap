@@ -18,7 +18,7 @@ exports[`IconButton test suite: adornment - badge & tooltip 1`] = `
     onTouchStart={[Function]}
   >
     <span
-      className="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+      className="MuiBadge-root css-1c32n2y-MuiBadge-root"
       data-cy="icon-button-adornment-badge"
     >
       <button
@@ -58,7 +58,7 @@ exports[`IconButton test suite: adornment - badge & tooltip 1`] = `
         />
       </button>
       <span
-        className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular MuiBadge-badge css-144dnr3-MuiBadge-badge"
+        className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular css-144dnr3-MuiBadge-badge"
       >
         3
       </span>
@@ -72,7 +72,7 @@ exports[`IconButton test suite: adornment - badge 1`] = `
   data-cy="icon-button-adornment"
 >
   <span
-    className="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+    className="MuiBadge-root css-1c32n2y-MuiBadge-root"
     data-cy="icon-button-adornment-badge"
   >
     <button
@@ -109,7 +109,7 @@ exports[`IconButton test suite: adornment - badge 1`] = `
       </svg>
     </button>
     <span
-      className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular MuiBadge-badge css-144dnr3-MuiBadge-badge"
+      className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular css-144dnr3-MuiBadge-badge"
     >
       3
     </span>

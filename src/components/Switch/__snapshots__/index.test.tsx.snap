@@ -480,7 +480,7 @@ exports[`Switch test suite: onChange 1`] = `
 
 exports[`Switch test suite: required 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-required css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="switch"
 >
   <span
@@ -519,6 +519,13 @@ exports[`Switch test suite: required 1`] = `
     <span
       className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
     />
+  </span>
+  <span
+    aria-hidden={true}
+    className="MuiFormControlLabel-asterisk css-1x2jons-MuiFormControlLabel-asterisk"
+  >
+     
+    *
   </span>
 </label>
 `;

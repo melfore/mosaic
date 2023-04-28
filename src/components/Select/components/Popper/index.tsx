@@ -30,8 +30,8 @@ const SelectPopper: FC<ISelectPopper> = ({ forwarded, popperWidth }) => {
       style={style}
       // React 17.x vs React 18.x mismatch
       // See: https://github.com/mui/material-ui/issues/35287
-      onResize={undefined}
-      onResizeCapture={undefined}
+      // onResize={undefined}
+      // onResizeCapture={undefined}
     />
   );
 };

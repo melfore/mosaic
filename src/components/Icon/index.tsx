@@ -1,6 +1,5 @@
-import React, { cloneElement, FC, ReactElement, useMemo } from "react";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, useMemo } from "react";
 import { Skeleton as MUISkeleton } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
 
 import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
@@ -16,21 +15,21 @@ const ICON_DIMENSIONS: IIconDimensions = {
   large: 35,
 };
 
-const useAnimations = makeStyles({
-  "@keyframes rotate": {
-    from: {
-      transform: "rotate(0deg)",
-    },
-    to: {
-      transform: "rotate(360deg)",
-    },
-  },
-  rotate: {
-    animation: "$rotate 2s linear infinite",
-  },
-});
+// const useAnimations = makeStyles({
+//   "@keyframes rotate": {
+//     from: {
+//       transform: "rotate(0deg)",
+//     },
+//     to: {
+//       transform: "rotate(360deg)",
+//     },
+//   },
+//   rotate: {
+//     animation: "$rotate 2s linear infinite",
+//   },
+// });
 
-const Icon: FC<IIcon> = ({
+const Icon: FC<PropsWithChildren<IIcon>> = ({
   badge,
   children,
   dataCy = DATA_CY_DEFAULT,
@@ -42,7 +41,10 @@ const Icon: FC<IIcon> = ({
   style: externalStyle,
   tooltip,
 }) => {
-  const { rotate: rotateAnimation } = useAnimations();
+  // const { rotate: rotateAnimation } = useAnimations();
+
+  // TODO#lb: fix this restoring animation
+  const rotateAnimation = "makeStyles-rotate-2";
 
   const dimensions = useMemo(() => {
     const dimension = ICON_DIMENSIONS[size];

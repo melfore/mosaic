@@ -3,7 +3,7 @@
 exports[`IconWrapper test suite: dataCy 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="custom"
   data-testid="AccountCircleIcon"
   focusable="false"
@@ -18,7 +18,7 @@ exports[`IconWrapper test suite: dataCy 1`] = `
 exports[`IconWrapper test suite: default 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="icon-wrapper"
   data-testid="AccountCircleIcon"
   focusable="false"
@@ -33,7 +33,7 @@ exports[`IconWrapper test suite: default 1`] = `
 exports[`IconWrapper test suite: icon - custom element 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="icon-wrapper"
   data-testid="StyleIcon"
   focusable="false"

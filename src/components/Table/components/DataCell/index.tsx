@@ -17,7 +17,8 @@ const TableDataCell: FC<ITableDataCell> = ({ column, data, dataCallbackOptions, 
   const { padding: columnPadding, path, render, width } = column;
 
   const onClick = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       suppressEvent(event);
       externalOnClick && externalOnClick(data, dataCallbackOptions);
     },

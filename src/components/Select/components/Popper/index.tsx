@@ -23,17 +23,7 @@ const SelectPopper: FC<ISelectPopper> = ({ forwarded, popperWidth }) => {
     [width]
   );
 
-  return (
-    <MUIPopper
-      {...forwarded}
-      placement="bottom-start"
-      style={style}
-      // React 17.x vs React 18.x mismatch
-      // See: https://github.com/mui/material-ui/issues/35287
-      onResize={undefined}
-      onResizeCapture={undefined}
-    />
-  );
+  return <MUIPopper {...forwarded} placement="bottom-start" style={style} />;
 };
 
 export default SelectPopper;

@@ -18,7 +18,7 @@ exports[`ListItemCollapsible test suite: dataCy 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="custom-header-icon"
         data-testid="KeyboardArrowDownIcon"
         focusable="false"
@@ -76,7 +76,7 @@ exports[`ListItemCollapsible test suite: default 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         data-testid="KeyboardArrowDownIcon"
         focusable="false"
@@ -195,7 +195,7 @@ exports[`ListItemCollapsible test suite: open 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         data-testid="KeyboardArrowUpIcon"
         focusable="false"
@@ -253,7 +253,7 @@ exports[`ListItemCollapsible test suite: open 2`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         data-testid="KeyboardArrowUpIcon"
         focusable="false"
@@ -311,7 +311,7 @@ exports[`ListItemCollapsible test suite: open variants 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
         data-testid="KeyboardArrowUpIcon"
         focusable="false"

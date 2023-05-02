@@ -2010,7 +2010,7 @@ exports[`Table test suite: global action - disabled 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Account-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -2550,7 +2550,7 @@ exports[`Table test suite: global action 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Account-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -2596,7 +2596,7 @@ exports[`Table test suite: global action 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Custom Icon-icon"
             data-testid="StyleIcon"
             focusable="false"
@@ -3104,7 +3104,7 @@ exports[`Table test suite: icon action 1`] = `
           onTouchStart={[Function]}
         >
           <span
-            className="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            className="MuiBadge-root css-1c32n2y-MuiBadge-root"
             data-cy="table-action-Account-adornment-badge"
           >
             <button
@@ -3134,7 +3134,7 @@ exports[`Table test suite: icon action 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
                 data-cy="table-action-Account-icon"
                 data-testid="AccountCircleIcon"
                 focusable="false"
@@ -3149,7 +3149,7 @@ exports[`Table test suite: icon action 1`] = `
               />
             </button>
             <span
-              className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular MuiBadge-badge css-144dnr3-MuiBadge-badge"
+              className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular css-144dnr3-MuiBadge-badge"
             >
               !
             </span>
@@ -3199,7 +3199,7 @@ exports[`Table test suite: icon action 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
               data-cy="table-action-No Icon-icon"
               data-testid="SettingsIcon"
               focusable="false"
@@ -3258,7 +3258,7 @@ exports[`Table test suite: icon action 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
               data-cy="table-action-Custom Icon-icon"
               data-testid="StyleIcon"
               focusable="false"
@@ -4603,9 +4603,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody
@@ -4704,7 +4702,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -4812,7 +4810,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -4920,7 +4918,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5028,7 +5026,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5136,7 +5134,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5244,9 +5242,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody
@@ -5345,7 +5341,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5456,7 +5452,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5567,7 +5563,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5675,7 +5671,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -5786,7 +5782,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6130,9 +6126,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 "width": "44px",
               }
             }
-          >
-            
-          </th>
+          />
           <th
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall css-1howxi1-MuiTableCell-root"
@@ -6221,7 +6215,7 @@ exports[`Table test suite: row action - primary 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6332,7 +6326,7 @@ exports[`Table test suite: row action - primary 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6443,7 +6437,7 @@ exports[`Table test suite: row action - primary 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6554,7 +6548,7 @@ exports[`Table test suite: row action - primary 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6665,7 +6659,7 @@ exports[`Table test suite: row action - primary 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -6802,9 +6796,7 @@ exports[`Table test suite: row action 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody
@@ -6903,7 +6895,7 @@ exports[`Table test suite: row action 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -7014,7 +7006,7 @@ exports[`Table test suite: row action 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -7125,7 +7117,7 @@ exports[`Table test suite: row action 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -7236,7 +7228,7 @@ exports[`Table test suite: row action 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -7347,7 +7339,7 @@ exports[`Table test suite: row action 1`] = `
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
                       data-cy="table-action-Account-icon"
                       data-testid="AccountCircleIcon"
                       focusable="false"
@@ -7684,7 +7676,7 @@ exports[`Table test suite: selection action - disabled 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Selection-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -7976,7 +7968,7 @@ exports[`Table test suite: selection action - disabled by data 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Selection-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -8268,7 +8260,7 @@ exports[`Table test suite: selection action 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="table-action-Selection-icon"
             data-testid="AccountCircleIcon"
             focusable="false"

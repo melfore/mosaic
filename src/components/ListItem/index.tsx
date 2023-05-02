@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { CSSProperties, FC, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
@@ -22,7 +22,7 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const ListItem: FC<IListItem> = ({
+const ListItem: FC<PropsWithChildren<IListItem>> = ({
   children,
   content,
   dataCy = DATA_CY_DEFAULT,
@@ -39,7 +39,8 @@ const ListItem: FC<IListItem> = ({
   );
 
   const onClick = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       suppressEvent(event);
       if (loading) {
         return;

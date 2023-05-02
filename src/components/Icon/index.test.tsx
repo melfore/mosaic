@@ -88,7 +88,7 @@ describe("Icon test suite:", () => {
 
   it("rotate", () => {
     const { element, wrapper } = getIconTestable({ props: { rotate: true } });
-    expect(wrapper.hasClass("makeStyles-rotate-2")).toBeTruthy();
+    expect(wrapper.hasClass("css-gi3h4x-MuiSvgIcon-root")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

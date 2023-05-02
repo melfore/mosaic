@@ -541,7 +541,7 @@ exports[`Checkbox test suite: onChange 1`] = `
 
 exports[`Checkbox test suite: required 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-required css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -587,6 +587,13 @@ exports[`Checkbox test suite: required 1`] = `
         d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
     </svg>
+  </span>
+  <span
+    aria-hidden={true}
+    className="MuiFormControlLabel-asterisk css-1x2jons-MuiFormControlLabel-asterisk"
+  >
+     
+    *
   </span>
 </label>
 `;

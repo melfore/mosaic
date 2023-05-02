@@ -86,7 +86,7 @@ exports[`Card test suite: actions 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="first-action-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -128,7 +128,7 @@ exports[`Card test suite: actions 1`] = `
         >
           <svg
             aria-hidden={true}
-            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
             data-cy="second-action-icon"
             data-testid="AccountCircleIcon"
             focusable="false"
@@ -217,7 +217,7 @@ exports[`Card test suite: collapsible 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="card-collapse-icon"
         data-testid="KeyboardArrowDownIcon"
         focusable="false"
@@ -368,7 +368,7 @@ exports[`Card test suite: icon 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
           data-cy="card-avatar-icon"
           data-testid="AccountCircleIcon"
           focusable="false"

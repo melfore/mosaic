@@ -1,3 +1,25 @@
+## [7.6.5](https://github.com/melfore/mosaic/compare/v7.6.4...v7.6.5) (2023-04-28)
+
+## [7.6.4](https://github.com/melfore/mosaic/compare/v7.6.3...v7.6.4) (2023-04-28)
+
+## [7.6.3](https://github.com/melfore/mosaic/compare/v7.6.2...v7.6.3) (2023-04-28)
+
+## [7.6.2](https://github.com/melfore/mosaic/compare/v7.6.1...v7.6.2) (2023-04-28)
+
+
+### chore
+
+* 🤖 Updated nvmrc to lts/gallium and Storybook to v7.x ([cfb38b7](https://github.com/melfore/mosaic/commit/cfb38b76799b0353b3e5d84bd5680df082778245))
+
+
+### BREAKING CHANGES
+
+* 🧨 Dropped support for Node < 16
+
+✅ Closes: 287
+
+## [7.6.1](https://github.com/melfore/mosaic/compare/v7.6.0...v7.6.1) (2022-12-27)
+
 # [7.7.0-beta.1](https://github.com/melfore/mosaic/compare/v7.6.0...v7.7.0-beta.1) (2022-12-27)
 
 

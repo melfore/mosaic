@@ -71,7 +71,7 @@ describe("IconButton test suite:", () => {
 
     const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
     const icon = wrapper.find(`svg[data-cy='${iconDataCy}']`);
-    expect(icon.hasClass("makeStyles-rotate-2")).toBeTruthy();
+    expect(icon.hasClass("css-gi3h4x-MuiSvgIcon-root")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

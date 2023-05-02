@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, ReactElement, useCallback, useMemo, useState } from "react";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, useCallback, useMemo, useState } from "react";
 import { DecoratorFn } from "@storybook/react";
 
 import Button from "../../components/Button";
@@ -9,7 +9,11 @@ interface ModalMockType {
   open?: boolean;
 }
 
-const ModalMock: FC<ModalMockType> = ({ buttonLabel = "Open", children, open: externalOpen = false }) => {
+const ModalMock: FC<PropsWithChildren<ModalMockType>> = ({
+  buttonLabel = "Open",
+  children,
+  open: externalOpen = false,
+}) => {
   const [open, setOpen] = useState(externalOpen);
 
   const onClose = useCallback(() => setOpen(false), []);

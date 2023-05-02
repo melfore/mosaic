@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta, Preview, Story, Title } from "@storybook/addon-docs";
+import { ArgsTable, Canvas, Meta, Story, Title } from "@storybook/addon-docs";
 
 import MUITextField from "@mui/material/TextField";
 
@@ -33,9 +33,9 @@ Table component displays a list of items in table form.
 
 Table component has three mandatory props: `columns` (see [ITableColumn](#ITableColumn)), `rows` (any iterable, defaults to `any[]`) and `title`.
 
-<Preview>
+<Canvas>
   <Story name="Primary">{Template.bind()}</Story>
-</Preview>
+</Canvas>
 
 ### Actions
 
@@ -49,7 +49,7 @@ Give a look and mix examples below to enrich your `Table` component.
 
 Global actions have all table scope. By default they are displayed like a `Button`, but they can also be displayed as simple icons.
 
-<Preview>
+<Canvas>
   <Story
     name="GlobalActions"
     args={{
@@ -70,7 +70,7 @@ Global actions have all table scope. By default they are displayed like a `Butto
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Row Actions
 
@@ -78,7 +78,7 @@ Row actions have row scope.
 One row action can be placed on the left, setting the position attribute to `primary`.
 In case more than one `primary` is specified, the others will be treathed as normal row actions.
 
-<Preview>
+<Canvas>
   <Story
     name="RowActions"
     args={{
@@ -100,14 +100,14 @@ In case more than one `primary` is specified, the others will be treathed as nor
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Selection Actions
 
 Selection actions have scope related to current selection.
 They are displayed in place of Global Actions when there is at least one row selected.
 
-<Preview>
+<Canvas>
   <Story
     name="SelectionActions"
     args={{
@@ -124,25 +124,25 @@ They are displayed in place of Global Actions when there is at least one row sel
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### Pagination
 
 `Table` offers built-in pagination, it can be configured using `onPageChange`, `onPageSizeChange`, `page`, `pageSize` and `pageSizeOptions` props.
 By default: `page` is set to `0`, `pageSize` to `10` and `pageSizeOptions` to `[5, 10, 25]`.
 
-<Preview>
+<Canvas>
   <Story name="Pagination" args={{ onPageChange: () => {}, onPageSizeChange: () => {}, rowsTotal: 3 }}>
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Pagination Customized
 
 Size and options of the page can be customized to adapt to any dataset.
 For instance: let's set a `pageSize` of `2` and give options to paginate by `1,2,3` items.
 
-<Preview>
+<Canvas>
   <Story
     name="PaginationCustomized"
     args={{
@@ -160,43 +160,43 @@ For instance: let's set a `pageSize` of `2` and give options to paginate by `1,2
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### No Data
 
 By default `Table` component displays a no data message.
 
-<Preview>
+<Canvas>
   <Story name="NoData" args={{ rows: [] }}>
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Empty State
 
 Customize the rendering of empty state passing any valid `ReactNode`.
 
-<Preview>
+<Canvas>
   <Story name="NoDataEmptyState" args={{ emptyState: <h1>Custom Empty State component</h1>, rows: [] }}>
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### Loading
 
 Loading state of the table
 
-<Preview>
+<Canvas>
   <Story name="Loading" args={{ loading: true }}>
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### Column Filter
 
 You can display column filters by setting `renderFilter` in columns definition. Note that `Table` does not provide any filter logic and is your responsibility to toggle `showFilters` value.
 
-<Preview>
+<Canvas>
   <Story
     name="ColumnFilter"
     args={{
@@ -225,14 +225,14 @@ You can display column filters by setting `renderFilter` in columns definition. 
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### Styling
 
 `Table` component can be styled in many ways.
 Global `style` prop can be used to style the external table wrapper.
 
-<Preview>
+<Canvas>
   <Story
     name="Styling"
     args={{
@@ -243,13 +243,13 @@ Global `style` prop can be used to style the external table wrapper.
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Row Styling
 
 The method `getRowStyle` allows to change style of rows using as input the row data and the callback options (including the row index).
 
-<Preview>
+<Canvas>
   <Story
     name="RowStyling"
     args={{
@@ -263,14 +263,14 @@ The method `getRowStyle` allows to change style of rows using as input the row d
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Table Layout
 
 Component support passing down the `tableLayout` property to the inner table.
 When value is `"auto"` the table can scroll horizontally leaving tollbar and pagination component in place.
 
-<Preview>
+<Canvas>
   <Story
     name="TableLayout"
     args={{
@@ -375,13 +375,13 @@ When value is `"auto"` the table can scroll horizontally leaving tollbar and pag
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 #### Table Layout and sticky
 
 Sticky header works also when `tableLayout="auto"
 
-<Preview>
+<Canvas>
   <Story
     name="TableLayoutSticky"
     args={{
@@ -488,7 +488,7 @@ Sticky header works also when `tableLayout="auto"
   >
     {Template.bind()}
   </Story>
-</Preview>
+</Canvas>
 
 ### API
 

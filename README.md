@@ -21,9 +21,8 @@ It requires these `peerDependencies` to be installed in host project:
   "@emotion/styled": ">= 11.8.1 < 12",
   "@mui/icons-material": ">= 5.5.1 < 6",
   "@mui/material": ">= 5.5.3 < 6",
-  "@mui/styles": ">= 5.5.3 < 6",
-  "react": ">= 17 < 18",
-  "react-dom": ">= 17 < 18"
+  "react": ">= 18 < 19",
+  "react-dom": ">= 18 < 19"
 ```
 
 ## Usage

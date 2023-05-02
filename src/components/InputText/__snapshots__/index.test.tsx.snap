@@ -59,7 +59,7 @@ exports[`InputText test suite: adornment 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
           data-cy="icon-button-icon"
           data-testid="AccountCircleIcon"
           focusable="false"

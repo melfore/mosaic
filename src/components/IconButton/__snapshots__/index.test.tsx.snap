@@ -43,7 +43,7 @@ exports[`IconButton test suite: adornment - badge & tooltip 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
           data-cy="icon-button-icon"
           data-testid="AccountCircleIcon"
           focusable="false"
@@ -97,7 +97,7 @@ exports[`IconButton test suite: adornment - badge 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="icon-button-icon"
         data-testid="AccountCircleIcon"
         focusable="false"
@@ -156,7 +156,7 @@ exports[`IconButton test suite: adornment - tooltip 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="icon-button-icon"
         data-testid="AccountCircleIcon"
         focusable="false"
@@ -197,7 +197,7 @@ exports[`IconButton test suite: custom icon 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
     data-cy="icon-button-icon"
     data-testid="AccountCircleIcon"
     focusable="false"
@@ -233,7 +233,7 @@ exports[`IconButton test suite: dataCy 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
     data-cy="custom-icon"
     data-testid="AccountCircleIcon"
     focusable="false"
@@ -272,7 +272,7 @@ exports[`IconButton test suite: default 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
     data-cy="icon-button-icon"
     data-testid="AccountCircleIcon"
     focusable="false"
@@ -308,7 +308,7 @@ exports[`IconButton test suite: disabled 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
     data-cy="icon-button-icon"
     data-testid="AccountCircleIcon"
     focusable="false"
@@ -344,7 +344,7 @@ exports[`IconButton test suite: rotate 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium makeStyles-rotate-2 css-i4bv87-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-gi3h4x-MuiSvgIcon-root"
     data-cy="icon-button-icon"
     data-testid="AccountCircleIcon"
     focusable="false"
@@ -380,7 +380,7 @@ exports[`IconButton test suite: size 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
     data-cy="icon-button-icon"
     data-testid="AccountCircleIcon"
     focusable="false"

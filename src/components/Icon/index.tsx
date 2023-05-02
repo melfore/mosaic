@@ -75,21 +75,24 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
               `;
             }
 
+            let className = css`
+              animation: ${animation};
+            `;
+
+            if (forwarded.className) {
+              className = forwarded.className;
+            }
+
             return (
               <Adornment badge={badge} tooltip={tooltip}>
-                {cloneElement(element as ReactElement<any>, {
-                  ...props,
-                  className: css`
-                    animation: ${animation};
-                  `,
-                })}
+                {cloneElement(element as ReactElement<any>, { ...props, className })}
               </Adornment>
             );
           }}
         </ClassNames>
       );
     },
-    [badge, props, rotate, rotateKeyframes, tooltip]
+    [badge, forwarded, props, rotate, rotateKeyframes, tooltip]
   );
 
   if (loading) {

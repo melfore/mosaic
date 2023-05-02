@@ -3,7 +3,7 @@
 exports[`Icon test suite: custom icon 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="icon"
   data-testid="StyleIcon"
   focusable="false"
@@ -24,7 +24,7 @@ exports[`Icon test suite: custom icon 1`] = `
 exports[`Icon test suite: dataCy 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="custom"
   data-testid="AddIcon"
   focusable="false"
@@ -39,7 +39,7 @@ exports[`Icon test suite: dataCy 1`] = `
 exports[`Icon test suite: default 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="icon"
   data-testid="AddIcon"
   focusable="false"
@@ -107,7 +107,7 @@ exports[`Icon test suite: render null 1`] = `null`;
 exports[`Icon test suite: rotate 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium makeStyles-rotate-2 css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-gi3h4x-MuiSvgIcon-root"
   data-cy="icon"
   data-testid="AddIcon"
   focusable="false"
@@ -122,7 +122,7 @@ exports[`Icon test suite: rotate 1`] = `
 exports[`Icon test suite: size 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-zifere-MuiSvgIcon-root"
   data-cy="icon"
   data-testid="AddIcon"
   focusable="false"
@@ -137,7 +137,7 @@ exports[`Icon test suite: size 1`] = `
 exports[`Icon test suite: styled 1`] = `
 <svg
   aria-hidden={true}
-  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
   data-cy="icon"
   data-testid="AddIcon"
   focusable="false"

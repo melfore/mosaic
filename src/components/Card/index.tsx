@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, Fragment, useMemo, useState } from "react";
+import React, { cloneElement, FC, Fragment, PropsWithChildren, useMemo, useState } from "react";
 import {
   Card as MUICard,
   CardActions as MUICardActions,
@@ -45,7 +45,7 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const Card: FC<ICard> = ({
+const Card: FC<PropsWithChildren<ICard>> = ({
   actions = [],
   children,
   collapsible,

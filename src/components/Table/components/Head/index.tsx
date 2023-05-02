@@ -1,11 +1,11 @@
-import React, { CSSProperties, FC, useMemo } from "react";
+import React, { CSSProperties, FC, PropsWithChildren, useMemo } from "react";
 import { TableHead as MUITableHead, TableRow as MUITableRow } from "@mui/material";
 
 import { ITableHead } from "../../../../types/Table";
 import { HEADER_Z_INDEX } from "../../utils";
 import TableHeadFilterCell from "../HeadFilter";
 
-const TableHead: FC<ITableHead> = ({ children, columns, dataCy, showFilters, sticky }) => {
+const TableHead: FC<PropsWithChildren<ITableHead>> = ({ children, columns, dataCy, showFilters, sticky }) => {
   const headerStyle = useMemo((): CSSProperties | undefined => {
     if (!showFilters || !sticky) {
       return;

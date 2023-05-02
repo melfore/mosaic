@@ -4603,9 +4603,7 @@ exports[`Table test suite: row action - disabled 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody
@@ -5244,9 +5242,7 @@ exports[`Table test suite: row action - disabled by data 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody
@@ -6130,9 +6126,7 @@ exports[`Table test suite: row action - primary 1`] = `
                 "width": "44px",
               }
             }
-          >
-            
-          </th>
+          />
           <th
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall css-1howxi1-MuiTableCell-root"
@@ -6802,9 +6796,7 @@ exports[`Table test suite: row action 1`] = `
                 "width": "48px",
               }
             }
-          >
-            
-          </th>
+          />
         </tr>
       </thead>
       <tbody

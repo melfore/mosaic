@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { CSSProperties, FC, PropsWithChildren, useCallback, useMemo } from "react";
 import { useTheme } from "@mui/material";
 
 import { getComposedDataCy, ISubpartMap, suppressEvent } from "../../../../utils";
@@ -15,7 +15,7 @@ export const APPBAR_TITLE_SUBPARTS: ISubpartMap = {
 
 const DATA_CY_DEFAULT = "appbar-title";
 
-const AppBarTitle: FC<any> = ({
+const AppBarTitle: FC<PropsWithChildren<any>> = ({
   children,
   dataCy = DATA_CY_DEFAULT,
   onTitleClick: externalOnTitleClick,
@@ -50,7 +50,8 @@ const AppBarTitle: FC<any> = ({
   );
 
   const onTitleClick = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       suppressEvent(event);
       externalOnTitleClick && externalOnTitleClick();
     },

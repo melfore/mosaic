@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, ReactElement, useMemo, useState } from "react";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, useMemo, useState } from "react";
 import { DecoratorFn } from "@storybook/react";
 
 type IFormValue = boolean | number | string | null;
@@ -9,7 +9,7 @@ interface FormMockType {
   valuePropName?: string;
 }
 
-const FormMock: FC<FormMockType> = ({
+const FormMock: FC<PropsWithChildren<FormMockType>> = ({
   children,
   onChangePropName = "onChange",
   value: externalValue,

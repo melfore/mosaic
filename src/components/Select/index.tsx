@@ -82,7 +82,8 @@ const Select = <T extends any>({
   );
 
   const onChange = useCallback(
-    (event, value: any) => {
+    // TODO#lb: fix any type
+    (event: any, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
     },
@@ -90,7 +91,8 @@ const Select = <T extends any>({
   );
 
   const onClose = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       if (!externalOnClose) {
         return;
       }
@@ -102,7 +104,8 @@ const Select = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    (event, value: string) => {
+    // TODO#lb: fix any type
+    (event: any, value: string) => {
       if (!externalOnInputChange) {
         return;
       }

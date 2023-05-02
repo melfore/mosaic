@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   Dialog as MUIDialog,
   DialogActions as MUIDialogActions,
@@ -39,7 +39,7 @@ export const SUBPARTS_MAP = {
 };
 
 // TODO#lb: should handle style?
-const Modal: FC<IModal> = ({
+const Modal: FC<PropsWithChildren<IModal>> = ({
   cancel,
   children,
   closable = false,

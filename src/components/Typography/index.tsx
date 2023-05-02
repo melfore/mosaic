@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, PropsWithChildren, useMemo } from "react";
 import {
   Skeleton as MUISkeleton,
   Typography as MUITypography,
@@ -23,7 +23,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
   { name: "content", type: "string" },
 ];
 
-const Typography: FC<ITypography> = ({
+const Typography: FC<PropsWithChildren<ITypography>> = ({
   bottomSpacing = false,
   children,
   content,

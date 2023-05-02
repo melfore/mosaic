@@ -1,3 +1,26 @@
+# [7.7.0-beta.2](https://github.com/melfore/mosaic/compare/v7.7.0-beta.1...v7.7.0-beta.2) (2023-05-02)
+
+
+### Bug Fixes
+
+* 🐛 [Select] Popper temp workaround ([47d1f0c](https://github.com/melfore/mosaic/commit/47d1f0c34759b2f06b6691d61ad2c310f4dad5f0))
+
+
+### chore
+
+* 🤖 Updated deps to React v18.x ([23f91b7](https://github.com/melfore/mosaic/commit/23f91b73633e2142fc12656f7eb8e9764619270d))
+* 🤖 Updated nvmrc to lts/gallium and Storybook to v7.x ([cfb38b7](https://github.com/melfore/mosaic/commit/cfb38b76799b0353b3e5d84bd5680df082778245))
+
+
+### BREAKING CHANGES
+
+* 🧨 Dropped support for React < 18
+
+✅ Closes: 296
+* 🧨 Dropped support for Node < 16
+
+✅ Closes: 287
+
 ## [7.6.5](https://github.com/melfore/mosaic/compare/v7.6.4...v7.6.5) (2023-04-28)
 
 ## [7.6.4](https://github.com/melfore/mosaic/compare/v7.6.3...v7.6.4) (2023-04-28)

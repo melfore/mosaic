@@ -1,5 +1,5 @@
-import React, { FC, Fragment } from "react";
-import { Collapse as MUICollapse } from "@material-ui/core";
+import React, { FC, Fragment, PropsWithChildren } from "react";
+import { Collapse as MUICollapse } from "@mui/material";
 
 import { Icons } from "../../types/Icon";
 import { IListItemCollapsible } from "../../types/ListItem";
@@ -17,7 +17,7 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const ListItemCollapsible: FC<IListItemCollapsible> = ({
+const ListItemCollapsible: FC<PropsWithChildren<IListItemCollapsible>> = ({
   children,
   content,
   dataCy = DATA_CY_DEFAULT,

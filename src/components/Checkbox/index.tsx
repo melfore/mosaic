@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useCallback } from "react";
-import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@material-ui/core";
+import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@mui/material";
 
 import { ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";
@@ -40,7 +40,6 @@ const Checkbox: FC<ICheckbox> = ({
       control={
         <MUICheckbox
           checked={value}
-          color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.check)}
           disabled={disabled}
           indeterminate={intermediate}

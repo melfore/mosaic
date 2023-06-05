@@ -7,7 +7,7 @@ import {
   TableRow as MUITableRow,
   useMediaQuery,
   useTheme,
-} from "@material-ui/core";
+} from "@mui/material";
 
 import { ITable, ITableAction, ITableColumn, ITableOnSortCallback } from "../../types/Table";
 import { getComposedDataCy } from "../../utils";

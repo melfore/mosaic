@@ -1,10 +1,10 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   Dialog as MUIDialog,
   DialogActions as MUIDialogActions,
   DialogContent as MUIDialogContent,
   DialogTitle as MUIDialogTitle,
-} from "@material-ui/core";
+} from "@mui/material";
 
 import { useMosaicContext } from "../..";
 import { Icons } from "../../types/Icon";
@@ -39,7 +39,7 @@ export const SUBPARTS_MAP = {
 };
 
 // TODO#lb: should handle style?
-const Modal: FC<IModal> = ({
+const Modal: FC<PropsWithChildren<IModal>> = ({
   cancel,
   children,
   closable = false,
@@ -86,10 +86,9 @@ const Modal: FC<IModal> = ({
     <MUIDialog {...viewOptions} aria-labelledby="modal-title" data-cy={dataCy} fullWidth onClose={onClose} open={open}>
       <MUIDialogTitle
         id="modal-title"
-        disableTypography
         style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}
       >
-        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant="title">
+        <Typography dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.title)} variant="caption">
           {title}
         </Typography>
         {closable && <IconButton icon={Icons.close} size="small" onClick={onClose} />}

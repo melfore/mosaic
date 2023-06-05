@@ -1,6 +1,6 @@
-import React, { cloneElement, FC, ReactElement, useMemo } from "react";
-import { makeStyles } from "@material-ui/core";
-import { Skeleton as MUISkeleton } from "@material-ui/lab";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, useCallback, useMemo } from "react";
+import { ClassNames } from "@emotion/react";
+import { keyframes, Skeleton as MUISkeleton } from "@mui/material";
 
 import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
@@ -16,21 +16,7 @@ const ICON_DIMENSIONS: IIconDimensions = {
   large: 35,
 };
 
-const useAnimations = makeStyles({
-  "@keyframes rotate": {
-    from: {
-      transform: "rotate(0deg)",
-    },
-    to: {
-      transform: "rotate(360deg)",
-    },
-  },
-  rotate: {
-    animation: "$rotate 2s linear infinite",
-  },
-});
-
-const Icon: FC<IIcon> = ({
+const Icon: FC<PropsWithChildren<IIcon>> = ({
   badge,
   children,
   dataCy = DATA_CY_DEFAULT,
@@ -42,8 +28,6 @@ const Icon: FC<IIcon> = ({
   style: externalStyle,
   tooltip,
 }) => {
-  const { rotate: rotateAnimation } = useAnimations();
-
   const dimensions = useMemo(() => {
     const dimension = ICON_DIMENSIONS[size];
     return { height: dimension, width: dimension };
@@ -64,23 +48,59 @@ const Icon: FC<IIcon> = ({
       props = { ...props, style: { ...props.style, ...dimensions } };
     }
 
-    if (rotate) {
-      props = { ...props, className: rotateAnimation };
-    }
-
     return props;
-  }, [children, dataCy, dimensions, externalStyle, forwarded, rotate, rotateAnimation, size]);
+  }, [children, dataCy, dimensions, externalStyle, forwarded, size]);
+
+  const rotateKeyframes = useMemo(
+    () => keyframes`
+      from: {
+        transform: "rotate(0deg)";
+      }
+      to: {
+        transform: "rotate(360deg)";
+      }
+  `,
+    []
+  );
+
+  const renderWithAnimation = useCallback(
+    (element: any) => {
+      return (
+        <ClassNames>
+          {({ css }) => {
+            let animation = "none";
+            if (rotate) {
+              animation = css`
+                ${rotateKeyframes} 2s linear infinite
+              `;
+            }
+
+            let className = css`
+              animation: ${animation};
+            `;
+
+            if (forwarded.className) {
+              className = forwarded.className;
+            }
+
+            return (
+              <Adornment badge={badge} tooltip={tooltip}>
+                {cloneElement(element as ReactElement<any>, { ...props, className })}
+              </Adornment>
+            );
+          }}
+        </ClassNames>
+      );
+    },
+    [badge, forwarded, props, rotate, rotateKeyframes, tooltip]
+  );
 
   if (loading) {
-    return <MUISkeleton variant="rect" style={{ ...dimensions }} />;
+    return <MUISkeleton variant="rectangular" style={{ ...dimensions }} />;
   }
 
   if (children) {
-    return (
-      <Adornment badge={badge} tooltip={tooltip}>
-        {cloneElement(children as ReactElement<any>, { ...props })}
-      </Adornment>
-    );
+    return renderWithAnimation(children);
   }
 
   if (!name) {
@@ -89,12 +109,7 @@ const Icon: FC<IIcon> = ({
   }
 
   const icon = iconsCatalog[name];
-
-  return (
-    <Adornment badge={badge} tooltip={tooltip}>
-      {cloneElement(icon, { ...props })}
-    </Adornment>
-  );
+  return renderWithAnimation(icon);
 };
 
 export default Icon;

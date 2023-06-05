@@ -1,8 +1,7 @@
 /* eslint-disable storybook/default-exports */
-
 import React from "react";
-import MUITextField from "@material-ui/core/TextField";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
+import MUITextField from "@mui/material/TextField";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
@@ -26,7 +25,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Table Component",
-          url: "https://v4.mui.com/components/tables/",
+          url: "https://mui.com/components/tables/",
         },
         component: "Table",
         e2eTestInfo: {
@@ -258,7 +257,11 @@ export const ColumnFilters = Template.bind({});
 ColumnFilters.args = {
   ...Primary.args,
   columns: [
-    { label: "Name", path: "name", renderFilter: <MUITextField type="text" label="type to filter" /> },
+    {
+      label: "Name",
+      path: "name",
+      renderFilter: <MUITextField label="type to filter" type="text" variant="standard" />,
+    },
     { label: "Age", path: "age" },
   ],
   height: 400,

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { Icons } from "../../types/Icon";
 import { IIconButton } from "../../types/IconButton";
@@ -71,7 +71,7 @@ describe("IconButton test suite:", () => {
 
     const iconDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.icon);
     const icon = wrapper.find(`svg[data-cy='${iconDataCy}']`);
-    expect(icon.hasClass("makeStyles-rotate-2")).toBeTruthy();
+    expect(icon.hasClass("css-gi3h4x-MuiSvgIcon-root")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -119,7 +119,7 @@ describe("IconButton test suite:", () => {
 
     const tooltipSubpart = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.tooltip);
     const tooltipWrapper = wrapper.find(`span[data-cy='${tooltipSubpart}']`);
-    expect(tooltipWrapper.prop("title")).toEqual(tooltip);
+    expect(tooltipWrapper.prop("aria-label")).toEqual(tooltip.toLowerCase());
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
@@ -148,7 +148,7 @@ describe("IconButton test suite:", () => {
 
     const tooltipSubpart = getComposedDataCy(adornmentDataCy, SUBPARTS_MAP.tooltip);
     const tooltipWrapper = wrapper.find(`span[data-cy='${tooltipSubpart}']`);
-    expect(tooltipWrapper.prop("title")).toEqual(tooltip);
+    expect(tooltipWrapper.prop("aria-label")).toEqual(tooltip.toLowerCase());
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

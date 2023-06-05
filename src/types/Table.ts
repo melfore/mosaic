@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from "react";
-import { TablePaginationProps as MUITablePaginationProps } from "@material-ui/core";
+import { TablePaginationProps as MUITablePaginationProps } from "@mui/material";
 
 import { IAdornment } from "./Adornment";
 import { IBase, ILoadable, ILocalizable } from "./Base";

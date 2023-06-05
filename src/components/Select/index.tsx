@@ -1,11 +1,11 @@
-import React, { SyntheticEvent, useCallback, useMemo } from "react";
-import { PopperProps as MUIPopperProps } from "@material-ui/core";
+import React, { HTMLAttributes, SyntheticEvent, useCallback, useMemo } from "react";
 import {
   Autocomplete as MUIAutocomplete,
   AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams,
   AutocompleteRenderInputParams as MUIAutocompleteRenderInputParams,
   AutocompleteRenderOptionState as MUIAutocompleteRenderOptionState,
-} from "@material-ui/lab";
+  PopperProps as MUIPopperProps,
+} from "@mui/material";
 
 import { ISelect } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
@@ -82,7 +82,8 @@ const Select = <T extends any>({
   );
 
   const onChange = useCallback(
-    (event, value: any) => {
+    // TODO#lb: fix any type
+    (event: any, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
     },
@@ -90,7 +91,8 @@ const Select = <T extends any>({
   );
 
   const onClose = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       if (!externalOnClose) {
         return;
       }
@@ -102,13 +104,14 @@ const Select = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    (event, value: any) => {
+    // TODO#lb: fix any type
+    (event: any, value: string) => {
       if (!externalOnInputChange) {
         return;
       }
 
       suppressEvent(event);
-      externalOnInputChange!(value);
+      externalOnInputChange(value);
     },
     [externalOnInputChange]
   );
@@ -203,11 +206,14 @@ const Select = <T extends any>({
   );
 
   const renderOption = useCallback(
-    (option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+    (props: HTMLAttributes<HTMLLIElement>, option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+      const { id: key } = props;
       return (
         <SelectOption
+          key={key}
           customRenderer={renderCustomOption}
           dataCy={dataCy}
+          forwarded={props}
           getOptionLabel={getOptionLabel}
           multiple={multiple}
           option={option}
@@ -245,8 +251,8 @@ const Select = <T extends any>({
       disableCloseOnSelect={multiple}
       disabled={disabled}
       getOptionLabel={getOptionLabel}
-      getOptionSelected={isOptionSelected}
       groupBy={groupBy}
+      isOptionEqualToValue={isOptionSelected}
       ListboxProps={listboxProps}
       loading={loading}
       multiple={multiple}

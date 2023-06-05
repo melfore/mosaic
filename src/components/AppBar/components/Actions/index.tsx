@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@mui/material";
 
 import { IAppBarActions } from "../../../../types/AppBar";
 import { Icons } from "../../../../types/Icon";
@@ -56,7 +56,7 @@ const AppBarActions: FC<IAppBarActions> = ({ actions, dataCy = DATA_CY_DEFAULT, 
         dataCy={getComposedDataCy(dataCy, APPBAR_ACTIONS_SUBPARTS.action, index)}
         icon={icon}
         onClick={onClick}
-        style={{ marginRight: `${theme.spacing(0.5)}px`, ...style }}
+        style={{ marginRight: `${theme.spacing(0.5)}`, ...style }}
         tooltip={tooltip}
       />
     ));

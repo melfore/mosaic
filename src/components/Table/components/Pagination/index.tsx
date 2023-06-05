@@ -1,8 +1,5 @@
 import React, { FC, useCallback, useMemo } from "react";
-import {
-  TablePagination as MUITablePagination,
-  TablePaginationProps as MUITablePaginationProps,
-} from "@material-ui/core";
+import { TablePagination as MUITablePagination, TablePaginationProps as MUITablePaginationProps } from "@mui/material";
 
 import { ITablePagination } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
@@ -28,7 +25,8 @@ const TablePagination: FC<ITablePagination> = ({
   const safePage = useMemo(() => (!safeCount ? 0 : page), [page, safeCount]);
 
   const onPageChange = useCallback(
-    (event, page) => {
+    // TODO#lb: fix any type
+    (event: any, page: any) => {
       suppressEvent(event);
       externalOnPageChange && externalOnPageChange(page);
     },
@@ -36,7 +34,8 @@ const TablePagination: FC<ITablePagination> = ({
   );
 
   const onPageSizeChange = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       const pageSize = parseInt(event.target.value, 10);
       externalOnPageSizeChange && externalOnPageSizeChange(0, pageSize);
     },

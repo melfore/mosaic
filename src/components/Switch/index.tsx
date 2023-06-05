@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useCallback } from "react";
-import { FormControlLabel as MUIFormControlLabel, Switch as MUISwitch } from "@material-ui/core";
+import { FormControlLabel as MUIFormControlLabel, Switch as MUISwitch } from "@mui/material";
 
 import { ISwitch } from "../../types/Switch";
 import { getComposedDataCy } from "../../utils";
@@ -40,7 +40,6 @@ const Switch: FC<ISwitch> = ({
       control={
         <MUISwitch
           checked={value}
-          color="primary"
           data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.toggle)}
           disabled={disabled}
           disableRipple={disableRipple}

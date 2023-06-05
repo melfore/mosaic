@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
-import { TableCell as MUITableCell, useTheme } from "@material-ui/core";
+import { TableCell as MUITableCell, useTheme } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import { ITableColumn } from "../../../../types/Table";
@@ -21,13 +21,16 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
 
   const onChange = useCallback((_: boolean) => onSelection(), [onSelection]);
 
-  const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
+  const padding = useMemo(
+    () => (!columnPadding || columnPadding === "default" ? "normal" : columnPadding),
+    [columnPadding]
+  );
 
   const style = useMemo((): CSSProperties => {
     if (!sticky) {
       return {
         ...rowStyle,
-        padding: `0 ${theme.spacing(1)}px`,
+        padding: `0 ${theme.spacing(1)}`,
         width,
       };
     }
@@ -38,7 +41,7 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
       ...rowStyle,
       backgroundColor,
       left: 0,
-      padding: `0 ${theme.spacing(1)}px`,
+      padding: `0 ${theme.spacing(1)}`,
       position: "sticky",
       width,
       zIndex: SELECTION_Z_INDEX,

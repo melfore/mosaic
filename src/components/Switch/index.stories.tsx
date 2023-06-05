@@ -21,7 +21,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Switch Component",
-          url: "https://v4.mui.com/components/switches/",
+          url: "https://mui.com/components/switches/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

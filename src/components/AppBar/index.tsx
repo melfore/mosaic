@@ -1,6 +1,5 @@
-import React, { CSSProperties, FC } from "react";
-import { useMemo } from "react";
-import { AppBar as MUIAppBar, Toolbar as MUIToolbar } from "@material-ui/core";
+import React, { CSSProperties, FC, useMemo } from "react";
+import { AppBar as MUIAppBar, Toolbar as MUIToolbar } from "@mui/material";
 
 import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { IAppBar } from "../../types/AppBar";

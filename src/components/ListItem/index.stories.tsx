@@ -1,5 +1,5 @@
 import React from "react";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
@@ -16,7 +16,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI ListItem Component",
-          url: "https://v4.mui.com/components/lists/",
+          url: "https://mui.com/components/lists/",
         },
         component: "ListItem",
         e2eTestInfo: {

@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode, useMemo } from "react";
+import React, { Fragment, HTMLAttributes, ReactNode, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";
 import { getComposedDataCy, ISubpart } from "../../../../utils";
@@ -7,6 +7,7 @@ import Typography from "../../../Typography";
 
 interface ISelectOption<T> extends IBase {
   customRenderer?: (option: T, selected: boolean) => ReactNode;
+  forwarded: HTMLAttributes<HTMLLIElement>;
   getOptionLabel: (option: T) => string;
   multiple: boolean;
   option: T;
@@ -31,6 +32,7 @@ export const SELECT_OPTION_LABEL_SUBPART: ISubpart = {
 const SelectOption = <T extends any>({
   customRenderer,
   dataCy = "select-option",
+  forwarded,
   getOptionLabel,
   multiple,
   option,
@@ -72,9 +74,9 @@ const SelectOption = <T extends any>({
   }, [checkboxDataCy, customContent, labelDataCy, optionLabel, multiple, selected]);
 
   return (
-    <div key={optionDataCy} data-cy={optionDataCy} style={{ display: "contents" }}>
+    <li data-cy={optionDataCy} {...forwarded}>
       {content}
-    </div>
+    </li>
   );
 };
 

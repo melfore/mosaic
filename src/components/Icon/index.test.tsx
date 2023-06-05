@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MUIStyleIcon from "@material-ui/icons/Style";
+import MUIStyleIcon from "@mui/icons-material/Style";
 
 import { Icons, IIcon } from "../../types/Icon";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
@@ -88,7 +88,7 @@ describe("Icon test suite:", () => {
 
   it("rotate", () => {
     const { element, wrapper } = getIconTestable({ props: { rotate: true } });
-    expect(wrapper.hasClass("makeStyles-rotate-2")).toBeTruthy();
+    expect(wrapper.hasClass("css-gi3h4x-MuiSvgIcon-root")).toBeTruthy();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

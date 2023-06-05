@@ -1,6 +1,9 @@
 import React, { FC, Fragment, useMemo } from "react";
-import { ListSubheader as MUIListSubheader, useTheme } from "@material-ui/core";
-import { AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams } from "@material-ui/lab";
+import {
+  AutocompleteRenderGroupParams as MUIAutocompleteRenderGroupParams,
+  ListSubheader as MUIListSubheader,
+  useTheme,
+} from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import { getComposedDataCy, ISubpart } from "../../../../utils";

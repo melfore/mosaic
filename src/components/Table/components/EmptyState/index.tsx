@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, ReactNode, useMemo } from "react";
-import { TableCell as MUITableCell, TableRow as MUITableRow } from "@material-ui/core";
+import { TableCell as MUITableCell, TableRow as MUITableRow } from "@mui/material";
 
 import Typography from "../../../Typography";
 

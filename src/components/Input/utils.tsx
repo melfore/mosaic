@@ -1,5 +1,5 @@
 import React from "react";
-import { InputAdornment as MUIInputAdornment } from "@material-ui/core";
+import { InputAdornment as MUIInputAdornment } from "@mui/material";
 
 import { IInputAdornment } from "../../types/Input";
 import IconButton from "../IconButton";

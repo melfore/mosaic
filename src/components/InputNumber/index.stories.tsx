@@ -21,7 +21,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Text Field",
-          url: "https://v4.mui.com/components/text-fields/",
+          url: "https://mui.com/components/text-fields/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

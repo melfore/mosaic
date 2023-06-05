@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { useMediaQuery, useTheme } from "@material-ui/core";
-import { Breakpoint as MUIBreakpoint } from "@material-ui/core/styles/createBreakpoints";
+import { useMediaQuery, useTheme } from "@mui/material";
+import { Breakpoint as MUIBreakpoint } from "@mui/material/styles";
 
 export interface IUseViewStateOptions {
   mobile?: MUIBreakpoint;

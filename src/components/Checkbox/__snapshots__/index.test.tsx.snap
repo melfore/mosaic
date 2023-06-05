@@ -2,7 +2,7 @@
 
 exports[`Checkbox test suite: checked 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -11,10 +11,10 @@ exports[`Checkbox test suite: checked 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -27,43 +27,37 @@ exports[`Checkbox test suite: checked 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={true}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={true}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: dataCy 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="custom"
   style={
     {
@@ -72,10 +66,10 @@ exports[`Checkbox test suite: dataCy 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="custom-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -88,43 +82,37 @@ exports[`Checkbox test suite: dataCy 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="custom-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="custom-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: default 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -133,10 +121,10 @@ exports[`Checkbox test suite: default 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -149,40 +137,34 @@ exports[`Checkbox test suite: default 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: disabled 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-disabled"
+  className="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -192,9 +174,10 @@ exports[`Checkbox test suite: disabled 1`] = `
 >
   <span
     aria-disabled={true}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-disabled-3 Mui-disabled MuiIconButton-colorPrimary Mui-disabled Mui-disabled"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary Mui-disabled MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -207,40 +190,34 @@ exports[`Checkbox test suite: disabled 1`] = `
     onTouchStart={[Function]}
     tabIndex={-1}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={true}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={true}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: intermediate 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -249,10 +226,10 @@ exports[`Checkbox test suite: intermediate 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-indeterminate MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -265,51 +242,45 @@ exports[`Checkbox test suite: intermediate 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={true}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="IndeterminateCheckBoxIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={true}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: label 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={{}}
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -322,33 +293,30 @@ exports[`Checkbox test suite: label 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
   <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
   >
     Checkbox
   </span>
@@ -357,15 +325,15 @@ exports[`Checkbox test suite: label 1`] = `
 
 exports[`Checkbox test suite: label placement 1`] = `
 <label
-  className="MuiFormControlLabel-root"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={{}}
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -378,36 +346,33 @@ exports[`Checkbox test suite: label placement 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
   <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
   >
     Checkbox
   </span>
@@ -416,15 +381,15 @@ exports[`Checkbox test suite: label placement 1`] = `
 
 exports[`Checkbox test suite: localized 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="locale.checkbox"
   style={{}}
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="locale.checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -437,33 +402,30 @@ exports[`Checkbox test suite: localized 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="locale.checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="locale.checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
   <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
   >
     Checkbox
   </span>
@@ -472,7 +434,7 @@ exports[`Checkbox test suite: localized 1`] = `
 
 exports[`Checkbox test suite: onChange - not handled 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -481,10 +443,10 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -497,43 +459,37 @@ exports[`Checkbox test suite: onChange - not handled 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: onChange 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -542,10 +498,10 @@ exports[`Checkbox test suite: onChange 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -558,40 +514,34 @@ exports[`Checkbox test suite: onChange 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;
 
 exports[`Checkbox test suite: required 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart Mui-required css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -600,10 +550,10 @@ exports[`Checkbox test suite: required 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -616,40 +566,41 @@ exports[`Checkbox test suite: required 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={true}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={true}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
   </span>
   <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
+    aria-hidden={true}
+    className="MuiFormControlLabel-asterisk css-1x2jons-MuiFormControlLabel-asterisk"
+  >
+     
+    *
+  </span>
 </label>
 `;
 
 exports[`Checkbox test suite: size 1`] = `
 <label
-  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart"
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
   data-cy="checkbox"
   style={
     {
@@ -658,10 +609,10 @@ exports[`Checkbox test suite: size 1`] = `
   }
 >
   <span
-    aria-disabled={false}
-    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
     data-cy="checkbox-check"
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onDragLeave={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -674,36 +625,30 @@ exports[`Checkbox test suite: size 1`] = `
     onTouchStart={[Function]}
     tabIndex={null}
   >
-    <span
-      className="MuiIconButton-label"
+    <input
+      checked={false}
+      className="PrivateSwitchBase-input css-1m9pwf3"
+      data-cy="checkbox-input"
+      data-indeterminate={false}
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+      data-testid="CheckBoxOutlineBlankIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <input
-        checked={false}
-        className="PrivateSwitchBase-input-4"
-        data-cy="checkbox-input"
-        data-indeterminate={false}
-        disabled={false}
-        onChange={[Function]}
-        required={false}
-        type="checkbox"
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
       />
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </span>
+    </svg>
     <span
-      className="MuiTouchRipple-root"
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </span>
-  <span
-    className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-  />
 </label>
 `;

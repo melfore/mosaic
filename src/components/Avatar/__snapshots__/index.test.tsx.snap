@@ -2,11 +2,11 @@
 
 exports[`Avatar test suite: dataCy 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="custom"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
@@ -15,11 +15,11 @@ exports[`Avatar test suite: dataCy 1`] = `
 
 exports[`Avatar test suite: default 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
@@ -28,19 +28,20 @@ exports[`Avatar test suite: default 1`] = `
 
 exports[`Avatar test suite: icon 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
 >
   <svg
     aria-hidden={true}
-    className="MuiSvgIcon-root"
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
     data-cy="avatar-icon"
+    data-testid="BusinessIcon"
     focusable="false"
     viewBox="0 0 24 24"
   >
@@ -53,18 +54,18 @@ exports[`Avatar test suite: icon 1`] = `
 
 exports[`Avatar test suite: image 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circular"
+  className="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
   data-cy="avatar"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
 >
   <img
     alt="Mosaic Image"
-    className="MuiAvatar-img"
+    className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
     src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg"
   />
 </div>
@@ -72,7 +73,7 @@ exports[`Avatar test suite: image 1`] = `
 
 exports[`Avatar test suite: loading - squared 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
+  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-qzz38t-MuiSkeleton-root"
   style={
     {
       "height": undefined,
@@ -81,12 +82,13 @@ exports[`Avatar test suite: loading - squared 1`] = `
   }
 >
   <div
-    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
     data-cy="avatar-loading"
   >
     <svg
       aria-hidden={true}
-      className="MuiSvgIcon-root MuiAvatar-fallback"
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+      data-testid="PersonIcon"
       focusable="false"
       viewBox="0 0 24 24"
     >
@@ -100,7 +102,7 @@ exports[`Avatar test suite: loading - squared 1`] = `
 
 exports[`Avatar test suite: loading 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto MuiSkeleton-pulse"
+  className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-1nk968r-MuiSkeleton-root"
   style={
     {
       "height": undefined,
@@ -109,12 +111,13 @@ exports[`Avatar test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+    className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
     data-cy="avatar-loading"
   >
     <svg
       aria-hidden={true}
-      className="MuiSvgIcon-root MuiAvatar-fallback"
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+      data-testid="PersonIcon"
       focusable="false"
       viewBox="0 0 24 24"
     >
@@ -128,11 +131,11 @@ exports[`Avatar test suite: loading 1`] = `
 
 exports[`Avatar test suite: squared 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-18gxrea-MuiAvatar-root"
   data-cy="avatar"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
@@ -141,17 +144,17 @@ exports[`Avatar test suite: squared 1`] = `
 
 exports[`Avatar test suite: text 1`] = `
 <div
-  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+  className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
   data-cy="avatar"
   style={
     {
-      "backgroundColor": "#3f51b5",
+      "backgroundColor": "#1976d2",
       "color": "#fff",
     }
   }
 >
   <p
-    className="MuiTypography-root MuiTypography-body1"
+    className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
     data-cy="avatar-text"
   >
     MO

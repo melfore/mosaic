@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { CircularProgress as MUICircularProgress, useTheme } from "@material-ui/core";
+import { CircularProgress as MUICircularProgress, useTheme } from "@mui/material";
 
 import { LOADER_Z_INDEX } from "../../utils";
 

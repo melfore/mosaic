@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useCallback, useMemo } from "react";
-import { TableCell as MUITableCell } from "@material-ui/core";
+import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import { ITableColumn, ITableDataCallback, ITableDataCallbackOptions } from "../../../../types/Table";
@@ -17,14 +17,18 @@ const TableDataCell: FC<ITableDataCell> = ({ column, data, dataCallbackOptions, 
   const { padding: columnPadding, path, render, width } = column;
 
   const onClick = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       suppressEvent(event);
       externalOnClick && externalOnClick(data, dataCallbackOptions);
     },
     [data, dataCallbackOptions, externalOnClick]
   );
 
-  const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
+  const padding = useMemo(
+    () => (!columnPadding || columnPadding === "default" ? "normal" : columnPadding),
+    [columnPadding]
+  );
 
   const style = useMemo(
     (): CSSProperties => ({

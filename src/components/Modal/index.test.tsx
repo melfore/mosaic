@@ -37,11 +37,9 @@ describe("Modal test suite:", () => {
 
     const cancelDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.actionCancel);
     const cancel = wrapper.find(`button[data-cy='${cancelDataCy}']`);
+    expect(cancel.text()).toEqual(label);
     cancel.simulate("click");
     expect(action).toHaveBeenCalledTimes(1);
-
-    const cancelLabel = cancel.find("span.MuiButton-label");
-    expect(cancelLabel.text()).toEqual(label);
   });
 
   // TODO: improve this
@@ -56,11 +54,9 @@ describe("Modal test suite:", () => {
 
     const confirmDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.actionConfirm);
     const confirm = wrapper.find(`button[data-cy='${confirmDataCy}']`);
+    expect(confirm.text()).toEqual(label);
     confirm.simulate("click");
     expect(action).toHaveBeenCalledTimes(1);
-
-    const confirmLabel = confirm.find("span.MuiButton-label");
-    expect(confirmLabel.text()).toEqual(label);
   });
 
   it("onClose", () => {

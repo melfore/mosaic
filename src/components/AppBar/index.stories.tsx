@@ -23,7 +23,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI AppBar Component",
-          url: "https://v4.mui.com/components/app-bar/",
+          url: "https://mui.com/components/app-bar/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

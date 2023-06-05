@@ -2,7 +2,7 @@
 
 exports[`Card test suite: actions 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -12,25 +12,25 @@ exports[`Card test suite: actions 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -39,7 +39,7 @@ exports[`Card test suite: actions 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -65,11 +65,12 @@ exports[`Card test suite: actions 1`] = `
         }
       >
         <button
-          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
           data-cy="first-action"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
           onDragLeave={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -83,21 +84,18 @@ exports[`Card test suite: actions 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span
-            className="MuiIconButton-label"
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+            data-cy="first-action-icon"
+            data-testid="AccountCircleIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
-              data-cy="first-action-icon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
+            />
+          </svg>
         </button>
          
       </div>
@@ -109,11 +107,12 @@ exports[`Card test suite: actions 1`] = `
         }
       >
         <button
-          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
           data-cy="second-action"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
           onDragLeave={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -127,21 +126,18 @@ exports[`Card test suite: actions 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span
-            className="MuiIconButton-label"
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+            data-cy="second-action-icon"
+            data-testid="AccountCircleIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
-              data-cy="second-action-icon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-              />
-            </svg>
-          </span>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
+            />
+          </svg>
         </button>
          
       </div>
@@ -152,7 +148,7 @@ exports[`Card test suite: actions 1`] = `
 
 exports[`Card test suite: collapsible 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -162,25 +158,25 @@ exports[`Card test suite: collapsible 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -189,7 +185,7 @@ exports[`Card test suite: collapsible 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -200,11 +196,12 @@ exports[`Card test suite: collapsible 1`] = `
     }
   >
     <button
-      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
       data-cy="card-collapse"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
+      onContextMenu={[Function]}
       onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -218,23 +215,20 @@ exports[`Card test suite: collapsible 1`] = `
       tabIndex={0}
       type="button"
     >
-      <span
-        className="MuiIconButton-label"
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+        data-cy="card-collapse-icon"
+        data-testid="KeyboardArrowDownIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root"
-          data-cy="card-collapse-icon"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-          />
-        </svg>
-      </span>
+        <path
+          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+        />
+      </svg>
       <span
-        className="MuiTouchRipple-root"
+        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
       />
     </button>
   </div>
@@ -243,7 +237,7 @@ exports[`Card test suite: collapsible 1`] = `
 
 exports[`Card test suite: dataCy 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="custom"
   style={
     {
@@ -253,25 +247,25 @@ exports[`Card test suite: dataCy 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="custom-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="custom-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="custom-content"
     style={
       {
@@ -280,7 +274,7 @@ exports[`Card test suite: dataCy 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -295,7 +289,7 @@ exports[`Card test suite: dataCy 1`] = `
 
 exports[`Card test suite: default 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -305,25 +299,25 @@ exports[`Card test suite: default 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -332,7 +326,7 @@ exports[`Card test suite: default 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -347,7 +341,7 @@ exports[`Card test suite: default 1`] = `
 
 exports[`Card test suite: icon 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -357,51 +351,52 @@ exports[`Card test suite: icon 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-avatar"
+      className="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
     >
       <div
-        className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault"
+        className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
         data-cy="card-avatar"
         style={
           {
-            "backgroundColor": "#3f51b5",
+            "backgroundColor": "#1976d2",
             "color": "#fff",
           }
         }
       >
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root"
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
           data-cy="card-avatar-icon"
+          data-testid="AccountCircleIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
           />
         </svg>
       </div>
     </div>
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -410,7 +405,7 @@ exports[`Card test suite: icon 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -425,7 +420,7 @@ exports[`Card test suite: icon 1`] = `
 
 exports[`Card test suite: loading 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -435,17 +430,17 @@ exports[`Card test suite: loading 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title-loading"
       >
         <span
-          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
           style={
             {
               "height": undefined,
@@ -455,11 +450,11 @@ exports[`Card test suite: loading 1`] = `
         />
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle-loading"
       >
         <span
-          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
           style={
             {
               "height": undefined,
@@ -471,7 +466,7 @@ exports[`Card test suite: loading 1`] = `
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -480,7 +475,7 @@ exports[`Card test suite: loading 1`] = `
     }
   >
     <span
-      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
       style={
         {
           "height": "128px",
@@ -494,7 +489,7 @@ exports[`Card test suite: loading 1`] = `
 
 exports[`Card test suite: localized 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="locale.title"
   style={
     {
@@ -504,25 +499,25 @@ exports[`Card test suite: localized 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="locale.title-title"
       >
         Title
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="locale.title-subtitle"
       />
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="locale.title-content"
     style={
       {
@@ -531,7 +526,7 @@ exports[`Card test suite: localized 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",
@@ -546,7 +541,7 @@ exports[`Card test suite: localized 1`] = `
 
 exports[`Card test suite: subtitle 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-bhp9pd-MuiPaper-root-MuiCard-root"
   data-cy="card"
   style={
     {
@@ -556,19 +551,19 @@ exports[`Card test suite: subtitle 1`] = `
   }
 >
   <div
-    className="MuiCardHeader-root"
+    className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-content"
+      className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
     >
       <h2
-        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap MuiTypography-displayBlock"
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-1540tig-MuiTypography-root"
         data-cy="card-title"
       >
         Card
       </h2>
       <span
-        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap"
+        className="MuiTypography-root MuiTypography-caption MuiTypography-noWrap css-840020-MuiTypography-root"
         data-cy="card-subtitle"
       >
         Subtitle
@@ -576,7 +571,7 @@ exports[`Card test suite: subtitle 1`] = `
     </div>
   </div>
   <div
-    className="MuiCardContent-root"
+    className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
     data-cy="card-content"
     style={
       {
@@ -585,7 +580,7 @@ exports[`Card test suite: subtitle 1`] = `
     }
   />
   <div
-    className="MuiCardActions-root"
+    className="MuiCardActions-root css-1rwjz6-MuiCardActions-root"
     style={
       {
         "alignItems": "center",

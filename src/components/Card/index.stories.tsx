@@ -22,7 +22,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Card Component",
-          url: "https://v4.mui.com/components/cards/",
+          url: "https://mui.com/components/cards/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

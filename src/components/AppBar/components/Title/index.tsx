@@ -1,5 +1,5 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
-import { useTheme } from "@material-ui/core";
+import React, { CSSProperties, FC, PropsWithChildren, useCallback, useMemo } from "react";
+import { useTheme } from "@mui/material";
 
 import { getComposedDataCy, ISubpartMap, suppressEvent } from "../../../../utils";
 import Typography from "../../../Typography";
@@ -15,7 +15,7 @@ export const APPBAR_TITLE_SUBPARTS: ISubpartMap = {
 
 const DATA_CY_DEFAULT = "appbar-title";
 
-const AppBarTitle: FC<any> = ({
+const AppBarTitle: FC<PropsWithChildren<any>> = ({
   children,
   dataCy = DATA_CY_DEFAULT,
   onTitleClick: externalOnTitleClick,
@@ -43,14 +43,15 @@ const AppBarTitle: FC<any> = ({
     (): CSSProperties => ({
       borderRadius: `${theme.shape.borderRadius}px`,
       cursor: "pointer",
-      padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px`,
+      padding: `${theme.spacing(0.5)} ${theme.spacing(1)}`,
       userSelect: "none",
     }),
     [theme]
   );
 
   const onTitleClick = useCallback(
-    (event) => {
+    // TODO#lb: fix any type
+    (event: any) => {
       suppressEvent(event);
       externalOnTitleClick && externalOnTitleClick();
     },

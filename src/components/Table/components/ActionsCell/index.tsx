@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TableCell as MUITableCell } from "@material-ui/core";
+import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
 import {
@@ -25,11 +25,15 @@ const TableActionsCell: FC<ITableActionsCell> = ({
   data,
   dataCallbackOptions,
   dataCy,
+  position,
   style: rowStyle,
 }) => {
   const { padding: columnPadding, width } = column;
 
-  const padding = useMemo(() => columnPadding || "normal", [columnPadding]);
+  const padding = useMemo(
+    () => (!columnPadding || columnPadding === "default" ? "normal" : columnPadding),
+    [columnPadding]
+  );
 
   const style = useMemo(
     (): CSSProperties => ({
@@ -39,14 +43,15 @@ const TableActionsCell: FC<ITableActionsCell> = ({
     [rowStyle, width]
   );
 
-  const wrapperStyle = useMemo(
-    (): CSSProperties => ({
+  const wrapperStyle = useMemo((): CSSProperties => {
+    const justifyContent = position === "primary" ? "center" : "flex-end";
+
+    return {
       alignItems: "center",
       display: "flex",
-      justifyContent: "flex-end",
-    }),
-    []
-  );
+      justifyContent,
+    };
+  }, [position]);
 
   return (
     <MUITableCell padding={padding} style={style}>

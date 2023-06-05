@@ -1,9 +1,9 @@
 import React, { CSSProperties, FC, useMemo } from "react";
-import { TextField as MUITextField } from "@material-ui/core";
 import {
   AutocompleteRenderInputParams as MUIAutocompleteRenderInputParams,
   Skeleton as MUISkeleton,
-} from "@material-ui/lab";
+  TextField as MUITextField,
+} from "@mui/material";
 
 import { ILoadable } from "../../../../types/Base";
 import { IInputField } from "../../../../types/Input";
@@ -32,7 +32,7 @@ const SelectInput: FC<ISelectInput> = ({
   type,
   variant,
 }) => {
-  const { inputProps: forwardedInputProps } = forwarded;
+  const { inputProps: forwardedInputProps, ...forwardedRefs } = forwarded;
 
   const style = useMemo((): CSSProperties => ({ ...externalStyle, width: "100%" }), [externalStyle]);
 
@@ -43,27 +43,32 @@ const SelectInput: FC<ISelectInput> = ({
 
   const inputProps = useMemo(
     () => ({
-      ...forwarded,
-      inputProps: {
-        ...forwardedInputProps,
-        "data-cy": inputDataCy,
-        style,
-      },
+      ...forwardedInputProps,
+      "data-cy": inputDataCy,
+      style,
     }),
-    [forwarded, forwardedInputProps, inputDataCy, style]
+    [forwardedInputProps, inputDataCy, style]
   );
 
   if (loading) {
     return (
       <MUISkeleton width="100%">
-        <MUITextField {...inputProps} margin="normal" size={size} variant={variant} style={style} />
+        <MUITextField
+          {...forwardedRefs}
+          inputProps={inputProps}
+          margin="normal"
+          size={size}
+          variant={variant}
+          style={style}
+        />
       </MUISkeleton>
     );
   }
 
   return (
     <MUITextField
-      {...inputProps}
+      {...forwardedRefs}
+      inputProps={inputProps}
       label={label}
       margin="normal"
       placeholder={placeholder}

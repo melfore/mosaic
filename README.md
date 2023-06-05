@@ -8,7 +8,7 @@ Melfore's UI kit library based on `@mui/*`.
 
 ## Getting started
 
-Starting from @melfore/mosaic v7.6.6 Mosaic dropped support for React < v18.x and Material UI < v5.x
+Starting from @melfore/mosaic v8.x Mosaic dropped support for React < v18.x and Material UI < v5.x
 
 Add the package to your project with:
 

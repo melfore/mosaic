@@ -1,3 +1,15 @@
+## [8.0.1](https://github.com/melfore/mosaic/compare/v8.0.0...v8.0.1) (2023-06-05)
+
+
+### Documentation
+
+* ✏️ Updated documentation for version bump ([bca8454](https://github.com/melfore/mosaic/commit/bca84549fd6573dd8d91bc3029d2376fc3909034))
+
+
+### BREAKING CHANGES
+
+* 🧨 Officially dropped support for versions of React < 18.x and MUI < 5.x
+
 ## [7.6.6](https://github.com/melfore/mosaic/compare/v7.6.5...v7.6.6) (2023-06-05)
 
 ### chore

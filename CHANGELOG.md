@@ -1,5 +1,12 @@
 ## [7.6.6](https://github.com/melfore/mosaic/compare/v7.6.5...v7.6.6) (2023-06-05)
 
+### chore
+
+* 🤖 Merged `beta` channel into `master`. 
+  
+  Thanks to @erosval and @alessandrotilli for actively supporting the transition to React v18.x and MUI v5.x
+
+
 # [7.7.0-beta.2](https://github.com/melfore/mosaic/compare/v7.7.0-beta.1...v7.7.0-beta.2) (2023-05-02)
 
 

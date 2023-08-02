@@ -15,7 +15,7 @@ ModalWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Feedback/Modal",
   component: ModalWithProps,
-  decorators: [localeDecorator, modalDecorator],
+  decorators: [modalDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

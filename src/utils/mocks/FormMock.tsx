@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, PropsWithChildren, ReactElement, useMemo, useState } from "react";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, useEffect, useState } from "react";
 import { DecoratorFn } from "@storybook/react";
 
 type IFormValue = boolean | number | string | null;
@@ -17,16 +17,17 @@ const FormMock: FC<PropsWithChildren<FormMockType>> = ({
 }) => {
   const [value, setValue] = useState(externalValue);
 
-  const wrappedFormElement = useMemo(
-    () =>
-      cloneElement(children as ReactElement<any>, {
-        [onChangePropName]: setValue,
-        [valuePropName]: value,
-      }),
-    [children, onChangePropName, value, valuePropName]
-  );
+  useEffect(() => {
+    if (externalValue !== value) {
+      setValue(externalValue);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [externalValue]);
 
-  return wrappedFormElement;
+  return cloneElement(children as ReactElement<any>, {
+    [onChangePropName]: setValue,
+    [valuePropName]: value,
+  });
 };
 
 const formDecorator: DecoratorFn = (Story, { args }) => <FormMock value={args.value}>{Story()}</FormMock>;

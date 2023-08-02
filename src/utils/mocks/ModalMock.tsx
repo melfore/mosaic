@@ -1,4 +1,13 @@
-import React, { cloneElement, FC, PropsWithChildren, ReactElement, useCallback, useMemo, useState } from "react";
+import React, {
+  cloneElement,
+  FC,
+  PropsWithChildren,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { DecoratorFn } from "@storybook/react";
 
 import Button from "../../components/Button";
@@ -16,16 +25,28 @@ const ModalMock: FC<PropsWithChildren<ModalMockType>> = ({
 }) => {
   const [open, setOpen] = useState(externalOpen);
 
-  const onClose = useCallback(() => setOpen(false), []);
+  useEffect(() => {
+    if (externalOpen !== open) {
+      setOpen(externalOpen);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [externalOpen]);
+
+  const toggleModal = useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]);
 
   const wrappedModal = useMemo(
-    () => cloneElement(children as ReactElement<any>, { onClose, open }),
-    [children, onClose, open]
+    () =>
+      cloneElement(children as ReactElement<any>, {
+        closable: true,
+        onClose: toggleModal,
+        open,
+      }),
+    [children, open, toggleModal]
   );
 
   return (
     <div>
-      <Button icon={{ name: Icons.open_new }} label={buttonLabel} onClick={() => setOpen(!open)} variant="outlined" />
+      <Button icon={{ name: Icons.open_new }} label={buttonLabel} onClick={toggleModal} variant="outlined" />
       {wrappedModal}
     </div>
   );

@@ -104,3 +104,9 @@ VariantOutlined.args = {
   ...Primary.args,
   variant: "outlined",
 };
+
+export const Color = Template.bind({});
+Color.args = {
+  ...Primary.args,
+  color: "success",
+};

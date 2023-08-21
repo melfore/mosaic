@@ -24,6 +24,9 @@ export enum ButtonVariants {
 
 type IButtonVariants = "contained" | "outlined";
 
+//type ButtonColor = "primary" | "success" | "error" | "secondary";
+type ButtonColor = "primary" | "success" | "secondary" | "info" | "error" | "warning";
+
 export type IButtonIcon = Pick<IIcon, "rotate"> & {
   component?: ReactElement;
   name?: Icons;
@@ -55,4 +58,8 @@ export interface IButton extends IBaseButton, IDisablableInput, ILocalizable {
    * Variant for button shape
    */
   variant?: IButtonVariants | ButtonVariants;
+  /**
+   * Button color
+   */
+  color?: ButtonColor;
 }

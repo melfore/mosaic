@@ -25,6 +25,7 @@ const Button: FC<IButton> = ({
   onClick,
   style,
   variant = "contained",
+  color = "primary",
 }) => {
   const icon = useMemo(() => {
     const muiIcon: IMUIButtonIcon = {};
@@ -62,6 +63,7 @@ const Button: FC<IButton> = ({
       onClick={onClickHandler}
       style={style}
       variant={variant}
+      color={color}
       {...icon}
     >
       {label}

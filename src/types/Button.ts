@@ -24,7 +24,6 @@ export enum ButtonVariants {
 
 type IButtonVariants = "contained" | "outlined";
 
-//type ButtonColor = "primary" | "success" | "error" | "secondary";
 type ButtonColor = "primary" | "success" | "secondary" | "info" | "error" | "warning";
 
 export type IButtonIcon = Pick<IIcon, "rotate"> & {

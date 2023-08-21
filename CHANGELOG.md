@@ -1,3 +1,10 @@
+# [8.1.0](https://github.com/melfore/mosaic/compare/v8.0.3...v8.1.0) (2023-08-21)
+
+
+### Features
+
+* 🎸 [Button] Added button colord ([e4459d3](https://github.com/melfore/mosaic/commit/e4459d3c712d22fe974a989399f4034507943326)), closes [#311](https://github.com/melfore/mosaic/issues/311)
+
 ## [8.0.3](https://github.com/melfore/mosaic/compare/v8.0.2...v8.0.3) (2023-08-02)
 
 ## [8.0.2](https://github.com/melfore/mosaic/compare/v8.0.1...v8.0.2) (2023-06-05)

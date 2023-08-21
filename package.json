@@ -91,7 +91,7 @@
     "build:storybook:beta": "storybook build -o docs/beta --docs",
     "build:test": "npm run pre:test && tsc",
     "build:yalc": "npm run build && yalc publish --push --private",
-    "clean:code": "eslint '**/*.ts*' --fix && prettier --write .",
+    "clean:code": "eslint ./ --ext .js,.jsx,.ts,.tsx --fix && prettier ./ --write",
     "clean:packages": "rm -rf package-lock.json",
     "clean:workspace": "rm -rf coverage/ && rm -rf dist && rm -rf tsconfig.json && rm -rf node_modules/",
     "commit": "npx git-cz",

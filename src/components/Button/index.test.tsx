@@ -148,3 +148,10 @@ describe("Button test suite:", () => {
     expect(snapshotWrapper).toMatchSnapshot();
   });
 });
+
+it("color", () => {
+  const { element } = getButtonTestable({ props: { color: "success" } });
+
+  const snapshotWrapper = renderer.create(element).toJSON();
+  expect(snapshotWrapper).toMatchSnapshot();
+});

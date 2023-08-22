@@ -147,11 +147,11 @@ describe("Button test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
-});
 
-it("color", () => {
-  const { element } = getButtonTestable({ props: { color: "success" } });
+  it("color", () => {
+    const { element } = getButtonTestable({ props: { color: "success" } });
 
-  const snapshotWrapper = renderer.create(element).toJSON();
-  expect(snapshotWrapper).toMatchSnapshot();
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

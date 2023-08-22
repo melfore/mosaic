@@ -1,3 +1,10 @@
+# [8.2.0](https://github.com/melfore/mosaic/compare/v8.1.0...v8.2.0) (2023-08-22)
+
+
+### Features
+
+* 🎸 [Progress] Added new component ([2424ae5](https://github.com/melfore/mosaic/commit/2424ae5dbd51a81e8f75f563f8bb56835ff31ea5)), closes [#106](https://github.com/melfore/mosaic/issues/106)
+
 # [8.1.0](https://github.com/melfore/mosaic/compare/v8.0.3...v8.1.0) (2023-08-21)
 
 

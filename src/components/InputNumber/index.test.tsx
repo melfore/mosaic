@@ -81,6 +81,9 @@ describe("InputNumber test suite:", () => {
     wrapper.simulate("change", { target: { value: 9 } });
     expect(onChange).toHaveBeenCalledWith(9);
 
+    wrapper.simulate("blur", { target: { value: 9 } });
+    expect(onChange).toHaveBeenCalledWith(minValue);
+
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });

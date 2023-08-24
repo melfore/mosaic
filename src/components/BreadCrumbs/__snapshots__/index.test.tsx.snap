@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BreadCrumbs test suite: icon test 1`] = `
+<nav
+  aria-label="breadcrumb"
+  className="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+  data-cy="bredCrumbs"
+>
+  <ol
+    className="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
+  >
+    <li
+      className="MuiBreadcrumbs-li"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+        data-cy="typography"
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+          }
+        }
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+          data-cy="icon"
+          data-testid="AddIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          />
+        </svg>
+        PAGE
+      </h3>
+    </li>
+  </ol>
+</nav>
+`;
+
 exports[`BreadCrumbs test suite: primary 1`] = `
 <nav
   aria-label="breadcrumb"

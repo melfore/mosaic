@@ -1,6 +1,8 @@
 import React from "react";
+import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Icons } from "../../types/Icon";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
@@ -32,8 +34,8 @@ export default {
 
 const Template: ComponentStory<typeof BreadCrumbs> = (args) => <BreadCrumbs {...args} dataCy={DATA_CY_DEFAULT} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   link: [
     {
       label: "page1",
@@ -48,5 +50,28 @@ Example.args = {
       href: "",
     },
   ],
-  onClick: () => {},
+};
+
+export const SeparatorCustom = Template.bind({});
+SeparatorCustom.args = { ...Primary.args, separator: "<" };
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  link: [
+    {
+      label: "page1",
+      href: "",
+      icon: Icons.clock,
+    },
+    {
+      label: "page2",
+      href: "",
+    },
+    {
+      label: "page3",
+      href: "",
+      icon: <AccessibilityIcon color="primary" />,
+    },
+  ],
+  size: "medium",
 };

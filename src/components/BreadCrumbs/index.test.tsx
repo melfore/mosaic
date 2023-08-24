@@ -33,4 +33,22 @@ describe("BreadCrumbs test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("Size", () => {
+    const { element } = getBreadCrumbsTestable({
+      props: { size: "medium" },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("separator", () => {
+    const { element } = getBreadCrumbsTestable({
+      props: { separator: "/" },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

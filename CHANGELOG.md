@@ -1,3 +1,11 @@
+# [8.3.0](https://github.com/melfore/mosaic/compare/v8.2.0...v8.3.0) (2023-08-24)
+
+
+### Features
+
+* 🎸 [Bread Crumbs] Added new component ([e7d556b](https://github.com/melfore/mosaic/commit/e7d556bd63969420730335dbb90127643f9d1343)), closes [#146](https://github.com/melfore/mosaic/issues/146)
+* 🎸 [BreadCrumbs] Added new component ([d276cc8](https://github.com/melfore/mosaic/commit/d276cc8c2b7b99ccf0d07d21c35ef8868d397884)), closes [#146](https://github.com/melfore/mosaic/issues/146)
+
 # [8.2.0](https://github.com/melfore/mosaic/compare/v8.1.0...v8.2.0) (2023-08-22)
 
 

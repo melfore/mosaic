@@ -38,6 +38,10 @@ const InputNumber: FC<IInputNumber> = ({
   const getNumericValue = useCallback(
     (value: string): INullableNumber => {
       const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      const minValueString = minValue.toString();
+      if (minValueString.length > value.length) {
+        return numericValue;
+      }
       if (isNaN(numericValue)) {
         return null;
       }
@@ -55,6 +59,7 @@ const InputNumber: FC<IInputNumber> = ({
     ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const numericValue = getNumericValue(value);
       onChange && onChange(numericValue);
+      console.log(typeof value);
     },
     [getNumericValue, onChange]
   );

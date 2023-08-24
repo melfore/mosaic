@@ -3,6 +3,7 @@
 exports[`InputNumber test suite: dataCy 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -57,6 +58,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
 exports[`InputNumber test suite: default 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -111,6 +113,7 @@ exports[`InputNumber test suite: default 1`] = `
 exports[`InputNumber test suite: disabled 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -165,6 +168,7 @@ exports[`InputNumber test suite: disabled 1`] = `
 exports[`InputNumber test suite: float 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -219,6 +223,7 @@ exports[`InputNumber test suite: float 1`] = `
 exports[`InputNumber test suite: localized 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -279,6 +284,7 @@ exports[`InputNumber test suite: localized 1`] = `
 exports[`InputNumber test suite: min/max 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -333,6 +339,7 @@ exports[`InputNumber test suite: min/max 1`] = `
 exports[`InputNumber test suite: numeric values only 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -387,6 +394,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
 exports[`InputNumber test suite: onChange 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -441,6 +449,7 @@ exports[`InputNumber test suite: onChange 1`] = `
 exports[`InputNumber test suite: placeholder 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -496,6 +505,7 @@ exports[`InputNumber test suite: placeholder 1`] = `
 exports[`InputNumber test suite: required 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -550,6 +560,7 @@ exports[`InputNumber test suite: required 1`] = `
 exports[`InputNumber test suite: shrink 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -604,6 +615,7 @@ exports[`InputNumber test suite: shrink 1`] = `
 exports[`InputNumber test suite: size 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -658,6 +670,7 @@ exports[`InputNumber test suite: size 1`] = `
 exports[`InputNumber test suite: value 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",
@@ -712,6 +725,7 @@ exports[`InputNumber test suite: value 1`] = `
 exports[`InputNumber test suite: variant 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
   style={
     {
       "textAlign": "right",

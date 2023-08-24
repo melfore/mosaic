@@ -77,8 +77,8 @@ Disabled.args = {
 export const MinMax = Template.bind({});
 MinMax.args = {
   ...Primary.args,
-  maxValue: 100,
-  minValue: 10,
+  maxValue: 1000,
+  minValue: 20,
 };
 
 export const Nullable = Template.bind({});

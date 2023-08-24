@@ -71,14 +71,15 @@ describe("InputNumber test suite:", () => {
 
   it("min/max", () => {
     const onChange = jest.fn();
-    const maxValue = 9;
-    const minValue = 5;
+    const maxValue = 100;
+    const minValue = 10;
     const { element, wrapper } = getInputNumberTestable({ props: { minValue, maxValue, onChange } });
 
     wrapper.simulate("change", { target: { value: maxValue + 1 } });
     expect(onChange).toHaveBeenCalledWith(maxValue);
-    wrapper.simulate("change", { target: { value: minValue - 1 } });
-    expect(onChange).toHaveBeenCalledWith(minValue);
+
+    wrapper.simulate("change", { target: { value: 9 } });
+    expect(onChange).toHaveBeenCalledWith(9);
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

@@ -38,34 +38,59 @@ const InputNumber: FC<IInputNumber> = ({
   const getNumericValue = useCallback(
     (value: string): INullableNumber => {
       const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      if (isNaN(numericValue)) {
+        return null;
+      }
       const minValueString = minValue.toString();
       if (minValueString.length > value.length) {
         return numericValue;
-      }
-      if (isNaN(numericValue)) {
-        return null;
       }
 
       if (numericValue >= minValue && numericValue <= maxValue) {
         return numericValue;
       }
 
-      return numericValue < minValue ? minValue : maxValue;
+      return numericValue < minValue ? numericValue : maxValue;
     },
     [integer, minValue, maxValue]
+  );
+
+  const getOnBlurNumericValue = useCallback(
+    (value: string): INullableNumber => {
+      const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      if (isNaN(numericValue)) {
+        return null;
+      }
+      return numericValue < minValue ? minValue : numericValue;
+    },
+    [integer, minValue]
+  );
+
+  const onBlurHandler = useCallback(
+    ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const numericValue = getOnBlurNumericValue(value);
+      if (onChange && numericValue) {
+        onChange(numericValue);
+      }
+    },
+    [getOnBlurNumericValue, onChange]
   );
 
   const onChangeHandler = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const numericValue = getNumericValue(value);
       onChange && onChange(numericValue);
-      console.log(typeof value);
     },
     [getNumericValue, onChange]
   );
 
   return (
     <MUITextField
+      onKeyDown={(e) => {
+        if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
+          e.preventDefault();
+        }
+      }}
       disabled={disabled}
       InputLabelProps={{
         shrink,
@@ -81,6 +106,7 @@ const InputNumber: FC<IInputNumber> = ({
       label={label}
       margin="normal"
       onChange={onChangeHandler}
+      onBlur={onBlurHandler}
       placeholder={placeholder}
       required={required}
       size={size}

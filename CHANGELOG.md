@@ -1,3 +1,10 @@
+# [8.4.0](https://github.com/melfore/mosaic/compare/v8.3.1...v8.4.0) (2023-08-25)
+
+
+### Features
+
+* 🎸 [Input Text] Added autoFocus ([72c8702](https://github.com/melfore/mosaic/commit/72c87020ed571f15ddea904a7ecd2519ffd46716)), closes [#201](https://github.com/melfore/mosaic/issues/201)
+
 ## [8.3.1](https://github.com/melfore/mosaic/compare/v8.3.0...v8.3.1) (2023-08-25)
 
 

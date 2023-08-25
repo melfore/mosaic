@@ -1,6 +1,7 @@
 import renderer from "react-test-renderer";
 
 import { BreadCrumbsType } from "../../types/BreadCrumbs";
+import { Icons } from "../../types/Icon";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 
 import BreadCrumbs, { DATA_CY_DEFAULT } from ".";
@@ -19,6 +20,33 @@ describe("BreadCrumbs test suite:", () => {
   it("primary", () => {
     const onClick = jest.fn();
     const { element } = getBreadCrumbsTestable({ props: { link: [{ label: "PAGE", href: "" }], onClick } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+  it("icon test", () => {
+    const onClick = jest.fn();
+    const { element } = getBreadCrumbsTestable({
+      props: { link: [{ label: "PAGE", href: "", icon: Icons.add }], onClick },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("Size", () => {
+    const { element } = getBreadCrumbsTestable({
+      props: { size: "medium" },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("separator", () => {
+    const { element } = getBreadCrumbsTestable({
+      props: { separator: "/" },
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

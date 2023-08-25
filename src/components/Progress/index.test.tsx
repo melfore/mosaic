@@ -22,4 +22,11 @@ describe("Progress test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("type", () => {
+    const { element } = getProgressTestable({ props: { type: "Linear" } });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

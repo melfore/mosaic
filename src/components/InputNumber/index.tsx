@@ -41,14 +41,38 @@ const InputNumber: FC<IInputNumber> = ({
       if (isNaN(numericValue)) {
         return null;
       }
+      if (minValue > numericValue) {
+        return numericValue;
+      }
 
       if (numericValue >= minValue && numericValue <= maxValue) {
         return numericValue;
       }
 
-      return numericValue < minValue ? minValue : maxValue;
+      return numericValue < minValue ? numericValue : maxValue;
     },
     [integer, minValue, maxValue]
+  );
+
+  const getOnBlurNumericValue = useCallback(
+    (value: string): INullableNumber => {
+      const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      if (isNaN(numericValue)) {
+        return null;
+      }
+      return numericValue < minValue ? minValue : numericValue;
+    },
+    [integer, minValue]
+  );
+
+  const onBlurHandler = useCallback(
+    ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const numericValue = getOnBlurNumericValue(value);
+      if (onChange && numericValue) {
+        onChange(numericValue);
+      }
+    },
+    [getOnBlurNumericValue, onChange]
   );
 
   const onChangeHandler = useCallback(
@@ -59,8 +83,15 @@ const InputNumber: FC<IInputNumber> = ({
     [getNumericValue, onChange]
   );
 
+  const OnKeyDownHandler = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
+      e.preventDefault();
+    }
+  }, []);
+
   return (
     <MUITextField
+      onKeyDown={OnKeyDownHandler}
       disabled={disabled}
       InputLabelProps={{
         shrink,
@@ -76,6 +107,7 @@ const InputNumber: FC<IInputNumber> = ({
       label={label}
       margin="normal"
       onChange={onChangeHandler}
+      onBlur={onBlurHandler}
       placeholder={placeholder}
       required={required}
       size={size}

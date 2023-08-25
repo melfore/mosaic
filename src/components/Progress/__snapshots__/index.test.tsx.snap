@@ -32,3 +32,28 @@ exports[`Progress test suite: color 1`] = `
   </span>
 </div>
 `;
+
+exports[`Progress test suite: type 1`] = `
+<div
+  className="MuiBox-root css-70qvj9"
+>
+  <div
+    className="MuiBox-root css-1bhivts"
+  >
+    <span
+      className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate css-eglki6-MuiLinearProgress-root"
+      data-cy="progress"
+      role="progressbar"
+    >
+      <span
+        className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate css-5ir5xx-MuiLinearProgress-bar1"
+        style={{}}
+      />
+      <span
+        className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate css-1r8wrcl-MuiLinearProgress-bar2"
+        style={{}}
+      />
+    </span>
+  </div>
+</div>
+`;

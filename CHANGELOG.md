@@ -1,3 +1,11 @@
+## [8.3.1](https://github.com/melfore/mosaic/compare/v8.3.0...v8.3.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* 🐛 [Input Number] Fixed wrong characters insert ([3b13b62](https://github.com/melfore/mosaic/commit/3b13b62da5d7141d20e99da5684ef5b9619d6648)), closes [#316](https://github.com/melfore/mosaic/issues/316)
+* 🐛 [InputNumber] Fixed number validation ([cb1b7f3](https://github.com/melfore/mosaic/commit/cb1b7f3baecf738a4b88dc2b0507380b7d2b4b36)), closes [#316](https://github.com/melfore/mosaic/issues/316)
+
 # [8.3.0](https://github.com/melfore/mosaic/compare/v8.2.0...v8.3.0) (2023-08-24)
 
 

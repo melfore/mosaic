@@ -86,4 +86,8 @@ export interface IInputField extends IBaseInput {
    * Input variant
    */
   variant?: IInputVariant | InputVariant;
+  /**
+   * Automatically get focus when the page loads
+   */
+  autoFocus?: boolean;
 }

@@ -41,8 +41,7 @@ const InputNumber: FC<IInputNumber> = ({
       if (isNaN(numericValue)) {
         return null;
       }
-      const minValueString = minValue.toString();
-      if (minValueString.length > value.length) {
+      if (minValue > numericValue) {
         return numericValue;
       }
 
@@ -84,13 +83,15 @@ const InputNumber: FC<IInputNumber> = ({
     [getNumericValue, onChange]
   );
 
+  const OnKeyDownHandler = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
+      e.preventDefault();
+    }
+  }, []);
+
   return (
     <MUITextField
-      onKeyDown={(e) => {
-        if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
-          e.preventDefault();
-        }
-      }}
+      onKeyDown={OnKeyDownHandler}
       disabled={disabled}
       InputLabelProps={{
         shrink,

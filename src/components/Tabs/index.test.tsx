@@ -29,4 +29,22 @@ describe("Tabs test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("Wrapped", () => {
+    const { element } = getTabsTestable({
+      props: { labelList: [{ label: "PAGE1" }, { label: "PAGE2", wrapped: true }] },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("children", () => {
+    const { element } = getTabsTestable({
+      props: { labelList: [{ label: "PAGE1", children: "Children" }] },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

@@ -234,6 +234,7 @@ exports[`Tabs test suite: children 1`] = `
     </div>
   </div>
   <div
+    aria-labelledby="horizontal-tab-0"
     id="simple-tabpanel-0"
     role="tabpanel"
   >
@@ -299,6 +300,75 @@ exports[`Tabs test suite: color 1`] = `
           PAGE
           <span
             className="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+            style={{}}
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs test suite: orientation 1`] = `
+<div
+  className="MuiBox-root css-k008qs"
+>
+  <div
+    className="MuiTabs-root MuiTabs-vertical css-1g4ac1o-MuiTabs-root"
+    data-cy="tabs"
+  >
+    <div
+      className="MuiTabs-hideScrollbar css-agdkjh-MuiTabs-scrollbarSize"
+      style={
+        {
+          "height": 99,
+          "overflow": "scroll",
+          "position": "absolute",
+          "top": -9999,
+          "width": 99,
+        }
+      }
+    />
+    <div
+      className="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableY css-1cgx7kx-MuiTabs-scroller"
+      onScroll={[Function]}
+      style={
+        {
+          "marginRight": -0,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <div
+        aria-orientation="vertical"
+        className="MuiTabs-flexContainer MuiTabs-flexContainerVertical css-lfwcke-MuiTabs-flexContainer"
+        onKeyDown={[Function]}
+        role="tablist"
+      >
+        <button
+          aria-selected={true}
+          className="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="tab"
+          tabIndex={0}
+          type="button"
+        >
+          PAGE1
+          <span
+            className="MuiTabs-indicator css-10d9dml-MuiTabs-indicator"
             style={{}}
           />
         </button>

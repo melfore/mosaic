@@ -1,6 +1,9 @@
 import { IBase } from "./Base";
 
+export type TabType = { label: string; wrapped?: boolean; children?: any };
+
 export type TabsType = IBase & {
-  labelList: { label: string; wrapped?: boolean; children?: any }[];
+  labelList: TabType[];
   color?: "primary" | "secondary";
+  orientation?: "horizontal" | "vertical";
 };

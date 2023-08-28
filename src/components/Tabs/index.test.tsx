@@ -47,4 +47,13 @@ describe("Tabs test suite:", () => {
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
+
+  it("orientation", () => {
+    const { element } = getTabsTestable({
+      props: { labelList: [{ label: "PAGE1" }], orientation: "vertical" },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
 });

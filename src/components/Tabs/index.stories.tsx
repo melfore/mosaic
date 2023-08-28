@@ -48,3 +48,6 @@ Custom.args = {
     { label: "PAGE3", children: <Progress type="Circular" withLabel={false} /> },
   ],
 };
+
+export const Orientation = Template.bind({});
+Orientation.args = { ...Custom.args, orientation: "vertical" };

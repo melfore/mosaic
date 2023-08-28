@@ -3,9 +3,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import Progress from "../Progress";
 
 import Tabs, { DATA_CY_DEFAULT } from ".";
-import Progress from "../Progress";
 
 const COMPONENT_NAME = "Tabs";
 Tabs.displayName = COMPONENT_NAME;

@@ -8,7 +8,7 @@ import Typography from "../Typography";
 
 export const DATA_CY_DEFAULT = "tabs";
 
-const Tabs: FC<TabsType> = ({ dataCy = DATA_CY_DEFAULT, labelList, color }) => {
+const Tabs: FC<TabsType> = ({ dataCy = DATA_CY_DEFAULT, labelList, color = "primary" }) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -17,8 +17,8 @@ const Tabs: FC<TabsType> = ({ dataCy = DATA_CY_DEFAULT, labelList, color }) => {
   return (
     <Box>
       <MUITabs data-cy={dataCy} value={value} onChange={handleChange} textColor={color} indicatorColor={color}>
-        {labelList.map((i) => {
-          return <MUITab label={i.label} wrapped={i.wrapped} />;
+        {labelList.map((i, index) => {
+          return <MUITab label={i.label} wrapped={i.wrapped} key={index} />;
         })}
       </MUITabs>
       {labelList[value].children && (

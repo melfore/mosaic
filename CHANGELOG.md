@@ -1,3 +1,11 @@
+# [8.5.0](https://github.com/melfore/mosaic/compare/v8.4.0...v8.5.0) (2023-08-28)
+
+
+### Features
+
+* 🎸 [Tabs] Added new component ([41489f2](https://github.com/melfore/mosaic/commit/41489f2c4bf99d09ddeb29943d533a03872308ca)), closes [#145](https://github.com/melfore/mosaic/issues/145)
+* 🎸 [Tabs] Added vertical tabs ([99a8909](https://github.com/melfore/mosaic/commit/99a890970ca7b39fb2e7bda5aa3d464f77569b59)), closes [#145](https://github.com/melfore/mosaic/issues/145)
+
 # [8.4.0](https://github.com/melfore/mosaic/compare/v8.3.1...v8.4.0) (2023-08-25)
 
 

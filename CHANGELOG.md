@@ -1,3 +1,10 @@
+# [8.6.0](https://github.com/melfore/mosaic/compare/v8.5.0...v8.6.0) (2023-08-29)
+
+
+### Features
+
+* 🎸 [Menu] Added component ([3880865](https://github.com/melfore/mosaic/commit/388086590e82722978c640bd6ffa8d04639f13b8)), closes [#246](https://github.com/melfore/mosaic/issues/246)
+
 # [8.5.0](https://github.com/melfore/mosaic/compare/v8.4.0...v8.5.0) (2023-08-28)
 
 

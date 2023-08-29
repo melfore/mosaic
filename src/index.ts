@@ -3,6 +3,8 @@ export { default as AppBar } from "./components/AppBar";
 export { default as Avatar } from "./components/Avatar";
 export { AvatarVariant } from "./types/Avatar";
 
+export { default as BreadCrumbs } from "./components/BreadCrumbs";
+
 export { default as Button } from "./components/Button";
 export { ButtonIconPosition, ButtonVariants } from "./types/Button";
 
@@ -22,6 +24,10 @@ export { InputSize, InputType, InputVariant } from "./types/Input";
 export { default as ListItem } from "./components/ListItem";
 export { default as ListItemCollapsible } from "./components/ListItemCollapsible";
 
+export { default as Menu } from "./components/Menu";
+
+export { default as Progress } from "./components/Progress";
+
 export { default as Modal } from "./components/Modal";
 export { ModalSize } from "./types/Modal";
 
@@ -35,6 +41,8 @@ export { SwitchSize } from "./types/Switch";
 
 export { default as Table } from "./components/Table";
 export { TableActionPosition } from "./types/Table";
+
+export { default as Tabs } from "./components/Tabs";
 
 export { default as Typography } from "./components/Typography";
 export { TypographyVariants, TypographyDisplay } from "./types/Typography";

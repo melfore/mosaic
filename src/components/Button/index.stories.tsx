@@ -1,6 +1,8 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
+import { expect, jest } from "@storybook/jest";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -8,6 +10,8 @@ import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Button, { ButtonWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "Button";
 Button.displayName = COMPONENT_NAME;
@@ -41,6 +45,7 @@ const Template: ComponentStory<typeof ButtonWithProps> = (args) => <Button {...a
 export const Primary = Template.bind({});
 Primary.args = {
   label: "Button",
+  onClick: jest.fn(),
 };
 
 export const Disabled = Template.bind({});
@@ -109,4 +114,15 @@ export const Color = Template.bind({});
 Color.args = {
   ...Primary.args,
   color: "success",
+};
+
+export const OnClick: any = {
+  args: {
+    ...Primary.args,
+  },
+  play: async ({ canvasElement }: any) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId(DATA_CY_DEFAULT));
+    await expect(Primary.args?.onClick).toHaveBeenCalledTimes(1);
+  },
 };

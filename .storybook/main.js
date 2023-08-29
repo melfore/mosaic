@@ -5,6 +5,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-mdx-gfm",
     "@storybook/addon-coverage",
+    "@storybook/addon-interactions",
   ],
   features: {
     emotionAlias: false,

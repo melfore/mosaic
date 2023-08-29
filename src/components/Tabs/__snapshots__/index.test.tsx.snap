@@ -262,7 +262,6 @@ exports[`Tabs test suite: color 1`] = `
   >
     <div
       className="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
-      onScroll={[Function]}
       style={
         {
           "marginBottom": -0,

@@ -81,7 +81,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="table-select-all-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -168,7 +168,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -260,7 +260,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -352,7 +352,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -444,7 +444,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -536,7 +536,7 @@ exports[`Table test suite: bulk selection - select all 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -690,7 +690,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="table-select-all-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -780,7 +780,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -875,7 +875,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -970,7 +970,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -1065,7 +1065,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
@@ -1160,7 +1160,7 @@ exports[`Table test suite: bulk selection - select none 1`] = `
               }
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
                 data-cy="checkbox-check"
                 onBlur={[Function]}
                 onContextMenu={[Function]}

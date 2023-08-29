@@ -440,7 +440,7 @@ exports[`Card test suite: loading 1`] = `
         data-cy="card-title-loading"
       >
         <span
-          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
+          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
           style={
             {
               "height": undefined,
@@ -454,7 +454,7 @@ exports[`Card test suite: loading 1`] = `
         data-cy="card-subtitle-loading"
       >
         <span
-          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
+          className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
           style={
             {
               "height": undefined,
@@ -475,7 +475,7 @@ exports[`Card test suite: loading 1`] = `
     }
   >
     <span
-      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
+      className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
       style={
         {
           "height": "128px",

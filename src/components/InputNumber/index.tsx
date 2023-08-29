@@ -1,4 +1,4 @@
-import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { ChangeEvent, CSSProperties, FC, KeyboardEvent, useCallback, useMemo } from "react";
 import { TextField as MUITextField } from "@mui/material";
 
 import { IInputNumber, INullableNumber } from "../../types/InputNumber";
@@ -83,7 +83,7 @@ const InputNumber: FC<IInputNumber> = ({
     [getNumericValue, onChange]
   );
 
-  const OnKeyDownHandler = useCallback((e: React.KeyboardEvent) => {
+  const onKeyDownHandler = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
       e.preventDefault();
     }
@@ -91,7 +91,7 @@ const InputNumber: FC<IInputNumber> = ({
 
   return (
     <MUITextField
-      onKeyDown={OnKeyDownHandler}
+      onKeyDown={onKeyDownHandler}
       disabled={disabled}
       InputLabelProps={{
         shrink,

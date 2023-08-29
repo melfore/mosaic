@@ -29,6 +29,7 @@ const InputText: FC<IInputText> = ({
   type = "text",
   value = "",
   variant = "outlined",
+  autoFocus,
 }) => {
   const adornment = useMemo(() => getAdornment(externalAdornment), [externalAdornment]);
 
@@ -64,6 +65,7 @@ const InputText: FC<IInputText> = ({
       type={type}
       variant={variant}
       value={value}
+      autoFocus={autoFocus}
     />
   );
 };

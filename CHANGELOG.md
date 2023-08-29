@@ -1,3 +1,34 @@
+# [8.5.0](https://github.com/melfore/mosaic/compare/v8.4.0...v8.5.0) (2023-08-28)
+
+
+### Features
+
+* 🎸 [Tabs] Added new component ([41489f2](https://github.com/melfore/mosaic/commit/41489f2c4bf99d09ddeb29943d533a03872308ca)), closes [#145](https://github.com/melfore/mosaic/issues/145)
+* 🎸 [Tabs] Added vertical tabs ([99a8909](https://github.com/melfore/mosaic/commit/99a890970ca7b39fb2e7bda5aa3d464f77569b59)), closes [#145](https://github.com/melfore/mosaic/issues/145)
+
+# [8.4.0](https://github.com/melfore/mosaic/compare/v8.3.1...v8.4.0) (2023-08-25)
+
+
+### Features
+
+* 🎸 [Input Text] Added autoFocus ([72c8702](https://github.com/melfore/mosaic/commit/72c87020ed571f15ddea904a7ecd2519ffd46716)), closes [#201](https://github.com/melfore/mosaic/issues/201)
+
+## [8.3.1](https://github.com/melfore/mosaic/compare/v8.3.0...v8.3.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* 🐛 [Input Number] Fixed wrong characters insert ([3b13b62](https://github.com/melfore/mosaic/commit/3b13b62da5d7141d20e99da5684ef5b9619d6648)), closes [#316](https://github.com/melfore/mosaic/issues/316)
+* 🐛 [InputNumber] Fixed number validation ([cb1b7f3](https://github.com/melfore/mosaic/commit/cb1b7f3baecf738a4b88dc2b0507380b7d2b4b36)), closes [#316](https://github.com/melfore/mosaic/issues/316)
+
+# [8.3.0](https://github.com/melfore/mosaic/compare/v8.2.0...v8.3.0) (2023-08-24)
+
+
+### Features
+
+* 🎸 [Bread Crumbs] Added new component ([e7d556b](https://github.com/melfore/mosaic/commit/e7d556bd63969420730335dbb90127643f9d1343)), closes [#146](https://github.com/melfore/mosaic/issues/146)
+* 🎸 [BreadCrumbs] Added new component ([d276cc8](https://github.com/melfore/mosaic/commit/d276cc8c2b7b99ccf0d07d21c35ef8868d397884)), closes [#146](https://github.com/melfore/mosaic/issues/146)
+
 # [8.2.0](https://github.com/melfore/mosaic/compare/v8.1.0...v8.2.0) (2023-08-22)
 
 

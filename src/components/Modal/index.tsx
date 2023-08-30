@@ -47,7 +47,7 @@ const Modal: FC<PropsWithChildren<IModal>> = ({
   dataCy = DATA_CY_DEFAULT,
   onClose: externalOnClose,
   open = false,
-  responsive = false,
+  responsive = true,
   size = "md",
   title = "",
 }) => {
@@ -69,7 +69,7 @@ const Modal: FC<PropsWithChildren<IModal>> = ({
   );
 
   const viewOptions: IModalViewOptions = useMemo(() => {
-    if (responsive) {
+    if (!responsive) {
       return {
         fullScreen: size === "xl",
         maxWidth: size,

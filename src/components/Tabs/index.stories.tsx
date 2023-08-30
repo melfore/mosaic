@@ -45,9 +45,9 @@ Custom.args = {
   labelList: [
     { label: "PAGE1" },
     { label: "PAGE2" },
-    { label: "PAGE3", children: <Progress type="Circular" withLabel={false} /> },
+    { label: "PAGE3", content: <Progress type="Circular" withLabel={false} /> },
   ],
 };
 
 export const Orientation = Template.bind({});
-Orientation.args = { ...Custom.args, orientation: "vertical" };
+Orientation.args = { ...Primary.args, orientation: "vertical" };

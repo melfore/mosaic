@@ -446,7 +446,7 @@ exports[`InputNumber test suite: onChange 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: placeholder 1`] = `
+exports[`InputNumber test suite: onKeyDown 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -468,6 +468,61 @@ exports[`InputNumber test suite: placeholder 1`] = `
       data-cy="input-number"
       disabled={false}
       id=":r8:"
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        {
+          "textAlign": "right",
+          "width": "100%",
+        }
+      }
+      type="number"
+      value=""
+    />
+    <fieldset
+      aria-hidden={true}
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="css-ihdtdm"
+      >
+        <span
+          className="notranslate"
+        >
+          ​
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`InputNumber test suite: placeholder 1`] = `
+<div
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
+  style={
+    {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      id=":r9:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -523,7 +578,7 @@ exports[`InputNumber test suite: required 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r9:"
+      id=":ra:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -578,7 +633,7 @@ exports[`InputNumber test suite: shrink 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":ra:"
+      id=":rb:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -633,7 +688,7 @@ exports[`InputNumber test suite: size 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":rb:"
+      id=":rc:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -688,7 +743,7 @@ exports[`InputNumber test suite: value 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":rc:"
+      id=":rd:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -743,7 +798,7 @@ exports[`InputNumber test suite: variant 1`] = `
       className="MuiInputBase-input MuiFilledInput-input css-10botns-MuiInputBase-input-MuiFilledInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":rd:"
+      id=":re:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}

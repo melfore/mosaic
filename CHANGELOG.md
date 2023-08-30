@@ -1,3 +1,10 @@
+## [8.6.1](https://github.com/melfore/mosaic/compare/v8.6.0...v8.6.1) (2023-08-30)
+
+
+### Bug Fixes
+
+* 🐛 [InputNumber] Typing for onKeyDown event handler ([e6d73df](https://github.com/melfore/mosaic/commit/e6d73dffc07efcf5f20f5867c29d2051ce6fb3ff))
+
 # [8.6.0](https://github.com/melfore/mosaic/compare/v8.5.0...v8.6.0) (2023-08-29)
 
 

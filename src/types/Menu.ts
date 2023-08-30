@@ -7,7 +7,7 @@ export interface IMenuItem {
   /**
    * Menu item label
    */
-  label?: string;
+  label: string;
   /**
    * Callback for click events, dedicated for menu item
    */

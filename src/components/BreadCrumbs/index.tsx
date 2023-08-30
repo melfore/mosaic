@@ -16,6 +16,7 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
     }
     return "pagetitle";
   }, [size]);
+
   return (
     <MUIBreadcrumbs data-cy={dataCy} aria-label="breadcrumb" separator={separator}>
       {link.map((i, index) => {
@@ -26,8 +27,8 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
             color="inherit"
             onClick={() => onClick(i.href)}
           >
-            {i.icon && <IconWrapper dataCy="icon" icon={i.icon} size={size} />}
             <Typography style={{ display: "flex", alignItems: "center" }} variant={typographySize}>
+              {i.icon && <IconWrapper dataCy="icon" icon={i.icon} size={size} />}
               {i.label}
             </Typography>
           </Link>

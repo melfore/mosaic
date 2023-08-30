@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Display/Typography Bottom Spacing 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-397282-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Custom Content 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+  data-cy="typography"
+>
+  <span>
+    <b>
+      Strong
+    </b>
+     text
+  </span>
+</p>
+`;
+
+exports[`Storyshots Display/Typography Display Block 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-10hburv-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Display Inline 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-1sx1eu0-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Loading 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+  data-cy="typography-loading"
+>
+  <span
+    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
+    style={
+      {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+</p>
+`;
+
+exports[`Storyshots Display/Typography Primary 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Truncated 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap css-1m2dqj2-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Variant Body 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Storyshots Display/Typography Variant Caption 1`] = `
+<span
+  className="MuiTypography-root MuiTypography-caption css-ecfcy6-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</span>
+`;
+
+exports[`Storyshots Display/Typography Variant Label 1`] = `
+<h3
+  className="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</h3>
+`;
+
+exports[`Storyshots Display/Typography Variant Overline 1`] = `
+<h4
+  className="MuiTypography-root MuiTypography-overline css-1dp7e8w-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</h4>
+`;
+
+exports[`Storyshots Display/Typography Variant Pagetitle 1`] = `
+<h1
+  className="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</h1>
+`;
+
+exports[`Storyshots Display/Typography Variant Title 1`] = `
+<h2
+  className="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+  data-cy="typography"
+>
+  Text example
+</h2>
+`;

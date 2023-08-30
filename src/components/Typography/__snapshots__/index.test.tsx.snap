@@ -42,7 +42,7 @@ exports[`Typography test suite: loading 1`] = `
   data-cy="typography-loading"
 >
   <span
-    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
+    className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
     style={
       {
         "height": undefined,

@@ -520,13 +520,17 @@ exports[`Switch test suite: required 1`] = `
       className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
     />
   </span>
-  <span
-    aria-hidden={true}
-    className="MuiFormControlLabel-asterisk css-1x2jons-MuiFormControlLabel-asterisk"
+  <div
+    className="MuiStack-root css-1d9cypr-MuiStack-root"
   >
-     
-    *
-  </span>
+    <span
+      aria-hidden={true}
+      className="MuiFormControlLabel-asterisk css-1x2jons-MuiFormControlLabel-asterisk"
+    >
+       
+      *
+    </span>
+  </div>
 </label>
 `;
 

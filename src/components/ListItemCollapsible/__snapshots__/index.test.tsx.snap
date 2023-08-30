@@ -133,7 +133,7 @@ exports[`ListItemCollapsible test suite: listItem variants 1`] = `
       className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
     >
       <span
-        className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
+        className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
         style={
           {
             "height": 24,
@@ -147,7 +147,7 @@ exports[`ListItemCollapsible test suite: listItem variants 1`] = `
       data-cy="list-item-collapsible-header-content-loading"
     >
       <span
-        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
+        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root"
         style={
           {
             "height": undefined,

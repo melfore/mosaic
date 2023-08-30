@@ -75,13 +75,13 @@ describe("InputNumber test suite:", () => {
     const minValue = 10;
     const { element, wrapper } = getInputNumberTestable({ props: { minValue, maxValue, onChange } });
 
-    wrapper.simulate("change", { target: { value: maxValue + 1 } });
+    wrapper.simulate("change", { target: { value: "101" } });
     expect(onChange).toHaveBeenCalledWith(maxValue);
-
-    wrapper.simulate("change", { target: { value: 9 } });
-    expect(onChange).toHaveBeenCalledWith(9);
-
-    wrapper.simulate("blur", { target: { value: 9 } });
+    wrapper.simulate("change", { target: { value: "11" } });
+    expect(onChange).toHaveBeenCalledWith(minValue + 1);
+    wrapper.simulate("change", { target: { value: "9" } });
+    expect(onChange).toHaveBeenCalledWith(minValue - 1);
+    wrapper.simulate("blur", { target: { value: "9" } });
     expect(onChange).toHaveBeenCalledWith(minValue);
 
     const snapshotWrapper = renderer.create(element).toJSON();
@@ -107,6 +107,23 @@ describe("InputNumber test suite:", () => {
 
     wrapper.simulate("change", { target: { value: 1 } });
     expect(onChange).toHaveBeenCalledWith(1);
+    wrapper.simulate("change", { target: { value: "1" } });
+    expect(onChange).toHaveBeenCalledWith(1);
+    wrapper.simulate("change", { target: { value: "a" } });
+    expect(onChange).toHaveBeenCalledWith(null);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("onKeyDown", () => {
+    const onChange = jest.fn();
+    const { element, wrapper } = getInputNumberTestable({ props: { onChange } });
+
+    ["e", "E", "+", "-"].forEach((unacceptedChar) => {
+      wrapper.simulate("keydown", { key: unacceptedChar, target: { value: unacceptedChar } });
+      expect(onChange).not.toHaveBeenCalled();
+    });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

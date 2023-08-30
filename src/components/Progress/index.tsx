@@ -11,7 +11,7 @@ const Progress: FC<ProgressType> = ({
   dataCy = DATA_CY_DEFAULT,
   color = "primary",
   type = "Circular",
-  withLabel = false,
+  withLabel,
   variant,
   value = 100,
 }) => {

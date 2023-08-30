@@ -68,7 +68,7 @@ exports[`Icon test suite: forwarded props 1`] = `
 
 exports[`Icon test suite: loading - size large 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
+  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
   style={
     {
       "height": 35,
@@ -80,7 +80,7 @@ exports[`Icon test suite: loading - size large 1`] = `
 
 exports[`Icon test suite: loading - size small 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
+  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
   style={
     {
       "height": 20,
@@ -92,7 +92,7 @@ exports[`Icon test suite: loading - size small 1`] = `
 
 exports[`Icon test suite: loading 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
+  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
   style={
     {
       "height": 24,

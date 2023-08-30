@@ -1,0 +1,332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Inputs/Switch Disable Ripple 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Disabled 1`] = `
+<label
+  className="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      aria-disabled={true}
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-checked Mui-disabled css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={true}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Label 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Label End 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+  >
+    Switch
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Primary 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Size Small 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeSmall css-1ycxvqq-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+</label>
+`;
+
+exports[`Storyshots Inputs/Switch Styled 1`] = `
+<label
+  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+  data-cy="switch"
+>
+  <span
+    className="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
+  >
+    <span
+      className="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+      data-cy="switch-toggle"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        {
+          "color": "red",
+        }
+      }
+      tabIndex={null}
+    >
+      <input
+        checked={true}
+        className="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+        data-cy="switch-input"
+        disabled={false}
+        onChange={[Function]}
+        required={false}
+        type="checkbox"
+      />
+      <span
+        className="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
+      />
+    </span>
+    <span
+      className="MuiSwitch-track css-1yjjitx-MuiSwitch-track"
+    />
+  </span>
+</label>
+`;

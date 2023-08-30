@@ -1,67 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListItemCollapsible test suite: dataCy 1`] = `
+exports[`Storyshots Display/ListItemCollapsible Dense 1`] = `
 [
   <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="custom-header"
-    disabled={false}
-    onClick={[Function]}
-    style={
-      {
-        "cursor": "default",
-      }
-    }
-  >
-    <div
-      className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
-    >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
-        data-cy="custom-header-icon"
-        data-testid="KeyboardArrowDownIcon"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-        />
-      </svg>
-    </div>
-    <div
-      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
-      data-cy="custom-header-content"
-    >
-      <span>
-        Collapsible Header
-      </span>
-    </div>
-  </li>,
-  <div
-    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-    data-cy="custom-collapse"
-    style={
-      {
-        "minHeight": "0px",
-      }
-    }
-  >
-    <div
-      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-    >
-      <div
-        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
-    </div>
-  </div>,
-]
-`;
-
-exports[`ListItemCollapsible test suite: default 1`] = `
-[
-  <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+    className="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -88,12 +30,10 @@ exports[`ListItemCollapsible test suite: default 1`] = `
       </svg>
     </div>
     <div
-      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+      className="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
-      <span>
-        Collapsible Header
-      </span>
+      Header
     </div>
   </li>,
   <div
@@ -110,16 +50,18 @@ exports[`ListItemCollapsible test suite: default 1`] = `
     >
       <div
         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
+      >
+        Collapsible Content
+      </div>
     </div>
   </div>,
 ]
 `;
 
-exports[`ListItemCollapsible test suite: listItem variants 1`] = `
+exports[`Storyshots Display/ListItemCollapsible Loading 1`] = `
 [
   <li
-    className="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -143,7 +85,7 @@ exports[`ListItemCollapsible test suite: listItem variants 1`] = `
       />
     </div>
     <div
-      className="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
+      className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content-loading"
     >
       <span
@@ -171,13 +113,15 @@ exports[`ListItemCollapsible test suite: listItem variants 1`] = `
     >
       <div
         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
+      >
+        Collapsible Content
+      </div>
     </div>
   </div>,
 ]
 `;
 
-exports[`ListItemCollapsible test suite: open 1`] = `
+exports[`Storyshots Display/ListItemCollapsible Open 1`] = `
 [
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
@@ -210,9 +154,7 @@ exports[`ListItemCollapsible test suite: open 1`] = `
       className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
-      <span>
-        Collapsible Header
-      </span>
+      Header
     </div>
   </li>,
   <div
@@ -229,13 +171,15 @@ exports[`ListItemCollapsible test suite: open 1`] = `
     >
       <div
         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
+      >
+        Collapsible Content
+      </div>
     </div>
   </div>,
 ]
 `;
 
-exports[`ListItemCollapsible test suite: open 2`] = `
+exports[`Storyshots Display/ListItemCollapsible Primary 1`] = `
 [
   <li
     className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
@@ -255,12 +199,12 @@ exports[`ListItemCollapsible test suite: open 2`] = `
         aria-hidden={true}
         className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
-        data-testid="KeyboardArrowUpIcon"
+        data-testid="KeyboardArrowDownIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
         />
       </svg>
     </div>
@@ -268,13 +212,11 @@ exports[`ListItemCollapsible test suite: open 2`] = `
       className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
-      <span>
-        Collapsible Header
-      </span>
+      Header
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       {
@@ -287,16 +229,18 @@ exports[`ListItemCollapsible test suite: open 2`] = `
     >
       <div
         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
+      >
+        Collapsible Content
+      </div>
     </div>
   </div>,
 ]
 `;
 
-exports[`ListItemCollapsible test suite: open variants 1`] = `
+exports[`Storyshots Display/ListItemCollapsible Selected 1`] = `
 [
   <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding Mui-selected css-1p823my-MuiListItem-root"
     data-cy="list-item-collapsible-header"
     disabled={false}
     onClick={[Function]}
@@ -313,12 +257,12 @@ exports[`ListItemCollapsible test suite: open variants 1`] = `
         aria-hidden={true}
         className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
         data-cy="list-item-collapsible-header-icon"
-        data-testid="KeyboardArrowUpIcon"
+        data-testid="KeyboardArrowDownIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
         />
       </svg>
     </div>
@@ -326,13 +270,11 @@ exports[`ListItemCollapsible test suite: open variants 1`] = `
       className="MuiListItemText-root css-tlelie-MuiListItemText-root"
       data-cy="list-item-collapsible-header-content"
     >
-      <span>
-        Collapsible Header
-      </span>
+      Header
     </div>
   </li>,
   <div
-    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
     data-cy="list-item-collapsible-collapse"
     style={
       {
@@ -345,7 +287,9 @@ exports[`ListItemCollapsible test suite: open variants 1`] = `
     >
       <div
         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-      />
+      >
+        Collapsible Content
+      </div>
     </div>
   </div>,
 ]

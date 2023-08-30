@@ -34,4 +34,7 @@ export default {
 const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
-Primary.args = { items: [{ value: "Value", label: "Ciao" }], label: "Label" };
+Primary.args = {
+  items: [{ value: "Value", label: "Ciao" }],
+  label: "Label",
+};

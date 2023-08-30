@@ -1,9 +1,10 @@
-module.exports = {
+export default {
   rootDir: "../src",
   setupFilesAfterEnv: ["<rootDir>/../.jest/enzyme.ts"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  modulePathIgnorePatterns: ["<rootDir>/storyshot.*"],
   testEnvironment: "jsdom",
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(test).[jt]s?(x)"],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },

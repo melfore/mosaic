@@ -1,4 +1,4 @@
-import React, { ChangeEvent, CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { ChangeEvent, CSSProperties, FC, KeyboardEvent, useCallback, useMemo } from "react";
 import { TextField as MUITextField } from "@mui/material";
 
 import { IInputNumber, INullableNumber } from "../../types/InputNumber";
@@ -36,54 +36,59 @@ const InputNumber: FC<IInputNumber> = ({
   const getControlledValue = useCallback((value: INullableNumber) => (value === null ? "" : value), []);
 
   const getNumericValue = useCallback(
-    (value: string): INullableNumber => {
-      const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
-      if (isNaN(numericValue)) {
-        return null;
-      }
-      if (minValue > numericValue) {
-        return numericValue;
-      }
-
-      if (numericValue >= minValue && numericValue <= maxValue) {
-        return numericValue;
-      }
-
-      return numericValue < minValue ? numericValue : maxValue;
-    },
-    [integer, minValue, maxValue]
+    (value: string) => (integer ? parseInt(value, 10) : parseFloat(value)),
+    [integer]
   );
 
-  const getOnBlurNumericValue = useCallback(
+  const parseOnChangeValue = useCallback(
     (value: string): INullableNumber => {
-      const numericValue = integer ? parseInt(value, 10) : parseFloat(value);
+      const numericValue = getNumericValue(value);
       if (isNaN(numericValue)) {
         return null;
       }
-      return numericValue < minValue ? minValue : numericValue;
+
+      if (numericValue > maxValue) {
+        return maxValue;
+      }
+
+      return numericValue;
     },
-    [integer, minValue]
+    [getNumericValue, maxValue]
+  );
+
+  const parseOnBlurValue = useCallback(
+    (value: string): INullableNumber => {
+      const numericValue = getNumericValue(value);
+      if (isNaN(numericValue)) {
+        return null;
+      }
+
+      if (numericValue < minValue) {
+        return minValue;
+      }
+
+      return numericValue;
+    },
+    [getNumericValue, minValue]
   );
 
   const onBlurHandler = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const numericValue = getOnBlurNumericValue(value);
-      if (onChange && numericValue) {
-        onChange(numericValue);
-      }
+      const numericValue = parseOnBlurValue(value);
+      onChange && onChange(numericValue);
     },
-    [getOnBlurNumericValue, onChange]
+    [parseOnBlurValue, onChange]
   );
 
   const onChangeHandler = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const numericValue = getNumericValue(value);
+      const numericValue = parseOnChangeValue(value);
       onChange && onChange(numericValue);
     },
-    [getNumericValue, onChange]
+    [parseOnChangeValue, onChange]
   );
 
-  const OnKeyDownHandler = useCallback((e: React.KeyboardEvent) => {
+  const onKeyDownHandler = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "e" || e.key === "E" || e.key === "-" || e.key === "+") {
       e.preventDefault();
     }
@@ -91,7 +96,7 @@ const InputNumber: FC<IInputNumber> = ({
 
   return (
     <MUITextField
-      onKeyDown={OnKeyDownHandler}
+      onKeyDown={onKeyDownHandler}
       disabled={disabled}
       InputLabelProps={{
         shrink,

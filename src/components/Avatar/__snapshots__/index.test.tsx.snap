@@ -73,7 +73,7 @@ exports[`Avatar test suite: image 1`] = `
 
 exports[`Avatar test suite: loading - squared 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-qzz38t-MuiSkeleton-root"
+  className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-zpjta8-MuiSkeleton-root"
   style={
     {
       "height": undefined,
@@ -102,7 +102,7 @@ exports[`Avatar test suite: loading - squared 1`] = `
 
 exports[`Avatar test suite: loading 1`] = `
 <span
-  className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-1nk968r-MuiSkeleton-root"
+  className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-1gtw0ls-MuiSkeleton-root"
   style={
     {
       "height": undefined,

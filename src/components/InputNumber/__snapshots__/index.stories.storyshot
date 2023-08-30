@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputNumber test suite: dataCy 1`] = `
+exports[`Storyshots Inputs/InputNumber Adornment 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -11,17 +11,25 @@ exports[`InputNumber test suite: dataCy 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r3v:"
+    id=":r3v:-label"
+  >
+    Label
+  </label>
   <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
   >
     <input
       aria-invalid={false}
       autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="custom"
+      className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+      data-cy="input-number"
       disabled={false}
-      id=":r1:"
+      id=":r3v:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -35,19 +43,54 @@ exports[`InputNumber test suite: dataCy 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
     />
+    <div
+      className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+    >
+      <button
+        className="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+        data-cy="icon-button"
+        disabled={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={-1}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+          data-cy="icon-button-icon"
+          data-testid="CloseIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </button>
+    </div>
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -55,7 +98,7 @@ exports[`InputNumber test suite: dataCy 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: default 1`] = `
+exports[`Storyshots Inputs/InputNumber Adornment Clickable 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -66,6 +109,112 @@ exports[`InputNumber test suite: default 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r40:"
+    id=":r40:-label"
+  >
+    Label
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+      data-cy="input-number"
+      disabled={false}
+      id=":r40:"
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        {
+          "textAlign": "right",
+          "width": "100%",
+        }
+      }
+      type="number"
+      value={5}
+    />
+    <div
+      className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+        data-cy="icon-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+          data-cy="icon-button-icon"
+          data-testid="CloseIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </button>
+    </div>
+    <fieldset
+      aria-hidden={true}
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="css-14lo706"
+      >
+        <span>
+          Label
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Inputs/InputNumber Decimal 1`] = `
+<div
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
+  style={
+    {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r41:"
+    id=":r41:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -76,7 +225,7 @@ exports[`InputNumber test suite: default 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r0:"
+      id=":r41:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -90,19 +239,17 @@ exports[`InputNumber test suite: default 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5.275}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -110,7 +257,7 @@ exports[`InputNumber test suite: default 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: disabled 1`] = `
+exports[`Storyshots Inputs/InputNumber Disabled 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -121,6 +268,14 @@ exports[`InputNumber test suite: disabled 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-disabled MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r42:"
+    id=":r42:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl Mui-readOnly MuiInputBase-readOnly css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -131,7 +286,7 @@ exports[`InputNumber test suite: disabled 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled Mui-readOnly MuiInputBase-readOnly css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={true}
-      id=":r3:"
+      id=":r42:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -145,19 +300,17 @@ exports[`InputNumber test suite: disabled 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -165,7 +318,7 @@ exports[`InputNumber test suite: disabled 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: float 1`] = `
+exports[`Storyshots Inputs/InputNumber Min Max 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -176,6 +329,14 @@ exports[`InputNumber test suite: float 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r43:"
+    id=":r43:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -186,7 +347,7 @@ exports[`InputNumber test suite: float 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r4:"
+      id=":r43:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -200,19 +361,17 @@ exports[`InputNumber test suite: float 1`] = `
         }
       }
       type="number"
-      value={10.1}
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -220,7 +379,7 @@ exports[`InputNumber test suite: float 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: localized 1`] = `
+exports[`Storyshots Inputs/InputNumber Nullable 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -234,10 +393,10 @@ exports[`InputNumber test suite: localized 1`] = `
   <label
     className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
     data-shrink={true}
-    htmlFor=":r2:"
-    id=":r2:-label"
+    htmlFor=":r44:"
+    id=":r44:-label"
   >
-    Title
+    Label
   </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
@@ -247,9 +406,9 @@ exports[`InputNumber test suite: localized 1`] = `
       aria-invalid={false}
       autoFocus={false}
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="locale.title"
+      data-cy="input-number"
       disabled={false}
-      id=":r2:"
+      id=":r44:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -273,7 +432,7 @@ exports[`InputNumber test suite: localized 1`] = `
         className="css-14lo706"
       >
         <span>
-          Title
+          Label
         </span>
       </legend>
     </fieldset>
@@ -281,7 +440,7 @@ exports[`InputNumber test suite: localized 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: min/max 1`] = `
+exports[`Storyshots Inputs/InputNumber Placeholder 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -292,6 +451,14 @@ exports[`InputNumber test suite: min/max 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r45:"
+    id=":r45:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -302,11 +469,12 @@ exports[`InputNumber test suite: min/max 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r5:"
+      id=":r45:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Enter value..."
       readOnly={false}
       required={false}
       style={
@@ -323,12 +491,10 @@ exports[`InputNumber test suite: min/max 1`] = `
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -336,7 +502,7 @@ exports[`InputNumber test suite: min/max 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: numeric values only 1`] = `
+exports[`Storyshots Inputs/InputNumber Primary 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -347,6 +513,14 @@ exports[`InputNumber test suite: numeric values only 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r3u:"
+    id=":r3u:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -357,7 +531,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r6:"
+      id=":r3u:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -371,19 +545,17 @@ exports[`InputNumber test suite: numeric values only 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -391,7 +563,7 @@ exports[`InputNumber test suite: numeric values only 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: onChange 1`] = `
+exports[`Storyshots Inputs/InputNumber Required 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -402,61 +574,21 @@ exports[`InputNumber test suite: onChange 1`] = `
     }
   }
 >
-  <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
-    onClick={[Function]}
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r46:"
+    id=":r46:-label"
   >
-    <input
-      aria-invalid={false}
-      autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="input-number"
-      disabled={false}
-      id=":r7:"
-      onAnimationStart={[Function]}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      readOnly={false}
-      required={false}
-      style={
-        {
-          "textAlign": "right",
-          "width": "100%",
-        }
-      }
-      type="number"
-      value=""
-    />
-    <fieldset
+    Label
+    <span
       aria-hidden={true}
-      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      className="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
     >
-      <legend
-        className="css-ihdtdm"
-      >
-        <span
-          className="notranslate"
-        >
-          ​
-        </span>
-      </legend>
-    </fieldset>
-  </div>
-</div>
-`;
-
-exports[`InputNumber test suite: onKeyDown 1`] = `
-<div
-  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
-  onKeyDown={[Function]}
-  style={
-    {
-      "textAlign": "right",
-      "width": "100%",
-    }
-  }
->
+       
+      *
+    </span>
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -467,118 +599,7 @@ exports[`InputNumber test suite: onKeyDown 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":r8:"
-      onAnimationStart={[Function]}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      readOnly={false}
-      required={false}
-      style={
-        {
-          "textAlign": "right",
-          "width": "100%",
-        }
-      }
-      type="number"
-      value=""
-    />
-    <fieldset
-      aria-hidden={true}
-      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-    >
-      <legend
-        className="css-ihdtdm"
-      >
-        <span
-          className="notranslate"
-        >
-          ​
-        </span>
-      </legend>
-    </fieldset>
-  </div>
-</div>
-`;
-
-exports[`InputNumber test suite: placeholder 1`] = `
-<div
-  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
-  onKeyDown={[Function]}
-  style={
-    {
-      "textAlign": "right",
-      "width": "100%",
-    }
-  }
->
-  <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
-    onClick={[Function]}
-  >
-    <input
-      aria-invalid={false}
-      autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="input-number"
-      disabled={false}
-      id=":r9:"
-      onAnimationStart={[Function]}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Placeholder"
-      readOnly={false}
-      required={false}
-      style={
-        {
-          "textAlign": "right",
-          "width": "100%",
-        }
-      }
-      type="number"
-      value=""
-    />
-    <fieldset
-      aria-hidden={true}
-      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-    >
-      <legend
-        className="css-ihdtdm"
-      >
-        <span
-          className="notranslate"
-        >
-          ​
-        </span>
-      </legend>
-    </fieldset>
-  </div>
-</div>
-`;
-
-exports[`InputNumber test suite: required 1`] = `
-<div
-  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
-  onKeyDown={[Function]}
-  style={
-    {
-      "textAlign": "right",
-      "width": "100%",
-    }
-  }
->
-  <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
-    onClick={[Function]}
-  >
-    <input
-      aria-invalid={false}
-      autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="input-number"
-      disabled={false}
-      id=":ra:"
+      id=":r46:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -592,19 +613,19 @@ exports[`InputNumber test suite: required 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
+           
+          *
         </span>
       </legend>
     </fieldset>
@@ -612,7 +633,7 @@ exports[`InputNumber test suite: required 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: shrink 1`] = `
+exports[`Storyshots Inputs/InputNumber Size Small 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -623,61 +644,14 @@ exports[`InputNumber test suite: shrink 1`] = `
     }
   }
 >
-  <div
-    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
-    onClick={[Function]}
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r47:"
+    id=":r47:-label"
   >
-    <input
-      aria-invalid={false}
-      autoFocus={false}
-      className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-      data-cy="input-number"
-      disabled={false}
-      id=":rb:"
-      onAnimationStart={[Function]}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      readOnly={false}
-      required={false}
-      style={
-        {
-          "textAlign": "right",
-          "width": "100%",
-        }
-      }
-      type="number"
-      value=""
-    />
-    <fieldset
-      aria-hidden={true}
-      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-    >
-      <legend
-        className="css-ihdtdm"
-      >
-        <span
-          className="notranslate"
-        >
-          ​
-        </span>
-      </legend>
-    </fieldset>
-  </div>
-</div>
-`;
-
-exports[`InputNumber test suite: size 1`] = `
-<div
-  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
-  onKeyDown={[Function]}
-  style={
-    {
-      "textAlign": "right",
-      "width": "100%",
-    }
-  }
->
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -688,7 +662,7 @@ exports[`InputNumber test suite: size 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":rc:"
+      id=":r47:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -702,19 +676,17 @@ exports[`InputNumber test suite: size 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -722,7 +694,7 @@ exports[`InputNumber test suite: size 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: value 1`] = `
+exports[`Storyshots Inputs/InputNumber Styled 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -733,6 +705,14 @@ exports[`InputNumber test suite: value 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r48:"
+    id=":r48:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
     onClick={[Function]}
@@ -743,7 +723,7 @@ exports[`InputNumber test suite: value 1`] = `
       className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":rd:"
+      id=":r48:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -752,24 +732,25 @@ exports[`InputNumber test suite: value 1`] = `
       required={false}
       style={
         {
-          "textAlign": "right",
+          "color": "red",
+          "fontSize": "large",
+          "fontWeight": "bold",
+          "textAlign": "center",
           "width": "100%",
         }
       }
       type="number"
-      value={10}
+      value={5}
     />
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
       <legend
-        className="css-ihdtdm"
+        className="css-14lo706"
       >
-        <span
-          className="notranslate"
-        >
-          ​
+        <span>
+          Label
         </span>
       </legend>
     </fieldset>
@@ -777,7 +758,7 @@ exports[`InputNumber test suite: value 1`] = `
 </div>
 `;
 
-exports[`InputNumber test suite: variant 1`] = `
+exports[`Storyshots Inputs/InputNumber Variant Filled 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
   onKeyDown={[Function]}
@@ -788,6 +769,14 @@ exports[`InputNumber test suite: variant 1`] = `
     }
   }
 >
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled css-o943dk-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r49:"
+    id=":r49:-label"
+  >
+    Label
+  </label>
   <div
     className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-1ff8729-MuiInputBase-root-MuiFilledInput-root"
     onClick={[Function]}
@@ -798,7 +787,7 @@ exports[`InputNumber test suite: variant 1`] = `
       className="MuiInputBase-input MuiFilledInput-input css-10botns-MuiInputBase-input-MuiFilledInput-input"
       data-cy="input-number"
       disabled={false}
-      id=":re:"
+      id=":r49:"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}
@@ -812,7 +801,56 @@ exports[`InputNumber test suite: variant 1`] = `
         }
       }
       type="number"
-      value=""
+      value={5}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Inputs/InputNumber Variant Standard 1`] = `
+<div
+  className="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
+  onKeyDown={[Function]}
+  style={
+    {
+      "textAlign": "right",
+      "width": "100%",
+    }
+  }
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+    htmlFor=":r4a:"
+    id=":r4a:-label"
+  >
+    Label
+  </label>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-v4u5dn-MuiInputBase-root-MuiInput-root"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoFocus={false}
+      className="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+      data-cy="input-number"
+      disabled={false}
+      id=":r4a:"
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        {
+          "textAlign": "right",
+          "width": "100%",
+        }
+      }
+      type="number"
+      value={5}
     />
   </div>
 </div>

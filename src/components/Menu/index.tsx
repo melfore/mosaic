@@ -13,7 +13,17 @@ const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   horizontal: "right",
 };
 
-const Menu: FC<IMenu> = ({ dataCy, icon: externalIcon, label, items, onItemClick, style, type = "button" }) => {
+export const DATA_CY_DEFAULT = "menu";
+
+const Menu: FC<IMenu> = ({
+  dataCy = DATA_CY_DEFAULT,
+  icon: externalIcon,
+  label,
+  items,
+  onItemClick,
+  style,
+  type = "button",
+}) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
 
   const onClose = useCallback(() => setAnchor(null), []);

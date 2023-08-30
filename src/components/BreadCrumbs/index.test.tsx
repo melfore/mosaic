@@ -8,9 +8,12 @@ import BreadCrumbs, { DATA_CY_DEFAULT } from ".";
 
 const DEFAULT_TEST_OPTIONS: ITestOptions<BreadCrumbsType> = {
   dataCy: DATA_CY_DEFAULT,
-  domNode: "breadcrumbs",
+  domNode: "nav",
   localized: true,
-  props: { link: [{ label: "PAGE", href: "" }], onClick: jest.fn() },
+  props: {
+    link: [{ label: "PAGE", href: "" }],
+    onClick: jest.fn(),
+  },
 };
 
 const getBreadCrumbsTestable = (options?: IPartialTestOptions<BreadCrumbsType>) =>
@@ -18,25 +21,67 @@ const getBreadCrumbsTestable = (options?: IPartialTestOptions<BreadCrumbsType>) 
 
 describe("BreadCrumbs test suite:", () => {
   it("primary", () => {
-    const onClick = jest.fn();
-    const { element } = getBreadCrumbsTestable({ props: { link: [{ label: "PAGE", href: "" }], onClick } });
+    const { element } = getBreadCrumbsTestable();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
-  it("icon test", () => {
-    const onClick = jest.fn();
+
+  it("dataCy", () => {
+    const dataCy = "custom";
+    const { element, wrapper } = getBreadCrumbsTestable({ dataCy, props: { dataCy } });
+    expect(wrapper).toHaveLength(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("icon", () => {
     const { element } = getBreadCrumbsTestable({
-      props: { link: [{ label: "PAGE", href: "", icon: Icons.add }], onClick },
+      props: {
+        link: [
+          { label: "HOME", href: "", icon: Icons.home },
+          { label: "PAGE", href: "", icon: Icons.business },
+        ],
+      },
     });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();
   });
 
-  it("Size", () => {
+  it("onClick", () => {
+    const onClickHandler = jest.fn();
+    const { element, wrapper } = getBreadCrumbsTestable({
+      props: {
+        link: [
+          { label: "HOME", href: "" },
+          { label: "PAGE", href: "" },
+        ],
+        onClick: onClickHandler,
+      },
+    });
+
+    const clickableLink = wrapper.find("li.MuiBreadcrumbs-li a.MuiLink-root");
+    clickableLink.simulate("click");
+    expect(onClickHandler).toHaveBeenCalledTimes(1);
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("size - medium", () => {
     const { element } = getBreadCrumbsTestable({
       props: { size: "medium" },
+    });
+
+    const snapshotWrapper = renderer.create(element).toJSON();
+    expect(snapshotWrapper).toMatchSnapshot();
+  });
+
+  it("size - large", () => {
+    const { element } = getBreadCrumbsTestable({
+      props: { size: "large" },
     });
 
     const snapshotWrapper = renderer.create(element).toJSON();

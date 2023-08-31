@@ -2,18 +2,19 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
 import Progress from "../Progress";
 
-import Tabs, { DATA_CY_DEFAULT } from ".";
+import ModalWithTabs, { DATA_CY_DEFAULT } from ".";
 
-const COMPONENT_NAME = "Tabs";
-Tabs.displayName = COMPONENT_NAME;
+const COMPONENT_NAME = "ModalWithTabs";
+ModalWithTabs.displayName = COMPONENT_NAME;
 
 export default {
-  title: "Navigation/Tabs",
-  component: Tabs,
-  decorators: [localeDecorator],
+  title: "Navigation/ModalWithTabs",
+  component: ModalWithTabs,
+  decorators: [modalDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -28,21 +29,19 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof Tabs>;
+} as ComponentMeta<typeof ModalWithTabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} dataCy={DATA_CY_DEFAULT} />;
+const Template: ComponentStory<typeof ModalWithTabs> = (args) => <ModalWithTabs {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   labelList: [
     { label: "PAGE1", content: "PAGE1" },
     { label: "PAGE2", content: "PAGE2" },
-    { label: "PAGE3", content: <Progress type="Circular" withLabel={false} /> },
+    { label: "PAGE3", content: <Progress type="Linear" /> },
   ],
+  children: "CONTENT SPACE",
 };
 
-export const Color = Template.bind({});
-Color.args = { ...Primary.args, color: "secondary" };
-
-export const Orientation = Template.bind({});
-Orientation.args = { ...Primary.args, orientation: "vertical" };
+export const Vertical = Template.bind({});
+Vertical.args = { ...Primary.args, orientation: "vertical" };

@@ -41,7 +41,7 @@ describe.skip("Tabs test suite:", () => {
 
   it("children", () => {
     const { element } = getTabsTestable({
-      props: { labelList: [{ label: "PAGE1", children: "Children" }] },
+      props: { labelList: [{ label: "PAGE1", content: "Children" }] },
     });
 
     const snapshotWrapper = renderer.create(element).toJSON();

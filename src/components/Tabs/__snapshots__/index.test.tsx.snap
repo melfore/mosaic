@@ -88,6 +88,17 @@ exports[`Tabs test suite: Page 1`] = `
       />
     </div>
   </div>
+  <div
+    aria-labelledby="horizontal-tab-0"
+    id="simple-tabpanel-0"
+    role="tabpanel"
+    style={
+      {
+        "padding": 8,
+        "width": "100%",
+      }
+    }
+  />
 </div>
 `;
 
@@ -168,6 +179,17 @@ exports[`Tabs test suite: Wrapped 1`] = `
       </div>
     </div>
   </div>
+  <div
+    aria-labelledby="horizontal-tab-0"
+    id="simple-tabpanel-0"
+    role="tabpanel"
+    style={
+      {
+        "padding": 8,
+        "width": "100%",
+      }
+    }
+  />
 </div>
 `;
 
@@ -237,17 +259,14 @@ exports[`Tabs test suite: children 1`] = `
     aria-labelledby="horizontal-tab-0"
     id="simple-tabpanel-0"
     role="tabpanel"
+    style={
+      {
+        "padding": 8,
+        "width": "100%",
+      }
+    }
   >
-    <div
-      className="MuiBox-root css-19kzrtu"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
-        data-cy="typography"
-      >
-        Children
-      </p>
-    </div>
+    Children
   </div>
 </div>
 `;
@@ -261,7 +280,20 @@ exports[`Tabs test suite: color 1`] = `
     data-cy="tabs"
   >
     <div
-      className="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+      className="MuiTabs-scrollableX MuiTabs-hideScrollbar css-agdkjh-MuiTabs-scrollbarSize"
+      style={
+        {
+          "height": 99,
+          "overflow": "scroll",
+          "position": "absolute",
+          "top": -9999,
+          "width": 99,
+        }
+      }
+    />
+    <div
+      className="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-69z67c-MuiTabs-scroller"
+      onScroll={[Function]}
       style={
         {
           "marginBottom": -0,
@@ -305,6 +337,17 @@ exports[`Tabs test suite: color 1`] = `
       </div>
     </div>
   </div>
+  <div
+    aria-labelledby="horizontal-tab-0"
+    id="simple-tabpanel-0"
+    role="tabpanel"
+    style={
+      {
+        "padding": 8,
+        "width": "100%",
+      }
+    }
+  />
 </div>
 `;
 
@@ -317,19 +360,7 @@ exports[`Tabs test suite: orientation 1`] = `
     data-cy="tabs"
   >
     <div
-      className="MuiTabs-hideScrollbar css-agdkjh-MuiTabs-scrollbarSize"
-      style={
-        {
-          "height": 99,
-          "overflow": "scroll",
-          "position": "absolute",
-          "top": -9999,
-          "width": 99,
-        }
-      }
-    />
-    <div
-      className="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableY css-1cgx7kx-MuiTabs-scroller"
+      className="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
       onScroll={[Function]}
       style={
         {
@@ -374,5 +405,16 @@ exports[`Tabs test suite: orientation 1`] = `
       </div>
     </div>
   </div>
+  <div
+    aria-labelledby="vertical-tab-0"
+    id="simple-tabpanel-0"
+    role="tabpanel"
+    style={
+      {
+        "padding": 8,
+        "width": "100%",
+      }
+    }
+  />
 </div>
 `;

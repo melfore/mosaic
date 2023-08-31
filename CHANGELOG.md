@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/melfore/mosaic/compare/v9.0.0...v9.0.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* 🐛 [BreadCrumbs] Fixed "key" error ([c2d0456](https://github.com/melfore/mosaic/commit/c2d045662b9f785a1afd92de2aa2d865cf971503))
+
 # [9.0.0](https://github.com/melfore/mosaic/compare/v8.6.1...v9.0.0) (2023-08-31)
 
 

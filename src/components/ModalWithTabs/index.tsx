@@ -1,4 +1,5 @@
 import React, { FC, PropsWithChildren, useMemo } from "react";
+import { Grid } from "@mui/material";
 
 import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { IModal } from "../../types/Modal";
@@ -47,8 +48,14 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
       size={size}
       title={title}
     >
-      <div style={{ marginBottom: 40, marginTop: 10 }}>{children}</div>
-      <Tabs data-cy={dataCy} labelList={labelList} color={color} orientation={autoOrientation} style={style} />
+      <Grid container spacing={2}>
+        <Grid item xs={12} paddingBottom={2}>
+          {children}
+        </Grid>
+        <Grid xs={12}>
+          <Tabs data-cy={dataCy} labelList={labelList} color={color} orientation={autoOrientation} style={style} />
+        </Grid>
+      </Grid>
     </Modal>
   );
 };

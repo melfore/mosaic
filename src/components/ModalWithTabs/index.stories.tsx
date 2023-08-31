@@ -35,15 +35,13 @@ const Template: ComponentStory<typeof ModalWithTabs> = (args) => <ModalWithTabs 
 
 export const Primary = Template.bind({});
 Primary.args = {
-  labelList: [{ label: "PAGE1" }, { label: "PAGE2" }, { label: "PAGE3" }],
-  children: "CONTENT SPACE",
-};
-
-export const Children = Template.bind({});
-Children.args = {
-  labelList: [{ label: "PAGE1" }, { label: "PAGE2" }, { label: "PAGE3", content: <Progress type="Linear" /> }],
+  labelList: [
+    { label: "PAGE1", content: "PAGE1" },
+    { label: "PAGE2", content: "PAGE2" },
+    { label: "PAGE3", content: <Progress type="Linear" /> },
+  ],
   children: "CONTENT SPACE",
 };
 
 export const Vertical = Template.bind({});
-Vertical.args = { ...Children.args, orientation: "vertical" };
+Vertical.args = { ...Primary.args, orientation: "vertical" };

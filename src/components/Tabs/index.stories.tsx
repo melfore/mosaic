@@ -34,20 +34,15 @@ const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} dataCy={
 
 export const Primary = Template.bind({});
 Primary.args = {
-  labelList: [{ label: "PAGE1" }, { label: "PAGE2" }, { label: "PAGE3" }],
+  labelList: [
+    { label: "PAGE1", content: "PAGE1" },
+    { label: "PAGE2", content: "PAGE2" },
+    { label: "PAGE3", content: <Progress type="Circular" withLabel={false} /> },
+  ],
 };
 
 export const Color = Template.bind({});
 Color.args = { ...Primary.args, color: "secondary" };
-
-export const Custom = Template.bind({});
-Custom.args = {
-  labelList: [
-    { label: "PAGE1" },
-    { label: "PAGE2" },
-    { label: "PAGE3", content: <Progress type="Circular" withLabel={false} /> },
-  ],
-};
 
 export const Orientation = Template.bind({});
 Orientation.args = { ...Primary.args, orientation: "vertical" };

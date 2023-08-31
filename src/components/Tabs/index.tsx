@@ -29,7 +29,7 @@ const Tabs: FC<TabsType> = ({
         textColor={color}
         indicatorColor={color}
         orientation={orientation}
-        variant="scrollable"
+        variant={orientation === "vertical" ? "standard" : "scrollable"}
         scrollButtons="auto"
       >
         {labelList.map((i, index) => {
@@ -41,7 +41,7 @@ const Tabs: FC<TabsType> = ({
         role="tabpanel"
         id={`simple-tabpanel-${value}`}
         aria-labelledby={`${orientation}-tab-${value}`}
-        style={{ width: "100%", padding: 8 }}
+        style={{ width: "100%", padding: 10 }}
       >
         {labelList[value].content && labelList[value].content}
       </div>

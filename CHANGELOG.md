@@ -1,3 +1,20 @@
+# [9.0.0](https://github.com/melfore/mosaic/compare/v8.6.1...v9.0.0) (2023-08-31)
+
+
+### Bug Fixes
+
+* 🐛 [Modal] Fixed responsive ([1be2149](https://github.com/melfore/mosaic/commit/1be21492a351b2cf5ba51c92259bbdb59e0e2421))
+
+
+### Features
+
+* 🎸 [ModalWithTabs] Added new component ([94cfa29](https://github.com/melfore/mosaic/commit/94cfa29b00c135b3ff2440958571543513d7c5aa)), closes [#322](https://github.com/melfore/mosaic/issues/322)
+
+
+### BREAKING CHANGES
+
+* 🧨 Fixed responsive flag, passign false modal remains of passed size
+
 ## [8.6.1](https://github.com/melfore/mosaic/compare/v8.6.0...v8.6.1) (2023-08-30)
 
 

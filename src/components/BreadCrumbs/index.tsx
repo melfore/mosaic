@@ -22,6 +22,7 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
       {link.map((i, index) => {
         return link.length - 1 !== index ? (
           <Link
+            key={index}
             underline="hover"
             sx={{ display: "flex", alignItems: "center" }}
             color="inherit"
@@ -33,7 +34,7 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
             </Typography>
           </Link>
         ) : (
-          <Typography style={{ display: "flex", alignItems: "center" }} variant={typographySize}>
+          <Typography key={index} style={{ display: "flex", alignItems: "center" }} variant={typographySize}>
             {i.icon && <IconWrapper dataCy="icon" icon={i.icon} size="small" />}
             {i.label}
           </Typography>

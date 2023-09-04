@@ -39,7 +39,7 @@ Primary.args = {
   stepList: [
     { label: "STEP1", content: "CONTENT PAGE 1" },
     { label: "STEP2", content: "CONTENT PAGE 2" },
-    { label: "STEP3", content: <Progress type="Circular" /> },
+    { label: "STEP3", content: <Progress type="Linear" /> },
   ],
   finishContent: "All Steps are completed",
 };

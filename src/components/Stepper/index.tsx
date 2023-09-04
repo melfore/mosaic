@@ -22,7 +22,7 @@ const Stepper: FC<StepperType> = ({
   finishContent,
 }) => {
   return (
-    <Grid container spacing={2} sx={{ width: "100%" }}>
+    <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid item xs={12}>
         <MUIStepper data-cy={dataCy} activeStep={activeStep} alternativeLabel>
           {stepList.map((i, index) => (
@@ -33,27 +33,23 @@ const Stepper: FC<StepperType> = ({
         </MUIStepper>
       </Grid>
       {activeStep === stepList.length ? (
-        <div style={{ width: "100%" }}>
+        <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
-            <div id={`${activeStep}`} style={{ width: "100%", padding: 10 }}>
-              {finishContent}
-            </div>
+            {finishContent}
           </Grid>
           <Grid item xs={12}>
-            <div style={{ display: "flex", justifyContent: "end", paddingTop: 10 }}>
+            <div style={{ display: "flex", justifyContent: "end" }}>
               <Button variant="outlined" label={labelFinishButton} color="primary" onClick={onFinishClick} />
             </div>
           </Grid>
-        </div>
+        </Grid>
       ) : (
-        <div style={{ width: "100%" }}>
+        <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
-            <div id={`${activeStep}`} style={{ width: "100%", padding: 10 }}>
-              {stepList[activeStep].content && stepList[activeStep].content}
-            </div>
+            {stepList[activeStep].content && stepList[activeStep].content}
           </Grid>
           <Grid item xs={12}>
-            <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 10 }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Button
                 variant="outlined"
                 label={labelBackButton}
@@ -65,7 +61,7 @@ const Stepper: FC<StepperType> = ({
               <Button variant="outlined" label={labelNextButton} color="primary" onClick={onNextClick} />
             </div>
           </Grid>
-        </div>
+        </Grid>
       )}
     </Grid>
   );

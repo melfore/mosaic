@@ -2,7 +2,7 @@
 
 exports[`Progress test suite: Final Content 1`] = `
 <div
-  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1tola1h-MuiGrid-root"
+  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1et7qun-MuiGrid-root"
 >
   <div
     className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
@@ -124,26 +124,12 @@ exports[`Progress test suite: Final Content 1`] = `
     </div>
   </div>
   <div
-    style={
-      {
-        "width": "100%",
-      }
-    }
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-dlyzdu-MuiGrid-root"
   >
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
-      <div
-        id="3"
-        style={
-          {
-            "padding": 10,
-            "width": "100%",
-          }
-        }
-      >
-        FINAL CONTENT
-      </div>
+      FINAL CONTENT
     </div>
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
@@ -153,7 +139,6 @@ exports[`Progress test suite: Final Content 1`] = `
           {
             "display": "flex",
             "justifyContent": "end",
-            "paddingTop": 10,
           }
         }
       >
@@ -190,7 +175,7 @@ exports[`Progress test suite: Final Content 1`] = `
 
 exports[`Progress test suite: default 1`] = `
 <div
-  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1tola1h-MuiGrid-root"
+  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1et7qun-MuiGrid-root"
 >
   <div
     className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
@@ -342,25 +327,11 @@ exports[`Progress test suite: default 1`] = `
     </div>
   </div>
   <div
-    style={
-      {
-        "width": "100%",
-      }
-    }
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-dlyzdu-MuiGrid-root"
   >
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
-    >
-      <div
-        id="0"
-        style={
-          {
-            "padding": 10,
-            "width": "100%",
-          }
-        }
-      />
-    </div>
+    />
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
@@ -369,7 +340,6 @@ exports[`Progress test suite: default 1`] = `
           {
             "display": "flex",
             "justifyContent": "space-between",
-            "paddingTop": 10,
           }
         }
       >

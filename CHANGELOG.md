@@ -1,3 +1,10 @@
+# [9.1.0](https://github.com/melfore/mosaic/compare/v9.0.1...v9.1.0) (2023-09-04)
+
+
+### Features
+
+* 🎸 [Stepper] Added new component ([4b5082c](https://github.com/melfore/mosaic/commit/4b5082c58086e5589e2bcdd83a3b904700296385)), closes [#144](https://github.com/melfore/mosaic/issues/144)
+
 ## [9.0.1](https://github.com/melfore/mosaic/compare/v9.0.0...v9.0.1) (2023-08-31)
 
 

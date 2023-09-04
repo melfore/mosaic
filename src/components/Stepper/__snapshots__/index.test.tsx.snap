@@ -83,10 +83,10 @@ exports[`Progress test suite: Final Content 1`] = `
         </span>
       </div>
       <div
-        className="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel css-n7tliy-MuiStep-root"
+        className="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel Mui-completed css-n7tliy-MuiStep-root"
       >
         <div
-          className="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-active css-zpcwqm-MuiStepConnector-root"
+          className="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-completed css-zpcwqm-MuiStepConnector-root"
         >
           <span
             className="MuiStepConnector-line MuiStepConnector-lineHorizontal css-z7uhs0-MuiStepConnector-line"
@@ -96,37 +96,27 @@ exports[`Progress test suite: Final Content 1`] = `
           className="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel css-ascpo7-MuiStepLabel-root"
         >
           <span
-            className="MuiStepLabel-iconContainer Mui-active MuiStepLabel-alternativeLabel css-vnkopk-MuiStepLabel-iconContainer"
+            className="MuiStepLabel-iconContainer Mui-completed MuiStepLabel-alternativeLabel css-vnkopk-MuiStepLabel-iconContainer"
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-completed css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root"
+              data-testid="CheckCircleIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
-              <circle
-                cx="12"
-                cy="12"
-                r="12"
+              <path
+                d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-2 17l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z"
               />
-              <text
-                className="MuiStepIcon-text css-117w1su-MuiStepIcon-text"
-                dominantBaseline="central"
-                textAnchor="middle"
-                x="12"
-                y="12"
-              >
-                3
-              </text>
             </svg>
           </span>
           <span
             className="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel css-1vyamtt-MuiStepLabel-labelContainer"
           >
             <span
-              className="MuiStepLabel-label Mui-active MuiStepLabel-alternativeLabel css-1hv8oq8-MuiStepLabel-label"
+              className="MuiStepLabel-label Mui-completed MuiStepLabel-alternativeLabel css-1hv8oq8-MuiStepLabel-label"
             >
-              PAGE3
+              PAGE3w
             </span>
           </span>
         </span>
@@ -144,14 +134,16 @@ exports[`Progress test suite: Final Content 1`] = `
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        id="2"
+        id="3"
         style={
           {
             "padding": 10,
             "width": "100%",
           }
         }
-      />
+      >
+        FINAL CONTENT
+      </div>
     </div>
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
@@ -160,7 +152,7 @@ exports[`Progress test suite: Final Content 1`] = `
         style={
           {
             "display": "flex",
-            "justifyContent": "space-between",
+            "justifyContent": "end",
             "paddingTop": 10,
           }
         }
@@ -182,40 +174,10 @@ exports[`Progress test suite: Final Content 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          style={
-            {
-              "marginRight": 1,
-            }
-          }
           tabIndex={0}
           type="button"
         >
-          BACK
-          <span
-            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
-          data-cy="button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          NEXT
+          FINISH
           <span
             className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
@@ -372,7 +334,7 @@ exports[`Progress test suite: default 1`] = `
             <span
               className="MuiStepLabel-label Mui-disabled MuiStepLabel-alternativeLabel css-1hv8oq8-MuiStepLabel-label"
             >
-              PAGE3
+              PAGE3w
             </span>
           </span>
         </span>

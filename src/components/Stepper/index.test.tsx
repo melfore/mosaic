@@ -10,7 +10,7 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<StepperType> = {
   domNode: "span",
   localized: true,
   props: {
-    stepList: [{ label: "PAGE" }, { label: "PAGE2" }, { label: "PAGE3" }],
+    stepList: [{ label: "PAGE" }, { label: "PAGE2" }, { label: "PAGE3w" }],
     activeStep: 0,
     finishContent: "",
     onBackClick: jest.fn(),
@@ -31,7 +31,7 @@ describe("Progress test suite:", () => {
   });
 
   it("Final Content", () => {
-    const { element } = getStepperTestable({ props: { finishContent: "FINAL CONTENT", activeStep: 2 } });
+    const { element } = getStepperTestable({ props: { finishContent: "FINAL CONTENT", activeStep: 3 } });
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

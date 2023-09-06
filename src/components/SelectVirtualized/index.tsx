@@ -133,7 +133,7 @@ const SelectVirtualized = <T extends any>({
     [onScrollEnd]
   );*/
 
-  const ROW = ({ data, index, style }: any) => {
+  const renderListBoxRow = ({ data, index, style }: any) => {
     return <div style={style}>{data[index]}</div>;
   };
 
@@ -187,7 +187,7 @@ const SelectVirtualized = <T extends any>({
             overscanCount={2}
             itemCount={options.length}
           >
-            {ROW}
+            {renderListBoxRow}
           </VariableSizeList>
         </div>
       );

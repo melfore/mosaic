@@ -52,6 +52,10 @@ interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
    * Width of options list popup
    */
   popperWidth?: number;
+  /**
+   * Number of options
+   */
+  optionsNumber?: number;
 }
 
 type SingleSelectDataType<T> = T | null;
@@ -63,7 +67,6 @@ interface ISelectSingle<T> extends IBaseSelect<T> {
   multiple: false;
   onChange: (value: SingleSelectDataType<T>) => void;
   value?: SingleSelectDataType<T>;
-  optionsNumber?: number;
 }
 
 type MultipleSelectDataType<T> = T[] | null;
@@ -75,7 +78,6 @@ interface ISelectMultiple<T> extends IBaseSelect<T> {
   multiple: true;
   onChange: (value: MultipleSelectDataType<T>) => void;
   value?: MultipleSelectDataType<T>;
-  optionsNumber?: number;
 }
 
 export type ISelect<T> = ISelectSingle<T> | ISelectMultiple<T>;

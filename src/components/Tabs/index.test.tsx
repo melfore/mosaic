@@ -1,5 +1,3 @@
-import renderer from "react-test-renderer";
-
 import { TabsType } from "../../types/Tabs";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 

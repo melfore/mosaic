@@ -52,6 +52,10 @@ interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
    * Width of options list popup
    */
   popperWidth?: number;
+  /**
+   * Number of options
+   */
+  optionsNumber?: number;
 }
 
 type SingleSelectDataType<T> = T | null;

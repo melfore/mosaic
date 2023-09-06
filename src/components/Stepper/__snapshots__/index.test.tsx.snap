@@ -331,7 +331,9 @@ exports[`Progress test suite: default 1`] = `
   >
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
-    />
+    >
+      CONTENT1
+    </div>
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >

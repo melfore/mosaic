@@ -10,7 +10,11 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<StepperType> = {
   domNode: "span",
   localized: true,
   props: {
-    stepList: [{ label: "PAGE" }, { label: "PAGE2" }, { label: "PAGE3w" }],
+    stepList: [
+      { label: "PAGE", content: "CONTENT1" },
+      { label: "PAGE2", content: "CONTENT2" },
+      { label: "PAGE3w", content: "CONTENT1" },
+    ],
     activeStep: 0,
     finishContent: "",
     onBackClick: jest.fn(),

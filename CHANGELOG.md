@@ -1,3 +1,10 @@
+# [9.2.0](https://github.com/melfore/mosaic/compare/v9.1.0...v9.2.0) (2023-09-06)
+
+
+### Features
+
+* 🎸 [SelectVirtualized] Added new component ([c6a40a1](https://github.com/melfore/mosaic/commit/c6a40a155cbd81637b31e48c5b6fdc44cc3618ae)), closes [#332](https://github.com/melfore/mosaic/issues/332)
+
 # [9.1.0](https://github.com/melfore/mosaic/compare/v9.0.1...v9.1.0) (2023-09-04)
 
 

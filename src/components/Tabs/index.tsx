@@ -41,7 +41,7 @@ const Tabs: FC<TabsType> = ({
         role="tabpanel"
         id={`simple-tabpanel-${value}`}
         aria-labelledby={`${orientation}-tab-${value}`}
-        style={{ width: "100%", padding: 10 }}
+        style={{ width: "100%" }}
       >
         {labelList[value].content && labelList[value].content}
       </div>

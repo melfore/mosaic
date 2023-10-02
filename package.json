@@ -135,5 +135,10 @@
       "path": "git-cz"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@mui/x-date-pickers": "^6.16.0",
+    "dayjs": "^1.11.10",
+    "luxon": "^3.4.3"
+  }
 }

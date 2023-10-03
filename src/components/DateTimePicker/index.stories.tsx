@@ -4,20 +4,20 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import TimePicker, { DATA_CY_DEFAULT } from ".";
+import DateTimePicker, { DATA_CY_DEFAULT } from ".";
 
-const COMPONENT_NAME = "Tabs";
-TimePicker.displayName = COMPONENT_NAME;
+const COMPONENT_NAME = "DateTimePicker";
+DateTimePicker.displayName = COMPONENT_NAME;
 
 export default {
-  title: "Navigation/TimePicker",
-  component: TimePicker,
+  title: "Inputs/DateTimePicker",
+  component: DateTimePicker,
   decorators: [localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
         basedOn: {
-          label: "MUI TimePicker Component",
+          label: "MUI DateTimePicker Component",
           url: "https://mui.com/material-ui/react-progress/",
         },
         component: COMPONENT_NAME,
@@ -27,9 +27,9 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof TimePicker>;
+} as ComponentMeta<typeof DateTimePicker>;
 
-const Template: ComponentStory<typeof TimePicker> = (args) => <TimePicker {...args} dataCy={DATA_CY_DEFAULT} />;
+const Template: ComponentStory<typeof DateTimePicker> = (args) => <DateTimePicker {...args} dataCy={DATA_CY_DEFAULT} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

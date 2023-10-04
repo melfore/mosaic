@@ -33,3 +33,12 @@ const Template: ComponentStory<typeof DateTimePicker> = (args) => <DateTimePicke
 
 export const Primary = Template.bind({});
 Primary.args = {};
+
+export const SecondsView = Template.bind({});
+SecondsView.args = { ...Primary.args, timeView: "sec" };
+
+export const MobileView = Template.bind({});
+MobileView.args = { ...SecondsView.args, mobileView: true };
+
+export const FormatAmPm = Template.bind({});
+FormatAmPm.args = { ...Primary.args, ampm: true };

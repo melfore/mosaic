@@ -30,4 +30,5 @@ yarn-error.log*
 yalc.lock
 
 # typescript local config
-tsconfig.json
+!*/tsconfig.json
+/tsconfig.json

@@ -94,9 +94,8 @@
     "react": ">= 18 < 19",
     "react-dom": ">= 18 < 19",
     "react-window": ">= 1.8.0 < 1.9.0",
-    "@mui/x-date-pickers": ">= 6.16.0 < 6.17.0",
-    "dayjs": ">= 1.11.10 < 1.12.0",
-    "luxon": ">= 3.4.3 < 3.5.0"
+    "@mui/x-date-pickers": ">= 6.16.0 < 7",
+    "luxon": ">= 3.4.3 < 4"
   },
   "scripts": {
     "build": "npm run pre:build && tsc",
@@ -113,9 +112,9 @@
     "pre:push": "npm run build && npm run test:coverage --ci",
     "pre:test": "cp -f ./.typescript/tsconfig.test.json ./tsconfig.json",
     "prepare": "husky install",
-    "start": "storybook dev -p 6006",
-    "test": "jest --clearCache && jest --c ./.jest/config.ts --watch",
-    "test:coverage": "jest --clearCache && jest --c ./.jest/config.ts --coverage",
+    "start": "npm run pre:test && storybook dev -p 6006",
+    "test": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.ts --watch",
+    "test:coverage": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.ts --coverage",
     "test:storybook": "test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose",
     "upload": "npm run build && npm publish --access public",
     "update:packages": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",

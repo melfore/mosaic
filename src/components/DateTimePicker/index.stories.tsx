@@ -42,3 +42,6 @@ MobileView.args = { ...SecondsView.args, mobileView: true };
 
 export const FormatAmPm = Template.bind({});
 FormatAmPm.args = { ...Primary.args, ampm: true };
+
+export const TimeZone = Template.bind({});
+TimeZone.args = { ...Primary.args, timeZone: "UTC+8" };

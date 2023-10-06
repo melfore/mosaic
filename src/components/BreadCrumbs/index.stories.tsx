@@ -21,7 +21,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI BreadCrumbs Component",
-          url: "https://mui.com/material-ui/react-progress/",
+          url: "https://mui.com/material-ui/react-breadcrumbs/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

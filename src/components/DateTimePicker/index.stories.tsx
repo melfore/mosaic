@@ -18,7 +18,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI DateTimePicker Component",
-          url: "https://mui.com/material-ui/react-progress/",
+          url: "https://mui.com/x/react-date-pickers/date-time-picker/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

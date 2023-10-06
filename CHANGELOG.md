@@ -1,3 +1,10 @@
+# [9.5.0](https://github.com/melfore/mosaic/compare/v9.4.1...v9.5.0) (2023-10-06)
+
+
+### Features
+
+* 🎸 [DateTimePicker] Added Timezone in context ([5b8672d](https://github.com/melfore/mosaic/commit/5b8672d6e97fe4f1838465532890fe65b7a400e5)), closes [#345](https://github.com/melfore/mosaic/issues/345)
+
 ## [9.4.1](https://github.com/melfore/mosaic/compare/v9.4.0...v9.4.1) (2023-10-06)
 
 # [9.4.0](https://github.com/melfore/mosaic/compare/v9.3.1...v9.4.0) (2023-10-06)

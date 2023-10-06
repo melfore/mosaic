@@ -33,10 +33,15 @@ export { default as Progress } from "./components/Progress";
 export { default as Modal } from "./components/Modal";
 export { ModalSize } from "./types/Modal";
 
+export { default as ModalWithTabs } from "./components/ModalWithTabs";
+
 export { default as Select } from "./components/Select";
+export { default as SelectVirtualized } from "./components/SelectVirtualized";
 
 export { default as Spacer } from "./components/Spacer";
 export { SpacerDirection } from "./types/Spacer";
+
+export { default as Stepper } from "./components/Stepper";
 
 export { default as Switch } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";

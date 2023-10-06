@@ -1,3 +1,16 @@
+# [9.4.0](https://github.com/melfore/mosaic/compare/v9.3.1...v9.4.0) (2023-10-06)
+
+
+### Bug Fixes
+
+* 🐛 Fixed broken links ([3a3df57](https://github.com/melfore/mosaic/commit/3a3df57ab6b18c912d06c69c9f97515178301e99)), closes [#341](https://github.com/melfore/mosaic/issues/341)
+
+
+### Features
+
+* 🎸 [DateTimePicker] added component's export ([a99396b](https://github.com/melfore/mosaic/commit/a99396bebfd0abdcee43865b9c256e9c77e56825)), closes [#342](https://github.com/melfore/mosaic/issues/342)
+* 🎸 Added components export ([2f5424e](https://github.com/melfore/mosaic/commit/2f5424ea88e2a94d77e7b6ebf7255333f53fe0f7)), closes [#342](https://github.com/melfore/mosaic/issues/342)
+
 ## [9.3.1](https://github.com/melfore/mosaic/compare/v9.3.0...v9.3.1) (2023-10-05)
 
 # [9.3.0](https://github.com/melfore/mosaic/compare/v9.2.1...v9.3.0) (2023-10-05)

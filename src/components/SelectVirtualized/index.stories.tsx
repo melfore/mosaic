@@ -22,7 +22,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Autocomplete Component",
-          url: "https://mui.com/components/autocomplete/",
+          url: "https://mui.com/material-ui/react-select/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

@@ -18,10 +18,6 @@ export default {
   parameters: {
     docs: {
       ...getDocsPage({
-        basedOn: {
-          label: "MUI Tabs Component",
-          url: "https://mui.com/material-ui/react-progress/",
-        },
         component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,

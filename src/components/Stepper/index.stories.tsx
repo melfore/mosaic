@@ -21,7 +21,7 @@ export default {
       ...getDocsPage({
         basedOn: {
           label: "MUI Stepper Component",
-          url: "https://mui.com/material-ui/react-progress/",
+          url: "https://mui.com/material-ui/react-stepper/",
         },
         component: COMPONENT_NAME,
         e2eTestInfo: {

@@ -17,12 +17,15 @@ Add the package to your project with:
 It requires these `peerDependencies` to be installed in host project:
 
 ```
-  "@emotion/react": ">= 11.8.2 < 12",
-  "@emotion/styled": ">= 11.8.1 < 12",
-  "@mui/icons-material": ">= 5.5.1 < 6",
-  "@mui/material": ">= 5.5.3 < 6",
-  "react": ">= 18 < 19",
-  "react-dom": ">= 18 < 19"
+    "@emotion/react": ">= 11.8.2 < 12",
+    "@emotion/styled": ">= 11.8.1 < 12",
+    "@mui/icons-material": ">= 5.5.1 < 6",
+    "@mui/material": ">= 5.5.3 < 6",
+    "@mui/x-date-pickers": ">= 6.16.0 < 7",
+    "luxon": ">= 3.4.3 < 4",
+    "react": ">= 18 < 19",
+    "react-dom": ">= 18 < 19",
+    "react-window": ">= 1.8.0 < 1.9.0"
 ```
 
 ## Usage

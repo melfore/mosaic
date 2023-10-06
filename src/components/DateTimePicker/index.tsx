@@ -3,13 +3,13 @@ import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { DateTimePicker as MuiDateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
+import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { DateTimePickerType, viewType } from "../../types/DateTimePicker";
 
 export const DATA_CY_DEFAULT = "timePicker";
 
 const DateTimePicker: FC<DateTimePickerType> = ({
   dataCy = DATA_CY_DEFAULT,
-  timeZone,
   label = "Date Time",
   value,
   onAccept,
@@ -31,6 +31,8 @@ const DateTimePicker: FC<DateTimePickerType> = ({
     }
     return ["year", "month", "day", "hours", "minutes"];
   }, [timeView]);
+
+  const { timeZone } = useMosaicContext();
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
       <MuiDateTimePicker

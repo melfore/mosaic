@@ -1,7 +1,6 @@
 import { IBase } from "./Base";
 
 export type DateTimePickerType = IBase & {
-  timeZone?: string;
   label: string;
   value?: string;
   onAccept?: (value: string | null) => void;

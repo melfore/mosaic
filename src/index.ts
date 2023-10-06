@@ -13,6 +13,8 @@ export { default as Card } from "./components/Card";
 export { default as Checkbox } from "./components/Checkbox";
 export { CheckboxSize } from "./types/Checkbox";
 
+export { default as DateTimePicker } from "./components/DateTimePicker";
+
 export { default as Icon } from "./components/Icon";
 export { default as IconButton } from "./components/IconButton";
 export { Icons, IconSize } from "./types/Icon";

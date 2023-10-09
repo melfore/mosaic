@@ -46,7 +46,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
     return d.isValid;
   }, []);
 
-  const verifValue = useMemo(() => {
+  const dateTimeValue = useMemo(() => {
     if (value) {
       const isoDate = isIsoDate(value);
       if (isoDate) {
@@ -62,7 +62,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
       <MuiDateTimePicker
         timezone={zone}
         desktopModeMediaQuery={desctopMode}
-        value={verifValue}
+        value={dateTimeValue}
         onAccept={onAccept}
         data-cy={dataCy}
         label={label}

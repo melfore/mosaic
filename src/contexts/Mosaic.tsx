@@ -7,13 +7,13 @@ export type ILocalizeMethod = (key: string) => string;
 interface IMosaicContextOptions {
   breakpoints?: IUseViewStateOptions;
   localize?: ILocalizeMethod;
-  timeZone?: string;
+  contextTimeZone?: string;
 }
 
 export interface IMosaicContext {
   localize?: ILocalizeMethod;
   view: IViewState;
-  timeZone?: string;
+  contextTimeZone?: string;
 }
 
 export const MOSAIC_CONTEXT_DISPLAY_NAME = "MosaicContext";
@@ -26,8 +26,8 @@ export const MosaicContextProvider: FC<PropsWithChildren<IMosaicContextOptions>>
   children,
   localize,
   breakpoints,
-  timeZone,
+  contextTimeZone,
 }) => {
   const view = useViewState(breakpoints);
-  return <MosaicContext.Provider value={{ localize, view, timeZone }}>{children}</MosaicContext.Provider>;
+  return <MosaicContext.Provider value={{ localize, view, contextTimeZone }}>{children}</MosaicContext.Provider>;
 };

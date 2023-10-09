@@ -47,6 +47,7 @@
     "@types/enzyme": "^3.10.13",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^29.5.4",
+    "@types/luxon": "^3.3.2",
     "@types/mdx": "^2.0.7",
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.21",
@@ -94,7 +95,7 @@
     "@mui/icons-material": ">= 5.5.1 < 6",
     "@mui/material": ">= 5.5.3 < 6",
     "@mui/x-date-pickers": ">= 6.16.0 < 7",
-    "luxon": ">= 3.4.3 < 4",
+    "luxon": "^3.4.3",
     "react": ">= 18 < 19",
     "react-dom": ">= 18 < 19",
     "react-window": ">= 1.8.0 < 1.9.0"

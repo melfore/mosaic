@@ -21,7 +21,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   format,
   timeZone,
 }: DateTimePickerType) => {
-  const { contextTimeZone } = useMosaicContext();
+  const { timeZone: contextTimeZone } = useMosaicContext();
 
   const desctopMode = useMemo(() => {
     return mobileView ? "Mobile" : undefined;
@@ -41,6 +41,11 @@ const DateTimePicker: FC<DateTimePickerType> = ({
     return timeZone ? timeZone : contextTimeZone;
   }, [timeZone, contextTimeZone]);
 
+  const isDate = useCallback((value: number) => {
+    const obj = new Date(value);
+    return obj instanceof Date && !isNaN(value);
+  }, []);
+
   const isIsoDate = useCallback((str: string) => {
     const d = DateTime.fromISO(str);
     return d.isValid;
@@ -48,14 +53,40 @@ const DateTimePicker: FC<DateTimePickerType> = ({
 
   const dateTimeValue = useMemo(() => {
     if (value) {
-      const isoDate = isIsoDate(value);
-      if (isoDate) {
-        return DateTime.fromISO(value);
+      if (typeof value === "string") {
+        const isoDate = isIsoDate(value);
+        if (isoDate) {
+          return DateTime.fromISO(value);
+        }
       }
+      if (typeof value === "number") {
+        const validMillis = isDate(value);
+        if (validMillis) {
+          return DateTime.fromMillis(value);
+        }
+      }
+      if (typeof value === "object") {
+        const objToMillis = value.getTime();
+        const validDate = isDate(objToMillis);
+        if (validDate) {
+          return DateTime.fromMillis(objToMillis);
+        }
+      }
+
+      ////////////////////////////////////////7
       logError("DateTimePicker", "Invalid Date");
       return undefined;
     }
-  }, [value, isIsoDate]);
+  }, [value, isIsoDate, isDate]);
+
+  const onAcceptIso = useCallback(
+    (value: DateTime | undefined | null) => {
+      if (onAccept) {
+        onAccept(value?.toISO());
+      }
+    },
+    [onAccept]
+  );
 
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
@@ -63,7 +94,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
         timezone={zone}
         desktopModeMediaQuery={desctopMode}
         value={dateTimeValue}
-        onAccept={onAccept}
+        onAccept={onAcceptIso}
         data-cy={dataCy}
         label={label}
         views={views}

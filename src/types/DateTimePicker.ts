@@ -1,11 +1,9 @@
-import { DateTime } from "luxon";
-
 import { IBase } from "./Base";
 
 export type DateTimePickerType = IBase & {
   label: string;
-  value?: string;
-  onAccept?: (value: DateTime | undefined | null) => void;
+  value?: Date | string | number;
+  onAccept?: (value: string | undefined | null) => void;
   ampm?: boolean;
   mobileView?: boolean;
   timeZone?: string;

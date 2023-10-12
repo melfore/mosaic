@@ -1,3 +1,11 @@
+# [9.6.0](https://github.com/melfore/mosaic/compare/v9.5.0...v9.6.0) (2023-10-12)
+
+
+### Features
+
+* 🎸 [DateTimePicker] Accept Date, number as value ([c9b8aaa](https://github.com/melfore/mosaic/commit/c9b8aaa383ae1addf40e8f3f5d393ce3e122bba0)), closes [#347](https://github.com/melfore/mosaic/issues/347)
+* 🎸 [DateTimePicker] Added timeZone prop ([89c29ba](https://github.com/melfore/mosaic/commit/89c29baea207c22f2f5403fabb85068073aacefb)), closes [#347](https://github.com/melfore/mosaic/issues/347)
+
 # [9.5.0](https://github.com/melfore/mosaic/compare/v9.4.1...v9.5.0) (2023-10-06)
 
 

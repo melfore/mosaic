@@ -2,10 +2,11 @@ import { IBase } from "./Base";
 
 export type DateTimePickerType = IBase & {
   label: string;
-  value?: string;
-  onAccept?: (value: string | null) => void;
+  value?: Date | string | number;
+  onAccept?: (value: string | undefined | null) => void;
   ampm?: boolean;
   mobileView?: boolean;
+  timeZone?: string;
   format?: string;
   timeView?: "hrs" | "min" | "sec";
 };

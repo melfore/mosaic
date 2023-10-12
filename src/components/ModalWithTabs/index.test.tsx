@@ -38,4 +38,14 @@ describe("Tabs test suite:", () => {
       props: { labelList: [{ label: "PAGE1" }], orientation: "vertical" },
     });
   });
+
+  // TODO: improve this
+  it("size - fullscreen", () => {
+    getModalWithTabsTestable({ props: { size: "xl" } });
+  });
+
+  // TODO: improve this
+  it("size - large", () => {
+    getModalWithTabsTestable({ props: { size: "lg" } });
+  });
 });

@@ -1,3 +1,10 @@
+## [9.6.1](https://github.com/melfore/mosaic/compare/v9.6.0...v9.6.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* 🐛 [DateTimePicker] Fixed input validation ([f7f796c](https://github.com/melfore/mosaic/commit/f7f796cca173e42febbc7f57f5212cb060660015)), closes [#349](https://github.com/melfore/mosaic/issues/349)
+
 # [9.6.0](https://github.com/melfore/mosaic/compare/v9.5.0...v9.6.0) (2023-10-12)
 
 

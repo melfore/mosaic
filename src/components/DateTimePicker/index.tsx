@@ -41,43 +41,22 @@ const DateTimePicker: FC<DateTimePickerType> = ({
     return timeZone ? timeZone : contextTimeZone;
   }, [timeZone, contextTimeZone]);
 
-  const isDate = useCallback((value: number) => {
-    const obj = new Date(value);
-    return obj instanceof Date && !isNaN(value);
-  }, []);
-
-  const isIsoDate = useCallback((str: string) => {
-    const d = DateTime.fromISO(str);
-    return d.isValid;
+  const isDate = useCallback((date: Date) => {
+    const valueDateTime = DateTime.fromJSDate(date);
+    return valueDateTime.isValid;
   }, []);
 
   const dateTimeValue = useMemo(() => {
     if (value) {
-      if (typeof value === "string") {
-        const isoDate = isIsoDate(value);
-        if (isoDate) {
-          return DateTime.fromISO(value);
-        }
+      const valueDate = new Date(value);
+      const validDate = isDate(valueDate);
+      if (validDate) {
+        return DateTime.fromJSDate(valueDate);
       }
-      if (typeof value === "number") {
-        const validMillis = isDate(value);
-        if (validMillis) {
-          return DateTime.fromMillis(value);
-        }
-      }
-      if (typeof value === "object") {
-        const objToMillis = value.getTime();
-        const validDate = isDate(objToMillis);
-        if (validDate) {
-          return DateTime.fromMillis(objToMillis);
-        }
-      }
-
-      ////////////////////////////////////////7
       logError("DateTimePicker", "Invalid Date");
       return undefined;
     }
-  }, [value, isIsoDate, isDate]);
+  }, [value, isDate]);
 
   const onAcceptIso = useCallback(
     (value: DateTime | undefined | null) => {

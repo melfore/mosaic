@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { formDecorator } from "../../utils/mocks/FormMock";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import InputText, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputTextWithProps, LOCALIZABLE_PROPS } from ".";
@@ -63,6 +63,14 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   ...Primary.args,
   disabled: true,
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  label: MessageMock.inputText,
+  placeholder: MessageMock.placeholder,
 };
 
 export const Multiline = Template.bind({});

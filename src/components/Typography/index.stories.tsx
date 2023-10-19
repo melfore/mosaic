@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS, TypographyWithProps } from ".";
@@ -72,6 +72,14 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...Primary.args,
   loading: true,
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  children: MessageMock.typography,
+  content: MessageMock.typography,
 };
 
 export const Truncated = Template.bind({});

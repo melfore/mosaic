@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ISelect } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
 import { formDecorator } from "../../utils/mocks/FormMock";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import SelectVirtual, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
@@ -86,6 +86,14 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...Primary.args,
   loading: true,
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  label: MessageMock.select,
+  placeholder: MessageMock.placeholder,
 };
 
 export const Multiple = Template.bind({});

@@ -1,5 +1,5 @@
 import React from "react";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 
 import { MosaicContextProvider } from "../../contexts/Mosaic";
 
@@ -12,10 +12,15 @@ export enum MessageMock {
   confirm = "locale.confirm",
   inputNumber = "locale.inputNumber",
   inputText = "locale.inputText",
+  label = "locale.label",
+  placeholder = "locale.placeholder",
+  select = "locale.select",
   subtitle = "locale.subtitle",
   switch = "locale.switch",
+  text = "locale.text",
   title = "locale.title",
   typography = "locale.typography",
+  value = "locale.value",
 }
 
 type IMessagesMock = {
@@ -32,28 +37,38 @@ export const MESSAGES_MOCK: IMessagesMock = {
     [MessageMock.confirm]: "Confirm",
     [MessageMock.inputNumber]: "Input Number",
     [MessageMock.inputText]: "Input Text",
+    [MessageMock.label]: "Label",
+    [MessageMock.placeholder]: "Enter value...",
+    [MessageMock.select]: "Dropdown",
     [MessageMock.subtitle]: "Subtitle",
     [MessageMock.switch]: "Switch",
+    [MessageMock.text]: "Some lines of text...",
     [MessageMock.title]: "Title",
-    [MessageMock.typography]: "Typography",
+    [MessageMock.typography]: "Text",
+    [MessageMock.value]: "Value",
   },
   "it-IT": {
     [MessageMock.button]: "Bottone",
     [MessageMock.cancel]: "Annulla",
     [MessageMock.checkbox]: "Spunta",
     [MessageMock.confirm]: "Conferma",
-    [MessageMock.inputNumber]: "Numero in input",
-    [MessageMock.inputText]: "Testo in input",
+    [MessageMock.inputNumber]: "Campo numerico",
+    [MessageMock.inputText]: "Campo testuale",
+    [MessageMock.label]: "Etichetta",
+    [MessageMock.placeholder]: "Inserire valore...",
+    [MessageMock.select]: "Menu a tendina",
     [MessageMock.subtitle]: "Sottotitolo",
     [MessageMock.switch]: "Interruttore",
+    [MessageMock.text]: "Qualche riga di testo...",
     [MessageMock.title]: "Titolo",
-    [MessageMock.typography]: "Tipografia",
+    [MessageMock.typography]: "Testo",
+    [MessageMock.value]: "Valore",
   },
 };
 
 const getLocalizedMessageMock = (key: MessageMock, locale: ILocaleMock): string => MESSAGES_MOCK[locale][key] || key;
 
-const localeDecorator: DecoratorFn = (Story) => (
+const localeDecorator: Decorator = (Story) => (
   <MosaicContextProvider localize={(key) => getLocalizedMessageMock(key as MessageMock, "it-IT")}>
     {Story()}
   </MosaicContextProvider>

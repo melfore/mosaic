@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
 import { formDecorator } from "../../utils/mocks/FormMock";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
 import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, SwitchWithProps } from ".";
@@ -64,6 +64,13 @@ export const LabelEnd = Template.bind({});
 LabelEnd.args = {
   ...Label.args,
   labelPlacement: "end",
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  label: MessageMock.switch,
 };
 
 export const SizeSmall = Template.bind({});

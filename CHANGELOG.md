@@ -1,3 +1,11 @@
+# [9.7.0](https://github.com/melfore/mosaic/compare/v9.6.1...v9.7.0) (2023-10-19)
+
+
+### Features
+
+* 🎸 [DateTimePicker] Added luxon settingsZone ([e740495](https://github.com/melfore/mosaic/commit/e740495de6e0b4170dd57c03627a12e96051c2a0))
+* 🎸 [DateTimePicker]Changed return value to Date obj ([fec805e](https://github.com/melfore/mosaic/commit/fec805e72c468ec26c0705fe570611cf625f5f4e)), closes [#351](https://github.com/melfore/mosaic/issues/351)
+
 ## [9.6.1](https://github.com/melfore/mosaic/compare/v9.6.0...v9.6.1) (2023-10-13)
 
 

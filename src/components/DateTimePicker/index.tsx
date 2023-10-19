@@ -2,7 +2,7 @@ import React, { FC, useCallback, useMemo } from "react";
 import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { DateTimePicker as MuiDateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateTime } from "luxon";
+import { DateTime, Settings } from "luxon";
 
 import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { DateTimePickerType, viewType } from "../../types/DateTimePicker";
@@ -23,10 +23,6 @@ const DateTimePicker: FC<DateTimePickerType> = ({
 }: DateTimePickerType) => {
   const { timeZone: contextTimeZone } = useMosaicContext();
 
-  const desctopMode = useMemo(() => {
-    return mobileView ? "Mobile" : undefined;
-  }, [mobileView]);
-
   const views: viewType[] = useMemo(() => {
     if (timeView === "hrs") {
       return ["year", "month", "day", "hours"];
@@ -38,8 +34,14 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   }, [timeView]);
 
   const zone = useMemo(() => {
-    return timeZone ? timeZone : contextTimeZone;
+    const settZone = timeZone ? timeZone : contextTimeZone;
+    Settings.defaultZone = settZone ? settZone : "system";
+    return settZone;
   }, [timeZone, contextTimeZone]);
+
+  const desctopMode = useMemo(() => {
+    return mobileView ? "Mobile" : undefined;
+  }, [mobileView]);
 
   const isDate = useCallback((date: Date) => {
     const valueDateTime = DateTime.fromJSDate(date);

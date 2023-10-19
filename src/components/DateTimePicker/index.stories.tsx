@@ -38,7 +38,7 @@ export const SecondsView = Template.bind({});
 SecondsView.args = { ...Primary.args, timeView: "sec" };
 
 export const MobileView = Template.bind({});
-MobileView.args = { ...SecondsView.args, mobileView: true };
+MobileView.args = { ...SecondsView.args, mobileView: true, timeZone: "utc+8", value: "2023-10-29T00:00:00.000+02:00" };
 
 export const FormatAmPm = Template.bind({});
 FormatAmPm.args = { ...Primary.args, ampm: true };

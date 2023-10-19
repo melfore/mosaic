@@ -3,7 +3,7 @@ import { IBase } from "./Base";
 export type DateTimePickerType = IBase & {
   label: string;
   value?: Date | string | number;
-  onAccept?: (value: string | undefined | null) => void;
+  onAccept?: (value: Date | undefined | null) => void;
   ampm?: boolean;
   mobileView?: boolean;
   timeZone?: string;

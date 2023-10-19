@@ -58,7 +58,7 @@ exports[`Typography test suite: localized 1`] = `
   className="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
   data-cy="typography"
 >
-  Typography
+  Text
 </p>
 `;
 

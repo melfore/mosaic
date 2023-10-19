@@ -61,7 +61,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   const onAcceptIso = useCallback(
     (value: DateTime | undefined | null) => {
       if (onAccept) {
-        onAccept(value?.toISO());
+        onAccept(value?.toJSDate());
       }
     },
     [onAccept]

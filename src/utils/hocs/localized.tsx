@@ -85,7 +85,7 @@ const localized =
     }
 
     const dataCy = useMemo(
-      (): string => (!externalDataCy ? (props as any)[dataCyShortcut] : dataCy),
+      (): string => externalDataCy || (props as any)[dataCyShortcut],
       [dataCyShortcut, externalDataCy, props]
     );
 

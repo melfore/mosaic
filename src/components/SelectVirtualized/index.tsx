@@ -87,7 +87,6 @@ const SelectVirtualized = <T extends any>({
     (event: any, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
-      console.log(value);
     },
     [externalOnChange]
   );

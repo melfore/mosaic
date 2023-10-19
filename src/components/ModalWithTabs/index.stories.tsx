@@ -49,11 +49,11 @@ const Template: ComponentStory<typeof ModalWithTabsWithProps> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   labelList: [
-    { label: "PAGE1", content: "PAGE1" },
-    { label: "PAGE2", content: "PAGE2" },
-    { label: "PAGE3", content: <Progress type="Linear" /> },
+    { label: "PAGE 1", content: "PAGE 1 Content" },
+    { label: "PAGE 2", content: <div>"PAGE 2 Content"</div> },
+    { label: "PAGE 3", content: <Progress type="Linear" /> },
   ],
-  children: "CONTENT SPACE",
+  children: "Generic modal content not enclosed in Tabs...",
 };
 
 export const Localized = Template.bind({});

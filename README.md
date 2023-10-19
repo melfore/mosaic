@@ -33,4 +33,4 @@ Simply import a `MosaicComponent` as follows:
   import { MosaicComponent } from '@melfore/mosaic';
 ```
 
-Browse <a href="https://melfore.github.io/mosaic/latest/" target="_blank">StoryBook</a> to discover all available components.
+Browse <a href="https://melfore.github.io/mosaic/beta/" target="_blank">StoryBook</a> to discover all available components.

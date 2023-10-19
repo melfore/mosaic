@@ -1,19 +1,27 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { getAllComposedDataCy } from "../../utils";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
 import Progress from "../Progress";
 
-import ModalWithTabs, { DATA_CY_DEFAULT } from ".";
+import ModalWithTabs, {
+  DATA_CY_DEFAULT,
+  DATA_CY_SHORTCUT,
+  LOCALIZABLE_PROPS,
+  ModalWithTabsWithProps,
+  SUBPARTS_MAP,
+} from ".";
 
 const COMPONENT_NAME = "ModalWithTabs";
 ModalWithTabs.displayName = COMPONENT_NAME;
+ModalWithTabsWithProps.displayName = COMPONENT_NAME;
 
 export default {
   title: "Navigation/ModalWithTabs",
-  component: ModalWithTabs,
+  component: ModalWithTabsWithProps,
   decorators: [modalDecorator, localeDecorator],
   parameters: {
     docs: {
@@ -25,13 +33,18 @@ export default {
         component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
+          subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
         },
+        localizableProps: LOCALIZABLE_PROPS,
       }),
     },
   },
-} as ComponentMeta<typeof ModalWithTabs>;
+} as ComponentMeta<typeof ModalWithTabsWithProps>;
 
-const Template: ComponentStory<typeof ModalWithTabs> = (args) => <ModalWithTabs {...args} dataCy={DATA_CY_DEFAULT} />;
+const Template: ComponentStory<typeof ModalWithTabsWithProps> = (args) => (
+  <ModalWithTabs {...args} dataCy={DATA_CY_DEFAULT} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -43,5 +56,15 @@ Primary.args = {
   children: "CONTENT SPACE",
 };
 
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  title: MessageMock.title,
+};
+
 export const Vertical = Template.bind({});
-Vertical.args = { ...Primary.args, orientation: "vertical" };
+Vertical.args = {
+  ...Primary.args,
+  orientation: "vertical",
+};

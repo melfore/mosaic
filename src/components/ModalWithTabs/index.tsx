@@ -4,12 +4,34 @@ import { Grid } from "@mui/material";
 import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { IModal } from "../../types/Modal";
 import { TabsType } from "../../types/Tabs";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Modal from "../Modal";
 import Tabs from "../Tabs";
 
 export const DATA_CY_DEFAULT = "modalwithtabs";
+export const DATA_CY_SHORTCUT = "title";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "title", type: "string" },
+  { name: "cancel.label", type: "any" },
+  { name: "confirm.label", type: "any" },
+];
 
-export type ModalWithTabsType = TabsType & IModal & {};
+export const SUBPARTS_MAP = {
+  title: {
+    label: "Title",
+  },
+  content: {
+    label: "Content",
+  },
+  actionCancel: {
+    label: "Action Cancel",
+  },
+  actionConfirm: {
+    label: "Action Confirm",
+  },
+};
+
+export type ModalWithTabsType = TabsType & IModal;
 
 const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
   dataCy = DATA_CY_DEFAULT,
@@ -20,6 +42,7 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
   cancel,
   closable = false,
   confirm,
+  localized = false,
   onClose,
   open = false,
   responsive,
@@ -37,6 +60,7 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
     }
     return orientation;
   }, [tabletView, orientation]);
+
   return (
     <Modal
       open={open}
@@ -44,6 +68,7 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
       closable={closable}
       cancel={cancel}
       confirm={confirm}
+      localized={localized}
       responsive={responsive}
       size={size}
       title={title}
@@ -60,4 +85,9 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
   );
 };
 
-export default ModalWithTabs;
+export const ModalWithTabsWithProps = ModalWithTabs;
+
+export default localized(ModalWithTabs, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

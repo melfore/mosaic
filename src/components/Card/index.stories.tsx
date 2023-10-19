@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 import Button from "../Button";
 
@@ -73,4 +73,12 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...Icon.args,
   loading: true,
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  title: MessageMock.title,
+  subtitle: MessageMock.subtitle,
 };

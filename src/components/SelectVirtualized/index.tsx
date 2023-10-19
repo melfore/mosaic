@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, SyntheticEvent, useCallback, useMemo } from "react";
+import React, { HTMLAttributes, useCallback, useMemo } from "react";
 import { VariableSizeList } from "react-window";
 import {
   Autocomplete as MUIAutocomplete,
@@ -87,7 +87,6 @@ const SelectVirtualized = <T extends any>({
     (event: any, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
-      console.log(value);
     },
     [externalOnChange]
   );

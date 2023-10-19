@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 import Icon from "../Icon";
 import Typography from "../Typography";
@@ -109,6 +109,13 @@ Locale.args = {
     label: "en",
     onItemClick: () => {},
   },
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  title: MessageMock.title,
 };
 
 export const Styled = Template.bind({});

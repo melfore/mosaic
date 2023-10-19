@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
+import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
 
@@ -49,24 +49,6 @@ Closeable.args = {
   closable: true,
 };
 
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Closeable.args,
-  size: "sm",
-};
-
-export const SizeLarge = Template.bind({});
-SizeLarge.args = {
-  ...Closeable.args,
-  size: "lg",
-};
-
-export const SizeFullScreen = Template.bind({});
-SizeFullScreen.args = {
-  ...Closeable.args,
-  size: "xl",
-};
-
 export const ActionCancel = Template.bind({});
 ActionCancel.args = {
   ...Closeable.args,
@@ -84,4 +66,37 @@ Actions.args = {
   ...Closeable.args,
   cancel: { action: () => {}, label: "Cancel", variant: "outlined" },
   confirm: { action: () => {}, label: "Confirm" },
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  ...Primary.args,
+  localized: true,
+  title: MessageMock.title,
+  cancel: {
+    ...Actions.args.cancel!,
+    label: MessageMock.cancel,
+  },
+  confirm: {
+    ...Actions.args.confirm!,
+    label: MessageMock.confirm,
+  },
+};
+
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+  ...Closeable.args,
+  size: "sm",
+};
+
+export const SizeLarge = Template.bind({});
+SizeLarge.args = {
+  ...Closeable.args,
+  size: "lg",
+};
+
+export const SizeFullScreen = Template.bind({});
+SizeFullScreen.args = {
+  ...Closeable.args,
+  size: "xl",
 };

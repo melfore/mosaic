@@ -1,17 +1,18 @@
-import { IBase, ILocalizable } from "./Base";
+import { ILocalizable } from "./Base";
 
-export type StepperType = IBase &
-  ILocalizable & {
-    stepList: {
-      label: string;
-      content?: React.ReactNode;
-    }[];
-    labelBackButton?: string;
-    labelNextButton?: string;
-    labelFinishButton?: string;
-    activeStep: number;
-    onNextClick: () => void;
-    onBackClick: () => void;
-    onFinishClick: () => void;
-    finishContent: React.ReactNode;
-  };
+export type StepperType = ILocalizable & {
+  stepsList: StepListType[];
+  labelBackButton?: string;
+  labelNextButton?: string;
+  labelFinishButton?: string;
+  activeStep: number;
+  onNextClick: () => void;
+  onBackClick: () => void;
+  onFinishClick: () => void;
+  finishContent: React.ReactNode;
+};
+
+export type StepListType = {
+  label: string;
+  content?: React.ReactNode;
+};

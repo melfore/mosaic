@@ -38,7 +38,7 @@ const Template: ComponentStory<typeof BreadCrumbs> = (args) => <BreadCrumbs {...
 
 export const Primary = Template.bind({});
 Primary.args = {
-  link: [
+  links: [
     {
       label: "page1",
       href: "",
@@ -59,7 +59,7 @@ SeparatorCustom.args = { ...Primary.args, separator: "<" };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  link: [
+  links: [
     {
       label: "page1",
       href: "",
@@ -81,7 +81,7 @@ WithIcon.args = {
 export const Localized = Template.bind({});
 Localized.args = {
   localized: true,
-  link: [
+  links: [
     {
       label: "locale.page1",
       href: "",

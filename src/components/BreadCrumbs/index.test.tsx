@@ -11,7 +11,7 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<BreadCrumbsType> = {
   domNode: "nav",
   localized: true,
   props: {
-    link: [{ label: "PAGE", href: "" }],
+    links: [{ label: "PAGE", href: "" }],
     onClick: jest.fn(),
   },
 };
@@ -39,7 +39,7 @@ describe("BreadCrumbs test suite:", () => {
   it("icon", () => {
     const { element } = getBreadCrumbsTestable({
       props: {
-        link: [
+        links: [
           { label: "HOME", href: "", icon: Icons.home },
           { label: "PAGE", href: "", icon: Icons.business },
         ],
@@ -54,7 +54,7 @@ describe("BreadCrumbs test suite:", () => {
     const onClickHandler = jest.fn();
     const { element, wrapper } = getBreadCrumbsTestable({
       props: {
-        link: [
+        links: [
           { label: "HOME", href: "" },
           { label: "PAGE", href: "" },
         ],

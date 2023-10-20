@@ -38,7 +38,7 @@ const Template: ComponentStory<typeof Stepper> = (args) => <Stepper {...args} da
 
 export const Primary = Template.bind({});
 Primary.args = {
-  stepList: [
+  stepsList: [
     { label: "STEP1", content: "CONTENT PAGE 1" },
     { label: "STEP2", content: "CONTENT PAGE 2" },
     { label: "STEP3", content: <Progress type="Linear" /> },
@@ -52,7 +52,7 @@ ActiveStep.args = { ...Primary.args, activeStep: 2 };
 export const Localized = Template.bind({});
 Localized.args = {
   localized: true,
-  stepList: [
+  stepsList: [
     { label: "locale.step1", content: "CONTENT PAGE 1" },
     { label: "locale.step2", content: "CONTENT PAGE 2" },
     { label: "locale.step3", content: <Progress type="Linear" /> },

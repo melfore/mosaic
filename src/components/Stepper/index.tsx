@@ -19,7 +19,7 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
 
 const Stepper: FC<StepperType> = ({
   dataCy = DATA_CY_DEFAULT,
-  stepList,
+  stepsList,
   labelBackButton = "Back",
   labelNextButton = "Next",
   labelFinishButton = "Finish",
@@ -33,14 +33,14 @@ const Stepper: FC<StepperType> = ({
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid item xs={12}>
         <MUIStepper data-cy={dataCy} activeStep={activeStep} alternativeLabel>
-          {stepList.map((i, index) => (
+          {stepsList.map((i, index) => (
             <Step key={index}>
               <StepLabel>{i.label}</StepLabel>
             </Step>
           ))}
         </MUIStepper>
       </Grid>
-      {activeStep === stepList.length ? (
+      {activeStep === stepsList.length ? (
         <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
             {finishContent}
@@ -54,7 +54,7 @@ const Stepper: FC<StepperType> = ({
       ) : (
         <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
-            {stepList[activeStep].content && stepList[activeStep].content}
+            {stepsList[activeStep].content && stepsList[activeStep].content}
           </Grid>
           <Grid item xs={12}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>

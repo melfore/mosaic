@@ -10,7 +10,7 @@ export const DATA_CY_DEFAULT = "bredCrumbs";
 export const DATA_CY_SHORTCUT = "breadCrumbs";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "link.label", type: "any[]" }];
 
-const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onClick, size = "small", separator }) => {
+const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, links, onClick, size = "small", separator }) => {
   const typographySize = useMemo(() => {
     if (size === "small") {
       return "label";
@@ -22,8 +22,8 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
 
   return (
     <MUIBreadcrumbs data-cy={dataCy} aria-label="breadcrumb" separator={separator}>
-      {link.map((i, index) => {
-        return link.length - 1 !== index ? (
+      {links.map((i, index) => {
+        return links.length - 1 !== index ? (
           <Link
             key={index}
             underline="hover"

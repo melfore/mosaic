@@ -6,7 +6,7 @@ import { Icons } from "../../types/Icon";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import BreadCrumbs, { DATA_CY_DEFAULT } from ".";
+import BreadCrumbs, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 const COMPONENT_NAME = "BreadCrumbs";
 BreadCrumbs.displayName = COMPONENT_NAME;
@@ -26,7 +26,9 @@ export default {
         component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
         },
+        localizableProps: LOCALIZABLE_PROPS,
       }),
     },
   },
@@ -36,7 +38,7 @@ const Template: ComponentStory<typeof BreadCrumbs> = (args) => <BreadCrumbs {...
 
 export const Primary = Template.bind({});
 Primary.args = {
-  link: [
+  links: [
     {
       label: "page1",
       href: "",
@@ -57,7 +59,7 @@ SeparatorCustom.args = { ...Primary.args, separator: "<" };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  link: [
+  links: [
     {
       label: "page1",
       href: "",
@@ -74,4 +76,23 @@ WithIcon.args = {
     },
   ],
   size: "medium",
+};
+
+export const Localized = Template.bind({});
+Localized.args = {
+  localized: true,
+  links: [
+    {
+      label: "locale.page1",
+      href: "",
+    },
+    {
+      label: "locale.page2",
+      href: "",
+    },
+    {
+      label: "locale.page3",
+      href: "",
+    },
+  ],
 };

@@ -1,6 +1,6 @@
-import { IBase } from "./Base";
+import { ILocalizable } from "./Base";
 
-export type DateTimePickerType = IBase & {
+export type DateTimePickerType = ILocalizable & {
   label: string;
   value?: Date | string | number;
   onAccept?: (value: Date | undefined | null) => void;

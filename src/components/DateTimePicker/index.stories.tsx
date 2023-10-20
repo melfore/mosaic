@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import DateTimePicker, { DATA_CY_DEFAULT } from ".";
+import DateTimePicker, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
 
 const COMPONENT_NAME = "DateTimePicker";
 DateTimePicker.displayName = COMPONENT_NAME;
@@ -23,7 +23,9 @@ export default {
         component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
+          dataCyShortcut: DATA_CY_SHORTCUT,
         },
+        localizableProps: LOCALIZABLE_PROPS,
       }),
     },
   },
@@ -42,3 +44,6 @@ MobileView.args = { ...SecondsView.args, mobileView: true, timeZone: "utc+8", va
 
 export const FormatAmPm = Template.bind({});
 FormatAmPm.args = { ...Primary.args, ampm: true };
+
+export const Localized = Template.bind({});
+Localized.args = { ...Primary.args, localized: true, label: "locale.dateTime" };

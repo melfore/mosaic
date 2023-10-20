@@ -6,6 +6,16 @@ import { MosaicContextProvider } from "../../contexts/Mosaic";
 export type ILocaleMock = "en" | "it-IT";
 
 export enum MessageMock {
+  page1 = "locale.page1",
+  page2 = "locale.page2",
+  page3 = "locale.page3",
+  step1 = "locale.step1",
+  step2 = "locale.step2",
+  step3 = "locale.step3",
+  next = "locale.next",
+  back = "locale.back",
+  finish = "locale.finish",
+  dateTime = "locale.dateTime",
   button = "locale.button",
   cancel = "locale.cancel",
   checkbox = "locale.checkbox",
@@ -31,6 +41,16 @@ type IMessagesMock = {
 
 export const MESSAGES_MOCK: IMessagesMock = {
   en: {
+    [MessageMock.page1]: "Page1",
+    [MessageMock.page2]: "Page2",
+    [MessageMock.page3]: "Page3",
+    [MessageMock.step1]: "Step1",
+    [MessageMock.step2]: "Step2",
+    [MessageMock.step3]: "Step3",
+    [MessageMock.next]: "Next",
+    [MessageMock.back]: "Back",
+    [MessageMock.finish]: "Finish",
+    [MessageMock.dateTime]: "Date Time",
     [MessageMock.button]: "Button",
     [MessageMock.cancel]: "Cancel",
     [MessageMock.checkbox]: "Checkbox",
@@ -48,6 +68,16 @@ export const MESSAGES_MOCK: IMessagesMock = {
     [MessageMock.value]: "Value",
   },
   "it-IT": {
+    [MessageMock.page1]: "Pagina 1",
+    [MessageMock.page2]: "Pagina 2",
+    [MessageMock.page3]: "Pagina 3",
+    [MessageMock.step1]: "1°Passo",
+    [MessageMock.step2]: "2°Passo",
+    [MessageMock.step3]: "3°Passo",
+    [MessageMock.next]: "Avanti",
+    [MessageMock.back]: "Dietro",
+    [MessageMock.finish]: "Finito",
+    [MessageMock.dateTime]: "Data Ore",
     [MessageMock.button]: "Bottone",
     [MessageMock.cancel]: "Annulla",
     [MessageMock.checkbox]: "Spunta",

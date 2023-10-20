@@ -5,16 +5,24 @@ import StepLabel from "@mui/material/StepLabel";
 import MUIStepper from "@mui/material/Stepper";
 
 import { StepperType } from "../../types/Stepper";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 
 export const DATA_CY_DEFAULT = "Stepper";
+export const DATA_CY_SHORTCUT = "Stepper";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "labelBackButton", type: "string" },
+  { name: "labelNextButton", type: "string" },
+  { name: "labelFinishButton", type: "string" },
+  { name: "stepList.label", type: "any[]" },
+];
 
 const Stepper: FC<StepperType> = ({
   dataCy = DATA_CY_DEFAULT,
-  stepList,
-  labelBackButton = "BACK",
-  labelNextButton = "NEXT",
-  labelFinishButton = "FINISH",
+  stepsList,
+  labelBackButton = "Back",
+  labelNextButton = "Next",
+  labelFinishButton = "Finish",
   activeStep,
   onNextClick,
   onBackClick,
@@ -25,14 +33,14 @@ const Stepper: FC<StepperType> = ({
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid item xs={12}>
         <MUIStepper data-cy={dataCy} activeStep={activeStep} alternativeLabel>
-          {stepList.map((i, index) => (
+          {stepsList.map((i, index) => (
             <Step key={index}>
               <StepLabel>{i.label}</StepLabel>
             </Step>
           ))}
         </MUIStepper>
       </Grid>
-      {activeStep === stepList.length ? (
+      {activeStep === stepsList.length ? (
         <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
             {finishContent}
@@ -46,7 +54,7 @@ const Stepper: FC<StepperType> = ({
       ) : (
         <Grid container spacing={2} sx={{ pt: 2 }}>
           <Grid item xs={12}>
-            {stepList[activeStep].content && stepList[activeStep].content}
+            {stepsList[activeStep].content && stepsList[activeStep].content}
           </Grid>
           <Grid item xs={12}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -67,4 +75,7 @@ const Stepper: FC<StepperType> = ({
   );
 };
 
-export default Stepper;
+export default localized(Stepper, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

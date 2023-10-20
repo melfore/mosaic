@@ -1,11 +1,11 @@
-import { IBase } from "./Base";
+import { ILocalizable } from "./Base";
 import { IIconElement } from "./Icon";
 
-export type BreadCrumbsType = IBase & {
+export type BreadCrumbsType = ILocalizable & {
   /**
    * List of Links
    */
-  link: { label: string; href: string; icon?: IIconElement }[];
+  links: LinkType[];
   /**
    * Callback for click events
    */
@@ -18,4 +18,10 @@ export type BreadCrumbsType = IBase & {
    * Text size
    */
   separator?: "-" | "/" | "<" | ">" | "|";
+};
+
+export type LinkType = {
+  label: string;
+  href: string;
+  icon?: IIconElement;
 };

@@ -1,3 +1,10 @@
+# [9.8.0](https://github.com/melfore/mosaic/compare/v9.7.1...v9.8.0) (2023-10-20)
+
+
+### Features
+
+* 🎸 Added localized to new components ([9d64f98](https://github.com/melfore/mosaic/commit/9d64f98f5db552b8075c5a4407c8a5b7fdc6a729)), closes [#358](https://github.com/melfore/mosaic/issues/358)
+
 ## [9.7.1](https://github.com/melfore/mosaic/compare/v9.7.0...v9.7.1) (2023-10-19)
 
 # [9.7.0](https://github.com/melfore/mosaic/compare/v9.6.1...v9.7.0) (2023-10-19)

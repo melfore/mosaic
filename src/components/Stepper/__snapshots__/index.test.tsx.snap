@@ -162,7 +162,7 @@ exports[`Progress test suite: Final Content 1`] = `
           tabIndex={0}
           type="button"
         >
-          FINISH
+          Finish
           <span
             className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
@@ -370,7 +370,7 @@ exports[`Progress test suite: default 1`] = `
           tabIndex={-1}
           type="button"
         >
-          BACK
+          Back
         </button>
         <button
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
@@ -392,7 +392,7 @@ exports[`Progress test suite: default 1`] = `
           tabIndex={0}
           type="button"
         >
-          NEXT
+          Next
         </button>
       </div>
     </div>

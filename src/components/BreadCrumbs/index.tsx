@@ -2,10 +2,13 @@ import React, { FC, useMemo } from "react";
 import { Breadcrumbs as MUIBreadcrumbs, Link } from "@mui/material";
 
 import { BreadCrumbsType } from "../../types/BreadCrumbs";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import IconWrapper from "../IconWrapper";
 import Typography from "../Typography";
 
 export const DATA_CY_DEFAULT = "bredCrumbs";
+export const DATA_CY_SHORTCUT = "breadCrumbs";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "link.label", type: "any[]" }];
 
 const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onClick, size = "small", separator }) => {
   const typographySize = useMemo(() => {
@@ -44,4 +47,7 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({ dataCy = DATA_CY_DEFAULT, link, onCl
   );
 };
 
-export default BreadCrumbs;
+export default localized(BreadCrumbs, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

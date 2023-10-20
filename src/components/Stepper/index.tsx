@@ -5,16 +5,24 @@ import StepLabel from "@mui/material/StepLabel";
 import MUIStepper from "@mui/material/Stepper";
 
 import { StepperType } from "../../types/Stepper";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import Button from "../Button";
 
 export const DATA_CY_DEFAULT = "Stepper";
+export const DATA_CY_SHORTCUT = "Stepper";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [
+  { name: "labelBackButton", type: "string" },
+  { name: "labelNextButton", type: "string" },
+  { name: "labelFinishButton", type: "string" },
+  { name: "stepList.label", type: "any[]" },
+];
 
 const Stepper: FC<StepperType> = ({
   dataCy = DATA_CY_DEFAULT,
   stepList,
-  labelBackButton = "BACK",
-  labelNextButton = "NEXT",
-  labelFinishButton = "FINISH",
+  labelBackButton = "Back",
+  labelNextButton = "Next",
+  labelFinishButton = "Finish",
   activeStep,
   onNextClick,
   onBackClick,
@@ -67,4 +75,7 @@ const Stepper: FC<StepperType> = ({
   );
 };
 
-export default Stepper;
+export default localized(Stepper, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

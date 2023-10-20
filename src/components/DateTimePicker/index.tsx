@@ -6,13 +6,16 @@ import { DateTime, Settings } from "luxon";
 
 import { useMosaicContext } from "../../hooks/useMosaicContext";
 import { DateTimePickerType, viewType } from "../../types/DateTimePicker";
+import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import { logError } from "../../utils/logger";
 
 export const DATA_CY_DEFAULT = "timePicker";
+export const DATA_CY_SHORTCUT = "label";
+export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
 
 const DateTimePicker: FC<DateTimePickerType> = ({
   dataCy = DATA_CY_DEFAULT,
-  label = "Date Time",
+  label,
   value,
   onAccept,
   ampm = false,
@@ -86,4 +89,7 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   );
 };
 
-export default DateTimePicker;
+export default localized(DateTimePicker, {
+  dataCyShortcut: DATA_CY_SHORTCUT,
+  localizableProps: LOCALIZABLE_PROPS,
+});

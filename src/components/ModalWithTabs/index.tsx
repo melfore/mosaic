@@ -77,7 +77,7 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
         <Grid item xs={12} paddingBottom={2}>
           {children}
         </Grid>
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <Tabs data-cy={dataCy} labelList={labelList} color={color} orientation={autoOrientation} style={style} />
         </Grid>
       </Grid>

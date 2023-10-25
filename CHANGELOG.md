@@ -1,3 +1,10 @@
+## [9.8.1](https://github.com/melfore/mosaic/compare/v9.8.0...v9.8.1) (2023-10-25)
+
+
+### Bug Fixes
+
+* 🐛 [ModalWithTabs] fixed grid error ([e90cb53](https://github.com/melfore/mosaic/commit/e90cb538132b57a036c42b4e91695da144fedb64)), closes [#360](https://github.com/melfore/mosaic/issues/360)
+
 # [9.8.0](https://github.com/melfore/mosaic/compare/v9.7.1...v9.8.0) (2023-10-20)
 
 

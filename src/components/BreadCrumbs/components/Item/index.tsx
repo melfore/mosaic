@@ -32,7 +32,7 @@ const BreadCrumbsItem = ({ dataCy, link: { icon, label }, localized, size, varia
   );
 
   return (
-    <div style={inlineFlexStyle}>
+    <div data-cy={dataCy} style={inlineFlexStyle}>
       {icon && <IconWrapper dataCy={`${dataCy}-icon`} icon={icon} size={size} style={iconStyle} />}
       <Typography dataCy={`${dataCy}-label`} localized={localized} variant={variant}>
         {label}

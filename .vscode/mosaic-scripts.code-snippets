@@ -1,0 +1,17 @@
+{
+  "TSReact Component": {
+    "prefix": "tsreact-component",
+    "description": "Create a new TSReact component",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "interface $1Props {}",
+      "",
+      "const $1 = ({}: $1Props) => {",
+      "  return null;",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  }
+}

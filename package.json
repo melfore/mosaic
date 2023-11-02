@@ -115,9 +115,10 @@
     "start": "npm run pre:test && storybook dev -p 6006",
     "test": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.ts --watch",
     "test:coverage": "npm run pre:test && jest --clearCache && jest --c ./.jest/config.ts --coverage",
-    "test:sb": "test-storybook --coverage --coverageDirectory coverage/storybook",
+    "test:sb": "test-storybook --watch",
     "test:sb:ci": "test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose",
-    "test:sb:coverage": "npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
+    "test:sb:coverage": "test-storybook --coverage --coverageDirectory coverage/storybook",
+    "test:sb:report": "npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
     "upload": "npm run build && npm publish --access public",
     "update:packages": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",
     "update:repo:from:beta": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta"

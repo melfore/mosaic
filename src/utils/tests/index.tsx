@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ComponentType, createElement, ReactElement } from "react";
 import { mount, ReactWrapper } from "enzyme";
 
@@ -46,7 +47,7 @@ const getReactElement = <T extends IBase>(Component: ComponentType<T>, options: 
  * @param element the ReactElement to mount
  * @param options the test options to apply
  */
-const getReactWrapper = <T extends IBase>(element: ReactElement, options: ITestOptions<T>): ReactWrapper => {
+const getReactWrapper = <T extends IBase>(element: any, options: ITestOptions<T>): ReactWrapper => {
   const { dataCy, domNode, mountOnly } = options;
   const wrapper = mount(element);
   if (mountOnly) {

@@ -31,7 +31,7 @@ const DocsLocale: FC<IDocsLocale> = ({ localizableProps }) => {
       </p>
       <b>Localizable props:</b>
       <ul>
-        {localizableProps.map(({ name, type }, index) => (
+        {localizableProps.map(({ name }, index) => (
           <li key={index}>{name}</li>
         ))}
       </ul>

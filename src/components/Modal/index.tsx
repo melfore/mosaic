@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { FC, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   Dialog as MUIDialog,

@@ -59,8 +59,8 @@ describe("Card test suite:", () => {
     const { element, wrapper } = getCardTestable({
       props: {
         actions: [
-          <IconButton dataCy="first-action" icon={Icons.account} onClick={() => {}} />,
-          <IconButton dataCy="second-action" icon={Icons.account} onClick={() => {}} />,
+          <IconButton key="first-action" dataCy="first-action" icon={Icons.account} onClick={() => {}} />,
+          <IconButton key="second-action" dataCy="second-action" icon={Icons.account} onClick={() => {}} />,
         ],
       },
     });

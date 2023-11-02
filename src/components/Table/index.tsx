@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { CSSProperties, FC, useCallback, useEffect, useMemo, useState } from "react";
 import {
   Paper as MUIPaper,
@@ -228,7 +230,7 @@ const Table: FC<ITable> = ({
       }
     });
 
-    if (!!primaryActions.length) {
+    if (primaryActions.length) {
       columns = [
         ...columns,
         {
@@ -243,7 +245,7 @@ const Table: FC<ITable> = ({
 
     columns = [...columns, ...externalColumns];
 
-    if (!!rowActions.length) {
+    if (rowActions.length) {
       columns = [
         ...columns,
         {
@@ -254,7 +256,7 @@ const Table: FC<ITable> = ({
       ];
     }
 
-    let defaultActions = toolbarActions;
+    const defaultActions = toolbarActions;
     switch (actionsOrder) {
       case "buttons-first":
         defaultActions.sort(({ position }, { position: another }) => -1 * position!.localeCompare(another!));

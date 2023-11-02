@@ -19,7 +19,7 @@ const TableSelectionCell: FC<ITableSelectionCell> = ({ column, onSelection, sele
 
   const { padding: columnPadding, width } = column;
 
-  const onChange = useCallback((_: boolean) => onSelection(), [onSelection]);
+  const onChange = useCallback(() => onSelection(), [onSelection]);
 
   const padding = useMemo(
     () => (!columnPadding || columnPadding === "default" ? "normal" : columnPadding),

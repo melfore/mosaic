@@ -36,7 +36,7 @@ exports[`ListItem test suite: default 1`] = `
     data-cy="list-item-content"
   >
     <span>
-      "List Item"
+      List Item
     </span>
   </div>
 </li>

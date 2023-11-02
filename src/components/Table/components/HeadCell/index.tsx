@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+import React, { CSSProperties, FC, MouseEvent, useCallback, useMemo } from "react";
 import { TableCell as MUITableCell, TableSortLabel as MUITableSortLabel, useTheme } from "@mui/material";
 
 import { ITableHeadCell } from "../../../../types/Table";
@@ -56,7 +56,7 @@ const TableHeadCell: FC<ITableHeadCell> = ({
   }, [cellStyle, stickyHeader, stickySelection, theme]);
 
   const onSortWrapper = useCallback(
-    (event: any) => {
+    (event: MouseEvent) => {
       suppressEvent(event);
 
       const { ordering: sortCriteria, path: sortPath } = sorting;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
 import { ChangeEvent, MouseEvent } from "react";
 
 export interface ISubpart {

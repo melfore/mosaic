@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {
   cloneElement,
   FC,
@@ -52,6 +53,6 @@ const ModalMock: FC<PropsWithChildren<ModalMockType>> = ({
   );
 };
 
-const modalDecorator: DecoratorFn = (Story, { args }) => <ModalMock>{Story()}</ModalMock>;
+const modalDecorator: DecoratorFn = (Story) => <ModalMock>{Story()}</ModalMock>;
 
 export { modalDecorator, ModalMock };

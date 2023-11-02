@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, MouseEvent, useCallback, useMemo } from "react";
 import MUIIconButton from "@mui/material/IconButton";
 
 import { IIconButton, IIconButtonSubpart } from "../../types/IconButton";
@@ -31,7 +31,7 @@ const IconButton: FC<IIconButton> = ({
   const iconDataCy = useMemo(() => getComposedDataCy(dataCy, SUBPARTS_MAP.icon), [dataCy]);
 
   const onClickHandler = useCallback(
-    (event: any) => {
+    (event: MouseEvent) => {
       suppressEvent(event);
       onClick();
     },

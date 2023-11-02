@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import React, { Fragment, HTMLAttributes, ReactNode, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";

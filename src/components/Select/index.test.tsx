@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // TODO: temp commenting out snapshots due to id="mui-XXXXX" property
 // import renderer from "react-test-renderer";
 
 import React from "react";
 
-import { ISelect } from "../../types/Select";
+import { SelectProps } from "../../types/Select";
 import { getComposedDataCy } from "../../utils";
 import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../utils/tests";
 import Typography from "../Typography";
 
 import Select, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const DEFAULT_TEST_OPTIONS: ITestOptions<ISelect<any>> = {
+const DEFAULT_TEST_OPTIONS: ITestOptions<SelectProps<any>> = {
   dataCy: DATA_CY_DEFAULT,
   domNode: "input",
   localized: true,
@@ -21,7 +22,7 @@ const DEFAULT_TEST_OPTIONS: ITestOptions<ISelect<any>> = {
   },
 };
 
-const getSelectTestable = (options?: IPartialTestOptions<ISelect<any>>) =>
+const getSelectTestable = (options?: IPartialTestOptions<SelectProps<any>>) =>
   getTestableComponent(Select, DEFAULT_TEST_OPTIONS, options);
 
 // TODO: missing localized test
@@ -257,7 +258,7 @@ describe("Select Single test suite:", () => {
       domNode: "div",
       mountOnly: true,
       props: {
-        customOptionRendering: (option: string, selected: boolean) => <Typography>{option.slice(0, 1)}</Typography>,
+        customOptionRendering: (option: string) => <Typography>{option.slice(0, 1)}</Typography>,
       },
     });
 

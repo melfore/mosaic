@@ -48,7 +48,7 @@ Primary.args = {
 export const Actions = Template.bind({});
 Actions.args = {
   ...Primary.args,
-  actions: [<Button icon={{ name: Icons.open_new }} label="Gallery" onClick={() => {}} />],
+  actions: [<Button key="gallery" icon={{ name: Icons.open_new }} label="Gallery" onClick={() => {}} />],
 };
 
 export const Collapsible = Template.bind({});

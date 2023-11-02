@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ILocalizable, IPartialClickable } from "./Base";
 import { IIconUtilizer } from "./Icon";
 

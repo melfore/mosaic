@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getAllComposedDataCy, getComposedDataCy, getObjectProperty, slugify, suppressEvent } from "./index";
 
 describe("getAllComposedDataCy", () => {

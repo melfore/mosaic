@@ -1,7 +1,7 @@
 import React, { CSSProperties, FC, useMemo } from "react";
 import { useTheme } from "@mui/material";
 
-import { IAppBarActions } from "../../../../types/AppBar";
+import { AppBarActionsProps } from "../../../../types/AppBar";
 import { Icons } from "../../../../types/Icon";
 import { getComposedDataCy, ISubpartMap } from "../../../../utils";
 import IconButton from "../../../IconButton";
@@ -30,7 +30,7 @@ export const APPBAR_ACTIONS_SUBPARTS: ISubpartMap = {
 
 const DATA_CY_DEFAULT = "appbar-actions";
 
-const AppBarActions: FC<IAppBarActions> = ({ actions, dataCy = DATA_CY_DEFAULT, locale, user }) => {
+const AppBarActions: FC<AppBarActionsProps> = ({ actions, dataCy = DATA_CY_DEFAULT, locale, user }) => {
   const theme = useTheme();
 
   const localeMenuDataCy = useMemo(() => getComposedDataCy(dataCy, APPBAR_ACTIONS_SUBPARTS.localesMenu), [dataCy]);

@@ -38,7 +38,7 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
         <br />
         To set a value for <code className={DOCS_CODELINE_CLASS}>data-cy</code> assign a valid string to{" "}
         <code className={DOCS_CODELINE_CLASS}>dataCy</code> prop (defaults to:{" "}
-        <code className={DOCS_CODELINE_CLASS}>"{e2eTestInfo.dataCyDefault}"</code>)
+        <code className={DOCS_CODELINE_CLASS}>{`"${e2eTestInfo.dataCyDefault}"`}</code>)
       </p>
       <p>
         <span>
@@ -87,7 +87,7 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
           <p>
             <span>
               <u>Example</u> Finding the <i>{e2eTestInfo.subpartsSuffixes[0].label}</i> subpart, with{" "}
-              <code className={DOCS_CODELINE_CLASS}>dataCy="{e2eTestInfo.dataCyDefault}"</code>
+              <code className={DOCS_CODELINE_CLASS}>{`dataCy="${e2eTestInfo.dataCyDefault}"`}</code>
             </span>
             :
             <code className={DOCS_CODEBLOCK_CLASS}>

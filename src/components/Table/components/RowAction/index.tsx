@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { CSSProperties, FC, useMemo } from "react";
 
 import { IBase } from "../../../../types/Base";

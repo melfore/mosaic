@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, PropsWithChildren, useCallback, useMemo } from "react";
+import React, { CSSProperties, FC, MouseEvent, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   ListItem as MUIListItem,
   ListItemIcon as MUIListItemIcon,
@@ -39,8 +39,7 @@ const ListItem: FC<PropsWithChildren<IListItem>> = ({
   );
 
   const onClick = useCallback(
-    // TODO#lb: fix any type
-    (event: any) => {
+    (event: MouseEvent) => {
       suppressEvent(event);
       if (loading) {
         return;

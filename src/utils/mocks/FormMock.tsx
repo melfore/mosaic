@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { cloneElement, FC, PropsWithChildren, ReactElement, useEffect, useState } from "react";
 import { DecoratorFn } from "@storybook/react";
 

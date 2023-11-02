@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { expect, jest } from "@storybook/jest";
@@ -123,7 +124,7 @@ Color.args = {
   color: "success",
 };
 
-export const OnClick: any = {
+export const OnClick = {
   args: {
     ...Primary.args,
   },

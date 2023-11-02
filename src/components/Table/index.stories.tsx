@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 /* eslint-disable storybook/default-exports */
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";

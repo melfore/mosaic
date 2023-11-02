@@ -1,4 +1,5 @@
-import React, { CSSProperties, FC, useCallback, useMemo } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { CSSProperties, FC, MouseEvent, useCallback, useMemo } from "react";
 import { TableCell as MUITableCell } from "@mui/material";
 
 import { IBase } from "../../../../types/Base";
@@ -17,8 +18,7 @@ const TableDataCell: FC<ITableDataCell> = ({ column, data, dataCallbackOptions, 
   const { padding: columnPadding, path, render, width } = column;
 
   const onClick = useCallback(
-    // TODO#lb: fix any type
-    (event: any) => {
+    (event: MouseEvent) => {
       suppressEvent(event);
       externalOnClick && externalOnClick(data, dataCallbackOptions);
     },

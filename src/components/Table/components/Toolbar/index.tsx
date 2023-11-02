@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { CSSProperties, FC, useMemo } from "react";
 import { Toolbar as MUIToolbar, useTheme } from "@mui/material";
 
@@ -66,7 +67,7 @@ const TableToolbar: FC<ITableToolbar> = ({
 
   const toolbarActions = useMemo(
     () =>
-      actions.map((action, index) => (
+      actions.map((action) => (
         <TableToolbarAction
           {...action}
           key={`action-${action.label}`}

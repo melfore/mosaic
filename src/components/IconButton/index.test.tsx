@@ -46,7 +46,9 @@ describe("IconButton test suite:", () => {
   });
 
   it("custom icon", () => {
-    const { element, wrapper } = getIconButtonTestable({ props: { children: <MUIStyleIcon /> } } as any);
+    const { element, wrapper } = getIconButtonTestable({
+      props: { children: <MUIStyleIcon /> },
+    } as Partial<IIconButton>);
     const svgPath = wrapper.find("path");
     expect(
       svgPath.matchesElement(

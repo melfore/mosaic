@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, PropsWithChildren, ReactElement, useCallback, useMemo } from "react";
+import React, { cloneElement, FC, PropsWithChildren, ReactElement, ReactNode, useCallback, useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import { keyframes, Skeleton as MUISkeleton } from "@mui/material";
 
@@ -64,7 +64,7 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
   );
 
   const renderWithAnimation = useCallback(
-    (element: any) => {
+    (element: ReactElement | ReactNode) => {
       return (
         <ClassNames>
           {({ css }) => {
@@ -85,7 +85,7 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
 
             return (
               <Adornment badge={badge} tooltip={tooltip}>
-                {cloneElement(element as ReactElement<any>, { ...props, className })}
+                {cloneElement(element as ReactElement, { ...props, className })}
               </Adornment>
             );
           }}

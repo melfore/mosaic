@@ -48,7 +48,7 @@ const getReactElement = <T extends IBase>(Component: ComponentType<T>, options: 
  */
 const getReactWrapper = <T extends IBase>(element: ReactElement, options: ITestOptions<T>): ReactWrapper => {
   const { dataCy, domNode, mountOnly } = options;
-  let wrapper = mount(element);
+  const wrapper = mount(element);
   if (mountOnly) {
     return wrapper;
   }

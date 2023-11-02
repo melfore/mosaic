@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import React, { HTMLAttributes, SyntheticEvent, useCallback, useMemo } from "react";
 import {
   Autocomplete as MUIAutocomplete,
@@ -7,7 +9,7 @@ import {
   PopperProps as MUIPopperProps,
 } from "@mui/material";
 
-import { ISelect } from "../../types/Select";
+import { SelectProps } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
@@ -64,7 +66,7 @@ const Select = <T extends any>({
   type = "text",
   value = null,
   variant = "outlined",
-}: ISelect<T>) => {
+}: SelectProps<T>) => {
   const getOptionLabel = useCallback(
     (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
     [externalGetOptionLabel]
@@ -82,8 +84,7 @@ const Select = <T extends any>({
   );
 
   const onChange = useCallback(
-    // TODO#lb: fix any type
-    (event: any, value: any) => {
+    (event: SyntheticEvent, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
     },
@@ -91,8 +92,7 @@ const Select = <T extends any>({
   );
 
   const onClose = useCallback(
-    // TODO#lb: fix any type
-    (event: any) => {
+    (event: SyntheticEvent) => {
       if (!externalOnClose) {
         return;
       }
@@ -104,8 +104,7 @@ const Select = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    // TODO#lb: fix any type
-    (event: any, value: string) => {
+    (event: SyntheticEvent, value: string) => {
       if (!externalOnInputChange) {
         return;
       }
@@ -274,4 +273,4 @@ export const SelectWithProps = Select;
 export default localized(Select as any, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
-}) as <T extends any>(props: ISelect<T>) => JSX.Element;
+}) as <T extends any>(props: SelectProps<T>) => JSX.Element;

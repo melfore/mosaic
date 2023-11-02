@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ChangeEvent, FC, useCallback } from "react";
 import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@mui/material";
 

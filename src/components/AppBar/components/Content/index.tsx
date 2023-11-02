@@ -1,6 +1,6 @@
 import React, { CSSProperties, FC, PropsWithChildren, useMemo } from "react";
 
-import { IAppBarContent } from "../../../../types/AppBar";
+import { AppBarContentProps } from "../../../../types/AppBar";
 import { getComposedDataCy, ISubpartMap } from "../../../../utils";
 import IconButton from "../../../IconButton";
 import AppBarTitle, { APPBAR_TITLE_SUBPARTS } from "../Title";
@@ -14,7 +14,7 @@ export const APPBAR_CONTENT_SUBPARTS: ISubpartMap = {
 
 const DATA_CY_DEFAULT = "appbar-content";
 
-const AppBarContent: FC<PropsWithChildren<IAppBarContent>> = ({
+const AppBarContent: FC<PropsWithChildren<AppBarContentProps>> = ({
   children,
   dataCy = DATA_CY_DEFAULT,
   menu,

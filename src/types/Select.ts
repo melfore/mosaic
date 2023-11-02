@@ -3,7 +3,14 @@ import { ReactNode } from "react";
 import { ILoadable, ILocalizable } from "./Base";
 import { IInputField } from "./Input";
 
-interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
+export interface SelectPopperProps {
+  /**
+   * Width of options list popup
+   */
+  popperWidth?: number;
+}
+
+interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable, IInputField {
   /**
    * Enables autocomplete feature
    */
@@ -49,10 +56,6 @@ interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
    */
   options: T[];
   /**
-   * Width of options list popup
-   */
-  popperWidth?: number;
-  /**
    * Number of options
    */
   optionsNumber?: number;
@@ -60,7 +63,7 @@ interface IBaseSelect<T> extends ILocalizable, ILoadable, IInputField {
 
 type SingleSelectDataType<T> = T | null;
 
-interface ISelectSingle<T> extends IBaseSelect<T> {
+interface SelectSingleProps<T> extends SelectBaseProps<T> {
   /**
    * Enables multiple mode
    */
@@ -71,7 +74,7 @@ interface ISelectSingle<T> extends IBaseSelect<T> {
 
 type MultipleSelectDataType<T> = T[] | null;
 
-interface ISelectMultiple<T> extends IBaseSelect<T> {
+interface SelectMultipleProps<T> extends SelectBaseProps<T> {
   /**
    * Enables multiple mode
    */
@@ -80,4 +83,4 @@ interface ISelectMultiple<T> extends IBaseSelect<T> {
   value?: MultipleSelectDataType<T>;
 }
 
-export type ISelect<T> = ISelectSingle<T> | ISelectMultiple<T>;
+export type SelectProps<T> = SelectSingleProps<T> | SelectMultipleProps<T>;

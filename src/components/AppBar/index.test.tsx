@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import { IAppBar } from "../../types/AppBar";
+import { AppBarProps } from "../../types/AppBar";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
 import { getLocalizedMessageMock, MessageMock } from "../../utils/mocks/LocaleMock";
@@ -9,14 +9,14 @@ import { getTestableComponent, IPartialTestOptions, ITestOptions } from "../../u
 
 import AppBar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-const DEFAULT_TEST_OPTIONS: ITestOptions<IAppBar> = {
+const DEFAULT_TEST_OPTIONS: ITestOptions<AppBarProps> = {
   dataCy: DATA_CY_DEFAULT,
   domNode: "header",
   localized: true,
   props: {},
 };
 
-const getAppBarTestable = (options?: IPartialTestOptions<IAppBar>) =>
+const getAppBarTestable = (options?: IPartialTestOptions<AppBarProps>) =>
   getTestableComponent(AppBar, DEFAULT_TEST_OPTIONS, options);
 
 describe("AppBar test suite:", () => {
@@ -74,7 +74,7 @@ describe("AppBar test suite:", () => {
   it("custom content", () => {
     const customText = "Custom Content";
     const { element, wrapper } = getAppBarTestable({
-      props: { children: <div id="content">{customText}</div> } as any,
+      props: { children: <div id="content">{customText}</div> } as AppBarProps,
     });
 
     const customContent = wrapper.find("#content");

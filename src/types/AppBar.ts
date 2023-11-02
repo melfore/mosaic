@@ -5,7 +5,7 @@ import { IBaseButton } from "./Button";
 import { IBaseIconButton } from "./IconButton";
 import { IMenu } from "./Menu";
 
-export interface IAppBarActions extends IBase {
+export interface AppBarActionsProps extends IBase {
   /**
    * Actions available for AppBar
    */
@@ -20,11 +20,7 @@ export interface IAppBarActions extends IBase {
   user?: IMenu;
 }
 
-export interface IAppBarContent extends IBase {
-  /**
-   * Main AppBar menu
-   */
-  menu?: IBaseIconButton;
+export interface AppBarTitleProps extends IBase {
   /**
    * Callback for click events on AppBar title
    */
@@ -35,8 +31,15 @@ export interface IAppBarContent extends IBase {
   title?: string;
 }
 
-export type IAppBar = IAppBarActions &
-  IAppBarContent &
+export interface AppBarContentProps extends AppBarTitleProps, IBase {
+  /**
+   * Main AppBar menu
+   */
+  menu?: IBaseIconButton;
+}
+
+export type AppBarProps = AppBarActionsProps &
+  AppBarContentProps &
   ILocalizable & {
     /**
      * When specified it gets rendered as main content, has precedence over title

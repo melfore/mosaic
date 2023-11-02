@@ -19,7 +19,7 @@ const getListItemTestable = (options?: IPartialTestOptions<IListItem>) =>
 
 describe("ListItem test suite:", () => {
   it("default", () => {
-    const content = <span>"List Item"</span>;
+    const content = <span>List Item</span>;
     const { element, wrapper } = getListItemTestable({ props: { content } });
     expect(wrapper).toHaveLength(1);
 

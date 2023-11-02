@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, MouseEvent, useCallback, useMemo } from "react";
 import MUIButton from "@mui/material/Button";
 
 import { IButton, IMUIButtonIcon } from "../../types/Button";
@@ -48,7 +48,7 @@ const Button: FC<IButton> = ({
   }, [dataCy, externalIcon]);
 
   const onClickHandler = useCallback(
-    (event: any) => {
+    (event: MouseEvent) => {
       suppressEvent(event);
       onClick();
     },

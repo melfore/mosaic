@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CSSProperties, ReactElement } from "react";
 
 import { IAdornment } from "./Adornment";

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CSSProperties, ReactNode } from "react";
 import { TablePaginationProps as MUITablePaginationProps } from "@mui/material";
 

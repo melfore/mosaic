@@ -1,4 +1,6 @@
-import React, { HTMLAttributes, useCallback, useMemo } from "react";
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { HTMLAttributes, SyntheticEvent, useCallback, useMemo } from "react";
 import { VariableSizeList } from "react-window";
 import {
   Autocomplete as MUIAutocomplete,
@@ -8,7 +10,7 @@ import {
   PopperProps as MUIPopperProps,
 } from "@mui/material";
 
-import { ISelect } from "../../types/Select";
+import { SelectProps } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 import SelectGroup, { SELECT_GROUP_SUBPART } from "../Select/components/Group";
@@ -54,7 +56,7 @@ const SelectVirtualized = <T extends any>({
   onChange: externalOnChange,
   onClose: externalOnClose,
   onInputChange: externalOnInputChange,
-  onScrollEnd,
+  // onScrollEnd,
   options: externalOptions,
   placeholder,
   popperWidth,
@@ -65,7 +67,7 @@ const SelectVirtualized = <T extends any>({
   value = null,
   variant = "outlined",
   optionsNumber,
-}: ISelect<T>) => {
+}: SelectProps<T>) => {
   const getOptionLabel = useCallback(
     (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
     [externalGetOptionLabel]
@@ -83,8 +85,7 @@ const SelectVirtualized = <T extends any>({
   );
 
   const onChange = useCallback(
-    // TODO#lb: fix any type
-    (event: any, value: any) => {
+    (event: SyntheticEvent, value: any) => {
       suppressEvent(event);
       externalOnChange(value);
     },
@@ -92,8 +93,7 @@ const SelectVirtualized = <T extends any>({
   );
 
   const onClose = useCallback(
-    // TODO#lb: fix any type
-    (event: any) => {
+    (event: SyntheticEvent) => {
       if (!externalOnClose) {
         return;
       }
@@ -105,8 +105,7 @@ const SelectVirtualized = <T extends any>({
   );
 
   const onInputChange = useCallback(
-    // TODO#lb: fix any type
-    (event: any, value: string) => {
+    (event: SyntheticEvent, value: string) => {
       if (!externalOnInputChange) {
         return;
       }
@@ -325,4 +324,4 @@ export const SelectWithProps = SelectVirtualized;
 export default localized(SelectVirtualized as any, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
-}) as <T extends any>(props: ISelect<T>) => JSX.Element;
+}) as <T extends any>(props: SelectProps<T>) => JSX.Element;

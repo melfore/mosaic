@@ -1,20 +1,27 @@
 import React, { CSSProperties, FC, useMemo } from "react";
 import { Popper as MUIPopper, PopperProps as MUIPopperProps } from "@mui/material";
 
-interface ISelectPopper {
-  forwarded: MUIPopperProps;
-  popperWidth: any;
-}
+import { SelectPopperProps } from "../../../../types/Select";
 
-const SelectPopper: FC<ISelectPopper> = ({ forwarded, popperWidth }) => {
+type SelectPopperEnhancedProps = SelectPopperProps & {
+  forwarded: MUIPopperProps;
+};
+
+const SelectPopper: FC<SelectPopperEnhancedProps> = ({ forwarded, popperWidth }) => {
   const { anchorEl } = forwarded;
 
-  const width = useMemo(() => {
-    const anchorElRef = anchorEl as any;
-    const anchorElWidth = anchorElRef ? anchorElRef.clientWidth : null;
+  const anchorElWidth = useMemo(() => {
+    if (!anchorEl || typeof anchorEl === "function" || !("clientWidth" in anchorEl)) {
+      return -1;
+    }
 
-    return !!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth;
-  }, [popperWidth, anchorEl]);
+    return anchorEl.clientWidth;
+  }, [anchorEl]);
+
+  const width = useMemo(
+    () => (!!popperWidth && popperWidth > anchorElWidth ? popperWidth : anchorElWidth),
+    [anchorElWidth, popperWidth]
+  );
 
   const style = useMemo(
     (): CSSProperties => ({

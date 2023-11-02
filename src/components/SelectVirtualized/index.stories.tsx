@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ISelect } from "../../types/Select";
+import { SelectProps } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
 import { formDecorator } from "../../utils/mocks/FormMock";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
@@ -36,7 +37,7 @@ export default {
   },
 } as ComponentMeta<typeof SelectWithProps>;
 
-const Template: ComponentStory<typeof SelectWithProps> = (args: ISelect<any>) => (
+const Template: ComponentStory<typeof SelectWithProps> = (args: SelectProps<any>) => (
   <SelectVirtual {...args} dataCy={DATA_CY_DEFAULT} />
 );
 
@@ -145,10 +146,11 @@ VariantStandard.args = {
 };
 
 export const Element1000 = Template.bind({});
-const exArray: any[] = [];
+const exArray: string[] = [];
 for (let i = 0; i < 1000; i++) {
   exArray.push(i + 1 + " Element");
 }
+
 Element1000.args = {
   label: "Select",
   multiple: false,

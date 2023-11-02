@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export type ILogLevel = "error" | "info" | "warn";
 
 const MOSAIC_TAG = "[@melfore/mosaic]";

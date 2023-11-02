@@ -20,8 +20,7 @@ const getProgressTestable = (options?: IPartialTestOptions<ProgressType>) =>
 
 describe("Progress test suite:", () => {
   it("default", () => {
-    const { element, wrapper } = getProgressTestable();
-    console.log(wrapper.debug());
+    const { element } = getProgressTestable();
 
     const snapshotWrapper = renderer.create(element).toJSON();
     expect(snapshotWrapper).toMatchSnapshot();

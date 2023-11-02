@@ -1,11 +1,19 @@
 import { ILocalizable } from "./Base";
 import { IIconElement } from "./Icon";
 
+export type BreadCrumbsSize = "small" | "medium" | "large";
+
+export type BreadCrumbsLink = {
+  label: string;
+  href: string;
+  icon?: IIconElement;
+};
+
 export type BreadCrumbsType = ILocalizable & {
   /**
    * List of Links
    */
-  links: LinkType[];
+  links: BreadCrumbsLink[];
   /**
    * Callback for click events
    */
@@ -13,15 +21,9 @@ export type BreadCrumbsType = ILocalizable & {
   /**
    * Text size
    */
-  size?: "small" | "medium" | "large";
+  size?: BreadCrumbsSize;
   /**
    * Text size
    */
   separator?: "-" | "/" | "<" | ">" | "|";
-};
-
-export type LinkType = {
-  label: string;
-  href: string;
-  icon?: IIconElement;
 };

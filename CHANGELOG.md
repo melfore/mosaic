@@ -1,3 +1,5 @@
+## [9.8.2](https://github.com/melfore/mosaic/compare/v9.8.1...v9.8.2) (2023-11-02)
+
 ## [9.8.1](https://github.com/melfore/mosaic/compare/v9.8.0...v9.8.1) (2023-10-25)
 
 

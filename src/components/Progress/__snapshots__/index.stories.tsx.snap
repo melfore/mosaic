@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback/Progress Circular smoke-test 1`] = `
+<div class="MuiBox-root css-rmz4vk">
+  <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+        role="progressbar"
+        data-cy="progress"
+        style="width: 40px; height: 40px;"
+  >
+    <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+         viewbox="22 22 44 44"
+    >
+      <circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              r="20.2"
+              fill="none"
+              stroke-width="3.6"
+      >
+      </circle>
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Feedback/Progress CircularColor smoke-test 1`] = `
+<div class="MuiBox-root css-rmz4vk">
+  <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorError css-1lxih1g-MuiCircularProgress-root"
+        role="progressbar"
+        data-cy="progress"
+        style="width: 40px; height: 40px;"
+  >
+    <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+         viewbox="22 22 44 44"
+    >
+      <circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              r="20.2"
+              fill="none"
+              stroke-width="3.6"
+      >
+      </circle>
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Feedback/Progress CircularDeterminate smoke-test 1`] = `
+<div class="MuiBox-root css-rmz4vk">
+  <span class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1rn30mb-MuiCircularProgress-root"
+        role="progressbar"
+        aria-valuenow="50"
+        data-cy="progress"
+        style="width: 40px; height: 40px; transform: rotate(-90deg);"
+  >
+    <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+         viewbox="22 22 44 44"
+    >
+      <circle class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              r="20.2"
+              fill="none"
+              stroke-width="3.6"
+              style="stroke-dasharray: 126.92; stroke-dashoffset: 63.46px;"
+      >
+      </circle>
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Feedback/Progress CircularWithLabel smoke-test 1`] = `
+<div class="MuiBox-root css-rmz4vk">
+  <span class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1rn30mb-MuiCircularProgress-root"
+        role="progressbar"
+        aria-valuenow="50"
+        data-cy="progress"
+        style="width: 40px; height: 40px; transform: rotate(-90deg);"
+  >
+    <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+         viewbox="22 22 44 44"
+    >
+      <circle class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              r="20.2"
+              fill="none"
+              stroke-width="3.6"
+              style="stroke-dasharray: 126.92; stroke-dashoffset: 63.46px;"
+      >
+      </circle>
+    </svg>
+  </span>
+  <div class="MuiBox-root css-1o8dslu">
+    <div class="MuiTypography-root MuiTypography-caption css-ol7wxs-MuiTypography-root">
+      50%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Feedback/Progress Linear smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiBox-root css-1bhivts">
+    <span class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate css-eglki6-MuiLinearProgress-root"
+          role="progressbar"
+          data-cy="progress"
+    >
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate css-5ir5xx-MuiLinearProgress-bar1">
+      </span>
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate css-1r8wrcl-MuiLinearProgress-bar2">
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Feedback/Progress LinearColor smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiBox-root css-1bhivts">
+    <span class="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-indeterminate css-1qzfjjf-MuiLinearProgress-root"
+          role="progressbar"
+          data-cy="progress"
+    >
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Indeterminate css-trpfwy-MuiLinearProgress-bar1">
+      </span>
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar2Indeterminate css-1ta3urv-MuiLinearProgress-bar2">
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Feedback/Progress LinearDeterminate smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiBox-root css-1bhivts">
+    <span class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-eglki6-MuiLinearProgress-root"
+          role="progressbar"
+          aria-valuenow="50"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          data-cy="progress"
+    >
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-5xe99f-MuiLinearProgress-bar1"
+            style="transform: translateX(-50%);"
+      >
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Feedback/Progress LinearWithLabel smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiBox-root css-1bhivts">
+    <span class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-eglki6-MuiLinearProgress-root"
+          role="progressbar"
+          aria-valuenow="50"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          data-cy="progress"
+    >
+      <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-5xe99f-MuiLinearProgress-bar1"
+            style="transform: translateX(-50%);"
+      >
+      </span>
+    </span>
+  </div>
+  <div class="MuiBox-root css-pazuet">
+    <p class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root">
+      50%
+    </p>
+  </div>
+</div>
+`;

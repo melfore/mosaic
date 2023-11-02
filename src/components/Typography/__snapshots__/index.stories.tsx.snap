@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display/Typography BottomSpacing smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-397282-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography CustomContent smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+   data-cy="typography"
+>
+  <span>
+    <b>
+      Strong
+    </b>
+    text
+  </span>
+</p>
+`;
+
+exports[`Display/Typography DisplayBlock smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-10hburv-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography DisplayInline smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-1sx1eu0-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography Loading smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+   data-cy="typography-loading"
+>
+  <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
+  </span>
+</p>
+`;
+
+exports[`Display/Typography Localized smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+   data-cy="typography"
+>
+  Testo
+</p>
+`;
+
+exports[`Display/Typography Primary smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography Truncated smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap css-1m2dqj2-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography VariantBody smoke-test 1`] = `
+<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+   data-cy="typography"
+>
+  Text example
+</p>
+`;
+
+exports[`Display/Typography VariantCaption smoke-test 1`] = `
+<span class="MuiTypography-root MuiTypography-caption css-ecfcy6-MuiTypography-root"
+      data-cy="typography"
+>
+  Text example
+</span>
+`;
+
+exports[`Display/Typography VariantLabel smoke-test 1`] = `
+<h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+    data-cy="typography"
+>
+  Text example
+</h3>
+`;
+
+exports[`Display/Typography VariantOverline smoke-test 1`] = `
+<h4 class="MuiTypography-root MuiTypography-overline css-1dp7e8w-MuiTypography-root"
+    data-cy="typography"
+>
+  Text example
+</h4>
+`;
+
+exports[`Display/Typography VariantPagetitle smoke-test 1`] = `
+<h1 class="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+    data-cy="typography"
+>
+  Text example
+</h1>
+`;
+
+exports[`Display/Typography VariantTitle smoke-test 1`] = `
+<h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+    data-cy="typography"
+>
+  Text example
+</h2>
+`;

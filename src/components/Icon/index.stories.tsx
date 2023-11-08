@@ -1,13 +1,13 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Icons } from "../../types/Icon";
 import getDocsPage from "../../utils/stories";
 
 import Icon, { DATA_CY_DEFAULT } from ".";
 
-export default {
+const meta = {
   title: "Display/Icon",
   component: Icon,
   parameters: {
@@ -24,79 +24,90 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof Icon>;
+} satisfies Meta<typeof Icon>;
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  name: Icons.account,
-};
-
-export const Badge = Template.bind({});
-Badge.args = {
-  ...Primary.args,
-  badge: {
-    color: "secondary",
-    overlap: "rectangular",
-    value: "5",
+export const Primary: Story = {
+  args: {
+    name: Icons.account,
   },
 };
 
-export const IconCustom = Template.bind({});
-IconCustom.args = {
-  children: <MUIStyleIcon />,
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  ...Primary.args,
-  loading: true,
-};
-
-export const Rotate = Template.bind({});
-Rotate.args = {
-  ...Primary.args,
-  rotate: true,
-};
-
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
-};
-
-export const SizeLarge = Template.bind({});
-SizeLarge.args = {
-  ...Primary.args,
-  size: "large",
-};
-
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    backgroundColor: "red",
-    borderRadius: "4px",
-    color: "white",
-    padding: "4px",
+export const Badge: Story = {
+  args: {
+    ...Primary.args,
+    badge: {
+      color: "secondary",
+      overlap: "rectangular",
+      value: "5",
+    },
   },
 };
 
-export const Tooltip = Template.bind({});
-Tooltip.args = {
-  ...Primary.args,
-  tooltip: "Account",
+export const ForwardedProps: Story = {
+  args: {
+    ...Primary.args,
+    forwarded: {
+      className: "test-forward",
+    },
+  },
 };
 
-// TODO: add this story using union type
-// const allIcons = Object.values(Icons);
-// const getIcon = (icon: string) => allIcons.find((i) => i === icon);
-// const allIconsJsx = allIcons.map((icon, index) => (
-//   <div key={index} className="icon-wrapper">
-//     <Icon dataCy={`icon-${icon}`} name={getIcon(icon) || Icons.add} />
-//     <span>{icon}</span>
-//   </div>
-// ));
+export const IconCustom: Story = {
+  args: {
+    children: <MUIStyleIcon />,
+  },
+};
 
-// export const AllIcons = () => <StoriesWrapper>{allIconsJsx}</StoriesWrapper>;
+export const Loading: Story = {
+  args: {
+    ...Primary.args,
+    loading: true,
+  },
+};
+
+export const Rotate: Story = {
+  args: {
+    ...Primary.args,
+    rotate: true,
+  },
+};
+
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
+};
+
+export const SizeLarge: Story = {
+  args: {
+    ...Primary.args,
+    size: "large",
+  },
+};
+
+export const SkipRender: Story = {
+  args: {},
+};
+
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      backgroundColor: "red",
+      borderRadius: "4px",
+      color: "white",
+      padding: "4px",
+    },
+  },
+};
+
+export const Tooltip: Story = {
+  args: {
+    ...Primary.args,
+    tooltip: "Account",
+  },
+};

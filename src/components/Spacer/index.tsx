@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useMemo } from "react";
+import React, { CSSProperties, FC, memo, useMemo } from "react";
 import { useTheme } from "@mui/material";
 
 import { ISpacer } from "../../types/Spacer";
@@ -26,4 +26,4 @@ const Spacer: FC<ISpacer> = ({ dataCy = DATA_CY_DEFAULT, direction = "horizontal
   return <div data-cy={dataCy} style={style} />;
 };
 
-export default Spacer;
+export default memo(Spacer);

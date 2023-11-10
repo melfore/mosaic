@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Display/Spacer HorizontalSpacing smoke-test 1`] = `
+<div id="flex-content"
+     style="display: flex; flex-direction: row;"
+>
+  <div id="first-content">
+    First Content
+  </div>
+  <div data-cy="spacer"
+       style="display: block; height: 0px; width: 8px;"
+  >
+  </div>
+  <div id="second-content">
+    Second Content
+  </div>
+</div>
+`;
+
+exports[`Display/Spacer InvalidSpacing smoke-test 1`] = `
+<div id="flex-content"
+     style="display: flex; flex-direction: row;"
+>
+  <div id="first-content">
+    First Content
+  </div>
+  <div data-cy="spacer"
+       style="display: block; height: 0px; width: 8px;"
+  >
+  </div>
+  <div id="second-content">
+    Second Content
+  </div>
+</div>
+`;
+
 exports[`Display/Spacer Primary smoke-test 1`] = `
 <div id="flex-content"
      style="display: flex; flex-direction: row;"
@@ -9,6 +43,23 @@ exports[`Display/Spacer Primary smoke-test 1`] = `
   </div>
   <div data-cy="spacer"
        style="display: block; height: 0px; width: 8px;"
+  >
+  </div>
+  <div id="second-content">
+    Second Content
+  </div>
+</div>
+`;
+
+exports[`Display/Spacer VerticalSpacing smoke-test 1`] = `
+<div id="flex-content"
+     style="display: flex; flex-direction: column;"
+>
+  <div id="first-content">
+    First Content
+  </div>
+  <div data-cy="spacer"
+       style="display: block; height: 8px; width: 0px;"
   >
   </div>
   <div id="second-content">

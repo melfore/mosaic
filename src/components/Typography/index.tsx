@@ -84,9 +84,12 @@ const Typography: FC<PropsWithChildren<ITypography>> = ({
   );
 };
 
-export default memo(
+// reactDocgen from @storybook/addon-docs does not auto-generate docs with custom HOCs
+export const LocalizedTypography = memo(
   localized(Typography, {
     dataCyShortcut: "dataCy",
     localizableProps: LOCALIZABLE_PROPS,
   })
 );
+
+export default LocalizedTypography;

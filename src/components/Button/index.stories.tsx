@@ -9,16 +9,16 @@ import { getAllComposedDataCy } from "../../utils";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import Button, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedButton, SUBPARTS_MAP } from ".";
 
 configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "Button";
-Button.displayName = COMPONENT_NAME;
+LocalizedButton.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Inputs/Button",
-  component: Button,
+  component: LocalizedButton,
   decorators: [localeDecorator],
   parameters: {
     docs: {
@@ -37,7 +37,7 @@ const meta = {
       }),
     },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof LocalizedButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -70,7 +70,10 @@ const Button: FC<IButton> = ({
   );
 };
 
-export default localized(Button, {
+// reactDocgen from @storybook/addon-docs does not auto-generate docs with custom HOCs
+export const LocalizedButton = localized(Button, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedButton;

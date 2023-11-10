@@ -48,6 +48,14 @@ export const Primary: Story = {
   },
 };
 
+export const Children: Story = {
+  args: {
+    ...Primary.args,
+    children: "Collapisble Children",
+    content: undefined,
+  },
+};
+
 export const Clickable: Story = {
   args: {
     ...Primary.args,

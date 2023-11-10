@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Display/ListItem Children smoke-test 1`] = `
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
+>
+  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+       data-cy="list-item-content"
+  >
+    Collapisble Children
+  </div>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
+`;
+
 exports[`Display/ListItem Clickable play-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-focusVisible MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
      tabindex="0"

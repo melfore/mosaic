@@ -1,22 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Display/ListItem Clickable play-test 1`] = `
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-focusVisible MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: pointer;"
+>
+  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+       data-cy="list-item-content"
+  >
+    John Doe
+  </div>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+          style="width: 1250.85px; height: 1250.85px; top: -604.423px; left: -1.42306px;"
+    >
+      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
 exports[`Display/ListItem Dense smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-178cqt3-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
        data-cy="list-item-content"
   >
     John Doe
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem Icon smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -35,13 +64,17 @@ exports[`Display/ListItem Icon smoke-test 1`] = `
   >
     John Doe
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem IconCustom smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -61,13 +94,17 @@ exports[`Display/ListItem IconCustom smoke-test 1`] = `
   >
     John Doe
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem IconLoading smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: default;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
@@ -81,13 +118,17 @@ exports[`Display/ListItem IconLoading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
     </span>
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem Loading smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: default;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
        data-cy="list-item-content-loading"
@@ -95,31 +136,41 @@ exports[`Display/ListItem Loading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
     </span>
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem Primary smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
        data-cy="list-item-content"
   >
     John Doe
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;
 
 exports[`Display/ListItem Selected smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding Mui-selected css-1p823my-MuiListItem-root"
-    data-cy="list-item"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item"
+     style="cursor: default;"
 >
   <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
        data-cy="list-item-content"
   >
     John Doe
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 `;

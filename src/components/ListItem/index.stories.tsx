@@ -1,6 +1,8 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -8,7 +10,9 @@ import getDocsPage from "../../utils/stories";
 
 import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-export default {
+configure({ testIdAttribute: "data-cy" });
+
+const meta = {
   title: "Display/ListItem",
   component: ListItem,
   parameters: {
@@ -26,47 +30,77 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof ListItem>;
+} satisfies Meta<typeof ListItem>;
 
-const Template: ComponentStory<typeof ListItem> = (args) => <ListItem {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  content: "John Doe",
+let clickCounts = 0;
+const onClickMock = jest.fn(() => {
+  clickCounts++;
+  alert("onClick handler");
+});
+
+export const Primary: Story = {
+  args: {
+    content: "John Doe",
+    onClick: undefined,
+  },
 };
 
-export const Dense = Template.bind({});
-Dense.args = {
-  ...Primary.args,
-  dense: true,
+export const Clickable: Story = {
+  args: {
+    ...Primary.args,
+    onClick: onClickMock,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const listItem = canvas.getByTestId(DATA_CY_DEFAULT);
+    if (listItem) {
+      await userEvent.click(listItem);
+      await expect(onClickMock).toHaveBeenCalledTimes(clickCounts);
+    }
+  },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  ...Primary.args,
-  icon: Icons.account,
+export const Dense: Story = {
+  args: {
+    ...Primary.args,
+    dense: true,
+  },
 };
 
-export const IconCustom = Template.bind({});
-IconCustom.args = {
-  ...Primary.args,
-  icon: <MUIStyleIcon />,
+export const Icon: Story = {
+  args: {
+    ...Primary.args,
+    icon: Icons.account,
+  },
 };
 
-export const IconLoading = Template.bind({});
-IconLoading.args = {
-  ...Icon.args,
-  loading: true,
+export const IconCustom: Story = {
+  args: {
+    ...Primary.args,
+    icon: <MUIStyleIcon />,
+  },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  ...Primary.args,
-  loading: true,
+export const IconLoading: Story = {
+  args: {
+    ...Icon.args,
+    loading: true,
+  },
 };
 
-export const Selected = Template.bind({});
-Selected.args = {
-  ...Primary.args,
-  selected: true,
+export const Loading: Story = {
+  args: {
+    ...Primary.args,
+    loading: true,
+  },
+};
+
+export const Selected: Story = {
+  args: {
+    ...Primary.args,
+    selected: true,
+  },
 };

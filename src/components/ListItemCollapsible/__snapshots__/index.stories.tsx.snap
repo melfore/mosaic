@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-padding css-6lnq02-MuiListItem-root"
-    data-cy="list-item-collapsible-header"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-178cqt3-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item-collapsible-header"
+     style="cursor: pointer;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -22,7 +24,9 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
   >
     Header
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
@@ -36,9 +40,11 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item-collapsible-header"
-    style="cursor: default;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item-collapsible-header"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
@@ -52,7 +58,9 @@ exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
     </span>
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
@@ -66,9 +74,11 @@ exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item-collapsible-header"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item-collapsible-header"
+     style="cursor: pointer;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -87,7 +97,9 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
   >
     Header
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
@@ -101,9 +113,11 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    data-cy="list-item-collapsible-header"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item-collapsible-header"
+     style="cursor: pointer;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -122,7 +136,9 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
   >
     Header
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
@@ -136,9 +152,11 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
-<li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding Mui-selected css-1p823my-MuiListItem-root"
-    data-cy="list-item-collapsible-header"
-    style="cursor: pointer;"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+     tabindex="0"
+     role="button"
+     data-cy="list-item-collapsible-header"
+     style="cursor: pointer;"
 >
   <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -157,7 +175,9 @@ exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
   >
     Header
   </div>
-</li>
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"

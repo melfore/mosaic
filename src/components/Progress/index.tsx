@@ -1,68 +1,101 @@
-import React, { FC, useMemo } from "react";
-import { Box, LinearProgress as MUILinearProgress } from "@mui/material";
+import React, { CSSProperties, FC, memo, useMemo } from "react";
+import { LinearProgress as MUILinearProgress, useTheme } from "@mui/material";
 import MUICircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 
-import { ProgressType } from "../../types/Progress";
+import { ProgressProps } from "../../types/Progress";
 
 export const DATA_CY_DEFAULT = "progress";
 
-const Progress: FC<ProgressType> = ({
+const Progress: FC<ProgressProps> = ({
   dataCy = DATA_CY_DEFAULT,
   color = "primary",
-  type = "Circular",
+  type,
   withLabel,
   variant,
   value = 100,
 }) => {
+  const { spacing } = useTheme();
+
   const percent = useMemo(() => {
     if (value < 0) {
       return 0;
     } else if (value > 100) {
       return 100;
     }
+
     return value;
   }, [value]);
 
-  if (type === "Circular") {
+  const percentString = useMemo(() => `${percent}%`, [percent]);
+
+  const flexCenterStyle = useMemo(
+    (): CSSProperties => ({
+      alignItems: "center",
+      display: "flex",
+    }),
+    []
+  );
+
+  const circularLabelStyle = useMemo(
+    (): CSSProperties => ({
+      ...flexCenterStyle,
+      justifyContent: "center",
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+    }),
+    [flexCenterStyle]
+  );
+
+  const circularWrapperStyle = useMemo(
+    (): CSSProperties => ({
+      display: "inline-flex",
+      position: "relative",
+    }),
+    []
+  );
+
+  const linearLabelStyle = useMemo(
+    (): CSSProperties => ({
+      minWidth: spacing(5),
+    }),
+    [spacing]
+  );
+
+  const linearWrapperStyle = useMemo(
+    (): CSSProperties => ({
+      marginRight: spacing(1),
+      width: "100%",
+    }),
+    [spacing]
+  );
+
+  if (type === "circular") {
     return (
-      <Box sx={{ position: "relative", display: "inline-flex" }}>
+      <div style={circularWrapperStyle}>
         <MUICircularProgress data-cy={dataCy} color={color} variant={variant} value={percent} />
         {withLabel && (
-          <Box
-            sx={{
-              top: 0,
-              left: 0,
-              bottom: 0,
-              right: 0,
-              position: "absolute",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Typography variant="caption" component="div" color="text.secondary">
-              {percent + `%`}
-            </Typography>
-          </Box>
+          <Typography component="div" color="text.secondary" variant="caption" style={circularLabelStyle}>
+            {percentString}
+          </Typography>
         )}
-      </Box>
+      </div>
     );
   }
+
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Box sx={{ width: "100%", mr: 1 }}>
-        <MUILinearProgress data-cy={dataCy} color={color} variant={variant} value={percent} />
-      </Box>
+    <div style={flexCenterStyle}>
+      <MUILinearProgress data-cy={dataCy} color={color} variant={variant} value={percent} style={linearWrapperStyle} />
       {withLabel && (
-        <Box sx={{ minWidth: 35 }}>
-          <Typography variant="body2" color="text.secondary">
-            {percent + `%`}
-          </Typography>
-        </Box>
+        <Typography color="text.secondary" variant="body2" style={linearLabelStyle}>
+          {percentString}
+        </Typography>
       )}
-    </Box>
+    </div>
   );
 };
 
-export default Progress;
+export default memo(Progress);

@@ -41,7 +41,7 @@ Primary.args = {
   stepsList: [
     { label: "STEP1", content: "CONTENT PAGE 1" },
     { label: "STEP2", content: "CONTENT PAGE 2" },
-    { label: "STEP3", content: <Progress type="Linear" /> },
+    { label: "STEP3", content: <Progress type="linear" /> },
   ],
   finishContent: "All Steps are completed",
 };
@@ -55,7 +55,7 @@ Localized.args = {
   stepsList: [
     { label: "locale.step1", content: "CONTENT PAGE 1" },
     { label: "locale.step2", content: "CONTENT PAGE 2" },
-    { label: "locale.step3", content: <Progress type="Linear" /> },
+    { label: "locale.step3", content: <Progress type="linear" /> },
   ],
   finishContent: "All Steps are completed",
   labelBackButton: "locale.back",

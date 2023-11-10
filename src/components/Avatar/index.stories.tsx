@@ -33,7 +33,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    dataCy: DATA_CY_DEFAULT,
     icon: Icons.add,
   },
 };

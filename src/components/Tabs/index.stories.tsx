@@ -37,7 +37,7 @@ Primary.args = {
   labelList: [
     { label: "PAGE1", content: "PAGE1" },
     { label: "PAGE2", content: "PAGE2" },
-    { label: "PAGE3", content: <Progress type="Circular" withLabel={false} /> },
+    { label: "PAGE3", content: <Progress type="circular" withLabel={false} /> },
   ],
 };
 

@@ -89,18 +89,17 @@ exports[`Navigation/Stepper ActiveStep smoke-test 1`] = `
     </div>
     <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-dlyzdu-MuiGrid-root">
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root">
-        <div class="MuiBox-root css-70qvj9">
-          <div class="MuiBox-root css-1bhivts">
-            <span class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate css-eglki6-MuiLinearProgress-root"
-                  role="progressbar"
-                  data-cy="progress"
-            >
-              <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate css-5ir5xx-MuiLinearProgress-bar1">
-              </span>
-              <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate css-1r8wrcl-MuiLinearProgress-bar2">
-              </span>
+        <div style="align-items: center; display: flex;">
+          <span class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate css-eglki6-MuiLinearProgress-root"
+                role="progressbar"
+                data-cy="progress"
+                style="margin-right: 8px; width: 100%;"
+          >
+            <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate css-5ir5xx-MuiLinearProgress-bar1">
             </span>
-          </div>
+            <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate css-1r8wrcl-MuiLinearProgress-bar2">
+            </span>
+          </span>
         </div>
       </div>
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root">

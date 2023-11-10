@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, memo, MouseEvent, PropsWithChildren, useCallback, useMemo } from "react";
+import React, { CSSProperties, FC, MouseEvent, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   ListItemButton as MUIListItemButton,
   ListItemIcon as MUIListItemIcon,
@@ -77,4 +77,4 @@ const ListItem: FC<PropsWithChildren<IListItem>> = ({
   );
 };
 
-export default memo(ListItem);
+export default ListItem;

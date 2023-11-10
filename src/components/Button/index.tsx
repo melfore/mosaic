@@ -17,6 +17,7 @@ export const DATA_CY_SHORTCUT = "label";
 export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type: "string" }];
 
 const Button: FC<IButton> = ({
+  color = "primary",
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
   elevated = false,
@@ -25,7 +26,6 @@ const Button: FC<IButton> = ({
   onClick,
   style,
   variant = "contained",
-  color = "primary",
 }) => {
   const icon = useMemo(() => {
     const muiIcon: IMUIButtonIcon = {};
@@ -34,16 +34,15 @@ const Button: FC<IButton> = ({
     }
 
     const { component, name, position, rotate } = externalIcon;
-    const icon = (
-      <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={name || component} rotate={rotate} />
-    );
+    const buttonIconDataCy = getComposedDataCy(dataCy, SUBPARTS_MAP.icon);
+    const icon = <IconWrapper dataCy={buttonIconDataCy} icon={name || component} rotate={rotate} />;
 
     switch (position) {
+      case "right":
+        return { endIcon: icon };
       case "left":
       default:
         return { startIcon: icon };
-      case "right":
-        return { endIcon: icon };
     }
   }, [dataCy, externalIcon]);
 
@@ -70,8 +69,6 @@ const Button: FC<IButton> = ({
     </MUIButton>
   );
 };
-
-export const ButtonWithProps = Button;
 
 export default localized(Button, {
   dataCyShortcut: DATA_CY_SHORTCUT,

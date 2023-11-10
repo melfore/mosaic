@@ -1,4 +1,4 @@
-import React, { FC, memo, PropsWithChildren, useMemo } from "react";
+import React, { FC, PropsWithChildren, useMemo } from "react";
 import { Collapse as MUICollapse } from "@mui/material";
 
 import { Icons } from "../../types/Icon";
@@ -60,4 +60,4 @@ const ListItemCollapsible: FC<PropsWithChildren<IListItemCollapsible>> = ({
   );
 };
 
-export default memo(ListItemCollapsible);
+export default ListItemCollapsible;

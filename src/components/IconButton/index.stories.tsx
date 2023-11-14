@@ -1,6 +1,8 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -8,7 +10,9 @@ import getDocsPage from "../../utils/stories";
 
 import IconButton, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
-export default {
+configure({ testIdAttribute: "data-cy" });
+
+const meta = {
   title: "Inputs/IconButton",
   component: IconButton,
   parameters: {
@@ -26,64 +30,89 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof IconButton>;
+} satisfies Meta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  icon: Icons.add,
-};
+let clickCounts = 0;
+const onClickMock = jest.fn(() => {
+  clickCounts++;
+  alert("onClick handler");
+});
 
-export const Badge = Template.bind({});
-Badge.args = {
-  ...Primary.args,
-  badge: {
-    color: "secondary",
-    value: "8",
+export const Primary: Story = {
+  args: {
+    icon: Icons.add,
+    onClick: onClickMock,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByTestId(DATA_CY_DEFAULT);
+    if (button) {
+      await userEvent.click(button);
+      await expect(onClickMock).toHaveBeenCalledTimes(clickCounts);
+    }
   },
 };
 
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-  icon: <MUIStyleIcon />,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
-};
-
-export const Rotate = Template.bind({});
-Rotate.args = {
-  ...Primary.args,
-  rotate: true,
-};
-
-export const SizeLarge = Template.bind({});
-SizeLarge.args = {
-  ...Primary.args,
-  size: "large",
-};
-
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
-};
-
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    backgroundColor: "red",
-    color: "white",
+export const Badge: Story = {
+  args: {
+    ...Primary.args,
+    badge: {
+      color: "secondary",
+      value: "8",
+    },
   },
 };
 
-export const Tooltip = Template.bind({});
-Tooltip.args = {
-  ...Primary.args,
-  tooltip: "Add",
+export const CustomIcon = {
+  args: {
+    icon: <MUIStyleIcon />,
+  },
+};
+
+export const Disabled = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
+};
+
+export const Rotate = {
+  args: {
+    ...Primary.args,
+    rotate: true,
+  },
+};
+
+export const SizeLarge = {
+  args: {
+    ...Primary.args,
+    size: "large",
+  },
+};
+
+export const SizeSmall = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
+};
+
+export const Styled = {
+  args: {
+    ...Primary.args,
+    style: {
+      backgroundColor: "red",
+      color: "white",
+    },
+  },
+};
+
+export const Tooltip = {
+  args: {
+    ...Primary.args,
+    tooltip: "Add",
+  },
 };

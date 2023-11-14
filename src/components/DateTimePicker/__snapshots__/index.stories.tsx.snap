@@ -7,7 +7,7 @@ exports[`Inputs/DateTimePicker FormatAmPm smoke-test 1`] = `
          for=":r9:"
          id=":r9:-label"
   >
-    DateTime
+    Date Time
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
@@ -43,7 +43,7 @@ exports[`Inputs/DateTimePicker FormatAmPm smoke-test 1`] = `
     >
       <legend class="css-yjsfm1">
         <span>
-          DateTime
+          Date Time
         </span>
       </legend>
     </fieldset>
@@ -58,7 +58,7 @@ exports[`Inputs/DateTimePicker HoursView smoke-test 1`] = `
          for=":r2:"
          id=":r2:-label"
   >
-    DateTime
+    Date Time
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
@@ -94,7 +94,7 @@ exports[`Inputs/DateTimePicker HoursView smoke-test 1`] = `
     >
       <legend class="css-yjsfm1">
         <span>
-          DateTime
+          Date Time
         </span>
       </legend>
     </fieldset>
@@ -160,7 +160,7 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
          for=":r7:"
          id=":r7:-label"
   >
-    DateTime
+    Date Time
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl Mui-readOnly MuiInputBase-readOnly css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
@@ -179,7 +179,7 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
     >
       <legend class="css-14lo706">
         <span>
-          DateTime
+          Date Time
         </span>
       </legend>
     </fieldset>
@@ -194,7 +194,7 @@ exports[`Inputs/DateTimePicker Primary smoke-test 1`] = `
          for=":r0:"
          id=":r0:-label"
   >
-    DateTime
+    Date Time
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
@@ -230,7 +230,7 @@ exports[`Inputs/DateTimePicker Primary smoke-test 1`] = `
     >
       <legend class="css-yjsfm1">
         <span>
-          DateTime
+          Date Time
         </span>
       </legend>
     </fieldset>
@@ -245,7 +245,7 @@ exports[`Inputs/DateTimePicker SecondsView smoke-test 1`] = `
          for=":r4:"
          id=":r4:-label"
   >
-    DateTime
+    Date Time
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
@@ -281,7 +281,7 @@ exports[`Inputs/DateTimePicker SecondsView smoke-test 1`] = `
     >
       <legend class="css-yjsfm1">
         <span>
-          DateTime
+          Date Time
         </span>
       </legend>
     </fieldset>

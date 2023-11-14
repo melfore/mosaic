@@ -1,21 +1,22 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure } from "@storybook/testing-library";
 
 import { getAllComposedDataCy } from "../../utils";
-import { formDecorator } from "../../utils/mocks/FormMock";
+import FormDecorator from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import Checkbox, { CheckboxWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedCheckbox, SUBPARTS_MAP } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "Checkbox";
-Checkbox.displayName = COMPONENT_NAME;
-CheckboxWithProps.displayName = COMPONENT_NAME;
+LocalizedCheckbox.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Inputs/Checkbox",
-  component: CheckboxWithProps,
-  decorators: [formDecorator, localeDecorator],
+  component: LocalizedCheckbox,
+  decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -33,57 +34,73 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof CheckboxWithProps>;
+} satisfies Meta<typeof LocalizedCheckbox>;
 
-const Template: ComponentStory<typeof CheckboxWithProps> = (args) => <Checkbox {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  value: true,
+export const Primary: Story = {
+  args: {
+    value: true,
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
 };
 
-export const Intermediate = Template.bind({});
-Intermediate.args = {
-  ...Primary.args,
-  intermediate: true,
+export const Intermediate: Story = {
+  args: {
+    ...Primary.args,
+    intermediate: true,
+  },
 };
 
-export const Label = Template.bind({});
-Label.args = {
-  ...Primary.args,
-  label: "Checkbox",
+export const Label: Story = {
+  args: {
+    ...Primary.args,
+    label: "Checkbox",
+  },
 };
 
-export const LabelEnd = Template.bind({});
-LabelEnd.args = {
-  ...Label.args,
-  labelPlacement: "end",
+export const LabelEnd: Story = {
+  args: {
+    ...Label.args,
+    labelPlacement: "end",
+  },
 };
 
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  label: MessageMock.checkbox,
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    label: MessageMock.checkbox,
+  },
 };
 
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
 };
 
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    backgroundColor: "red",
-    color: "white",
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      backgroundColor: "red",
+      color: "white",
+    },
+  },
+};
+
+export const Unchecked: Story = {
+  args: {
+    ...Primary.args,
+    value: undefined,
   },
 };

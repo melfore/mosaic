@@ -1,10 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ChangeEvent, FC, useCallback } from "react";
+import React, { ChangeEvent, CSSProperties, FC, InputHTMLAttributes, useCallback, useMemo } from "react";
 import { Checkbox as MUICheckbox, FormControlLabel as MUIFormControlLabel } from "@mui/material";
 
 import { ICheckbox } from "../../types/Checkbox";
 import { getComposedDataCy } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+
+type InnerInputProps = InputHTMLAttributes<HTMLInputElement> & {
+  "data-cy": string;
+};
 
 export const DATA_CY_DEFAULT = "checkbox";
 export const DATA_CY_SHORTCUT = "label";
@@ -25,15 +28,31 @@ const Checkbox: FC<ICheckbox> = ({
   intermediate = false,
   label,
   labelPlacement = "start",
-  onChange,
+  onChange: externalOnChange,
   required = false,
   size = "medium",
   style,
   value = false,
 }) => {
-  const onChangeHandler = useCallback(
-    ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => onChange && onChange(checked),
-    [onChange]
+  const onChange = useCallback(
+    ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => externalOnChange && externalOnChange(checked),
+    [externalOnChange]
+  );
+
+  const checkDataCy = useMemo(() => getComposedDataCy(dataCy, SUBPARTS_MAP.check), [dataCy]);
+
+  const inputProps = useMemo(
+    (): InnerInputProps => ({
+      "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.input),
+    }),
+    [dataCy]
+  );
+
+  const wrapperStyle = useMemo(
+    (): CSSProperties => ({
+      ...(!label ? { margin: 0 } : {}),
+    }),
+    [label]
   );
 
   return (
@@ -41,15 +60,11 @@ const Checkbox: FC<ICheckbox> = ({
       control={
         <MUICheckbox
           checked={value}
-          data-cy={getComposedDataCy(dataCy, SUBPARTS_MAP.check)}
+          data-cy={checkDataCy}
           disabled={disabled}
           indeterminate={intermediate}
-          inputProps={
-            {
-              "data-cy": getComposedDataCy(dataCy, SUBPARTS_MAP.input),
-            } as any
-          }
-          onChange={onChangeHandler}
+          inputProps={inputProps}
+          onChange={onChange}
           required={required}
           size={size}
           style={style}
@@ -58,14 +73,15 @@ const Checkbox: FC<ICheckbox> = ({
       data-cy={dataCy}
       label={label}
       labelPlacement={labelPlacement}
-      style={{ ...(!label ? { margin: 0 } : {}) }}
+      style={wrapperStyle}
     />
   );
 };
 
-export const CheckboxWithProps = Checkbox;
-
-export default localized(Checkbox, {
+// reactDocgen from @storybook/addon-docs does not auto-generate docs with custom HOCs
+export const LocalizedCheckbox = localized(Checkbox, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedCheckbox;

@@ -2,10 +2,17 @@
 
 exports[`Inputs/DateTimePicker FormatAmPm smoke-test 1`] = `
 <div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
+  <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+         data-shrink="false"
+         for=":r9:"
+         id=":r9:-label"
+  >
+    DateTime
+  </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
            autocomplete="off"
-           id=":r7:"
+           id=":r9:"
            placeholder="MM/DD/YYYY hh:mm aa"
            type="text"
            inputmode="text"
@@ -34,9 +41,60 @@ exports[`Inputs/DateTimePicker FormatAmPm smoke-test 1`] = `
     <fieldset aria-hidden="true"
               class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
-      <legend class="css-ihdtdm">
-        <span class="notranslate">
-          ​
+      <legend class="css-yjsfm1">
+        <span>
+          DateTime
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`Inputs/DateTimePicker HoursView smoke-test 1`] = `
+<div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
+  <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+         data-shrink="false"
+         for=":r2:"
+         id=":r2:-label"
+  >
+    DateTime
+  </label>
+  <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
+    <input aria-invalid="false"
+           autocomplete="off"
+           id=":r2:"
+           placeholder="MM/DD/YYYY hh"
+           type="text"
+           inputmode="text"
+           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+           value
+    >
+    <div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root">
+      <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root"
+              tabindex="0"
+              type="button"
+              aria-label="Choose date"
+      >
+        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+             focusable="false"
+             aria-hidden="true"
+             viewbox="0 0 24 24"
+             data-testid="CalendarIcon"
+        >
+          <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z">
+          </path>
+        </svg>
+        <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+        </span>
+      </button>
+    </div>
+    <fieldset aria-hidden="true"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+    >
+      <legend class="css-yjsfm1">
+        <span>
+          DateTime
         </span>
       </legend>
     </fieldset>
@@ -48,15 +106,15 @@ exports[`Inputs/DateTimePicker Localized smoke-test 1`] = `
 <div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
   <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
          data-shrink="false"
-         for=":r9:"
-         id=":r9:-label"
+         for=":rb:"
+         id=":rb:-label"
   >
     Data Ore
   </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
            autocomplete="off"
-           id=":r9:"
+           id=":rb:"
            placeholder="MM/DD/YYYY hh:mm"
            type="text"
            inputmode="text"
@@ -97,10 +155,17 @@ exports[`Inputs/DateTimePicker Localized smoke-test 1`] = `
 
 exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
 <div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
+  <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+         data-shrink="true"
+         for=":r7:"
+         id=":r7:-label"
+  >
+    DateTime
+  </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl Mui-readOnly MuiInputBase-readOnly css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
            autocomplete="off"
-           id=":r5:"
+           id=":r7:"
            placeholder="MM/DD/YYYY hh:mm:ss"
            readonly
            type="text"
@@ -112,9 +177,9 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
     <fieldset aria-hidden="true"
               class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
-      <legend class="css-ihdtdm">
-        <span class="notranslate">
-          ​
+      <legend class="css-14lo706">
+        <span>
+          DateTime
         </span>
       </legend>
     </fieldset>
@@ -124,6 +189,13 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
 
 exports[`Inputs/DateTimePicker Primary smoke-test 1`] = `
 <div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
+  <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+         data-shrink="false"
+         for=":r0:"
+         id=":r0:-label"
+  >
+    DateTime
+  </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
            autocomplete="off"
@@ -156,9 +228,9 @@ exports[`Inputs/DateTimePicker Primary smoke-test 1`] = `
     <fieldset aria-hidden="true"
               class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
-      <legend class="css-ihdtdm">
-        <span class="notranslate">
-          ​
+      <legend class="css-yjsfm1">
+        <span>
+          DateTime
         </span>
       </legend>
     </fieldset>
@@ -168,10 +240,17 @@ exports[`Inputs/DateTimePicker Primary smoke-test 1`] = `
 
 exports[`Inputs/DateTimePicker SecondsView smoke-test 1`] = `
 <div class="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root">
+  <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+         data-shrink="false"
+         for=":r4:"
+         id=":r4:-label"
+  >
+    DateTime
+  </label>
   <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root">
     <input aria-invalid="false"
            autocomplete="off"
-           id=":r2:"
+           id=":r4:"
            placeholder="MM/DD/YYYY hh:mm:ss"
            type="text"
            inputmode="text"
@@ -200,9 +279,9 @@ exports[`Inputs/DateTimePicker SecondsView smoke-test 1`] = `
     <fieldset aria-hidden="true"
               class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
     >
-      <legend class="css-ihdtdm">
-        <span class="notranslate">
-          ​
+      <legend class="css-yjsfm1">
+        <span>
+          DateTime
         </span>
       </legend>
     </fieldset>

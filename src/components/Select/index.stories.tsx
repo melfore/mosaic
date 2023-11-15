@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { SelectProps } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
-import { formDecorator } from "../../utils/mocks/FormMock";
+import FormDecorator from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
@@ -17,7 +17,7 @@ const COMPONENT_NAME = "Select";
 export default {
   title: "Inputs/Select",
   component: SelectWithProps,
-  decorators: [formDecorator, localeDecorator],
+  decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

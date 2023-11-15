@@ -70,9 +70,9 @@ const InputText: FC<IInputText> = ({
   );
 };
 
-export const InputTextWithProps = InputText;
-
-export default localized(InputText, {
+export const LocalizedInputText = localized(InputText, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedInputText;

@@ -40,11 +40,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let changesCount = 0;
-const onChangeMock = jest.fn((value: FormValue) => {
-  changesCount++;
-  logInfo("InputNumber", `onChange handler: value '${value}' - changes '${changesCount}`);
-});
+const onChangeMock = jest.fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
 
 export const Primary: Story = {
   args: {

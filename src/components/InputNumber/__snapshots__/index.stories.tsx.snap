@@ -189,7 +189,7 @@ exports[`Inputs/InputNumber Localized smoke-test 1`] = `
            id=":r5:"
            placeholder="Inserire valore..."
            type="number"
-           data-cy="input-number"
+           data-cy="locale.inputNumber"
            class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
            value="5"
            style="text-align: right; width: 100%;"
@@ -307,7 +307,7 @@ exports[`Inputs/InputNumber Placeholder smoke-test 1`] = `
 </div>
 `;
 
-exports[`Inputs/InputNumber Primary smoke-test 1`] = `
+exports[`Inputs/InputNumber Primary play-test 1`] = `
 <div class="MuiFormControl-root MuiFormControl-marginNormal MuiTextField-root css-1rv3ei8-MuiFormControl-root-MuiTextField-root"
      style="text-align: right; width: 100%;"
 >
@@ -324,7 +324,7 @@ exports[`Inputs/InputNumber Primary smoke-test 1`] = `
            type="number"
            data-cy="input-number"
            class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-           value="5"
+           value="50"
            style="text-align: right; width: 100%;"
     >
     <fieldset aria-hidden="true"

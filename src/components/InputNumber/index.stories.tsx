@@ -13,7 +13,7 @@ import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedInputNum
 configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "InputNumber";
-LocalizedInputNumber.displayName = COMPONENT_NAME;
+LocalizedInputNumber.displayName = "InputNumber";
 
 const meta = {
   title: "Inputs/InputNumber",

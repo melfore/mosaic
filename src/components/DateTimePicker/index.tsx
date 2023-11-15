@@ -89,7 +89,6 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   );
 };
 
-// reactDocgen from @storybook/addon-docs does not auto-generate docs with custom HOCs
 export const LocalizedDateTimePicker = localized(DateTimePicker, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,

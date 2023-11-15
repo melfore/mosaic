@@ -6,6 +6,7 @@ import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
@@ -47,8 +48,7 @@ const linksMock = [
   { label: "page3", href: "//google.com/page3" },
 ];
 
-let onMockClicks = 0;
-const onClickMock = jest.fn(() => onMockClicks++);
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {
@@ -64,7 +64,7 @@ export const Primary: Story = {
     const firstLink = canvas.getAllByTestId(firstLinkDataCy).at(0);
     if (firstLink) {
       await userEvent.click(firstLink);
-      await expect(onClickMock).toHaveBeenCalledTimes(onMockClicks);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
       await expect(onClickMock).toHaveBeenCalledWith(linksMock[firstIndex].href);
     }
 
@@ -73,7 +73,7 @@ export const Primary: Story = {
     const lastLink = canvas.getAllByTestId(lastLinkDataCy).at(0);
     if (lastLink) {
       await userEvent.click(lastLink);
-      await expect(onClickMock).toHaveBeenCalledTimes(onMockClicks);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }
   },
 };

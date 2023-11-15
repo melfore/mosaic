@@ -6,11 +6,14 @@ import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import getDocsPage from "../../utils/stories";
 
 import IconButton, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 configure({ testIdAttribute: "data-cy" });
+
+const COMPONENT_NAME = IconButton.displayName!;
 
 const meta = {
   title: "Inputs/IconButton",
@@ -22,7 +25,7 @@ const meta = {
           label: "MUI Button Component",
           url: "https://mui.com/material-ui/react-button/#icon-button",
         },
-        component: "IconButton",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
@@ -35,11 +38,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let clickCounts = 0;
-const onClickMock = jest.fn(() => {
-  clickCounts++;
-  alert("onClick handler");
-});
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {
@@ -51,7 +50,7 @@ export const Primary: Story = {
     const button = canvas.getByTestId(DATA_CY_DEFAULT);
     if (button) {
       await userEvent.click(button);
-      await expect(onClickMock).toHaveBeenCalledTimes(clickCounts);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }
   },
 };

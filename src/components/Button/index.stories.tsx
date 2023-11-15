@@ -6,6 +6,7 @@ import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
@@ -42,11 +43,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let clickCounts = 0;
-const onClickMock = jest.fn(() => {
-  clickCounts++;
-  alert("onClick handler");
-});
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {
@@ -58,7 +55,7 @@ export const Primary: Story = {
     const button = canvas.getByTestId(DATA_CY_DEFAULT);
     if (button) {
       await userEvent.click(button);
-      await expect(onClickMock).toHaveBeenCalledTimes(clickCounts);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }
   },
 };

@@ -6,11 +6,14 @@ import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import getDocsPage from "../../utils/stories";
 
 import ListItem, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
 
 configure({ testIdAttribute: "data-cy" });
+
+const COMPONENT_NAME = ListItem.displayName!;
 
 const meta = {
   title: "Display/ListItem",
@@ -22,7 +25,7 @@ const meta = {
           label: "MUI ListItem Component",
           url: "https://mui.com/components/lists/",
         },
-        component: "ListItem",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
@@ -35,11 +38,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let clickCounts = 0;
-const onClickMock = jest.fn(() => {
-  clickCounts++;
-  alert("onClick handler");
-});
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {
@@ -66,7 +65,7 @@ export const Clickable: Story = {
     const listItem = canvas.getByTestId(DATA_CY_DEFAULT);
     if (listItem) {
       await userEvent.click(listItem);
-      await expect(onClickMock).toHaveBeenCalledTimes(clickCounts);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }
   },
 };

@@ -56,25 +56,33 @@ export const Primary: Story = {
     links: linksMock,
     onClick: onClickMock,
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
-    const firstIndex = 0;
-    const firstLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, firstIndex);
-    const firstLink = canvas.getAllByTestId(firstLinkDataCy).at(0);
-    if (firstLink) {
+    await step("First Link", async () => {
+      const firstIndex = 0;
+      const firstLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, firstIndex);
+      const firstLink = canvas.getAllByTestId(firstLinkDataCy).at(0);
+      if (!firstLink) {
+        return;
+      }
+
       await userEvent.click(firstLink);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
       await expect(onClickMock).toHaveBeenCalledWith(linksMock[firstIndex].href);
-    }
+    });
 
-    const lastIndex = linksMock.length - 1;
-    const lastLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, lastIndex);
-    const lastLink = canvas.getAllByTestId(lastLinkDataCy).at(0);
-    if (lastLink) {
+    await step("Last Link", async () => {
+      const lastIndex = linksMock.length - 1;
+      const lastLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, lastIndex);
+      const lastLink = canvas.getAllByTestId(lastLinkDataCy).at(0);
+      if (!lastLink) {
+        return;
+      }
+
       await userEvent.click(lastLink);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
-    }
+    });
   },
 };
 

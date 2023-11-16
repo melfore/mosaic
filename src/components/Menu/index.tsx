@@ -1,12 +1,10 @@
 import React, { FC, Fragment, useCallback, useMemo, useState } from "react";
-import { Menu as MUIMenu, MenuItem as MUIMenuItem, PopoverOrigin as MUIPopoverOrigin } from "@mui/material";
+import { Menu as MUIMenu, PopoverOrigin as MUIPopoverOrigin } from "@mui/material";
 
-import { Icons } from "../../types/Icon";
-import { IMenu, IMenuItemCallback } from "../../types/Menu";
-import { suppressEvent } from "../../utils";
-import { logWarn } from "../../utils/logger";
-import Button from "../Button";
-import IconButton from "../IconButton";
+import { IMenu } from "../../types/Menu";
+
+import MenuButton from "./components/Button";
+import MenuItem from "./components/Item";
 
 const MENU_ITEMS_ANCHORING: MUIPopoverOrigin = {
   vertical: "top",
@@ -17,10 +15,10 @@ export const DATA_CY_DEFAULT = "menu";
 
 const Menu: FC<IMenu> = ({
   dataCy = DATA_CY_DEFAULT,
-  icon: externalIcon,
+  icon,
   label,
   items,
-  onItemClick,
+  onItemClick: externalOnItemClick,
   style,
   type = "button",
 }) => {
@@ -28,50 +26,16 @@ const Menu: FC<IMenu> = ({
 
   const onClose = useCallback(() => setAnchor(null), []);
 
-  const onItem = useCallback(
-    (value: string, onClick?: IMenuItemCallback) => {
-      if (onClick) {
-        onClick(value);
-        return;
-      }
+  const buttonDataCy = useMemo(() => `${dataCy}-button`, [dataCy]);
 
-      if (onItemClick) {
-        onItemClick(value);
-        return;
-      }
-
-      return;
-    },
-    [onItemClick]
+  const onMenu = useCallback(
+    () => setAnchor(document.querySelector(`button[data-cy='${buttonDataCy}']`)),
+    [buttonDataCy]
   );
-
-  const onMenu = useCallback(() => setAnchor(document.querySelector(`button[data-cy='${dataCy}']`)), [dataCy]);
-
-  const menuButton = useMemo(() => {
-    let icon = externalIcon;
-    if (!icon) {
-      logWarn("Menu", "Icon is not set, fallback to Icons.menu");
-      icon = Icons.menu;
-    }
-
-    if (type === "icon") {
-      return <IconButton dataCy={dataCy} icon={icon} onClick={onMenu} style={style} tooltip={label} />;
-    }
-
-    return (
-      <Button
-        dataCy={dataCy}
-        icon={typeof icon === "string" ? { name: icon } : { component: icon }}
-        label={label}
-        onClick={onMenu}
-        style={style}
-      />
-    );
-  }, [dataCy, externalIcon, label, onMenu, style, type]);
 
   return (
     <Fragment>
-      {menuButton}
+      <MenuButton dataCy={buttonDataCy} icon={icon} label={label} onMenu={onMenu} style={style} type={type} />
       <MUIMenu
         id={dataCy}
         anchorEl={anchor}
@@ -82,17 +46,16 @@ const Menu: FC<IMenu> = ({
         onClose={onClose}
       >
         {items.map(({ label, onClick, value }, index) => (
-          <MUIMenuItem
+          <MenuItem
             key={`${dataCy}-item-${index}`}
-            data-cy={`${dataCy}-item-${index}`}
-            onClick={(event) => {
-              suppressEvent(event);
-              onClose();
-              onItem(value, onClick);
-            }}
-          >
-            {label}
-          </MUIMenuItem>
+            dataCy={dataCy}
+            index={index}
+            label={label}
+            onClick={onClick}
+            onClose={onClose}
+            onItemClick={externalOnItemClick}
+            value={value}
+          />
         ))}
       </MUIMenu>
     </Fragment>

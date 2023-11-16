@@ -1,10 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation/Menu Primary smoke-test 1`] = `
+exports[`Navigation/Menu CustomIcon smoke-test 1`] = `
 <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-zddlty-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="button"
-        data-cy="Menu"
+        data-cy="menu-button"
+>
+  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+         focusable="false"
+         aria-hidden="true"
+         viewbox="0 0 24 24"
+         data-testid="StyleIcon"
+         data-cy="menu-button-icon"
+         style="height: 24px; width: 24px;"
+    >
+      <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61zm19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z">
+      </path>
+    </svg>
+  </span>
+  Label
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</button>
+`;
+
+exports[`Navigation/Menu CustomIconButton smoke-test 1`] = `
+<span data-cy="icon-menu-button-adornment">
+  <span aria-label="label"
+        data-cy="icon-menu-button-adornment-tooltip"
+        class
+        data-mui-internal-clone-element="true"
+  >
+    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+            data-cy="icon-menu-button"
+    >
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+           focusable="false"
+           aria-hidden="true"
+           viewbox="0 0 24 24"
+           data-testid="StyleIcon"
+           data-cy="icon-menu-button-icon"
+           style="height: 24px; width: 24px;"
+      >
+        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61zm19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z">
+        </path>
+      </svg>
+      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      </span>
+    </button>
+  </span>
+</span>
+`;
+
+exports[`Navigation/Menu IconButton smoke-test 1`] = `
+<span data-cy="icon-menu-button-adornment">
+  <span aria-label="label"
+        data-cy="icon-menu-button-adornment-tooltip"
+        class
+        data-mui-internal-clone-element="true"
+  >
+    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+            data-cy="icon-menu-button"
+    >
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+           focusable="false"
+           aria-hidden="true"
+           viewbox="0 0 24 24"
+           data-testid="MenuIcon"
+           data-cy="icon-menu-button-icon"
+      >
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
+        </path>
+      </svg>
+      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      </span>
+    </button>
+  </span>
+</span>
+`;
+
+exports[`Navigation/Menu Primary play-test 1`] = `
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-zddlty-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+        data-cy="menu-button"
 >
   <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -12,7 +96,7 @@ exports[`Navigation/Menu Primary smoke-test 1`] = `
          aria-hidden="true"
          viewbox="0 0 24 24"
          data-testid="MenuIcon"
-         data-cy="Menu-icon"
+         data-cy="menu-button-icon"
     >
       <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
       </path>
@@ -20,6 +104,12 @@ exports[`Navigation/Menu Primary smoke-test 1`] = `
   </span>
   Label
   <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+          style="width: 111.427px; height: 111.427px; top: -37.7136px; left: -4.71355px;"
+    >
+      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
+      </span>
+    </span>
   </span>
 </button>
 `;

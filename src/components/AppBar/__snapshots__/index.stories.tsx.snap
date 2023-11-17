@@ -243,6 +243,30 @@ exports[`Surfaces/AppBar CustomContent smoke-test 1`] = `
 </header>
 `;
 
+exports[`Surfaces/AppBar Empty smoke-test 1`] = `
+<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
+        data-cy="appbar"
+>
+  <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+       style="align-items: center; display: flex; justify-content: space-between;"
+  >
+    <div style="align-items: center; display: flex; flex: 1 1 0%;">
+      <div data-cy="appbar-title-clickable"
+           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      >
+        <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+            data-cy="appbar-title-text"
+        >
+          Empty
+        </h2>
+      </div>
+    </div>
+    <div style="align-items: center; display: flex;">
+    </div>
+  </div>
+</header>
+`;
+
 exports[`Surfaces/AppBar Locale smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
         data-cy="appbar"
@@ -343,29 +367,29 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
 
 exports[`Surfaces/AppBar Localized smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
-        data-cy="appbar"
+        data-cy="locale.title"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
        style="align-items: center; display: flex; justify-content: space-between;"
   >
     <div style="align-items: center; display: flex; flex: 1 1 0%;">
-      <span data-cy="appbar-menu-adornment">
+      <span data-cy="locale.title-menu-adornment">
         <span aria-label="home"
-              data-cy="appbar-menu-adornment-tooltip"
+              data-cy="locale.title-menu-adornment-tooltip"
               class
               data-mui-internal-clone-element="true"
         >
           <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
                   tabindex="0"
                   type="button"
-                  data-cy="appbar-menu"
+                  data-cy="locale.title-menu"
           >
             <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
                  focusable="false"
                  aria-hidden="true"
                  viewbox="0 0 24 24"
                  data-testid="HomeIcon"
-                 data-cy="appbar-menu-icon"
+                 data-cy="locale.title-menu-icon"
             >
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
@@ -375,27 +399,27 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
+      <div data-cy="locale.title-title-clickable"
            style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
       >
         <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
-            data-cy="appbar-title-text"
+            data-cy="locale.title-title-text"
         >
           Titolo
         </h2>
       </div>
     </div>
     <div style="align-items: center; display: flex;">
-      <span data-cy="appbar-action-0-adornment">
+      <span data-cy="locale.title-action-0-adornment">
         <span aria-label="settings"
-              data-cy="appbar-action-0-adornment-tooltip"
+              data-cy="locale.title-action-0-adornment-tooltip"
               class
               data-mui-internal-clone-element="true"
         >
           <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
                   tabindex="0"
                   type="button"
-                  data-cy="appbar-action-0"
+                  data-cy="locale.title-action-0"
                   style="margin-right: 4px;"
           >
             <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
@@ -403,7 +427,7 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
                  aria-hidden="true"
                  viewbox="0 0 24 24"
                  data-testid="SettingsIcon"
-                 data-cy="appbar-action-0-icon"
+                 data-cy="locale.title-action-0-icon"
             >
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z">
               </path>
@@ -568,6 +592,129 @@ exports[`Surfaces/AppBar Styled smoke-test 1`] = `
           </button>
         </span>
       </span>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Surfaces/AppBar TitleClickable play-test 1`] = `
+<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
+        data-cy="appbar"
+>
+  <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+       style="align-items: center; display: flex; justify-content: space-between;"
+  >
+    <div style="align-items: center; display: flex; flex: 1 1 0%;">
+      <div data-cy="appbar-title-clickable"
+           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      >
+        <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+            data-cy="appbar-title-text"
+        >
+          Title
+        </h2>
+      </div>
+    </div>
+    <div style="align-items: center; display: flex;">
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
+<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-7e0s21-MuiPaper-root-MuiAppBar-root"
+        data-cy="appbar"
+>
+  <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+       style="align-items: center; display: flex; justify-content: space-between;"
+  >
+    <div style="align-items: center; display: flex; flex: 1 1 0%;">
+      <span data-cy="appbar-menu-adornment">
+        <span aria-label="home"
+              data-cy="appbar-menu-adornment-tooltip"
+              class
+              data-mui-internal-clone-element="true"
+        >
+          <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                  data-cy="appbar-menu"
+          >
+            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+                 focusable="false"
+                 aria-hidden="true"
+                 viewbox="0 0 24 24"
+                 data-testid="HomeIcon"
+                 data-cy="appbar-menu-icon"
+            >
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
+              </path>
+            </svg>
+            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+            </span>
+          </button>
+        </span>
+      </span>
+      <div data-cy="appbar-title-clickable"
+           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      >
+        <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+            data-cy="appbar-title-text"
+        >
+          AppBar
+        </h2>
+      </div>
+    </div>
+    <div style="align-items: center; display: flex;">
+      <span data-cy="appbar-action-0-adornment">
+        <span aria-label="settings"
+              data-cy="appbar-action-0-adornment-tooltip"
+              class
+              data-mui-internal-clone-element="true"
+        >
+          <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                  data-cy="appbar-action-0"
+                  style="margin-right: 4px;"
+          >
+            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+                 focusable="false"
+                 aria-hidden="true"
+                 viewbox="0 0 24 24"
+                 data-testid="SettingsIcon"
+                 data-cy="appbar-action-0-icon"
+            >
+              <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z">
+              </path>
+            </svg>
+            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+            </span>
+          </button>
+        </span>
+      </span>
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-zddlty-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+              data-cy="appbar-user-menu-button"
+              style="text-transform: lowercase;"
+      >
+        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+               focusable="false"
+               aria-hidden="true"
+               viewbox="0 0 24 24"
+               data-testid="AccountCircleIcon"
+               data-cy="appbar-user-menu-button-icon"
+          >
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z">
+            </path>
+          </svg>
+        </span>
+        User
+        <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+        </span>
+      </button>
     </div>
   </div>
 </header>

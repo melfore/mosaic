@@ -53,10 +53,12 @@ export const Primary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByTestId(DATA_CY_DEFAULT);
-    if (button) {
-      await userEvent.click(button);
-      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+    if (!button) {
+      return;
     }
+
+    await userEvent.click(button);
+    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
   },
 };
 

@@ -1,21 +1,25 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
-import { getAllComposedDataCy } from "../../utils";
+import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 import Button from "../Button";
 
-import Card, { CardWithProps, DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedCard, SUBPARTS_MAP } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "Card";
-Card.displayName = COMPONENT_NAME;
-CardWithProps.displayName = COMPONENT_NAME;
+LocalizedCard.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Surfaces/Card",
-  component: CardWithProps,
+  component: LocalizedCard,
   decorators: [localeDecorator],
   parameters: {
     docs: {
@@ -34,51 +38,71 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof CardWithProps>;
+} satisfies Meta<typeof LocalizedCard>;
 
-const Template: ComponentStory<typeof CardWithProps> = (args) => <Card {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: "A mosaic is an artistic picture or design made out of any materials assembled together.",
-  subtitle: "UK: /mə(ʊ)ˈzeɪɪk/",
-  title: "Mosaic",
+export const Primary: Story = {
+  args: {
+    children: "A mosaic is an artistic picture or design made out of any materials assembled together.",
+    subtitle: "UK: /mə(ʊ)ˈzeɪɪk/",
+    title: "Mosaic",
+  },
 };
 
-export const Actions = Template.bind({});
-Actions.args = {
-  ...Primary.args,
-  actions: [<Button key="gallery" icon={{ name: Icons.open_new }} label="Gallery" onClick={() => {}} />],
+export const Actions: Story = {
+  args: {
+    ...Primary.args,
+    actions: [<Button key="gallery" icon={{ name: Icons.open_new }} label="Gallery" onClick={() => {}} />],
+  },
 };
 
-export const Collapsible = Template.bind({});
-Collapsible.args = {
-  ...Primary.args,
-  collapsible: "Discover mosaics from all around the globe!",
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onCollapse handler"));
+
+export const Collapsible: Story = {
+  args: {
+    ...Primary.args,
+    collapsible: "Discover mosaics from all around the globe!",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const collapseButton = canvas.getByTestId(getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.collapse));
+    if (!collapseButton) {
+      return;
+    }
+
+    await userEvent.click(collapseButton);
+    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+  },
 };
 
-export const CollapsibleActions = Template.bind({});
-CollapsibleActions.args = {
-  ...Actions.args,
-  ...Collapsible.args,
+export const CollapsibleActions: Story = {
+  args: {
+    ...Actions.args,
+    ...Collapsible.args,
+  },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  ...Primary.args,
-  icon: Icons.apps,
+export const Icon: Story = {
+  args: {
+    ...Primary.args,
+    icon: Icons.apps,
+  },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  ...Icon.args,
-  loading: true,
+export const Loading: Story = {
+  args: {
+    ...Icon.args,
+    loading: true,
+  },
 };
 
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  title: MessageMock.title,
-  subtitle: MessageMock.subtitle,
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    title: MessageMock.title,
+    subtitle: MessageMock.subtitle,
+  },
 };

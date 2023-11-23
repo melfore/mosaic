@@ -3,7 +3,7 @@ export const DOCS_CODELINE_CLASS = "mosaic-documentation-code-line";
 export const DOCS_CODEBLOCK_CLASS = "mosaic-documentation-code-block";
 export const DOCS_TITLE_CLASS = "mosaic-documentation-title";
 
-export const DOCS_PAGE_STYLE: string = `
+export const DOCS_PAGE_STYLE = `
   .${DOCS_BODY_CLASS},
   .${DOCS_TITLE_CLASS} {
     color: #333333 !important;

@@ -183,7 +183,7 @@ describe("AppBar test suite:", () => {
 
   it("username", () => {
     const onClick = jest.fn();
-    const username: string = "mos@ic";
+    const username = "mos@ic";
     const { wrapper } = getAppBarTestable({
       props: { user: { items: [{ label: "Logout", onClick, value: "logout" }], label: username } },
     });

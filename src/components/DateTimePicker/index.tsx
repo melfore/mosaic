@@ -1,4 +1,5 @@
 import React, { FC, useCallback, useMemo } from "react";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import { AdapterLuxon } from "@mui/x-date-pickers/AdapterLuxon";
 import { DateTimePicker as MuiDateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -15,9 +16,11 @@ export const LOCALIZABLE_PROPS: ILocalizableProperty[] = [{ name: "label", type:
 
 const DateTimePicker: FC<DateTimePickerType> = ({
   dataCy = DATA_CY_DEFAULT,
+  type = "dateTime",
   label,
   value,
   onAccept,
+  onChange,
   ampm = false,
   mobileView,
   timeView = "min",
@@ -72,19 +75,54 @@ const DateTimePicker: FC<DateTimePickerType> = ({
     [onAccept]
   );
 
+  const onChangeIso = useCallback(
+    (value: DateTime | undefined | null) => {
+      if (onChange) {
+        onChange(value?.toJSDate());
+      }
+    },
+    [onChange]
+  );
+
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
-      <MuiDateTimePicker
-        timezone={zone}
-        desktopModeMediaQuery={desctopMode}
-        value={dateTimeValue}
-        onAccept={onAcceptIso}
-        data-cy={dataCy}
-        label={label}
-        views={views}
-        format={format}
-        ampm={ampm}
-      />
+      {type === "dateTime" ? (
+        <MuiDateTimePicker
+          timezone={zone}
+          desktopModeMediaQuery={desctopMode}
+          value={dateTimeValue}
+          onAccept={onAcceptIso}
+          onChange={onChangeIso}
+          data-cy={dataCy}
+          label={label}
+          views={views}
+          format={format}
+          ampm={ampm}
+        />
+      ) : type === "date" ? (
+        <DatePicker
+          timezone={zone}
+          desktopModeMediaQuery={desctopMode}
+          value={dateTimeValue}
+          onAccept={onAcceptIso}
+          onChange={onChangeIso}
+          data-cy={dataCy}
+          label={label}
+          format={format}
+        />
+      ) : (
+        <TimePicker
+          timezone={zone}
+          desktopModeMediaQuery={desctopMode}
+          value={dateTimeValue}
+          onAccept={onAcceptIso}
+          onChange={onChangeIso}
+          data-cy={dataCy}
+          label={label}
+          format={format}
+          ampm={ampm}
+        />
+      )}
     </LocalizationProvider>
   );
 };

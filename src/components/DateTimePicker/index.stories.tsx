@@ -47,3 +47,9 @@ FormatAmPm.args = { ...Primary.args, ampm: true };
 
 export const Localized = Template.bind({});
 Localized.args = { ...Primary.args, localized: true, label: "locale.dateTime" };
+
+export const Time = Template.bind({});
+Time.args = { ...Primary.args, type: "time" };
+
+export const Date = Template.bind({});
+Date.args = { ...Primary.args, type: "date" };

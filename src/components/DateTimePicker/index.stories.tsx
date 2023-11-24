@@ -62,17 +62,31 @@ export const MobileView: Story = {
   },
 };
 
-export const FormatAmPm = {
+export const FormatAmPm: Story = {
   args: {
     ...Primary.args,
     ampm: true,
   },
 };
 
-export const Localized = {
+export const Localized: Story = {
   args: {
     ...Primary.args,
     localized: true,
     label: "locale.dateTime",
+  },
+};
+
+export const Date = {
+  args: {
+    ...Primary.args,
+    type: "date",
+  },
+};
+
+export const Time: Story = {
+  args: {
+    ...Primary.args,
+    type: "time",
   },
 };

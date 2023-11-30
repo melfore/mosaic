@@ -5,7 +5,7 @@ import MUITextField from "@mui/material/TextField";
 import { Icons } from "../../types/Icon";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 
-import Table, { TableWithProps } from ".";
+import Table, { LocalizedTable } from ".";
 
 <Meta title="Display/Table [new doc]" component={Table} decorators={[localeDecorator]} />
 
@@ -496,7 +496,7 @@ Sticky header works also when `tableLayout="auto"
 
 Below you can find the whole list of props accepted by the `Table` component. Required props are marked with `*`.
 
-<ArgsTable of={TableWithProps} />
+<ArgsTable of={LocalizedTable} />
 
 #### Types
 

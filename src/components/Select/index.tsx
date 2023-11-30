@@ -15,6 +15,7 @@ import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
 
 import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
 import SelectInput, { SELECT_LOADING_SUBPART } from "./components/Input";
+import SelectListBox from "./components/ListBox";
 import SelectOption, {
   SELECT_OPTION_CHECKBOX_SUBPART,
   SELECT_OPTION_LABEL_SUBPART,
@@ -58,6 +59,7 @@ const Select = <T extends any>({
   onInputChange: externalOnInputChange,
   onScrollEnd,
   options: externalOptions,
+  optionsNumber,
   placeholder,
   popperWidth,
   required = false,
@@ -66,6 +68,7 @@ const Select = <T extends any>({
   type = "text",
   value = null,
   variant = "outlined",
+  virtualized = false,
 }: SelectProps<T>) => {
   const getOptionLabel = useCallback(
     (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
@@ -130,16 +133,19 @@ const Select = <T extends any>({
     [onScrollEnd]
   );
 
-  const listboxProps = useMemo(
-    () => ({
+  const listboxProps = useMemo(() => {
+    if (virtualized) {
+      return undefined;
+    }
+
+    return {
       onScroll,
       style: {
         padding: 0,
         width: "100%",
       },
-    }),
-    [onScroll]
-  );
+    };
+  }, [onScroll, virtualized]);
 
   const options = useMemo(() => {
     let options = [...externalOptions];
@@ -243,6 +249,14 @@ const Select = <T extends any>({
 
   const validatedValue = useMemo(() => validateValue(value), [validateValue, value]);
 
+  const listboxComponent = useMemo(() => {
+    if (!virtualized) {
+      return undefined;
+    }
+
+    return SelectListBox({ multiple, options, optionsNumber });
+  }, [multiple, options, optionsNumber, virtualized]);
+
   return (
     <MUIAutocomplete<T, boolean>
       autoComplete={autoComplete}
@@ -252,6 +266,7 @@ const Select = <T extends any>({
       getOptionLabel={getOptionLabel}
       groupBy={groupBy}
       isOptionEqualToValue={isOptionSelected}
+      ListboxComponent={listboxComponent}
       ListboxProps={listboxProps}
       loading={loading}
       multiple={multiple}
@@ -268,9 +283,14 @@ const Select = <T extends any>({
   );
 };
 
-export const SelectWithProps = Select;
-
-export default localized(Select as any, {
+export const LocalizedSelect = localized(Select as any, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 }) as <T extends any>(props: SelectProps<T>) => JSX.Element;
+
+/**
+ * @deprecated Select offers built-in prop virtualized
+ */
+export const SelectVirtualized = <T extends any>(props: SelectProps<T>) => <LocalizedSelect {...props} virtualized />;
+
+export default LocalizedSelect;

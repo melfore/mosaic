@@ -59,6 +59,10 @@ interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable,
    * Number of options
    */
   optionsNumber?: number;
+  /**
+   * For internal use
+   */
+  virtualized?: boolean;
 }
 
 type SingleSelectDataType<T> = T | null;

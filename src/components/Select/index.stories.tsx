@@ -1,22 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
-import { SelectProps } from "../../types/Select";
 import { getAllComposedDataCy } from "../../utils";
 import FormDecorator from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import Select, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectWithProps, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedSelect, SUBPARTS_MAP } from ".";
 
 const COMPONENT_NAME = "Select";
-(Select as any).displayName = COMPONENT_NAME;
-(SelectWithProps as any).displayName = COMPONENT_NAME;
+(LocalizedSelect as any).displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Inputs/Select",
-  component: SelectWithProps,
+  component: LocalizedSelect,
   decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
@@ -35,112 +33,146 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof SelectWithProps>;
+} satisfies Meta<typeof LocalizedSelect>;
 
-const Template: ComponentStory<typeof SelectWithProps> = (args: SelectProps<any>) => (
-  <Select {...args} dataCy={DATA_CY_DEFAULT} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Select",
-  multiple: false,
-  onChange: () => {},
-  onClose: () => {},
-  onInputChange: () => {},
-  onScrollEnd: () => {},
-  options: ["Paintings", "Sculpture", "Mosaic", "Murales", "Photography"],
-  placeholder: "Select a value",
-};
-
-export const Autocomplete = Template.bind({});
-Autocomplete.args = {
-  ...Primary.args,
-  autoComplete: false,
-};
-
-export const AutoSort = Template.bind({});
-AutoSort.args = {
-  ...Primary.args,
-  autoSort: true,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
-};
-
-export const Grouped = Template.bind({});
-Grouped.args = {
-  ...Primary.args,
-  groupBy: (option) => (option as string).slice(0, 1),
-};
-
-export const GroupedCustomLabel = Template.bind({});
-GroupedCustomLabel.args = {
-  ...Grouped.args,
-  getGroupLabel: (groupName) => `Letter: ${groupName}`,
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  ...Primary.args,
-  loading: true,
-};
-
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  label: MessageMock.select,
-  placeholder: MessageMock.placeholder,
-};
-
-export const Multiple = Template.bind({});
-Multiple.args = {
-  ...Primary.args,
-  multiple: true,
-  value: [],
-};
-
-export const OptionCustomRendering = Template.bind({});
-OptionCustomRendering.args = {
-  ...Primary.args,
-  customOptionRendering: (option) => <b>{(option as string).slice(0, 3).toUpperCase()}</b>,
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  ...Primary.args,
-  required: true,
-};
-
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
-};
-
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    color: "red",
-    fontWeight: "bold",
-    fontSize: "large",
-    textAlign: "center",
+export const Primary: Story = {
+  args: {
+    label: "Select",
+    multiple: false,
+    onChange: () => {},
+    onClose: () => {},
+    onInputChange: () => {},
+    onScrollEnd: () => {},
+    options: ["Paintings", "Sculpture", "Mosaic", "Murales", "Photography"],
+    placeholder: "Select a value",
   },
 };
 
-export const VariantFilled = Template.bind({});
-VariantFilled.args = {
-  ...Primary.args,
-  variant: "filled",
+export const Autocomplete: Story = {
+  args: {
+    ...Primary.args,
+    autoComplete: false,
+  },
 };
 
-export const VariantStandard = Template.bind({});
-VariantStandard.args = {
-  ...Primary.args,
-  variant: "standard",
+export const AutoSort: Story = {
+  args: {
+    ...Primary.args,
+    autoSort: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
+};
+
+export const Grouped: Story = {
+  args: {
+    ...Primary.args,
+    groupBy: (option) => (option as string).slice(0, 1),
+  },
+};
+
+export const GroupedCustomLabel: Story = {
+  args: {
+    ...Grouped.args,
+    getGroupLabel: (groupName) => `Letter: ${groupName}`,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    ...Primary.args,
+    loading: true,
+  },
+};
+
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    label: MessageMock.select,
+    placeholder: MessageMock.placeholder,
+  },
+};
+
+export const Multiple: Story = {
+  args: {
+    ...Primary.args,
+    multiple: true,
+    value: [],
+  },
+};
+
+export const OptionCustomRendering: Story = {
+  args: {
+    ...Primary.args,
+    customOptionRendering: (option) => <b>{(option as string).slice(0, 3).toUpperCase()}</b>,
+  },
+};
+
+export const Required: Story = {
+  args: {
+    ...Primary.args,
+    required: true,
+  },
+};
+
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
+};
+
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      color: "red",
+      fontWeight: "bold",
+      fontSize: "large",
+      textAlign: "center",
+    },
+  },
+};
+
+export const VariantFilled: Story = {
+  args: {
+    ...Primary.args,
+    variant: "filled",
+  },
+};
+
+export const VariantStandard: Story = {
+  args: {
+    ...Primary.args,
+    variant: "standard",
+  },
+};
+
+export const Virtualized: Story = {
+  args: {
+    ...Primary.args,
+    virtualized: true,
+  },
+};
+
+const options1000: string[] = [];
+for (let i = 0; i < 1000; i++) {
+  options1000.push(i + 1 + " Element");
+}
+
+export const VirtualizedWith1000Elements: Story = {
+  args: {
+    ...Primary.args,
+    options: options1000,
+    virtualized: true,
+  },
 };

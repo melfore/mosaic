@@ -382,7 +382,7 @@ exports[`Inputs/Select Loading smoke-test 1`] = `
 
 exports[`Inputs/Select Localized smoke-test 1`] = `
 <div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
-     data-cy="select-outer-wrapper"
+     data-cy="locale.select-outer-wrapper"
 >
   <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
        style="width: 100%;"
@@ -406,7 +406,7 @@ exports[`Inputs/Select Localized smoke-test 1`] = `
              autocapitalize="none"
              spellcheck="false"
              role="combobox"
-             data-cy="select"
+             data-cy="locale.select"
              value
              style="width: 100%;"
       >
@@ -939,6 +939,134 @@ exports[`Inputs/Select VariantStandard smoke-test 1`] = `
           </span>
         </button>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Inputs/Select Virtualized smoke-test 1`] = `
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+     data-cy="select-outer-wrapper"
+>
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+       style="width: 100%;"
+  >
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":ru:"
+           id=":ru:-label"
+    >
+      Select
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             autocomplete="off"
+             id=":ru:"
+             placeholder="Select a value"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             aria-autocomplete="both"
+             aria-expanded="false"
+             autocapitalize="none"
+             spellcheck="false"
+             role="combobox"
+             data-cy="select"
+             value
+             style="width: 100%;"
+      >
+      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                tabindex="-1"
+                type="button"
+                aria-label="Open"
+                title="Open"
+        >
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+               focusable="false"
+               aria-hidden="true"
+               viewbox="0 0 24 24"
+               data-testid="ArrowDropDownIcon"
+          >
+            <path d="M7 10l5 5 5-5z">
+            </path>
+          </svg>
+          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+          </span>
+        </button>
+      </div>
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Select
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Inputs/Select VirtualizedWith1000Elements smoke-test 1`] = `
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+     data-cy="select-outer-wrapper"
+>
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+       style="width: 100%;"
+  >
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r10:"
+           id=":r10:-label"
+    >
+      Select
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             autocomplete="off"
+             id=":r10:"
+             placeholder="Select a value"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             aria-autocomplete="both"
+             aria-expanded="false"
+             autocapitalize="none"
+             spellcheck="false"
+             role="combobox"
+             data-cy="select"
+             value
+             style="width: 100%;"
+      >
+      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                tabindex="-1"
+                type="button"
+                aria-label="Open"
+                title="Open"
+        >
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+               focusable="false"
+               aria-hidden="true"
+               viewbox="0 0 24 24"
+               data-testid="ArrowDropDownIcon"
+          >
+            <path d="M7 10l5 5 5-5z">
+            </path>
+          </svg>
+          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+          </span>
+        </button>
+      </div>
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Select
+          </span>
+        </legend>
+      </fieldset>
     </div>
   </div>
 </div>

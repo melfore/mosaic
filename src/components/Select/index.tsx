@@ -9,9 +9,10 @@ import {
   PopperProps as MUIPopperProps,
 } from "@mui/material";
 
-import { SelectProps } from "../../types/Select";
+import { SelectData, SelectDataAllowed, SelectMultipleData, SelectProps, SelectSingleData } from "../../types/Select";
 import { getComposedDataCy, suppressEvent } from "../../utils";
 import localized, { ILocalizableProperty } from "../../utils/hocs/localized";
+import { logInfo, logWarn } from "../../utils/logger";
 
 import SelectGroup, { SELECT_GROUP_SUBPART } from "./components/Group";
 import SelectInput, { SELECT_LOADING_SUBPART } from "./components/Input";
@@ -41,7 +42,7 @@ export const SUBPARTS_MAP = {
   },
 };
 
-const Select = <T extends any>({
+const Select = <T extends SelectDataAllowed>({
   autoComplete = true,
   autoSort = false,
   customOptionRendering,
@@ -53,7 +54,7 @@ const Select = <T extends any>({
   groupBy,
   label,
   loading = false,
-  multiple = false,
+  multiple,
   onChange: externalOnChange,
   onClose: externalOnClose,
   onInputChange: externalOnInputChange,
@@ -70,13 +71,15 @@ const Select = <T extends any>({
   variant = "outlined",
   virtualized = false,
 }: SelectProps<T>) => {
+  const outerWrapperDataCy = useMemo(() => getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper), [dataCy]);
+
   const getOptionLabel = useCallback(
-    (option: T): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
+    (option: SelectData<T>): string => (externalGetOptionLabel ? externalGetOptionLabel(option) : `${option}`),
     [externalGetOptionLabel]
   );
 
   const isOptionSelected = useCallback(
-    (option: T, value: T): boolean => {
+    (option: SelectData<T>, value: SelectData<T>): boolean => {
       if (getOptionSelected) {
         return getOptionSelected(option, value);
       }
@@ -84,14 +87,6 @@ const Select = <T extends any>({
       return !!value && option === value;
     },
     [getOptionSelected]
-  );
-
-  const onChange = useCallback(
-    (event: SyntheticEvent, value: any) => {
-      suppressEvent(event);
-      externalOnChange(value);
-    },
-    [externalOnChange]
   );
 
   const onClose = useCallback(
@@ -126,6 +121,7 @@ const Select = <T extends any>({
 
       const { clientHeight, scrollHeight, scrollTop } = listboxNode;
       const scrollEnded = clientHeight + scrollTop === scrollHeight;
+      logInfo("Select.onScroll  ", `ch ${clientHeight} / st ${scrollTop} / sh ${scrollHeight} / ${scrollEnded}`);
       if (scrollEnded) {
         onScrollEnd();
       }
@@ -154,7 +150,7 @@ const Select = <T extends any>({
     }
 
     if (groupBy) {
-      options = options.sort((one: T, another: T) => {
+      options = options.sort((one: SelectData<T>, another: SelectData<T>) => {
         const oneGroup = groupBy(one);
         const anotherGroup = groupBy(another);
         return oneGroup.localeCompare(anotherGroup);
@@ -162,7 +158,7 @@ const Select = <T extends any>({
     }
 
     if (autoSort) {
-      options = options.sort((one: T, another: T) => {
+      options = options.sort((one: SelectData<T>, another: SelectData<T>) => {
         const oneLabel = getOptionLabel(one);
         const anotherLabel = getOptionLabel(another);
         return oneLabel.localeCompare(anotherLabel);
@@ -172,10 +168,16 @@ const Select = <T extends any>({
     return options;
   }, [autoSort, externalOptions, getOptionLabel, groupBy]);
 
-  const outerWrapperDataCy = useMemo(() => getComposedDataCy(dataCy, SUBPARTS_MAP.outerWrapper), [dataCy]);
+  const listboxComponent = useMemo(() => {
+    if (!virtualized) {
+      return undefined;
+    }
+
+    return SelectListBox({ multiple, options, optionsNumber });
+  }, [multiple, options, optionsNumber, virtualized]);
 
   const isOptionSelectable = useCallback(
-    (value: T | null): boolean => !!value && options.some((option) => isOptionSelected(option, value)),
+    (value: SelectData<T> | null): boolean => !!value && options.some((option) => isOptionSelected(option, value)),
     [options, isOptionSelected]
   );
 
@@ -206,12 +208,13 @@ const Select = <T extends any>({
   );
 
   const renderCustomOption = useCallback(
-    (option: T, selected: boolean) => (customOptionRendering ? customOptionRendering(option, selected) : undefined),
+    (option: SelectData<T>, selected: boolean) =>
+      customOptionRendering ? customOptionRendering(option, selected) : undefined,
     [customOptionRendering]
   );
 
   const renderOption = useCallback(
-    (props: HTMLAttributes<HTMLLIElement>, option: T, { selected }: MUIAutocompleteRenderOptionState) => {
+    (props: HTMLAttributes<HTMLLIElement>, option: SelectData<T>, { selected }: MUIAutocompleteRenderOptionState) => {
       const { id: key } = props;
       return (
         <SelectOption
@@ -234,31 +237,58 @@ const Select = <T extends any>({
     [popperWidth]
   );
 
-  const validateValue = useCallback(
-    (value: T | T[] | null): T | T[] | null => {
-      if (multiple) {
-        const isValidMultipleValue = Array.isArray(value) && value.length > 0 && value.every(isOptionSelectable);
-        return isValidMultipleValue ? value : [];
-      }
+  if (multiple === false) {
+    const onChangeSingle = (event: SyntheticEvent, value: SelectSingleData<T>) => {
+      suppressEvent(event);
+      externalOnChange && externalOnChange(value);
+    };
 
-      const isValidValue = !Array.isArray(value) && isOptionSelectable(value);
-      return isValidValue ? value : null;
-    },
-    [isOptionSelectable, multiple]
-  );
-
-  const validatedValue = useMemo(() => validateValue(value), [validateValue, value]);
-
-  const listboxComponent = useMemo(() => {
-    if (!virtualized) {
-      return undefined;
+    let singleValue: SelectSingleData<T> = null;
+    if (!Array.isArray(value) && isOptionSelectable(value)) {
+      singleValue = value;
+    } else {
+      logWarn("Select", `Provided value is not valid '${value}'`);
     }
 
-    return SelectListBox({ multiple, options, optionsNumber });
-  }, [multiple, options, optionsNumber, virtualized]);
+    return (
+      <MUIAutocomplete<SelectData<T>, false>
+        autoComplete={autoComplete}
+        data-cy={outerWrapperDataCy}
+        disableCloseOnSelect={multiple}
+        disabled={disabled}
+        getOptionLabel={getOptionLabel}
+        groupBy={groupBy}
+        isOptionEqualToValue={isOptionSelected}
+        ListboxComponent={listboxComponent}
+        ListboxProps={listboxProps}
+        loading={loading}
+        onChange={onChangeSingle}
+        onClose={onClose}
+        onInputChange={onInputChange}
+        options={options}
+        PopperComponent={renderPopper}
+        renderGroup={renderGroup}
+        renderInput={renderInput}
+        renderOption={renderOption}
+        value={singleValue}
+      />
+    );
+  }
+
+  const onChangeMultiple = (event: SyntheticEvent, value: SelectMultipleData<T>) => {
+    suppressEvent(event);
+    externalOnChange && externalOnChange(value);
+  };
+
+  let multipleValue: SelectMultipleData<T> = [];
+  if (Array.isArray(value) && value.length > 0 && value.every(isOptionSelectable)) {
+    multipleValue = value;
+  } else {
+    logWarn("Select", `Provided value is not valid '${value}'`);
+  }
 
   return (
-    <MUIAutocomplete<T, boolean>
+    <MUIAutocomplete<SelectData<T>, true>
       autoComplete={autoComplete}
       data-cy={outerWrapperDataCy}
       disableCloseOnSelect={multiple}
@@ -269,8 +299,8 @@ const Select = <T extends any>({
       ListboxComponent={listboxComponent}
       ListboxProps={listboxProps}
       loading={loading}
-      multiple={multiple}
-      onChange={onChange}
+      multiple
+      onChange={onChangeMultiple}
       onClose={onClose}
       onInputChange={onInputChange}
       options={options}
@@ -278,19 +308,21 @@ const Select = <T extends any>({
       renderGroup={renderGroup}
       renderInput={renderInput}
       renderOption={renderOption}
-      value={validatedValue}
+      value={multipleValue}
     />
   );
 };
 
-export const LocalizedSelect = localized(Select as any, {
+export const LocalizedSelect = localized(Select, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
-}) as <T extends any>(props: SelectProps<T>) => JSX.Element;
+}) as <T extends SelectDataAllowed>(props: SelectProps<T>) => JSX.Element;
 
 /**
  * @deprecated Select offers built-in prop virtualized
  */
-export const SelectVirtualized = <T extends any>(props: SelectProps<T>) => <LocalizedSelect {...props} virtualized />;
+export const SelectVirtualized = <T extends SelectDataAllowed>(props: SelectProps<T>) => (
+  <LocalizedSelect {...props} virtualized />
+);
 
 export default LocalizedSelect;

@@ -1,20 +1,18 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { CSSProperties, ReactNode, useCallback, useMemo } from "react";
 import { VariableSizeList } from "react-window";
 
-import { SelectProps } from "../../../../types/Select";
+import { SelectDataAllowed, SelectProps } from "../../../../types/Select";
 import useResetCache from "../../hooks/useResetCache";
 import SelectListBoxRow from "../ListBoxRow";
 
-type SelectListBoxProps<T extends any> = Pick<SelectProps<T>, "multiple" | "options" | "optionsNumber">;
+type SelectListBoxProps<T extends SelectDataAllowed> = Pick<SelectProps<T>, "multiple" | "options" | "optionsNumber">;
 
 const ITEM_HEIGHT_DEFAULT = 40;
 const ITEM_HEIGHT_MULTIPLE = 55;
 const ITEMS_THRESHOLD_DEFAULT = 5;
 const ITEMS_THRESHOLD_MULTIPLE = 6;
 
-const SelectListBox = <T extends any>({ multiple, options, optionsNumber }: SelectListBoxProps<T>) =>
+const SelectListBox = <T extends SelectDataAllowed>({ multiple, options, optionsNumber }: SelectListBoxProps<T>) =>
   React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLElement>>(function ListboxComponent(props, ref) {
     const { children, ...other } = props;
 

@@ -15,19 +15,23 @@
 
 - `npm start`
 
-  Launches `storybook` on port `9009`
+  Launches `Storybook` on port `9009`
 
 - `npm run build`
 
   Compiles the code with `tsc` and saves the output into `/dist`
 
-- `npm test`
+- `npm run test`
 
-  Launches `Jest` test suite
+  Launches `Storybook` test suite
 
 - `npm run test:coverage`
 
-  Launches `Jest` test suite in coverage mode and saves the output into `/coverage`
+  Launches `Storybook` test suite in coverage mode and saves the output into `/coverage`
+
+- `npm run test:report`
+
+  After running `npm run test:coverage` generates an HTML report of the coverage
 
 ## Local testing
 

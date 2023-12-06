@@ -35,6 +35,11 @@ jobs:
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
 
+    - name: Generate Docs
+      id: generate-docs
+      run: |
+        npm run build:storybook:beta
+
     - name: Test runner
       run: |
         npx playwright install --with-deps

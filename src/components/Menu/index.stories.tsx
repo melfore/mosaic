@@ -2,7 +2,7 @@ import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, screen, userEvent, within } from "@storybook/testing-library";
 
 import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
@@ -43,31 +43,30 @@ const onItemClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick item hand
 
 export const Primary: Story = {
   args: {
-    items: [{ label: "Item", onClick: onItemClickMock, value: "Value" }],
+    items: [
+      { label: "Item1", onClick: onItemClickMock, value: "Value" },
+      { label: "Item2", value: "Value" },
+    ],
     label: "Label",
     onItemClick: onClickMock,
   },
-  play: async ({ canvasElement, step }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByTestId(`${DATA_CY_DEFAULT}-button`);
     if (!button) {
       return;
     }
 
-    await step("Open Menu", async () => {
-      await userEvent.click(button);
-      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
-    });
+    await userEvent.click(button);
+    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
 
-    // await step("Click Menu Item", async () => {
-    //   const item = canvas.getByTestId(`${DATA_CY_DEFAULT}-item-0`);
-    //   if (!item) {
-    //     return;
-    //   }
+    const listbox = within(screen.getByRole("presentation")).getByRole("menu");
+    const options = within(listbox).getAllByRole("menuitem");
+    fireEvent.click(options[0]);
+    await expect(onItemClickMock).toHaveBeenCalledTimes(onItemClickMock.mock.calls.length);
 
-    //   await userEvent.click(item);
-    //   await expect(onItemClickMock).toHaveBeenCalledTimes(onItemClickMock.mock.calls.length);
-    // });
+    fireEvent.click(options[1]);
+    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
   },
 };
 

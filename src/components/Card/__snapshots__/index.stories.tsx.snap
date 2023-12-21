@@ -48,8 +48,6 @@ exports[`Surfaces/Card Actions smoke-test 1`] = `
             </svg>
           </span>
           Gallery
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
     </div>
@@ -100,20 +98,6 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
         <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z">
         </path>
       </svg>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-        <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-        >
-          <span class="MuiTouchRipple-child MuiTouchRipple-childPulsate">
-          </span>
-        </span>
-        <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-        >
-          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-          </span>
-        </span>
-      </span>
     </button>
   </div>
   <div class="MuiCollapse-root MuiCollapse-vertical css-1fkrdiv-MuiCollapse-root"
@@ -181,8 +165,6 @@ exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
             </svg>
           </span>
           Gallery
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
     </div>
@@ -201,8 +183,6 @@ exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
         <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
         </path>
       </svg>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-      </span>
     </button>
   </div>
   <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"

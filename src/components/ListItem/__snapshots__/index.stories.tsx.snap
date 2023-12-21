@@ -12,8 +12,6 @@ exports[`Display/ListItem Children smoke-test 1`] = `
   >
     Collapisble Children
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -29,14 +27,6 @@ exports[`Display/ListItem Clickable play-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-          style="width: 1251px; height: 1251px; top: -601.5px; left: -1.4998px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-      </span>
-    </span>
-  </span>
 </div>
 `;
 
@@ -52,8 +42,6 @@ exports[`Display/ListItem Dense smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -81,8 +69,6 @@ exports[`Display/ListItem Icon smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -111,8 +97,6 @@ exports[`Display/ListItem IconCustom smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -135,8 +119,6 @@ exports[`Display/ListItem IconLoading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
     </span>
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -153,8 +135,6 @@ exports[`Display/ListItem Loading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
     </span>
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -170,8 +150,6 @@ exports[`Display/ListItem Primary smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;
 
@@ -187,7 +165,5 @@ exports[`Display/ListItem Selected smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-  </span>
 </div>
 `;

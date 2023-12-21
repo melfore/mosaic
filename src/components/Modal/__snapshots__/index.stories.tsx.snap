@@ -20,8 +20,6 @@ exports[`Feedback/Modal ActionCancel smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -46,8 +44,6 @@ exports[`Feedback/Modal ActionConfirm smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -72,8 +68,6 @@ exports[`Feedback/Modal Actions smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -98,8 +92,6 @@ exports[`Feedback/Modal Closeable smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -124,8 +116,6 @@ exports[`Feedback/Modal Localized smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -150,8 +140,6 @@ exports[`Feedback/Modal Primary smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -176,8 +164,6 @@ exports[`Feedback/Modal SizeFullScreen smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -202,8 +188,6 @@ exports[`Feedback/Modal SizeLarge smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;
@@ -228,8 +212,6 @@ exports[`Feedback/Modal SizeSmall smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-    </span>
   </button>
 </div>
 `;

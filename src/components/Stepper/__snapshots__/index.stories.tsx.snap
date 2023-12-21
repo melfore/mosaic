@@ -111,8 +111,6 @@ exports[`Navigation/Stepper ActiveStep smoke-test 1`] = `
                   style="margin-right: 1px;"
           >
             Back
-            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-            </span>
           </button>
           <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
                   tabindex="0"
@@ -120,8 +118,6 @@ exports[`Navigation/Stepper ActiveStep smoke-test 1`] = `
                   data-cy="button"
           >
             Next
-            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-            </span>
           </button>
         </div>
       </div>
@@ -258,8 +254,6 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
                   data-cy="button"
           >
             Avanti
-            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-            </span>
           </button>
         </div>
       </div>
@@ -396,8 +390,6 @@ exports[`Navigation/Stepper Primary smoke-test 1`] = `
                   data-cy="button"
           >
             Next
-            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-            </span>
           </button>
         </div>
       </div>

@@ -46,8 +46,6 @@ exports[`Inputs/Select AutoSort smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -112,8 +110,6 @@ exports[`Inputs/Select Autocomplete play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -178,8 +174,6 @@ exports[`Inputs/Select AutocompleteChange play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -308,8 +302,6 @@ exports[`Inputs/Select Grouped play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -374,8 +366,6 @@ exports[`Inputs/Select GroupedCustomLabel play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -433,8 +423,6 @@ exports[`Inputs/Select Loading smoke-test 1`] = `
               <path d="M7 10l5 5 5-5z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-            </span>
           </button>
         </div>
         <fieldset aria-hidden="true"
@@ -498,8 +486,6 @@ exports[`Inputs/Select Localized smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -582,8 +568,6 @@ exports[`Inputs/Select Multiple play-test 1`] = `
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
                 tabindex="-1"
@@ -600,8 +584,6 @@ exports[`Inputs/Select Multiple play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -666,8 +648,6 @@ exports[`Inputs/Select OnScrollEndCallback play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -732,8 +712,6 @@ exports[`Inputs/Select OptionCustomLabel play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -798,8 +776,6 @@ exports[`Inputs/Select OptionCustomRendering play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -862,8 +838,6 @@ exports[`Inputs/Select Primary play-test 1`] = `
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
                 tabindex="-1"
@@ -880,8 +854,6 @@ exports[`Inputs/Select Primary play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -950,8 +922,6 @@ exports[`Inputs/Select Required smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -1014,8 +984,6 @@ exports[`Inputs/Select SizeSmall smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -1078,8 +1046,6 @@ exports[`Inputs/Select Styled smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -1142,8 +1108,6 @@ exports[`Inputs/Select VariantFilled smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
     </div>
@@ -1197,8 +1161,6 @@ exports[`Inputs/Select VariantStandard smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
     </div>
@@ -1254,8 +1216,6 @@ exports[`Inputs/Select Virtualized play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
@@ -1320,8 +1280,6 @@ exports[`Inputs/Select VirtualizedWith1000Elements play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
-          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
-          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"

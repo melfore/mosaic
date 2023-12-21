@@ -46,8 +46,8 @@ export const parameters = {
       desktopDefault: {
         name: "desktopDefault",
         styles: {
-          height: 900,
-          width: 1450,
+          height: "900px",
+          width: "1450px",
         },
       },
     },

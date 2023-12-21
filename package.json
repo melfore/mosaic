@@ -107,7 +107,7 @@
     "pre:test": "copyfiles -a -f ./.typescript/test/tsconfig.json ./",
     "prepare": "husky install",
     "start": "npm run pre:test && storybook dev -p 6006",
-    "start:ci": "npm run pre:test && storybook dev -p 6006 --docs --ci",
+    "start:ci": "npm run pre:test && storybook dev -p 6006 --ci",
     "test": "test-storybook --watch",
     "test:ci": "test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose",
     "test:coverage": "test-storybook --coverage --coverageDirectory coverage/storybook",

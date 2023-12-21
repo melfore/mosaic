@@ -1,7 +1,9 @@
 import { IBase } from "./Base";
 
-export type ProgressType = IBase & {
-  type: "Circular" | "Linear";
+type ProgressType = "circular" | "linear";
+
+export type ProgressProps = IBase & {
+  type: ProgressType;
   withLabel?: boolean;
   color?: "primary" | "success" | "error";
   variant?: "determinate" | "indeterminate";

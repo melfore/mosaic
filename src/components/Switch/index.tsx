@@ -62,9 +62,9 @@ const Switch: FC<ISwitch> = ({
   );
 };
 
-export const SwitchWithProps = Switch;
-
-export default localized(Switch, {
+export const LocalizedSwitch = localized(Switch, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedSwitch;

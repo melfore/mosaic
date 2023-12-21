@@ -35,8 +35,7 @@ export { ModalSize } from "./types/Modal";
 
 export { default as ModalWithTabs } from "./components/ModalWithTabs";
 
-export { default as Select } from "./components/Select";
-export { default as SelectVirtualized } from "./components/SelectVirtualized";
+export { default as Select, SelectVirtualized } from "./components/Select";
 
 export { default as Spacer } from "./components/Spacer";
 export { SpacerDirection } from "./types/Spacer";

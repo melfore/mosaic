@@ -1,4 +1,4 @@
-import React, { FC, Fragment, PropsWithChildren } from "react";
+import React, { FC, PropsWithChildren, useMemo } from "react";
 import { Collapse as MUICollapse } from "@mui/material";
 
 import { Icons } from "../../types/Icon";
@@ -31,12 +31,16 @@ const ListItemCollapsible: FC<PropsWithChildren<IListItemCollapsible>> = ({
   style,
   unmountContent = false,
 }) => {
+  const icon = useMemo(() => (open ? Icons.up : Icons.down), [open]);
+
+  const collapsibleContent = useMemo(() => content || children, [content, children]);
+
   return (
-    <Fragment>
+    <>
       <ListItem
         dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.header)}
         dense={dense}
-        icon={open ? Icons.up : Icons.down}
+        icon={icon}
         loading={loading}
         onClick={onClick}
         selected={selected}
@@ -50,9 +54,9 @@ const ListItemCollapsible: FC<PropsWithChildren<IListItemCollapsible>> = ({
         timeout={openTimeout}
         unmountOnExit={unmountContent}
       >
-        {content || children}
+        {collapsibleContent}
       </MUICollapse>
-    </Fragment>
+    </>
   );
 };
 

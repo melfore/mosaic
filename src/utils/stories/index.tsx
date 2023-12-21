@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import { ArgsTable, Primary, PRIMARY_STORY, Stories } from "@storybook/addon-docs";
+import { Controls, Primary, Stories } from "@storybook/addon-docs";
 
 import DocsE2E, { IDocsE2ETestInfo } from "./components/DocsE2E";
 import DocsIntro, { IDocsBasedOn } from "./components/DocsIntro";
@@ -32,7 +32,7 @@ const DocsPage: FC<IDocsPage> = ({ basedOn, component, e2eTestInfo, localizableP
       {/* Playground: rendering, props */}
       <DocsTitle text="Playground" subtitle />
       <Primary />
-      <ArgsTable story={PRIMARY_STORY} />
+      <Controls />
       {/* Localization */}
       <DocsLocale localizableProps={localizableProps} />
       {/* E2E Tests */}

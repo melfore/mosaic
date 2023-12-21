@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useMemo } from "react";
+import React, { FC, memo, PropsWithChildren, useMemo } from "react";
 import {
   Skeleton as MUISkeleton,
   Typography as MUITypography,
@@ -27,7 +27,7 @@ const Typography: FC<PropsWithChildren<ITypography>> = ({
   bottomSpacing = false,
   children,
   content,
-  dataCy = DATA_CY_DEFAULT,
+  dataCy: externalDataCy = DATA_CY_DEFAULT,
   display = "initial",
   loading = false,
   style,
@@ -59,9 +59,19 @@ const Typography: FC<PropsWithChildren<ITypography>> = ({
     }
   }, [variant]);
 
+  const dataCy = useMemo(() => `${externalDataCy}${loading ? "-loading" : ""}`, [externalDataCy, loading]);
+
+  const textContent = useMemo(() => {
+    if (loading) {
+      return <MUISkeleton />;
+    }
+
+    return content || children;
+  }, [children, content, loading]);
+
   return (
     <MUITypography
-      data-cy={`${dataCy}${loading ? "-loading" : ""}`}
+      data-cy={dataCy}
       display={display}
       gutterBottom={bottomSpacing}
       noWrap={truncated}
@@ -69,14 +79,16 @@ const Typography: FC<PropsWithChildren<ITypography>> = ({
       variant={muiVariant}
       variantMapping={VARIANT_COMPONENT_MAP}
     >
-      {loading ? <MUISkeleton /> : content || children}
+      {textContent}
     </MUITypography>
   );
 };
 
-export const TypographyWithProps = Typography;
+export const LocalizedTypography = memo(
+  localized(Typography, {
+    dataCyShortcut: "dataCy",
+    localizableProps: LOCALIZABLE_PROPS,
+  })
+);
 
-export default localized(Typography, {
-  dataCyShortcut: "dataCy",
-  localizableProps: LOCALIZABLE_PROPS,
-});
+export default LocalizedTypography;

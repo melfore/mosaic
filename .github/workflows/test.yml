@@ -34,8 +34,15 @@ jobs:
     - name: Install Dependencies
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: npm ci
-    
-    - name: Unit Tests
-      run: npm run test:coverage
-      env:
-        CI: true
+
+    - name: Generate Docs
+      id: generate-docs
+      run: |
+        npm run build:storybook
+
+    - name: Test runner
+      run: |
+        npx playwright install --with-deps
+        npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "npm run start:ci" \
+          "npx wait-on tcp:127.0.0.1:6006 -d 10000 && npm run test:ci"

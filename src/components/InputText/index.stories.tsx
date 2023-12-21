@@ -1,21 +1,24 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
-import { formDecorator } from "../../utils/mocks/FormMock";
+import { logInfo } from "../../utils/logger";
+import FormDecorator, { FormValue } from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import InputText, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputTextWithProps, LOCALIZABLE_PROPS } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedInputText } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "InputText";
-InputText.displayName = COMPONENT_NAME;
-InputTextWithProps.displayName = COMPONENT_NAME;
+LocalizedInputText.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Inputs/InputText",
-  component: InputTextWithProps,
-  decorators: [formDecorator, localeDecorator],
+  component: LocalizedInputText,
+  decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -32,94 +35,121 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof InputTextWithProps>;
+} satisfies Meta<typeof LocalizedInputText>;
 
-const Template: ComponentStory<typeof InputTextWithProps> = (args) => <InputText {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Label",
-  value: "Value",
-};
+const onChangeMock = jest.fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
 
-export const Adornment = Template.bind({});
-Adornment.args = {
-  ...Primary.args,
-  adornment: {
-    icon: Icons.close,
+export const Primary: Story = {
+  args: {
+    label: "Label",
+    onChange: onChangeMock,
+    value: "Value",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const inputText = canvas.getByTestId(DATA_CY_DEFAULT);
+    if (!inputText) {
+      return;
+    }
+
+    await userEvent.type(inputText, "Changed");
+    await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+    await expect(onChangeMock).toHaveBeenLastCalledWith("ValueChanged");
   },
 };
 
-export const AdornmentClickable = Template.bind({});
-AdornmentClickable.args = {
-  ...Primary.args,
-  adornment: {
-    icon: Icons.close,
-    onClick: () => {},
+export const Adornment: Story = {
+  args: {
+    ...Primary.args,
+    adornment: {
+      icon: Icons.close,
+    },
   },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
-};
-
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  label: MessageMock.inputText,
-  placeholder: MessageMock.placeholder,
-};
-
-export const Multiline = Template.bind({});
-Multiline.args = {
-  ...Primary.args,
-  multiline: {
-    rows: 3,
-    rowsMax: 5,
+export const AdornmentClickable: Story = {
+  args: {
+    ...Primary.args,
+    adornment: {
+      icon: Icons.close,
+      onClick: () => {},
+    },
   },
 };
 
-export const Placeholder = Template.bind({});
-Placeholder.args = {
-  label: "Label",
-  placeholder: "Enter value...",
-  value: undefined,
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  ...Primary.args,
-  required: true,
-};
-
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
-};
-
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    color: "red",
-    fontWeight: "bold",
-    fontSize: "large",
-    textAlign: "center",
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
   },
 };
 
-export const VariantFilled = Template.bind({});
-VariantFilled.args = {
-  ...Primary.args,
-  variant: "filled",
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    label: MessageMock.inputText,
+    placeholder: MessageMock.placeholder,
+  },
 };
 
-export const VariantStandard = Template.bind({});
-VariantStandard.args = {
-  ...Primary.args,
-  variant: "standard",
+export const Multiline: Story = {
+  args: {
+    ...Primary.args,
+    multiline: {
+      rows: 3,
+      rowsMax: 5,
+    },
+  },
+};
+
+export const Placeholder: Story = {
+  args: {
+    label: "Label",
+    placeholder: "Enter value...",
+    value: undefined,
+  },
+};
+
+export const Required: Story = {
+  args: {
+    ...Primary.args,
+    required: true,
+  },
+};
+
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
+};
+
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      color: "red",
+      fontWeight: "bold",
+      fontSize: "large",
+      textAlign: "center",
+    },
+  },
+};
+
+export const VariantFilled: Story = {
+  args: {
+    ...Primary.args,
+    variant: "filled",
+  },
+};
+
+export const VariantStandard: Story = {
+  args: {
+    ...Primary.args,
+    variant: "standard",
+  },
 };

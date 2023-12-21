@@ -1,13 +1,22 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import getDocsPage from "../../utils/stories";
 
 import Spacer, { DATA_CY_DEFAULT } from ".";
 
-export default {
+const meta = {
   title: "Display/Spacer",
   component: Spacer,
+  decorators: [
+    (Story, { args: { direction } }) => (
+      <div id="flex-content" style={{ display: "flex", flexDirection: direction === "vertical" ? "column" : "row" }}>
+        <div id="first-content">First Content</div>
+        {Story()}
+        <div id="second-content">Second Content</div>
+      </div>
+    ),
+  ],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -19,18 +28,32 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof Spacer>;
+} satisfies Meta<typeof Spacer>;
 
-const Template: ComponentStory<typeof Spacer> = (args) => <Spacer {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-  (Story, { args: { direction } }) => (
-    <div id="flex-content" style={{ display: "flex", flexDirection: direction === "vertical" ? "column" : "row" }}>
-      <div id="first-content">First Content</div>
-      {Story()}
-      <div id="second-content">Second Content</div>
-    </div>
-  ),
-];
+export const Primary: Story = {
+  args: {},
+};
+
+export const InvalidSpacing: Story = {
+  args: {
+    ...Primary.args,
+    level: -999,
+  },
+};
+
+export const HorizontalSpacing: Story = {
+  args: {
+    ...Primary.args,
+    direction: "horizontal",
+  },
+};
+
+export const VerticalSpacing: Story = {
+  args: {
+    ...Primary.args,
+    direction: "vertical",
+  },
+};

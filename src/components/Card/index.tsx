@@ -148,9 +148,9 @@ const Card: FC<PropsWithChildren<ICard>> = ({
   );
 };
 
-export const CardWithProps = Card;
-
-export default localized(Card, {
+export const LocalizedCard = localized(Card, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedCard;

@@ -1,18 +1,23 @@
 import React from "react";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
+import { getComposedDataCy } from "../../utils";
+import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import BreadCrumbs, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import BreadCrumbs, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "BreadCrumbs";
 BreadCrumbs.displayName = COMPONENT_NAME;
-//ProgressWithProps.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Navigation/BreadCrumbs",
   component: BreadCrumbs,
   decorators: [localeDecorator],
@@ -32,67 +37,85 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof BreadCrumbs>;
+} satisfies Meta<typeof BreadCrumbs>;
 
-const Template: ComponentStory<typeof BreadCrumbs> = (args) => <BreadCrumbs {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  links: [
-    {
-      label: "page1",
-      href: "",
-    },
-    {
-      label: "page2",
-      href: "",
-    },
-    {
-      label: "page3",
-      href: "",
-    },
-  ],
+const linksMock = [
+  { label: "page1", href: "//google.com/page1" },
+  { label: "page2", href: "//google.com/page2" },
+  { label: "page3", href: "//google.com/page3" },
+];
+
+const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+
+export const Primary: Story = {
+  args: {
+    dataCy: DATA_CY_DEFAULT,
+    links: linksMock,
+    onClick: onClickMock,
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step("First Link", async () => {
+      const firstIndex = 0;
+      const firstLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, firstIndex);
+      const firstLink = canvas.getAllByTestId(firstLinkDataCy).at(0);
+      if (!firstLink) {
+        return;
+      }
+
+      await userEvent.click(firstLink);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+      await expect(onClickMock).toHaveBeenCalledWith(linksMock[firstIndex].href);
+    });
+
+    await step("Last Link", async () => {
+      const lastIndex = linksMock.length - 1;
+      const lastLinkDataCy = getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.links, lastIndex);
+      const lastLink = canvas.getAllByTestId(lastLinkDataCy).at(0);
+      if (!lastLink) {
+        return;
+      }
+
+      await userEvent.click(lastLink);
+      await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+    });
+  },
 };
 
-export const SeparatorCustom = Template.bind({});
-SeparatorCustom.args = { ...Primary.args, separator: "<" };
-
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  links: [
-    {
-      label: "page1",
-      href: "",
-      icon: Icons.clock,
-    },
-    {
-      label: "page2",
-      href: "",
-    },
-    {
-      label: "page3",
-      href: "",
-      icon: <AccessibilityIcon color="primary" />,
-    },
-  ],
-  size: "medium",
+export const CustomSeparator: Story = {
+  args: {
+    ...Primary.args,
+    separator: ">",
+  },
 };
 
-export const Localized = Template.bind({});
-Localized.args = {
-  localized: true,
-  links: [
-    {
-      label: "locale.page1",
-      href: "",
-    },
-    {
-      label: "locale.page2",
-      href: "",
-    },
-    {
-      label: "locale.page3",
-      href: "",
-    },
-  ],
+export const SizeMedium: Story = {
+  args: {
+    ...Primary.args,
+    size: "medium",
+  },
+};
+
+export const SizeLarge: Story = {
+  args: {
+    ...Primary.args,
+    size: "large",
+  },
+};
+
+export const WithIcons: Story = {
+  args: {
+    links: linksMock.map((link, index) => ({ ...link, icon: index % 2 === 0 ? Icons.clock : <AccessibilityIcon /> })),
+  },
+};
+
+export const Localized: Story = {
+  args: {
+    localized: true,
+    links: linksMock.map((link) => ({ ...link, label: `locale.${link.label}` })),
+  },
 };

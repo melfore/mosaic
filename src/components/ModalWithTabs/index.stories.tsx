@@ -47,7 +47,7 @@ Primary.args = {
   labelList: [
     { label: "PAGE 1", content: "PAGE 1 Content" },
     { label: "PAGE 2", content: <div>PAGE 2 Content</div> },
-    { label: "PAGE 3", content: <Progress type="Linear" /> },
+    { label: "PAGE 3", content: <Progress type="linear" /> },
   ],
   children: "Generic modal content not enclosed in Tabs...",
 };

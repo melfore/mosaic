@@ -86,9 +86,9 @@ const AppBar: FC<AppBarProps> = ({
   );
 };
 
-export const AppBarWithProps = AppBar;
-
-export default localized(AppBar, {
+export const LocalizedAppBar = localized(AppBar, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default AppBar;

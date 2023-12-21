@@ -124,9 +124,9 @@ const InputNumber: FC<IInputNumber> = ({
   );
 };
 
-export const InputNumberWithProps = InputNumber;
-
-export default localized(InputNumber, {
+export const LocalizedInputNumber = localized(InputNumber, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedInputNumber;

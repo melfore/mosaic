@@ -1,21 +1,19 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import { formDecorator } from "../../utils/mocks/FormMock";
+import FormDecorator from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import Switch, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP, SwitchWithProps } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedSwitch, SUBPARTS_MAP } from ".";
 
 const COMPONENT_NAME = "Switch";
-Switch.displayName = COMPONENT_NAME;
-SwitchWithProps.displayName = COMPONENT_NAME;
+LocalizedSwitch.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Inputs/Switch",
-  component: SwitchWithProps,
-  decorators: [formDecorator, localeDecorator],
+  component: LocalizedSwitch,
+  decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -33,56 +31,65 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof SwitchWithProps>;
+} satisfies Meta<typeof LocalizedSwitch>;
 
-const Template: ComponentStory<typeof SwitchWithProps> = (args) => <Switch {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  value: true,
+export const Primary: Story = {
+  args: {
+    value: true,
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
 };
 
-export const DisableRipple = Template.bind({});
-DisableRipple.args = {
-  ...Primary.args,
-  disableRipple: true,
+export const DisableRipple: Story = {
+  args: {
+    ...Primary.args,
+    disableRipple: true,
+  },
 };
 
-export const Label = Template.bind({});
-Label.args = {
-  ...Primary.args,
-  label: "Switch",
+export const Label: Story = {
+  args: {
+    ...Primary.args,
+    label: "Switch",
+  },
 };
 
-export const LabelEnd = Template.bind({});
-LabelEnd.args = {
-  ...Label.args,
-  labelPlacement: "end",
+export const LabelEnd: Story = {
+  args: {
+    ...Label.args,
+    labelPlacement: "end",
+  },
 };
 
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  label: MessageMock.switch,
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    label: MessageMock.switch,
+  },
 };
 
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
 };
 
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    color: "red",
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      color: "red",
+    },
   },
 };

@@ -127,7 +127,9 @@ const DateTimePicker: FC<DateTimePickerType> = ({
   );
 };
 
-export default localized(DateTimePicker, {
+export const LocalizedDateTimePicker = localized(DateTimePicker, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default DateTimePicker;

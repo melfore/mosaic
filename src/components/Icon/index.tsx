@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, PropsWithChildren, ReactElement, ReactNode, useCallback, useMemo } from "react";
+import React, { cloneElement, FC, memo, PropsWithChildren, ReactElement, ReactNode, useCallback, useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import { keyframes, Skeleton as MUISkeleton } from "@mui/material";
 
@@ -112,4 +112,4 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
   return renderWithAnimation(icon);
 };
 
-export default Icon;
+export default memo(Icon);

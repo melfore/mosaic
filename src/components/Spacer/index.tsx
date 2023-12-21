@@ -1,23 +1,29 @@
-import React, { FC, useMemo } from "react";
+import React, { CSSProperties, FC, memo, useMemo } from "react";
+import { useTheme } from "@mui/material";
 
 import { ISpacer } from "../../types/Spacer";
 
 export const DATA_CY_DEFAULT = "spacer";
 
 const Spacer: FC<ISpacer> = ({ dataCy = DATA_CY_DEFAULT, direction = "horizontal", level: externalLevel = 1 }) => {
-  const size = useMemo(() => {
-    let level = externalLevel;
-    if (level < 0 || !level) {
-      level = 1;
-    }
+  const { spacing } = useTheme();
 
-    return level * 8;
-  }, [externalLevel]);
+  const level = useMemo(() => (externalLevel < 0 || !externalLevel ? 1 : externalLevel), [externalLevel]);
 
-  const height = useMemo(() => (direction === "horizontal" ? 0 : `${size}px`), [direction, size]);
-  const width = useMemo(() => (direction === "horizontal" ? `${size}px` : 0), [direction, size]);
+  const height = useMemo(() => (direction === "horizontal" ? 0 : spacing(level)), [direction, level, spacing]);
 
-  return <div data-cy={dataCy} style={{ display: "block", height, width }} />;
+  const width = useMemo(() => (direction === "horizontal" ? spacing(level) : 0), [direction, level, spacing]);
+
+  const style = useMemo(
+    (): CSSProperties => ({
+      display: "block",
+      height,
+      width,
+    }),
+    [height, width]
+  );
+
+  return <div data-cy={dataCy} style={style} />;
 };
 
-export default Spacer;
+export default memo(Spacer);

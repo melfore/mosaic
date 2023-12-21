@@ -3,6 +3,10 @@ import { ReactNode } from "react";
 import { ILoadable, ILocalizable } from "./Base";
 import { IInputField } from "./Input";
 
+export type SelectDataAllowed = number | object | string;
+
+export type SelectData<T extends SelectDataAllowed> = T;
+
 export interface SelectPopperProps {
   /**
    * Width of options list popup
@@ -10,7 +14,7 @@ export interface SelectPopperProps {
   popperWidth?: number;
 }
 
-interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable, IInputField {
+interface SelectBaseProps<T extends SelectDataAllowed> extends SelectPopperProps, ILocalizable, ILoadable, IInputField {
   /**
    * Enables autocomplete feature
    */
@@ -22,7 +26,7 @@ interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable,
   /**
    * Method to allow custom rendering of each option
    */
-  customOptionRendering?: (option: T, selected: boolean) => ReactNode;
+  customOptionRendering?: (option: SelectData<T>, selected: boolean) => ReactNode;
   /**
    * Method to determine group label from group name
    */
@@ -30,15 +34,15 @@ interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable,
   /**
    * Method to extract option label from option
    */
-  getOptionLabel?: (option: T) => string;
+  getOptionLabel?: (option: SelectData<T>) => string;
   /**
    * Method to determine currently selected option
    */
-  getOptionSelected?: (option: T, value: T) => boolean;
+  getOptionSelected?: (option: SelectData<T>, value: SelectData<T>) => boolean;
   /**
    * Method to group options using one option property
    */
-  groupBy?: (option: T) => string;
+  groupBy?: (option: SelectData<T>) => string;
   /**
    * Callback for close event
    */
@@ -54,33 +58,39 @@ interface SelectBaseProps<T> extends SelectPopperProps, ILocalizable, ILoadable,
   /**
    * List of available options
    */
-  options: T[];
+  options: SelectData<T>[];
   /**
    * Number of options
    */
   optionsNumber?: number;
+  /**
+   * For internal use
+   */
+  virtualized?: boolean;
 }
 
-type SingleSelectDataType<T> = T | null;
+export type SelectSingleData<T extends SelectDataAllowed> = SelectData<T> | null;
 
-interface SelectSingleProps<T> extends SelectBaseProps<T> {
+interface SelectSingleProps<T extends SelectDataAllowed> extends SelectBaseProps<T> {
   /**
    * Enables multiple mode
    */
   multiple: false;
-  onChange: (value: SingleSelectDataType<T>) => void;
-  value?: SingleSelectDataType<T>;
+  onChange?: (value: SelectSingleData<T>) => void;
+  value?: SelectSingleData<T>;
 }
 
-type MultipleSelectDataType<T> = T[] | null;
+export type SelectMultipleData<T extends SelectDataAllowed> = SelectData<T>[] | null;
 
-interface SelectMultipleProps<T> extends SelectBaseProps<T> {
+interface SelectMultipleProps<T extends SelectDataAllowed> extends SelectBaseProps<T> {
   /**
    * Enables multiple mode
    */
   multiple: true;
-  onChange: (value: MultipleSelectDataType<T>) => void;
-  value?: MultipleSelectDataType<T>;
+  onChange?: (value: SelectMultipleData<T>) => void;
+  value?: SelectMultipleData<T>;
 }
 
-export type SelectProps<T> = SelectSingleProps<T> | SelectMultipleProps<T>;
+export type SelectProps<T extends SelectDataAllowed, Multiple = boolean> = Multiple extends true
+  ? SelectMultipleProps<T>
+  : SelectSingleProps<T>;

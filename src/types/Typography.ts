@@ -14,7 +14,7 @@ export enum TypographyVariants {
   title = "h6",
 }
 
-type ITypographyVariants = "body" | "caption" | "label" | "overline" | "pagetitle" | "title";
+export type ITypographyVariants = "body" | "caption" | "label" | "overline" | "pagetitle" | "title";
 
 /**
  * @deprecated Use "block" | "initial" | "inline"

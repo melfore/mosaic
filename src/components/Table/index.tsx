@@ -485,9 +485,9 @@ const Table: FC<ITable> = ({
   );
 };
 
-export const TableWithProps = Table;
-
-export default localized(Table, {
+export const LocalizedTable = localized(Table, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedTable;

@@ -1,21 +1,24 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, userEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
-import { formDecorator } from "../../utils/mocks/FormMock";
+import { logInfo } from "../../utils/logger";
+import FormDecorator, { FormValue } from "../../utils/mocks/FormDecorator";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 
-import InputNumber, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, InputNumberWithProps, LOCALIZABLE_PROPS } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedInputNumber } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "InputNumber";
-InputNumber.displayName = COMPONENT_NAME;
-InputNumberWithProps.displayName = COMPONENT_NAME;
+LocalizedInputNumber.displayName = "InputNumber";
 
-export default {
+const meta = {
   title: "Inputs/InputNumber",
-  component: InputNumberWithProps,
-  decorators: [formDecorator, localeDecorator],
+  component: LocalizedInputNumber,
+  decorators: [FormDecorator, localeDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -32,107 +35,156 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof InputNumberWithProps>;
+} satisfies Meta<typeof LocalizedInputNumber>;
 
-const Template: ComponentStory<typeof InputNumberWithProps> = (args) => (
-  <InputNumber {...args} dataCy={DATA_CY_DEFAULT} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Label",
-  value: 5,
-};
+const onChangeMock = jest.fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
 
-export const Adornment = Template.bind({});
-Adornment.args = {
-  ...Primary.args,
-  adornment: {
-    icon: Icons.close,
+export const Primary: Story = {
+  args: {
+    label: "Label",
+    onChange: onChangeMock,
+    value: 5,
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const inputNumber = canvas.getByTestId(DATA_CY_DEFAULT);
+    if (!inputNumber) {
+      return;
+    }
+
+    await step("Invalid chars", async () => {
+      await userEvent.type(inputNumber, "e");
+      await userEvent.type(inputNumber, "E");
+      await userEvent.type(inputNumber, "+");
+      await userEvent.type(inputNumber, "-");
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+    });
+
+    // await step("NaN chars", async () => {
+    //   await userEvent.type(inputNumber, "T");
+    //   await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+    //   await expect(onChangeMock).toHaveBeenCalledWith(null);
+    // });
+
+    await step("Numeric chars", async () => {
+      await userEvent.type(inputNumber, "0");
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await expect(onChangeMock).toHaveBeenCalledWith(50);
+    });
+
+    await step("Blur away", async () => {
+      await userEvent.tab();
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await expect(onChangeMock).toHaveBeenCalledWith(50);
+    });
   },
 };
 
-export const AdornmentClickable = Template.bind({});
-AdornmentClickable.args = {
-  ...Primary.args,
-  adornment: {
-    icon: Icons.close,
-    onClick: () => {},
+export const Adornment: Story = {
+  args: {
+    ...Primary.args,
+    adornment: {
+      icon: Icons.close,
+    },
   },
 };
 
-export const Decimal = Template.bind({});
-Decimal.args = {
-  ...Primary.args,
-  integer: false,
-  value: 5.275,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Primary.args,
-  disabled: true,
-};
-
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  label: MessageMock.inputNumber,
-  placeholder: MessageMock.placeholder,
-};
-
-export const MinMax = Template.bind({});
-MinMax.args = {
-  ...Primary.args,
-  maxValue: 1000,
-  minValue: 20,
-};
-
-export const Nullable = Template.bind({});
-Nullable.args = {
-  ...Primary.args,
-  value: null,
-};
-
-export const Placeholder = Template.bind({});
-Placeholder.args = {
-  label: "Label",
-  placeholder: "Enter value...",
-  value: undefined,
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  ...Primary.args,
-  required: true,
-};
-
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Primary.args,
-  size: "small",
-};
-
-export const Styled = Template.bind({});
-Styled.args = {
-  ...Primary.args,
-  style: {
-    color: "red",
-    fontWeight: "bold",
-    fontSize: "large",
-    textAlign: "center",
+export const AdornmentClickable: Story = {
+  args: {
+    ...Primary.args,
+    adornment: {
+      icon: Icons.close,
+      onClick: () => {},
+    },
   },
 };
 
-export const VariantFilled = Template.bind({});
-VariantFilled.args = {
-  ...Primary.args,
-  variant: "filled",
+export const Decimal: Story = {
+  args: {
+    ...Primary.args,
+    integer: false,
+    value: 5.275,
+  },
 };
 
-export const VariantStandard = Template.bind({});
-VariantStandard.args = {
-  ...Primary.args,
-  variant: "standard",
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
+};
+
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    label: MessageMock.inputNumber,
+    placeholder: MessageMock.placeholder,
+  },
+};
+
+export const MinMax: Story = {
+  args: {
+    ...Primary.args,
+    maxValue: 1000,
+    minValue: 20,
+  },
+};
+
+export const Nullable: Story = {
+  args: {
+    ...Primary.args,
+    value: null,
+  },
+};
+
+export const Placeholder: Story = {
+  args: {
+    label: "Label",
+    placeholder: "Enter value...",
+    value: undefined,
+  },
+};
+
+export const Required: Story = {
+  args: {
+    ...Primary.args,
+    required: true,
+  },
+};
+
+export const SizeSmall: Story = {
+  args: {
+    ...Primary.args,
+    size: "small",
+  },
+};
+
+export const Styled: Story = {
+  args: {
+    ...Primary.args,
+    style: {
+      color: "red",
+      fontWeight: "bold",
+      fontSize: "large",
+      textAlign: "center",
+    },
+  },
+};
+
+export const VariantFilled: Story = {
+  args: {
+    ...Primary.args,
+    variant: "filled",
+  },
+};
+
+export const VariantStandard: Story = {
+  args: {
+    ...Primary.args,
+    variant: "standard",
+  },
 };

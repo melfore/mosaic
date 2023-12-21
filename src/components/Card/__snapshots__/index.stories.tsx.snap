@@ -117,7 +117,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
     </button>
   </div>
   <div class="MuiCollapse-root MuiCollapse-vertical css-1fkrdiv-MuiCollapse-root"
-       style="min-height: 0px; height: 35px; transition-duration: 191ms;"
+       style="min-height: 0px; height: 40px; transition-duration: 196ms;"
   >
     <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
       <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">

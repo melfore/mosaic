@@ -31,7 +31,7 @@ exports[`Display/ListItem Clickable play-test 1`] = `
   </div>
   <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
     <span class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-          style="width: 1250.85px; height: 1250.85px; top: -604.423px; left: -1.42306px;"
+          style="width: 1251px; height: 1251px; top: -601.5px; left: -1.4998px;"
     >
       <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
       </span>

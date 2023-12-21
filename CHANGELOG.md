@@ -1,3 +1,14 @@
+## [9.9.1](https://github.com/melfore/mosaic/compare/v9.9.0...v9.9.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* 🐛 [Progress] Type prop to be lowercase ([debb718](https://github.com/melfore/mosaic/commit/debb7180de93d3c4339fb4800fcb5715049f581e))
+* 🐛 Following official StoryBook setup for [@mui](https://github.com/mui) ([49a8d8c](https://github.com/melfore/mosaic/commit/49a8d8c001431f1d25fcc361b9db0db6f0cde437))
+* 🐛 Removing ripple from MUI theme when started in dev or ci ([d1d813a](https://github.com/melfore/mosaic/commit/d1d813a9acc0ddd49231326b8a58056995d70488))
+* 🐛 StoryBook viewports fix ([fe19986](https://github.com/melfore/mosaic/commit/fe19986939bce9bdab9beacc25bec3da9e715b30))
+* 🐛 Viewport size to be string ([e0b4333](https://github.com/melfore/mosaic/commit/e0b4333987522b2cd96000ea74ac45865da6d906))
+
 # [9.9.0](https://github.com/melfore/mosaic/compare/v9.8.2...v9.9.0) (2023-11-23)
 
 

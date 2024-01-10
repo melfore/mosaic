@@ -67,6 +67,8 @@ export const Primary: Story = {
 
     fireEvent.click(options[1]);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+
+    fireEvent.blur(button);
   },
 };
 

@@ -1,46 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation/Tabs Color smoke-test 1`] = `
-<div class="MuiBox-root css-0">
-  <div class="MuiTabs-root css-1ujnqem-MuiTabs-root"
+<div class="MuiBox-root css-mui-classname">
+  <div class="MuiTabs-root css-mui-classname"
        data-cy="tabs"
   >
-    <div class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-oqr85h"
+    <div class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-mui-classname"
          style="width: 99px; height: 99px; position: absolute; top: -9999px; overflow: scroll;"
     >
     </div>
-    <div class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-69z67c-MuiTabs-scroller"
+    <div class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-mui-classname"
          style="margin-bottom: 0px;"
     >
-      <div class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+      <div class="MuiTabs-flexContainer css-mui-classname"
            role="tablist"
       >
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary Mui-selected css-1a4cg4j-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary Mui-selected css-mui-classname"
                 tabindex="0"
                 type="button"
                 role="tab"
                 aria-selected="true"
         >
           PAGE1
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary css-1a4cg4j-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE2
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary css-1a4cg4j-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorSecondary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE3
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
-      <span class="MuiTabs-indicator css-11yukd5-MuiTabs-indicator"
+      <span class="MuiTabs-indicator css-mui-classname"
             style="left: 0px; width: 90px;"
       >
       </span>
@@ -57,43 +63,49 @@ exports[`Navigation/Tabs Color smoke-test 1`] = `
 `;
 
 exports[`Navigation/Tabs Orientation smoke-test 1`] = `
-<div class="MuiBox-root css-k008qs">
-  <div class="MuiTabs-root MuiTabs-vertical css-1g4ac1o-MuiTabs-root"
+<div class="MuiBox-root css-mui-classname">
+  <div class="MuiTabs-root MuiTabs-vertical css-mui-classname"
        data-cy="tabs"
   >
-    <div class="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+    <div class="MuiTabs-scroller MuiTabs-fixed css-mui-classname"
          style="overflow: hidden; margin-right: 0px;"
     >
       <div aria-orientation="vertical"
-           class="MuiTabs-flexContainer MuiTabs-flexContainerVertical css-lfwcke-MuiTabs-flexContainer"
+           class="MuiTabs-flexContainer MuiTabs-flexContainerVertical css-mui-classname"
            role="tablist"
       >
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-mui-classname"
                 tabindex="0"
                 type="button"
                 role="tab"
                 aria-selected="true"
         >
           PAGE1
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE2
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE3
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
-      <span class="MuiTabs-indicator css-10d9dml-MuiTabs-indicator"
+      <span class="MuiTabs-indicator css-mui-classname"
             style="top: 0px; height: 48px;"
       >
       </span>
@@ -110,46 +122,52 @@ exports[`Navigation/Tabs Orientation smoke-test 1`] = `
 `;
 
 exports[`Navigation/Tabs Primary smoke-test 1`] = `
-<div class="MuiBox-root css-0">
-  <div class="MuiTabs-root css-1ujnqem-MuiTabs-root"
+<div class="MuiBox-root css-mui-classname">
+  <div class="MuiTabs-root css-mui-classname"
        data-cy="tabs"
   >
-    <div class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-oqr85h"
+    <div class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-mui-classname"
          style="width: 99px; height: 99px; position: absolute; top: -9999px; overflow: scroll;"
     >
     </div>
-    <div class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-69z67c-MuiTabs-scroller"
+    <div class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-mui-classname"
          style="margin-bottom: 0px;"
     >
-      <div class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+      <div class="MuiTabs-flexContainer css-mui-classname"
            role="tablist"
       >
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-mui-classname"
                 tabindex="0"
                 type="button"
                 role="tab"
                 aria-selected="true"
         >
           PAGE1
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE2
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
                 type="button"
                 role="tab"
                 aria-selected="false"
         >
           PAGE3
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
-      <span class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+      <span class="MuiTabs-indicator css-mui-classname"
             style="left: 0px; width: 90px;"
       >
       </span>

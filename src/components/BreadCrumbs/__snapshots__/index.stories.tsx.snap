@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation/BreadCrumbs CustomSeparator smoke-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             page1
@@ -23,19 +23,19 @@ exports[`Navigation/BreadCrumbs CustomSeparator smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       &gt;
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             page2
@@ -44,7 +44,7 @@ exports[`Navigation/BreadCrumbs CustomSeparator smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       &gt;
     </li>
@@ -52,7 +52,7 @@ exports[`Navigation/BreadCrumbs CustomSeparator smoke-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           page3
@@ -64,20 +64,20 @@ exports[`Navigation/BreadCrumbs CustomSeparator smoke-test 1`] = `
 `;
 
 exports[`Navigation/BreadCrumbs Localized smoke-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             Pagina 1
@@ -86,19 +86,19 @@ exports[`Navigation/BreadCrumbs Localized smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             Pagina 2
@@ -107,7 +107,7 @@ exports[`Navigation/BreadCrumbs Localized smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
@@ -115,7 +115,7 @@ exports[`Navigation/BreadCrumbs Localized smoke-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           Pagina 3
@@ -127,20 +127,20 @@ exports[`Navigation/BreadCrumbs Localized smoke-test 1`] = `
 `;
 
 exports[`Navigation/BreadCrumbs Primary play-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             page1
@@ -149,19 +149,19 @@ exports[`Navigation/BreadCrumbs Primary play-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             page2
@@ -170,7 +170,7 @@ exports[`Navigation/BreadCrumbs Primary play-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
@@ -178,7 +178,7 @@ exports[`Navigation/BreadCrumbs Primary play-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           page3
@@ -190,20 +190,20 @@ exports[`Navigation/BreadCrumbs Primary play-test 1`] = `
 `;
 
 exports[`Navigation/BreadCrumbs SizeLarge smoke-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <h1 class="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+          <h1 class="MuiTypography-root MuiTypography-h5 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             page1
@@ -212,19 +212,19 @@ exports[`Navigation/BreadCrumbs SizeLarge smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <h1 class="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+          <h1 class="MuiTypography-root MuiTypography-h5 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             page2
@@ -233,7 +233,7 @@ exports[`Navigation/BreadCrumbs SizeLarge smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
@@ -241,7 +241,7 @@ exports[`Navigation/BreadCrumbs SizeLarge smoke-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <h1 class="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+        <h1 class="MuiTypography-root MuiTypography-h5 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           page3
@@ -253,20 +253,20 @@ exports[`Navigation/BreadCrumbs SizeLarge smoke-test 1`] = `
 `;
 
 exports[`Navigation/BreadCrumbs SizeMedium smoke-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+          <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             page1
@@ -275,19 +275,19 @@ exports[`Navigation/BreadCrumbs SizeMedium smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+          <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             page2
@@ -296,7 +296,7 @@ exports[`Navigation/BreadCrumbs SizeMedium smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
@@ -304,7 +304,7 @@ exports[`Navigation/BreadCrumbs SizeMedium smoke-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           page3
@@ -316,20 +316,20 @@ exports[`Navigation/BreadCrumbs SizeMedium smoke-test 1`] = `
 `;
 
 exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
-<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root"
+<nav class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-mui-classname"
      data-cy="breadcrumbs"
      aria-label="breadcrumb"
 >
-  <ol class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol">
+  <ol class="MuiBreadcrumbs-ol css-mui-classname">
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-0"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-0"
              style="align-items: center; display: flex;"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -342,7 +342,7 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
             <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z">
             </path>
           </svg>
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-0-label"
           >
             page1
@@ -351,19 +351,19 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
     <li class="MuiBreadcrumbs-li">
-      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-bvyohc-MuiTypography-root-MuiLink-root"
+      <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-mui-classname"
          data-cy="breadcrumbs-link-1"
          style="align-items: center; display: flex;"
       >
         <div data-cy="breadcrumbs-link-1"
              style="align-items: center; display: flex;"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -374,7 +374,7 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
             <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z">
             </path>
           </svg>
-          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+          <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
               data-cy="breadcrumbs-link-1-label"
           >
             page2
@@ -383,7 +383,7 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
       </a>
     </li>
     <li aria-hidden="true"
-        class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
+        class="MuiBreadcrumbs-separator css-mui-classname"
     >
       /
     </li>
@@ -391,7 +391,7 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
       <div data-cy="breadcrumbs-link-2"
            style="align-items: center; display: flex;"
       >
-        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-e5efhf-MuiSvgIcon-root"
+        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
              focusable="false"
              aria-hidden="true"
              viewbox="0 0 24 24"
@@ -404,7 +404,7 @@ exports[`Navigation/BreadCrumbs WithIcons smoke-test 1`] = `
           <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z">
           </path>
         </svg>
-        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+        <h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
             data-cy="breadcrumbs-link-2-label"
         >
           page3

@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inputs/SelectVirtualized AutoSort smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":r6:"
            id=":r6:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r6:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -30,14 +30,14 @@ exports[`Inputs/SelectVirtualized AutoSort smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -46,12 +46,14 @@ exports[`Inputs/SelectVirtualized AutoSort smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -63,27 +65,27 @@ exports[`Inputs/SelectVirtualized AutoSort smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Autocomplete play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":r2:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":r2:"
            id=":r2:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r2:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="list"
              aria-expanded="true"
              autocapitalize="none"
@@ -94,14 +96,14 @@ exports[`Inputs/SelectVirtualized Autocomplete play-test 1`] = `
              aria-controls=":r2:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -110,12 +112,14 @@ exports[`Inputs/SelectVirtualized Autocomplete play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -127,27 +131,27 @@ exports[`Inputs/SelectVirtualized Autocomplete play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized AutocompleteChange play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":r4:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":r4:"
            id=":r4:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r4:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="list"
              aria-expanded="true"
              autocapitalize="none"
@@ -158,14 +162,14 @@ exports[`Inputs/SelectVirtualized AutocompleteChange play-test 1`] = `
              aria-controls=":r4:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -174,12 +178,14 @@ exports[`Inputs/SelectVirtualized AutocompleteChange play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -191,27 +197,27 @@ exports[`Inputs/SelectVirtualized AutocompleteChange play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Disabled smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-disabled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-disabled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":r8:"
            id=":r8:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              disabled
              id=":r8:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -221,15 +227,15 @@ exports[`Inputs/SelectVirtualized Disabled smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 disabled
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -241,9 +247,9 @@ exports[`Inputs/SelectVirtualized Disabled smoke-test 1`] = `
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -255,27 +261,27 @@ exports[`Inputs/SelectVirtualized Disabled smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Grouped play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":ra:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":ra:"
            id=":ra:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":ra:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -286,14 +292,14 @@ exports[`Inputs/SelectVirtualized Grouped play-test 1`] = `
              aria-controls=":ra:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -302,12 +308,14 @@ exports[`Inputs/SelectVirtualized Grouped play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -319,27 +327,27 @@ exports[`Inputs/SelectVirtualized Grouped play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized GroupedCustomLabel play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":rc:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":rc:"
            id=":rc:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rc:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -350,14 +358,14 @@ exports[`Inputs/SelectVirtualized GroupedCustomLabel play-test 1`] = `
              aria-controls=":rc:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -366,12 +374,14 @@ exports[`Inputs/SelectVirtualized GroupedCustomLabel play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -383,21 +393,21 @@ exports[`Inputs/SelectVirtualized GroupedCustomLabel play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Loading smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-125l7zm-MuiSkeleton-root"
+  <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-mui-classname"
         style="width: 100%;"
   >
-    <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+    <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
          style="width: 100%;"
     >
-      <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+      <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
         <input aria-invalid="false"
                autocomplete="off"
                id=":re:"
                type="text"
-               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
                aria-autocomplete="both"
                aria-expanded="false"
                autocapitalize="none"
@@ -407,14 +417,14 @@ exports[`Inputs/SelectVirtualized Loading smoke-test 1`] = `
                value
                style="width: 100%;"
         >
-        <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-          <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+        <div class="MuiAutocomplete-endAdornment css-mui-classname">
+          <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                   tabindex="-1"
                   type="button"
                   aria-label="Open"
                   title="Open"
           >
-            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                  focusable="false"
                  aria-hidden="true"
                  viewbox="0 0 24 24"
@@ -423,12 +433,14 @@ exports[`Inputs/SelectVirtualized Loading smoke-test 1`] = `
               <path d="M7 10l5 5 5-5z">
               </path>
             </svg>
+            <span class="MuiTouchRipple-root css-mui-classname">
+            </span>
           </button>
         </div>
         <fieldset aria-hidden="true"
-                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  class="MuiOutlinedInput-notchedOutline css-mui-classname"
         >
-          <legend class="css-ihdtdm">
+          <legend class="css-mui-classname">
             <span class="notranslate">
               ​
             </span>
@@ -441,26 +453,26 @@ exports[`Inputs/SelectVirtualized Loading smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Localized smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="locale.select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":rg:"
            id=":rg:-label"
     >
       Menu a tendina
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rg:"
              placeholder="Inserire valore..."
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -470,14 +482,14 @@ exports[`Inputs/SelectVirtualized Localized smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -486,12 +498,14 @@ exports[`Inputs/SelectVirtualized Localized smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Menu a tendina
           </span>
@@ -503,30 +517,30 @@ exports[`Inputs/SelectVirtualized Localized smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":ri:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":ri:"
            id=":ri:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1gywuxd-MuiInputBase-root-MuiOutlinedInput-root">
-      <div class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault MuiAutocomplete-tag MuiAutocomplete-tagSizeMedium css-38raov-MuiButtonBase-root-MuiChip-root"
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
+      <div class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault MuiAutocomplete-tag MuiAutocomplete-tagSizeMedium css-mui-classname"
            tabindex="-1"
            role="button"
            data-tag-index="0"
       >
-        <span class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label">
+        <span class="MuiChip-label MuiChip-labelMedium css-mui-classname">
           Sculpture
         </span>
-        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiChip-deleteIcon MuiChip-deleteIconMedium MuiChip-deleteIconColorDefault MuiChip-deleteIconFilledColorDefault css-i4bv87-MuiSvgIcon-root"
+        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiChip-deleteIcon MuiChip-deleteIconMedium MuiChip-deleteIconColorDefault MuiChip-deleteIconFilledColorDefault css-mui-classname"
              focusable="false"
              aria-hidden="true"
              viewbox="0 0 24 24"
@@ -541,7 +555,7 @@ exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
              id=":ri:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-152mnda-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -552,14 +566,14 @@ exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
              aria-controls=":ri:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Clear"
                 title="Clear"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -568,14 +582,16 @@ exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -584,12 +600,14 @@ exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -601,27 +619,27 @@ exports[`Inputs/SelectVirtualized Multiple play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized OnScrollEndCallback play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":rk:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":rk:"
            id=":rk:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rk:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -632,14 +650,14 @@ exports[`Inputs/SelectVirtualized OnScrollEndCallback play-test 1`] = `
              aria-controls=":rk:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -648,12 +666,14 @@ exports[`Inputs/SelectVirtualized OnScrollEndCallback play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -665,27 +685,27 @@ exports[`Inputs/SelectVirtualized OnScrollEndCallback play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized OptionCustomLabel play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":rm:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":rm:"
            id=":rm:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rm:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -696,14 +716,14 @@ exports[`Inputs/SelectVirtualized OptionCustomLabel play-test 1`] = `
              aria-controls=":rm:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -712,12 +732,14 @@ exports[`Inputs/SelectVirtualized OptionCustomLabel play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -729,27 +751,27 @@ exports[`Inputs/SelectVirtualized OptionCustomLabel play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized OptionCustomRendering play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":ro:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":ro:"
            id=":ro:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":ro:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -760,14 +782,14 @@ exports[`Inputs/SelectVirtualized OptionCustomRendering play-test 1`] = `
              aria-controls=":ro:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -776,12 +798,14 @@ exports[`Inputs/SelectVirtualized OptionCustomRendering play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -793,26 +817,26 @@ exports[`Inputs/SelectVirtualized OptionCustomRendering play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Primary play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":r0:"
            id=":r0:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r0:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -822,14 +846,14 @@ exports[`Inputs/SelectVirtualized Primary play-test 1`] = `
              value="Sculpture"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Clear"
                 title="Clear"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -838,14 +862,16 @@ exports[`Inputs/SelectVirtualized Primary play-test 1`] = `
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -854,12 +880,14 @@ exports[`Inputs/SelectVirtualized Primary play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -871,32 +899,32 @@ exports[`Inputs/SelectVirtualized Primary play-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Required smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":rq:"
            id=":rq:-label"
     >
       Select
       <span aria-hidden="true"
-            class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+            class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-mui-classname"
       >
          *
       </span>
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rq:"
              placeholder="Select a value"
              required
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -906,14 +934,14 @@ exports[`Inputs/SelectVirtualized Required smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -922,12 +950,14 @@ exports[`Inputs/SelectVirtualized Required smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Select *
           </span>
@@ -939,26 +969,26 @@ exports[`Inputs/SelectVirtualized Required smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized SizeSmall smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":rs:"
            id=":rs:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":rs:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -968,14 +998,14 @@ exports[`Inputs/SelectVirtualized SizeSmall smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -984,12 +1014,14 @@ exports[`Inputs/SelectVirtualized SizeSmall smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -1001,26 +1033,26 @@ exports[`Inputs/SelectVirtualized SizeSmall smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized Styled smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="color: red; font-weight: bold; font-size: large; text-align: center; width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="false"
            for=":ru:"
            id=":ru:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":ru:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -1030,14 +1062,14 @@ exports[`Inputs/SelectVirtualized Styled smoke-test 1`] = `
              value
              style="color: red; font-weight: bold; font-size: large; text-align: center; width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -1046,12 +1078,14 @@ exports[`Inputs/SelectVirtualized Styled smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-yjsfm1">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>
@@ -1063,26 +1097,26 @@ exports[`Inputs/SelectVirtualized Styled smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized VariantFilled smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-e4w4as-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-mui-classname"
            data-shrink="false"
            for=":r10:"
            id=":r10:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-1tzgnuz-MuiInputBase-root-MuiFilledInput-root">
+    <div class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r10:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1gctnaj-MuiInputBase-input-MuiFilledInput-input"
+             class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -1092,14 +1126,14 @@ exports[`Inputs/SelectVirtualized VariantFilled smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -1108,6 +1142,8 @@ exports[`Inputs/SelectVirtualized VariantFilled smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
     </div>
@@ -1116,26 +1152,26 @@ exports[`Inputs/SelectVirtualized VariantFilled smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized VariantStandard smoke-test 1`] = `
-<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard css-mui-classname"
            data-shrink="false"
            for=":r12:"
            id=":r12:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-l4u8b9-MuiInputBase-root-MuiInput-root">
+    <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r12:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1x51dt5-MuiInputBase-input-MuiInput-input"
+             class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="false"
              autocapitalize="none"
@@ -1145,14 +1181,14 @@ exports[`Inputs/SelectVirtualized VariantStandard smoke-test 1`] = `
              value
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Open"
                 title="Open"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -1161,6 +1197,8 @@ exports[`Inputs/SelectVirtualized VariantStandard smoke-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
     </div>
@@ -1169,27 +1207,27 @@ exports[`Inputs/SelectVirtualized VariantStandard smoke-test 1`] = `
 `;
 
 exports[`Inputs/SelectVirtualized VirtualizedWith1000Elements play-test 1`] = `
-<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-1h51icj-MuiAutocomplete-root"
+<div class="MuiAutocomplete-root Mui-expanded Mui-focused MuiAutocomplete-hasPopupIcon css-mui-classname"
      data-cy="select-outer-wrapper"
      aria-owns=":r14:-listbox"
 >
-  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root"
+  <div class="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-mui-classname"
        style="width: 100%;"
   >
-    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-mui-classname"
            data-shrink="true"
            for=":r14:"
            id=":r14:-label"
     >
       Select
     </label>
-    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root">
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-mui-classname">
       <input aria-invalid="false"
              autocomplete="off"
              id=":r14:"
              placeholder="Select a value"
              type="text"
-             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mui-classname"
              aria-autocomplete="both"
              aria-expanded="true"
              autocapitalize="none"
@@ -1200,14 +1238,14 @@ exports[`Inputs/SelectVirtualized VirtualizedWith1000Elements play-test 1`] = `
              aria-controls=":r14:-listbox"
              style="width: 100%;"
       >
-      <div class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment">
-        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+      <div class="MuiAutocomplete-endAdornment css-mui-classname">
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
                 tabindex="-1"
                 type="button"
                 aria-label="Close"
                 title="Close"
         >
-          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
                viewbox="0 0 24 24"
@@ -1216,12 +1254,14 @@ exports[`Inputs/SelectVirtualized VirtualizedWith1000Elements play-test 1`] = `
             <path d="M7 10l5 5 5-5z">
             </path>
           </svg>
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
         </button>
       </div>
       <fieldset aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-mui-classname"
       >
-        <legend class="css-14lo706">
+        <legend class="css-mui-classname">
           <span>
             Select
           </span>

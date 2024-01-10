@@ -66,8 +66,8 @@ jobs:
         run: |
           npx playwright install --with-deps
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npm run start:ci" \
-            "npx wait-on tcp:127.0.0.1:6006 -d 10000 && npm run test:ci"
+            "npx http-server docs/latest --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && npm run test:ci"
 
       - name: Build
         run: npm run build

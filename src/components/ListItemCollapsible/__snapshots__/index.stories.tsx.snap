@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: pointer;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -19,18 +19,20 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
       </path>
     </svg>
   </div>
-  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root css-mui-classname"
        data-cy="list-item-collapsible-header-content"
   >
     Header
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapisble Children
     </div>
   </div>
@@ -38,14 +40,14 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-178cqt3-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: pointer;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -56,18 +58,20 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
       </path>
     </svg>
   </div>
-  <div class="MuiListItemText-root MuiListItemText-dense css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root MuiListItemText-dense css-mui-classname"
        data-cy="list-item-collapsible-header-content"
   >
     Header
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapsible Content
     </div>
   </div>
@@ -75,31 +79,33 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-153n0d3-MuiSkeleton-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-mui-classname"
           style="width: 24px; height: 24px;"
     >
     </span>
   </div>
-  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root css-mui-classname"
        data-cy="list-item-collapsible-header-content-loading"
   >
-    <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
+    <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-mui-classname">
     </span>
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapsible Content
     </div>
   </div>
@@ -107,14 +113,14 @@ exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: pointer;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -125,18 +131,20 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
       </path>
     </svg>
   </div>
-  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root css-mui-classname"
        data-cy="list-item-collapsible-header-content"
   >
     Header
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapsible Content
     </div>
   </div>
@@ -144,14 +152,14 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: pointer;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -162,18 +170,20 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
       </path>
     </svg>
   </div>
-  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root css-mui-classname"
        data-cy="list-item-collapsible-header-content"
   >
     Header
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapsible Content
     </div>
   </div>
@@ -181,14 +191,14 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
 `;
 
 exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: pointer;"
 >
-  <div class="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root">
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <div class="MuiListItemIcon-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -199,18 +209,20 @@ exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
       </path>
     </svg>
   </div>
-  <div class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+  <div class="MuiListItemText-root css-mui-classname"
        data-cy="list-item-collapsible-header-content"
   >
     Header
   </div>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
 </div>
-<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+<div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
      style="min-height: 0px;"
 >
-  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper">
-    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner">
+  <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
+    <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">
       Collapsible Content
     </div>
   </div>

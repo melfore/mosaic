@@ -2,7 +2,7 @@ import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -57,8 +57,10 @@ export const Primary: Story = {
       return;
     }
 
-    await userEvent.click(button);
+    fireEvent.click(button);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+
+    fireEvent.blur(button);
   },
 };
 

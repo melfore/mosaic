@@ -2,13 +2,13 @@
 
 exports[`Feedback/Modal ActionCancel smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -20,19 +20,21 @@ exports[`Feedback/Modal ActionCancel smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal ActionConfirm smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -44,19 +46,21 @@ exports[`Feedback/Modal ActionConfirm smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal Actions smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -68,19 +72,21 @@ exports[`Feedback/Modal Actions smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal Closeable smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -92,19 +98,21 @@ exports[`Feedback/Modal Closeable smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal Localized smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -116,19 +124,21 @@ exports[`Feedback/Modal Localized smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal Primary smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -140,19 +150,21 @@ exports[`Feedback/Modal Primary smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal SizeFullScreen smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -164,19 +176,21 @@ exports[`Feedback/Modal SizeFullScreen smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal SizeLarge smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -188,19 +202,21 @@ exports[`Feedback/Modal SizeLarge smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;
 
 exports[`Feedback/Modal SizeSmall smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-1p5nen7-MuiButtonBase-root-MuiButton-root"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon">
-      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
@@ -212,6 +228,8 @@ exports[`Feedback/Modal SizeSmall smoke-test 1`] = `
       </svg>
     </span>
     Open
+    <span class="MuiTouchRipple-root css-mui-classname">
+    </span>
   </button>
 </div>
 `;

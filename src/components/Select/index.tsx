@@ -247,7 +247,9 @@ const Select = <T extends SelectDataAllowed>({
     if (!Array.isArray(value) && isOptionSelectable(value)) {
       singleValue = value;
     } else {
-      logWarn("Select", `Provided value is not valid '${value}'`);
+      if (value) {
+        logWarn("Select", `Provided value is not valid '${value}'`);
+      }
     }
 
     return (

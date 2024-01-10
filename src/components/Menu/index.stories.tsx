@@ -2,7 +2,7 @@ import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, screen, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, screen, within } from "@storybook/testing-library";
 
 import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
@@ -57,7 +57,7 @@ export const Primary: Story = {
       return;
     }
 
-    await userEvent.click(button);
+    fireEvent.click(button);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
 
     const listbox = within(screen.getByRole("presentation")).getByRole("menu");

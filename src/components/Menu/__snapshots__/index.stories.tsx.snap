@@ -83,7 +83,7 @@ exports[`Navigation/Menu IconButton smoke-test 1`] = `
 `;
 
 exports[`Navigation/Menu Primary play-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation Mui-focusVisible MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="menu-button"
@@ -102,18 +102,6 @@ exports[`Navigation/Menu Primary play-test 1`] = `
   </span>
   Label
   <span class="MuiTouchRipple-root css-mui-classname">
-    <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-          style="width: 83.8065px; height: 83.8065px; top: -23.9033px; left: 8.09673px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childPulsate">
-      </span>
-    </span>
-    <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-          style="width: 111.427px; height: 111.427px; top: -37.7136px; left: -4.71355px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-      </span>
-    </span>
   </span>
 </button>
 `;

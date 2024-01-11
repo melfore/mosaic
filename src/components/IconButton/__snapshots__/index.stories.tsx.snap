@@ -111,16 +111,18 @@ exports[`Inputs/IconButton Rotate smoke-test 1`] = `
         type="button"
         data-cy="icon-button"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
-       focusable="false"
-       aria-hidden="true"
-       viewbox="0 0 24 24"
-       data-testid="AddIcon"
-       data-cy="icon-button-icon"
-  >
-    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z">
-    </path>
-  </svg>
+  <div class="MuiBox-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
+         focusable="false"
+         aria-hidden="true"
+         viewbox="0 0 24 24"
+         data-testid="AddIcon"
+         data-cy="icon-button-icon"
+    >
+      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z">
+      </path>
+    </svg>
+  </div>
   <span class="MuiTouchRipple-root css-mui-classname">
   </span>
 </button>

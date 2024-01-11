@@ -1,6 +1,6 @@
 import React, { cloneElement, FC, memo, PropsWithChildren, ReactElement, ReactNode, useCallback, useMemo } from "react";
-import { ClassNames } from "@emotion/react";
-import { keyframes, Skeleton as MUISkeleton } from "@mui/material";
+import { Skeleton as MUISkeleton } from "@mui/material";
+import { Box } from "@mui/system";
 
 import { IIcon, IIconDimensions, IRenderedIcon } from "../../types/Icon";
 import { logWarn } from "../../utils/logger";
@@ -51,48 +51,35 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
     return props;
   }, [children, dataCy, dimensions, externalStyle, forwarded, size]);
 
-  const rotateKeyframes = useMemo(
-    () => keyframes`
-      from: {
-        transform: "rotate(0deg)";
-      }
-      to: {
-        transform: "rotate(360deg)";
-      }
-  `,
-    []
-  );
-
   const renderWithAnimation = useCallback(
     (element: ReactElement | ReactNode) => {
-      return (
-        <ClassNames>
-          {({ css }) => {
-            let animation = "none";
-            if (rotate) {
-              animation = css`
-                ${rotateKeyframes} 2s linear infinite
-              `;
-            }
-
-            let className = css`
-              animation: ${animation};
-            `;
-
-            if (forwarded.className) {
-              className = forwarded.className;
-            }
-
-            return (
-              <Adornment badge={badge} tooltip={tooltip}>
-                {cloneElement(element as ReactElement, { ...props, className })}
-              </Adornment>
-            );
+      return rotate ? (
+        <Box
+          sx={{
+            animation: "spin 2s linear infinite",
+            "@keyframes spin": {
+              "0%": {
+                transform: "rotate(360deg)",
+              },
+              "100%": {
+                transform: "rotate(0deg)",
+              },
+            },
+            width: dimensions.width,
+            height: dimensions.width,
           }}
-        </ClassNames>
+        >
+          <Adornment badge={badge} tooltip={tooltip}>
+            {cloneElement(element as ReactElement, { ...props })}
+          </Adornment>
+        </Box>
+      ) : (
+        <Adornment badge={badge} tooltip={tooltip}>
+          {cloneElement(element as ReactElement, { ...props })}
+        </Adornment>
       );
     },
-    [badge, forwarded, props, rotate, rotateKeyframes, tooltip]
+    [badge, props, tooltip, rotate, dimensions]
   );
 
   if (loading) {

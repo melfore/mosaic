@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CSSProperties, ReactNode } from "react";
-import { TablePaginationProps as MUITablePaginationProps } from "@mui/material";
+import { TablePaginationActionsProps as MUITablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
 
 import { IAdornment } from "./Adornment";
 import { IBase, ILoadable, ILocalizable } from "./Base";
@@ -168,7 +168,7 @@ export interface ITablePagination extends IBase {
   rowsTotal: number;
 }
 
-export type ITablePaginationActions = MUITablePaginationProps & {
+export type ITablePaginationActions = MUITablePaginationActionsProps & {
   dataCy: string;
 };
 

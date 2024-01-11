@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FC, MouseEvent, useCallback, useMemo } from "react";
-import { TablePagination as MUITablePagination, TablePaginationProps as MUITablePaginationProps } from "@mui/material";
+import { TablePagination as MUITablePagination } from "@mui/material";
+import { TablePaginationActionsProps as MUITablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
 
 import { ITablePagination } from "../../../../types/Table";
 import { suppressEvent } from "../../../../utils";
@@ -16,7 +17,7 @@ const TablePagination: FC<ITablePagination> = ({
   style,
 }) => {
   const paginationActions = useCallback(
-    (props: MUITablePaginationProps) => <TablePaginationActions {...props} dataCy={dataCy} />,
+    (props: MUITablePaginationActionsProps) => <TablePaginationActions {...props} dataCy={dataCy} />,
     [dataCy]
   );
 

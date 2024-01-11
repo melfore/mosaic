@@ -85,7 +85,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
   <div class="MuiCardActions-root css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between; padding: 8px 16px;"
   >
-    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+    <button class="MuiButtonBase-root Mui-focusVisible MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
             tabindex="0"
             type="button"
             data-cy="card-collapse"
@@ -101,6 +101,24 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
         </path>
       </svg>
       <span class="MuiTouchRipple-root css-mui-classname">
+        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
+              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
+        >
+          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving MuiTouchRipple-childPulsate">
+          </span>
+        </span>
+        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
+        >
+          <span class="MuiTouchRipple-child">
+          </span>
+        </span>
+        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
+        >
+          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
+          </span>
+        </span>
       </span>
     </button>
   </div>

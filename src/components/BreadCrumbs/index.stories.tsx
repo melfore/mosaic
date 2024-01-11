@@ -2,7 +2,7 @@ import React from "react";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
@@ -67,7 +67,7 @@ export const Primary: Story = {
         return;
       }
 
-      await userEvent.click(firstLink);
+      fireEvent.click(firstLink);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
       await expect(onClickMock).toHaveBeenCalledWith(linksMock[firstIndex].href);
     });
@@ -80,7 +80,7 @@ export const Primary: Story = {
         return;
       }
 
-      await userEvent.click(lastLink);
+      fireEvent.click(lastLink);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     });
   },

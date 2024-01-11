@@ -3908,7 +3908,7 @@ exports[`Display/Table Pagination play-test 1`] = `
             </path>
           </svg>
         </button>
-        <button class="MuiButtonBase-root Mui-focusVisible MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+        <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
                 tabindex="0"
                 type="button"
                 data-cy="table-pagination-next"
@@ -3924,18 +3924,6 @@ exports[`Display/Table Pagination play-test 1`] = `
             </path>
           </svg>
           <span class="MuiTouchRipple-root css-mui-classname">
-            <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-                  style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-            >
-              <span class="MuiTouchRipple-child MuiTouchRipple-childPulsate">
-              </span>
-            </span>
-            <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-                  style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-            >
-              <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-              </span>
-            </span>
           </span>
         </button>
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
@@ -4240,18 +4228,6 @@ exports[`Display/Table Selectable play-test 1`] = `
                   </path>
                 </svg>
                 <span class="MuiTouchRipple-root css-mui-classname">
-                  <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-                        style="width: 39px; height: 39px; top: -0.5px; left: -0.5px;"
-                  >
-                    <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving MuiTouchRipple-childPulsate">
-                    </span>
-                  </span>
-                  <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-                        style="width: 39px; height: 39px; top: -0.5px; left: -0.5px;"
-                  >
-                    <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving MuiTouchRipple-childPulsate">
-                    </span>
-                  </span>
                 </span>
               </span>
             </label>
@@ -4320,7 +4296,7 @@ exports[`Display/Table Selectable play-test 1`] = `
                    data-cy="checkbox"
                    style="margin: 0px;"
             >
-              <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall Mui-focusVisible PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
+              <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
                     data-cy="checkbox-check"
               >
                 <input class="PrivateSwitchBase-input css-mui-classname"
@@ -4338,24 +4314,6 @@ exports[`Display/Table Selectable play-test 1`] = `
                   </path>
                 </svg>
                 <span class="MuiTouchRipple-root css-mui-classname">
-                  <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-                        style="width: 39px; height: 39px; top: -0.5px; left: -0.5px;"
-                  >
-                    <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving MuiTouchRipple-childPulsate">
-                    </span>
-                  </span>
-                  <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-                        style="width: 39px; height: 39px; top: -0.5px; left: -0.5px;"
-                  >
-                    <span class="MuiTouchRipple-child">
-                    </span>
-                  </span>
-                  <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-                        style="width: 39px; height: 39px; top: -0.5px; left: -0.5px;"
-                  >
-                    <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-                    </span>
-                  </span>
                 </span>
               </span>
             </label>

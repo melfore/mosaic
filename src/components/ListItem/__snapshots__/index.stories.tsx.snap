@@ -18,7 +18,7 @@ exports[`Display/ListItem Children smoke-test 1`] = `
 `;
 
 exports[`Display/ListItem Clickable play-test 1`] = `
-<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-focusVisible MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
+<div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
      tabindex="0"
      role="button"
      data-cy="list-item"
@@ -30,12 +30,6 @@ exports[`Display/ListItem Clickable play-test 1`] = `
     John Doe
   </div>
   <span class="MuiTouchRipple-root css-mui-classname">
-    <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-          style="width: 1251px; height: 1251px; top: -601.5px; left: -1.4998px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-      </span>
-    </span>
   </span>
 </div>
 `;

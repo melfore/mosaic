@@ -1,7 +1,7 @@
 import React from "react";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
@@ -72,10 +72,10 @@ export const Collapsible: Story = {
       return;
     }
 
-    await userEvent.click(collapseButton);
+    fireEvent.click(collapseButton);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
 
-    await userEvent.click(collapseButton);
+    fireEvent.click(collapseButton);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
   },
 };

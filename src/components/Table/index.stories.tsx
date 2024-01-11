@@ -6,7 +6,7 @@ import MUIStyleIcon from "@mui/icons-material/Style";
 import MUITextField from "@mui/material/TextField";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { ITableDataCallbackOptions } from "../../types/Table";
@@ -207,7 +207,7 @@ export const Pagination: Story = {
       return;
     }
 
-    await userEvent.click(nextPageButton);
+    fireEvent.click(nextPageButton);
     expect(onPageMock).toHaveBeenCalledTimes(onPageMock.mock.calls.length);
   },
 };
@@ -224,7 +224,7 @@ export const RowClickable: Story = {
       return;
     }
 
-    await userEvent.click(secondRow);
+    fireEvent.click(secondRow);
     expect(onRowMock).toHaveBeenCalledTimes(onRowMock.mock.calls.length);
   },
 };
@@ -242,12 +242,12 @@ export const Selectable: Story = {
     }
 
     await step("Select all", async () => {
-      await userEvent.click(selectAll);
+      fireEvent.click(selectAll);
       await expect(onSelectMock).toHaveBeenCalledTimes(onSelectMock.mock.calls.length);
     });
 
     await step("Deselect all", async () => {
-      await userEvent.click(selectAll);
+      fireEvent.click(selectAll);
       await expect(onSelectMock).toHaveBeenCalledTimes(onSelectMock.mock.calls.length);
     });
 
@@ -257,12 +257,12 @@ export const Selectable: Story = {
     }
 
     await step("Select one", async () => {
-      await userEvent.click(selectOne);
+      fireEvent.click(selectOne);
       await expect(onSelectMock).toHaveBeenCalledTimes(onSelectMock.mock.calls.length);
     });
 
     await step("Deselect one", async () => {
-      await userEvent.click(selectOne);
+      fireEvent.click(selectOne);
       await expect(onSelectMock).toHaveBeenCalledTimes(onSelectMock.mock.calls.length);
     });
   },
@@ -280,7 +280,7 @@ export const Sortable: Story = {
       return;
     }
 
-    await userEvent.click(firstHeading);
+    fireEvent.click(firstHeading);
     expect(onSortMock).toHaveBeenCalledTimes(onSortMock.mock.calls.length);
   },
 };

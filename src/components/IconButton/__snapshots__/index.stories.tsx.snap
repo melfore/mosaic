@@ -73,39 +73,6 @@ exports[`Inputs/IconButton Disabled smoke-test 1`] = `
 `;
 
 exports[`Inputs/IconButton Primary play-test 1`] = `
-<button class="MuiButtonBase-root Mui-focusVisible MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
-        tabindex="0"
-        type="button"
-        data-cy="icon-button"
->
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
-       focusable="false"
-       aria-hidden="true"
-       viewbox="0 0 24 24"
-       data-testid="AddIcon"
-       data-cy="icon-button-icon"
-  >
-    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z">
-    </path>
-  </svg>
-  <span class="MuiTouchRipple-root css-mui-classname">
-    <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-          style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childPulsate">
-      </span>
-    </span>
-    <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-          style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-    >
-      <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-      </span>
-    </span>
-  </span>
-</button>
-`;
-
-exports[`Inputs/IconButton Rotate smoke-test 1`] = `
 <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
         tabindex="0"
         type="button"
@@ -121,6 +88,29 @@ exports[`Inputs/IconButton Rotate smoke-test 1`] = `
     <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z">
     </path>
   </svg>
+  <span class="MuiTouchRipple-root css-mui-classname">
+  </span>
+</button>
+`;
+
+exports[`Inputs/IconButton Rotate smoke-test 1`] = `
+<button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+        tabindex="0"
+        type="button"
+        data-cy="icon-button"
+>
+  <div class="MuiBox-root css-mui-classname">
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
+         focusable="false"
+         aria-hidden="true"
+         viewbox="0 0 24 24"
+         data-testid="AddIcon"
+         data-cy="icon-button-icon"
+    >
+      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z">
+      </path>
+    </svg>
+  </div>
   <span class="MuiTouchRipple-root css-mui-classname">
   </span>
 </button>

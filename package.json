@@ -1,6 +1,6 @@
 {
   "name": "@melfore/mosaic",
-  "version": "9.9.3",
+  "version": "9.9.4",
   "homepage": "https://github.com/melfore/mosaic#readme",
   "description": "Melfore's UI kit library based on `@material-ui`",
   "repository": {
@@ -27,6 +27,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.15.4",
     "@mui/material": "^5.15.4",
+    "@mui/system": "^5.15.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/git": "^10.0.1",
@@ -86,6 +87,7 @@
     "@mui/icons-material": ">= 5.5.1 < 6",
     "@mui/material": ">= 5.5.3 < 6",
     "@mui/x-date-pickers": ">= 6.16.0 < 7",
+    "@mui/system": ">= 5.15.4 < 6",
     "luxon": ">= 3.4.3 < 4",
     "react": ">= 18 < 19",
     "react-dom": ">= 18 < 19",

@@ -1,3 +1,10 @@
+## [9.9.4](https://github.com/melfore/mosaic/compare/v9.9.3...v9.9.4) (2024-01-11)
+
+
+### Bug Fixes
+
+* 🐛 [Icon] Fixed rotate function ([3269738](https://github.com/melfore/mosaic/commit/32697386a3091ccf03cd072db765b70a8ebf71e4)), closes [#305](https://github.com/melfore/mosaic/issues/305)
+
 ## [9.9.3](https://github.com/melfore/mosaic/compare/v9.9.2...v9.9.3) (2024-01-10)
 
 ## [9.9.2](https://github.com/melfore/mosaic/compare/v9.9.1...v9.9.2) (2024-01-10)

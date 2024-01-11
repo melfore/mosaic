@@ -71,7 +71,6 @@ export const Collapsible: Story = {
     if (!collapseButton) {
       return;
     }
-
     await userEvent.click(collapseButton);
     await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
 

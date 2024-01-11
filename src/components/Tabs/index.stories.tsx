@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
@@ -10,7 +10,7 @@ import Tabs, { DATA_CY_DEFAULT } from ".";
 const COMPONENT_NAME = "Tabs";
 Tabs.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Navigation/Tabs",
   component: Tabs,
   decorators: [localeDecorator],
@@ -28,21 +28,25 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof Tabs>;
+} satisfies Meta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  labelList: [
-    { label: "PAGE1", content: "PAGE1" },
-    { label: "PAGE2", content: "PAGE2" },
-    { label: "PAGE3", content: <Progress type="circular" withLabel={false} /> },
-  ],
+export const Primary: Story = {
+  args: {
+    labelList: [
+      { label: "PAGE1", content: "PAGE1" },
+      { label: "PAGE2", content: "PAGE2" },
+      { label: "PAGE3", content: <Progress type="circular" withLabel={false} /> },
+    ],
+  },
 };
 
-export const Color = Template.bind({});
-Color.args = { ...Primary.args, color: "secondary" };
+export const Color: Story = {
+  args: { ...Primary.args, color: "secondary" },
+};
 
-export const Orientation = Template.bind({});
-Orientation.args = { ...Primary.args, orientation: "vertical" };
+export const Orientation: Story = {
+  args: { ...Primary.args, orientation: "vertical" },
+};

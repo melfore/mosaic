@@ -1,201 +1,201 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inputs/Switch DisableRipple smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch Disabled smoke-test 1`] = `
-<label class="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-checked Mui-disabled css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-disabled Mui-checked Mui-disabled css-mui-classname"
           tabindex="-1"
           aria-disabled="true"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              disabled
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch Label smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
-  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root">
+  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-mui-classname">
     Switch
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch LabelEnd smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
-  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root">
+  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-mui-classname">
     Switch
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch Localized smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="locale.switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="locale.switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="locale.switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
-  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root">
+  <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-mui-classname">
     Interruttore
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch Primary smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch SizeSmall smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeSmall css-1ycxvqq-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeSmall css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
 </label>
 `;
 
 exports[`Inputs/Switch Styled smoke-test 1`] = `
-<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-1f2kvjf-MuiFormControlLabel-root"
+<label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
        data-cy="switch"
 >
-  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root">
-    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase"
+  <span class="MuiSwitch-root MuiSwitch-sizeMedium css-mui-classname">
+    <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-mui-classname"
           data-cy="switch-toggle"
           style="color: red;"
     >
-      <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+      <input class="PrivateSwitchBase-input MuiSwitch-input css-mui-classname"
              type="checkbox"
              data-cy="switch-input"
              checked
       >
-      <span class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb">
+      <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
-    <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+    <span class="MuiSwitch-track css-mui-classname">
     </span>
   </span>
 </label>

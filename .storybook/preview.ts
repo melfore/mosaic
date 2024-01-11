@@ -7,15 +7,7 @@ import "@fontsource/material-icons";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
-const lightTheme = createTheme({
-  components: {
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: process.env.STORYBOOK_CI_FIX === "true",
-      },
-    },
-  },
-});
+const lightTheme = createTheme();
 
 export const decorators = [
   withThemeFromJSXProvider({

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Display/Typography BottomSpacing smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-397282-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -9,7 +9,7 @@ exports[`Display/Typography BottomSpacing smoke-test 1`] = `
 `;
 
 exports[`Display/Typography CustomContent smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   <span>
@@ -22,7 +22,7 @@ exports[`Display/Typography CustomContent smoke-test 1`] = `
 `;
 
 exports[`Display/Typography DisplayBlock smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-10hburv-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -30,7 +30,7 @@ exports[`Display/Typography DisplayBlock smoke-test 1`] = `
 `;
 
 exports[`Display/Typography DisplayInline smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-1sx1eu0-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -38,16 +38,16 @@ exports[`Display/Typography DisplayInline smoke-test 1`] = `
 `;
 
 exports[`Display/Typography Loading smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography-loading"
 >
-  <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1e1x4vv-MuiSkeleton-root">
+  <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-mui-classname">
   </span>
 </p>
 `;
 
 exports[`Display/Typography Localized smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   Testo
@@ -55,7 +55,7 @@ exports[`Display/Typography Localized smoke-test 1`] = `
 `;
 
 exports[`Display/Typography Primary smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -63,7 +63,7 @@ exports[`Display/Typography Primary smoke-test 1`] = `
 `;
 
 exports[`Display/Typography Truncated smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap css-1m2dqj2-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -71,7 +71,7 @@ exports[`Display/Typography Truncated smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantBody smoke-test 1`] = `
-<p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+<p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
    data-cy="typography"
 >
   Text example
@@ -79,7 +79,7 @@ exports[`Display/Typography VariantBody smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantCaption smoke-test 1`] = `
-<span class="MuiTypography-root MuiTypography-caption css-ecfcy6-MuiTypography-root"
+<span class="MuiTypography-root MuiTypography-caption css-mui-classname"
       data-cy="typography"
 >
   Text example
@@ -87,7 +87,7 @@ exports[`Display/Typography VariantCaption smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantLabel smoke-test 1`] = `
-<h3 class="MuiTypography-root MuiTypography-subtitle1 css-rjc5iw-MuiTypography-root"
+<h3 class="MuiTypography-root MuiTypography-subtitle1 css-mui-classname"
     data-cy="typography"
 >
   Text example
@@ -95,7 +95,7 @@ exports[`Display/Typography VariantLabel smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantOverline smoke-test 1`] = `
-<h4 class="MuiTypography-root MuiTypography-overline css-1dp7e8w-MuiTypography-root"
+<h4 class="MuiTypography-root MuiTypography-overline css-mui-classname"
     data-cy="typography"
 >
   Text example
@@ -103,7 +103,7 @@ exports[`Display/Typography VariantOverline smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantPagetitle smoke-test 1`] = `
-<h1 class="MuiTypography-root MuiTypography-h5 css-19bb5qq-MuiTypography-root"
+<h1 class="MuiTypography-root MuiTypography-h5 css-mui-classname"
     data-cy="typography"
 >
   Text example
@@ -111,7 +111,7 @@ exports[`Display/Typography VariantPagetitle smoke-test 1`] = `
 `;
 
 exports[`Display/Typography VariantTitle smoke-test 1`] = `
-<h2 class="MuiTypography-root MuiTypography-h6 css-tho60i-MuiTypography-root"
+<h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
     data-cy="typography"
 >
   Text example

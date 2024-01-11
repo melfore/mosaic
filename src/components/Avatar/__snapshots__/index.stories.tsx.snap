@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Display/Avatar CustomIcon smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
        focusable="false"
        aria-hidden="true"
        viewbox="0 0 24 24"
@@ -20,23 +20,23 @@ exports[`Display/Avatar CustomIcon smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar Image smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-circular css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
   <img alt="avatar"
        src="//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/440px-Roof_hafez_tomb.jpg"
-       class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+       class="MuiAvatar-img css-mui-classname"
   >
 </div>
 `;
 
 exports[`Display/Avatar Loading smoke-test 1`] = `
-<span class="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-1gtw0ls-MuiSkeleton-root">
-  <div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<span class="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-mui-classname">
+  <div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
        data-cy="avatar-loading"
   >
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -50,11 +50,11 @@ exports[`Display/Avatar Loading smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar LoadingVariant smoke-test 1`] = `
-<span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-zpjta8-MuiSkeleton-root">
-  <div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<span class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-fitContent MuiSkeleton-heightAuto css-mui-classname">
+  <div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
        data-cy="avatar-loading"
   >
-    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-mui-classname"
          focusable="false"
          aria-hidden="true"
          viewbox="0 0 24 24"
@@ -68,11 +68,11 @@ exports[`Display/Avatar LoadingVariant smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar Primary smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
        focusable="false"
        aria-hidden="true"
        viewbox="0 0 24 24"
@@ -86,11 +86,11 @@ exports[`Display/Avatar Primary smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar Styled smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: red; color: white;"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
        focusable="false"
        aria-hidden="true"
        viewbox="0 0 24 24"
@@ -104,11 +104,11 @@ exports[`Display/Avatar Styled smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar Text smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
-  <p class="MuiTypography-root MuiTypography-body1 css-5wwosz-MuiTypography-root"
+  <p class="MuiTypography-root MuiTypography-body1 css-mui-classname"
      data-cy="avatar-text"
   >
     MO
@@ -117,11 +117,11 @@ exports[`Display/Avatar Text smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar VariantRounded smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-54qi11-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-rounded MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
        focusable="false"
        aria-hidden="true"
        viewbox="0 0 24 24"
@@ -135,11 +135,11 @@ exports[`Display/Avatar VariantRounded smoke-test 1`] = `
 `;
 
 exports[`Display/Avatar VariantSquare smoke-test 1`] = `
-<div class="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-18gxrea-MuiAvatar-root"
+<div class="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault css-mui-classname"
      data-cy="avatar"
      style="background-color: rgb(25, 118, 210); color: rgb(255, 255, 255);"
 >
-  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wnp694-MuiSvgIcon-root"
+  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
        focusable="false"
        aria-hidden="true"
        viewbox="0 0 24 24"

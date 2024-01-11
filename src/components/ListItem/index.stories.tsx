@@ -2,7 +2,7 @@ import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -64,7 +64,7 @@ export const Clickable: Story = {
     const canvas = within(canvasElement);
     const listItem = canvas.getByTestId(DATA_CY_DEFAULT);
     if (listItem) {
-      await userEvent.click(listItem);
+      fireEvent.click(listItem);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }
   },

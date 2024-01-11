@@ -78,7 +78,8 @@
     "rimraf": "^5.0.5",
     "semantic-release": "^22.0.6",
     "storybook": "^7.5.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@mui/system": "^5.15.4"
   },
   "peerDependencies": {
     "@emotion/react": ">= 11.8.2 < 12",
@@ -86,6 +87,7 @@
     "@mui/icons-material": ">= 5.5.1 < 6",
     "@mui/material": ">= 5.5.3 < 6",
     "@mui/x-date-pickers": ">= 6.16.0 < 7",
+    "@mui/system": ">= 5.15.4 < 6",
     "luxon": ">= 3.4.3 < 4",
     "react": ">= 18 < 19",
     "react-dom": ">= 18 < 19",

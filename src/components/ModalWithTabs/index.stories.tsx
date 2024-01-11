@@ -64,3 +64,9 @@ Vertical.args = {
   ...Primary.args,
   orientation: "vertical",
 };
+
+export const Closeable = Template.bind({});
+Closeable.args = {
+  ...Primary.args,
+  closable: true,
+};

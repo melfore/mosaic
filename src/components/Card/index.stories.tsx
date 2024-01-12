@@ -1,11 +1,10 @@
 import React from "react";
-import { expect, jest } from "@storybook/jest";
+import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, userEvent, waitFor, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
-import { logInfo } from "../../utils/logger";
 import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
 import Button from "../Button";
@@ -58,8 +57,6 @@ export const Actions: Story = {
   },
 };
 
-const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onCollapse handler"));
-
 export const Collapsible: Story = {
   args: {
     ...Primary.args,
@@ -71,11 +68,17 @@ export const Collapsible: Story = {
     if (!collapseButton) {
       return;
     }
-    await userEvent.click(collapseButton);
-    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
 
     await userEvent.click(collapseButton);
-    await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
+    const collapsibleContentRoot = document.querySelector("div.MuiCollapse-root");
+    expect(collapsibleContentRoot).not.toHaveClass("MuiCollapse-hidden");
+
+    await userEvent.click(collapseButton);
+    await waitFor(() => {
+      expect(collapsibleContentRoot).toHaveClass("MuiCollapse-hidden");
+    });
+
+    await userEvent.tab();
   },
 };
 

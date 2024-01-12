@@ -15,7 +15,7 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
          data-testid="KeyboardArrowDownIcon"
          data-cy="list-item-collapsible-header-icon"
     >
-      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
+      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
       </path>
     </svg>
   </div>
@@ -54,7 +54,7 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
          data-testid="KeyboardArrowDownIcon"
          data-cy="list-item-collapsible-header-icon"
     >
-      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
+      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
       </path>
     </svg>
   </div>
@@ -166,7 +166,7 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
          data-testid="KeyboardArrowDownIcon"
          data-cy="list-item-collapsible-header-icon"
     >
-      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
+      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
       </path>
     </svg>
   </div>
@@ -205,7 +205,7 @@ exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
          data-testid="KeyboardArrowDownIcon"
          data-cy="list-item-collapsible-header-icon"
     >
-      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
+      <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
       </path>
     </svg>
   </div>

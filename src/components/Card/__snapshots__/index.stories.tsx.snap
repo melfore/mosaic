@@ -85,7 +85,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
   <div class="MuiCardActions-root css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between; padding: 8px 16px;"
   >
-    <button class="MuiButtonBase-root Mui-focusVisible MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
             tabindex="0"
             type="button"
             data-cy="card-collapse"
@@ -110,7 +110,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
         <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
               style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
         >
-          <span class="MuiTouchRipple-child">
+          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
           </span>
         </span>
         <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
@@ -122,7 +122,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
       </span>
     </button>
   </div>
-  <div class="MuiCollapse-root MuiCollapse-vertical css-mui-classname"
+  <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
        style="min-height: 0px; height: 0px; transition-duration: 196ms;"
   >
     <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">

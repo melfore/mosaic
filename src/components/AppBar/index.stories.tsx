@@ -196,6 +196,28 @@ export const Username: Story = {
   },
 };
 
+export const UsernameIcon: Story = {
+  args: {
+    ...Primary.args,
+    user: {
+      items: [
+        {
+          label: "View Details",
+          onClick: onUserMock,
+          value: "details",
+        },
+        {
+          label: "Logout",
+          onClick: onUserMock,
+          value: "logout",
+        },
+      ],
+      label: "mosaic@github",
+      type: "icon",
+    },
+  },
+};
+
 export const UserMenu: Story = {
   args: {
     ...Primary.args,

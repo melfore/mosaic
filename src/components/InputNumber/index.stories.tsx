@@ -45,6 +45,8 @@ const onChangeMock = jest.fn((value: FormValue) => logInfo(COMPONENT_NAME, `onCh
 export const Primary: Story = {
   args: {
     label: "Label",
+    maxValue: 100,
+    minValue: 5,
     onChange: onChangeMock,
     value: 5,
   },
@@ -61,24 +63,42 @@ export const Primary: Story = {
       await userEvent.type(inputNumber, "+");
       await userEvent.type(inputNumber, "-");
       await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await userEvent.clear(inputNumber);
     });
 
-    // await step("NaN chars", async () => {
-    //   await userEvent.type(inputNumber, "T");
-    //   await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
-    //   await expect(onChangeMock).toHaveBeenCalledWith(null);
-    // });
-
     await step("Numeric chars", async () => {
+      await userEvent.type(inputNumber, "9");
       await userEvent.type(inputNumber, "0");
       await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
-      await expect(onChangeMock).toHaveBeenCalledWith(50);
+      await expect(onChangeMock).toHaveBeenCalledWith(90);
+      await userEvent.clear(inputNumber);
     });
 
     await step("Blur away", async () => {
       await userEvent.tab();
       await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
-      await expect(onChangeMock).toHaveBeenCalledWith(50);
+      await expect(onChangeMock).toHaveBeenCalledWith(90);
+      await userEvent.clear(inputNumber);
+    });
+
+    await step("Higher than maxValue", async () => {
+      await userEvent.type(inputNumber, "9");
+      await userEvent.type(inputNumber, "0");
+      await userEvent.type(inputNumber, "0");
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await expect(onChangeMock).toHaveBeenCalledWith(90);
+      await userEvent.tab();
+      await expect(onChangeMock).toHaveBeenCalledWith(100);
+      await userEvent.clear(inputNumber);
+    });
+
+    await step("Lower than minValue", async () => {
+      await userEvent.type(inputNumber, "1");
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await expect(onChangeMock).toHaveBeenCalledWith(1);
+      await userEvent.tab();
+      await expect(onChangeMock).toHaveBeenCalledWith(5);
+      await userEvent.clear(inputNumber);
     });
   },
 };
@@ -107,6 +127,22 @@ export const Decimal: Story = {
     ...Primary.args,
     integer: false,
     value: 5.275,
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const inputNumber = canvas.getByTestId(DATA_CY_DEFAULT);
+    if (!inputNumber) {
+      return;
+    }
+
+    await step("Numeric chars", async () => {
+      await userEvent.clear(inputNumber);
+      await userEvent.type(inputNumber, "5");
+      await userEvent.type(inputNumber, ".");
+      await userEvent.type(inputNumber, "5");
+      await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
+      await expect(onChangeMock).toHaveBeenCalledWith(5.5);
+    });
   },
 };
 

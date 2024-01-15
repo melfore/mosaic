@@ -41,16 +41,4 @@ export const parameters = {
     },
   },
   viewMode: "docs",
-  viewport: {
-    viewports: {
-      desktopDefault: {
-        name: "desktopDefault",
-        styles: {
-          height: "900px",
-          width: "1450px",
-        },
-      },
-    },
-    defaultViewport: "desktopDefault",
-  },
 };

@@ -1,20 +1,25 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { expect, jest } from "@storybook/jest";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure, fireEvent, within } from "@storybook/testing-library";
 
+import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import { stepperDecorator } from "../../utils/mocks/StepperMock";
 import getDocsPage from "../../utils/stories";
 import Progress from "../Progress";
 
-import Stepper, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, localizedStepper } from ".";
 
 const COMPONENT_NAME = "Stepper";
-Stepper.displayName = COMPONENT_NAME;
+localizedStepper.displayName = COMPONENT_NAME;
 //ProgressWithProps.displayName = COMPONENT_NAME;
 
-export default {
+configure({ testIdAttribute: "data-cy" });
+
+const meta = {
   title: "Navigation/Stepper",
-  component: Stepper,
+  component: localizedStepper,
   decorators: [stepperDecorator, localeDecorator],
   parameters: {
     docs: {
@@ -32,33 +37,63 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof Stepper>;
+} satisfies Meta<typeof localizedStepper>;
 
-const Template: ComponentStory<typeof Stepper> = (args) => <Stepper {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  stepsList: [
-    { label: "STEP1", content: "CONTENT PAGE 1" },
-    { label: "STEP2", content: "CONTENT PAGE 2" },
-    { label: "STEP3", content: <Progress type="linear" /> },
-  ],
-  finishContent: "All Steps are completed",
+const onClickMockBack = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMockNext = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMockFinish = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+
+export const Primary: Story = {
+  args: {
+    activeStep: 1,
+    stepsList: [
+      { label: "STEP1", content: "CONTENT PAGE 1" },
+      { label: "STEP2", content: "CONTENT PAGE 2" },
+      { label: "STEP3", content: <Progress type="linear" /> },
+    ],
+    finishContent: "All Steps are completed",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttonBack = canvas.getByTestId(`${DATA_CY_DEFAULT}-back`);
+    const buttonNext = canvas.getByTestId(`${DATA_CY_DEFAULT}-next`);
+    if (!buttonBack) {
+      return;
+    }
+
+    fireEvent.click(buttonBack);
+    await expect(onClickMockBack).toHaveBeenCalledTimes(onClickMockBack.mock.calls.length);
+    fireEvent.click(buttonNext);
+    fireEvent.click(buttonNext);
+    await expect(onClickMockNext).toHaveBeenCalledTimes(onClickMockNext.mock.calls.length);
+  },
 };
 
-export const ActiveStep = Template.bind({});
-ActiveStep.args = { ...Primary.args, activeStep: 2 };
+export const ActiveStep: Story = {
+  args: { ...Primary.args, activeStep: 3 },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttonFinish = canvas.getByTestId(`${DATA_CY_DEFAULT}-finish`);
+    fireEvent.click(buttonFinish);
+    await expect(onClickMockFinish).toHaveBeenCalledTimes(onClickMockFinish.mock.calls.length);
+  },
+};
 
-export const Localized = Template.bind({});
-Localized.args = {
-  localized: true,
-  stepsList: [
-    { label: "locale.step1", content: "CONTENT PAGE 1" },
-    { label: "locale.step2", content: "CONTENT PAGE 2" },
-    { label: "locale.step3", content: <Progress type="linear" /> },
-  ],
-  finishContent: "All Steps are completed",
-  labelBackButton: "locale.back",
-  labelNextButton: "locale.next",
-  labelFinishButton: "locale.finish",
+export const Localized: Story = {
+  args: {
+    activeStep: 0,
+    localized: true,
+    stepsList: [
+      { label: "locale.step1", content: "CONTENT PAGE 1" },
+      { label: "locale.step2", content: "CONTENT PAGE 2" },
+      { label: "locale.step3", content: <Progress type="linear" /> },
+    ],
+    finishContent: "All Steps are completed",
+    labelBackButton: "locale.back",
+    labelNextButton: "locale.next",
+    labelFinishButton: "locale.finish",
+  },
 };

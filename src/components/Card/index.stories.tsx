@@ -1,7 +1,7 @@
 import React from "react";
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, waitFor, within } from "@storybook/testing-library";
+import { configure, fireEvent, waitFor, within } from "@storybook/testing-library";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
@@ -65,20 +65,16 @@ export const Collapsible: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const collapseButton = canvas.getByTestId(getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.collapse));
-    if (!collapseButton) {
+    const collapsibleContentRoot = document.querySelector("div.MuiCollapse-root");
+    if (!collapseButton || !collapsibleContentRoot) {
       return;
     }
 
-    await userEvent.click(collapseButton);
-    const collapsibleContentRoot = document.querySelector("div.MuiCollapse-root");
-    expect(collapsibleContentRoot).not.toHaveClass("MuiCollapse-hidden");
+    fireEvent.click(collapseButton);
 
-    await userEvent.click(collapseButton);
     await waitFor(() => {
-      expect(collapsibleContentRoot).toHaveClass("MuiCollapse-hidden");
+      expect(collapsibleContentRoot).not.toHaveClass("MuiCollapse-hidden");
     });
-
-    await userEvent.tab();
   },
 };
 

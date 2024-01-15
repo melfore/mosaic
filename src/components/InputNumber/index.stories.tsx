@@ -142,6 +142,7 @@ export const Decimal: Story = {
       await userEvent.type(inputNumber, "5");
       await expect(onChangeMock).toHaveBeenCalledTimes(onChangeMock.mock.calls.length);
       await expect(onChangeMock).toHaveBeenCalledWith(5.5);
+      await userEvent.clear(inputNumber);
     });
   },
 };

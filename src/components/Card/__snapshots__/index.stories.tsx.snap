@@ -94,36 +94,18 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
            focusable="false"
            aria-hidden="true"
            viewbox="0 0 24 24"
-           data-testid="KeyboardArrowDownIcon"
+           data-testid="KeyboardArrowUpIcon"
            data-cy="card-collapse-icon"
       >
-        <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
+        <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z">
         </path>
       </svg>
       <span class="MuiTouchRipple-root css-mui-classname">
-        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
-              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-        >
-          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving MuiTouchRipple-childPulsate">
-          </span>
-        </span>
-        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-        >
-          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-          </span>
-        </span>
-        <span class="css-mui-classname MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
-              style="width: 41px; height: 41px; top: -0.5px; left: -0.5px;"
-        >
-          <span class="MuiTouchRipple-child MuiTouchRipple-childLeaving">
-          </span>
-        </span>
       </span>
     </button>
   </div>
-  <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
-       style="min-height: 0px; height: 0px; transition-duration: 196ms;"
+  <div class="MuiCollapse-root MuiCollapse-vertical css-mui-classname"
+       style="min-height: 0px; height: 40px; transition-duration: 196ms;"
   >
     <div class="MuiCollapse-wrapper MuiCollapse-vertical css-mui-classname">
       <div class="MuiCollapse-wrapperInner MuiCollapse-vertical css-mui-classname">

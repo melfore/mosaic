@@ -74,6 +74,7 @@ export const Collapsible: Story = {
 
     await waitFor(() => {
       expect(collapsibleContentRoot).not.toHaveClass("MuiCollapse-hidden");
+      expect(collapsibleContentRoot).toHaveClass("MuiCollapse-entered");
     });
   },
 };

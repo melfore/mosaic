@@ -1,7 +1,7 @@
 import type { TestRunnerConfig } from "@storybook/test-runner";
 
 const config: TestRunnerConfig = {
-  async postVisit(page, context) {
+  async postRender(page, context) {
     const elementHandler = await page.$("#storybook-root");
     if (!elementHandler) {
       return;

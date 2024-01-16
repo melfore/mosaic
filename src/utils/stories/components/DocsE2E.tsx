@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { Spacer, SpacerDirection } from "../../..";
+import { Spacer } from "../../..";
 import { DATA_CY_SUFFIX_SEPARATOR } from "../..";
 import { DOCS_CODEBLOCK_CLASS, DOCS_CODELINE_CLASS } from "../utils";
 
@@ -30,11 +30,16 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
     <div>
       <DocsTitle text="E2E Testing" />
       <p>
-        This component leverages <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML attribute for e2e testing.
-        The reference framework is:&nbsp;
+        This component leverages <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML attribute testing. Reference
+        frameworks are:&nbsp;
         <a href="https://www.cypress.io" rel="noreferrer" target="_blank">
           cypress.io
         </a>
+        &nbsp;and&nbsp;
+        <a href="https://testing-library.com/" rel="noreferrer" target="_blank">
+          Testing Library
+        </a>
+        .
         <br />
         To set a value for <code className={DOCS_CODELINE_CLASS}>data-cy</code> assign a valid string to{" "}
         <code className={DOCS_CODELINE_CLASS}>dataCy</code> prop (defaults to:{" "}
@@ -42,8 +47,9 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
       </p>
       <p>
         <span>
-          <u>Example</u> Finding the component:
+          <u>Example:</u> finding the root component
         </span>
+        <Spacer direction="vertical" />
         <code className={DOCS_CODEBLOCK_CLASS}>
           {`cy.get("[data-cy='${e2eTestInfo.dataCyDefault}']"); // Do something with it `}
         </code>
@@ -86,17 +92,16 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
           </table>
           <p>
             <span>
-              <u>Example</u> Finding the <i>{e2eTestInfo.subpartsSuffixes[0].label}</i> subpart, with{" "}
+              <u>Example:</u> finding the <i>{e2eTestInfo.subpartsSuffixes[0].label}</i> subpart, with{" "}
               <code className={DOCS_CODELINE_CLASS}>{`dataCy="${e2eTestInfo.dataCyDefault}"`}</code>
             </span>
-            :
+            <Spacer direction="vertical" />
             <code className={DOCS_CODEBLOCK_CLASS}>
               {`cy.get("[data-cy='${e2eTestInfo.dataCyDefault}-${e2eTestInfo.subpartsSuffixes[0].suffix}']") // Do something with it`}
             </code>
           </p>
         </div>
       )}
-      <Spacer direction={SpacerDirection.vertical} level={3} />
     </div>
   );
 };

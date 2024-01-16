@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { Grid } from "@mui/material";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -29,6 +29,9 @@ const Stepper: FC<StepperType> = ({
   onFinishClick,
   finishContent,
 }) => {
+  const buttonBackDataCy = useMemo(() => `${dataCy}-back`, [dataCy]);
+  const buttonNextDataCy = useMemo(() => `${dataCy}-next`, [dataCy]);
+  const buttonFinishDataCy = useMemo(() => `${dataCy}-finish`, [dataCy]);
   return (
     <Grid container spacing={2} sx={{ flexGrow: 1 }}>
       <Grid item xs={12}>
@@ -47,7 +50,13 @@ const Stepper: FC<StepperType> = ({
           </Grid>
           <Grid item xs={12}>
             <div style={{ display: "flex", justifyContent: "end" }}>
-              <Button variant="outlined" label={labelFinishButton} color="primary" onClick={onFinishClick} />
+              <Button
+                dataCy={buttonFinishDataCy}
+                variant="outlined"
+                label={labelFinishButton}
+                color="primary"
+                onClick={onFinishClick}
+              />
             </div>
           </Grid>
         </Grid>
@@ -59,6 +68,7 @@ const Stepper: FC<StepperType> = ({
           <Grid item xs={12}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Button
+                dataCy={buttonBackDataCy}
                 variant="outlined"
                 label={labelBackButton}
                 color="primary"
@@ -66,7 +76,13 @@ const Stepper: FC<StepperType> = ({
                 onClick={onBackClick}
                 style={{ marginRight: 1 }}
               />
-              <Button variant="outlined" label={labelNextButton} color="primary" onClick={onNextClick} />
+              <Button
+                dataCy={buttonNextDataCy}
+                variant="outlined"
+                label={labelNextButton}
+                color="primary"
+                onClick={onNextClick}
+              />
             </div>
           </Grid>
         </Grid>
@@ -75,7 +91,9 @@ const Stepper: FC<StepperType> = ({
   );
 };
 
-export default localized(Stepper, {
+export const localizedStepper = localized(Stepper, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default localizedStepper;

@@ -1,13 +1,13 @@
 # Contents
 
 - [Scripts](#scripts)
-- [Local testing](#local-testing)
-- [Creating branch](#creating-branch)
+- [Creating a new branch](#creating-a-new-branch)
 - [Git Hooks](#git-hooks)
 - [Commit](#commit)
 	- [How to commit](#how-to-commit)
 - [Push](#push)
 - [Release process](#release-process)
+- [Install locally on host projects](#install-locally-on-host-projects)
 
 # Contributing
 
@@ -15,7 +15,7 @@
 
 - `npm start`
 
-  Launches `Storybook` on port `9009`
+  Launches `Storybook` on port `6006`
 
 - `npm run build`
 
@@ -23,7 +23,7 @@
 
 - `npm run test`
 
-  Launches `Storybook` test suite
+  Launches `Storybook` test suite, based on [`test-runner`](https://storybook.js.org/docs/writing-tests/test-runner)
 
 - `npm run test:coverage`
 
@@ -31,56 +31,22 @@
 
 - `npm run test:report`
 
-  After running `npm run test:coverage` generates an HTML report of the coverage
+  Running this command after `npm run test:coverage` generates an HTML report of the coverage into `/coverage/storybook/lcov-report`
 
-## Local testing
+## Creating a new branch
 
-Use this guide to locally use/test `@melfore/mosaic` on host projects, while developing new features on it.
+### From GitHub UI
 
-1. Install [`yalc`](https://github.com/whitecolor/yalc) local package manager
+Open the details of an issue assigned to you, and use the **Create new branch** link.
+Follow the instructions and before creation choose the option `Checkout locally`.
 
-   `npm i yalc -g`
+Copy the git commands into your terminal:
+```
+git fetch
+git checkout <new-branch-name>
+```
 
-2. Build `@melfore/mosaic`
-
-   `npm run build`
-
-3. Publish locally `@melfore/mosaic`
-
-   `yalc publish --push --private`
-
-   You will get something similar in the output:
-
-   `@melfore/mosaic@0.1.0-6ea98d41 published in store.`
-
-4. Move to the folder of the utilizing project and add local dependency for `@melfore/mosaic` (it will temporary replace the dependency for the online package)
-
-   `yalc add @melfore/mosaic`
-
-   You will see the new entry in your `package.json`
-   Remember to add these two rules to your `.gitignore` to avoid pushing to repo:
-
-   `/.yalc`
-
-   `yalc.lock`
-
-5. Update `node_modules` and local dependencies
-
-   `npm install`
-
-6. Import and use components in your code
-
-   ```
-   import { MosaicComponent } from '@melfore/mosaic';
-
-   ...
-
-   <MosaicComponent
-       label="Learn React"
-       onClick={() => window.open('https://reactjs.org', '_blank')}
-   />
-   ```
-## Creating branch
+### Manually
 
 To create a new feature branch, start always from the latest status of branch `master`:
 
@@ -91,13 +57,13 @@ git pull
 
 Then create locally a branch:
 
-```git checkout -b "my-local-branch"```
+```git checkout -b "<my-local-branch>"```
 
 Do your changes and commit them using dedicated npm command ```npm run commit``` (see [Commit](#commit) chapter).
 
 Set tracking info for current branch and push:
 
-```git push --set-upstream origin my-local-branch```
+```git push --set-upstream origin <my-local-branch>```
 
 Next pushes can be done simply with:
 
@@ -105,21 +71,9 @@ Next pushes can be done simply with:
 
 ## Git Hooks
 
-This project uses [husky](https://github.com/typicode/husky) to verify code before git actions can happen.
+This project uses [husky](https://github.com/typicode/husky) to verify  or transform code before git actions can happen.
 
-Husky v4.x rules:
-
-```
-{
-  "hooks": {
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "npm run clean:code",
-    "pre-push": "npm run build && CI=true npm run test:coverage"
-  }
-}
-```
-
-After migration to Husky v7.x hooks are stored in dedicated files under `.husky` folder.
+After migration to Husky v7.x hooks are stored in dedicated files under `.husky` folder inside project root directory.
 
 *commit-msg*
 
@@ -133,9 +87,9 @@ If a file required transformation, it will be added to current changes of the wo
 
 *pre-push*
 
-Before pushing code is always built and tested. Tests are executed with code coverage checks (required 80% to pass).
+Before pushing code is always built to ensure that it is stable enough to reach master.
 
-If build fails or code coverage is not met, the push is aborted. Bugs or failing tests must be solved before pushing to the remote.
+If build fails, the push is aborted. Bugs or errors must be solved before retry pushing to the remote.
 
 ## Commit
 
@@ -154,7 +108,7 @@ You have to add your local changes to a stage to prepare the commit. Feel free t
 
 2. Create a commit with `commitlint`
 
-Commits cannot be done via cmd line or other tools unless some specific plugins are configured (at the time being there is no support for this).
+**Commits cannot be done via cmd line or other tools unless some specific plugins are configured (at the time being there is no support for this).**
 
 Run `npm run commit`.
 
@@ -212,8 +166,8 @@ A commit may target several issues at the same time, in this situation, separate
 
 Examples:
 
-- 45
-- 45, 76
+- #45
+- #45, #76
 
 Press enter key to confirm.
 
@@ -242,7 +196,7 @@ PR should always point to `master` branch, however if multiple issues are going 
 Write a meaningful title, add an approver and write a description.
 If your work targets an open issue, please use the GitHub keywords to refer to it (for more info see [here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)).
 
-Every new PR must undergo an automated `test` CI Action, which starts immediately after creating the PR. It checks out the project and runs tests with coverage (similar to *pre-push* hook).
+Every new PR must undergo an automated `test` CI Action, which starts immediately after creating the PR. It checks out the project and runs tests with coverage.
 
 For more details see [test](./.github/workflows/test.yml) workflow.
 
@@ -251,4 +205,51 @@ Another CI Action takes care of preparing the bundle and uploading it to npm.
 
 For more details see [release](./.github/workflows/release.yml) workflow.
 
+## Install locally on host projects
+
+Use this guide to locally use/test `@melfore/mosaic` on host projects, while developing new features on it.
+
+1. Install [`yalc`](https://github.com/whitecolor/yalc) local package manager
+
+   `npm i yalc -g`
+
+2. Build `@melfore/mosaic`
+
+   `npm run build`
+
+3. Publish locally `@melfore/mosaic`
+
+   `yalc publish --push --private`
+
+   You will get something similar in the output:
+
+   `@melfore/mosaic@0.1.0-6ea98d41 published in store.`
+
+4. Move to the folder of the utilizing project and add local dependency for `@melfore/mosaic` (it will temporary replace the dependency for the online package)
+
+   `yalc add @melfore/mosaic`
+
+   You will see the new entry in your `package.json`
+   Remember to add these two rules to your `.gitignore` to avoid pushing to repo:
+
+   `/.yalc`
+
+   `yalc.lock`
+
+5. Update `node_modules` and local dependencies
+
+   `npm install`
+
+6. Import and use components in your code
+
+   ```
+   import { MosaicComponent } from '@melfore/mosaic';
+
+   ...
+
+   <MosaicComponent
+       label="Learn React"
+       onClick={() => window.open('https://reactjs.org', '_blank')}
+   />
+   ```
 

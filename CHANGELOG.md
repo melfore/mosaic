@@ -29,7 +29,7 @@
 
 ### Features
 
-* 🎸 [DateTimePicke] added prop type ([79da9d5](https://github.com/melfore/mosaic/commit/79da9d507a7c6668b7815a1d459983faab769e79)), closes [#364](https://github.com/melfore/mosaic/issues/364)
+* 🎸 [DateTimePicker] added prop type ([79da9d5](https://github.com/melfore/mosaic/commit/79da9d507a7c6668b7815a1d459983faab769e79)), closes [#364](https://github.com/melfore/mosaic/issues/364)
 
 ## [9.8.2](https://github.com/melfore/mosaic/compare/v9.8.1...v9.8.2) (2023-11-02)
 

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import { Spacer } from "../../..";
 import { DOCS_CODELINE_CLASS } from "../utils";
 
 import DocsTitle from "./DocsTitle";
@@ -41,6 +42,7 @@ const DocsLocale: FC<IDocsLocale> = ({ localizableProps }) => {
         If one of the properties above is an array of strings or object, all the values for that path will get
         localized.
       </p>
+      <Spacer direction="vertical" level={3} />
     </div>
   );
 };

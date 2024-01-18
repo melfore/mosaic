@@ -1,6 +1,5 @@
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, userEvent, within } from "@storybook/testing-library";
+import { configure, expect, fn, userEvent, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { logInfo } from "../../utils/logger";
@@ -40,7 +39,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onChangeMock = jest.fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
+const onChangeMock = fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
 
 export const Primary: Story = {
   args: {

@@ -4,9 +4,8 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
 import MUITextField from "@mui/material/TextField";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { ITableDataCallbackOptions } from "../../types/Table";
@@ -49,11 +48,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onPageMock = jest.fn(() => logInfo(COMPONENT_NAME, "onPageChange handler"));
-const onPageSizeMock = jest.fn(() => logInfo(COMPONENT_NAME, "onPageSizeChange handler"));
-const onRowMock = jest.fn(() => logInfo(COMPONENT_NAME, "onRow handler"));
-const onSelectMock = jest.fn(() => logInfo(COMPONENT_NAME, "onSelect handler"));
-const onSortMock = jest.fn(() => logInfo(COMPONENT_NAME, "onSort handler"));
+const onPageMock = fn(() => logInfo(COMPONENT_NAME, "onPageChange handler"));
+const onPageSizeMock = fn(() => logInfo(COMPONENT_NAME, "onPageSizeChange handler"));
+const onRowMock = fn(() => logInfo(COMPONENT_NAME, "onRow handler"));
+const onSelectMock = fn(() => logInfo(COMPONENT_NAME, "onSelect handler"));
+const onSortMock = fn(() => logInfo(COMPONENT_NAME, "onSort handler"));
 
 export const Primary: Story = {
   args: {
@@ -68,7 +67,7 @@ export const Primary: Story = {
   },
 };
 
-const onActionMock = jest.fn(() => {});
+const onActionMock = fn(() => {});
 
 const onDataAction = (actionName: string, data: any, options: ITableDataCallbackOptions) => {
   console.info({ data }, { options });

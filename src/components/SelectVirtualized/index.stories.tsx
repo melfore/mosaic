@@ -1,7 +1,6 @@
 import React from "react";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, screen, userEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, screen, userEvent, within } from "@storybook/test";
 
 import { getAllComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
@@ -42,9 +41,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onInputChangeMock = jest.fn((value) => logInfo(COMPONENT_NAME, `onInputChange handler '${value || null}'`));
-const onChangeMock = jest.fn((value) => logInfo(COMPONENT_NAME, `onChange handler '${value || null}'`));
-const onScrollEndMock = jest.fn(() => logInfo(COMPONENT_NAME, `onScroll handler`));
+const onInputChangeMock = fn((value) => logInfo(COMPONENT_NAME, `onInputChange handler '${value || null}'`));
+const onChangeMock = fn((value) => logInfo(COMPONENT_NAME, `onChange handler '${value || null}'`));
+const onScrollEndMock = fn(() => logInfo(COMPONENT_NAME, `onScroll handler`));
 
 const options: string[] = ["Paintings", "Sculpture", "Mosaic", "Murales", "Photography"];
 

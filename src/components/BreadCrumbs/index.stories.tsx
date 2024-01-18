@@ -1,8 +1,7 @@
 import React from "react";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
@@ -48,7 +47,7 @@ const linksMock = [
   { label: "page3", href: "//google.com/page3" },
 ];
 
-const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMock = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {

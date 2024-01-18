@@ -1,7 +1,6 @@
 import React from "react";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
@@ -42,9 +41,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onClickMockBack = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
-const onClickMockNext = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
-const onClickMockFinish = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMockBack = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMockNext = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMockFinish = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {

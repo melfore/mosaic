@@ -1,8 +1,7 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
@@ -43,7 +42,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMock = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
 export const Primary: Story = {
   args: {

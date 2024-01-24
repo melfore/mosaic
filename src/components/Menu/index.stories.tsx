@@ -1,8 +1,7 @@
 import React from "react";
 import MUIStyleIcon from "@mui/icons-material/Style";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, screen, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, screen, within } from "@storybook/test";
 
 import { logInfo } from "../../utils/logger";
 import { localeDecorator } from "../../utils/mocks/LocaleMock";
@@ -37,9 +36,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
+const onClickMock = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 
-const onItemClickMock = jest.fn(() => logInfo(COMPONENT_NAME, "onClick item handler"));
+const onItemClickMock = fn(() => logInfo(COMPONENT_NAME, "onClick item handler"));
 
 export const Primary: Story = {
   args: {

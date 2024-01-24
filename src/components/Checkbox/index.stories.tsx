@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { configure } from "@storybook/testing-library";
+import { configure } from "@storybook/test";
 
 import { getAllComposedDataCy } from "../../utils";
 import FormDecorator from "../../utils/mocks/FormDecorator";

@@ -1,7 +1,6 @@
 import React from "react";
-import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, waitFor, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, waitFor, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";

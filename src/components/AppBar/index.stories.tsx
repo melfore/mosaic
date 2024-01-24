@@ -1,7 +1,6 @@
 import React from "react";
-import { expect, jest } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { configure, fireEvent, within } from "@storybook/testing-library";
+import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
@@ -45,11 +44,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onActionMock = jest.fn(() => logInfo(COMPONENT_NAME, "onAction handler"));
-const onMenuMock = jest.fn(() => logInfo(COMPONENT_NAME, "onMenu handler"));
-const onLocaleMock = jest.fn(() => logInfo(COMPONENT_NAME, "onLocale handler"));
-const onTitleMock = jest.fn(() => logInfo(COMPONENT_NAME, "onTitle handler"));
-const onUserMock = jest.fn(() => logInfo(COMPONENT_NAME, "onUser handler"));
+const onActionMock = fn(() => logInfo(COMPONENT_NAME, "onAction handler"));
+const onMenuMock = fn(() => logInfo(COMPONENT_NAME, "onMenu handler"));
+const onLocaleMock = fn(() => logInfo(COMPONENT_NAME, "onLocale handler"));
+const onTitleMock = fn(() => logInfo(COMPONENT_NAME, "onTitle handler"));
+const onUserMock = fn(() => logInfo(COMPONENT_NAME, "onUser handler"));
 
 export const Primary: Story = {
   args: {

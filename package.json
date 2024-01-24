@@ -43,7 +43,7 @@
     "@storybook/react": "^7.6.7",
     "@storybook/react-webpack5": "^7.6.7",
     "@storybook/test": "^8.0.0-alpha.10",
-    "@storybook/test-runner": "^0.13.0",
+    "@storybook/test-runner": "^0.16.0",
     "@types/luxon": "^3.4.0",
     "@types/mdx": "^2.0.10",
     "@types/node": "^18.18.8",

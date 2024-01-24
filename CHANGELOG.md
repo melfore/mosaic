@@ -1,3 +1,10 @@
+# [9.10.0](https://github.com/melfore/mosaic/compare/v9.9.7...v9.10.0) (2024-01-24)
+
+
+### Features
+
+* 🎸 changed test imports ([57bcf56](https://github.com/melfore/mosaic/commit/57bcf562b9710d1f74b0cd0d4a80d27ddce59769)), closes [#380](https://github.com/melfore/mosaic/issues/380)
+
 ## [9.9.7](https://github.com/melfore/mosaic/compare/v9.9.6...v9.9.7) (2024-01-16)
 
 ## [9.9.6](https://github.com/melfore/mosaic/compare/v9.9.5...v9.9.6) (2024-01-16)

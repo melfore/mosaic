@@ -34,21 +34,21 @@ export const SUBPARTS_MAP = {
 export type ModalWithTabsType = TabsType & IModal;
 
 const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
-  dataCy = DATA_CY_DEFAULT,
-  tabList,
-  color,
-  orientation = "vertical",
-  children,
   cancel,
+  children,
   closable = false,
+  color,
   confirm,
+  dataCy = DATA_CY_DEFAULT,
   localized = false,
   onClose,
   open = false,
+  orientation = "vertical",
   responsive,
   size,
-  title,
   style,
+  tabList,
+  title,
 }) => {
   const {
     view: { tablet: tabletView },

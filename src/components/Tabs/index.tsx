@@ -9,7 +9,7 @@ export const DATA_CY_DEFAULT = "tabs";
 
 const Tabs: FC<TabsType> = ({
   dataCy = DATA_CY_DEFAULT,
-  labelList,
+  tabList,
   color = "primary",
   orientation = "horizontal",
   style,
@@ -32,8 +32,8 @@ const Tabs: FC<TabsType> = ({
         variant={orientation === "vertical" ? "standard" : "scrollable"}
         scrollButtons="auto"
       >
-        {labelList.map((i, index) => {
-          return <MUITab label={i.label} wrapped={i.wrapped} key={index} />;
+        {tabList.map((i, index) => {
+          return <MUITab label={i.label} wrapped={i.wrapped} key={index} disabled={i.disabled} />;
         })}
       </MUITabs>
 
@@ -43,7 +43,7 @@ const Tabs: FC<TabsType> = ({
         aria-labelledby={`${orientation}-tab-${value}`}
         style={{ width: "100%" }}
       >
-        {labelList[value].content && labelList[value].content}
+        {tabList[value].content && tabList[value].content}
       </div>
     </Box>
   );

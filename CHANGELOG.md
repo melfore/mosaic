@@ -1,3 +1,10 @@
+# [10.1.0](https://github.com/melfore/mosaic/compare/v10.0.0...v10.1.0) (2024-01-25)
+
+
+### Features
+
+* 🎸 [Tabs] Added single tab color ([a01f698](https://github.com/melfore/mosaic/commit/a01f6985f06c5e564193b77c9ba398262b43d7c6)), closes [#393](https://github.com/melfore/mosaic/issues/393)
+
 # [10.0.0](https://github.com/melfore/mosaic/compare/v9.11.0...v10.0.0) (2024-01-25)
 
 

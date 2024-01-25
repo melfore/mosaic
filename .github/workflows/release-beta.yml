@@ -9,7 +9,7 @@ jobs:
   release-beta:
     runs-on: ubuntu-latest
     steps:
-      - name: Check execution queue
+      - name: Workflow Ready
         uses: ahmadnassri/action-workflow-queue@v1.2.0
         with:
           timeout: 300000

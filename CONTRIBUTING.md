@@ -205,7 +205,7 @@ Another CI Action takes care of preparing the bundle and uploading it to npm.
 
 For more details see [release](./.github/workflows/release.yml) workflow.
 
-Below the florwchart for release process.
+Below the florwchart for release process (applies for release-beta as well).
 Any job (orange boxes) may fail, causing the immediate abort of the run. 
 Subsequent steps will not be triggered.
 

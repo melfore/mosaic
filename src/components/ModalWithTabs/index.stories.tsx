@@ -44,7 +44,7 @@ const Template: ComponentStory<typeof ModalWithTabsWithProps> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  labelList: [
+  tabList: [
     { label: "PAGE 1", content: "PAGE 1 Content" },
     { label: "PAGE 2", content: <div>PAGE 2 Content</div> },
     { label: "PAGE 3", content: <Progress type="linear" /> },

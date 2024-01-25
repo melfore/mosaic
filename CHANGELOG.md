@@ -1,3 +1,10 @@
+# [9.11.0](https://github.com/melfore/mosaic/compare/v9.10.2...v9.11.0) (2024-01-25)
+
+
+### Features
+
+* 🎸 [Tabs] Add disabled prop ([3f9ccdf](https://github.com/melfore/mosaic/commit/3f9ccdf9b037cbf3c55621a18c784bcf30d033f3)), closes [#385](https://github.com/melfore/mosaic/issues/385)
+
 ## [9.10.2](https://github.com/melfore/mosaic/compare/v9.10.1...v9.10.2) (2024-01-25)
 
 ## [9.10.1](https://github.com/melfore/mosaic/compare/v9.10.0...v9.10.1) (2024-01-24)

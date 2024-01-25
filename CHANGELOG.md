@@ -1,3 +1,16 @@
+# [10.0.0](https://github.com/melfore/mosaic/compare/v9.11.0...v10.0.0) (2024-01-25)
+
+
+### Features
+
+* 🎸 [Tabs] Renamed `labelList` into `tabList` ([4d3b51a](https://github.com/melfore/mosaic/commit/4d3b51a70197e8869b2a00de87c4735032d6628e))
+
+
+### BREAKING CHANGES
+
+* 🧨 Renamed `labelList` prop into `tabList` for Tabs. This impacts also
+ModalWithTabs.
+
 # [9.11.0](https://github.com/melfore/mosaic/compare/v9.10.2...v9.11.0) (2024-01-25)
 
 

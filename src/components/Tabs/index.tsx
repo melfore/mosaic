@@ -9,10 +9,10 @@ export const DATA_CY_DEFAULT = "tabs";
 
 const Tabs: FC<TabsType> = ({
   dataCy = DATA_CY_DEFAULT,
-  tabList,
   color = "primary",
   orientation = "horizontal",
   style,
+  tabList,
 }) => {
   const [value, setValue] = React.useState(0);
 

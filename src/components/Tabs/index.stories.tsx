@@ -44,7 +44,7 @@ export const Primary: Story = {
 };
 
 export const Color: Story = {
-  args: { ...Primary.args, color: "secondary" },
+  args: { ...Primary.args, color: "warning" },
 };
 
 export const Orientation: Story = {
@@ -57,6 +57,16 @@ export const DisabledTab: Story = {
       { label: "PAGE1", content: "PAGE1" },
       { label: "PAGE2", content: "PAGE2" },
       { label: "PAGE3", content: <Progress type="circular" withLabel={false} />, disabled: true },
+    ],
+  },
+};
+
+export const SingleTabColor: Story = {
+  args: {
+    tabList: [
+      { label: "PAGE1", content: "PAGE1" },
+      { label: "PAGE2", content: "PAGE2" },
+      { label: "PAGE3", content: <Progress type="circular" withLabel={false} />, textColor: "error" },
     ],
   },
 };

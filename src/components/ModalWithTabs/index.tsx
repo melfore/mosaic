@@ -35,7 +35,7 @@ export type ModalWithTabsType = TabsType & IModal;
 
 const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
   dataCy = DATA_CY_DEFAULT,
-  labelList,
+  tabList,
   color,
   orientation = "vertical",
   children,
@@ -78,7 +78,7 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
           {children}
         </Grid>
         <Grid item xs={12}>
-          <Tabs data-cy={dataCy} labelList={labelList} color={color} orientation={autoOrientation} style={style} />
+          <Tabs data-cy={dataCy} tabList={tabList} color={color} orientation={autoOrientation} style={style} />
         </Grid>
       </Grid>
     </Modal>

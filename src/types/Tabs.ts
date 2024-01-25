@@ -1,9 +1,9 @@
 import { IBase } from "./Base";
 
-export type TabType = { label: string; wrapped?: boolean; content?: React.ReactNode };
+export type TabType = { label: string; wrapped?: boolean; content?: React.ReactNode; disabled?: boolean };
 
 export type TabsType = IBase & {
-  labelList: TabType[];
+  tabList: TabType[];
   color?: "primary" | "secondary";
   orientation?: "horizontal" | "vertical";
 };

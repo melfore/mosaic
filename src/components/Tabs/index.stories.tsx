@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    labelList: [
+    tabList: [
       { label: "PAGE1", content: "PAGE1" },
       { label: "PAGE2", content: "PAGE2" },
       { label: "PAGE3", content: <Progress type="circular" withLabel={false} /> },
@@ -49,4 +49,14 @@ export const Color: Story = {
 
 export const Orientation: Story = {
   args: { ...Primary.args, orientation: "vertical" },
+};
+
+export const DisabledTab: Story = {
+  args: {
+    tabList: [
+      { label: "PAGE1", content: "PAGE1" },
+      { label: "PAGE2", content: "PAGE2" },
+      { label: "PAGE3", content: <Progress type="circular" withLabel={false} />, disabled: true },
+    ],
+  },
 };

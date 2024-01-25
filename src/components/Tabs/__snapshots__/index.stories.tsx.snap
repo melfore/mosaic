@@ -62,6 +62,67 @@ exports[`Navigation/Tabs Color smoke-test 1`] = `
 </div>
 `;
 
+exports[`Navigation/Tabs DisabledTab smoke-test 1`] = `
+<div class="MuiBox-root css-mui-classname">
+  <div class="MuiTabs-root css-mui-classname"
+       data-cy="tabs"
+  >
+    <div class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-mui-classname"
+         style="width: 99px; height: 99px; position: absolute; top: -9999px; overflow: scroll;"
+    >
+    </div>
+    <div class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-mui-classname"
+         style="margin-bottom: 0px;"
+    >
+      <div class="MuiTabs-flexContainer css-mui-classname"
+           role="tablist"
+      >
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-mui-classname"
+                tabindex="0"
+                type="button"
+                role="tab"
+                aria-selected="true"
+        >
+          PAGE1
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
+        </button>
+        <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
+                tabindex="-1"
+                type="button"
+                role="tab"
+                aria-selected="false"
+        >
+          PAGE2
+          <span class="MuiTouchRipple-root css-mui-classname">
+          </span>
+        </button>
+        <button class="MuiButtonBase-root Mui-disabled MuiTab-root MuiTab-textColorPrimary Mui-disabled css-mui-classname"
+                tabindex="-1"
+                type="button"
+                disabled
+                role="tab"
+                aria-selected="false"
+        >
+          PAGE3
+        </button>
+      </div>
+      <span class="MuiTabs-indicator css-mui-classname"
+            style="left: 0px; width: 90px;"
+      >
+      </span>
+    </div>
+  </div>
+  <div role="tabpanel"
+       id="simple-tabpanel-0"
+       aria-labelledby="horizontal-tab-0"
+       style="width: 100%;"
+  >
+    PAGE1
+  </div>
+</div>
+`;
+
 exports[`Navigation/Tabs Orientation smoke-test 1`] = `
 <div class="MuiBox-root css-mui-classname">
   <div class="MuiTabs-root MuiTabs-vertical css-mui-classname"

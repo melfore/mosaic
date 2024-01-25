@@ -9,6 +9,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Check execution queue
+        uses: ahmadnassri/action-workflow-queue@v1.2.0
+        with:
+          timeout: 300000
+  
       - name: Checkout
         uses: actions/checkout@v3
         with:

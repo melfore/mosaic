@@ -5,15 +5,14 @@ on:
     branches:
       - beta
 
+concurrency:
+  group: release-beta
+  cancel-in-progress: true
+
 jobs:
   release-beta:
     runs-on: ubuntu-latest
     steps:
-      - name: Workflow Ready
-        uses: ahmadnassri/action-workflow-queue@v1.2.0
-        with:
-          timeout: 300000
-          
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -86,7 +85,7 @@ jobs:
       - name: Send Notification
         uses: Co-qn/google-chat-notification@master
         with:
-          name: Mosaic CI - Release Beta
+          name: ${{ github.workflow }}
           url: ${{ secrets.GOOGLE_CHAT }}
           status: ${{ job.status }}
         if: always()

@@ -1,4 +1,12 @@
-export default {
+import type { StorybookConfig } from "@storybook/react-webpack5";
+
+type MosaicStorybookConfig = StorybookConfig & {
+  features: StorybookConfig["features"] & {
+    emotionAlias: boolean;
+  };
+};
+
+const config: MosaicStorybookConfig = {
   stories: ["../src/components/**/*.stories.mdx", "../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -6,6 +14,9 @@ export default {
     "@storybook/addon-coverage",
     "@storybook/addon-interactions",
   ],
+  docs: {
+    autodocs: true,
+  },
   features: {
     emotionAlias: false,
   },
@@ -13,7 +24,6 @@ export default {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  docs: {
-    autodocs: true,
-  },
 };
+
+export default config;

@@ -23,7 +23,7 @@ It requires these `peerDependencies` to be installed in host project:
     "@mui/material": ">= 5.5.3 < 6",
     "@mui/system": ">= 5.15.4 < 6",
     "@mui/x-date-pickers": ">= 6.16.0 < 7",
-    "luxon": ">= 3.4.3 < 4",
+    "luxon": ">= 3.4.4 < 4",
     "react": ">= 18 < 19",
     "react-dom": ">= 18 < 19",
     "react-window": ">= 1.8.0 < 1.9.0"

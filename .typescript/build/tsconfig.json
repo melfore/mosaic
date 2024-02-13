@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "react",
     "outDir": "./dist",
-    "declaration": true,
+    "declaration": true
   },
   "include": ["src"],
   "exclude": [
@@ -24,6 +24,6 @@
     "**/*.test.*",
     "src/utils/mocks/*",
     "src/utils/stories/*",
-    "src/utils/tests/*",
-  ],
+    "src/utils/tests/*"
+  ]
 }

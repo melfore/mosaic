@@ -29,31 +29,29 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
   return (
     <div>
       <DocsTitle text="E2E Testing" />
-      <p>
-        This component leverages <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML attribute testing. Reference
-        frameworks are:&nbsp;
-        <a href="https://www.cypress.io" rel="noreferrer" target="_blank">
-          cypress.io
-        </a>
-        &nbsp;and&nbsp;
-        <a href="https://testing-library.com/" rel="noreferrer" target="_blank">
-          Testing Library
-        </a>
-        .
-        <br />
-        To set a value for <code className={DOCS_CODELINE_CLASS}>data-cy</code> assign a valid string to{" "}
-        <code className={DOCS_CODELINE_CLASS}>dataCy</code> prop (defaults to:{" "}
-        <code className={DOCS_CODELINE_CLASS}>{`"${e2eTestInfo.dataCyDefault}"`}</code>)
-      </p>
-      <p>
-        <span>
-          <u>Example:</u> finding the root component
-        </span>
+      This component leverages <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML attribute testing. Reference
+      frameworks are:&nbsp;
+      <a href="https://www.cypress.io" rel="noreferrer" target="_blank">
+        cypress.io
+      </a>
+      &nbsp;and&nbsp;
+      <a href="https://testing-library.com/" rel="noreferrer" target="_blank">
+        Testing Library
+      </a>
+      .
+      <br />
+      To set a value for <code className={DOCS_CODELINE_CLASS}>data-cy</code> assign a valid string to{" "}
+      <code className={DOCS_CODELINE_CLASS}>dataCy</code> prop (defaults to:{" "}
+      <code className={DOCS_CODELINE_CLASS}>{`"${e2eTestInfo.dataCyDefault}"`}</code>)
+      <br />
+      <div>
+        <u>Example:</u> finding the root component
         <Spacer direction="vertical" />
         <code className={DOCS_CODEBLOCK_CLASS}>
           {`cy.get("[data-cy='${e2eTestInfo.dataCyDefault}']"); // Do something with it `}
         </code>
-      </p>
+        <br />
+      </div>
       {localizable && e2eTestInfo.dataCyShortcut && (
         <p>
           <u>Important!</u>
@@ -64,12 +62,9 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
       )}
       {e2eTestInfo.subpartsSuffixes && (
         <div>
-          <p>
-            <b>Testing component subparts</b>
-            <br />
-            There are some component subparts which offer a <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML
-            attribute to retrieve them easily.
-          </p>
+          <h4>Testing component subparts</h4>
+          There are some component subparts which offer a <code className={DOCS_CODELINE_CLASS}>data-cy</code> HTML
+          attribute to retrieve them easily.
           <table style={{ textAlign: "left", minWidth: "75%" }}>
             <thead>
               <tr>
@@ -90,16 +85,14 @@ const DocsE2E: FC<IDocsE2E> = ({ e2eTestInfo, localizable = false }) => {
               ))}
             </tbody>
           </table>
-          <p>
-            <span>
-              <u>Example:</u> finding the <i>{e2eTestInfo.subpartsSuffixes[0].label}</i> subpart, with{" "}
-              <code className={DOCS_CODELINE_CLASS}>{`dataCy="${e2eTestInfo.dataCyDefault}"`}</code>
-            </span>
-            <Spacer direction="vertical" />
-            <code className={DOCS_CODEBLOCK_CLASS}>
-              {`cy.get("[data-cy='${e2eTestInfo.dataCyDefault}-${e2eTestInfo.subpartsSuffixes[0].suffix}']") // Do something with it`}
-            </code>
-          </p>
+          <span>
+            <u>Example:</u> finding the <i>{e2eTestInfo.subpartsSuffixes[0].label}</i> subpart, with{" "}
+            <code className={DOCS_CODELINE_CLASS}>{`dataCy="${e2eTestInfo.dataCyDefault}"`}</code>
+          </span>
+          <Spacer direction="vertical" />
+          <code className={DOCS_CODEBLOCK_CLASS}>
+            {`cy.get("[data-cy='${e2eTestInfo.dataCyDefault}-${e2eTestInfo.subpartsSuffixes[0].suffix}']") // Do something with it`}
+          </code>
         </div>
       )}
     </div>

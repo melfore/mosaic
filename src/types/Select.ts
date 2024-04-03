@@ -22,7 +22,7 @@ interface SelectBaseProps<T extends SelectDataAllowed> extends SelectPopperProps
   /**
    * Automatically sorts options in alphabetical order (localeCompare)
    */
-  autoSort?: boolean;
+  autoSort?: "asc" | "desc" | ((opt1: T, opt2: T) => number);
   /**
    * Method to allow custom rendering of each option
    */

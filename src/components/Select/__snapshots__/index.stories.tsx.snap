@@ -93,8 +93,8 @@ exports[`Inputs/Select Autocomplete play-test 1`] = `
              role="combobox"
              data-cy="select"
              value="M"
-             style="width: 100%;"
              aria-controls=":r2:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -159,8 +159,8 @@ exports[`Inputs/Select AutocompleteChange play-test 1`] = `
              role="combobox"
              data-cy="select"
              value="M"
-             style="width: 100%;"
              aria-controls=":r4:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -289,8 +289,8 @@ exports[`Inputs/Select Grouped play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":ra:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -355,8 +355,8 @@ exports[`Inputs/Select GroupedCustomLabel play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":rc:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -563,8 +563,8 @@ exports[`Inputs/Select Multiple play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":ri:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-mui-classname"
@@ -647,8 +647,8 @@ exports[`Inputs/Select OnScrollEndCallback play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":rk:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -713,8 +713,8 @@ exports[`Inputs/Select OptionCustomLabel play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":rm:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -779,8 +779,8 @@ exports[`Inputs/Select OptionCustomRendering play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":ro:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -1235,8 +1235,8 @@ exports[`Inputs/Select Virtualized play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":r14:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"
@@ -1301,8 +1301,8 @@ exports[`Inputs/Select VirtualizedWith1000Elements play-test 1`] = `
              role="combobox"
              data-cy="select"
              value
-             style="width: 100%;"
              aria-controls=":r16:-listbox"
+             style="width: 100%;"
       >
       <div class="MuiAutocomplete-endAdornment css-mui-classname">
         <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator MuiAutocomplete-popupIndicatorOpen css-mui-classname"

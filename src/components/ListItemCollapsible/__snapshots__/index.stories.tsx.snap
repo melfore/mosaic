@@ -5,7 +5,7 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
-     style="cursor: pointer;"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
@@ -44,7 +44,7 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
-     style="cursor: pointer;"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
@@ -117,7 +117,7 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
-     style="cursor: pointer;"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
@@ -156,7 +156,7 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
-     style="cursor: pointer;"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
@@ -195,7 +195,7 @@ exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
      tabindex="0"
      role="button"
      data-cy="list-item-collapsible-header"
-     style="cursor: pointer;"
+     style="cursor: default;"
 >
   <div class="MuiListItemIcon-root css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"

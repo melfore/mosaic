@@ -33,15 +33,11 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -245,15 +241,11 @@ exports[`Surfaces/AppBar Empty smoke-test 1`] = `
        style="align-items: center; display: flex; justify-content: space-between;"
   >
     <div style="align-items: center; display: flex; flex: 1 1 0%;">
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          Empty
-        </h2>
-      </div>
+        Empty
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
     </div>
@@ -294,15 +286,11 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -390,15 +378,11 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="locale.title-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="locale.title-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="locale.title-title-text"
-        >
-          Titolo
-        </h2>
-      </div>
+        Titolo
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="locale.title-action-0-adornment">
@@ -465,15 +449,11 @@ exports[`Surfaces/AppBar Primary smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -541,15 +521,11 @@ exports[`Surfaces/AppBar Styled smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -640,15 +616,11 @@ exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -737,15 +709,11 @@ exports[`Surfaces/AppBar Username smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">
@@ -834,15 +802,11 @@ exports[`Surfaces/AppBar UsernameIcon smoke-test 1`] = `
           </button>
         </span>
       </span>
-      <div data-cy="appbar-title-clickable"
-           style="border-radius: 4px; cursor: pointer; padding: 4px 8px; user-select: none;"
+      <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
+          data-cy="appbar-title-text"
       >
-        <h2 class="MuiTypography-root MuiTypography-h6 css-mui-classname"
-            data-cy="appbar-title-text"
-        >
-          AppBar
-        </h2>
-      </div>
+        AppBar
+      </h2>
     </div>
     <div style="align-items: center; display: flex;">
       <span data-cy="appbar-action-0-adornment">

@@ -44,7 +44,7 @@ export const SUBPARTS_MAP = {
 
 const Select = <T extends SelectDataAllowed>({
   autoComplete = true,
-  autoSort = false,
+  autoSort = undefined,
   customOptionRendering,
   dataCy = DATA_CY_DEFAULT,
   disabled = false,
@@ -157,11 +157,25 @@ const Select = <T extends SelectDataAllowed>({
       });
     }
 
-    if (autoSort) {
+    if (typeof autoSort === "function") {
+      options = options.sort((one: SelectData<T>, another: SelectData<T>) => {
+        return autoSort(one, another);
+      });
+    }
+
+    if (autoSort === "asc") {
       options = options.sort((one: SelectData<T>, another: SelectData<T>) => {
         const oneLabel = getOptionLabel(one);
         const anotherLabel = getOptionLabel(another);
         return oneLabel.localeCompare(anotherLabel);
+      });
+    }
+
+    if (autoSort === "desc") {
+      options = options.sort((one: SelectData<T>, another: SelectData<T>) => {
+        const oneLabel = getOptionLabel(one);
+        const anotherLabel = getOptionLabel(another);
+        return anotherLabel.localeCompare(oneLabel);
       });
     }
 

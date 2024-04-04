@@ -190,7 +190,7 @@ exports[`Inputs/InputText Multiline smoke-test 1`] = `
               id=":r5:"
               data-cy="input-text"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline css-mui-classname"
-              style="height: 69px; width: 100%;"
+              style="width: 100%; height: 69px;"
     >
       Value
     </textarea>

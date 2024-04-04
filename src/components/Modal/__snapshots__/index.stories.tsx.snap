@@ -2,12 +2,12 @@
 
 exports[`Feedback/Modal ActionCancel smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -28,12 +28,12 @@ exports[`Feedback/Modal ActionCancel smoke-test 1`] = `
 
 exports[`Feedback/Modal ActionConfirm smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -54,12 +54,12 @@ exports[`Feedback/Modal ActionConfirm smoke-test 1`] = `
 
 exports[`Feedback/Modal Actions smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -80,12 +80,12 @@ exports[`Feedback/Modal Actions smoke-test 1`] = `
 
 exports[`Feedback/Modal Closeable smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -106,12 +106,12 @@ exports[`Feedback/Modal Closeable smoke-test 1`] = `
 
 exports[`Feedback/Modal Localized smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -132,12 +132,12 @@ exports[`Feedback/Modal Localized smoke-test 1`] = `
 
 exports[`Feedback/Modal Primary smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -158,12 +158,12 @@ exports[`Feedback/Modal Primary smoke-test 1`] = `
 
 exports[`Feedback/Modal SizeFullScreen smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -184,12 +184,12 @@ exports[`Feedback/Modal SizeFullScreen smoke-test 1`] = `
 
 exports[`Feedback/Modal SizeLarge smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"
@@ -210,12 +210,12 @@ exports[`Feedback/Modal SizeLarge smoke-test 1`] = `
 
 exports[`Feedback/Modal SizeSmall smoke-test 1`] = `
 <div>
-  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+  <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
           tabindex="0"
           type="button"
           data-cy="button"
   >
-    <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+    <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
            aria-hidden="true"

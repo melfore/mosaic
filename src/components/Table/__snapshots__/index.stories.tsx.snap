@@ -598,13 +598,13 @@ exports[`Display/Table ColumnFiltersStickyWithActions smoke-test 1`] = `
       Column Filters (sticky)
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -1417,13 +1417,13 @@ exports[`Display/Table ColumnFiltersStickyWithActionsStickySelection smoke-test 
       Column Filters (sticky)
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -2236,13 +2236,13 @@ exports[`Display/Table DataActions smoke-test 1`] = `
       Table
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -2258,13 +2258,13 @@ exports[`Display/Table DataActions smoke-test 1`] = `
         <span class="MuiTouchRipple-root css-mui-classname">
         </span>
       </button>
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Custom"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -2281,14 +2281,14 @@ exports[`Display/Table DataActions smoke-test 1`] = `
         <span class="MuiTouchRipple-root css-mui-classname">
         </span>
       </button>
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="-1"
               type="button"
               disabled
               data-cy="table-action-Send"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -5732,13 +5732,13 @@ exports[`Display/Table TableLayoutAuto smoke-test 1`] = `
       Try to scroll horizontally
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -6519,13 +6519,13 @@ exports[`Display/Table TableLayoutAutoSelectionSticky smoke-test 1`] = `
       Try to scroll horizontally
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"
@@ -7306,13 +7306,13 @@ exports[`Display/Table TableLayoutSticky smoke-test 1`] = `
       Try to scroll both ways
     </h2>
     <div style="align-items: center; display: flex; justify-content: center;">
-      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+      <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
               tabindex="0"
               type="button"
               data-cy="table-action-Add"
               style="margin: 0px 4px;"
       >
-        <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+        <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
           <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
                focusable="false"
                aria-hidden="true"

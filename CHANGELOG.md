@@ -1,3 +1,10 @@
+# [10.2.0](https://github.com/melfore/mosaic/compare/v10.1.4...v10.2.0) (2024-04-04)
+
+
+### Features
+
+* 🎸 [Selecet]Change autoSort prop ([b7808cb](https://github.com/melfore/mosaic/commit/b7808cbb1c35e536b5b539d77aab279bab291ec6)), closes [#405](https://github.com/melfore/mosaic/issues/405)
+
 ## [10.1.4](https://github.com/melfore/mosaic/compare/v10.1.3...v10.1.4) (2024-02-19)
 
 ## [10.1.3](https://github.com/melfore/mosaic/compare/v10.1.2...v10.1.3) (2024-02-15)

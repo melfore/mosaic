@@ -26,6 +26,11 @@ const config: MosaicStorybookConfig = {
     options: {},
   },
   stories: ["../src/components/**/*.mdx", "../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
+  typescript: {
+    check: false,
+    reactDocgen: "react-docgen-typescript",
+    skipCompiler: false,
+  },
 };
 
 export default config;

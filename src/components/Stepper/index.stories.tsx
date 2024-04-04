@@ -48,12 +48,15 @@ const onClickMockFinish = fn(() => logInfo(COMPONENT_NAME, "onClick handler"));
 export const Primary: Story = {
   args: {
     activeStep: 1,
+    finishContent: "All Steps are completed",
+    onBackClick: onClickMockBack,
+    onNextClick: onClickMockNext,
+    onFinishClick: onClickMockFinish,
     stepsList: [
       { label: "STEP1", content: "CONTENT PAGE 1" },
       { label: "STEP2", content: "CONTENT PAGE 2" },
       { label: "STEP3", content: <Progress type="linear" /> },
     ],
-    finishContent: "All Steps are completed",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -72,7 +75,10 @@ export const Primary: Story = {
 };
 
 export const ActiveStep: Story = {
-  args: { ...Primary.args, activeStep: 3 },
+  args: {
+    ...Primary.args,
+    activeStep: 3,
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const buttonFinish = canvas.getByTestId(`${DATA_CY_DEFAULT}-finish`);
@@ -83,14 +89,8 @@ export const ActiveStep: Story = {
 
 export const Localized: Story = {
   args: {
-    activeStep: 0,
+    ...Primary.args,
     localized: true,
-    stepsList: [
-      { label: "locale.step1", content: "CONTENT PAGE 1" },
-      { label: "locale.step2", content: "CONTENT PAGE 2" },
-      { label: "locale.step3", content: <Progress type="linear" /> },
-    ],
-    finishContent: "All Steps are completed",
     labelBackButton: "locale.back",
     labelNextButton: "locale.next",
     labelFinishButton: "locale.finish",

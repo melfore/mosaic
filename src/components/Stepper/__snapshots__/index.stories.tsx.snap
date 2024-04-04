@@ -106,44 +106,34 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
       <div class="MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel css-mui-classname"
            data-cy="Stepper"
       >
-        <div class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel css-mui-classname">
+        <div class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel Mui-completed css-mui-classname">
           <span class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel css-mui-classname">
-            <span class="MuiStepLabel-iconContainer Mui-active MuiStepLabel-alternativeLabel css-mui-classname">
-              <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-mui-classname"
+            <span class="MuiStepLabel-iconContainer Mui-completed MuiStepLabel-alternativeLabel css-mui-classname">
+              <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-completed css-mui-classname"
                    focusable="false"
                    aria-hidden="true"
                    viewbox="0 0 24 24"
+                   data-testid="CheckCircleIcon"
               >
-                <circle cx="12"
-                        cy="12"
-                        r="12"
-                >
-                </circle>
-                <text class="MuiStepIcon-text css-mui-classname"
-                      x="12"
-                      y="12"
-                      text-anchor="middle"
-                      dominant-baseline="central"
-                >
-                  1
-                </text>
+                <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-2 17l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z">
+                </path>
               </svg>
             </span>
             <span class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel css-mui-classname">
-              <span class="MuiStepLabel-label Mui-active MuiStepLabel-alternativeLabel css-mui-classname">
-                locale.step1
+              <span class="MuiStepLabel-label Mui-completed MuiStepLabel-alternativeLabel css-mui-classname">
+                STEP1
               </span>
             </span>
           </span>
         </div>
         <div class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel css-mui-classname">
-          <div class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled css-mui-classname">
+          <div class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-active css-mui-classname">
             <span class="MuiStepConnector-line MuiStepConnector-lineHorizontal css-mui-classname">
             </span>
           </div>
-          <span class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel css-mui-classname">
-            <span class="MuiStepLabel-iconContainer Mui-disabled MuiStepLabel-alternativeLabel css-mui-classname">
-              <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root css-mui-classname"
+          <span class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel css-mui-classname">
+            <span class="MuiStepLabel-iconContainer Mui-active MuiStepLabel-alternativeLabel css-mui-classname">
+              <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active css-mui-classname"
                    focusable="false"
                    aria-hidden="true"
                    viewbox="0 0 24 24"
@@ -164,8 +154,8 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
               </svg>
             </span>
             <span class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel css-mui-classname">
-              <span class="MuiStepLabel-label Mui-disabled MuiStepLabel-alternativeLabel css-mui-classname">
-                locale.step2
+              <span class="MuiStepLabel-label Mui-active MuiStepLabel-alternativeLabel css-mui-classname">
+                STEP2
               </span>
             </span>
           </span>
@@ -199,7 +189,7 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
             </span>
             <span class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel css-mui-classname">
               <span class="MuiStepLabel-label Mui-disabled MuiStepLabel-alternativeLabel css-mui-classname">
-                locale.step3
+                STEP3
               </span>
             </span>
           </span>
@@ -208,18 +198,19 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
     </div>
     <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mui-classname">
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mui-classname">
-        CONTENT PAGE 1
+        CONTENT PAGE 2
       </div>
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mui-classname">
         <div style="display: flex; justify-content: space-between;">
-          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
-                  tabindex="-1"
+          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
+                  tabindex="0"
                   type="button"
-                  disabled
                   data-cy="Stepper-back"
                   style="margin-right: 1px;"
           >
             Dietro
+            <span class="MuiTouchRipple-root css-mui-classname">
+            </span>
           </button>
           <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
                   tabindex="0"

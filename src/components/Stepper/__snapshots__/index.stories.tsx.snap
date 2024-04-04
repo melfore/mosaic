@@ -83,7 +83,7 @@ exports[`Navigation/Stepper ActiveStep play-test 1`] = `
       </div>
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mui-classname">
         <div style="display: flex; justify-content: end;">
-          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
                   tabindex="0"
                   type="button"
                   data-cy="Stepper-finish"
@@ -212,7 +212,7 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
       </div>
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mui-classname">
         <div style="display: flex; justify-content: space-between;">
-          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
                   tabindex="-1"
                   type="button"
                   disabled
@@ -221,7 +221,7 @@ exports[`Navigation/Stepper Localized smoke-test 1`] = `
           >
             Dietro
           </button>
-          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
                   tabindex="0"
                   type="button"
                   data-cy="Stepper-next"
@@ -320,7 +320,7 @@ exports[`Navigation/Stepper Primary play-test 1`] = `
       </div>
       <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-mui-classname">
         <div style="display: flex; justify-content: end;">
-          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+          <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
                   tabindex="0"
                   type="button"
                   data-cy="Stepper-finish"

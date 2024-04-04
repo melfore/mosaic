@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation/Menu CustomIcon smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="menu-button"
 >
-  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
@@ -83,12 +83,12 @@ exports[`Navigation/Menu IconButton smoke-test 1`] = `
 `;
 
 exports[`Navigation/Menu Primary play-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="menu-button"
 >
-  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"

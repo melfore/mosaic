@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inputs/Button Color smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
@@ -13,7 +13,7 @@ exports[`Inputs/Button Color smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button Disabled smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="-1"
         type="button"
         disabled
@@ -24,7 +24,7 @@ exports[`Inputs/Button Disabled smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button Elevated smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
@@ -36,12 +36,12 @@ exports[`Inputs/Button Elevated smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button Icon smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
 >
-  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
@@ -60,12 +60,12 @@ exports[`Inputs/Button Icon smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button IconCustom smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
 >
-  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
@@ -85,13 +85,13 @@ exports[`Inputs/Button IconCustom smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button IconRight smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
 >
   Button
-  <span class="MuiButton-endIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-endIcon MuiButton-iconSizeMedium css-mui-classname">
     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
          focusable="false"
          aria-hidden="true"
@@ -109,13 +109,13 @@ exports[`Inputs/Button IconRight smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button IconRotate smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="-1"
         type="button"
         disabled
         data-cy="button"
 >
-  <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
+  <span class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-mui-classname">
     <div class="MuiBox-root css-mui-classname">
       <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-mui-classname"
            focusable="false"
@@ -134,7 +134,7 @@ exports[`Inputs/Button IconRotate smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button Localized smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="locale.button"
@@ -146,7 +146,7 @@ exports[`Inputs/Button Localized smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button Primary play-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
@@ -158,7 +158,7 @@ exports[`Inputs/Button Primary play-test 1`] = `
 `;
 
 exports[`Inputs/Button Styled smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"
@@ -171,7 +171,7 @@ exports[`Inputs/Button Styled smoke-test 1`] = `
 `;
 
 exports[`Inputs/Button VariantOutlined smoke-test 1`] = `
-<button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation css-mui-classname"
+<button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-disableElevation css-mui-classname"
         tabindex="0"
         type="button"
         data-cy="button"

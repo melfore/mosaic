@@ -213,7 +213,7 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
   >
     Date Time
   </label>
-  <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl Mui-readOnly MuiInputBase-readOnly css-mui-classname">
+  <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd Mui-readOnly MuiInputBase-readOnly css-mui-classname">
     <input aria-invalid="false"
            autocomplete="off"
            id=":r7:"
@@ -222,7 +222,7 @@ exports[`Inputs/DateTimePicker MobileView smoke-test 1`] = `
            type="text"
            aria-label="Choose date, selected date is Oct 29, 2023"
            inputmode="text"
-           class="MuiInputBase-input MuiOutlinedInput-input Mui-readOnly MuiInputBase-readOnly css-mui-classname"
+           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd Mui-readOnly MuiInputBase-readOnly css-mui-classname"
            value="10/29/2023 06:00:00"
     >
     <fieldset aria-hidden="true"

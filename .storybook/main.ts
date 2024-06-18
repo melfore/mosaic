@@ -12,7 +12,6 @@ const config: MosaicStorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-coverage",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
     "@storybook/addon-webpack5-compiler-babel",
   ],
   docs: {

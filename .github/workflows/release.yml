@@ -3,7 +3,7 @@ name: Mosaic CI - Release
 on:
   push:
     branches:
-      - master
+      - main
 
 concurrency:
   group: release

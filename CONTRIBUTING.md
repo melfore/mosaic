@@ -48,10 +48,10 @@ git checkout <new-branch-name>
 
 ### Manually
 
-To create a new feature branch, start always from the latest status of branch `master`:
+To create a new feature branch, start always from the latest status of branch `main`:
 
 ```
-git checkout master
+git checkout main
 git pull
 ```
 
@@ -87,7 +87,7 @@ If a file required transformation, it will be added to current changes of the wo
 
 *pre-push*
 
-Before pushing code is always built to ensure that it is stable enough to reach master.
+Before pushing code is always built to ensure that it is stable enough to reach main.
 
 If build fails, the push is aborted. Bugs or errors must be solved before retry pushing to the remote.
 
@@ -142,7 +142,7 @@ Can be skipped pressing enter key.
 
 6. Breaking changes!
 
-This is fundamental to highlight that a new feature is breaking with respect to current version of the library on master.
+This is fundamental to highlight that a new feature is breaking with respect to current version of the library on main.
 
 It is a textual description that will be took into consideration by `commitlint` when deciding the next version number. It will be shown also in Changelog file.
 
@@ -191,7 +191,7 @@ This repository has CI/CD enabled using GitHub Actions tool.
 
 Once the code is pushed to the remote ref a new PR must be created on GitHub page of this repository.
 
-PR should always point to `master` branch, however if multiple issues are going to be closed at the same time the PRs can lead to the `release-candidate` branch.
+PR should always point to `main` branch, however if multiple issues are going to be closed at the same time the PRs can lead to the `release-candidate` branch.
 
 Write a meaningful title, add an approver and write a description.
 If your work targets an open issue, please use the GitHub keywords to refer to it (for more info see [here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)).

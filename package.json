@@ -105,7 +105,7 @@
     "commit": "npx git-cz",
     "pre:build": "rimraf ./dist && copyfiles -a -f ./.typescript/build/tsconfig.json ./",
     "pre:commit": "npm run clean:code",
-    "pre:push": "npm run build",
+    "pre:push": "npm run build:test",
     "pre:test": "copyfiles -a -f ./.typescript/test/tsconfig.json ./",
     "prepare": "husky",
     "start": "npm run pre:test && storybook dev -p 6006",
@@ -113,7 +113,6 @@
     "test:ci": "test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose",
     "test:coverage": "test-storybook --coverage --coverageDirectory coverage/storybook",
     "test:report": "npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
-    "upload": "npm run build && npm publish --access public",
     "update:packages": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",
     "update:repo:from:beta": "git checkout origin/beta -- CHANGELOG.md && git checkout origin/beta -- docs/beta"
   },

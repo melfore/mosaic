@@ -4,9 +4,9 @@ import { configure, expect, fireEvent, fn, screen, userEvent, within } from "@st
 
 import { getAllComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import FormDecorator from "../../utils/mocks/FormDecorator";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import FormDecorator from "../../utils/stories/decorators/Form";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedSelect, SUBPARTS_MAP } from ".";
 
@@ -19,7 +19,7 @@ const COMPONENT_NAME = "Select";
 const meta = {
   title: "Inputs/Select",
   component: LocalizedSelect,
-  decorators: [FormDecorator, localeDecorator],
+  decorators: [FormDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

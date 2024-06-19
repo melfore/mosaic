@@ -6,8 +6,8 @@ import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedButton, SUBPARTS_MAP } from ".";
 
@@ -19,7 +19,7 @@ LocalizedButton.displayName = COMPONENT_NAME;
 const meta = {
   title: "Inputs/Button",
   component: LocalizedButton,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

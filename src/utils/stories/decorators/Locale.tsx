@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Decorator } from "@storybook/react";
 
-import { MosaicContextProvider } from "../../contexts/Mosaic";
+import { MosaicContextProvider } from "../../../contexts/Mosaic";
 
 export type ILocaleMock = "en" | "it-IT";
 
@@ -98,10 +99,10 @@ export const MESSAGES_MOCK: IMessagesMock = {
 
 const getLocalizedMessageMock = (key: MessageMock, locale: ILocaleMock): string => MESSAGES_MOCK[locale][key] || key;
 
-const localeDecorator: Decorator = (Story) => (
-  <MosaicContextProvider localize={(key) => getLocalizedMessageMock(key as MessageMock, "it-IT")}>
+const LocaleDecorator: Decorator = (Story) => (
+  <MosaicContextProvider localize={(key: any) => getLocalizedMessageMock(key as MessageMock, "it-IT")}>
     {Story()}
   </MosaicContextProvider>
 );
 
-export { getLocalizedMessageMock, localeDecorator };
+export default LocaleDecorator;

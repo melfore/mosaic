@@ -17,13 +17,5 @@
     "declaration": true
   },
   "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.stories.*",
-    "**/*.test.*",
-    "src/utils/mocks/*",
-    "src/utils/stories/*",
-    "src/utils/tests/*"
-  ]
+  "exclude": ["node_modules", "dist", "**/*.stories.*", "**/*.test.*", "src/utils/stories/*", "src/utils/tests/*"]
 }

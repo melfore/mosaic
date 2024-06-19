@@ -1,28 +1,21 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
-import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
+import ModalDecorator from "../../utils/stories/decorators/Modal";
 import Progress from "../Progress";
 
-import ModalWithTabs, {
-  DATA_CY_DEFAULT,
-  DATA_CY_SHORTCUT,
-  LOCALIZABLE_PROPS,
-  ModalWithTabsWithProps,
-  SUBPARTS_MAP,
-} from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedModalWithTabs, SUBPARTS_MAP } from ".";
 
 const COMPONENT_NAME = "ModalWithTabs";
-ModalWithTabs.displayName = COMPONENT_NAME;
-ModalWithTabsWithProps.displayName = COMPONENT_NAME;
+LocalizedModalWithTabs.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Navigation/ModalWithTabs",
-  component: ModalWithTabsWithProps,
-  decorators: [modalDecorator, localeDecorator],
+  component: LocalizedModalWithTabs,
+  decorators: [ModalDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -36,37 +29,40 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof ModalWithTabsWithProps>;
+} satisfies Meta<typeof LocalizedModalWithTabs>;
 
-const Template: ComponentStory<typeof ModalWithTabsWithProps> = (args) => (
-  <ModalWithTabs {...args} dataCy={DATA_CY_DEFAULT} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  tabList: [
-    { label: "PAGE 1", content: "PAGE 1 Content" },
-    { label: "PAGE 2", content: <div>PAGE 2 Content</div> },
-    { label: "PAGE 3", content: <Progress type="linear" /> },
-  ],
-  children: "Generic modal content not enclosed in Tabs...",
+export const Primary: Story = {
+  args: {
+    tabList: [
+      { label: "PAGE 1", content: "PAGE 1 Content" },
+      { label: "PAGE 2", content: <div>PAGE 2 Content</div> },
+      { label: "PAGE 3", content: <Progress type="linear" /> },
+    ],
+    children: "Generic modal content not enclosed in Tabs...",
+  },
 };
 
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  title: MessageMock.title,
+export const Localized: Story = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    title: MessageMock.title,
+  },
 };
 
-export const Vertical = Template.bind({});
-Vertical.args = {
-  ...Primary.args,
-  orientation: "vertical",
+export const Vertical: Story = {
+  args: {
+    ...Primary.args,
+    orientation: "vertical",
+  },
 };
 
-export const Closeable = Template.bind({});
-Closeable.args = {
-  ...Primary.args,
-  closable: true,
+export const Closeable: Story = {
+  args: {
+    ...Primary.args,
+    closable: true,
+  },
 };

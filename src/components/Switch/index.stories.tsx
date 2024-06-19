@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import FormDecorator from "../../utils/mocks/FormDecorator";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import FormDecorator from "../../utils/stories/decorators/Form";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedSwitch, SUBPARTS_MAP } from ".";
 
@@ -13,7 +13,7 @@ LocalizedSwitch.displayName = COMPONENT_NAME;
 const meta = {
   title: "Inputs/Switch",
   component: LocalizedSwitch,
-  decorators: [FormDecorator, localeDecorator],
+  decorators: [FormDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

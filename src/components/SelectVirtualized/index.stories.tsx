@@ -4,9 +4,9 @@ import { configure, expect, fireEvent, fn, screen, userEvent, within } from "@st
 
 import { getAllComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import FormDecorator from "../../utils/mocks/FormDecorator";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import FormDecorator from "../../utils/stories/decorators/Form";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SelectVirtualized, SUBPARTS_MAP } from "../Select";
 
 configure({ testIdAttribute: "data-cy" });
@@ -18,7 +18,7 @@ const COMPONENT_NAME = "SelectVirtualized";
 const meta = {
   title: "Inputs/SelectVirtualized",
   component: SelectVirtualized,
-  decorators: [FormDecorator, localeDecorator],
+  decorators: [FormDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -115,7 +115,7 @@ export const AutocompleteChange: Story = {
 export const AutoSort: Story = {
   args: {
     ...Primary.args,
-    autoSort: true,
+    autoSort: "asc",
   },
 };
 

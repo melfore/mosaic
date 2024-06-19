@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
 import DateTimePicker, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedDateTimePicker } from ".";
 
@@ -11,7 +11,7 @@ DateTimePicker.displayName = COMPONENT_NAME;
 const meta = {
   title: "Inputs/DateTimePicker",
   component: LocalizedDateTimePicker,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

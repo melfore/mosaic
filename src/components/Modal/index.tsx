@@ -125,9 +125,9 @@ const Modal: FC<PropsWithChildren<IModal>> = ({
   );
 };
 
-export const ModalWithProps = Modal;
-
-export default localized(Modal, {
+export const LocalizedModal = localized(Modal, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedModal;

@@ -14,7 +14,7 @@ import { Decorator } from "@storybook/react";
 import Button from "../../../components/Button";
 import { Icons } from "../../../types/Icon";
 
-interface ModalMockProps {
+export interface ModalMockProps {
   buttonLabel?: string;
   open?: boolean;
 }

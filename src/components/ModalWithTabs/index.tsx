@@ -85,9 +85,9 @@ const ModalWithTabs: FC<PropsWithChildren<ModalWithTabsType>> = ({
   );
 };
 
-export const ModalWithTabsWithProps = ModalWithTabs;
-
-export default localized(ModalWithTabs, {
+export const LocalizedModalWithTabs = localized(ModalWithTabs, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedModalWithTabs;

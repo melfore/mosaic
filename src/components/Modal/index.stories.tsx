@@ -1,20 +1,21 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import { configure } from "@storybook/test";
 
 import { getAllComposedDataCy } from "../../utils";
 import getDocsPage from "../../utils/stories";
 import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 import ModalDecorator from "../../utils/stories/decorators/Modal";
 
-import Modal, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, ModalWithProps, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedModal, SUBPARTS_MAP } from ".";
+
+configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "Modal";
-Modal.displayName = COMPONENT_NAME;
-ModalWithProps.displayName = COMPONENT_NAME;
+LocalizedModal.displayName = COMPONENT_NAME;
 
-export default {
+const meta = {
   title: "Feedback/Modal",
-  component: ModalWithProps,
+  component: LocalizedModal,
   decorators: [ModalDecorator, LocaleDecorator],
   parameters: {
     docs: {
@@ -33,70 +34,80 @@ export default {
       }),
     },
   },
-} as ComponentMeta<typeof ModalWithProps>;
+} satisfies Meta<typeof LocalizedModal>;
 
-const Template: ComponentStory<typeof ModalWithProps> = (args) => <Modal {...args} dataCy={DATA_CY_DEFAULT} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: "Modal Content",
-  title: "Modal",
-};
-
-export const Closeable = Template.bind({});
-Closeable.args = {
-  ...Primary.args,
-  closable: true,
-};
-
-export const ActionCancel = Template.bind({});
-ActionCancel.args = {
-  ...Closeable.args,
-  cancel: { action: () => {}, label: "Cancel", variant: "outlined" },
-};
-
-export const ActionConfirm = Template.bind({});
-ActionConfirm.args = {
-  ...Closeable.args,
-  confirm: { action: () => {}, label: "Confirm" },
-};
-
-export const Actions = Template.bind({});
-Actions.args = {
-  ...Closeable.args,
-  cancel: { action: () => {}, label: "Cancel", variant: "outlined" },
-  confirm: { action: () => {}, label: "Confirm" },
-};
-
-export const Localized = Template.bind({});
-Localized.args = {
-  ...Primary.args,
-  localized: true,
-  title: MessageMock.title,
-  cancel: {
-    ...Actions.args.cancel!,
-    label: MessageMock.cancel,
-  },
-  confirm: {
-    ...Actions.args.confirm!,
-    label: MessageMock.confirm,
+export const Primary: Story = {
+  args: {
+    children: "Modal Content",
+    title: "Modal",
   },
 };
 
-export const SizeSmall = Template.bind({});
-SizeSmall.args = {
-  ...Closeable.args,
-  size: "sm",
+export const Closeable: Story = {
+  args: {
+    ...Primary.args,
+    closable: true,
+  },
 };
 
-export const SizeLarge = Template.bind({});
-SizeLarge.args = {
-  ...Closeable.args,
-  size: "lg",
+export const ActionCancel: Story = {
+  args: {
+    ...Closeable.args,
+    cancel: { action: () => {}, label: "Cancel", variant: "outlined" },
+  },
 };
 
-export const SizeFullScreen = Template.bind({});
-SizeFullScreen.args = {
-  ...Closeable.args,
-  size: "xl",
+export const ActionConfirm: Story = {
+  args: {
+    ...Closeable.args,
+    confirm: { action: () => {}, label: "Confirm" },
+  },
+};
+
+export const Actions = {
+  args: {
+    ...Closeable.args,
+    cancel: { action: () => {}, label: "Cancel", variant: "outlined" },
+    confirm: { action: () => {}, label: "Confirm" },
+  },
+};
+
+export const Localized = {
+  args: {
+    ...Primary.args,
+    localized: true,
+    title: MessageMock.title,
+    cancel: {
+      ...Actions.args.cancel!,
+      label: MessageMock.cancel,
+    },
+    confirm: {
+      ...Actions.args.confirm!,
+      label: MessageMock.confirm,
+    },
+  },
+};
+
+export const SizeSmall = {
+  args: {
+    ...Closeable.args,
+    size: "sm",
+  },
+};
+
+export const SizeLarge = {
+  args: {
+    ...Closeable.args,
+    size: "lg",
+  },
+};
+
+export const SizeFullScreen = {
+  args: {
+    ...Closeable.args,
+    size: "xl",
+  },
 };

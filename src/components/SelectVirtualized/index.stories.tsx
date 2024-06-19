@@ -115,7 +115,7 @@ export const AutocompleteChange: Story = {
 export const AutoSort: Story = {
   args: {
     ...Primary.args,
-    autoSort: true,
+    autoSort: "asc",
   },
 };
 

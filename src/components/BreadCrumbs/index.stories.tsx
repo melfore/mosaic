@@ -108,12 +108,14 @@ export const SizeLarge: Story = {
 
 export const WithIcons: Story = {
   args: {
+    ...Primary.args,
     links: linksMock.map((link, index) => ({ ...link, icon: index % 2 === 0 ? Icons.clock : <AccessibilityIcon /> })),
   },
 };
 
 export const Localized: Story = {
   args: {
+    ...Primary.args,
     localized: true,
     links: linksMock.map((link) => ({ ...link, label: `locale.${link.label}` })),
   },

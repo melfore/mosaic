@@ -3,9 +3,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
 import { logInfo } from "../../utils/logger";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
-import { stepperDecorator } from "../../utils/mocks/StepperMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
+import StepperDecorator from "../../utils/stories/decorators/Stepper";
 import Progress from "../Progress";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, localizedStepper } from ".";
@@ -19,7 +19,7 @@ configure({ testIdAttribute: "data-cy" });
 const meta = {
   title: "Navigation/Stepper",
   component: localizedStepper,
-  decorators: [stepperDecorator, localeDecorator],
+  decorators: [StepperDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Meta, StoryObj } from "@storybook/react";
 import { configure, expect, fn, userEvent, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { logInfo } from "../../utils/logger";
-import FormDecorator, { FormValue } from "../../utils/mocks/FormDecorator";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import FormDecorator from "../../utils/stories/decorators/Form";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedInputNumber } from ".";
 
@@ -17,7 +18,7 @@ LocalizedInputNumber.displayName = "InputNumber";
 const meta = {
   title: "Inputs/InputNumber",
   component: LocalizedInputNumber,
-  decorators: [FormDecorator, localeDecorator],
+  decorators: [FormDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -39,7 +40,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const onChangeMock = fn((value: FormValue) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
+const onChangeMock = fn((value?: any) => logInfo(COMPONENT_NAME, `onChange handler: value '${value}'`));
 
 export const Primary: Story = {
   args: {

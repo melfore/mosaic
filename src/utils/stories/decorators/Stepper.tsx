@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { cloneElement, FC, PropsWithChildren, ReactElement, useCallback, useEffect, useMemo } from "react";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 
-interface StepperMockType {
+export interface StepperMockProps {
   stepList?: [];
   activeStep?: number;
 }
 
-const StepperMock: FC<PropsWithChildren<StepperMockType>> = ({
+const StepperMock: FC<PropsWithChildren<StepperMockProps>> = ({
   children,
   stepList,
   activeStep: externalActiveStep,
@@ -45,10 +45,10 @@ const StepperMock: FC<PropsWithChildren<StepperMockType>> = ({
   return <div>{wrappedStepper}</div>;
 };
 
-const stepperDecorator: DecoratorFn = (Story, { args }) => (
+const StepperDecorator: Decorator<StepperMockProps> = (Story, { args }) => (
   <StepperMock activeStep={args.activeStep} stepList={args.stepList}>
     {Story()}
   </StepperMock>
 );
 
-export { stepperDecorator, StepperMock };
+export default StepperDecorator;

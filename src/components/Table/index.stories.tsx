@@ -11,8 +11,8 @@ import { Icons } from "../../types/Icon";
 import { ITableDataCallbackOptions } from "../../types/Table";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { TABLE_MOCKED_COLUMNS, TABLE_MOCKED_COLUMNS_FULL, TABLE_MOCKED_DATA } from "./utils";
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedTable, SUBPARTS_MAP } from ".";
@@ -25,7 +25,7 @@ LocalizedTable.displayName = COMPONENT_NAME;
 const meta = {
   title: "Display/Table",
   component: LocalizedTable,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

@@ -6,8 +6,8 @@ import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 import { Icons } from "../../types/Icon";
 import { getComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
 import BreadCrumbs, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
 
@@ -19,7 +19,7 @@ BreadCrumbs.displayName = COMPONENT_NAME;
 const meta = {
   title: "Navigation/BreadCrumbs",
   component: BreadCrumbs,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

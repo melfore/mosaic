@@ -5,8 +5,8 @@ import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 import Icon from "../Icon";
 import Typography from "../Typography";
 
@@ -21,7 +21,7 @@ LocalizedAppBar.displayName = COMPONENT_NAME;
 const meta = {
   title: "Surfaces/AppBar",
   component: LocalizedAppBar,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

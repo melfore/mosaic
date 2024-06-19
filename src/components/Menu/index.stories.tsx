@@ -4,8 +4,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { configure, expect, fireEvent, fn, screen, within } from "@storybook/test";
 
 import { logInfo } from "../../utils/logger";
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
 import Menu, { DATA_CY_DEFAULT } from ".";
 
@@ -16,7 +16,7 @@ const COMPONENT_NAME = Menu.displayName!;
 const meta = {
   title: "Navigation/Menu",
   component: Menu,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

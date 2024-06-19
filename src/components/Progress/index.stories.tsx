@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
 import Progress, { DATA_CY_DEFAULT } from ".";
 
@@ -11,7 +11,7 @@ Progress.displayName = COMPONENT_NAME;
 const meta = {
   title: "Feedback/Progress",
   component: Progress,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

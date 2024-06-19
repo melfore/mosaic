@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { localeDecorator } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator from "../../utils/stories/decorators/Locale";
 import Progress from "../Progress";
 
 import Tabs, { DATA_CY_DEFAULT } from ".";
@@ -13,7 +13,7 @@ Tabs.displayName = COMPONENT_NAME;
 const meta = {
   title: "Navigation/Tabs",
   component: Tabs,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

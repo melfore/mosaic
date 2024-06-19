@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import Typography, { DATA_CY_DEFAULT, LOCALIZABLE_PROPS } from ".";
 
@@ -12,7 +12,7 @@ Typography.displayName = COMPONENT_NAME;
 const meta = {
   title: "Display/Typography",
   component: Typography,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

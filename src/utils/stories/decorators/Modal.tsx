@@ -9,17 +9,17 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 
-import Button from "../../components/Button";
-import { Icons } from "../../types/Icon";
+import Button from "../../../components/Button";
+import { Icons } from "../../../types/Icon";
 
-interface ModalMockType {
+interface ModalMockProps {
   buttonLabel?: string;
   open?: boolean;
 }
 
-const ModalMock: FC<PropsWithChildren<ModalMockType>> = ({
+const ModalMock: FC<PropsWithChildren<ModalMockProps>> = ({
   buttonLabel = "Open",
   children,
   open: externalOpen = false,
@@ -53,6 +53,6 @@ const ModalMock: FC<PropsWithChildren<ModalMockType>> = ({
   );
 };
 
-const modalDecorator: DecoratorFn = (Story) => <ModalMock>{Story()}</ModalMock>;
+const ModalDecorator: Decorator<ModalMockProps> = (Story) => <ModalMock>{Story()}</ModalMock>;
 
-export { modalDecorator, ModalMock };
+export default ModalDecorator;

@@ -2,9 +2,9 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
-import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
+import ModalDecorator from "../../utils/stories/decorators/Modal";
 import Progress from "../Progress";
 
 import ModalWithTabs, {
@@ -22,7 +22,7 @@ ModalWithTabsWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Navigation/ModalWithTabs",
   component: ModalWithTabsWithProps,
-  decorators: [modalDecorator, localeDecorator],
+  decorators: [ModalDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

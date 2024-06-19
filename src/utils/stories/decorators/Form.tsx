@@ -1,9 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useState } from "react";
-import { DecoratorFn } from "@storybook/react";
+import { Decorator } from "@storybook/react";
 
-export type FormValue = boolean | number | string | null;
+interface BaseFormProps {
+  onChange?: (value: any) => void;
+  value?: any;
+}
 
-const FormDecorator: DecoratorFn = (Story, { args: { onChange: externalOnChange, value: externalValue, ...args } }) => {
+export type FormMockProps = BaseFormProps & {
+  [key: string]: any;
+};
+
+const FormDecorator: Decorator<FormMockProps> = (
+  Story,
+  { args: { onChange: externalOnChange, value: externalValue, ...args } }
+) => {
   const [value, setValue] = useState(externalValue);
 
   useEffect(() => {
@@ -14,7 +25,7 @@ const FormDecorator: DecoratorFn = (Story, { args: { onChange: externalOnChange,
   }, [externalValue]);
 
   const onChange = useCallback(
-    (value: FormValue) => {
+    (value: any) => {
       externalOnChange && externalOnChange(value);
       setValue(value);
     },

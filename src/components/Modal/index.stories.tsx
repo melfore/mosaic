@@ -2,9 +2,9 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { getAllComposedDataCy } from "../../utils";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
-import { modalDecorator } from "../../utils/mocks/ModalMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
+import ModalDecorator from "../../utils/stories/decorators/Modal";
 
 import Modal, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, ModalWithProps, SUBPARTS_MAP } from ".";
 
@@ -15,7 +15,7 @@ ModalWithProps.displayName = COMPONENT_NAME;
 export default {
   title: "Feedback/Modal",
   component: ModalWithProps,
-  decorators: [modalDecorator, localeDecorator],
+  decorators: [ModalDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

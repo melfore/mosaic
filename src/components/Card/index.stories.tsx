@@ -4,8 +4,8 @@ import { configure, expect, fireEvent, waitFor, within } from "@storybook/test";
 
 import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 import Button from "../Button";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedCard, SUBPARTS_MAP } from ".";
@@ -18,7 +18,7 @@ LocalizedCard.displayName = COMPONENT_NAME;
 const meta = {
   title: "Surfaces/Card",
   component: LocalizedCard,
-  decorators: [localeDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

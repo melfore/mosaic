@@ -2,9 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { configure } from "@storybook/test";
 
 import { getAllComposedDataCy } from "../../utils";
-import FormDecorator from "../../utils/mocks/FormDecorator";
-import { localeDecorator, MessageMock } from "../../utils/mocks/LocaleMock";
 import getDocsPage from "../../utils/stories";
+import FormDecorator from "../../utils/stories/decorators/Form";
+import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
 
 import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedCheckbox, SUBPARTS_MAP } from ".";
 
@@ -16,7 +16,7 @@ LocalizedCheckbox.displayName = COMPONENT_NAME;
 const meta = {
   title: "Inputs/Checkbox",
   component: LocalizedCheckbox,
-  decorators: [FormDecorator, localeDecorator],
+  decorators: [FormDecorator, LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({

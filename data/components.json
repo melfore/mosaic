@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Checkbox",
+    "description": "Checkbox description",
+    "extension": "tsx",
+    "docs": {
+      "examples": [
+        {
+          "source": "inputs-checkbox--primary",
+          "code": "inputs-checkbox--primary"
+        },
+        {
+          "source": "inputs-checkbox--disabled",
+          "code": "inputs-checkbox--disabled"
+        },
+        {
+          "source": "inputs-checkbox--intermediate",
+          "code": "inputs-checkbox--intermediate"
+        },
+        {
+          "source": "inputs-checkbox--label",
+          "code": "inputs-checkbox--label"
+        },
+        {
+          "source": "inputs-checkbox--label-end",
+          "code": "inputs-checkbox--label-end"
+        },
+        {
+          "source": "inputs-checkbox--localized",
+          "code": "inputs-checkbox--localized"
+        },
+        {
+          "source": "inputs-checkbox--size-small",
+          "code": "inputs-checkbox--size-small"
+        },
+        {
+          "source": "inputs-checkbox--styled",
+          "code": "inputs-checkbox--styled"
+        },
+        {
+          "source": "inputs-checkbox--unchecked",
+          "code": "inputs-checkbox--unchecked"
+        }
+      ],
+      "import": {
+        "code": "import { Checkbox } from \"@melfore/mosaic\";"
+      },
+      "info": {
+        "props": [
+          {
+            "name": "value",
+            "description": "Value to set status",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "intermediate",
+            "description": "Adds intermediate state",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "labelPlacement",
+            "description": "Positioning of label",
+            "required": false,
+            "type": "enum",
+            "values": [
+              "start",
+              "end"
+            ]
+          },
+          {
+            "name": "onChange",
+            "description": "Callback for change events",
+            "required": false,
+            "type": "((value: boolean) => void)"
+          },
+          {
+            "name": "label",
+            "description": "Label displayed",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "required",
+            "description": "Adds required state",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "size",
+            "description": "Size of input",
+            "required": false,
+            "type": "enum",
+            "values": [
+              "small",
+              "medium"
+            ]
+          },
+          {
+            "name": "disabled",
+            "description": "Adds disabled state and prevents interaction",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "localized",
+            "description": "Component localization support",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "dataCy",
+            "description": "Identifier for element selection in e2e testing",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "style",
+            "description": "Custom styling applied to root element",
+            "required": false,
+            "type": "CSSProperties"
+          }
+        ]
+      }
+    }
+  }
+]

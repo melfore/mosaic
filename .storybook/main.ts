@@ -8,6 +8,7 @@ type MosaicStorybookConfig = Omit<StorybookConfig, "features"> & {
 
 const config: MosaicStorybookConfig = {
   addons: [
+    "@storybook/addon-docs",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-coverage",

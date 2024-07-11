@@ -1,144 +1,70 @@
-import { TestRunnerConfig, getStoryContext } from "@storybook/test-runner";
-import { StoryContextForEnhancers } from "@storybook/types";
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { getStoryContext, TestRunnerConfig } from "@storybook/test-runner";
+import {
+  waitFor,
+  SBStory,
+  initDatabase,
+  getDatabase,
+  getComponentTitle,
+  parseStory,
+  getComponentProps,
+  writeDatabase,
+  getComponentDescription,
+  getComponentImport,
+} from "./utils";
 
-type WithCode = {
-  code: string;
-};
+// Util to be used for logging inside page.evaluate
+// declare global {
+//   var logToPage: (message: string) => Promise<void>;
+// }
 
-type Props = {
-  name: string;
-  description?: string;
-  required: boolean;
-  type: string;
-  values?: string[];
-};
-
-type Info = Partial<WithCode> & {
-  props: Props[];
-};
-
-type Example = WithCode & {
-  source: string;
-};
-
-type ComponentData = {
-  name: string;
-  description: string;
-  extension: "tsx";
-  docs: {
-    import: WithCode;
-    info: Info;
-    examples: Example[];
-  };
-};
-
-const DATABASE_FILE = "data/components.json";
-
-/**
- * Gets component title name from story ctx
- */
-const getComponentTitle = (title: string) => {
-  const parts = title.split("/");
-  return parts[parts.length - 1];
-};
-
-/**
- * Gets required and type info for all properties of component from story ctx
- * @param sbType the storybook proprietary type of the component
- */
-const getPropertyType = (sbType?: any): { required: boolean; type: string } => {
-  if (!sbType) {
-    return { required: false, type: "any" };
-  }
-
-  const { name, required } = sbType;
-  let type = sbType.name;
-  if (type === "other" || type === "function") {
-    type = sbType.value;
-  }
-
-  return { required, type };
-};
-
-/**
- * Gets properties values from story ctx creating list of unique values
- * @param sbOptions the storybook proprietary options of the component
- */
-const getPropertyValues = (sbOptions?: readonly any[]) => {
-  if (!sbOptions || !sbOptions.length) {
-    return undefined;
-  }
-
-  let options: string[] = [];
-  sbOptions.forEach((option) => {
-    if (!options.includes(option)) {
-      options.push(option);
-    }
-  });
-
-  return options;
-};
-
-/**
- * Gets all component props from story ctx argTypes
- * @param argTypes the object with all argTypes of the component
- */
-const getComponentProps = (argTypes: StoryContextForEnhancers["argTypes"]) =>
-  Object.values(argTypes).map(({ name, description, type: sbType, options }): Props => {
-    const { required, type } = getPropertyType(sbType);
-    const values = getPropertyValues(options);
-
-    return { name, description, required, type, values };
-  });
+let storySourceData: SBStory;
 
 const config: TestRunnerConfig = {
   async setup() {
-    const databaseFile = DATABASE_FILE;
-    if (!existsSync(databaseFile)) {
-      writeFileSync(databaseFile, JSON.stringify([], null, 2));
-    }
+    initDatabase();
+  },
+  async preVisit(page) {
+    page
+      .evaluate<SBStory>(() => {
+        return new Promise((resolve, reject) => {
+          const channel = globalThis.__STORYBOOK_ADDONS_CHANNEL__;
+          channel.on("@storybook/core/docs/snippet-rendered", (data: SBStory) => resolve(data));
+        });
+      })
+      .then((data) => {
+        storySourceData = data;
+      });
   },
   async postVisit(page, context) {
-    const databaseFileContent = readFileSync(DATABASE_FILE, "utf-8");
-    let database = JSON.parse(databaseFileContent) as ComponentData[];
+    let database = getDatabase();
+    const { argTypes, parameters, title } = await getStoryContext(page, context);
+    const name = getComponentTitle(title);
+    const exampleSourceData = await waitFor(() => storySourceData);
+    const example = parseStory(exampleSourceData);
 
-    const storyContext = await getStoryContext(page, context);
-    const { parameters } = await getStoryContext(page, context);
-    const { id, title, componentId } = storyContext;
-    const componentName = getComponentTitle(title);
-    const example: Example = { source: id, code: id };
-
-    const componentIsMapped = database.find(({ name }) => name === componentName);
+    const componentIsMapped = database.find(({ name: dbName }) => dbName === name);
     if (!componentIsMapped) {
-      // TODO: add support for other components and remove this check
-      if (componentId === "inputs-checkbox") {
-        const { argTypes, parameters } = storyContext;
-        const props = getComponentProps(argTypes);
+      const description = getComponentDescription(name, parameters);
+      const importCode = getComponentImport(name);
+      const props = getComponentProps(argTypes);
 
-        // TODO: add support for other stories and remove this check
-        if (id === "inputs-checkbox--primary") {
-          const { parameters } = await getStoryContext(page, context);
-          console.log(parameters.docs.source.originalSource);
-        }
-
-        database = [
-          ...database,
-          {
-            name: componentName,
-            description: `${componentName} description`,
-            extension: "tsx",
-            docs: {
-              examples: [example],
-              import: { code: `import { ${componentName} } from "@melfore/mosaic";` },
-              info: { props },
-            },
+      database = [
+        ...database,
+        {
+          name,
+          description,
+          docs_path: "",
+          extension: "tsx",
+          docs: {
+            import: importCode,
+            props,
+            examples: [example],
           },
-        ];
-      }
+        },
+      ];
     } else {
       database = database.map((component) => {
-        if (component.name !== componentName) {
+        if (component.name !== name) {
           return component;
         }
 
@@ -152,7 +78,7 @@ const config: TestRunnerConfig = {
       });
     }
 
-    writeFileSync(DATABASE_FILE, JSON.stringify(database, null, 2));
+    writeDatabase(database);
 
     const elementHandler = await page.$("#storybook-root");
     if (!elementHandler) {

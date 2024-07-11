@@ -41,6 +41,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Table component is used to display data in a table format.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedTable>;

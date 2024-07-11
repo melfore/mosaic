@@ -34,6 +34,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Card component is a surface that displays content and actions.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedCard>;

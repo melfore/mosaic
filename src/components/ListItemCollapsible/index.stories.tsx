@@ -21,6 +21,9 @@ const meta = {
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
         },
       }),
+      description: {
+        component: "The `ListItemCollapsible` component is used to display collapsible content.",
+      },
     },
   },
 } satisfies Meta<typeof ListItemCollapsible>;

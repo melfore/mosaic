@@ -35,6 +35,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Button component can be used to trigger an action.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedButton>;

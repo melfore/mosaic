@@ -3,14 +3,14 @@ import { Meta, StoryObj } from "@storybook/react";
 import getDocsPage from "../../utils/stories";
 import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
-import Progress, { DATA_CY_DEFAULT } from ".";
+import { DATA_CY_DEFAULT, MemoizedProgress } from ".";
 
 const COMPONENT_NAME = "Progress";
-Progress.displayName = COMPONENT_NAME;
+MemoizedProgress.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Feedback/Progress",
-  component: Progress,
+  component: MemoizedProgress,
   decorators: [LocaleDecorator],
   parameters: {
     docs: {
@@ -24,9 +24,12 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Progress component is used to display the progress of a task.",
+      },
     },
   },
-} satisfies Meta<typeof Progress>;
+} satisfies Meta<typeof MemoizedProgress>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

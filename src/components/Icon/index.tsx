@@ -99,4 +99,6 @@ const Icon: FC<PropsWithChildren<IIcon>> = ({
   return renderWithAnimation(icon);
 };
 
-export default memo(Icon);
+export const MemoizedIcon = memo(Icon);
+
+export default MemoizedIcon;

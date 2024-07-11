@@ -30,6 +30,9 @@ const meta = {
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
         },
       }),
+      description: {
+        component: "The ListItem component is used to display items in a list.",
+      },
     },
   },
 } satisfies Meta<typeof ListItem>;

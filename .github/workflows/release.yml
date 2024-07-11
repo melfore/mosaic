@@ -49,7 +49,7 @@ jobs:
           git add .
           echo "formatted-files=$(git status -s -uno | wc -l)" >> $GITHUB_OUTPUT
 
-      - name: Commit Changes
+      - name: Commit Format
         if: steps.code-format.outputs.formatted-files > 0
         run: |
           git commit -m "refactor: 💡 Clean code" -a
@@ -61,17 +61,24 @@ jobs:
           git add .
           echo "generated-docs=$(git status -s -uno | wc -l)" >> $GITHUB_OUTPUT
 
-      - name: Commit Changes
+      - name: Commit Docs
         if: steps.generate-docs.outputs.generated-docs > 0
         run: |
           git commit -m "docs: ✏️ Updated StoryBook" -a
 
       - name: Test runner
+        id: test-runner
         run: |
           npx playwright install --with-deps
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server docs/latest --port 6006 --silent" \
             "npx wait-on tcp:127.0.0.1:6006 && npm run test:ci"
+          echo "components-db=$(git status -s -uno | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Commit Database
+        if: steps.test-runner.outputs.components-db > 0
+        run: |
+          git commit -m "docs: ✏️ Updated components database" -a
 
       - name: Build
         run: npm run build

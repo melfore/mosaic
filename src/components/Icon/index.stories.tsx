@@ -5,11 +5,14 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Icons } from "../../types/Icon";
 import getDocsPage from "../../utils/stories";
 
-import Icon, { DATA_CY_DEFAULT } from ".";
+import { DATA_CY_DEFAULT, MemoizedIcon } from ".";
+
+const COMPONENT_NAME = "Icon";
+MemoizedIcon.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Display/Icon",
-  component: Icon,
+  component: MemoizedIcon,
   parameters: {
     docs: {
       ...getDocsPage({
@@ -17,14 +20,17 @@ const meta = {
           label: "MUI Icon Component",
           url: "https://mui.com/components/icons/",
         },
-        component: "Icon",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Icon component is used to display an icon.",
+      },
     },
   },
-} satisfies Meta<typeof Icon>;
+} satisfies Meta<typeof MemoizedIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

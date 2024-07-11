@@ -98,4 +98,6 @@ const Progress: FC<ProgressProps> = ({
   );
 };
 
-export default memo(Progress);
+export const MemoizedProgress = memo(Progress);
+
+export default MemoizedProgress;

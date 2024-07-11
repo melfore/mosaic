@@ -29,6 +29,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Switch is used to display a toggle switch.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedSwitch>;

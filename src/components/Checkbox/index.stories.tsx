@@ -32,6 +32,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Checkbox component is used to select one or more items from a list.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedCheckbox>;

@@ -8,17 +8,16 @@ import LocaleDecorator from "../../utils/stories/decorators/Locale";
 import StepperDecorator from "../../utils/stories/decorators/Stepper";
 import Progress from "../Progress";
 
-import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, localizedStepper } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedStepper } from ".";
 
 const COMPONENT_NAME = "Stepper";
-localizedStepper.displayName = COMPONENT_NAME;
-//ProgressWithProps.displayName = COMPONENT_NAME;
+LocalizedStepper.displayName = COMPONENT_NAME;
 
 configure({ testIdAttribute: "data-cy" });
 
 const meta = {
   title: "Navigation/Stepper",
-  component: localizedStepper,
+  component: LocalizedStepper,
   decorators: [StepperDecorator, LocaleDecorator],
   parameters: {
     docs: {
@@ -34,9 +33,12 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Stepper component is used to display a sequence of steps.",
+      },
     },
   },
-} satisfies Meta<typeof localizedStepper>;
+} satisfies Meta<typeof LocalizedStepper>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

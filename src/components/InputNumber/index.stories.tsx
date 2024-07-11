@@ -33,6 +33,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The InputNumber is a number input component.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedInputNumber>;

@@ -30,6 +30,9 @@ const meta = {
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
         },
       }),
+      description: {
+        component: "The IconButton component is used to create an icon button.",
+      },
     },
   },
 } satisfies Meta<typeof IconButton>;

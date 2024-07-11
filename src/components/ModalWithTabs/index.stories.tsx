@@ -27,6 +27,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The ModalWithTabs component is used to display a modal with tabs.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedModalWithTabs>;

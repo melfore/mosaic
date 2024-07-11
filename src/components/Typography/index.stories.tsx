@@ -26,6 +26,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Typography component is used to render text with different styles.",
+      },
     },
   },
 } satisfies Meta<typeof Typography>;

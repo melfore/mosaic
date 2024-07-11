@@ -4,6 +4,7 @@
 /.yalc/*
 /build/*
 /coverage/*
+/data/*
 /dist/*
 /docs/*
 /node_modules/*

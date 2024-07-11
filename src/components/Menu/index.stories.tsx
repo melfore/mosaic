@@ -29,6 +29,9 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Menu component is used to display a list of menu items.",
+      },
     },
   },
 } satisfies Meta<typeof Menu>;

@@ -91,4 +91,4 @@ export const LocalizedAppBar = localized(AppBar, {
   localizableProps: LOCALIZABLE_PROPS,
 });
 
-export default AppBar;
+export default LocalizedAppBar;

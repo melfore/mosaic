@@ -91,9 +91,9 @@ const Stepper: FC<StepperType> = ({
   );
 };
 
-export const localizedStepper = localized(Stepper, {
+export const LocalizedStepper = localized(Stepper, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
 
-export default localizedStepper;
+export default LocalizedStepper;

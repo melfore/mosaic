@@ -26,4 +26,6 @@ const Spacer: FC<ISpacer> = ({ dataCy = DATA_CY_DEFAULT, direction = "horizontal
   return <div data-cy={dataCy} style={style} />;
 };
 
-export default memo(Spacer);
+export const MemoizedSpacer = memo(Spacer);
+
+export default MemoizedSpacer;

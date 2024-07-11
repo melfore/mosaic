@@ -3,11 +3,14 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import getDocsPage from "../../utils/stories";
 
-import Spacer, { DATA_CY_DEFAULT } from ".";
+import { DATA_CY_DEFAULT, MemoizedSpacer } from ".";
+
+const COMPONENT_NAME = "Spacer";
+MemoizedSpacer.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Display/Spacer",
-  component: Spacer,
+  component: MemoizedSpacer,
   decorators: [
     (Story, { args: { direction } }) => (
       <div id="flex-content" style={{ display: "flex", flexDirection: direction === "vertical" ? "column" : "row" }}>
@@ -21,14 +24,14 @@ const meta = {
     docs: {
       ...getDocsPage({
         basedOn: { label: "HTML Div" },
-        component: "Spacer",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
     },
   },
-} satisfies Meta<typeof Spacer>;
+} satisfies Meta<typeof MemoizedSpacer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

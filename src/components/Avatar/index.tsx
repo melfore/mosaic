@@ -68,4 +68,6 @@ const Avatar: FC<IAvatar> = ({
   return <MUIAvatar alt={alt} data-cy={dataCy} src={src} style={avatarStyle} variant={variant} />;
 };
 
-export default memo(Avatar);
+export const MemoizedAvatar = memo(Avatar);
+
+export default MemoizedAvatar;

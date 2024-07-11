@@ -6,11 +6,14 @@ import { Icons } from "../../types/Icon";
 import { getAllComposedDataCy } from "../../utils";
 import getDocsPage from "../../utils/stories";
 
-import Avatar, { DATA_CY_DEFAULT, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, MemoizedAvatar, SUBPARTS_MAP } from ".";
+
+const COMPONENT_NAME = "Avatar";
+MemoizedAvatar.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Display/Avatar",
-  component: Avatar,
+  component: MemoizedAvatar,
   parameters: {
     docs: {
       ...getDocsPage({
@@ -18,7 +21,7 @@ const meta = {
           label: "MUI Avatar Component",
           url: "https://mui.com/components/avatars/",
         },
-        component: "Avatar",
+        component: COMPONENT_NAME,
         e2eTestInfo: {
           dataCyDefault: DATA_CY_DEFAULT,
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
@@ -26,7 +29,7 @@ const meta = {
       }),
     },
   },
-} satisfies Meta<typeof Avatar>;
+} satisfies Meta<typeof MemoizedAvatar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

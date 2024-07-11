@@ -9,16 +9,16 @@ import { logInfo } from "../../utils/logger";
 import getDocsPage from "../../utils/stories";
 import LocaleDecorator from "../../utils/stories/decorators/Locale";
 
-import BreadCrumbs, { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, SUBPARTS_MAP } from ".";
+import { DATA_CY_DEFAULT, DATA_CY_SHORTCUT, LOCALIZABLE_PROPS, LocalizedBreadCrumbs, SUBPARTS_MAP } from ".";
 
 configure({ testIdAttribute: "data-cy" });
 
 const COMPONENT_NAME = "BreadCrumbs";
-BreadCrumbs.displayName = COMPONENT_NAME;
+LocalizedBreadCrumbs.displayName = COMPONENT_NAME;
 
 const meta = {
   title: "Navigation/BreadCrumbs",
-  component: BreadCrumbs,
+  component: LocalizedBreadCrumbs,
   decorators: [LocaleDecorator],
   parameters: {
     docs: {
@@ -36,7 +36,7 @@ const meta = {
       }),
     },
   },
-} satisfies Meta<typeof BreadCrumbs>;
+} satisfies Meta<typeof LocalizedBreadCrumbs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

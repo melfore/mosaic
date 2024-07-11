@@ -88,7 +88,9 @@ const BreadCrumbs: FC<BreadCrumbsType> = ({
   );
 };
 
-export default localized(BreadCrumbs, {
+export const LocalizedBreadCrumbs = localized(BreadCrumbs, {
   dataCyShortcut: DATA_CY_SHORTCUT,
   localizableProps: LOCALIZABLE_PROPS,
 });
+
+export default LocalizedBreadCrumbs;

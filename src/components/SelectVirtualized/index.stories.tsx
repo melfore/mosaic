@@ -34,6 +34,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The SelectVirtualized component is used to select an option from a list of virtualized options.",
+      },
     },
   },
 } satisfies Meta<typeof SelectVirtualized>;

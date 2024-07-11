@@ -26,6 +26,9 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Tabs component is used to display content in tabs that can be switched between.",
+      },
     },
   },
 } satisfies Meta<typeof Tabs>;

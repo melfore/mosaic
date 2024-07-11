@@ -37,6 +37,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The AppBar is a surface that contains application navigation and other content.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedAppBar>;

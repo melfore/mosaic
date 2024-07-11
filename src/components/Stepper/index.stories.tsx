@@ -33,6 +33,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Stepper component is used to display a sequence of steps.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedStepper>;

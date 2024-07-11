@@ -25,6 +25,9 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Icon component is used to display an icon.",
+      },
     },
   },
 } satisfies Meta<typeof MemoizedIcon>;

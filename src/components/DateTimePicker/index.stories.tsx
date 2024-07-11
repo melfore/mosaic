@@ -26,6 +26,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The DateTimePicker is a date and time picker component.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedDateTimePicker>;

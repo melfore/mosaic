@@ -27,6 +27,9 @@ const meta = {
           subpartsSuffixes: getAllComposedDataCy(SUBPARTS_MAP),
         },
       }),
+      description: {
+        component: "The Avatar component is used to display an image or initials.",
+      },
     },
   },
 } satisfies Meta<typeof MemoizedAvatar>;

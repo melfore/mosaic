@@ -34,6 +34,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The BreadCrumbs component displays the current page location in a hierarchy.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedBreadCrumbs>;

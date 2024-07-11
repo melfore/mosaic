@@ -33,6 +33,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The InputText is a text field component.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedInputText>;

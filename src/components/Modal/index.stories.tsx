@@ -32,6 +32,9 @@ const meta = {
         },
         localizableProps: LOCALIZABLE_PROPS,
       }),
+      description: {
+        component: "The Modal is a surface that contains application content.",
+      },
     },
   },
 } satisfies Meta<typeof LocalizedModal>;

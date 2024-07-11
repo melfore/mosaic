@@ -24,6 +24,9 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Progress component is used to display the progress of a task.",
+      },
     },
   },
 } satisfies Meta<typeof MemoizedProgress>;

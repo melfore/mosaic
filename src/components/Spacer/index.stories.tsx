@@ -29,6 +29,9 @@ const meta = {
           dataCyDefault: DATA_CY_DEFAULT,
         },
       }),
+      description: {
+        component: "The Spacer component is used to add spacing between elements.",
+      },
     },
   },
 } satisfies Meta<typeof MemoizedSpacer>;

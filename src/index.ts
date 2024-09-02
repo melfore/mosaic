@@ -46,6 +46,7 @@ export { default as Switch } from "./components/Switch";
 export { SwitchSize } from "./types/Switch";
 
 export { default as Table } from "./components/Table";
+export { default as TableVirtualized } from "./components/TableVirtualized";
 export { TableActionPosition } from "./types/Table";
 
 export { default as Tabs } from "./components/Tabs";

@@ -113,3 +113,15 @@ export const TABLE_MOCKED_DATA = [
     avatar: "http://dummyimage.com/136x100.png/5fa2dd/ffffff",
   },
 ];
+
+export const createLargeMockedData = (count = 100) => {
+  let id = 0;
+  const rows: typeof TABLE_MOCKED_DATA = [];
+
+  while (rows.length < Math.max(count, 0)) {
+    const fixedRows = TABLE_MOCKED_DATA.slice(0, count - rows.length).map((item) => ({ ...item, id: ++id }));
+    Array.prototype.push.apply(rows, fixedRows);
+  }
+
+  return rows;
+};

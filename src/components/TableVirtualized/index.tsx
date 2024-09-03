@@ -62,6 +62,9 @@ export const SUBPARTS_MAP = {
   scrollContainer: {
     label: "Table scroll container",
   },
+  tableBody: {
+    label: "Table body",
+  },
 };
 
 interface ITableContext {
@@ -132,7 +135,7 @@ const VirtuosoTableComponents: TableComponents<any, ITableContext> = {
   },
   TableBody: forwardRef<HTMLTableSectionElement, any>(({ context, children, ...props }, ref) => {
     return (
-      <MUITableBody {...props} ref={ref}>
+      <MUITableBody {...props} ref={ref} data-cy={getComposedDataCy(context.dataCy, SUBPARTS_MAP.tableBody)}>
         {context.isEmpty ? (
           <TableEmptyState columns={context?.columns.length} emptyState={context?.emptyState} />
         ) : (

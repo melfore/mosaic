@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
+exports[`Display/TableVirtualized ColumnFilters play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: inherit; position: relative;"
@@ -81,11 +81,12 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -102,7 +103,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -119,7 +120,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -136,7 +137,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -153,7 +154,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -170,7 +171,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -187,7 +188,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -204,7 +205,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -221,7 +222,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -238,7 +239,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -255,7 +256,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -272,7 +273,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -289,7 +290,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -306,7 +307,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="13"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="13"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -323,7 +324,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="14"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="14"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -340,7 +341,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="15"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="15"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -354,8 +355,38 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
               21
             </td>
           </tr>
-          <tr>
-            <td style="height: 200px; padding: 0px; border: 0px;">
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="33"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="17"
+              data-known-size="33"
+              data-item-index="17"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Nevsa
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              22
             </td>
           </tr>
         </tbody>
@@ -365,7 +396,7 @@ exports[`Display/TableVirtualized ColumnFilters smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
+exports[`Display/TableVirtualized ColumnFiltersSticky play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -450,11 +481,12 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -471,7 +503,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -488,7 +520,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -505,7 +537,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -522,7 +554,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -539,7 +571,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -556,7 +588,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -573,7 +605,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -590,7 +622,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -607,7 +639,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -624,7 +656,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -641,7 +673,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -658,7 +690,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -672,8 +704,89 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
               29
             </td>
           </tr>
-          <tr>
-            <td style="height: 500px; padding: 0px; border: 0px;">
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="33"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="33"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="33"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="33"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="17"
+              data-known-size="33"
+              data-item-index="17"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Nevsa
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              22
             </td>
           </tr>
         </tbody>
@@ -683,7 +796,7 @@ exports[`Display/TableVirtualized ColumnFiltersSticky smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] = `
+exports[`Display/TableVirtualized ColumnFiltersStickyWithActions play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -924,11 +1037,12 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1045,7 +1159,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1162,7 +1276,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1279,7 +1393,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1396,7 +1510,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1513,7 +1627,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1630,7 +1744,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1747,7 +1861,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1864,7 +1978,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -1981,7 +2095,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -2098,7 +2212,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -2215,7 +2329,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -2332,7 +2446,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -2446,8 +2560,476 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
               </div>
             </td>
           </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="73"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Domican
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              kdomican1@archive.org
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Culacling
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              378 Loftsgordon Drive
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Services
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Medical Academy in Lodz
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/212x100.png/dddddd/000000
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="73"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Hackleton
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              hhackleton2@mozilla.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Klirou
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              385 Prairie Rose Junction
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Support
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Universidad Autónoma de Fresnillo
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/235x100.png/ff4444/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="53"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Robard
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              krobard3@unblog.fr
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Van Nuys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              883 Straubel Way
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Fachhochschule Hamburg
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/229x100.png/cc0000/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="113"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Jedrys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              tjedrys4@eventbrite.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Sumberagung
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              72 Independence Street
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Illinois School of Professional Psychology - Meadows Campus
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/249x100.png/5fa2dd/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
           <tr>
-            <td style="height: 3700px; padding: 0px; border: 0px;">
+            <td style="height: 2409px; padding: 0px; border: 0px;">
             </td>
           </tr>
         </tbody>
@@ -2457,7 +3039,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActions smoke-test 1`] 
 </div>
 `;
 
-exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection smoke-test 1`] = `
+exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -2661,14 +3243,14 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
               <div class="MuiFormControl-root MuiTextField-root css-mui-classname">
                 <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-standard css-mui-classname"
                        data-shrink="false"
-                       for=":r32:"
-                       id=":r32:-label"
+                       for=":r38:"
+                       id=":r38:-label"
                 >
                   type to filter
                 </label>
                 <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-mui-classname">
                   <input aria-invalid="false"
-                         id=":r32:"
+                         id=":r38:"
                          type="text"
                          class="MuiInputBase-input MuiInput-input css-mui-classname"
                          value
@@ -2734,11 +3316,12 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -2884,7 +3467,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3030,7 +3613,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3176,7 +3759,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3322,7 +3905,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3468,7 +4051,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3614,7 +4197,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3760,7 +4343,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -3906,7 +4489,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4052,7 +4635,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4198,7 +4781,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4344,7 +4927,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4490,7 +5073,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4633,8 +5216,592 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
               </div>
             </td>
           </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="73"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="background-color: rgb(255, 255, 255); left: 0px; padding: 0px 8px; position: sticky; width: 36px; z-index: 1;"
+            >
+              <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
+                     data-cy="checkbox"
+                     style="margin: 0px;"
+              >
+                <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
+                      data-cy="checkbox-check"
+                >
+                  <input class="PrivateSwitchBase-input css-mui-classname"
+                         type="checkbox"
+                         data-indeterminate="false"
+                         data-cy="checkbox-input"
+                  >
+                  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                       focusable="false"
+                       aria-hidden="true"
+                       viewbox="0 0 24 24"
+                       data-testid="CheckBoxOutlineBlankIcon"
+                  >
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                    </path>
+                  </svg>
+                  <span class="MuiTouchRipple-root css-mui-classname">
+                  </span>
+                </span>
+              </label>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Domican
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              kdomican1@archive.org
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Culacling
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              378 Loftsgordon Drive
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Services
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Medical Academy in Lodz
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/212x100.png/dddddd/000000
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="73"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="background-color: rgb(255, 255, 255); left: 0px; padding: 0px 8px; position: sticky; width: 36px; z-index: 1;"
+            >
+              <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
+                     data-cy="checkbox"
+                     style="margin: 0px;"
+              >
+                <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
+                      data-cy="checkbox-check"
+                >
+                  <input class="PrivateSwitchBase-input css-mui-classname"
+                         type="checkbox"
+                         data-indeterminate="false"
+                         data-cy="checkbox-input"
+                  >
+                  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                       focusable="false"
+                       aria-hidden="true"
+                       viewbox="0 0 24 24"
+                       data-testid="CheckBoxOutlineBlankIcon"
+                  >
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                    </path>
+                  </svg>
+                  <span class="MuiTouchRipple-root css-mui-classname">
+                  </span>
+                </span>
+              </label>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Hackleton
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              hhackleton2@mozilla.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Klirou
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              385 Prairie Rose Junction
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Support
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Universidad Autónoma de Fresnillo
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/235x100.png/ff4444/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="53"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="background-color: rgb(255, 255, 255); left: 0px; padding: 0px 8px; position: sticky; width: 36px; z-index: 1;"
+            >
+              <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
+                     data-cy="checkbox"
+                     style="margin: 0px;"
+              >
+                <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
+                      data-cy="checkbox-check"
+                >
+                  <input class="PrivateSwitchBase-input css-mui-classname"
+                         type="checkbox"
+                         data-indeterminate="false"
+                         data-cy="checkbox-input"
+                  >
+                  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                       focusable="false"
+                       aria-hidden="true"
+                       viewbox="0 0 24 24"
+                       data-testid="CheckBoxOutlineBlankIcon"
+                  >
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                    </path>
+                  </svg>
+                  <span class="MuiTouchRipple-root css-mui-classname">
+                  </span>
+                </span>
+              </label>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Robard
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              krobard3@unblog.fr
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Van Nuys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              883 Straubel Way
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Fachhochschule Hamburg
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/229x100.png/cc0000/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="113"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="background-color: rgb(255, 255, 255); left: 0px; padding: 0px 8px; position: sticky; width: 36px; z-index: 1;"
+            >
+              <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementStart css-mui-classname"
+                     data-cy="checkbox"
+                     style="margin: 0px;"
+              >
+                <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeSmall css-mui-classname"
+                      data-cy="checkbox-check"
+                >
+                  <input class="PrivateSwitchBase-input css-mui-classname"
+                         type="checkbox"
+                         data-indeterminate="false"
+                         data-cy="checkbox-input"
+                  >
+                  <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                       focusable="false"
+                       aria-hidden="true"
+                       viewbox="0 0 24 24"
+                       data-testid="CheckBoxOutlineBlankIcon"
+                  >
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
+                    </path>
+                  </svg>
+                  <span class="MuiTouchRipple-root css-mui-classname">
+                  </span>
+                </span>
+              </label>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 44px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: center;">
+                <span data-cy="table-virtualized-action-Edit-adornment">
+                  <span aria-label="edit"
+                        data-cy="table-virtualized-action-Edit-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Edit"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="EditIcon"
+                           data-cy="table-virtualized-action-Edit-icon"
+                      >
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Jedrys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              tjedrys4@eventbrite.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Sumberagung
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              72 Independence Street
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Illinois School of Professional Psychology - Meadows Campus
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/249x100.png/5fa2dd/ffffff
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="width: 48px;"
+            >
+              <div style="align-items: center; display: flex; justify-content: flex-end;">
+                <span data-cy="table-virtualized-action-Custom-adornment">
+                  <span aria-label="custom"
+                        data-cy="table-virtualized-action-Custom-adornment-tooltip"
+                        class
+                  >
+                    <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-mui-classname"
+                            tabindex="0"
+                            type="button"
+                            data-cy="table-virtualized-action-Custom"
+                            style="z-index: 0;"
+                    >
+                      <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-mui-classname"
+                           focusable="false"
+                           aria-hidden="true"
+                           viewbox="0 0 24 24"
+                           data-testid="StyleIcon"
+                           data-cy="table-virtualized-action-Custom-icon"
+                           style="height: 20px; width: 20px;"
+                      >
+                        <path d="m2.53 19.65 1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61m19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6M7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34z">
+                        </path>
+                      </svg>
+                      <span class="MuiTouchRipple-root css-mui-classname">
+                      </span>
+                    </button>
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
           <tr>
-            <td style="height: 3700px; padding: 0px; border: 0px;">
+            <td style="height: 3069px; padding: 0px; border: 0px;">
             </td>
           </tr>
         </tbody>
@@ -4644,7 +5811,7 @@ exports[`Display/TableVirtualized ColumnFiltersStickyWithActionsStickySelection 
 </div>
 `;
 
-exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
+exports[`Display/TableVirtualized DataActions play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -4831,11 +5998,12 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -4968,7 +6136,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -5100,7 +6268,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -5233,7 +6401,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -5366,7 +6534,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -5499,7 +6667,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="49"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -5636,7 +6804,7 @@ exports[`Display/TableVirtualized DataActions smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized EmptyState smoke-test 1`] = `
+exports[`Display/TableVirtualized EmptyState play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -5686,6 +6854,7 @@ exports[`Display/TableVirtualized EmptyState smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname">
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5702,7 +6871,7 @@ exports[`Display/TableVirtualized EmptyState smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized Loading smoke-test 1`] = `
+exports[`Display/TableVirtualized Loading play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -5771,11 +6940,12 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5792,7 +6962,7 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5809,7 +6979,7 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5826,7 +6996,7 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5843,7 +7013,7 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5860,7 +7030,7 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5881,9 +7051,9 @@ exports[`Display/TableVirtualized Loading smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized Localized smoke-test 1`] = `
+exports[`Display/TableVirtualized Localized play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
-     data-cy="locale.title"
+     data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
@@ -5898,7 +7068,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
     </div>
   </div>
   <div data-virtuoso-scroller="true"
-       data-cy="locale.title-table-scroll-container"
+       data-cy="table-virtualized-table-scroll-container"
        class="virtuoso-wrapper"
        style="min-height: 40px;"
   >
@@ -5917,13 +7087,13 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root MuiTableRow-head css-mui-classname">
             <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall css-mui-classname"
                 scope="col"
-                data-cy="locale.title-header-cell-Name"
+                data-cy="table-virtualized-header-cell-Name"
             >
               Name
             </th>
             <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall css-mui-classname"
                 scope="col"
-                data-cy="locale.title-header-cell-Age"
+                data-cy="table-virtualized-header-cell-Age"
             >
               Age
             </th>
@@ -5931,11 +7101,12 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5952,7 +7123,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5969,7 +7140,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -5986,7 +7157,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6003,7 +7174,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6020,7 +7191,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6041,7 +7212,7 @@ exports[`Display/TableVirtualized Localized smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized NoData smoke-test 1`] = `
+exports[`Display/TableVirtualized NoData play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -6091,6 +7262,7 @@ exports[`Display/TableVirtualized NoData smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname">
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6111,7 +7283,7 @@ exports[`Display/TableVirtualized NoData smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized PageSizeCustom smoke-test 1`] = `
+exports[`Display/TableVirtualized PageSizeCustom play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -6161,11 +7333,12 @@ exports[`Display/TableVirtualized PageSizeCustom smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6182,7 +7355,7 @@ exports[`Display/TableVirtualized PageSizeCustom smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6199,7 +7372,7 @@ exports[`Display/TableVirtualized PageSizeCustom smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6386,11 +7559,12 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6407,7 +7581,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6424,7 +7598,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6441,7 +7615,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6458,7 +7632,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6475,7 +7649,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6612,7 +7786,7 @@ exports[`Display/TableVirtualized Pagination play-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized Primary smoke-test 1`] = `
+exports[`Display/TableVirtualized Primary play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -6662,6 +7836,7 @@ exports[`Display/TableVirtualized Primary smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
@@ -6822,11 +7997,12 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6843,7 +8019,7 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6860,7 +8036,7 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6877,7 +8053,7 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6894,7 +8070,7 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -6911,7 +8087,7 @@ exports[`Display/TableVirtualized RowClickable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7012,11 +8188,12 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7062,7 +8239,7 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7108,7 +8285,7 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7154,7 +8331,7 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7200,7 +8377,7 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7246,7 +8423,7 @@ exports[`Display/TableVirtualized Selectable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="39"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -7374,11 +8551,12 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7395,7 +8573,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7412,7 +8590,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7429,7 +8607,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7446,7 +8624,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7463,7 +8641,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7484,7 +8662,7 @@ exports[`Display/TableVirtualized Sortable play-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
+exports[`Display/TableVirtualized Sticky play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -7536,11 +8714,12 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7557,7 +8736,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7574,7 +8753,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7591,7 +8770,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7608,7 +8787,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7625,7 +8804,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7642,7 +8821,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7659,7 +8838,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7676,7 +8855,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7693,7 +8872,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7710,7 +8889,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7727,7 +8906,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7744,7 +8923,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7758,8 +8937,89 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
               29
             </td>
           </tr>
-          <tr>
-            <td style="height: 500px; padding: 0px; border: 0px;">
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="33"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="33"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="33"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="33"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="17"
+              data-known-size="33"
+              data-item-index="17"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Nevsa
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              22
             </td>
           </tr>
         </tbody>
@@ -7769,7 +9029,7 @@ exports[`Display/TableVirtualized Sticky smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
+exports[`Display/TableVirtualized StickyPagination play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -7821,11 +9081,12 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7842,7 +9103,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7859,7 +9120,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7876,7 +9137,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7893,7 +9154,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7910,7 +9171,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7927,7 +9188,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7944,7 +9205,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7961,7 +9222,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7978,7 +9239,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -7995,7 +9256,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8012,7 +9273,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8029,7 +9290,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8043,8 +9304,89 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
               29
             </td>
           </tr>
-          <tr>
-            <td style="height: 500px; padding: 0px; border: 0px;">
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="33"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="33"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="33"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="33"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="17"
+              data-known-size="33"
+              data-item-index="17"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Nevsa
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              22
             </td>
           </tr>
         </tbody>
@@ -8168,7 +9510,7 @@ exports[`Display/TableVirtualized StickyPagination smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized Styled smoke-test 1`] = `
+exports[`Display/TableVirtualized Styled play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative; background-color: cyan;"
@@ -8218,11 +9560,12 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8239,7 +9582,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8256,7 +9599,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8273,7 +9616,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8290,7 +9633,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8307,7 +9650,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="33"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -8328,7 +9671,7 @@ exports[`Display/TableVirtualized Styled smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
+exports[`Display/TableVirtualized StyledRow play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -8384,11 +9727,12 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="0"
               style="background-color: lightyellow;"
           >
@@ -8438,7 +9782,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="1"
               style="background-color: lightgreen;"
           >
@@ -8488,7 +9832,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="2"
               style="background-color: lightyellow;"
           >
@@ -8538,7 +9882,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="3"
               style="background-color: lightgreen;"
           >
@@ -8588,7 +9932,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="4"
               style="background-color: lightyellow;"
           >
@@ -8638,7 +9982,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="37"
               data-item-index="5"
               style="background-color: lightgreen;"
           >
@@ -8692,7 +10036,7 @@ exports[`Display/TableVirtualized StyledRow smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
+exports[`Display/TableVirtualized TableLayoutAuto play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -8818,11 +10162,12 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -8938,7 +10283,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9054,7 +10399,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9170,7 +10515,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9286,7 +10631,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9402,7 +10747,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9522,7 +10867,7 @@ exports[`Display/TableVirtualized TableLayoutAuto smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] = `
+exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 100%; overflow-y: inherit; position: relative;"
@@ -9678,11 +11023,12 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9827,7 +11173,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -9972,7 +11318,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -10117,7 +11463,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -10262,7 +11608,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -10407,7 +11753,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingCheckbox MuiTableCell-sizeSmall css-mui-classname"
@@ -10556,7 +11902,7 @@ exports[`Display/TableVirtualized TableLayoutAutoSelectionSticky smoke-test 1`] 
 </div>
 `;
 
-exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
+exports[`Display/TableVirtualized TableLayoutSticky play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-mui-classname"
      data-cy="table-virtualized"
      style="height: 400px; overflow-y: hidden; position: relative;"
@@ -10672,11 +12018,12 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
         </thead>
         <tbody class="MuiTableBody-root css-mui-classname"
                data-testid="virtuoso-item-list"
+               data-cy="table-virtualized-table-body"
         >
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="0"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="0"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10728,7 +12075,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="1"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="1"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10780,7 +12127,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="2"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="2"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10832,7 +12179,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="3"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="3"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10884,7 +12231,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="4"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="4"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10936,7 +12283,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="5"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="5"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -10988,7 +12335,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="6"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="6"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11040,7 +12387,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="7"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="7"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11092,7 +12439,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="8"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="8"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11144,7 +12491,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="9"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="9"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11196,7 +12543,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="10"
-              data-known-size="100"
+              data-known-size="113"
               data-item-index="10"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11248,7 +12595,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="11"
-              data-known-size="100"
+              data-known-size="53"
               data-item-index="11"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11300,7 +12647,7 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
           <tr class="MuiTableRow-root css-mui-classname"
               item="[object Object]"
               data-index="12"
-              data-known-size="100"
+              data-known-size="73"
               data-item-index="12"
           >
             <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
@@ -11349,8 +12696,268 @@ exports[`Display/TableVirtualized TableLayoutSticky smoke-test 1`] = `
               http://dummyimage.com/199x100.png/ff4444/ffffff
             </td>
           </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="13"
+              data-known-size="73"
+              data-item-index="13"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Kale
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Domican
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              44
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              kdomican1@archive.org
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Culacling
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              378 Loftsgordon Drive
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Services
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Medical Academy in Lodz
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/212x100.png/dddddd/000000
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="14"
+              data-known-size="73"
+              data-item-index="14"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Harcourt
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Hackleton
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              19
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              hhackleton2@mozilla.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Klirou
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              385 Prairie Rose Junction
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Support
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Universidad Autónoma de Fresnillo
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/235x100.png/ff4444/ffffff
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="15"
+              data-known-size="53"
+              data-item-index="15"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Keri
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Robard
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              21
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              krobard3@unblog.fr
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Van Nuys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              883 Straubel Way
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Fachhochschule Hamburg
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/229x100.png/cc0000/ffffff
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="16"
+              data-known-size="113"
+              data-item-index="16"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Trueman
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Jedrys
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              36
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              tjedrys4@eventbrite.com
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Sumberagung
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              72 Independence Street
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Business Development
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Illinois School of Professional Psychology - Meadows Campus
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/249x100.png/5fa2dd/ffffff
+            </td>
+          </tr>
+          <tr class="MuiTableRow-root css-mui-classname"
+              item="[object Object]"
+              data-index="17"
+              data-known-size="53"
+              data-item-index="17"
+          >
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Nevsa
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Gelderd
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              22
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              ngelderd5@wisc.edu
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Qandala
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              2 Lakewood Gardens Trail
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Accounting
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              Universiti Malaysia Sabah
+            </td>
+            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall css-mui-classname"
+                style="z-index: 0;"
+            >
+              http://dummyimage.com/136x100.png/5fa2dd/ffffff
+            </td>
+          </tr>
           <tr>
-            <td style="height: 3700px; padding: 0px; border: 0px;">
+            <td style="height: 1836px; padding: 0px; border: 0px;">
             </td>
           </tr>
         </tbody>

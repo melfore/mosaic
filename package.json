@@ -113,7 +113,7 @@
     "prepare": "husky",
     "start": "npm run pre:test && storybook dev -p 6006",
     "test": "test-storybook --watch",
-    "test:ci": "rimraf data/components.json && test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose --maxWorkers=1",
+    "test:ci": "test-storybook --coverage --coverageDirectory coverage/storybook --ci --verbose",
     "test:coverage": "test-storybook --coverage --coverageDirectory coverage/storybook",
     "test:report": "npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
     "update:packages": "npx npm-check-updates --interactive --upgrade --doctor --doctorTest 'npm run pre:push'",

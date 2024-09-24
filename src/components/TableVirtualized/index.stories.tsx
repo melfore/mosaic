@@ -7,13 +7,13 @@ import MUITextField from "@mui/material/TextField";
 import { Meta, StoryObj } from "@storybook/react";
 import { configure, expect, fireEvent, fn, within } from "@storybook/test";
 
+import { waitFor } from "../../../.storybook/utils";
 import { Icons } from "../../types/Icon";
 import { ITableColumn, ITableDataCallbackOptions } from "../../types/Table";
 import { getAllComposedDataCy, getComposedDataCy } from "../../utils";
 import { logInfo } from "../../utils/logger";
 import getDocsPage from "../../utils/stories";
 import LocaleDecorator, { MessageMock } from "../../utils/stories/decorators/Locale";
-import TableVirtualizedDecorator from "../../utils/stories/decorators/TableVirtualized";
 import {
   createLargeMockedData,
   TABLE_MOCKED_COLUMNS,
@@ -36,7 +36,7 @@ LocalizedTableVirtualized.displayName = COMPONENT_NAME;
 const meta = {
   title: "Display/TableVirtualized",
   component: LocalizedTableVirtualized,
-  decorators: [TableVirtualizedDecorator, LocaleDecorator],
+  decorators: [LocaleDecorator],
   parameters: {
     docs: {
       ...getDocsPage({
@@ -69,6 +69,13 @@ const onRowMock = fn(() => logInfo(COMPONENT_NAME, "onRow handler"));
 const onSelectMock = fn(() => logInfo(COMPONENT_NAME, "onSelect handler"));
 const onSortMock = fn(() => logInfo(COMPONENT_NAME, "onSort handler"));
 
+const waitForVirtuosoTable = async (canvas: any) => {
+  // react-virtuoso doesn't render rows immediately because it need to do some DOM measurements...
+  // waiting for table body children ensure consistency in test snapshots
+  const tbody = canvas.getByTestId(getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.tableBody));
+  await waitFor(() => tbody.childNodes.length > 0);
+};
+
 export const Primary: Story = {
   args: {
     columns: TABLE_MOCKED_COLUMNS,
@@ -78,7 +85,12 @@ export const Primary: Story = {
     onSelectionChange: undefined,
     onSortChange: undefined,
     rows: TABLE_MOCKED_DATA,
+    dataCy: DATA_CY_DEFAULT,
     title: "TableVirtualized",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await waitForVirtuosoTable(canvas);
   },
 };
 
@@ -172,6 +184,7 @@ export const DataActions: Story = {
       },
     ],
   },
+  play: Primary.play,
 };
 
 export const Loading: Story = {
@@ -179,6 +192,7 @@ export const Loading: Story = {
     ...Primary.args,
     loading: true,
   },
+  play: Primary.play,
 };
 
 export const Localized: Story = {
@@ -187,6 +201,7 @@ export const Localized: Story = {
     localized: true,
     title: MessageMock.title,
   },
+  play: Primary.play,
 };
 
 export const NoData: Story = {
@@ -194,6 +209,7 @@ export const NoData: Story = {
     ...Primary.args,
     rows: [],
   },
+  play: Primary.play,
 };
 
 export const EmptyState: Story = {
@@ -201,6 +217,7 @@ export const EmptyState: Story = {
     ...NoData.args,
     emptyState: "Custom Empty State",
   },
+  play: Primary.play,
 };
 
 export const PageSizeCustom: Story = {
@@ -213,6 +230,7 @@ export const PageSizeCustom: Story = {
     rows: [...Primary.args.rows!.slice(0, 3)],
     rowsTotal: 30,
   },
+  play: Primary.play,
 };
 
 export const Pagination: Story = {
@@ -224,6 +242,7 @@ export const Pagination: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    await waitForVirtuosoTable(canvas);
     const nextPageButton = canvas.getByTestId(getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.pagination, "next"));
     if (!nextPageButton) {
       return;
@@ -241,6 +260,7 @@ export const RowClickable: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    await waitForVirtuosoTable(canvas);
     const secondRow = canvas.getAllByRole("cell").at(1);
     if (!secondRow) {
       return;
@@ -258,6 +278,7 @@ export const Selectable: Story = {
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
+    await waitForVirtuosoTable(canvas);
     const selectAll = canvas.getByTestId(getComposedDataCy(DATA_CY_DEFAULT, SUBPARTS_MAP.selectAll));
     if (!selectAll) {
       return;
@@ -297,6 +318,7 @@ export const Sortable: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    await waitForVirtuosoTable(canvas);
     const firstHeading = canvas.getAllByRole("columnheader").at(0);
     if (!firstHeading) {
       return;
@@ -316,6 +338,7 @@ export const Sticky: Story = {
     rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
     sticky: true,
   },
+  play: Primary.play,
 };
 
 export const StickyPagination: Story = {
@@ -326,6 +349,7 @@ export const StickyPagination: Story = {
     rows: [...Primary.args.rows!, ...Primary.args.rows!, ...Primary.args.rows!],
     sticky: true,
   },
+  play: Primary.play,
 };
 
 export const Styled = {
@@ -335,6 +359,7 @@ export const Styled = {
       backgroundColor: "cyan",
     },
   },
+  play: Primary.play,
 };
 
 export const StyledRow = {
@@ -355,6 +380,7 @@ export const StyledRow = {
       };
     },
   },
+  play: Primary.play,
 };
 
 export const TableLayoutAuto: Story = {
@@ -385,6 +411,7 @@ export const TableLayoutAuto: Story = {
     tableLayout: "auto",
     title: "Try to scroll horizontally",
   },
+  play: Primary.play,
 };
 
 export const TableLayoutAutoSelectionSticky = {
@@ -393,6 +420,7 @@ export const TableLayoutAutoSelectionSticky = {
     onSelectionChange: onSelectMock,
     stickySelection: true,
   },
+  play: Primary.play,
 };
 
 export const TableLayoutSticky = {
@@ -413,6 +441,7 @@ export const TableLayoutSticky = {
     tableLayout: "auto",
     title: "Try to scroll both ways",
   },
+  play: Primary.play,
 };
 
 export const ColumnFilters: Story = {
@@ -431,6 +460,7 @@ export const ColumnFilters: Story = {
     showFilters: true,
     title: "Column Filters",
   },
+  play: Primary.play,
 };
 
 export const ColumnFiltersSticky: Story = {
@@ -439,6 +469,7 @@ export const ColumnFiltersSticky: Story = {
     sticky: true,
     title: "Column Filters (sticky)",
   },
+  play: Primary.play,
 };
 
 export const ColumnFiltersStickyWithActions: Story = {
@@ -480,6 +511,7 @@ export const ColumnFiltersStickyWithActions: Story = {
     rows: TableLayoutSticky.args.rows,
     tableLayout: "auto",
   },
+  play: Primary.play,
 };
 
 export const ColumnFiltersStickyWithActionsStickySelection: Story = {
@@ -488,4 +520,5 @@ export const ColumnFiltersStickyWithActionsStickySelection: Story = {
     onSelectionChange: onSelectMock,
     stickySelection: true,
   },
+  play: Primary.play,
 };

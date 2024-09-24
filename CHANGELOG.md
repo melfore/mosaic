@@ -1,3 +1,10 @@
+# [10.3.0](https://github.com/melfore/mosaic/compare/v10.2.6...v10.3.0) (2024-09-24)
+
+
+### Features
+
+* 🎸 [TableVirtualized] Added new component ([01e6d73](https://github.com/melfore/mosaic/commit/01e6d73ef28f679641ca6c81c4d535ed54a1193c)), closes [#421](https://github.com/melfore/mosaic/issues/421)
+
 ## [10.2.6](https://github.com/melfore/mosaic/compare/v10.2.5...v10.2.6) (2024-07-11)
 
 ## [10.2.5](https://github.com/melfore/mosaic/compare/v10.2.4...v10.2.5) (2024-07-11)

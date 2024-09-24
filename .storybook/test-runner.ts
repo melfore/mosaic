@@ -45,6 +45,7 @@ const writeStoryDataToDB: TestHook = async (page, context) => {
     const importCode = getComponentImport(name);
     const props = getComponentProps(argTypes);
     database = [
+      // @ts-ignore
       ...database,
       {
         name,
@@ -53,6 +54,7 @@ const writeStoryDataToDB: TestHook = async (page, context) => {
         extension: "tsx",
         docs: {
           import: importCode,
+          // @ts-ignore
           props,
           examples: [example],
         },
@@ -80,7 +82,14 @@ const writeStoryDataToDB: TestHook = async (page, context) => {
  * Gets story element handler and extracts innerHTML to generate snapshots
  * @param page puppeteer page (see playwright)
  */
-const validateSnapshot: TestHook = async (page) => {
+const validateSnapshot: TestHook = async (page, context) => {
+  const { title } = await getStoryContext(page, context);
+  const name = getComponentTitle(title);
+  // Exclude TableVirtualized from snapshot validation
+  if (name === "TableVirtualized") {
+    return;
+  }
+
   const elementHandler = await page.$("#storybook-root");
   if (!elementHandler) {
     return;

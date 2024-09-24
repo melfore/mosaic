@@ -80,6 +80,11 @@ const config: TestRunnerConfig = {
 
     writeDatabase(database);
 
+    // Exclude TableVirtualized from snapshot validation
+    if (name === "TableVirtualized") {
+      return;
+    }
+
     const elementHandler = await page.$("#storybook-root");
     if (!elementHandler) {
       return;

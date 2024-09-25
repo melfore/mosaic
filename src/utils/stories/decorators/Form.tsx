@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useCallback, useEffect, useState } from "react";
+import React, { cloneElement, ReactElement, useCallback, useEffect, useState } from "react";
+import { PropsWithChildren } from "react";
 import { Decorator } from "@storybook/react";
 
 interface BaseFormProps {
@@ -11,10 +12,12 @@ export type FormMockProps = BaseFormProps & {
   [key: string]: any;
 };
 
-const FormDecorator: Decorator<FormMockProps> = (
-  Story,
-  { args: { onChange: externalOnChange, value: externalValue, ...args } }
-) => {
+const FormMock = ({
+  children,
+  onChange: externalOnChange,
+  value: externalValue,
+  ...props
+}: PropsWithChildren<FormMockProps>) => {
   const [value, setValue] = useState(externalValue);
 
   useEffect(() => {
@@ -32,13 +35,9 @@ const FormDecorator: Decorator<FormMockProps> = (
     [externalOnChange]
   );
 
-  return Story({
-    args: {
-      ...args,
-      onChange,
-      value,
-    },
-  });
+  return <>{cloneElement(children as ReactElement<any>, { onChange, value, ...props })}</>;
 };
+
+const FormDecorator: Decorator<FormMockProps> = (Story, { args }) => <FormMock {...args}>{Story()}</FormMock>;
 
 export default FormDecorator;

@@ -3,6 +3,7 @@
 exports[`Surfaces/AppBar Actions smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -28,8 +29,6 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -64,8 +63,6 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
                 <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2m6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1z">
                 </path>
               </svg>
-              <span class="MuiTouchRipple-root css-mui-classname">
-              </span>
             </button>
             <span class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightCircular MuiBadge-overlapCircular MuiBadge-colorError css-mui-classname">
               5
@@ -94,8 +91,6 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -120,8 +115,6 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -133,6 +126,7 @@ exports[`Surfaces/AppBar Actions smoke-test 1`] = `
 exports[`Surfaces/AppBar CustomContent smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -158,8 +152,6 @@ exports[`Surfaces/AppBar CustomContent smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -223,8 +215,6 @@ exports[`Surfaces/AppBar CustomContent smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -236,6 +226,7 @@ exports[`Surfaces/AppBar CustomContent smoke-test 1`] = `
 exports[`Surfaces/AppBar Empty smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -256,6 +247,7 @@ exports[`Surfaces/AppBar Empty smoke-test 1`] = `
 exports[`Surfaces/AppBar Locale smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -281,8 +273,6 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -314,8 +304,6 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -332,13 +320,11 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
                data-testid="LanguageIcon"
                data-cy="appbar-locales-menu-button-icon"
           >
-            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2m6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56M12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96M4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56m2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8M12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96M14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2m.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2m6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56M12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96M4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56m2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8M12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96M14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2m.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z">
             </path>
           </svg>
         </span>
         en
-        <span class="MuiTouchRipple-root css-mui-classname">
-        </span>
       </button>
     </div>
   </div>
@@ -348,6 +334,7 @@ exports[`Surfaces/AppBar Locale smoke-test 1`] = `
 exports[`Surfaces/AppBar Localized smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="locale.title"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -373,8 +360,6 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -406,8 +391,6 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -419,6 +402,7 @@ exports[`Surfaces/AppBar Localized smoke-test 1`] = `
 exports[`Surfaces/AppBar Primary smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -444,8 +428,6 @@ exports[`Surfaces/AppBar Primary smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -477,8 +459,6 @@ exports[`Surfaces/AppBar Primary smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -490,7 +470,7 @@ exports[`Surfaces/AppBar Primary smoke-test 1`] = `
 exports[`Surfaces/AppBar Styled smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
-        style="border: 2px solid rgb(63, 81, 181); border-radius: 4px; background-color: rgb(100, 149, 237);"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12); border: 2px solid rgb(63, 81, 181); border-radius: 4px; background-color: rgb(100, 149, 237);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -516,8 +496,6 @@ exports[`Surfaces/AppBar Styled smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -549,8 +527,6 @@ exports[`Surfaces/AppBar Styled smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -562,6 +538,7 @@ exports[`Surfaces/AppBar Styled smoke-test 1`] = `
 exports[`Surfaces/AppBar TitleClickable play-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -586,6 +563,7 @@ exports[`Surfaces/AppBar TitleClickable play-test 1`] = `
 exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -611,8 +589,6 @@ exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -644,8 +620,6 @@ exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -668,8 +642,6 @@ exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
           </svg>
         </span>
         User
-        <span class="MuiTouchRipple-root css-mui-classname">
-        </span>
       </button>
     </div>
   </div>
@@ -679,6 +651,7 @@ exports[`Surfaces/AppBar UserMenu smoke-test 1`] = `
 exports[`Surfaces/AppBar Username smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -704,8 +677,6 @@ exports[`Surfaces/AppBar Username smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -737,8 +708,6 @@ exports[`Surfaces/AppBar Username smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -761,8 +730,6 @@ exports[`Surfaces/AppBar Username smoke-test 1`] = `
           </svg>
         </span>
         mosaic@github
-        <span class="MuiTouchRipple-root css-mui-classname">
-        </span>
       </button>
     </div>
   </div>
@@ -772,6 +739,7 @@ exports[`Surfaces/AppBar Username smoke-test 1`] = `
 exports[`Surfaces/AppBar UsernameIcon smoke-test 1`] = `
 <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-mui-classname"
         data-cy="appbar"
+        style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
 >
   <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mui-classname"
        style="align-items: center; display: flex; justify-content: space-between;"
@@ -797,8 +765,6 @@ exports[`Surfaces/AppBar UsernameIcon smoke-test 1`] = `
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -830,8 +796,6 @@ exports[`Surfaces/AppBar UsernameIcon smoke-test 1`] = `
               <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>
@@ -856,8 +820,6 @@ exports[`Surfaces/AppBar UsernameIcon smoke-test 1`] = `
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20">
               </path>
             </svg>
-            <span class="MuiTouchRipple-root css-mui-classname">
-            </span>
           </button>
         </span>
       </span>

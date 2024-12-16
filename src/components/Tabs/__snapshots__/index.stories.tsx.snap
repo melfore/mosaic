@@ -23,8 +23,6 @@ exports[`Navigation/Tabs Color smoke-test 1`] = `
                 style="color: rgb(237, 108, 2);"
         >
           PAGE1
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -33,8 +31,6 @@ exports[`Navigation/Tabs Color smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE2
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -43,8 +39,6 @@ exports[`Navigation/Tabs Color smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE3
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
       <span class="MuiTabs-indicator css-mui-classname"
@@ -86,8 +80,6 @@ exports[`Navigation/Tabs DisabledTab smoke-test 1`] = `
                 style="color: rgb(25, 118, 210);"
         >
           PAGE1
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -96,8 +88,6 @@ exports[`Navigation/Tabs DisabledTab smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE2
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root Mui-disabled MuiTab-root MuiTab-textColorPrimary Mui-disabled css-mui-classname"
                 tabindex="-1"
@@ -145,8 +135,6 @@ exports[`Navigation/Tabs Orientation smoke-test 1`] = `
                 style="color: rgb(25, 118, 210);"
         >
           PAGE1
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -155,8 +143,6 @@ exports[`Navigation/Tabs Orientation smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE2
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -165,8 +151,6 @@ exports[`Navigation/Tabs Orientation smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE3
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
       <span class="MuiTabs-indicator css-mui-classname"
@@ -208,8 +192,6 @@ exports[`Navigation/Tabs Primary smoke-test 1`] = `
                 style="color: rgb(25, 118, 210);"
         >
           PAGE1
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -218,8 +200,6 @@ exports[`Navigation/Tabs Primary smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE2
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -228,8 +208,6 @@ exports[`Navigation/Tabs Primary smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE3
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
       <span class="MuiTabs-indicator css-mui-classname"
@@ -271,8 +249,6 @@ exports[`Navigation/Tabs SingleTabColor smoke-test 1`] = `
                 style="color: rgb(25, 118, 210);"
         >
           PAGE1
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -281,8 +257,6 @@ exports[`Navigation/Tabs SingleTabColor smoke-test 1`] = `
                 aria-selected="false"
         >
           PAGE2
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
         <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-mui-classname"
                 tabindex="-1"
@@ -292,8 +266,6 @@ exports[`Navigation/Tabs SingleTabColor smoke-test 1`] = `
                 style="color: rgb(211, 47, 47);"
         >
           PAGE3
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
       <span class="MuiTabs-indicator css-mui-classname"

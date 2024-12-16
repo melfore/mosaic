@@ -20,8 +20,6 @@ exports[`Navigation/ModalWithTabs Closeable smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-mui-classname">
-    </span>
   </button>
 </div>
 `;
@@ -46,8 +44,6 @@ exports[`Navigation/ModalWithTabs Localized smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-mui-classname">
-    </span>
   </button>
 </div>
 `;
@@ -72,8 +68,6 @@ exports[`Navigation/ModalWithTabs Primary smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-mui-classname">
-    </span>
   </button>
 </div>
 `;
@@ -98,8 +92,6 @@ exports[`Navigation/ModalWithTabs Vertical smoke-test 1`] = `
       </svg>
     </span>
     Open
-    <span class="MuiTouchRipple-root css-mui-classname">
-    </span>
   </button>
 </div>
 `;

@@ -24,8 +24,6 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
   >
     Header
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
@@ -63,8 +61,6 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
   >
     Header
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
@@ -97,8 +93,6 @@ exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-mui-classname">
     </span>
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
@@ -136,8 +130,6 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
   >
     Header
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-mui-classname"
      data-cy="list-item-collapsible-collapse"
@@ -175,8 +167,6 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
   >
     Header
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"
@@ -214,8 +204,6 @@ exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
   >
     Header
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
      data-cy="list-item-collapsible-collapse"

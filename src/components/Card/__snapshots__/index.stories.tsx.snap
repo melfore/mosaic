@@ -3,7 +3,7 @@
 exports[`Surfaces/Card Actions smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-content css-mui-classname">
@@ -48,8 +48,6 @@ exports[`Surfaces/Card Actions smoke-test 1`] = `
             </svg>
           </span>
           Gallery
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
     </div>
@@ -60,7 +58,7 @@ exports[`Surfaces/Card Actions smoke-test 1`] = `
 exports[`Surfaces/Card Collapsible play-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-content css-mui-classname">
@@ -100,8 +98,6 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
         <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z">
         </path>
       </svg>
-      <span class="MuiTouchRipple-root css-mui-classname">
-      </span>
     </button>
   </div>
   <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-mui-classname"
@@ -124,7 +120,7 @@ exports[`Surfaces/Card Collapsible play-test 1`] = `
 exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-content css-mui-classname">
@@ -169,8 +165,6 @@ exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
             </svg>
           </span>
           Gallery
-          <span class="MuiTouchRipple-root css-mui-classname">
-          </span>
         </button>
       </div>
     </div>
@@ -189,8 +183,6 @@ exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
         <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z">
         </path>
       </svg>
-      <span class="MuiTouchRipple-root css-mui-classname">
-      </span>
     </button>
   </div>
   <div class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-mui-classname"
@@ -213,7 +205,7 @@ exports[`Surfaces/Card CollapsibleActions smoke-test 1`] = `
 exports[`Surfaces/Card Icon smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-avatar css-mui-classname">
@@ -262,7 +254,7 @@ exports[`Surfaces/Card Icon smoke-test 1`] = `
 exports[`Surfaces/Card Loading smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-avatar css-mui-classname">
@@ -312,7 +304,7 @@ exports[`Surfaces/Card Loading smoke-test 1`] = `
 exports[`Surfaces/Card Localized smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="locale.title"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-content css-mui-classname">
@@ -344,7 +336,7 @@ exports[`Surfaces/Card Localized smoke-test 1`] = `
 exports[`Surfaces/Card Primary smoke-test 1`] = `
 <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-mui-classname"
      data-cy="card"
-     style="margin: 16px; width: calc(100% - 32px);"
+     style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12); margin: 16px; width: calc(100% - 32px);"
 >
   <div class="MuiCardHeader-root css-mui-classname">
     <div class="MuiCardHeader-content css-mui-classname">

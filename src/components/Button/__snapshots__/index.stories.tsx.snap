@@ -7,8 +7,6 @@ exports[`Inputs/Button Color smoke-test 1`] = `
         data-cy="button"
 >
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -30,8 +28,6 @@ exports[`Inputs/Button Elevated smoke-test 1`] = `
         data-cy="button"
 >
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -54,8 +50,6 @@ exports[`Inputs/Button Icon smoke-test 1`] = `
     </svg>
   </span>
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -79,8 +73,6 @@ exports[`Inputs/Button IconCustom smoke-test 1`] = `
     </svg>
   </span>
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -102,8 +94,6 @@ exports[`Inputs/Button IconRight smoke-test 1`] = `
       <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z">
       </path>
     </svg>
-  </span>
-  <span class="MuiTouchRipple-root css-mui-classname">
   </span>
 </button>
 `;
@@ -140,8 +130,6 @@ exports[`Inputs/Button Localized smoke-test 1`] = `
         data-cy="locale.button"
 >
   Bottone
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -152,8 +140,6 @@ exports[`Inputs/Button Primary play-test 1`] = `
         data-cy="button"
 >
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -165,8 +151,6 @@ exports[`Inputs/Button Styled smoke-test 1`] = `
         style="background-color: red; color: white;"
 >
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;
 
@@ -177,7 +161,5 @@ exports[`Inputs/Button VariantOutlined smoke-test 1`] = `
         data-cy="button"
 >
   Button
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </button>
 `;

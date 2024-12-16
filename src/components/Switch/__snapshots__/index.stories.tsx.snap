@@ -62,8 +62,6 @@ exports[`Inputs/Switch Label smoke-test 1`] = `
       >
       <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
-      </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">
     </span>
@@ -88,8 +86,6 @@ exports[`Inputs/Switch LabelEnd smoke-test 1`] = `
              checked
       >
       <span class="MuiSwitch-thumb css-mui-classname">
-      </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">
@@ -116,8 +112,6 @@ exports[`Inputs/Switch Localized smoke-test 1`] = `
       >
       <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
-      </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">
     </span>
@@ -143,8 +137,6 @@ exports[`Inputs/Switch Primary smoke-test 1`] = `
       >
       <span class="MuiSwitch-thumb css-mui-classname">
       </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
-      </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">
     </span>
@@ -166,8 +158,6 @@ exports[`Inputs/Switch SizeSmall smoke-test 1`] = `
              checked
       >
       <span class="MuiSwitch-thumb css-mui-classname">
-      </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">
@@ -191,8 +181,6 @@ exports[`Inputs/Switch Styled smoke-test 1`] = `
              checked
       >
       <span class="MuiSwitch-thumb css-mui-classname">
-      </span>
-      <span class="MuiTouchRipple-root css-mui-classname">
       </span>
     </span>
     <span class="MuiSwitch-track css-mui-classname">

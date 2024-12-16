@@ -12,8 +12,6 @@ exports[`Display/ListItem Children smoke-test 1`] = `
   >
     Collapisble Children
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -29,8 +27,6 @@ exports[`Display/ListItem Clickable play-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -46,8 +42,6 @@ exports[`Display/ListItem Dense smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -75,8 +69,6 @@ exports[`Display/ListItem Icon smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -105,8 +97,6 @@ exports[`Display/ListItem IconCustom smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -129,8 +119,6 @@ exports[`Display/ListItem IconLoading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-mui-classname">
     </span>
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -147,8 +135,6 @@ exports[`Display/ListItem Loading smoke-test 1`] = `
     <span class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-mui-classname">
     </span>
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -164,8 +150,6 @@ exports[`Display/ListItem Primary smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;
 
@@ -181,7 +165,5 @@ exports[`Display/ListItem Selected smoke-test 1`] = `
   >
     John Doe
   </div>
-  <span class="MuiTouchRipple-root css-mui-classname">
-  </span>
 </div>
 `;

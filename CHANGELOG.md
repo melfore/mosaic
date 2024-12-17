@@ -1,3 +1,15 @@
+## [10.3.2](https://github.com/melfore/mosaic/compare/v10.3.1...v10.3.2) (2024-12-17)
+
+
+### chore
+
+* 🤖 upgrade  @mui/* to v6 and @mui/x-date-pickers to v7 ([48ccc8e](https://github.com/melfore/mosaic/commit/48ccc8e2eb859d83994e14890edf4e1085bda546)), closes [#436](https://github.com/melfore/mosaic/issues/436) [#437](https://github.com/melfore/mosaic/issues/437)
+
+
+### BREAKING CHANGES
+
+* 🧨 mui and mui/x major upgrade
+
 ## [10.3.1](https://github.com/melfore/mosaic/compare/v10.3.0...v10.3.1) (2024-09-25)
 
 # [10.3.0](https://github.com/melfore/mosaic/compare/v10.2.6...v10.3.0) (2024-09-24)

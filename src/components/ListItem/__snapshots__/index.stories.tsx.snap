@@ -2,7 +2,7 @@
 
 exports[`Display/ListItem Children smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -32,7 +32,7 @@ exports[`Display/ListItem Clickable play-test 1`] = `
 
 exports[`Display/ListItem Dense smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -47,7 +47,7 @@ exports[`Display/ListItem Dense smoke-test 1`] = `
 
 exports[`Display/ListItem Icon smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -73,7 +73,7 @@ exports[`Display/ListItem Icon smoke-test 1`] = `
 
 exports[`Display/ListItem IconCustom smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -100,7 +100,7 @@ exports[`Display/ListItem IconCustom smoke-test 1`] = `
 
 exports[`Display/ListItem IconLoading smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -122,7 +122,7 @@ exports[`Display/ListItem IconLoading smoke-test 1`] = `
 
 exports[`Display/ListItem Loading smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -136,9 +136,9 @@ exports[`Display/ListItem Loading smoke-test 1`] = `
 </div>
 `;
 
-exports[`Display/ListItem Primary smoke-test 1`] = `
+exports[`Display/ListItem Primary play-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"
@@ -153,7 +153,7 @@ exports[`Display/ListItem Primary smoke-test 1`] = `
 
 exports[`Display/ListItem Selected smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item"
      style="cursor: default;"

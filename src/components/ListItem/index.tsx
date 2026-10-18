@@ -1,9 +1,12 @@
 import React, { CSSProperties, FC, MouseEvent, PropsWithChildren, useCallback, useMemo } from "react";
 import {
   ListItemButton as MUIListItemButton,
+  listItemButtonClasses as MUIListItemButtonClasses,
   ListItemIcon as MUIListItemIcon,
   ListItemText as MUIListItemText,
   Skeleton as MUISkeleton,
+  SxProps,
+  Theme,
 } from "@mui/material";
 
 import { IListItem } from "../../types/ListItem";
@@ -55,16 +58,43 @@ const ListItem: FC<PropsWithChildren<IListItem>> = ({
 
   const selected = useMemo(() => !loading && externalSelected, [externalSelected, loading]);
 
+  const clickable = useMemo(() => !loading && !!externalOnClick, [externalOnClick, loading]);
+
   const wrapperStyle = useMemo(
     (): CSSProperties => ({
-      cursor: !loading && !!externalOnClick ? "pointer" : "default",
+      cursor: clickable ? "pointer" : "default",
       ...style,
     }),
-    [externalOnClick, loading, style]
+    [clickable, style]
+  );
+
+  const wrapperSx = useMemo(
+    (): SxProps<Theme> | undefined =>
+      clickable
+        ? undefined
+        : {
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+            [`&.${MUIListItemButtonClasses.selected}:hover`]: {
+              backgroundColor: (theme: Theme) =>
+                theme.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+            },
+          },
+    [clickable]
   );
 
   return (
-    <MUIListItemButton data-cy={dataCy} dense={dense} onClick={onClick} selected={selected} style={wrapperStyle}>
+    <MUIListItemButton
+      data-cy={dataCy}
+      dense={dense}
+      disableRipple={!clickable}
+      onClick={onClick}
+      selected={selected}
+      style={wrapperStyle}
+      sx={wrapperSx}
+      tabIndex={clickable ? 0 : -1}
+    >
       {icon && (
         <MUIListItemIcon>
           <IconWrapper dataCy={getComposedDataCy(dataCy, SUBPARTS_MAP.icon)} icon={icon} loading={loading} />

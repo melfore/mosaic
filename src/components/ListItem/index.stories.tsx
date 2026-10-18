@@ -47,6 +47,11 @@ export const Primary: Story = {
     content: "John Doe",
     onClick: undefined,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const listItem = canvas.getByTestId(DATA_CY_DEFAULT);
+    await expect(listItem).toHaveAttribute("tabindex", "-1");
+  },
 };
 
 export const Children: Story = {
@@ -66,6 +71,7 @@ export const Clickable: Story = {
     const canvas = within(canvasElement);
     const listItem = canvas.getByTestId(DATA_CY_DEFAULT);
     if (listItem) {
+      await expect(listItem).toHaveAttribute("tabindex", "0");
       fireEvent.click(listItem);
       await expect(onClickMock).toHaveBeenCalledTimes(onClickMock.mock.calls.length);
     }

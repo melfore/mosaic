@@ -2,7 +2,7 @@
 
 exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
@@ -38,7 +38,7 @@ exports[`Display/ListItemCollapsible Children smoke-test 1`] = `
 
 exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-dense MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
@@ -74,7 +74,7 @@ exports[`Display/ListItemCollapsible Dense smoke-test 1`] = `
 
 exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
@@ -106,7 +106,7 @@ exports[`Display/ListItemCollapsible Loading smoke-test 1`] = `
 
 exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
@@ -142,7 +142,7 @@ exports[`Display/ListItemCollapsible Open smoke-test 1`] = `
 
 exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
@@ -178,7 +178,7 @@ exports[`Display/ListItemCollapsible Primary smoke-test 1`] = `
 
 exports[`Display/ListItemCollapsible Selected smoke-test 1`] = `
 <div class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-selected css-mui-classname"
-     tabindex="0"
+     tabindex="-1"
      role="button"
      data-cy="list-item-collapsible-header"
      style="cursor: default;"
